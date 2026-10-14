@@ -1,5 +1,20 @@
 [
     {
+        "id":  "michelin-patent-portfolio",
+        "title":  "ミシュラン特許ポートフォリオ分析",
+        "filename":  "posts/michelin-patent-portfolio.html",
+        "createdAt":  "2026-10-14T15:58:57+09:00",
+        "dateFormatted":  "2026/10/14",
+        "description":  "特許データから読み解く技術領域、研究開発の重点、材料・構造・製造技術のつながり（2026年1～9月のNotion格納資料に基づく分析）",
+        "tags":  [
+                     "特許",
+                     "知財",
+                     "ミシュラン",
+                     "ポートフォリオ",
+                     "技術動向"
+                 ]
+    },
+    {
         "id":  "continental-patent-report",
         "title":  "コンチネンタルWO特許：グラフ分析・技術動向レポート",
         "filename":  "posts/continental-patent-report.html",

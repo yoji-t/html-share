@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ミシュラン特許ポートフォリオ分析</title>
+<style>
+:root {
+  --navy:#17365d;
+  --blue:#2878d0;
+  --cyan:#21a5b8;
+  --orange:#f29d38;
+  --green:#35a878;
+  --purple:#8170cf;
+  --bg:#f4f8fc;
+  --ink:#25364a;
+  --muted:#65758a;
+  --line:#e2eaf3;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",
+  "Noto Sans JP",sans-serif;line-height:1.75;
+}
+header{
+  background:linear-gradient(130deg,#17365d,#2878d0);
+  color:white;padding:48px 22px 42px;
+}
+.header-inner,.container{max-width:1080px;margin:auto}
+.eyebrow{font-size:12px;letter-spacing:2px;opacity:.8}
+h1{font-size:clamp(27px,5vw,43px);line-height:1.35;margin:12px 0}
+header p{max-width:720px;color:#eaf4ff}
+.container{padding:24px 16px 60px}
+h2{font-size:23px;color:var(--navy);margin:0 0 16px}
+h3{font-size:17px;margin:0 0 12px;color:var(--navy)}
+section{margin:25px 0}
+.card{
+  background:white;border:1px solid var(--line);
+  border-radius:17px;padding:23px;
+  box-shadow:0 5px 20px rgba(35,70,110,.045);
+}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.metric{background:white;border:1px solid var(--line);border-radius:15px;padding:19px}
+.metric .label{font-size:12px;color:var(--muted)}
+.metric .number{font-size:30px;font-weight:800;color:var(--navy);line-height:1.5}
+.metric .sub{font-size:12px;color:var(--muted)}
+.note{font-size:12px;color:var(--muted)}
+.pill{display:inline-block;border-radius:99px;background:#e9f3ff;
+  color:#245da0;font-size:12px;padding:3px 10px;margin:3px}
+.chart{margin-top:14px}
+.bar-row{
+  display:grid;grid-template-columns:minmax(120px,1.1fr) 3fr 64px;
+  align-items:center;gap:12px;margin:17px 0;
+}
+.bar-label{font-size:14px}
+.track{height:19px;background:#edf2f8;border-radius:99px;overflow:hidden}
+.fill{height:100%;border-radius:99px}
+.value{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+.theme-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.theme{border:1px solid var(--line);border-radius:13px;padding:17px}
+.theme .icon{font-size:25px}
+.theme p{font-size:13px;margin:7px 0;color:var(--muted)}
+.theme .importance{font-size:12px;color:#245da0;font-weight:700}
+.flow{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap;margin-top:16px}
+.flow-item{flex:1;min-width:130px;background:#f1f6fd;border-radius:12px;padding:14px;text-align:center}
+.flow-item b{display:block;color:var(--navy)}
+.arrow{align-self:center;color:#8ba2bc;font-size:22px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:12px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f1f6fc;color:var(--navy)}
+.callout{background:#fff7e9;border-left:4px solid var(--orange);
+  border-radius:8px;padding:15px 17px;font-size:14px}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
+@media(max-width:700px){
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .theme-grid{grid-template-columns:1fr}
+ .card{padding:17px}
+ .bar-row{grid-template-columns:105px 1fr 48px;gap:8px}
+ .bar-label{font-size:12px}
+ .metric .number{font-size:26px}
+ th,td{padding:9px 6px}
+}
+@media print{
+ body{background:white}
+ .card,.metric{box-shadow:none;break-inside:avoid}
+ header{background:#17365d!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="eyebrow">INTELLECTUAL PROPERTY · TECHNOLOGY INTELLIGENCE</div>
+    <h1>ミシュラン特許<br>ポートフォリオ分析</h1>
+    <p>特許データから読み解く技術領域、研究開発の重点、材料・構造・製造技術のつながり</p>
+    <span class="pill">Notion格納資料に基づく分析</span>
+    <span class="pill">2026年10月14日作成</span>
+  </div>
+</header>
+
+<main class="container">
+
+<section>
+  <h2>01｜エグゼクティブサマリー</h2>
+  <div class="grid">
+    <div class="metric">
+      <div class="label">2026年1～9月</div>
+      <div class="number">161件</div>
+      <div class="sub">固有WO公報・月別資料の集計</div>
+    </div>
+    <div class="metric">
+      <div class="label">集計対象の元ページ</div>
+      <div class="number">167件</div>
+      <div class="sub">言語違いの重複6ページを除外</div>
+    </div>
+    <div class="metric">
+      <div class="label">2026年3月の対象</div>
+      <div class="number">7件</div>
+      <div class="sub">同月のダッシュボード記載値</div>
+    </div>
+    <div class="metric">
+      <div class="label">注目すべき横断テーマ</div>
+      <div class="number">材料×構造</div>
+      <div class="sub">性能と耐久性の両立</div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <h3>分析から読み取れる3つのポイント</h3>
+    <p><b>① 材料開発：</b>再生カーボンブラック、機能性エラストマー、シラン化学など、配合・分子構造から性能を制御する技術が見られます。</p>
+    <p><b>② タイヤの耐久性と性能：</b>トレッドの溝・サイプ、補強層の配置、端部の保護、接着界面など、局所構造によって性能を調整する発明が見られます。</p>
+    <p><b>③ 製品以外への展開：</b>連続製造設備、工程検査、機能性膜など、材料を製品にする工程やタイヤ以外の用途も対象に含まれています。</p>
+    <p class="note">対象件数はNotionの2026年1～9月資料に記載された集計値です。すべての出願人名義や全世界の出願を網羅した件数とは限りません。</p>
+  </div>
+</section>
+
+<section>
+  <h2>02｜グラフ① 2026年3月の技術領域別構成</h2>
+  <div class="card">
+    <p>2026年3月の月別ダッシュボードに記載された7件を分類しています。</p>
+    <div class="chart">
+      <div class="bar-row">
+        <div class="bar-label">高分子材料・製造</div>
+        <div class="track"><div class="fill" style="width:42.9%;background:#2878d0"></div></div>
+        <div class="value">3件</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">タイヤ構造・耐久性</div>
+        <div class="track"><div class="fill" style="width:28.6%;background:#21a5b8"></div></div>
+        <div class="value">2件</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">生産検査・自動化</div>
+        <div class="track"><div class="fill" style="width:14.3%;background:#f29d38"></div></div>
+        <div class="value">1件</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">水素・電気化学</div>
+        <div class="track"><div class="fill" style="width:14.3%;background:#8170cf"></div></div>
+        <div class="value">1件</div>
+      </div>
+    </div>
+    <div class="legend">
+      <span><i class="dot" style="background:#2878d0"></i>材料・製造</span>
+      <span><i class="dot" style="background:#21a5b8"></i>タイヤ</span>
+      <span><i class="dot" style="background:#f29d38"></i>生産技術</span>
+      <span><i class="dot" style="background:#8170cf"></i>エネルギー</span>
+    </div>
+    <div class="callout" style="margin-top:22px">
+      <b>読み取り：</b>この月の対象7件では、高分子材料・製造が3件（42.9%）で最大です。一方、タイヤ構造だけでなく、生産工程やエネルギー関連の案件も含まれています。
+    </div>
+    <p class="note">注意：これは2026年3月の7件だけを集計したグラフであり、ミシュラン全体の技術構成を代表するものではありません。</p>
+  </div>
+</section>
+
+<section>
+  <h2>03｜グラフ② 技術テーマの全体像</h2>
+  <div class="card">
+    <p>2026年1～9月の横断分析資料から、注目テーマを整理しました。以下は件数の比較ではなく、技術的な関係を示すマップです。</p>
+    <div class="theme-grid">
+      <div class="theme">
+        <div class="icon">♻️</div>
+        <h3>再生原料・持続可能性</h3>
+        <p>回収カーボンブラック、補完フィラー、再生材料とゴム性能の両立。</p>
+        <div class="importance">注目軸：環境負荷 × 製品性能</div>
+      </div>
+      <div class="theme">
+        <div class="icon">🧪</div>
+        <h3>高分子・ゴム配合</h3>
+        <p>シラン官能化、ブロックポリマー、分岐構造、反応制御。</p>
+        <div class="importance">注目軸：分子設計 × 加工性</div>
+      </div>
+      <div class="theme">
+        <div class="icon">🛞</div>
+        <h3>トレッド・走行性能</h3>
+        <p>溝・サイプ、複数ゴム層、摩耗、グリップ、転がり抵抗。</p>
+        <div class="importance">注目軸：摩耗 × グリップ × 低損失</div>
+      </div>
+      <div class="theme">
+        <div class="icon">🧵</div>
+        <h3>補強材・接着界面</h3>
+        <p>繊維・樹脂複合材、金属補強材、接着層、端部の保護。</p>
+        <div class="importance">注目軸：耐久性 × 界面制御</div>
+      </div>
+      <div class="theme">
+        <div class="icon">🏭</div>
+        <h3>製造プロセス・検査</h3>
+        <p>連続製造設備、複合部材の成形、積層物の配置方向検査。</p>
+        <div class="importance">注目軸：品質 × 量産再現性</div>
+      </div>
+      <div class="theme">
+        <div class="icon">⚡</div>
+        <h3>機能性材料の用途拡張</h3>
+        <p>燃料電池・電解槽用のアニオン交換膜など、タイヤ外の材料用途。</p>
+        <div class="importance">注目軸：材料技術の横展開</div>
+      </div>
+    </div>
+    <p class="note">テーマ別の件数は、資料中で全161件を同じ基準で再集計した数値が確認できないため表示していません。テーマの掲載順も件数順位を表しません。</p>
+  </div>
+</section>
+
+<section>
+  <h2>04｜グラフ③ 技術のつながり</h2>
+  <div class="card">
+    <p>材料の開発から製品性能、製造・検査までを一連の技術体系として捉えた概念図です。</p>
+    <div class="flow">
+      <div class="flow-item">
+        <b>材料設計</b>
+        <span>高分子・フィラー・シラン</span>
+      </div>
+      <div class="arrow">→</div>
+      <div class="flow-item">
+        <b>界面・補強</b>
+        <span>接着・繊維・保護層</span>
+      </div>
+      <div class="arrow">→</div>
+      <div class="flow-item">
+        <b>製品構造</b>
+        <span>トレッド・補強配置</span>
+      </div>
+      <div class="arrow">→</div>
+      <div class="flow-item">
+        <b>性能・品質</b>
+        <span>耐久性・摩耗・検査</span>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:20px">
+      <b>知財分析上の示唆：</b>個々の公報を独立に評価するだけでなく、材料・製法・構造の組み合わせで競争優位が形成されていないかを調べることが重要です。
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>05｜注目技術と代表的な公報</h2>
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>技術領域</th>
+          <th>代表的な公報</th>
+          <th>分析上の注目点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>トレッド・偏摩耗</td>
+          <td>WO2026029909A1</td>
+          <td>角度付き溝とブロッキングサイプによる不規則摩耗への対応。</td>
+        </tr>
+        <tr>
+          <td>転がり抵抗</td>
+          <td>WO2026073811A1</td>
+          <td>転がり抵抗性能を最適化するタイヤ設計。</td>
+        </tr>
+        <tr>
+          <td>複数ゴム層</td>
+          <td>WO2026087343A1</td>
+          <td>複数のエラストマー配合を使ったトレッド設計。</td>
+        </tr>
+        <tr>
+          <td>建機用タイヤの保護</td>
+          <td>WO2026082430A1</td>
+          <td>異なる補強材を含む保護プライによる損傷対策。</td>
+        </tr>
+        <tr>
+          <td>連続複合部材製造</td>
+          <td>WO2026087834A1</td>
+          <td>細長い複合部材を連続製造する設備。</td>
+        </tr>
+        <tr>
+          <td>水素・電気化学</td>
+          <td>WO2026061779A1</td>
+          <td>燃料電池または電解槽用のアニオン交換膜。</td>
+        </tr>
+        <tr>
+          <td>生産検査</td>
+          <td>WO2026057674A1</td>
+          <td>積層物の配置方向を確認する方法・装置。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">公報番号と技術概要はNotionの保存資料に基づきます。代表例であり、重要度の順位や権利の強さを示すものではありません。</p>
+  </div>
+</section>
+
+<section>
+  <h2>06｜研究開発・知財戦略への示唆</h2>
+  <div class="card">
+    <h3>① 材料単体ではなく、製品構造との組み合わせを分析する</h3>
+    <p>新規ポリマーやフィラーの発明を調べる際は、その材料がトレッド、サイドウォール、補強部材などのどこで使われるか、対応する組成物・製法の公報が存在するかを横断して確認します。</p>
+
+    <h3>② 耐久性を支える周辺技術を見逃さない</h3>
+    <p>補強層の配置だけでなく、接着層、端部処理、保護プライ、成形方法まで調べることで、単独の構造特許では見えない技術のまとまりを把握できます。</p>
+
+    <h3>③ 持続可能性と走行性能の両立を追跡する</h3>
+    <p>再生原料の採用だけでなく、加工性、摩耗、グリップ、転がり抵抗などを同時に扱う案件を抽出し、従来材料に対する差別化ポイントを比較します。</p>
+
+    <h3>④ 出願件数と特許価値を分けて考える</h3>
+    <p>件数の多さは研究活動の広さを示す一つの指標ですが、事業上の重要性を直接示すものではありません。独立請求項、権利範囲、ファミリー展開、審査経過、引用関係、製品との対応を併せて評価する必要があります。</p>
+  </div>
+</section>
+
+<section>
+  <h2>07｜データの限界と次に作るべきグラフ</h2>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>グラフ</th><th>必要なデータ</th><th>分析目的</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>年別・月別出願推移</td>
+          <td>各公報の公開日・出願日</td>
+          <td>技術投資の増減や出願集中時期を把握する。</td>
+        </tr>
+        <tr>
+          <td>技術分類別の推移</td>
+          <td>全公報に共通する技術分類</td>
+          <td>タイヤ構造、材料、製法などの重点変化を追う。</td>
+        </tr>
+        <tr>
+          <td>IPC別の構成</td>
+          <td>公報ごとのIPC・CPC</td>
+          <td>技術領域を分類コードから定量比較する。</td>
+        </tr>
+        <tr>
+          <td>出願人・共同出願分析</td>
+          <td>出願人・発明者情報</td>
+          <td>共同研究や技術領域の広がりを調べる。</td>
+        </tr>
+        <tr>
+          <td>引用・ファミリー分析</td>
+          <td>引用情報・ファミリー情報</td>
+          <td>技術的影響度と海外権利化の広がりを調べる。</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="callout" style="margin-top:18px">
+      <b>重要：</b>今回の資料から確認できる161件という数値だけでは、年別出願推移や技術テーマ別の構成比は算出できません。これらのグラフを作るには、全公報の公開日・出願日・分類を同一形式で抽出し、重複を整理したデータセットが必要です。
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>08｜総括</h2>
+  <div class="card">
+    <p>今回確認できたミシュランの特許資料では、ゴム・高分子材料の開発に加え、タイヤ構造、補強材と接着界面、製造工程、検査技術まで幅広い技術が扱われています。</p>
+    <p>知財戦略上は、個々の公報の件数だけを追うのではなく、<b>材料 → 部材 → タイヤ構造 → 製造・品質保証</b>というつながりを可視化することが有効です。</p>
+    <p>ただし、このHTMLはNotion資料から確認できた集計値と技術テーマを整理したレポートです。全161件を同一ルールで再分類した完全な統計分析や、特許の法的有効性・事業価値の判定を行ったものではありません。</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  ミシュラン特許ポートフォリオ分析｜社内検討・研究開発・知財戦略のための参考資料<br>
+  集計根拠：Notion「特許公報 ＞ ミシュラン」配下の保存資料
+</footer>
+
+</body>
+</html>

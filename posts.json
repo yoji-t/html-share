@@ -1,5 +1,20 @@
 [
     {
+        "id":  "continental-patent-report",
+        "title":  "コンチネンタルWO特許：グラフ分析・技術動向レポート",
+        "filename":  "posts/continental-patent-report.html",
+        "createdAt":  "2026-10-14T15:40:52+09:00",
+        "dateFormatted":  "2026/10/14",
+        "description":  "Notionに格納された2026年上期公開のWO公報36件を対象に、公開動向、技術分野、競争環境、重要特許候補、今後の技術トレンドを整理した分析レポート。",
+        "tags":  [
+                     "特許",
+                     "知財",
+                     "コンチネンタル",
+                     "グラフ分析",
+                     "技術動向"
+                 ]
+    },
+    {
         "id":  "patent-top5",
         "title":  "特許公報から選ぶ注目特許5選",
         "filename":  "posts/patent-top5.html",

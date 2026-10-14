@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja-JP" class="transparentSkybridgeBackground desktopSkybridge dark" data-theme="dark" style="color-scheme: dark; --safe-area-inset-top: 0px; --safe-area-inset-bottom: 0px; --safe-area-inset-left: 0px; --safe-area-inset-right: 0px;"><head><style>@layer sandbox-defaults{html,body,#root{margin:0;padding:0}}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コンチネンタルWO特許：グラフ分析・技術動向レポート</title>
+<style>
+:root{
+  --bg:#f5f8fc;--surface:#ffffff;--text:#203047;--muted:#607086;
+  --line:#dce5ef;--blue:#1769aa;--blue2:#e8f3ff;--teal:#087f8c;
+  --orange:#b85c00;--orangebg:#fff3e4;--green:#19734b;--greenbg:#e9f8f0;
+  --shadow:0 8px 24px rgba(32,48,71,.07)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+.hero{background:linear-gradient(135deg,#eaf4ff,#f7fbff 58%,#e9f8f5);border-bottom:1px solid var(--line);padding:54px 22px 42px}
+.hero-inner,main{max-width:1120px;margin:auto}
+.eyebrow{color:var(--blue);font-weight:800;letter-spacing:.08em;font-size:.82rem}
+h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.3;margin:.5rem 0 1rem;letter-spacing:-.03em}
+.lead{font-size:1.08rem;max-width:850px;color:#41536a}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+button,.button{border:0;border-radius:10px;background:var(--blue);color:white;font-weight:750;padding:11px 16px;font-size:.95rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+button.secondary,.button.secondary{background:white;color:var(--blue);border:1px solid #b9d4ee}
+button:hover,.button:hover{filter:brightness(.96)}
+main{padding:28px 20px 70px}
+nav{background:white;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:26px;box-shadow:var(--shadow)}
+nav strong{display:block;margin-bottom:8px}
+nav ul{margin:0;padding-left:20px;columns:2;column-gap:32px}
+nav li{break-inside:avoid;margin:3px 0}
+a{color:#1268a8;text-underline-offset:3px}
+section{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;margin:22px 0;box-shadow:var(--shadow);scroll-margin-top:18px}
+h2{font-size:1.45rem;line-height:1.4;margin:0 0 16px;padding-bottom:12px;border-bottom:2px solid var(--blue2)}
+h3{font-size:1.12rem;margin:24px 0 10px}
+p{margin:9px 0}
+.muted,small,.note{color:var(--muted)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}
+.kpi{border:1px solid var(--line);background:#fbfdff;border-radius:12px;padding:17px}
+.kpi strong{display:block;font-size:1.55rem;line-height:1.35;color:var(--blue)}
+.kpi span{font-size:.86rem;color:var(--muted)}
+.callout{border-left:4px solid var(--blue);background:var(--blue2);padding:14px 16px;border-radius:0 10px 10px 0;margin:16px 0}
+.warning{border-left-color:var(--orange);background:var(--orangebg)}
+.good{border-left-color:var(--green);background:var(--greenbg)}
+.chart-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.chart-card{border:1px solid var(--line);border-radius:13px;padding:16px;min-width:0}
+.chart-card h3{margin:0 0 10px}
+.chart{width:100%;height:auto;display:block;overflow:visible}
+.chart text{font-family:inherit;fill:var(--muted);font-size:12px}
+.chart .gridline{stroke:#e7edf4;stroke-width:1}
+.chart .bar{fill:#3987c9}
+.chart .bar2{fill:#1b9a91}
+.chart .label{fill:var(--text);font-weight:650}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.83rem;color:var(--muted);margin-top:8px}
+.dot{width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:5px}
+table{width:100%;border-collapse:collapse;margin:12px 0 4px;font-size:.94rem}
+th,td{border-bottom:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top}
+th{background:#f0f6fc;color:#314a63;font-weight:800}
+tbody tr:nth-child(even){background:#fbfdff}
+.table-wrap{overflow-x:auto}
+.pill{display:inline-block;border-radius:999px;padding:3px 9px;font-size:.78rem;font-weight:800;background:#e8f3ff;color:#175d91}
+.pill.green{background:var(--greenbg);color:var(--green)}
+.pill.orange{background:var(--orangebg);color:var(--orange)}
+.two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.topic{border:1px solid var(--line);border-radius:12px;padding:17px}
+.topic h3{margin:0 0 7px}
+.priority{display:grid;grid-template-columns:100px 1fr;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+.priority:last-child{border-bottom:0}
+.priority b{color:var(--blue)}
+footer{text-align:center;color:var(--muted);padding:24px;font-size:.86rem}
+@media(max-width:760px){
+ .hero{padding:36px 18px 30px}main{padding:18px 12px 45px}
+ section{padding:19px;margin:15px 0}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .chart-grid,.two-col{grid-template-columns:1fr}nav ul{columns:1}
+ .priority{grid-template-columns:1fr;gap:3px}
+}
+@media print{
+ body{background:white;font-size:10pt}.hero{padding:20px;background:white}
+ main{padding:0;max-width:none}section,nav{box-shadow:none;break-inside:avoid}
+ .hero-actions,nav{display:none}.chart-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">PATENT INTELLIGENCE / CONTINENTAL</div>
+    <h1>コンチネンタルWO特許<br>グラフ分析・技術動向レポート</h1>
+    <p class="lead">Notionに格納された2026年上期公開のWO公報36件を対象に、公開動向、技術分野、競争環境、重要特許候補、今後の技術トレンドを整理した分析レポート。</p>
+    <div class="hero-actions">
+      <button onclick="copyHtml()">HTMLコードをコピー</button>
+      <button class="secondary" onclick="window.print()">印刷・PDF保存</button>
+    </div>
+    <p class="note">集計値と解釈を区別し、未確認情報やデータ上の制約を明示しています。</p>
+  </div>
+</header>
+<main>
+<nav>
+  <strong>レポート目次</strong>
+  <ul>
+    <li><a href="#summary">エグゼクティブサマリー</a></li>
+    <li><a href="#scope">分析対象と制約</a></li>
+    <li><a href="#monthly">公開・出願動向</a></li>
+    <li><a href="#tech">技術分野別分析</a></li>
+    <li><a href="#competitors">企業・先行技術の関係</a></li>
+    <li><a href="#strategy">技術分野別の戦略分析</a></li>
+    <li><a href="#patents">重要特許候補</a></li>
+    <li><a href="#future">今後3〜5年の仮説</a></li>
+    <li><a href="#recommendations">部門別提言</a></li>
+    <li><a href="#next">追加調査の優先順位</a></li>
+  </ul>
+</nav>
+
+<section id="summary">
+  <h2>1. エグゼクティブサマリー</h2>
+  <div class="kpis">
+    <div class="kpi"><strong>36件</strong><span>対象WO公報</span></div>
+    <div class="kpi"><strong>2026年1〜6月</strong><span>公開期間</span></div>
+    <div class="kpi"><strong>6分野</strong><span>主技術分類</span></div>
+    <div class="kpi"><strong>58.3%</strong><span>補強・ビード＋材料配合</span></div>
+  </div>
+  <ul>
+    <li><b>補強・ビード構造が最大の重点領域：</b>14件、全体の38.9%。特に2026年4〜6月の公開分に集中しています。</li>
+    <li><b>材料・ゴム配合も重要：</b>7件、19.4%。低転がり抵抗、耐摩耗性、老化抑制、回収カーボンブラックなどが関連テーマです。</li>
+    <li><b>複合性能の最適化：</b>雪上・ウェット性能と騒音、転がり抵抗と耐摩耗性、補強と耐久性など、複数性能の両立が調査テーマになります。</li>
+    <li><b>デジタル技術：</b>摩耗予測、センサー情報の真正性、車載処理装置の完全性などが確認対象です。</li>
+  </ul>
+  <div class="callout warning"><b>結論の範囲：</b>これらは今回の36件の限定リスト内で確認できる傾向です。Continental全社の研究開発戦略や市場全体の成長を判断するには、過年度データや公報全文などの追加確認が必要です。</div>
+</section>
+
+<section id="scope">
+  <h2>2. 分析対象とデータの制約</h2>
+  <p>対象ページ「コンチネンタルWO202601to202606」と、その配下の「コンチネンタルWO2026上期｜特許・ISRダッシュボード」で確認できた登録済み集計表・案件別要約を利用しています。</p>
+  <ul>
+    <li>対象：2026年1月15日〜6月25日公開のWO公報36件</li>
+    <li>主技術分類：各公報を1つの主分類に割り当てた集計</li>
+    <li>未確認：全公報の全文、独立請求項の完全な対比、IPC/CPC完全一覧、ファミリー全展開、各国の権利状態</li>
+    <li>ISR原本：この分析では原本照合を完了していません。ページ上のX文献記載を正式なX引用と同一視しません。</li>
+  </ul>
+  <div class="callout"><b>集計上の注意：</b>公開日、出願日、優先日は異なります。公開件数の増減を、そのまま出願活動の増減と解釈しないでください。直近年は公開までのタイムラグによる過小計上も考慮する必要があります。</div>
+</section>
+
+<section id="monthly">
+  <h2>3. 年別・月別の特許公開・出願動向</h2>
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h3>グラフ1：2026年上期の公開月別件数</h3>
+      <svg class="chart" viewBox="0 0 520 300" role="img" aria-label="2026年1月から6月の公開件数">
+        <line class="gridline" x1="55" y1="235" x2="495" y2="235"></line><line class="gridline" x1="55" y1="185" x2="495" y2="185"></line><line class="gridline" x1="55" y1="135" x2="495" y2="135"></line><line class="gridline" x1="55" y1="85" x2="495" y2="85"></line><line class="gridline" x1="55" y1="35" x2="495" y2="35"></line>
+        <text x="35" y="239">0</text><text x="35" y="189">2</text><text x="35" y="139">4</text><text x="35" y="89">6</text><text x="35" y="39">8</text>
+        <rect class="bar" x="78" y="185" width="42" height="50" rx="4"></rect><rect class="bar" x="146" y="110" width="42" height="125" rx="4"></rect><rect class="bar" x="214" y="35" width="42" height="200" rx="4"></rect><rect class="bar" x="282" y="35" width="42" height="200" rx="4"></rect><rect class="bar" x="350" y="85" width="42" height="150" rx="4"></rect><rect class="bar" x="418" y="60" width="42" height="175" rx="4"></rect>
+        <g class="label" text-anchor="middle"><text x="99" y="176">2</text><text x="167" y="101">5</text><text x="235" y="26">8</text><text x="303" y="26">8</text><text x="371" y="76">6</text><text x="439" y="51">7</text></g>
+        <g text-anchor="middle"><text x="99" y="258">1月</text><text x="167" y="258">2月</text><text x="235" y="258">3月</text><text x="303" y="258">4月</text><text x="371" y="258">5月</text><text x="439" y="258">6月</text></g>
+        <text x="275" y="289" text-anchor="middle">公開月（件）</text>
+      </svg>
+      <p class="muted">対象36件。3月・4月が各8件で最多です。</p>
+    </div>
+    <div class="chart-card">
+      <h3>グラフ2：PCT出願月別件数</h3>
+      <svg class="chart" viewBox="0 0 520 300" role="img" aria-label="2025年6月から12月のPCT出願件数">
+        <line class="gridline" x1="55" y1="235" x2="495" y2="235"></line><line class="gridline" x1="55" y1="185" x2="495" y2="185"></line><line class="gridline" x1="55" y1="135" x2="495" y2="135"></line><line class="gridline" x1="55" y1="85" x2="495" y2="85"></line><line class="gridline" x1="55" y1="35" x2="495" y2="35"></line>
+        <text x="35" y="239">0</text><text x="35" y="189">2</text><text x="35" y="139">4</text><text x="35" y="89">6</text><text x="35" y="39">8</text>
+        <rect class="bar2" x="68" y="135" width="38" height="100" rx="4"></rect><rect class="bar2" x="128" y="160" width="38" height="75" rx="4"></rect><rect class="bar2" x="188" y="35" width="38" height="200" rx="4"></rect><rect class="bar2" x="248" y="35" width="38" height="200" rx="4"></rect><rect class="bar2" x="308" y="110" width="38" height="125" rx="4"></rect><rect class="bar2" x="368" y="135" width="38" height="100" rx="4"></rect><rect class="bar2" x="428" y="135" width="38" height="100" rx="4"></rect>
+        <g class="label" text-anchor="middle"><text x="87" y="126">4</text><text x="147" y="151">3</text><text x="207" y="26">8</text><text x="267" y="26">8</text><text x="327" y="101">5</text><text x="387" y="126">4</text><text x="447" y="126">4</text></g>
+        <g text-anchor="middle"><text x="87" y="258">6月</text><text x="147" y="258">7月</text><text x="207" y="258">8月</text><text x="267" y="258">9月</text><text x="327" y="258">10月</text><text x="387" y="258">11月</text><text x="447" y="258">12月</text></g>
+        <text x="275" y="289" text-anchor="middle">2025年の出願月（件）</text>
+      </svg>
+      <p class="muted">2025年8月・9月の出願は合計16件、対象36件の44.4%です。</p>
+    </div>
+  </div>
+  <h3>公開四半期の比較</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>公開期間</th><th>件数</th><th>構成比</th></tr></thead>
+    <tbody><tr><td>2026年1〜3月</td><td>15</td><td>41.7%</td></tr><tr><td>2026年4〜6月</td><td>21</td><td>58.3%</td></tr><tr><th>合計</th><th>36</th><th>100%</th></tr></tbody>
+  </table></div>
+  <p><b>観察：</b>第2四半期の公開件数は第1四半期より6件多く、40%増です。3月・4月が各8件で最多です。</p>
+  <p><b>解釈：</b>公開時期に偏りがありますが、公開件数は出願活動の発生時期そのものを示しません。PCT出願から公開までのタイムラグがあります。</p>
+  <p><b>代替説明：</b>出願時期の集中、公開日の分布、対象リストの選定条件などでも説明できます。</p>
+  <p><b>確信度：</b>公開件数の比較は高。研究開発活動の増減との因果関係は低。</p>
+</section>
+
+<section id="tech">
+  <h2>4. 技術分野別の動向</h2>
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h3>グラフ3：主技術分野別の件数</h3>
+      <svg class="chart" viewBox="0 0 540 350" role="img" aria-label="主技術分野別件数">
+        <g><line class="gridline" x1="205" y1="25" x2="205" y2="310"></line><line class="gridline" x1="275" y1="25" x2="275" y2="310"></line><line class="gridline" x1="345" y1="25" x2="345" y2="310"></line><line class="gridline" x1="415" y1="25" x2="415" y2="310"></line><line class="gridline" x1="485" y1="25" x2="485" y2="310"></line></g>
+        <g><text x="195" y="48" text-anchor="end">補強・ビード構造</text><rect class="bar" x="205" y="30" width="280" height="25" rx="4"></rect><text x="493" y="48" class="label">14</text>
+        <text x="195" y="94" text-anchor="end">材料・配合</text><rect class="bar" x="205" y="76" width="140" height="25" rx="4"></rect><text x="353" y="94" class="label">7</text>
+        <text x="195" y="140" text-anchor="end">トレッド・溝設計</text><rect class="bar" x="205" y="122" width="100" height="25" rx="4"></rect><text x="313" y="140" class="label">5</text>
+        <text x="195" y="186" text-anchor="end">センシング・データ</text><rect class="bar" x="205" y="168" width="80" height="25" rx="4"></rect><text x="293" y="186" class="label">4</text>
+        <text x="195" y="232" text-anchor="end">表面・放熱・保護</text><rect class="bar" x="205" y="214" width="60" height="25" rx="4"></rect><text x="273" y="232" class="label">3</text>
+        <text x="195" y="278" text-anchor="end">吸音・製造・再生</text><rect class="bar" x="205" y="260" width="60" height="25" rx="4"></rect><text x="273" y="278" class="label">3</text></g>
+        <g text-anchor="middle"><text x="205" y="330">0</text><text x="275" y="330">3.5</text><text x="345" y="330">7</text><text x="415" y="330">10.5</text><text x="485" y="330">14件</text></g>
+      </svg>
+      <p class="muted">36件を主技術分野に1件ずつ分類。重複計上なし。</p>
+    </div>
+    <div class="chart-card">
+      <h3>グラフ4：主技術分野×公開四半期</h3>
+      <svg class="chart" viewBox="0 0 540 350" role="img" aria-label="主技術分野別の第1四半期と第2四半期の比較">
+        <g><text x="195" y="48" text-anchor="end">補強・ビード構造</text><rect class="bar" x="205" y="28" width="40" height="12" rx="3"></rect><rect class="bar2" x="205" y="43" width="240" height="12" rx="3"></rect><text x="450" y="53" class="label">12</text>
+        <text x="195" y="94" text-anchor="end">材料・配合</text><rect class="bar" x="205" y="74" width="60" height="12" rx="3"></rect><rect class="bar2" x="205" y="89" width="80" height="12" rx="3"></rect><text x="290" y="99" class="label">4</text>
+        <text x="195" y="140" text-anchor="end">トレッド・溝設計</text><rect class="bar" x="205" y="120" width="80" height="12" rx="3"></rect><rect class="bar2" x="205" y="135" width="20" height="12" rx="3"></rect><text x="290" y="130" class="label">4</text>
+        <text x="195" y="186" text-anchor="end">センシング・データ</text><rect class="bar" x="205" y="166" width="60" height="12" rx="3"></rect><rect class="bar2" x="205" y="181" width="20" height="12" rx="3"></rect><text x="270" y="176" class="label">3</text>
+        <text x="195" y="232" text-anchor="end">表面・放熱・保護</text><rect class="bar" x="205" y="212" width="20" height="12" rx="3"></rect><rect class="bar2" x="205" y="227" width="40" height="12" rx="3"></rect><text x="250" y="237" class="label">2</text>
+        <text x="195" y="278" text-anchor="end">吸音・製造・再生</text><rect class="bar" x="205" y="258" width="40" height="12" rx="3"></rect><rect class="bar2" x="205" y="273" width="20" height="12" rx="3"></rect><text x="250" y="283" class="label">2</text></g>
+        <g text-anchor="middle"><text x="205" y="320">0</text><text x="285" y="320">4</text><text x="365" y="320">8</text><text x="445" y="320">12件</text></g>
+      </svg>
+      <div class="legend"><span><i class="dot" style="background:#3987c9"></i>1〜3月</span><span><i class="dot" style="background:#1b9a91"></i>4〜6月</span></div>
+      <p class="muted">主分類別の四半期比較。バーは件数に比例。</p>
+    </div>
+  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>主技術分野</th><th>件数</th><th>構成比</th><th>分析上の着眼点</th></tr></thead>
+    <tbody>
+      <tr><td>補強・ビード構造</td><td>14</td><td>38.9%</td><td>ビードコア、カーカス、ベルト端部、バンド補強</td></tr>
+      <tr><td>材料・配合</td><td>7</td><td>19.4%</td><td>シリカ、官能化ゴム、老化抑制、回収カーボンブラック</td></tr>
+      <tr><td>トレッド・溝設計</td><td>5</td><td>13.9%</td><td>雪上性能、排水、騒音、石噛み、摩耗後性能</td></tr>
+      <tr><td>センシング・データ</td><td>4</td><td>11.1%</td><td>摩耗検出・予測、センサー情報、車載処理の信頼性</td></tr>
+      <tr><td>表面・放熱・保護</td><td>3</td><td>8.3%</td><td>表面特性、熱、保護機能</td></tr>
+      <tr><td>吸音・製造・再生</td><td>3</td><td>8.3%</td><td>吸音層、製造工程、再生・更生</td></tr>
+    </tbody>
+  </table></div>
+  <p><b>観察：</b>補強・ビード構造と材料・配合を合わせると21件、全体の58.3%です。</p>
+  <p><b>四半期比較：</b>補強・ビード構造は第1四半期2件（13.3%）から第2四半期12件（57.1%）へ偏っています。第2四半期の公開集中が、そのまま開発活動の増加を意味するわけではありません。</p>
+  <p><b>追加確認：</b>2025年9月30日出願の近接テーマ案件群について、共通する設計思想、独立請求項の差、同一ファミリーかどうかを確認する必要があります。</p>
+</section>
+
+<section id="competitors">
+  <h2>5. 企業・先行技術の関係</h2>
+  <div class="callout warning"><b>重要な注意：</b>元の集計には、企業別の記載案件数と「その他の名義」の確定的な集計値に未検証部分があります。以下の企業別数値は正式なISRのX引用数や技術力ランキングとして使用できません。</div>
+  <div class="chart-card">
+    <h3>ページ記載の企業・名義別案件数（参考表示）</h3>
+    <svg class="chart" viewBox="0 0 600 390" role="img" aria-label="ページ記載企業名義別の参考件数">
+      <g><line class="gridline" x1="190" y1="25" x2="190" y2="345"></line><line class="gridline" x1="270" y1="25" x2="270" y2="345"></line><line class="gridline" x1="350" y1="25" x2="350" y2="345"></line><line class="gridline" x1="430" y1="25" x2="430" y2="345"></line><line class="gridline" x1="510" y1="25" x2="510" y2="345"></line></g>
+      <g><text x="180" y="49" text-anchor="end">Continental</text><rect class="bar" x="190" y="30" width="280" height="23" rx="4"></rect><text x="478" y="48" class="label">28</text>
+      <text x="180" y="88" text-anchor="end">住友ゴム工業</text><rect class="bar" x="190" y="69" width="170" height="23" rx="4"></rect><text x="368" y="87" class="label">17</text>
+      <text x="180" y="127" text-anchor="end">Michelin</text><rect class="bar" x="190" y="108" width="160" height="23" rx="4"></rect><text x="358" y="126" class="label">16</text>
+      <text x="180" y="166" text-anchor="end">横浜ゴム</text><rect class="bar" x="190" y="147" width="150" height="23" rx="4"></rect><text x="348" y="165" class="label">15</text>
+      <text x="180" y="205" text-anchor="end">Dunlop（歴史名義）</text><rect class="bar" x="190" y="186" width="70" height="23" rx="4"></rect><text x="268" y="204" class="label">7</text>
+      <text x="180" y="244" text-anchor="end">Goodyear</text><rect class="bar" x="190" y="225" width="40" height="23" rx="4"></rect><text x="238" y="243" class="label">4</text>
+      <text x="180" y="283" text-anchor="end">Bridgestone</text><rect class="bar" x="190" y="264" width="40" height="23" rx="4"></rect><text x="238" y="282" class="label">4</text>
+      <text x="180" y="322" text-anchor="end">その他の名義*</text><rect class="bar" x="190" y="303" width="90" height="23" rx="4" opacity=".45"></rect><text x="288" y="321" class="label">9*</text></g>
+      <g text-anchor="middle"><text x="190" y="367">0</text><text x="270" y="367">8</text><text x="350" y="367">16</text><text x="430" y="367">24</text><text x="510" y="367">32件</text></g>
+    </svg>
+    <p class="muted">*「その他の名義」の9件は確定値として裏付けられていないため、参考表示にとどめ、定量分析には使用しないでください。</p>
+  </div>
+  <ul>
+    <li>Continental自身の過去文献が多く記載されている場合、既存技術との差別化や改良発明の検討が重要になります。</li>
+    <li>住友ゴム工業、Michelin、横浜ゴムなどは、関連分野の先行技術調査で確認する候補です。</li>
+    <li>引用文献が多い企業ほど技術力が高い、あるいは権利化リスクが高いとは限りません。</li>
+    <li>ページにX文献の記載があっても、ISR原本の区分を確認できたことにはなりません。</li>
+  </ul>
+  <p><b>推奨：</b>この情報は競争力ランキングではなく、先行技術調査の優先候補を見つける補助指標として扱います。</p>
+</section>
+
+<section id="strategy">
+  <h2>6. 技術分野別の戦略分析</h2>
+  <div class="two-col">
+    <div class="topic">
+      <h3>① 補強・ビード構造 <span class="pill green">最優先調査</span></h3>
+      <p>ビードコア、カーカスコード角度、ベルト端部、バンド補強などが中心です。コード角度や配置、ゴム部材の組み合わせによって、耐久性・発熱・変形・摩耗を制御する方向が調査対象になります。</p>
+      <p><b>研究開発：</b>補強構造と接地形状、転がり抵抗、耐久性の関係を比較。</p>
+      <p><b>知財：</b>角度・幅・材料・配置条件の組み合わせと、独立請求項の限定条件を確認。</p>
+    </div>
+    <div class="topic">
+      <h3>② 材料・ゴム配合 <span class="pill green">優先調査</span></h3>
+      <p>シリカ、官能化ゴム、老化抑制、低温特性、回収カーボンブラックなどが関連します。</p>
+      <p><b>研究開発：</b>低転がり抵抗・ウェット制動・耐摩耗性の両立、再生原料の品質安定性を検討。</p>
+      <p><b>知財：</b>配合比、材料特性値、製造工程の限定と、配合変更による回避可能性を調べる。</p>
+    </div>
+    <div class="topic">
+      <h3>③ トレッド・溝設計</h3>
+      <p>雪上性能、排水、騒音、石噛み、摩耗後の性能維持などが調査テーマです。</p>
+      <p><b>研究開発：</b>新品時だけでなく、摩耗後の溝形状と性能変化を評価。</p>
+      <p><b>知財：</b>溝の角度・深さ・配置・ブロック剛性の相互関係を確認。</p>
+    </div>
+    <div class="topic">
+      <h3>④ センシング・データ</h3>
+      <p>摩耗検出・予測と、センサー情報や車載処理装置の信頼性確認が関連します。</p>
+      <p><b>研究開発：</b>センサー、推定モデル、校正方法、データ検証を一体で調査。</p>
+      <p><b>知財：</b>入力データ、演算処理、判定条件、出力制御のうち、請求項で保護される部分を特定。</p>
+    </div>
+  </div>
+</section>
+
+<section id="patents">
+  <h2>7. 重要特許の候補</h2>
+  <p>技術動向を把握するため、登録済み要約から詳細確認を優先したい案件を6件選定しました。これは権利の強さや特許価値が確定したランキングではありません。</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>公開番号</th><th>発明の名称・技術概要</th><th>選定理由</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2026073911" target="_blank" rel="noopener">WO2026073911</a></td><td>Pneumatic vehicle tire。金属カーカスと滴形ビードコアなどの構造</td><td>ビード構造の重点群を代表する案件</td></tr>
+      <tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2026125165" target="_blank" rel="noopener">WO2026125165</a></td><td>ベルト補強層の端部保護</td><td>ベルト端部の耐久性改善に関係</td></tr>
+      <tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2026052302" target="_blank" rel="noopener">WO2026052302</a></td><td>トレッドとトレッド配合</td><td>材料・構造を組み合わせた性能最適化</td></tr>
+      <tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2026061675" target="_blank" rel="noopener">WO2026061675</a></td><td>雪上性能と騒音特性を考慮したトレッド</td><td>複数性能の両立という開発課題に関係</td></tr>
+      <tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2026057246" target="_blank" rel="noopener">WO2026057246</a></td><td>タイヤ摩耗の予測方法・プログラム・装置</td><td>データを用いた予防保全への展開可能性</td></tr>
+      <tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2026114459" target="_blank" rel="noopener">WO2026114459</a></td><td>回収カーボンブラックを含むタイヤ用ゴム配合</td><td>再生原料の利用と材料設計の接点</td></tr>
+    </tbody>
+  </table></div>
+  <h3>重要特許候補の詳細調査手順</h3>
+  <ol>
+    <li>独立請求項の構成要件と、数値限定・材料限定を抽出する。</li>
+    <li>明細書の実施例・比較例から技術的効果を確認する。</li>
+    <li>先行技術と請求項を対比し、差別化要素を特定する。</li>
+    <li>ファミリー、各国移行、審査経過、権利状態を確認する。</li>
+    <li>自社製品・開発テーマとの関係を調べ、追加調査や設計変更の必要性を評価する。</li>
+  </ol>
+  <div class="callout warning">現時点では、請求項の具体的な権利範囲、登録可能性、存続状況は確定できません。公報リンクは詳細確認の入口として利用してください。</div>
+</section>
+
+<section id="future">
+  <h2>8. 今後3〜5年の技術トレンド仮説</h2>
+  <div class="topic">
+    <h3>仮説A：補強構造の局所最適化 <span class="pill">確信度：中</span></h3>
+    <p>ビード・カーカス・ベルト・バンドの局所的な設計条件を組み合わせ、耐久性や変形を制御する技術が重要な調査対象となる可能性があります。</p>
+  </div>
+  <div class="topic">
+    <h3>仮説B：複数性能を同時に満たす材料設計 <span class="pill">確信度：中</span></h3>
+    <p>低転がり抵抗、ウェット・雪上性能、摩耗寿命、老化抑制、再生原料利用を両立する設計が継続的な開発課題となる可能性があります。</p>
+  </div>
+  <div class="topic">
+    <h3>仮説C：摩耗予測とデータ信頼性の統合 <span class="pill orange">確信度：低〜中</span></h3>
+    <p>タイヤの状態推定から交換時期の予測、車両管理、データの真正性確認まで、運用面を含めた知財ポートフォリオが形成される可能性があります。</p>
+  </div>
+  <div class="topic">
+    <h3>仮説D：タイヤの循環利用と更生技術 <span class="pill orange">確信度：低〜中</span></h3>
+    <p>回収カーボンブラック、吸音層、更生用トレッドなどから、材料の再利用と製品寿命の延長を両立する技術が調査テーマになります。</p>
+  </div>
+  <p class="muted">これらは36件の限定リストから設定した仮説です。市場全体の成長率やContinentalの将来戦略を示すものではありません。</p>
+</section>
+
+<section id="recommendations">
+  <h2>9. 研究開発部門・知的財産部門への提言</h2>
+  <div class="two-col">
+    <div class="topic">
+      <h3>研究開発部門</h3>
+      <ol>
+        <li><b>第一優先：</b>ビード・カーカス・ベルトの構造パラメータと耐久性、摩耗、転がり抵抗の関係を整理する。</li>
+        <li><b>第二優先：</b>材料配合の比較表を作り、性能指標と配合条件の対応を確認する。</li>
+        <li><b>第三優先：</b>トレッド設計では新品時と摩耗後の性能を分けて評価する。</li>
+        <li><b>第四優先：</b>摩耗予測について、実測データ、校正、推定アルゴリズム、検証処理を分けて競合調査する。</li>
+      </ol>
+    </div>
+    <div class="topic">
+      <h3>知的財産部門</h3>
+      <ol>
+        <li><b>関連出願のまとまり：</b>2025年9月30日出願群の独立請求項を横並びにし、共通構成と差別化要素を確認する。</li>
+        <li><b>競合先行技術：</b>住友ゴム工業、Michelin、横浜ゴムなどの文献を、技術分野と請求項の対応から比較する。</li>
+        <li><b>権利化の質：</b>件数だけでなく、請求項の広さ、実施例の裏付け、ファミリー展開、権利状態を確認する。</li>
+        <li><b>ISR原本：</b>ページ記載のX文献を正式な国際調査報告書と照合し、対象請求項・引用文献・評価区分を記録する。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="next">
+  <h2>10. データ品質と追加調査の優先順位</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>優先度</th><th>追加調査</th><th>目的</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pill orange">最優先</span></td><td>ISR原本とX文献の照合</td><td>正式な引用区分と対象請求項を確定</td></tr>
+      <tr><td><span class="pill orange">最優先</span></td><td>2025年9月30日出願群の請求項比較</td><td>関連案件の共通構造と差別化を把握</td></tr>
+      <tr><td><span class="pill">高</span></td><td>2023〜2025年のWO公報収集</td><td>中長期の出願傾向を比較</td></tr>
+      <tr><td><span class="pill">高</span></td><td>IPC・CPCの完全な抽出</td><td>分類別の成長領域を定量評価</td></tr>
+      <tr><td><span class="pill">高</span></td><td>ファミリー・各国移行情報の確認</td><td>海外展開と権利化状況を把握</td></tr>
+      <tr><td><span class="pill">中</span></td><td>請求項・実施例の詳細分析</td><td>技術的差別化と特許価値を評価</td></tr>
+    </tbody>
+  </table></div>
+  <h3>グラフ・集計の再利用について</h3>
+  <ul>
+    <li>公開月別・出願月別・技術分野別の集計は、対象36件に限った結果として管理する。</li>
+    <li>同一ファミリーの重複公報がないか確認し、件数の単位を「公報」「出願」「ファミリー」のどれにするか明示する。</li>
+    <li>企業・名義別の参考件数は、原データの再集計とISR原本照合が終わるまで、比較指標として使用しない。</li>
+    <li>IPC/CPC、優先日、各国移行、権利状態が追加取得できた段階で、分析を更新する。</li>
+  </ul>
+</section>
+
+<section>
+  <h2>総括</h2>
+  <p>今回の36件から最も明確に確認できるのは、<b>補強・ビード構造が最大の主技術分野であり、2026年4〜6月の公開分に集中していること</b>です。材料・配合では性能の両立や再生原料の活用、デジタル分野では摩耗予測やデータ信頼性が調査テーマとして浮かび上がります。</p>
+  <p>次のステップでは、2026年上期の限定リストから過年度を含む時系列分析へ広げることを推奨します。請求項、IPC/CPC、ファミリー、ISR情報を追加すれば、公開件数の比較から、競合の技術戦略や自社の研究開発・知財戦略に直接つながる分析へ発展させられます。</p>
+  <div class="callout warning"><b>品質上の留意事項：</b>元の企業・名義別グラフの「その他の名義」9件は確定値として裏付けられていません。この値は定量分析に使用せず、企業別件数も正式なX引用件数とは扱わないでください。</div>
+</section>
+</main>
+<footer>コンチネンタルWO特許・グラフ分析レポート｜HTML単一ファイル版</footer>
+</body></html>

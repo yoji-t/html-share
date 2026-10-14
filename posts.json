@@ -1,0 +1,11 @@
+[
+  {
+    "id": "welcome",
+    "title": "ようこそ！HTML Shareへ",
+    "filename": "posts/welcome.html",
+    "createdAt": "2026-10-14T15:15:00+09:00",
+    "dateFormatted": "2026/10/14",
+    "description": "スマホからAntigravityチャットにHTMLコードを貼り付けるだけで、自動でGitHub Pagesへ公開されるシステムです。",
+    "tags": ["初期設定", "ウェルカム"]
+  }
+]

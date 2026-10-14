@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ようこそ！HTML Shareへ</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --accent: #818cf8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 680px;
+      width: 100%;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      transition: opacity 0.2s;
+    }
+    .back-link:hover { opacity: 0.8; }
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--primary);
+      padding: 0.35rem 0.8rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 1.85rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+      background: linear-gradient(to right, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .meta {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 1rem;
+    }
+    p { margin-bottom: 1.2rem; color: #cbd5e1; }
+    .features {
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin: 1.5rem 0;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .features li {
+      margin-left: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #e2e8f0;
+    }
+    .footer {
+      margin-top: 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html" class="back-link">← コンテンツ一覧に戻る</a>
+    <div class="card">
+      <span class="badge">🚀 公開テストページ</span>
+      <h1>ようこそ！HTML Shareへ</h1>
+      <div class="meta">公開日: 2026年10月14日</div>
+      
+      <p>このサイトは、スマートフォンやPCから <strong>Antigravity チャットにHTMLコードを貼り付けるだけ</strong> で、自動的にGitHub Pagesへ公開されるシステムです。</p>
+      
+      <div class="features">
+        <strong>💡 こんな使い方ができます：</strong>
+        <ul>
+          <li>スマホで生成したAIコンテンツ・デザインを即公開</li>
+          <li>急ぎで共有したいWebページやデモのワンクリック公開</li>
+          <li>トップページの一覧に自動でサムネイル・リンクが追加</li>
+        </ul>
+      </div>
+
+      <p>チャットで「このHTMLを公開して」と送るだけで、数秒〜数十秒で全世界からアクセス可能なURLが発行されます。</p>
+    </div>
+    <div class="footer">
+      Powered by Antigravity & GitHub Pages
+    </div>
+  </div>
+</body>
+</html>

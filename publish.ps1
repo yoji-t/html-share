@@ -1,20 +1,9 @@
+[CmdletBinding()]
 param(
-    [Parameter(Mandatory=$false)]
-    [string]$HtmlContent,
-
-    [Parameter(Mandatory=$false)]
     [string]$HtmlFilePath,
-
-    [Parameter(Mandatory=$false)]
     [string]$Title,
-
-    [Parameter(Mandatory=$false)]
     [string]$Description,
-
-    [Parameter(Mandatory=$false)]
     [string[]]$Tags,
-
-    [Parameter(Mandatory=$false)]
     [string]$Slug
 )
 
@@ -22,121 +11,94 @@ $ErrorActionPreference = "Stop"
 $projectDir = "C:\Users\tacky\.gemini\antigravity\scratch\html-share"
 Set-Location $projectDir
 
-# HTMLコンテンツの取得
-if ($HtmlFilePath -and (Test-Path $HtmlFilePath)) {
-    $rawHtml = Get-Content -Path $HtmlFilePath -Raw -Encoding UTF8
-} elseif ($HtmlContent) {
-    $rawHtml = $HtmlContent
-} else {
-    Write-Error "HTMLコンテンツまたはファイルパスを指定してください。"
-    exit 1
+if (-not (Test-Path $HtmlFilePath)) {
+    throw "HTMLファイルが見つかりません: $HtmlFilePath"
 }
+
+$rawHtml = [System.IO.File]::ReadAllText($HtmlFilePath, [System.Text.Encoding]::UTF8)
 
 $now = Get-Date
 $timestamp = $now.ToString("yyyyMMdd_HHmmss")
 $dateFormatted = $now.ToString("yyyy/MM/dd HH:mm")
 
-# タイトルの自動抽出（未指定の場合）
+# タイトルの抽出
 if (-not $Title) {
-    if ($rawHtml -match '<title[^>]*>(.*?)</title>') {
+    if ($rawHtml -match "(?i)<title[^>]*>(.*?)</title>") {
         $Title = $matches[1].Trim()
-    } elseif ($rawHtml -match '<h1[^>]*>(.*?)</h1>') {
-        $Title = ($matches[1] -replace '<[^>]+>', '').Trim()
     } else {
         $Title = "新規コンテンツ ($dateFormatted)"
     }
 }
 
-# 説明文の自動抽出（未指定の場合）
+# 説明文の抽出
 if (-not $Description) {
-    if ($rawHtml -match '<meta\s+name=["'']description["'']\s+content=["'']([^"'']+)["'']') {
-        $Description = $matches[1].Trim()
+    if ($rawHtml -match "(?i)<p[^>]*class=[`"']lead[`"'][^>]*>(.*?)</p>") {
+        $Description = ($matches[1] -replace "<[^>]+>", "").Trim()
+    } elseif ($rawHtml -match "(?i)<p[^>]*>(.*?)</p>") {
+        $Description = ($matches[1] -replace "<[^>]+>", "").Trim()
     } else {
-        # タグを除去したプレーンテキストの先頭100文字
-        $cleanText = ($rawHtml -replace '<style[\s\S]*?</style>', '' -replace '<script[\s\S]*?</script>', '' -replace '<[^>]+>', ' ') -replace '\s+', ' '
-        $cleanText = $cleanText.Trim()
-        if ($cleanText.Length -gt 100) {
-            $Description = $cleanText.Substring(0, 100) + "..."
-        } else {
-            $Description = $cleanText
-        }
+        $Description = "説明なし"
     }
 }
 
-# タグのデフォルト
+# タグ
 if (-not $Tags -or $Tags.Count -eq 0) {
     $Tags = @("コンテンツ")
 }
 
-# ファイル名の決定
+# ファイル名
 if ($Slug) {
-    $safeSlug = ($Slug -replace '[^a-zA-Z0-9_-]', '_').ToLower()
-    $filename = "posts/${safeSlug}.html"
+    $cleanSlug = ($Slug -replace "[^a-zA-Z0-9_-]", "_").ToLower()
+    $relPath = "posts/" + $cleanSlug + ".html"
 } else {
-    $filename = "posts/${timestamp}.html"
+    $relPath = "posts/" + $timestamp + ".html"
 }
 
-$fullFilePath = Join-Path $projectDir $filename
-$postsDir = Split-Path $fullFilePath -Parent
-if (!(Test-Path $postsDir)) {
-    New-Item -ItemType Directory -Path $postsDir -Force | Out-Null
+$destFile = Join-Path $projectDir ($relPath -replace "/", "\")
+$parentDir = Split-Path $destFile -Parent
+if (-not (Test-Path $parentDir)) {
+    New-Item -ItemType Directory -Path $parentDir -Force | Out-Null
 }
 
-# HTMLファイルの書き出し (UTF8 without BOM)
-[System.IO.File]::WriteAllText($fullFilePath, $rawHtml, [System.Text.UTF8Encoding]::new($false))
+# 保存
+[System.IO.File]::WriteAllText($destFile, $rawHtml, [System.Text.UTF8Encoding]::new($false))
 
-# posts.json の更新
+# posts.json 更新
 $jsonPath = Join-Path $projectDir "posts.json"
-$posts = @()
-if (Test-Path $jsonPath) {
-    $jsonContent = Get-Content -Path $jsonPath -Raw -Encoding UTF8
-    if ($jsonContent.Trim()) {
-        $posts = $jsonContent | ConvertFrom-Json
-    }
-}
-
-# 配列であることを保証
-$postsList = [System.Collections.Generic.List[object]]::new()
-if ($posts -is [System.Array]) {
-    $posts | ForEach-Object { $postsList.Add($_) }
-} elseif ($posts) {
-    $postsList.Add($posts)
-}
+$list = [System.Collections.Generic.List[object]]::new()
 
 $newPost = [PSCustomObject]@{
-    id = [System.IO.Path]::GetFileNameWithoutExtension($filename)
+    id = [System.IO.Path]::GetFileNameWithoutExtension($destFile)
     title = $Title
-    filename = $filename
+    filename = $relPath
     createdAt = $now.ToString("yyyy-MM-ddTHH:mm:sszzz")
-    dateFormatted = $dateFormatted
+    dateFormatted = $now.ToString("yyyy/MM/dd")
     description = $Description
     tags = $Tags
 }
+$list.Add($newPost)
 
-# 先頭に追加
-$postsList.Insert(0, $newPost)
+if (Test-Path $jsonPath) {
+    $existing = Get-Content $jsonPath -Raw -Encoding UTF8 | ConvertFrom-Json
+    if ($existing) {
+        foreach ($p in $existing) {
+            if ($p.filename -ne $relPath) {
+                $list.Add($p)
+            }
+        }
+    }
+}
 
-$newJson = $postsList | ConvertTo-Json -Depth 5
+$newJson = $list | ConvertTo-Json -Depth 5
 [System.IO.File]::WriteAllText($jsonPath, $newJson, [System.Text.UTF8Encoding]::new($false))
 
-# Git コミット＆プッシュ
+# Git
 $git = "C:\Users\tacky\AppData\Local\Programs\Git\cmd\git.exe"
 & $git add .
-& $git commit -m "Add new post: $Title"
+& $git commit -m "Publish: $Title"
 & $git push origin main
 
-$publicUrl = "https://yoji-t.github.io/html-share/$filename"
+$postUrl = "https://yoji-t.github.io/html-share/" + $relPath
 $portalUrl = "https://yoji-t.github.io/html-share/"
 
-Write-Host "==========================================" -ForegroundColor Green
-Write-Host "🎉 公開が完了しました！" -ForegroundColor Green
-Write-Host "記事URL : $publicUrl" -ForegroundColor Cyan
-Write-Host "ポータル: $portalUrl" -ForegroundColor Cyan
-Write-Host "==========================================" -ForegroundColor Green
-
-return @{
-    PublicUrl = $publicUrl
-    PortalUrl = $portalUrl
-    Title = $Title
-    Filename = $filename
-}
+Write-Output "URL: $postUrl"

@@ -1,11 +1,28 @@
 [
-  {
-    "id": "welcome",
-    "title": "ようこそ！HTML Shareへ",
-    "filename": "posts/welcome.html",
-    "createdAt": "2026-10-14T15:15:00+09:00",
-    "dateFormatted": "2026/10/14",
-    "description": "スマホからAntigravityチャットにHTMLコードを貼り付けるだけで、自動でGitHub Pagesへ公開されるシステムです。",
-    "tags": ["初期設定", "ウェルカム"]
-  }
+    {
+        "id":  "patent-top5",
+        "title":  "特許公報から選ぶ注目特許5選",
+        "filename":  "posts/patent-top5.html",
+        "createdAt":  "2026-10-14T15:26:07+09:00",
+        "dateFormatted":  "2026/10/14",
+        "description":  "技術の独自性、製品・製造工程への応用可能性、競合分析への有用性という視点から、タイヤ関連特許を読み解く。",
+        "tags":  [
+                     "特許",
+                     "知財",
+                     "タイヤ",
+                     "技術動向"
+                 ]
+    },
+    {
+        "id":  "welcome",
+        "title":  "ようこそ！HTML Shareへ",
+        "filename":  "posts/welcome.html",
+        "createdAt":  "2026-10-14T15:15:00+09:00",
+        "dateFormatted":  "2026/10/14",
+        "description":  "スマホからAntigravityチャットにHTMLコードを貼り付けるだけで、自動でGitHub Pagesへ公開されるシステムです。",
+        "tags":  [
+                     "初期設定",
+                     "ウェルカム"
+                 ]
+    }
 ]

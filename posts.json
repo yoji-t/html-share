@@ -1,5 +1,22 @@
 [
     {
+        "id":  "ai-ip-legal-risk-report",
+        "title":  "知財業務におけるAI活用の法的リスク調査報告書",
+        "filename":  "posts/ai-ip-legal-risk-report.html",
+        "createdAt":  "2026-10-15T17:14:59+09:00",
+        "dateFormatted":  "2026/10/15",
+        "description":  "生成AI・特許検索AI・文書解析AI・AIエージェントの安全な導入と運用（企業の知財部門向け包括的調査報告書）",
+        "tags":  [
+                     "知財",
+                     "生成AI",
+                     "法的リスク",
+                     "調査報告書",
+                     "特許",
+                     "著作権",
+                     "コンプライアンス"
+                 ]
+    },
+    {
         "id":  "ai-ip-risk-prompt",
         "title":  "知財業務におけるAI活用の法的リスク調査プロンプト",
         "filename":  "posts/ai-ip-risk-prompt.html",

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>知財業務におけるAI活用の法的リスク調査報告書</title>
+<style>
+:root {
+  --navy:#18365b; --blue:#2864ad; --pale:#edf4fc;
+  --teal:#087f8c; --text:#243447; --muted:#617286;
+  --line:#dce5ef; --bg:#f5f8fc; --white:#fff;
+  --red:#b42318; --redbg:#fff0ee;
+  --amber:#8a5a00; --amberbg:#fff6df;
+  --green:#176b48; --greenbg:#eaf7ef;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",
+  "Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  line-height:1.8;font-size:15px
+}
+header{background:linear-gradient(135deg,#18365b,#2864ad);
+  color:white;padding:44px 20px}
+header .inner,main,footer{max-width:1100px;margin:auto}
+header h1{font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.4;margin:0 0 14px}
+header p{margin:6px 0;opacity:.94}
+main{padding:24px 16px 60px}
+section,.panel{background:white;border:1px solid var(--line);
+  border-radius:13px;padding:24px;margin:20px 0;
+  box-shadow:0 3px 12px rgba(24,54,91,.04)}
+h2{font-size:1.45rem;color:var(--navy);border-bottom:2px solid var(--line);
+  padding-bottom:9px;margin-top:0}
+h3{font-size:1.13rem;color:var(--teal);margin-top:25px}
+h4{font-size:1rem;color:var(--navy);margin-bottom:6px}
+p{margin:10px 0}
+li{margin:5px 0}
+a{color:#205da6;overflow-wrap:anywhere}
+a:hover{text-decoration:none}
+.toc{background:var(--pale)}
+.toc ul{columns:2;padding-left:22px}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.pill{display:inline-block;padding:4px 10px;border-radius:20px;
+  background:#e5efff;color:#204f91;font-size:.84rem}
+.risk{display:inline-block;border-radius:5px;padding:2px 8px;
+  font-size:.8rem;font-weight:700;white-space:nowrap}
+.high{color:var(--red);background:var(--redbg)}
+.medium{color:var(--amber);background:var(--amberbg)}
+.low{color:var(--green);background:var(--greenbg)}
+.note{padding:14px 17px;border-left:4px solid #d59b26;
+  background:var(--amberbg);border-radius:5px;margin:16px 0}
+.info{padding:14px 17px;border-left:4px solid var(--blue);
+  background:var(--pale);border-radius:5px;margin:16px 0}
+.danger{padding:14px 17px;border-left:4px solid var(--red);
+  background:var(--redbg);border-radius:5px;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:15px 0}
+table{border-collapse:collapse;width:100%;min-width:700px;font-size:.91rem}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--pale);color:var(--navy)}
+tr:nth-child(even) td{background:#fbfcfe}
+.small{font-size:.88rem;color:var(--muted)}
+.checklist li{list-style:none;margin-left:-20px}
+.checklist li::before{content:"□ ";font-weight:bold;color:var(--blue)}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.flow div{background:#f7faff;border:1px solid var(--line);padding:14px;border-radius:8px}
+footer{padding:15px 20px 35px;color:var(--muted);font-size:.88rem}
+@media(max-width:650px){
+  header{padding:32px 18px}.toc ul{columns:1}
+  section,.panel{padding:17px}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  header{background:#fff;color:#18365b;padding:20px 0}
+  section,.panel{box-shadow:none;break-inside:avoid}
+  a{color:#18365b;text-decoration:none}
+  .toc{break-after:page}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="inner">
+  <h1>知財業務におけるAI活用の法的リスク調査報告書</h1>
+  <p>生成AI・特許検索AI・文書解析AI・AIエージェントの安全な導入と運用</p>
+  <div class="meta">
+    <span class="pill">調査基準日：2026年10月15日</span>
+    <span class="pill">対象：日本企業の知的財産部門</span>
+    <span class="pill">法務・知財・情報セキュリティ横断分析</span>
+  </div>
+</div>
+</header>
+
+<main>
+
+<section id="summary">
+<h2>1. エグゼクティブサマリー</h2>
+<p>
+知財業務でAIを活用すること自体が一律に禁止されているわけではない。
+公開済み特許公報の要約、技術分類、翻訳、情報整理などは、入力情報の利用条件を確認し、
+AIの出力を検証する仕組みを設ければ、比較的管理しやすい。
+</p>
+<p>
+一方、未公開発明、出願前の明細書、製造ノウハウ、実験データ、他社から秘密保持義務を負って受領した情報を、未承認のAIサービスに入力することは重大なリスクとなる。
+特許性・侵害判断・発明者認定・出願要否などをAIの回答だけで確定する運用も避けるべきである。
+</p>
+
+<div class="danger">
+<strong>最優先で実施すべきこと：</strong>
+未公開発明情報の入力ルール、利用を認めるサービス・契約プランの指定、
+特許調査結果の人間による検証、AIエージェントの権限制限、
+誤入力時の報告手順を整備する。
+</div>
+
+<h3>重要な結論</h3>
+<ul>
+<li>「入力データを学習に使わない」という条件だけでは、秘密保持・個人情報・保存・国外移転・アクセス権限のリスクは解消しない。</li>
+<li>著作権法第30条の4は、あらゆる文書のAI入力や再配布を無条件で許可する規定ではない。</li>
+<li>AIは特許調査や技術分析の補助として活用できるが、架空の文献、誤ったクレーム解釈、誤った法的結論を生成する可能性がある。</li>
+<li>AIが提案したアイデアを採用したという事実だけで、誰が発明者かが自動的に決まるわけではない。人間の技術的・創作的寄与を記録する運用が重要である。</li>
+<li>AIエージェントには、閲覧・検索・保存と、送信・公開・削除・出願などの重要操作を区別した権限設計が必要である。</li>
+<li>日本のAI法はAIの研究開発・活用を推進する枠組みであり、個別の著作権・特許・個人情報・契約上の問題を一括して解消する法律ではない。</li>
+</ul>
+
+<h3>全体的な利用判断</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>利用内容</th><th>基本的な判断</th><th>必須の管理策</th></tr></thead>
+<tbody>
+<tr><td>公開済み特許公報の要約・翻訳</td><td><span class="risk low">比較的利用しやすい</span></td><td>サービス規約、出典、出力の正確性を確認</td></tr>
+<tr><td>公開公報の大量解析</td><td><span class="risk medium">条件付き</span></td><td>データベース契約、著作権、処理量、保存条件を確認</td></tr>
+<tr><td>未公開発明の入力</td><td><span class="risk high">厳格管理</span></td><td>承認済み環境、契約確認、アクセス制御</td></tr>
+<tr><td>特許性・侵害の最終判断</td><td><span class="risk high">AI単独判断は不可</span></td><td>原文確認、担当者レビュー、必要に応じ専門家確認</td></tr>
+<tr><td>AIエージェントによる自動操作</td><td><span class="risk medium">権限次第</span></td><td>最小権限、操作ログ、重要操作の人間承認</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<nav class="section toc">
+<h2>目次</h2>
+<ul>
+<li><a href="#scope">2. 調査範囲・前提条件</a></li>
+<li><a href="#framework">3. 法的な基本構造</a></li>
+<li><a href="#risklist">4. 法的リスク一覧</a></li>
+<li><a href="#top10">5. 重要リスク10項目</a></li>
+<li><a href="#scenarios">6. 利用シーン別判定</a></li>
+<li><a href="#laws">7. 国内法令・海外制度</a></li>
+<li><a href="#vendors">8. AIサービスの条件比較</a></li>
+<li><a href="#rules">9. 社内AI利用規程案</a></li>
+<li><a href="#checklist">10. 導入前チェックリスト</a></li>
+<li><a href="#incident">11. インシデント対応</a></li>
+<li><a href="#priorities">12. 優先対策</a></li>
+<li><a href="#sources">13. 参考資料・一次情報</a></li>
+<li><a href="#unknown">14. 未確認事項・追加調査</a></li>
+</ul>
+</nav>
+
+<section id="scope">
+<h2>2. 調査範囲・前提条件・調査基準日</h2>
+<p><strong>調査基準日：</strong>2026年10月15日</p>
+<p>
+対象は、日本企業が知的財産業務で利用する生成AI、AIエージェント、特許検索AI、
+文書解析AI、社内AIシステムである。日本法を中心に、EUのAI規制や主要AIサービスの
+公式公開資料を確認した。
+</p>
+<p>
+本報告書は、公開された法令・行政資料・サービス提供者の公式説明を基にした初期的なリスク評価である。
+個別企業の契約書、管理者設定、データ処理契約、社内規程、実際の入力情報は確認していない。
+したがって、個別サービスの利用可否や契約上の適合性を確定するものではない。
+</p>
+<div class="note">
+<strong>評価上の制約：</strong>
+サービスの料金プラン、地域、管理者設定、契約書、機能ごとに条件が異なる。
+公式ページの一般的説明だけで、特定の企業契約の内容を断定しないこと。
+</div>
+</section>
+
+<section id="framework">
+<h2>3. 知財業務における法的な基本構造</h2>
+
+<h3>3-1. 主要な法的論点</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>領域</th><th>主要な論点</th><th>実務で確認すべき点</th></tr></thead>
+<tbody>
+<tr><td>特許法</td><td>発明者、特許要件、明細書の記載要件、権利帰属</td><td>人間の寄与、技術的根拠、発明記録、原文確認</td></tr>
+<tr><td>著作権法</td><td>入力時の複製、情報解析、生成物の類似性、出力の公開</td><td>利用目的、必要性、権利者の利益、契約条件</td></tr>
+<tr><td>不正競争防止法</td><td>営業秘密の管理・漏えい・不正取得</td><td>秘密管理性、アクセス権、委託先管理、ログ</td></tr>
+<tr><td>個人情報保護法</td><td>個人情報の利用目的、委託、第三者提供、国外移転</td><td>データの種類、処理主体、契約、提供先、本人への対応</td></tr>
+<tr><td>契約法務</td><td>NDA、共同研究契約、利用規約、責任制限</td><td>入力許可、再委託、保存、削除、補償、監査</td></tr>
+<tr><td>情報セキュリティ</td><td>不正アクセス、誤送信、プロンプトインジェクション</td><td>最小権限、認証、ログ、承認、隔離、監視</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>3-2. 法的義務と推奨策を区別する</h3>
+<ul>
+<li><strong>法的義務：</strong>適用される法律・規則・契約によって要求される事項。</li>
+<li><strong>行政指針：</strong>法令そのものと同一ではないが、リスク管理の参考となる公的な指針。</li>
+<li><strong>契約上の義務：</strong>利用規約、秘密保持契約、共同研究契約などによって発生する義務。</li>
+<li><strong>推奨される実務：</strong>法律で一律に義務付けられているとは限らないが、事故防止や説明責任のために望ましい措置。</li>
+</ul>
+
+<h3>3-3. AI利用の基本原則</h3>
+<ol>
+<li>入力情報の機密性と権利関係を、利用するAIサービスとは別に評価する。</li>
+<li>入力データの学習利用の有無だけでなく、保存、閲覧、再委託、国外移転、削除を確認する。</li>
+<li>AIの出力を原資料と照合し、重要判断に利用する場合は担当者が検証する。</li>
+<li>出願、外部公開、契約締結、権利放棄などの不可逆的操作をAIだけで実行させない。</li>
+<li>利用したAI、入力情報の区分、出力の確認者、採用判断を必要な範囲で記録する。</li>
+</ol>
+</section>
+
+<section id="risklist">
+<h2>4. 法的リスク一覧表</h2>
+<p class="small">
+評価は一般的な企業利用を想定した初期評価。高・中・低は、法的違法性の断定ではなく、
+想定される損害・発生可能性・管理の必要性を総合したもの。
+</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>ID</th><th>リスク</th><th>法的確実性</th><th>可能性</th><th>影響度</th><th>総合</th><th>主な対策</th></tr>
+</thead>
+<tbody>
+<tr><td>R01</td><td>未公開発明・営業秘密の外部入力</td><td>契約・管理状況に依存</td><td>中</td><td>高</td><td><span class="risk high">高</span></td><td>承認済み環境、入力制限、契約確認</td></tr>
+<tr><td>R02</td><td>AI出力を原因とする誤った出願・技術判断</td><td>個別事実に依存</td><td>中～高</td><td>高</td><td><span class="risk high">高</span></td><td>原資料確認、二重レビュー、根拠保存</td></tr>
+<tr><td>R03</td><td>発明者の誤認・不適切な記載</td><td>制度・寄与に依存</td><td>中</td><td>高</td><td><span class="risk high">高</span></td><td>人間の寄与記録、発明者面談</td></tr>
+<tr><td>R04</td><td>特許調査の漏れ・架空文献・誤引用</td><td>業務品質上の問題が中心</td><td>高</td><td>高</td><td><span class="risk high">高</span></td><td>公報原文、番号、請求項、法的状態を確認</td></tr>
+<tr><td>R05</td><td>著作物の入力・複製・生成物の類似性</td><td>著作権法と事実関係に依存</td><td>中</td><td>中～高</td><td><span class="risk medium">中～高</span></td><td>利用目的・契約確認、類似性確認</td></tr>
+<tr><td>R06</td><td>特許DB・論文DBの契約違反</td><td>契約条件に依存</td><td>中</td><td>中～高</td><td><span class="risk medium">中～高</span></td><td>大量取得、再利用、自動アクセスの条件確認</td></tr>
+<tr><td>R07</td><td>個人情報の不適切な処理</td><td>個人情報保護法等に依存</td><td>中</td><td>高</td><td><span class="risk high">高</span></td><td>データ最小化、委託先確認、国外移転の評価</td></tr>
+<tr><td>R08</td><td>サービス規約・契約上の責任制限の見落とし</td><td>契約条件に依存</td><td>中</td><td>中～高</td><td><span class="risk medium">中～高</span></td><td>契約版管理、法務審査、責任分担の明確化</td></tr>
+<tr><td>R09</td><td>AIエージェントの誤送信・誤公開・誤削除</td><td>操作内容・権限に依存</td><td>中</td><td>高</td><td><span class="risk high">高</span></td><td>最小権限、実行前承認、ログ、復旧手順</td></tr>
+<tr><td>R10</td><td>他社特許の侵害可能性をAIだけで判断</td><td>技術・クレーム・国に依存</td><td>中</td><td>高</td><td><span class="risk high">高</span></td><td>クレームチャート、専門家レビュー</td></tr>
+<tr><td>R11</td><td>生成文章・図面・ロゴの権利侵害</td><td>類似性・依拠性等に依存</td><td>中</td><td>中～高</td><td><span class="risk medium">中～高</span></td><td>類似性調査、商用利用前審査</td></tr>
+<tr><td>R12</td><td>共同研究・NDA情報の契約違反</td><td>契約文言に依存</td><td>中</td><td>高</td><td><span class="risk high">高</span></td><td>契約相手の許諾、目的外利用の確認</td></tr>
+<tr><td>R13</td><td>AI出力の誤りを経営判断に利用</td><td>責任・因果関係に依存</td><td>中</td><td>高</td><td><span class="risk high">高</span></td><td>不確実性表示、承認記録、複数情報源</td></tr>
+<tr><td>R14</td><td>プロンプトインジェクション・権限悪用</td><td>システム構成に依存</td><td>中</td><td>高</td><td><span class="risk high">高</span></td><td>外部指示の隔離、秘密情報の分離、操作制限</td></tr>
+<tr><td>R15</td><td>AI利用記録の不足</td><td>法的義務は状況に依存</td><td>中</td><td>中</td><td><span class="risk medium">中</span></td><td>重要案件の記録基準、アクセスログ、版管理</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="top10">
+<h2>5. 特に重要なリスク10項目の詳細分析</h2>
+
+<h3>R01 未公開発明・営業秘密の外部入力</h3>
+<p><strong>問題：</strong>サービス提供者による処理・保存、利用者側の共有設定、アクセス権、契約条件などによって、秘密情報の管理に影響する可能性がある。</p>
+<p><strong>法的論点：</strong>不正競争防止法上の営業秘密管理、NDA、共同研究契約、委託契約、個人情報保護法など。入力しただけで直ちに営業秘密性が失われると一律に断定することはできないが、秘密管理性や契約遵守の観点で重大な問題になり得る。</p>
+<p><strong>対策：</strong>未公開発明は承認済みサービスに限定し、学習利用、保存期間、再委託、国外移転、削除条件、管理者アクセスを確認する。必要な部分だけを入力し、識別情報をマスキングする。</p>
+
+<h3>R02 AI出力に基づく誤った出願・技術判断</h3>
+<p><strong>問題：</strong>AIが実験結果、構成要件、技術的因果関係、実施例、引用文献を誤って生成する可能性がある。</p>
+<p><strong>対策：</strong>AIの生成文を事実として採用しない。発明者・技術担当者が技術的実現可能性を確認し、特許担当者が明細書の記載要件、請求項と実施例の整合性を確認する。存在しない実験データや実施例を補作しない。</p>
+
+<h3>R03 発明者の認定</h3>
+<p><strong>問題：</strong>AIが出力した技術案について、人間の誰が発明者に該当するかは、単なるAI利用の有無だけでは決まらない。</p>
+<p><strong>対策：</strong>課題設定、技術的制約の設定、候補の選択、技術的改良、検証、最終構成の決定など、人間の具体的な寄与を記録する。AIそのものを発明者として記載できると安易に判断しない。</p>
+<p class="small">参考：特許庁「AI関連技術に関する特許審査の事例について」。AIを活用した創作の保護の在り方に関する調査研究資料も参照する。</p>
+
+<h3>R04 特許調査の漏れ・誤引用</h3>
+<p><strong>問題：</strong>AIの回答に架空の公報番号、誤った公開日、誤った法的状態、請求項の読み違いが含まれる可能性がある。</p>
+<p><strong>対策：</strong>公報番号、出願人、優先日、公開日、請求項、ファミリー、法的状態を公式DB等で照合する。AIの引用は検索の手掛かりと位置付け、一次資料で検証する。</p>
+
+<h3>R05 著作権</h3>
+<p><strong>問題：</strong>著作権法第30条の4には情報解析等に関する権利制限があるが、利用目的や著作権者の利益を不当に害する場合などの検討が必要であり、あらゆる利用が無条件で許されるわけではない。</p>
+<p><strong>対策：</strong>入力時の処理と生成物の外部公開を別々に評価する。全文の再配布、既存資料に酷似する文章の商用利用、図面や写真の転載は特に慎重に扱う。</p>
+
+<h3>R06 特許データベース等の契約</h3>
+<p><strong>問題：</strong>公開されている文献であっても、検索サービスの利用規約が大量取得、自動アクセス、データ再利用、第三者サービスへの投入を制限している場合がある。</p>
+<p><strong>対策：</strong>API条件、ダウンロード上限、再配布制限、AI解析の可否、データ保持条件を確認する。著作権法上の適法性と契約上の利用許可を混同しない。</p>
+
+<h3>R07 個人情報</h3>
+<p><strong>問題：</strong>発明者、従業員、共同研究者、顧客等の情報が含まれる場合、個人情報保護法上の利用目的、安全管理、委託・第三者提供、国外移転等の検討が必要になることがある。</p>
+<p><strong>対策：</strong>氏名・連絡先などを必要以上に入力しない。サービス提供者が委託先に該当するか、国外移転等の条件、保存・削除条件を法務・個人情報担当者が確認する。</p>
+
+<h3>R08 AIサービス契約</h3>
+<p><strong>問題：</strong>個人向けサービスと法人向けサービスでは、データの取扱い、管理機能、責任条件などが異なる。サービス名が同じでもプランや設定で結論が変わる。</p>
+<p><strong>対策：</strong>公式規約、プライバシー文書、データ処理契約、セキュリティ文書、利用する機能の条件を保存し、定期的に再確認する。</p>
+
+<h3>R09 AIエージェントの誤操作</h3>
+<p><strong>問題：</strong>ブラウザやファイル、Notion等の外部サービスにアクセスするAIエージェントが、誤ったページを更新したり、機密情報を外部送信したりする可能性がある。</p>
+<p><strong>対策：</strong>閲覧・検索・下書き作成と、送信・公開・削除・権限変更を分離する。重要操作は実行前に人間が承認し、ログと復旧手段を確保する。</p>
+
+<h3>R10 侵害・特許性の最終判断</h3>
+<p><strong>問題：</strong>侵害判断は請求項の文言、解釈、明細書、審査経過、各国法、製品構成などを踏まえる必要がある。AIによる簡易比較だけでは判断の根拠が不足し得る。</p>
+<p><strong>対策：</strong>請求項ごとの対比表、対象製品の証拠、関連する審査経過、法的状態を確認する。高リスクの製品投入・ライセンス・無効判断では弁理士・弁護士等のレビューを検討する。</p>
+</section>
+
+<section id="scenarios">
+<h2>6. 利用シーン別の判定表</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>No.</th><th>利用シーン</th><th>判定</th><th>実施条件・必須の確認</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>公開済み特許公報の要約</td><td><span class="risk low">原則として利用可能</span></td><td>入力条件、出典、公報原文との一致を確認する。</td></tr>
+<tr><td>2</td><td>未公開明細書をAIに入力</td><td><span class="risk high">条件付き・厳格管理</span></td><td>承認済み環境、契約、保存・学習・国外移転を確認する。未承認サービスには入力しない。</td></tr>
+<tr><td>3</td><td>請求項の作成</td><td><span class="risk medium">条件付きで利用可能</span></td><td>ドラフト補助に限定し、発明者・担当者が技術内容、範囲、サポートを確認する。</td></tr>
+<tr><td>4</td><td>先行技術調査をAIだけで実施し、そのまま報告</td><td><span class="risk high">利用を避けるべき</span></td><td>一次資料を照合し、検索式・範囲・限界を明記して担当者が承認する。</td></tr>
+<tr><td>5</td><td>他社特許の侵害可能性をAIに判定させる</td><td><span class="risk high">最終判断は不可</span></td><td>クレームチャート、製品構成、審査経過、法的状態を人間が確認する。</td></tr>
+<tr><td>6</td><td>競合特許ポートフォリオ分析</td><td><span class="risk medium">条件付きで利用可能</span></td><td>公報・ファミリー・法的状態・分類を検証し、推論と事実を区別する。</td></tr>
+<tr><td>7</td><td>公報・論文の大量解析</td><td><span class="risk medium">追加確認が必要</span></td><td>DB規約、著作権、API条件、データ量、再利用・保存条件を確認する。</td></tr>
+<tr><td>8</td><td>AI生成の図面・文章を出願書類に利用</td><td><span class="risk medium">条件付きで利用可能</span></td><td>技術的正確性、記載要件、権利侵害、発明者の寄与を確認する。</td></tr>
+<tr><td>9</td><td>AIエージェントでDB操作・Notion保存</td><td><span class="risk medium">条件付きで利用可能</span></td><td>最小権限、対象ページ制限、重複防止、ログ、実行前承認を設ける。</td></tr>
+<tr><td>10</td><td>出願要否・権利維持・放棄の提案</td><td><span class="risk medium">判断支援に限定</span></td><td>事業価値、法的状態、費用、競合特許、事業計画を人間が確認する。</td></tr>
+<tr><td>11</td><td>AI生成アイデアを発明届に記載</td><td><span class="risk medium">条件付きで利用可能</span></td><td>人間が創作した部分、AI提案の採用・改良、検証過程を記録する。</td></tr>
+<tr><td>12</td><td>無料版AIに機密情報を誤入力</td><td><span class="risk high">直ちに対応</span></td><td>追加入力を停止し、社内窓口へ報告。保存・共有・削除・通知義務を確認する。</td></tr>
+<tr><td>13</td><td>架空公報番号や誤った法的判断を発見</td><td><span class="risk high">成果物の利用停止・再検証</span></td><td>報告先、引用資料、意思決定への影響を確認し、訂正する。</td></tr>
+<tr><td>14</td><td>AI生成物が他社著作物・特許技術に類似</td><td><span class="risk high">公開・実装前に追加確認</span></td><td>類似性、依拠性、権利範囲、商標・意匠を確認する。</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>ケース別の補足</h3>
+<ul>
+<li><strong>公開公報：</strong>公開されていることは、あらゆる契約・再配布条件が消滅していることを意味しない。</li>
+<li><strong>未公開発明：</strong>「学習に使われない」という表示だけではなく、保存、ログ、人間のアクセス、国外処理、連携機能も確認する。</li>
+<li><strong>AI生成物の出願：</strong>AI生成文をそのまま採用せず、技術的根拠と発明者の寄与を明確にする。</li>
+<li><strong>誤入力：</strong>削除を試みるだけで対応を終了せず、社内報告、影響評価、契約上の通知義務を確認する。</li>
+</ul>
+</section>
+
+<section id="laws">
+<h2>7. 国内法令・海外制度・主要ガイドライン</h2>
+
+<h3>7-1. 日本のAI関連法</h3>
+<p>
+「人工知能関連技術の研究開発及び活用の推進に関する法律」（令和7年法律第53号）は、
+2025年6月4日に公布され、同年9月1日に全面施行された。
+AIの研究開発・活用の推進、基本計画、AI戦略本部等を定める枠組みである。
+この法律だけで、特許・著作権・個人情報・秘密保持契約の個別義務がなくなるわけではない。
+</p>
+<p><a href="https://laws.e-gov.go.jp/law/507AC0000000053" target="_blank" rel="noopener">e-Gov法令検索：人工知能関連技術の研究開発及び活用の推進に関する法律</a></p>
+<p><a href="https://www8.cao.go.jp/cstp/ai/ai_act/ai_act.html" target="_blank" rel="noopener">内閣府：AI法の概要・関連資料</a></p>
+
+<h3>7-2. AI事業者ガイドライン</h3>
+<p>
+総務省・経済産業省の「AI事業者ガイドライン」は、AIの開発・提供・利用に関わる主体が
+リスクを把握し、適切な管理を行うための重要な参考資料である。
+社内の責任分担、透明性、安全性、データ管理、人間による監督等の運用設計に活用する。
+ガイドライン上の推奨事項と、個別法令上の義務は区別すること。
+</p>
+<p><a href="https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20250328_1.pdf" target="_blank" rel="noopener">経済産業省・総務省：AI事業者ガイドライン第1.1版（2025年3月28日）</a></p>
+
+<h3>7-3. 特許法・AI関連発明</h3>
+<p>
+AIを活用した発明でも、新規性、進歩性、産業上の利用可能性、明細書の記載要件など、
+通常の特許要件の検討が必要となる。
+AIを利用したという事実だけで特許性が肯定・否定されるわけではない。
+人間の発明者の認定は、単なるAI利用の有無だけではなく、具体的な技術的寄与を踏まえて検討する。
+</p>
+<p><a href="https://www.jpo.go.jp/system/laws/rule/guideline/patent/ai_jirei.html" target="_blank" rel="noopener">特許庁：AI関連技術に関する特許審査の事例について</a></p>
+<p><a href="https://www.jpo.go.jp/system/laws/rule/guideline/patent/index.html" target="_blank" rel="noopener">特許庁：特許・実用新案の審査基準等</a></p>
+
+<h3>7-4. 著作権法</h3>
+<p>
+著作権法第30条の4は、一定の情報解析等、著作物に表現された思想・感情の享受を目的としない利用について、
+必要と認められる限度で権利制限を定めている。
+ただし、権利者の利益を不当に害する場合などの例外があり、入力方法、利用目的、利用態様を踏まえた評価が必要である。
+AIの出力についても、既存著作物との類似性・依拠性等の検討が必要になる。
+</p>
+<p><a href="https://www.bunka.go.jp/seisaku/chosakuken/aiandcopyright.html" target="_blank" rel="noopener">文化庁：AIと著作権について（2024年3月15日の考え方等）</a></p>
+<p><a href="https://laws.e-gov.go.jp/law/345AC0000000048" target="_blank" rel="noopener">e-Gov法令検索：著作権法</a></p>
+
+<h3>7-5. 個人情報保護法</h3>
+<p>
+個人情報がAIに入力される場合、個人情報の種類、利用目的、処理主体、委託関係、第三者提供、
+国外移転等を確認する。単にサービスが法人向けであることだけで適法性が確定するわけではない。
+</p>
+<p><a href="https://www.ppc.go.jp/news/careful_information/230602_AI_utilize_alert/" target="_blank" rel="noopener">個人情報保護委員会：生成AIサービスの利用に関する注意喚起等について</a></p>
+
+<h3>7-6. EU AI Act</h3>
+<p>
+EU AI Actは段階的に適用される。欧州委員会のAI Act Service Deskによれば、2026年8月2日から、
+禁止されるAI実践、一定の透明性要件、汎用AIモデルに関する規定などについて執行が開始される。
+一部の高リスクAIシステムに関する規定は、2027年以降など別の日程で適用される。
+日本企業も、EU域内での提供・利用、対象となる事業活動等によって関係する可能性があるため、
+事業形態と適用要件を個別に確認する。
+</p>
+<p><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-enforcement-start" target="_blank" rel="noopener">European Commission AI Act Service Desk：適用・執行開始時期</a></p>
+<p><a href="https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august" target="_blank" rel="noopener">欧州委員会：2026年8月2日のAI Act関連ルールの執行開始</a></p>
+</section>
+
+<section id="vendors">
+<h2>8. AIサービスの契約・利用条件の比較</h2>
+<p>
+以下は各社の公式公開資料から確認できる一般的な方向性であり、個別契約の保証ではない。
+利用するプラン、地域、機能、管理者設定、契約書を導入時に確認すること。
+</p>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>サービス・形態</th><th>公式資料で確認できる事項</th><th>知財部門の確認事項</th></tr></thead>
+<tbody>
+<tr>
+<td>ChatGPT 個人向けサービス</td>
+<td>個人向けサービスでは、設定等に応じて入力内容がモデル改善に利用される場合がある。データコントロール等の選択肢がある。</td>
+<td>学習利用設定、履歴、共有、ファイル入力、保存・削除条件を確認。未公開発明は社内承認なしに入力しない。</td>
+</tr>
+<tr>
+<td>ChatGPT Business / Enterprise / API</td>
+<td>公式説明では、業務向けデータはデフォルトでモデル学習に使用されないとされる。</td>
+<td>契約、データ処理条件、保存期間、管理者設定、APIログ、接続先、個別機能を確認する。</td>
+</tr>
+<tr>
+<td>Google Workspace の Gemini</td>
+<td>対象となるWorkspaceエディションでは、組織向けのデータ保護条件、学習利用に関する説明、管理者による保持設定が案内されている。</td>
+<td>対象エディション、GeminiアプリとWorkspace内機能の違い、会話保持、管理者設定、Notebook機能の条件を確認する。</td>
+</tr>
+<tr>
+<td>Microsoft Copilot / Copilot Chat</td>
+<td>組織向け利用では、対象条件に応じてEnterprise Data ProtectionやMicrosoftの契約条件が適用される。</td>
+<td>職場アカウントか、対象ライセンスか、検索クエリ・ログ・コネクタ・権限設定がどう扱われるかを確認する。</td>
+</tr>
+<tr>
+<td>Claude Free / Pro等の個人向け</td>
+<td>消費者向けサービスでは、設定や利用状況等に応じてモデル改善への利用があり得る。</td>
+<td>利用するプランの最新ポリシー、学習設定、共有、保存、連携機能を確認する。</td>
+</tr>
+<tr>
+<td>Claude for Work / API等</td>
+<td>商用サービスでは、原則として入力・出力をモデル学習に使用しないとの公式説明がある。ただしフィードバック等の例外条件がある。</td>
+<td>商用契約、データ処理条件、フィードバック設定、保存期間、利用機能、例外条件を確認する。</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>公式資料</h3>
+<ul>
+<li><a href="https://help.openai.com/en/articles/7039943-how-openai-handles-data-in-consumer-services" target="_blank" rel="noopener">OpenAI：個人向けサービスにおけるデータの取扱い</a></li>
+<li><a href="https://openai.com/business-data/" target="_blank" rel="noopener">OpenAI：Business Data Privacy, Security, and Compliance</a></li>
+<li><a href="https://knowledge.workspace.google.com/admin/generative-ai/generative-ai-in-google-workspace-privacy-hub" target="_blank" rel="noopener">Google Workspace：Generative AI Privacy Hub</a></li>
+<li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection" target="_blank" rel="noopener">Microsoft Learn：Enterprise Data Protection</a></li>
+<li><a href="https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training" target="_blank" rel="noopener">Anthropic：商用サービスの学習利用に関する説明</a></li>
+<li><a href="https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training" target="_blank" rel="noopener">Anthropic：個人向けサービスの学習利用に関する説明</a></li>
+</ul>
+
+<div class="note">
+<strong>契約審査の注意：</strong>
+本表は各サービスの最新の契約書・管理画面を直接監査した結果ではない。
+利用前に公式規約と実際の契約条件を再確認し、確認日・文書版・対象プランを記録すること。
+</div>
+</section>
+
+<section id="rules">
+<h2>9. 社内AI利用規程案</h2>
+
+<h3>第1条（目的）</h3>
+<p>本規程は、知的財産業務におけるAIの適正な利用を推進し、知的財産権、営業秘密、個人情報、契約上の義務および情報セキュリティに関するリスクを管理することを目的とする。</p>
+
+<h3>第2条（対象）</h3>
+<p>本規程は、従業員その他会社の情報を取り扱う者による、生成AI、AIエージェント、特許検索AI、文書解析AI、社内AIシステムおよびこれらに類するサービスの利用に適用する。</p>
+
+<h3>第3条（利用可能なサービス）</h3>
+<p>会社は、サービス名、契約形態、利用可能機能、入力可能な情報区分、管理責任者を定めた承認済みサービス一覧を整備する。承認されていないサービスへの機密情報入力は禁止する。</p>
+
+<h3>第4条（入力情報の区分）</h3>
+<ul>
+<li><strong>公開情報：</strong>公開済み公報など。著作権・契約条件・個人情報等を別途確認する。</li>
+<li><strong>社内限定情報：</strong>社内資料等。会社が承認したサービスと用途に限って入力できる。</li>
+<li><strong>重要機密情報：</strong>未公開発明、出願前明細書、製造ノウハウ、実験データ等。指定された環境と承認手続に限定する。</li>
+<li><strong>第三者秘密情報：</strong>NDAや共同研究契約等で受領した情報。契約上の許諾範囲を確認し、必要な承認を得る。</li>
+<li><strong>個人情報：</strong>入力の必要性、利用目的、処理条件等を確認し、必要最小限に限定する。</li>
+</ul>
+
+<h3>第5条（AI出力の確認）</h3>
+<p>AIの出力は、原則として未検証の補助情報として扱う。特許性、侵害、権利帰属、出願要否、権利維持・放棄、契約締結などの重要判断には、担当者による原資料確認と所定の承認を必要とする。</p>
+
+<h3>第6条（発明者認定・記録）</h3>
+<p>AIを利用した発明については、発明者の具体的な技術的寄与を確認する。重要案件では、課題設定、AI出力、採用・改良内容、実験・検証、人間の判断を必要な範囲で記録する。</p>
+
+<h3>第7条（外部公開・出願利用）</h3>
+<p>AI生成文章、図面、画像等を特許出願、顧客提供、ウェブ公開、製品資料に利用する場合は、技術的正確性、権利侵害、機密情報の混入、出典および社内承認を確認する。</p>
+
+<h3>第8条（AIエージェントの権限）</h3>
+<p>AIエージェントの権限は目的達成に必要な最小限とする。外部送信、公開、削除、権限変更、出願手続その他の重要操作には、原則として人間の事前承認を要求する。操作ログと復旧手段を確保する。</p>
+
+<h3>第9条（インシデント報告）</h3>
+<p>機密情報の誤入力、誤送信、誤公開、権利侵害のおそれ、重大な誤判断等を認識した者は、速やかに所定の窓口へ報告する。追加利用を停止し、証拠を保全して影響評価を行う。</p>
+
+<h3>第10条（教育・監査・見直し）</h3>
+<p>会社は、利用者教育、サービス一覧の定期点検、ログの確認、規程の見直しを実施する。AIサービスの規約変更や重大な事故があった場合は、臨時の見直しを行う。</p>
+
+<p class="small">※上記は社内規程のたたき台であり、実際の規程化にあたっては既存の情報管理規程、就業規則、契約、システム運用と整合させること。</p>
+</section>
+
+<section id="checklist">
+<h2>10. AIサービス導入前チェックリスト</h2>
+<p>法務・知財・情報システム部門が、導入前および重要な設定変更時に確認する。</p>
+
+<h3>契約・サービス条件</h3>
+<ul class="checklist">
+<li>利用するサービス名、プラン、契約主体、地域を特定した。</li>
+<li>最新の利用規約、プライバシー文書、データ処理契約を確認した。</li>
+<li>入力・出力データの学習利用条件を確認した。</li>
+<li>保存期間、削除条件、バックアップ、ログの扱いを確認した。</li>
+<li>事業者・再委託先のアクセス、国外移転、データ処理場所を確認した。</li>
+<li>責任制限、補償、第三者権利侵害への対応、通知条件を確認した。</li>
+<li>契約終了時のデータ返却・削除と、利用規約の変更通知を確認した。</li>
+</ul>
+
+<h3>知財・データ管理</h3>
+<ul class="checklist">
+<li>入力する情報の機密区分を定義した。</li>
+<li>未公開発明・NDA情報の入力可否を確認した。</li>
+<li>第三者データベースの利用規約と自動取得条件を確認した。</li>
+<li>AI出力の出典、原文、技術的根拠を確認する手順を定めた。</li>
+<li>発明者の寄与とAI利用履歴を必要な範囲で記録する基準を定めた。</li>
+<li>出願・公開・ライセンス判断の承認者を決めた。</li>
+</ul>
+
+<h3>セキュリティ・AIエージェント</h3>
+<ul class="checklist">
+<li>多要素認証、アクセス制御、ログ、権限管理を確認した。</li>
+<li>AIエージェントの操作可能範囲を必要最小限にした。</li>
+<li>送信・公開・削除などの重要操作に人間の承認を設けた。</li>
+<li>プロンプトインジェクション、外部ファイル、Webページ経由の指示への対策を検討した。</li>
+<li>誤操作時の停止、復旧、連絡先、証拠保全の手順を定めた。</li>
+<li>利用者教育と定期的な規程・設定レビューの担当者を決めた。</li>
+</ul>
+</section>
+
+<section id="incident">
+<h2>11. インシデント対応手順</h2>
+<div class="flow">
+<div><strong>STEP 1：停止</strong><br>追加入力・送信・自動操作を停止し、被害拡大を防ぐ。</div>
+<div><strong>STEP 2：報告</strong><br>知財、法務、情報セキュリティの所定窓口に速やかに報告する。</div>
+<div><strong>STEP 3：証拠保全</strong><br>入力内容、日時、サービス、設定、共有範囲、操作ログを保全する。</div>
+<div><strong>STEP 4：影響評価</strong><br>営業秘密、特許出願、個人情報、著作権、契約への影響を確認する。</div>
+<div><strong>STEP 5：封じ込め</strong><br>必要に応じてアクセス停止、共有解除、削除依頼等を実施する。</div>
+<div><strong>STEP 6：法的対応</strong><br>通知義務、契約上の報告義務、関係者への連絡を確認する。</div>
+<div><strong>STEP 7：再発防止</strong><br>原因分析、設定変更、教育、規程・契約・承認手続の改善を行う。</div>
+</div>
+
+<h3>ケース別の初動</h3>
+<ul>
+<li><strong>未公開発明を誤入力：</strong>追加利用を停止し、入力内容、サービス、日時、保存・共有条件を確認する。知財責任者・情報セキュリティ担当に報告する。</li>
+<li><strong>AIが架空文献を生成：</strong>該当成果物の利用を止め、全引用文献を原文で再確認する。既に意思決定に利用した場合は、影響範囲を確認して訂正する。</li>
+<li><strong>AI生成物の権利侵害が疑われる：</strong>公開・実装を保留し、元資料、生成履歴、類似性、対象権利を確認する。</li>
+<li><strong>AIエージェントが誤送信・誤公開：</strong>連携権限を停止し、送信先、公開範囲、取得・閲覧状況、復旧可能性を確認する。</li>
+</ul>
+<div class="note">
+事故時に一律にデータを削除すると、原因究明や証拠保全に支障が出る場合がある。
+削除・通知・サービス停止などの対応は、社内事故対応責任者と連携して実施する。
+</div>
+</section>
+
+<section id="priorities">
+<h2>12. 企業が優先して実施すべき対策</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>優先順位</th><th>対策</th><th>主担当</th><th>実施目安</th></tr></thead>
+<tbody>
+<tr><td><span class="risk high">最優先</span></td><td>未公開発明・営業秘密・NDA情報の入力ルールを明文化する。</td><td>知財・法務・情報セキュリティ</td><td>直ちに</td></tr>
+<tr><td><span class="risk high">最優先</span></td><td>承認済みAIサービスと利用可能プランの一覧を作成する。</td><td>情報システム・法務</td><td>直ちに</td></tr>
+<tr><td><span class="risk high">最優先</span></td><td>特許調査・侵害予防調査のAI出力検証手順を定める。</td><td>知財</td><td>直ちに</td></tr>
+<tr><td><span class="risk high">最優先</span></td><td>誤入力・誤送信・誤公開の報告窓口と初動手順を整備する。</td><td>情報セキュリティ・法務</td><td>直ちに</td></tr>
+<tr><td><span class="risk medium">高</span></td><td>AIエージェントの最小権限、重要操作の事前承認、ログを整備する。</td><td>情報システム・業務主管</td><td>早期</td></tr>
+<tr><td><span class="risk medium">高</span></td><td>発明者認定とAI利用記録の運用を整備する。</td><td>知財・研究開発</td><td>早期</td></tr>
+<tr><td><span class="risk medium">高</span></td><td>サービス規約・契約条件の定期レビューを実施する。</td><td>法務・調達・情報システム</td><td>定期</td></tr>
+<tr><td><span class="risk low">継続</span></td><td>教育、監査、事故訓練、規程の更新を実施する。</td><td>各部門責任者</td><td>継続</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>推奨する運用体制</h3>
+<ul>
+<li><strong>知財：</strong>特許調査、発明者認定、出願書類、権利維持判断の品質管理。</li>
+<li><strong>法務：</strong>利用規約、NDA、共同研究契約、責任分担、通知義務の確認。</li>
+<li><strong>情報システム・セキュリティ：</strong>サービス選定、アクセス権限、ログ、連携機能、インシデント対応。</li>
+<li><strong>研究開発：</strong>技術内容、実験データ、実施可能性、発明者の寄与の確認。</li>
+<li><strong>管理職・経営層：</strong>許容リスク、投資判断、重要案件の承認。</li>
+</ul>
+</section>
+
+<section id="sources">
+<h2>13. 参考資料・一次情報</h2>
+<p>以下は調査に利用した主要な公式資料である。実務で判断する際にはリンク先の最新の本文、改定履歴、関連文書を確認すること。</p>
+<ol>
+<li><a href="https://laws.e-gov.go.jp/law/507AC0000000053" target="_blank" rel="noopener">e-Gov：人工知能関連技術の研究開発及び活用の推進に関する法律</a></li>
+<li><a href="https://www8.cao.go.jp/cstp/ai/ai_act/ai_act.html" target="_blank" rel="noopener">内閣府：AI法の概要・関連資料</a></li>
+<li><a href="https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20250328_1.pdf" target="_blank" rel="noopener">総務省・経済産業省：AI事業者ガイドライン第1.1版</a></li>
+<li><a href="https://www.jpo.go.jp/system/laws/rule/guideline/patent/ai_jirei.html" target="_blank" rel="noopener">特許庁：AI関連技術に関する特許審査の事例について</a></li>
+<li><a href="https://www.jpo.go.jp/system/laws/rule/guideline/patent/index.html" target="_blank" rel="noopener">特許庁：特許・実用新案の審査基準等</a></li>
+<li><a href="https://www.bunka.go.jp/seisaku/chosakuken/aiandcopyright.html" target="_blank" rel="noopener">文化庁：AIと著作権について</a></li>
+<li><a href="https://laws.e-gov.go.jp/law/345AC0000000048" target="_blank" rel="noopener">e-Gov：著作権法</a></li>
+<li><a href="https://www.ppc.go.jp/news/careful_information/230602_AI_utilize_alert/" target="_blank" rel="noopener">個人情報保護委員会：生成AIサービスの利用に関する注意喚起</a></li>
+<li><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-enforcement-start" target="_blank" rel="noopener">欧州委員会 AI Act Service Desk：AI Actの執行開始時期</a></li>
+<li><a href="https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august" target="_blank" rel="noopener">欧州委員会：2026年8月2日のAI Act関連ルールの執行開始</a></li>
+<li><a href="https://help.openai.com/en/articles/7039943-how-openai-handles-data-in-consumer-services" target="_blank" rel="noopener">OpenAI：個人向けサービスにおけるデータの取扱い</a></li>
+<li><a href="https://openai.com/business-data/" target="_blank" rel="noopener">OpenAI：業務向けデータのプライバシー・セキュリティ</a></li>
+<li><a href="https://knowledge.workspace.google.com/admin/generative-ai/generative-ai-in-google-workspace-privacy-hub" target="_blank" rel="noopener">Google Workspace：生成AIのプライバシーに関する公式資料</a></li>
+<li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection" target="_blank" rel="noopener">Microsoft Learn：Enterprise Data Protection</a></li>
+<li><a href="https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training" target="_blank" rel="noopener">Anthropic：商用サービスにおける学習利用の説明</a></li>
+<li><a href="https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training" target="_blank" rel="noopener">Anthropic：個人向けサービスにおける学習利用の説明</a></li>
+</ol>
+</section>
+
+<section id="unknown">
+<h2>14. 未確認事項・追加調査事項</h2>
+<ul>
+<li>利用するAIサービスの実際の契約書、データ処理契約、管理者設定、契約主体ごとの個別条件。</li>
+<li>各サービスの最新規約における保存期間、バックアップ、サポート時の閲覧、再委託先、削除条件の詳細。</li>
+<li>利用する特許検索・論文データベースの契約上の自動取得、外部AI連携、大量解析、再利用条件。</li>
+<li>企業のNDA、共同研究契約、委託契約、情報管理規程におけるAI利用の許容範囲。</li>
+<li>個別のAI生成物についての著作権・商標・意匠・特許の類似性、具体的な権利範囲。</li>
+<li>EU域内でのAI提供・利用の有無、AI Actの適用対象となる役割や事業形態。</li>
+<li>今後の法改正、行政ガイドライン改定、裁判例、サービス規約変更。</li>
+</ul>
+<div class="note">
+<strong>追加調査の進め方：</strong>
+実際に導入を予定しているサービスとプランを特定し、契約書・利用規約・データ処理条件を並べて比較する。
+そのうえで、入力する知財情報の区分と利用シーンを対応付け、部門別の利用可否を決定する。
+</div>
+</section>
+
+<section>
+<h2>最終結論</h2>
+<p>
+企業の知財業務におけるAI活用は、公開情報の整理・要約から段階的に進め、
+未公開発明や営業秘密を扱う用途は、承認済み環境と明確な統制の下で利用することが望ましい。
+</p>
+<p>
+特許調査、発明者認定、出願書類、侵害予防調査、権利維持判断などの重要な業務では、
+AIを判断支援として位置付け、原資料に基づく人間の確認と承認を必須とする。
+AIエージェントについては、権限の最小化と重要操作の事前承認を組み合わせる。
+</p>
+<p>
+最終的な判断は、最新の法令・公式資料・契約条件・具体的な事実関係に基づいて行う必要がある。
+</p>
+</section>
+
+</main>
+
+<footer>
+<p>知財業務におけるAI活用の法的リスク調査報告書</p>
+<p>調査基準日：2026年10月15日</p>
+<p>本資料は企業内のリスク評価を支援するための情報整理であり、個別案件についての法律意見書ではありません。</p>
+</footer>
+</body>
+</html>

@@ -1,5 +1,20 @@
 [
     {
+        "id":  "ai-inventorship-guide",
+        "title":  "AIを使って作った発明の発明者は誰か？",
+        "filename":  "posts/ai-inventorship-guide.html",
+        "createdAt":  "2026-10-15T15:33:07+09:00",
+        "dateFormatted":  "2026/10/15",
+        "description":  "生成AI時代の発明者認定と、企業の知財実務で押さえておきたいポイント（日本の特許制度を中心に整理）",
+        "tags":  [
+                     "AI",
+                     "特許",
+                     "知財",
+                     "発明者認定",
+                     "生成AI"
+                 ]
+    },
+    {
         "id":  "npb-12teams-analysis",
         "title":  "プロ野球12球団 戦力分析レポート",
         "filename":  "posts/npb-12teams-analysis.html",

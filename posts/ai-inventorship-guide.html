@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIを使って作った発明の発明者は誰か？</title>
+<style>
+:root {
+  --blue: #2563eb;
+  --blue-light: #eff6ff;
+  --cyan: #0891b2;
+  --green: #15803d;
+  --green-light: #f0fdf4;
+  --orange: #c2410c;
+  --orange-light: #fff7ed;
+  --red: #b91c1c;
+  --red-light: #fef2f2;
+  --text: #243247;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --bg: #f8fafc;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Noto Sans JP", sans-serif;
+  line-height: 1.85;
+}
+header {
+  padding: 64px 24px 52px;
+  color: white;
+  background: linear-gradient(135deg, #1d4ed8, #0891b2);
+}
+.hero, main, footer {
+  max-width: 1000px;
+  margin: auto;
+}
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: .12em;
+  font-weight: 700;
+  opacity: .85;
+}
+h1 {
+  font-size: clamp(28px, 5vw, 43px);
+  line-height: 1.4;
+  margin: 14px 0;
+}
+header p { max-width: 760px; }
+.date { font-size: 13px; opacity: .8; }
+main { padding: 30px 20px 60px; }
+section {
+  margin: 28px 0;
+  padding: clamp(20px, 4vw, 34px);
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, .035);
+}
+h2 {
+  font-size: 24px;
+  line-height: 1.5;
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--blue-light);
+}
+h3 { font-size: 18px; margin: 0 0 10px; }
+p { margin: 10px 0; }
+.lead {
+  font-size: 18px;
+  font-weight: 650;
+}
+.highlight {
+  color: var(--blue);
+  background: linear-gradient(transparent 65%, #dbeafe 65%);
+}
+.callout {
+  margin: 20px 0;
+  padding: 20px;
+  border-left: 5px solid var(--blue);
+  border-radius: 8px;
+  background: var(--blue-light);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+}
+.card h3 { font-size: 17px; }
+.card p { font-size: 14px; }
+.card.green { background: var(--green-light); }
+.card.orange { background: var(--orange-light); }
+.card.red { background: var(--red-light); }
+.tag {
+  display: inline-block;
+  margin: 4px 0 12px;
+  padding: 3px 10px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.green .tag { background: #dcfce7; color: var(--green); }
+.orange .tag { background: #ffedd5; color: var(--orange); }
+.red .tag { background: #fee2e2; color: var(--red); }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 14px;
+}
+th, td {
+  padding: 13px;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--blue-light); }
+.steps {
+  display: grid;
+  gap: 12px;
+}
+.step {
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.step-label {
+  color: var(--cyan);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+.conclusion {
+  padding: 22px;
+  border-radius: 12px;
+  background: var(--green-light);
+  border: 1px solid #bbf7d0;
+}
+li { margin: 8px 0; }
+a { color: var(--blue); overflow-wrap: anywhere; }
+.small { color: var(--muted); font-size: 13px; }
+footer {
+  padding: 25px 20px 45px;
+  color: var(--muted);
+  font-size: 13px;
+}
+@media (max-width: 700px) {
+  header { padding: 42px 22px; }
+  .grid { grid-template-columns: 1fr; }
+  section { padding: 21px 17px; }
+  h2 { font-size: 21px; }
+  table { font-size: 12px; }
+  th, td { padding: 9px; }
+}
+@media print {
+  body { background: white; }
+  header { padding: 30px; }
+  section { box-shadow: none; break-inside: avoid; }
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hero">
+    <div class="eyebrow">AI × INTELLECTUAL PROPERTY</div>
+    <h1>AIを使って作った発明の<br>発明者は誰になるのか？</h1>
+    <p>生成AI時代の発明者認定と、企業の知財実務で押さえておきたいポイント</p>
+    <div class="date">日本の特許制度を中心に整理｜2026年10月15日時点</div>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <h2>1. 結論：AIを使っても、人間が発明者になり得る</h2>
+  <p class="lead">
+    AIを利用したという事実だけで、発明者が決まるわけではありません。
+  </p>
+  <div class="callout">
+    <strong>重要なポイント</strong><br>
+    日本では、発明者として認められるのは自然人、つまり人間です。
+    AIそのものを発明者として記載することは認められていません。
+    人間が発明の技術的特徴を創作することに、どのように関与したかが重要です。
+  </div>
+  <p>
+    AIにアイデアを出させた人が自動的に発明者になるわけでも、
+    AIを使った発明がすべて特許の対象外になるわけでもありません。
+  </p>
+</section>
+
+<section>
+  <h2>2. 具体的に誰が発明者になるのか</h2>
+  <div class="grid">
+    <div class="card green">
+      <h3>ケースA：人間が技術的に改良</h3>
+      <span class="tag">発明者になり得る</span>
+      <p>
+        AIが提示した複数の案を技術的に検討し、
+        独自の構造や仕組みを考案・具体化した場合。
+      </p>
+      <p>人間の創作的関与が認められれば、その人は発明者になり得ます。</p>
+    </div>
+    <div class="card orange">
+      <h3>ケースB：AIに指示しただけ</h3>
+      <span class="tag">個別判断が必要</span>
+      <p>
+        「新しいタイヤ構造を考えて」と指示し、
+        AIの出力をそのまま採用した場合。
+      </p>
+      <p>課題を提示したり、AIを操作したりしただけでは、不十分な可能性があります。</p>
+    </div>
+    <div class="card red">
+      <h3>ケースC：AIが自律的に発明</h3>
+      <span class="tag">特許取得に問題</span>
+      <p>
+        人間に発明者といえる創作的関与がなく、
+        AIだけが技術的特徴を生み出した場合。
+      </p>
+      <p>AIを発明者として出願することはできず、人間を形式的に発明者とすることもできません。</p>
+    </div>
+  </div>
+  <p class="small">
+    ※ 具体的な判断は、発明の内容と人間の実際の貢献に基づいて行われます。
+  </p>
+</section>
+
+<section>
+  <h2>3. 発明者を判断するためのポイント</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>人間が行ったこと</th>
+        <th>発明者認定に関する考え方</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>従来技術にない具体的な構造を考案</td>
+        <td>創作的関与が認められる可能性がある</td>
+      </tr>
+      <tr>
+        <td>AIの提案を技術的に検証し、独自に改良</td>
+        <td>改良部分が発明の技術的特徴に関係するかが重要</td>
+      </tr>
+      <tr>
+        <td>AIの出力から技術的特徴を見いだし、具体化</td>
+        <td>実際の関与と創作の経緯による</td>
+      </tr>
+      <tr>
+        <td>一般的なプロンプトを入力しただけ</td>
+        <td>それだけでは不十分な可能性がある</td>
+      </tr>
+      <tr>
+        <td>AIの出力を確認せず、そのまま採用</td>
+        <td>創作的関与がなければ不十分な可能性がある</td>
+      </tr>
+      <tr>
+        <td>AIの開発、資金提供、データ提供だけ</td>
+        <td>それだけで発明者になるわけではない</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    プロンプトの文字数やAIとの対話回数などによる、
+    一律の判定基準があるわけではありません。
+    発明の技術的特徴と各人の貢献を照らし合わせて判断します。
+  </p>
+</section>
+
+<section>
+  <h2>4. タイヤメーカーの研究開発で考える</h2>
+  <p>
+    例えば、AIを使ってタイヤ内面の吸音スポンジ構造を改良するケースです。
+  </p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-label">STEP 1</div>
+      <h3>研究者が課題を設定する</h3>
+      材料使用量を抑えながら、騒音低減効果を維持したい。
+    </div>
+    <div class="step">
+      <div class="step-label">STEP 2</div>
+      <h3>AIが複数の構造案を提案する</h3>
+      中央を薄く、両端を厚くする形状、磁石による固定、
+      スポンジ配置の最適化などを提案する。
+    </div>
+    <div class="step">
+      <div class="step-label">STEP 3</div>
+      <h3>研究者が技術的特徴を具体化する</h3>
+      振動特性や接着性を検討し、特定の厚さの比率や形状、
+      固定方法の組合せを考案する。
+    </div>
+  </div>
+  <div class="callout">
+    <strong>発明者認定の考え方</strong><br>
+    STEP 3で研究者が発明の本質に関わる技術的特徴を創作したのであれば、
+    発明者になり得ます。一方、AIが具体的な構造をすべて生み出し、
+    研究者が採用を決めただけなら、発明者と認められるとは限りません。
+  </div>
+  <p>
+    最初に課題を思いついた人と、最終的な発明の技術的特徴を創作した人が、
+    必ずしも同じとは限りません。複数の研究者が関与した場合も、
+    それぞれの創作的貢献を検討する必要があります。
+  </p>
+</section>
+
+<section>
+  <h2>5. 発明者と特許出願人は別</h2>
+  <table>
+    <thead>
+      <tr><th>用語</th><th>意味</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>発明者</strong></td>
+        <td>発明の創作に関与した人</td>
+      </tr>
+      <tr>
+        <td><strong>出願人</strong></td>
+        <td>特許出願を行う主体。企業の場合もある</td>
+      </tr>
+      <tr>
+        <td><strong>特許を受ける権利</strong></td>
+        <td>発明者に発生し、法律上の要件を満たす承継などによって企業が取得できる権利</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="conclusion">
+    例えば、社員がAIを利用して発明し、その特許を受ける権利が
+    会社に適法に帰属・承継している場合、発明者は社員、出願人は会社となり得ます。
+    AIを利用したことだけで、会社やAIが発明者になるわけではありません。
+  </div>
+</section>
+
+<section>
+  <h2>6. 日本・米国・欧州の比較</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>地域</th>
+        <th>AIそのものを発明者にできるか</th>
+        <th>基本的な考え方</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>日本</td>
+        <td>できない</td>
+        <td>人間の創作的関与に基づいて判断</td>
+      </tr>
+      <tr>
+        <td>米国</td>
+        <td>できない</td>
+        <td>人間の発明者に関する法的基準を適用</td>
+      </tr>
+      <tr>
+        <td>欧州特許庁（EPO）</td>
+        <td>できない</td>
+        <td>人間を発明者として特定する必要がある</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    米国では、USPTOが2025年11月にAI支援発明の発明者認定ガイダンスを改訂し、
+    2024年版を撤回しました。古い解説を参照する際は、
+    現行の説明と混同しないよう注意が必要です。
+  </p>
+  <p class="small">
+    各国の法令・審査運用は更新されることがあるため、
+    実際の出願では対象国の最新の公式資料を確認してください。
+  </p>
+</section>
+
+<section>
+  <h2>7. 企業の知財部門が取り組むべきこと</h2>
+  <div class="steps">
+    <div class="step">
+      <h3>① AI利用の経緯を記録する</h3>
+      課題設定、入力内容、生成案、研究者による追加検討、
+      実験結果、最終構造の決定過程を記録する。
+    </div>
+    <div class="step">
+      <h3>② 出願前に発明者を確認する</h3>
+      AIの出力をそのまま採用したのか、
+      人間が技術的特徴を考案・改良したのかを確認する。
+    </div>
+    <div class="step">
+      <h3>③ 研究者ごとの貢献を確認する</h3>
+      プロンプト作成者、実験担当者、設計改良者などの肩書だけで判断せず、
+      発明の技術的特徴への創作的関与を検討する。
+    </div>
+    <div class="step">
+      <h3>④ 発明者認定と特許性を区別する</h3>
+      人間が発明者と認められることと、新規性・進歩性などを満たすことは別問題。
+      それぞれを独立して検討する。
+    </div>
+  </div>
+  <p class="small">
+    ※ AI利用履歴の保存が、すべての特許出願で一律に法律上義務付けられているという意味ではありません。
+    社内での発明者確認や説明に備えるための実務上の対策です。
+  </p>
+</section>
+
+<section>
+  <h2>8. まとめ</h2>
+  <div class="conclusion">
+    <ul>
+      <li>AIを使っても、人間が発明者になり得る。</li>
+      <li>AIに指示した人が自動的に発明者になるわけではない。</li>
+      <li>発明の技術的特徴を創作することへの人間の関与が重要。</li>
+      <li>人間の創作的関与がない純粋なAI生成発明は、日本では原則として特許による保護を受けられない。</li>
+      <li>企業では、AI利用の経緯と人間の技術的貢献を記録し、出願前に発明者を確認することが有用。</li>
+    </ul>
+  </div>
+  <p class="lead">
+    知財実務における今後の重要課題は、
+    AIが大量に生成した発明候補のうち、どの段階で人間の創作的関与があったと評価できるか、という点です。
+  </p>
+</section>
+
+<section>
+  <h2>参考資料・公式情報</h2>
+  <ul>
+    <li>
+      <a href="https://www.jpo.go.jp/system/process/shutugan/hatsumei.html" target="_blank" rel="noopener">
+        特許庁：発明者等の表示について
+      </a>
+    </li>
+    <li>
+      <a href="https://www.jpo.go.jp/system/laws/rule/guideline/patent/ai_jirei.html" target="_blank" rel="noopener">
+        特許庁：AI関連技術に関する特許審査の事例について
+      </a>
+    </li>
+    <li>
+      <a href="https://www.uspto.gov/subscription-center/2025/revised-inventorship-guidance-ai-assisted-inventions" target="_blank" rel="noopener">
+        USPTO：Revised inventorship guidance for AI-assisted inventions
+      </a>
+    </li>
+    <li>
+      <a href="https://www.epo.org/en/news-events/in-focus/digital-innovations/inventorship" target="_blank" rel="noopener">
+        EPO：Inventorship
+      </a>
+    </li>
+  </ul>
+  <p class="small">
+    本ページは一般的な情報提供を目的とした解説です。
+    個別案件の発明者認定や出願方針については、
+    発明の具体的内容と最新の法令・審査運用に基づく検討が必要です。
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <div>AI × 知的財産｜発明者認定の実務ガイド</div>
+  <div>最終整理日：2026年10月15日</div>
+</footer>
+
+</body>
+</html>

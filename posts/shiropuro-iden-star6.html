@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【城プロRE】強すぎる異伝★6城娘 改築解説まとめ</title>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-card: #243048;
+      --accent: #38bdf8;
+      --accent-sub: #f59e0b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: #334155;
+      --danger: #f43f5e;
+      --success: #10b981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 1.85rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+    }
+
+    .meta {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .meta a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .meta a:hover {
+      text-decoration: underline;
+    }
+
+    .character-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.75rem;
+    }
+
+    .char-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .role-badge {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .role-support { background: #3b82f6; color: #fff; }
+    .role-dps { background: var(--danger); color: #fff; }
+    .role-free { background: var(--accent-sub); color: #fff; }
+
+    .diff-list {
+      list-style: none;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .diff-list li {
+      margin-bottom: 0.6rem;
+      font-size: 0.92rem;
+    }
+
+    .diff-label {
+      font-weight: 600;
+      color: var(--accent);
+      display: block;
+      font-size: 0.8rem;
+    }
+
+    .highlight-stat {
+      color: #fca5a5;
+      font-weight: 700;
+    }
+
+    .comment-box {
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 6px;
+      padding: 0.75rem;
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      border-left: 3px solid var(--accent);
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-box {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .timestamp {
+      background: #334155;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">御城プロジェクト:RE 攻略・検証まとめ</div>
+      <h1>改築で★7を超えた！？強すぎる異伝★6城娘</h1>
+      <div class="meta">
+        参照動画：<a href="https://youtu.be/uXO527NEDkg" target="_blank" rel="noopener noreferrer">おひげチャンネル 動画本編</a>
+      </div>
+    </header>
+
+    <div class="character-grid">
+      <!-- 沼田城 -->
+      <article class="card">
+        <div class="card-header">
+          <div class="char-name">[華謀]沼田城</div>
+          <span class="role-badge role-support">凶悪デバフ / 看破支援</span>
+        </div>
+        <ul class="diff-list">
+          <li>
+            <span class="diff-label">計略持続 & 範囲</span>
+            持続 20秒 → <strong class="highlight-stat">30秒</strong> / 範囲 特大 → <strong class="highlight-stat">超特大</strong>
+          </li>
+          <li>
+            <span class="diff-label">永続デバフ倍率</span>
+            敵の攻撃・防御低下 25% → <strong class="highlight-stat">35% 低下</strong>
+          </li>
+          <li>
+            <span class="diff-label">特筆ポイント</span>
+            特殊能力による「永続看破＋味方全体大幅強化」が極めて強力。計略ではないため審議の計略縛りにも引っかからない点が秀イ。
+          </li>
+        </ul>
+        <div class="comment-box">
+          「メインは特殊能力を使ったサポートなので、限界突破やレベル上げは無理にしなくても即戦力として機能します」
+        </div>
+      </article>
+
+      <!-- 米沢城 -->
+      <article class="card">
+        <div class="card-header">
+          <div class="char-name">[刃衣]米沢城</div>
+          <span class="role-badge role-dps">超火力アタッカー</span>
+        </div>
+        <ul class="diff-list">
+          <li>
+            <span class="diff-label">撃破時バフ (計略)</span>
+            敵撃破時10秒間、攻撃 1.4倍 → <strong class="highlight-stat">1.5倍</strong> に強化
+          </li>
+          <li>
+            <span class="diff-label">新規追加効果</span>
+            自身の耐久が高いほど与ダメ上昇（<strong class="highlight-stat">最大1.3倍</strong>）が新たに追加
+          </li>
+          <li>
+            <span class="diff-label">特筆ポイント</span>
+            改築前から★7級だった火力が完全に覚醒。既存の拳城娘を置き去りにする異次元のアタッカーへ進化。
+          </li>
+        </ul>
+        <div class="comment-box">
+          「今回の改築で一番ヤバい強化をもらった城娘。余っている★6羅紗は躊躇なく投入してOK」
+        </div>
+      </article>
+
+      <!-- 雑賀城 -->
+      <article class="card">
+        <div class="card-header">
+          <div class="char-name">[暁鴉]雑賀城</div>
+          <span class="role-badge role-free">配布 / ぶっちぎりTier1</span>
+        </div>
+        <ul class="diff-list">
+          <li>
+            <span class="diff-label">特技（残HP依存与ダメ）</span>
+            敵耐久が低いほど与ダメ上昇 最大1.5倍 → <strong class="highlight-stat">1.7倍</strong>
+          </li>
+          <li>
+            <span class="diff-label">大魔法時間</span>
+            持続 10秒 → <strong class="highlight-stat">15秒</strong> に延長
+          </li>
+          <li>
+            <span class="diff-label">特筆ポイント</span>
+            イベント配布枠でありながら、全銃城娘の中でも最高峰の削り性能を誇る破格のスペック。
+          </li>
+        </ul>
+        <div class="comment-box">
+          「無料配布だからと交換を渋る必要なし。初心者殿からベテラン殿まで全員にっこりのTier1ユニット」
+        </div>
+      </article>
+    </div>
+
+    <!-- 実戦セクション -->
+    <div class="section-box">
+      <h2 class="section-title">実戦ハイライト：ニヴルヘイム7層</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timestamp">00:01:49</span>
+          <div>
+            <strong>実践投入編成の解説</strong><br>
+            改築後の[刃衣]米沢城を主軸メインアタッカー、サブにノーマル絢爛城娘を添えてニヴルヘイム7層の攻略を開始。
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timestamp">00:06:37</span>
+          <div>
+            <strong>圧倒的殲滅力でボス・強敵を粉砕</strong><br>
+            強敵・福島正則の連撃に対してもクロスカウンター級の超火力を叩き込み、地獄の難所を余裕で制圧。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Generated for 御城プロジェクト:RE 動画情報まとめ
+    </footer>
+  </div>
+</body>
+</html>

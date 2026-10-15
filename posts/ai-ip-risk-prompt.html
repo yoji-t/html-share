@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>知財業務におけるAI活用の法的リスク調査プロンプト</title>
+<style>
+:root {
+  --primary: #2457a7;
+  --primary-light: #eaf2ff;
+  --accent: #008b8b;
+  --bg: #f5f8fc;
+  --card: #ffffff;
+  --text: #263445;
+  --muted: #627286;
+  --border: #dce5ef;
+  --warning: #fff4dc;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  line-height: 1.85;
+}
+header {
+  background: linear-gradient(135deg, #2457a7, #008b8b);
+  color: white;
+  padding: 52px 20px 44px;
+}
+.header-inner, main, footer {
+  max-width: 1000px;
+  margin: auto;
+}
+header h1 {
+  margin: 0 0 16px;
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  line-height: 1.4;
+}
+header p { margin: 0; opacity: .95; }
+main { padding: 28px 18px 60px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 20px 0;
+  box-shadow: 0 4px 14px rgba(34, 65, 100, .045);
+}
+h2 {
+  color: var(--primary);
+  font-size: 1.45rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+h3 {
+  color: var(--accent);
+  font-size: 1.12rem;
+  margin-top: 25px;
+}
+p { margin: 10px 0; }
+ul, ol { padding-left: 1.5rem; }
+li { margin: 6px 0; }
+a { color: var(--primary); }
+.toc {
+  background: var(--primary-light);
+  border-radius: 10px;
+  padding: 20px 24px;
+}
+.toc h2 { border: none; margin-bottom: 8px; }
+.toc ul { columns: 2; }
+.highlight {
+  background: var(--warning);
+  border-left: 4px solid #e3a329;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 16px 0;
+}
+.tag {
+  display: inline-block;
+  background: #e5f5f2;
+  color: #08786f;
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: .85rem;
+  margin: 3px 4px 3px 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: .94rem;
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 11px 13px;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+tr:nth-child(even) td { background: #fbfcfe; }
+.prompt {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px;
+}
+footer {
+  padding: 10px 20px 35px;
+  text-align: center;
+  color: var(--muted);
+  font-size: .9rem;
+}
+@media (max-width: 650px) {
+  .toc ul { columns: 1; }
+  .card { padding: 18px; }
+  table { display: block; overflow-x: auto; }
+  header { padding: 36px 20px; }
+}
+@media print {
+  body { background: white; }
+  header { background: white; color: #263445; padding: 20px 0; }
+  .card { box-shadow: none; break-inside: avoid; }
+  a { color: #263445; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1>知財業務におけるAI活用の法的リスク調査プロンプト</h1>
+    <p>企業の知的財産部門向け｜法務・知財・情報セキュリティ・研究開発管理の横断的調査</p>
+  </div>
+</header>
+
+<main>
+
+<section class="card">
+  <h2>このプロンプトの目的</h2>
+  <p>
+    企業の知的財産業務において生成AIやAIエージェントを活用する際に生じる
+    法的リスク、契約上のリスク、情報セキュリティ上のリスクを体系的に調査し、
+    安全な導入・運用に必要な対策を提案する。
+  </p>
+  <div>
+    <span class="tag">特許・知財</span>
+    <span class="tag">生成AI</span>
+    <span class="tag">著作権</span>
+    <span class="tag">営業秘密</span>
+    <span class="tag">個人情報</span>
+    <span class="tag">契約・規約</span>
+    <span class="tag">情報セキュリティ</span>
+  </div>
+</section>
+
+<nav class="card toc">
+  <h2>目次</h2>
+  <ul>
+    <li><a href="#role">1. あなたの役割</a></li>
+    <li><a href="#purpose">2. 調査目的</a></li>
+    <li><a href="#domains">3. 調査対象領域</a></li>
+    <li><a href="#method">4. 調査方法</a></li>
+    <li><a href="#evaluation">5. リスク評価基準</a></li>
+    <li><a href="#scenarios">6. 利用シーン別の評価</a></li>
+    <li><a href="#controls">7. 社内ルールと対策</a></li>
+    <li><a href="#incident">8. インシデント対応</a></li>
+    <li><a href="#report">9. 最終報告書の構成</a></li>
+    <li><a href="#cautions">10. 分析上の注意事項</a></li>
+  </ul>
+</nav>
+
+<section class="card" id="role">
+  <h2>1. あなたの役割</h2>
+  <p>
+    あなたは、企業の知的財産戦略、知的財産法、AI関連法規、
+    情報セキュリティ、企業法務および研究開発管理に精通した
+    シニア法務・知財リスクアナリストです。
+  </p>
+  <p>
+    日本法を中心に、必要に応じて米国、欧州、中国その他の主要国・地域の
+    法制度も比較し、企業の知的財産部門が実務で利用できる調査結果を提示してください。
+  </p>
+</section>
+
+<section class="card" id="purpose">
+  <h2>2. 調査目的</h2>
+  <p>企業の知的財産業務におけるAIの利用について、次の事項を明らかにしてください。</p>
+  <ul>
+    <li>AI利用に関係する法律、ガイドライン、契約条件および社内規程</li>
+    <li>知財情報や研究開発情報をAIに入力することによるリスク</li>
+    <li>AIが生成した成果物を出願、公開、社内利用する際のリスク</li>
+    <li>AIサービスの利用規約、データ保存、学習利用、第三者提供に関する問題</li>
+    <li>リスクの重大性と発生可能性に基づく優先順位</li>
+    <li>リスクを低減するための技術的・組織的・契約的対策</li>
+    <li>知財部門向けのAI利用ルール、チェックリスト、承認フローの提案</li>
+  </ul>
+</section>
+
+<section class="card" id="domains">
+  <h2>3. 調査対象領域</h2>
+
+  <h3>A. AIを用いた発明・特許出願</h3>
+  <ul>
+    <li>AIを利用して創作した発明における発明者の認定</li>
+    <li>人間の創作的関与と発明者適格性</li>
+    <li>AIの出力を発明として出願する際の留意点</li>
+    <li>発明の着想、具体化、実施可能性の検討にAIを利用する場合の記録</li>
+    <li>AIによる発明案の生成と、既存技術・他社権利との関係</li>
+    <li>発明者認定や出願書類の記載に関する法的リスク</li>
+  </ul>
+
+  <h3>B. 特許調査・先行技術調査</h3>
+  <ul>
+    <li>AIによる特許検索、分類、要約、類似文献抽出の精度と限界</li>
+    <li>検索漏れ、誤引用、架空文献、誤った公報番号のリスク</li>
+    <li>AIが作成した特許性評価や侵害予防調査結果の検証方法</li>
+    <li>非公開の発明情報や出願前情報を外部AIに入力するリスク</li>
+    <li>AIによる調査結果を意思決定に利用する際の責任分担</li>
+  </ul>
+
+  <h3>C. 著作権・データ利用</h3>
+  <ul>
+    <li>特許公報、論文、技術資料、図面、写真などの入力・加工・出力</li>
+    <li>著作物の複製、翻案、引用、社内共有に関する論点</li>
+    <li>AI生成物と既存著作物との類似性・依拠性の問題</li>
+    <li>AI出力を社外向け資料や製品資料に利用する場合の確認事項</li>
+    <li>データベースや有料情報サービスの利用規約との関係</li>
+  </ul>
+
+  <h3>D. 営業秘密・機密情報</h3>
+  <ul>
+    <li>未公開発明、研究開発データ、設計情報、配合情報などの入力</li>
+    <li>営業秘密の秘密管理性を維持するための対策</li>
+    <li>外部AIサービスへの入力による情報漏えいの可能性</li>
+    <li>AIサービスの学習利用、保存期間、ログ、バックアップの確認</li>
+    <li>法人向けプランと個人向けプランの管理機能・契約条件の比較</li>
+    <li>社内AI、オンプレミスAI、クラウドAIのリスク比較</li>
+  </ul>
+
+  <h3>E. AIサービスの利用規約・契約</h3>
+  <ul>
+    <li>入力データおよび出力データの権利帰属</li>
+    <li>入力データの学習利用、保存、第三者提供に関する条項</li>
+    <li>サービス提供者によるデータ処理、再委託、国外移転</li>
+    <li>秘密保持、保証、免責、損害賠償、責任制限の条項</li>
+    <li>サービス停止、アカウント停止、データ削除、契約終了時の扱い</li>
+    <li>企業利用に適した契約条件・設定の確認</li>
+  </ul>
+
+  <h3>F. 個人情報・プライバシー</h3>
+  <ul>
+    <li>発明者、従業員、共同研究者、顧客などの個人情報の入力</li>
+    <li>個人情報保護法上の利用目的、安全管理措置、委託先監督</li>
+    <li>要配慮個人情報や個人を識別できる情報の取扱い</li>
+    <li>海外事業者や国外サーバーを利用する場合の確認事項</li>
+    <li>AIによる人物評価や自動判断を利用する場合の留意点</li>
+  </ul>
+
+  <h3>G. AI関連法規・ガイドライン・社内統制</h3>
+  <ul>
+    <li>日本のAI関連法令、政府ガイドライン、関係省庁の公表資料</li>
+    <li>EU AI Act、GDPR、米国その他の主要国・地域の関連制度</li>
+    <li>AI利用に関する社内規程、承認権限、監査記録の整備</li>
+    <li>AIの出力を人間が確認する仕組みと責任分担</li>
+    <li>AIエージェントによるブラウザ操作、ファイル操作、外部サービス連携</li>
+    <li>AIが社内データベースや知財管理システムにアクセスする場合の権限管理</li>
+  </ul>
+</section>
+
+<section class="card" id="method">
+  <h2>4. 調査方法</h2>
+  <ol>
+    <li>調査開始時点の日付を明示し、法令・規約・ガイドラインの最新状況を確認する。</li>
+    <li>法令、官公庁の資料、裁判例、公式の利用規約などの一次資料を優先する。</li>
+    <li>重要な法的結論には根拠資料、条文、資料名、公開日または改定日を付す。</li>
+    <li>法律上の義務、行政上の指針、契約上の義務、推奨される実務対応を区別する。</li>
+    <li>日本法を基本とし、海外法が関係する場合は適用条件を明示する。</li>
+    <li>各AIサービスの利用規約は、サービス名、プラン、対象地域、調査日を記録する。</li>
+    <li>確認できない情報は推測で補わず、「未確認」「要追加調査」と明記する。</li>
+    <li>法改正の予定と施行済みの法令を混同しない。</li>
+    <li>法律上の見解が分かれる場合は、主要な解釈と不確実性を説明する。</li>
+  </ol>
+  <div class="highlight">
+    <strong>重要：</strong>
+    AIサービスの仕様や利用規約は変更される可能性があるため、
+    過去の情報だけで現在の利用条件を断定しないこと。
+  </div>
+</section>
+
+<section class="card" id="evaluation">
+  <h2>5. リスク評価基準</h2>
+  <p>各リスクについて、発生可能性と影響度を評価し、対策の優先順位を示してください。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>評価項目</th>
+        <th>評価基準</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>発生可能性</td>
+        <td>低・中・高。発生頻度、利用条件、管理状況などから評価する。</td>
+      </tr>
+      <tr>
+        <td>影響度</td>
+        <td>低・中・高。権利喪失、情報漏えい、損害賠償、事業への影響などを評価する。</td>
+      </tr>
+      <tr>
+        <td>リスクレベル</td>
+        <td>重大・高・中・低。発生可能性と影響度を総合して判断する。</td>
+      </tr>
+      <tr>
+        <td>対策の緊急性</td>
+        <td>直ちに対応・早期対応・継続管理など、実施時期を示す。</td>
+      </tr>
+      <tr>
+        <td>残余リスク</td>
+        <td>対策後も残るリスクと、追加で必要な管理策を記載する。</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>評価は数値だけで機械的に決めず、評価理由と前提条件を必ず説明してください。</p>
+</section>
+
+<section class="card" id="scenarios">
+  <h2>6. 利用シーン別の評価</h2>
+  <p>少なくとも、以下の利用シーンについて個別に評価してください。</p>
+  <ol>
+    <li>公開済み特許公報の要約・翻訳</li>
+    <li>公開済み特許公報の技術分類・グラフ分析</li>
+    <li>非公開発明提案書の要約・分析</li>
+    <li>発明者との面談記録の要約</li>
+    <li>発明のアイデア出しや技術課題の整理</li>
+    <li>特許請求の範囲や明細書のドラフト作成</li>
+    <li>先行技術調査や特許性評価</li>
+    <li>侵害予防調査や他社特許の権利範囲分析</li>
+    <li>他社の特許ポートフォリオ分析</li>
+    <li>特許年金や権利維持・放棄の判断支援</li>
+    <li>共同研究契約や秘密保持契約のレビュー</li>
+    <li>社内知財データベースとAIの連携</li>
+    <li>AIエージェントによるブラウザ操作・文書保存・データ登録</li>
+    <li>AIの出力を社外向け資料や顧客向け説明に利用</li>
+  </ol>
+
+  <p>各シーンについて、次の形式で整理してください。</p>
+  <table>
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>記載内容</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>利用目的</td><td>AIを利用する具体的な業務</td></tr>
+      <tr><td>入力情報</td><td>公開情報、社内限定情報、秘密情報、個人情報など</td></tr>
+      <tr><td>主なリスク</td><td>法律、契約、情報漏えい、精度、運用上のリスク</td></tr>
+      <tr><td>利用可否</td><td>利用可能、条件付きで利用可能、原則禁止、追加確認が必要</td></tr>
+      <tr><td>必要な対策</td><td>マスキング、契約確認、人間による検証、権限管理など</td></tr>
+      <tr><td>承認者</td><td>担当者、知財責任者、法務、情報セキュリティ部門など</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="card" id="controls">
+  <h2>7. 社内ルールと対策</h2>
+
+  <h3>7-1. AI利用区分の提案</h3>
+  <p>入力情報の機密性とAIサービスの管理条件を踏まえ、次のような利用区分を提案してください。</p>
+  <ul>
+    <li><strong>一般利用：</strong>公開情報を用いた要約、翻訳、情報整理など。</li>
+    <li><strong>条件付き利用：</strong>社内限定情報を扱う場合。承認、契約確認、設定確認などを必須とする。</li>
+    <li><strong>厳格管理：</strong>未公開発明、営業秘密、重要な研究開発情報など。承認された環境に限定する。</li>
+    <li><strong>原則禁止：</strong>会社が承認していないサービスへの重要機密情報の入力など。</li>
+  </ul>
+  <p>上記は初期案とし、会社の情報分類、契約、法的義務に応じて具体化してください。</p>
+
+  <h3>7-2. 社内規程に含める項目</h3>
+  <ul>
+    <li>利用を認めるAIサービスとプラン</li>
+    <li>入力可能な情報と入力禁止情報</li>
+    <li>利用前の承認が必要となる業務</li>
+    <li>AIサービスの利用規約とデータ処理条件の確認方法</li>
+    <li>生成物の正確性、出典、権利侵害の確認</li>
+    <li>特許出願書類、法的意見書、重要な判断への人間の関与</li>
+    <li>アクセス権限、ログ、保存期間、データ削除</li>
+    <li>AIエージェントの外部操作権限と実行前の確認</li>
+    <li>教育、監査、違反時の報告手順</li>
+  </ul>
+
+  <h3>7-3. 導入前チェックリスト</h3>
+  <ul>
+    <li>□ サービス名と利用プランを特定した</li>
+    <li>□ 最新の利用規約とプライバシー関連文書を確認した</li>
+    <li>□ 入力データの学習利用・保存・削除条件を確認した</li>
+    <li>□ 会社の秘密情報を入力してよいか確認した</li>
+    <li>□ 個人情報や第三者提供情報の取扱いを確認した</li>
+    <li>□ データの保存場所、国外移転、再委託先を確認した</li>
+    <li>□ 出力の検証担当者と承認者を決めた</li>
+    <li>□ 特許調査や出願書類に必要な検証手順を定めた</li>
+    <li>□ AIエージェントの権限を必要最小限にした</li>
+    <li>□ 誤操作・情報漏えい時の連絡先と対応手順を定めた</li>
+  </ul>
+</section>
+
+<section class="card" id="incident">
+  <h2>8. インシデント対応</h2>
+  <p>AI利用に伴い、情報漏えい、誤送信、不適切な公開、誤った出願判断などが発生した場合の対応手順を提案してください。</p>
+  <ol>
+    <li><strong>初動：</strong>追加の入力・送信・外部操作を停止し、被害拡大を防ぐ。</li>
+    <li><strong>報告：</strong>知財、法務、情報セキュリティなど所定の窓口に速やかに報告する。</li>
+    <li><strong>事実確認：</strong>入力内容、サービス、日時、共有範囲、ログなどを確認する。</li>
+    <li><strong>影響評価：</strong>営業秘密、特許出願、著作権、個人情報、契約への影響を評価する。</li>
+    <li><strong>封じ込め：</strong>必要に応じて権限停止、共有解除、削除依頼などを実施する。</li>
+    <li><strong>法的対応：</strong>通知義務、報告義務、契約上の義務などを個別に確認する。</li>
+    <li><strong>再発防止：</strong>原因分析、規程改定、教育、システム設定の見直しを行う。</li>
+  </ol>
+  <div class="highlight">
+    実際の事故では、証拠保全や関係者への連絡が必要となる場合があります。
+    一律の削除操作などで証拠を失わないよう、社内の事故対応責任者の指示に従ってください。
+  </div>
+</section>
+
+<section class="card" id="report">
+  <h2>9. 最終報告書の構成</h2>
+  <p>調査結果は、知財部門の管理職、実務担当者、法務部門、情報セキュリティ部門が利用できる報告書としてまとめてください。</p>
+  <ol>
+    <li>エグゼクティブサマリー</li>
+    <li>調査の目的、対象範囲、基準日</li>
+    <li>主要な法令・ガイドライン・契約条件</li>
+    <li>知財業務における主要リスクの一覧</li>
+    <li>利用シーン別のリスク評価表</li>
+    <li>AIサービスの選定・契約・設定に関する確認事項</li>
+    <li>特許出願、先行技術調査、営業秘密に関する重点分析</li>
+    <li>リスク低減策と対応の優先順位</li>
+    <li>社内AI利用規程のたたき台</li>
+    <li>導入前チェックリスト</li>
+    <li>インシデント対応フロー</li>
+    <li>未確認事項、追加調査事項、専門家への相談事項</li>
+    <li>参照した法令・公式資料・利用規約の一覧</li>
+  </ol>
+
+  <h3>リスク一覧表の推奨項目</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>リスク</th>
+        <th>根拠</th>
+        <th>可能性</th>
+        <th>影響度</th>
+        <th>対策</th>
+        <th>担当</th>
+        <th>優先度</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>例：未公開発明情報の外部入力</td>
+        <td>契約・秘密管理・サービス仕様を確認</td>
+        <td>個別評価</td>
+        <td>個別評価</td>
+        <td>承認済み環境の利用、入力制限</td>
+        <td>知財・情報セキュリティ</td>
+        <td>個別評価</td>
+      </tr>
+      <tr>
+        <td>例：AIによる特許調査の誤り</td>
+        <td>調査手順・検証基準を確認</td>
+        <td>個別評価</td>
+        <td>個別評価</td>
+        <td>原文確認、重要文献の再検証</td>
+        <td>特許調査担当</td>
+        <td>個別評価</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="card" id="cautions">
+  <h2>10. 分析上の注意事項</h2>
+  <ul>
+    <li>法律上の義務と、望ましい運用上の対策を混同しないでください。</li>
+    <li>法令や契約の条文を引用する場合は、対象条項と根拠資料を示してください。</li>
+    <li>判例や行政資料を紹介する場合は、事件名・公表主体・日付などを確認してください。</li>
+    <li>海外法の適用については、対象地域、企業の活動、データの種類などの条件を示してください。</li>
+    <li>AIサービスの機能や契約条件を、確認せずに断定しないでください。</li>
+    <li>特許性、侵害、発明者認定などの重要判断については、AIの回答だけで結論を出さないでください。</li>
+    <li>重要な判断には、担当者による原資料の確認と必要に応じた専門家のレビューを求めてください。</li>
+    <li>調査で確認できなかった事項は明示し、追加確認に必要な資料や質問を提示してください。</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>実行指示</h2>
+  <div class="prompt">以上の条件に基づき、企業の知的財産業務におけるAI活用の法的リスクを体系的に調査してください。
+
+まず調査基準日を明示し、一次資料を優先して最新情報を確認してください。
+次に、利用シーン別のリスク評価表、対策の優先順位、社内利用規程案、導入前チェックリスト、インシデント対応手順を作成してください。
+
+重要な結論には根拠資料を付し、法的義務と推奨対応を区別してください。
+不明点や未確認事項は推測で埋めず、明示してください。
+最終的に、企業の知財部門がAI導入の可否や運用ルールを検討する際に、そのまま実務で活用できる報告書として提示してください。</div>
+</section>
+
+</main>
+
+<footer>
+  <p>知財業務におけるAI活用の法的リスク調査プロンプト</p>
+  <p>※本ページは調査用プロンプトのひな形です。実際の法的判断は、最新の法令・契約・事実関係を確認して行ってください。</p>
+</footer>
+
+</body>
+</html>

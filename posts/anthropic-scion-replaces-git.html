@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthropic、Gitをやめる｜新世代バージョン管理「Scion」解説まとめ</title>
+  <style>
+    :root {
+      --bg-body: #0d1117;
+      --bg-card: #161b22;
+      --bg-card-hover: #1c2128;
+      --border-color: #30363d;
+      --primary: #58a6ff;
+      --accent: #bc8cff;
+      --accent-coral: #f78166;
+      --accent-green: #3fb950;
+      --text-main: #c9d1d9;
+      --text-bright: #f0f6fc;
+      --text-muted: #8b949e;
+      --code-bg: #0b0e14;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2.5rem 1rem;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      background: rgba(88, 166, 255, 0.12);
+      color: var(--primary);
+      border: 1px solid rgba(88, 166, 255, 0.3);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-bright);
+      line-height: 1.35;
+      margin-bottom: 0.8rem;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .meta a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .meta a:hover {
+      text-decoration: underline;
+    }
+
+    .summary-lead {
+      background: rgba(22, 27, 34, 0.8);
+      border-left: 4px solid var(--accent);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 2.5rem;
+      font-size: 1.02rem;
+      color: var(--text-bright);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      color: var(--text-bright);
+      margin: 2.5rem 0 1.2rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      color: var(--text-bright);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card ul {
+      padding-left: 1.2rem;
+      font-size: 0.92rem;
+      color: var(--text-main);
+    }
+
+    .card li {
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-coral);
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin-bottom: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--bg-card);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.9rem 1.1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      background: var(--code-bg);
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .highlight-cell {
+      font-weight: 600;
+      color: var(--accent-green);
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 1rem;
+      background: var(--bg-card);
+      padding: 1.25rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    .time-tag {
+      background: var(--code-bg);
+      color: var(--accent);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, monospace;
+      font-size: 0.85rem;
+      height: fit-content;
+      white-space: nowrap;
+    }
+
+    .timeline-text h4 {
+      color: var(--text-bright);
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-text p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 3rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">AI時代のソフトウェア開発インフラ</span>
+      <h1>Anthropic、Gitをやめる</h1>
+      <p style="font-size: 1.1rem; color: var(--text-bright); margin-bottom: 0.5rem;">
+        社内専用の版管理「Scion」を自作し、わずか5か月で完全移行した全貌
+      </p>
+      <div class="meta">
+        参照動画：<a href="https://youtu.be/5yE4RrGuBVQ" target="_blank" rel="noopener noreferrer">AI時短ラボ（YouTube）</a>
+      </div>
+    </header>
+
+    <div class="summary-lead">
+      <strong>核心のメッセージ：</strong><br>
+      「コードを書くことは、もはや開発のボトルネックではない。今詰まっているのは、人間の規模に合わせて作られた開発ツールの方だ。」<br>
+      AIエージェントの爆発的なコード生成によりGitの限界に達したAnthropicが、自前で新システムを構築した理由と設計思想のまとめ。
+    </div>
+
+    <h2>1. なぜ世界標準のGitを捨てたのか？</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>エージェントによるコード爆発</h3>
+        <ul>
+          <li><strong>変更件数の急増:</strong> 2026年5月の1日約2,500件から、9月には<span class="stat-number">1日3万件超</span>へ（4か月で10倍以上）。</li>
+          <li><strong>モノレポの肥大化:</strong> 本線履歴だけで約100GB。</li>
+          <li><strong>CI自動テスト需要:</strong> 1日約2,500万回（毎秒約290回）のコード取得が発生。そのままGitを使うと1日600PB以上の通信量に膨張する計算。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Gitの設計前提のズレ</h3>
+        <ul>
+          <li><strong>全員が丸ごと保持:</strong> Gitは「オフラインでも作業できるよう手元に全履歴を持つ」分散型前提。</li>
+          <li><strong>常時接続のAIエージェント:</strong> 実際にコードを書くエージェントは最初から高速ネットワークに常時接続されており、オフライン前提の設計が最大の足かせに。</li>
+          <li><strong>中継サーバーの破綻:</strong> 数百台のGitキャッシュ中継を動かしても、更新頻度が高すぎて即座に古くなり限界に達した。</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>2. Gitと新システム「Scion」の比較</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>従来のGit</th>
+            <th>Anthropicの「Scion」</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>データ配置</strong></td>
+            <td>各開発者が全履歴・全リポジトリを丸ごと所持</td>
+            <td>中央サーバーが預かり、必要な時にオンデマンド取得</td>
+          </tr>
+          <tr>
+            <td><strong>処理の分担</strong></td>
+            <td>クライアント側で計算・履歴探索を実行</td>
+            <td>差分計算・探索・マージ処理はすべてサーバー側で実行</td>
+          </tr>
+          <tr>
+            <td><strong>コミットの単位</strong></td>
+            <td>その時点のリポジトリ全体のスナップショット</td>
+            <td>「変更されたファイル一覧と実体の格納先」のみを記録（軽量）</td>
+          </tr>
+          <tr>
+            <td><strong>キャッシュ構造</strong></td>
+            <td>ローカル複製 or 数百台の中継ミラー</td>
+            <td>3段階（端末ローカル → リージョン棚 → 中央サーバー）で99%即応</td>
+          </tr>
+          <tr>
+            <td><strong>コンフリクト処理</strong></td>
+            <td>マージ前にロックして1件ずつ直列テスト</td>
+            <td>ロックせず並行投入し、衝突時はAIが即時自己修復</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>3. 驚異的な移行成果・パフォーマンス</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>インフラ・速度の改善</h3>
+        <ul>
+          <li><strong>サーバー資源:</strong> 旧Git中継設備と比較してCPU・メモリが <span class="highlight-cell">1/2</span> に半減。</li>
+          <li><strong>作業環境の構築時間:</strong> 7.1分 → <span class="highlight-cell">5.1秒（約84倍速）</span>。</li>
+          <li><strong>状態確認（Status確認）:</strong> 3.9秒 → <span class="highlight-cell">0.01秒（390倍速）</span>。</li>
+          <li><strong>変更提出までの待ち時間:</strong> 34分 → <span class="highlight-cell">3.7分</span> に短縮。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>エージェント時間の創出</h3>
+        <ul>
+          <li><strong>日あたり創出時間:</strong> 約 <span class="stat-number">10,000</span> エージェント時間／日。</li>
+          <li><strong>人間換算:</strong> 1日8時間労働でおよそ <span class="highlight-cell">1,375人分</span> のエンジニアリソースに相当。</li>
+          <li><strong>開発体制:</strong> このシステム群をわずか <span class="highlight-cell">7名のチームが5か月</span> で構築・完全移行。</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>4. 人間エンジニアの役割はどう変わったか？</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="time-tag">コード生成</span>
+        <div class="timeline-text">
+          <h4>AI（Claude）が主導</h4>
+          <p>Scionへのデータ移行スクリプトをClaudeにリライト依頼したところ、メモリ半減・速度4倍のコードを自律生成。テストも徹底され、コード記述自体はAIが人間を上回るとチーム全員が認識。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="time-tag">意思決定</span>
+        <div class="timeline-text">
+          <h4>人間が「何を解くか」「どこまで耐えるか」を規定</h4>
+          <p>システム全体の境界線やボトルネックの設計、どのサービスとどう結合させるかといったアーキテクチャの根幹を人間が定義。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="time-tag">ガバナンス</span>
+        <div class="timeline-text">
+          <h4>AIに「ダメ」とブレーキをかける仕事</h4>
+          <p>AIが全履歴を非効率に線形探索しようとしたり、過剰防衛でシステムを無駄に複雑化しようとした際に、人間が変更の「意図」をレビューして制止する役割にシフト。</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Anthropic Scion Overview Summary &bull; Based on YouTube Commentary
+    </footer>
+  </div>
+</body>
+</html>

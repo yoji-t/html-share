@@ -1,5 +1,21 @@
 [
     {
+        "id":  "anthropic-scion-replaces-git",
+        "title":  "Anthropic、Gitをやめる｜新世代バージョン管理「Scion」解説まとめ",
+        "filename":  "posts/anthropic-scion-replaces-git.html",
+        "createdAt":  "2026-10-16T07:38:22+09:00",
+        "dateFormatted":  "2026/10/16",
+        "description":  "AIエージェントによるコード爆発に対応するため、Gitを捨て自社製版管理システム「Scion」をわずか5か月で完全移行したAnthropicの背景・技術比較・エンジニアの役割変化の解説まとめ",
+        "tags":  [
+                     "Anthropic",
+                     "Git",
+                     "Scion",
+                     "AIエージェント",
+                     "バージョン管理",
+                     "ソフトウェア開発"
+                 ]
+    },
+    {
         "id":  "antigravity-website-workflow",
         "title":  "AntigravityでWebサイト作成→公開 ガイドまとめ",
         "filename":  "posts/antigravity-website-workflow.html",

@@ -1,5 +1,20 @@
 [
     {
+        "id":  "peraichi-plans-guide",
+        "title":  "ペライチ有料プランまとめ｜2026年10月版",
+        "filename":  "posts/peraichi-plans-guide.html",
+        "createdAt":  "2026-10-15T16:12:24+09:00",
+        "dateFormatted":  "2026/10/15",
+        "description":  "ホームページやLPを簡単に作成できる「ペライチ」の料金・機能・メリットを整理し、GitHub Pagesとの比較も含めたプラン選びガイド。",
+        "tags":  [
+                     "ペライチ",
+                     "Web制作",
+                     "ホスティング",
+                     "料金比較",
+                     "GitHub Pages"
+                 ]
+    },
+    {
         "id":  "ai-inventorship-guide",
         "title":  "AIを使って作った発明の発明者は誰か？",
         "filename":  "posts/ai-inventorship-guide.html",

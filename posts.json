@@ -1,4 +1,19 @@
-[
+﻿[
+    {
+        "id":  "japan-patent-litigation-recent",
+        "title":  "国内知的財産訴訟・判決速報まとめ",
+        "filename":  "posts/japan-patent-litigation-recent.html",
+        "createdAt":  "2026-10-16T08:08:20+09:00",
+        "dateFormatted":  "2026/10/16",
+        "description":  "知的財産高等裁判所・地裁知財部における最新の特許判決動向と知財実務への示唆まとめ（セパレータ進歩性、露光装置制御、IPMモータ均等論）。",
+        "tags":  [
+                     "知財",
+                     "特許",
+                     "判例",
+                     "知財高裁",
+                     "特許訴訟"
+                 ]
+    },
     {
         "id":  "anthropic-scion-replaces-git",
         "title":  "Anthropic、Gitをやめる｜新世代バージョン管理「Scion」解説まとめ",

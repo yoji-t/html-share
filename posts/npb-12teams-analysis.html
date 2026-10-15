@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プロ野球12球団 戦力分析レポート</title>
+  <style>
+    :root {
+      --navy: #183153;
+      --blue: #2878b5;
+      --light-blue: #eaf4fc;
+      --bg: #f4f7fb;
+      --text: #263445;
+      --muted: #65758b;
+      --border: #dce5ef;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+      line-height: 1.8;
+    }
+
+    header {
+      background: linear-gradient(135deg, #183153, #2878b5);
+      color: white;
+      padding: 44px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(26px, 4vw, 40px);
+      line-height: 1.4;
+    }
+
+    header p {
+      margin: 0;
+      color: #e2efff;
+    }
+
+    main {
+      padding-top: 28px;
+      padding-bottom: 50px;
+    }
+
+    section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 14px rgba(24, 49, 83, 0.04);
+    }
+
+    h2 {
+      color: var(--navy);
+      border-bottom: 2px solid var(--light-blue);
+      padding-bottom: 10px;
+      font-size: 23px;
+    }
+
+    h3 {
+      color: var(--blue);
+      margin-top: 26px;
+    }
+
+    .notice {
+      background: #fff8e7;
+      border-left: 5px solid #e7ad37;
+      border-radius: 8px;
+      padding: 14px 18px;
+    }
+
+    .info {
+      background: var(--light-blue);
+      border-radius: 8px;
+      padding: 14px 18px;
+    }
+
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+    }
+
+    .steps li {
+      counter-increment: step;
+      margin: 14px 0;
+      padding: 14px 14px 14px 54px;
+      background: #f7faff;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      position: relative;
+    }
+
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 15px;
+      top: 13px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--blue);
+      color: white;
+      font-weight: bold;
+    }
+
+    .score-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .score-item {
+      background: #f7faff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .score-item strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 11px;
+      border: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--light-blue);
+      color: var(--navy);
+    }
+
+    footer {
+      color: var(--muted);
+      text-align: center;
+      padding: 24px 15px;
+      font-size: 13px;
+    }
+
+    a {
+      color: var(--blue);
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 32px 0;
+      }
+
+      .container {
+        padding: 0 14px;
+      }
+
+      section {
+        padding: 17px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      header {
+        background: white;
+        color: var(--navy);
+        padding: 20px 0;
+      }
+
+      header p {
+        color: var(--text);
+      }
+
+      section {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>プロ野球12球団 戦力分析レポート</h1>
+      <p>NPB全12球団の戦力比較・シーズン展望・中長期的な戦力評価</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>1. 分析の目的と基本方針</h2>
+      <p>
+        あなたは、日本プロ野球（NPB）のデータ分析、チーム編成、
+        選手評価、野球統計および戦略分析に精通したシニア野球アナリストです。
+        セ・リーグとパ・リーグの全12球団について、客観的なデータに基づいて
+        戦力を分析し、球団間の比較と今後の展望を提示してください。
+      </p>
+
+      <div class="notice">
+        <strong>重要：</strong>
+        分析対象日を最初に明示し、最新情報を確認してください。
+        選手の所属、故障、登録・抹消、移籍、ドラフト、新外国人選手などは、
+        確認できた事実と未確認情報を区別してください。
+      </div>
+    </section>
+
+    <section>
+      <h2>2. 情報収集と情報源</h2>
+      <p>分析前に、次の情報をできる限り最新の状態で確認してください。</p>
+      <ul>
+        <li>各球団の公式発表、選手名鑑、登録選手情報</li>
+        <li>NPB公式の試合結果、順位表、個人成績、チーム成績</li>
+        <li>先発投手・救援投手の登板状況と投球内容</li>
+        <li>打率、出塁率、長打率、本塁打、得点などの打撃指標</li>
+        <li>防御率、WHIP、奪三振、与四球などの投手指標</li>
+        <li>守備、走塁、故障者、選手層、若手選手の成長状況</li>
+        <li>トレード、FA、ドラフト、新外国人選手などの補強状況</li>
+      </ul>
+
+      <p>
+        情報源は原則として、NPB公式、球団公式発表、信頼できる報道機関、
+        統計データサイトの順に優先してください。
+        重要な事実には出典と確認日を付けてください。
+      </p>
+
+      <p>
+        参考リンク：
+        <a href="https://npb.jp/" target="_blank" rel="noopener noreferrer">NPB公式サイト</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>3. シーズン状況の判定</h2>
+      <p>分析対象日を基準に、現在のシーズン状況を判定してください。</p>
+      <ul>
+        <li><strong>レギュラーシーズン中：</strong>現在の成績と直近の戦力状況を重視する。</li>
+        <li><strong>ポストシーズン：</strong>短期決戦での起用法、先発投手の質、救援陣を重視する。</li>
+        <li><strong>オフシーズン：</strong>確定した移籍・補強・退団・ドラフト結果を基に翌季を予測する。</li>
+      </ul>
+      <p>
+        未発表の移籍や契約、確定していない故障情報などを事実として扱わないでください。
+      </p>
+    </section>
+
+    <section>
+      <h2>4. 全12球団の戦力評価</h2>
+      <p>各球団を同一の評価基準で採点し、合計100点で評価してください。</p>
+
+      <div class="score-list">
+        <div class="score-item">
+          <strong>先発投手：25点</strong>
+          ローテーションの質、投球回、安定性、故障リスク、若手先発の成長。
+        </div>
+        <div class="score-item">
+          <strong>救援投手：15点</strong>
+          抑え、セットアッパー、中継ぎの層、連投耐性、失点リスク。
+        </div>
+        <div class="score-item">
+          <strong>打撃力：25点</strong>
+          得点力、出塁率、長打力、打線のつながり、左右投手への対応。
+        </div>
+        <div class="score-item">
+          <strong>守備・走塁：15点</strong>
+          守備力、失策、走塁、盗塁、進塁能力、守備位置の安定性。
+        </div>
+        <div class="score-item">
+          <strong>選手層：15点</strong>
+          控え選手、二軍の代替戦力、故障時の対応力、選手層の厚さ。
+        </div>
+        <div class="score-item">
+          <strong>将来性：5点</strong>
+          若手有望株、成長余地、育成状況、中長期的な戦力維持の可能性。
+        </div>
+      </div>
+
+      <h3>採点ルール</h3>
+      <ul>
+        <li>各項目の得点は、その項目の配点を上限とする。</li>
+        <li>合計点は各項目の得点を加算し、小数第1位まで表示する。</li>
+        <li>可能な限り実際の成績や指標に基づき、印象だけで採点しない。</li>
+        <li>同じ基準を12球団すべてに適用する。</li>
+        <li>データ不足の場合は推定であることを明記する。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. 各球団の詳細分析</h2>
+      <p>12球団すべてについて、以下の項目を統一した形式で分析してください。</p>
+
+      <h3>① 総合評価</h3>
+      <ul>
+        <li>総合得点と12球団内での順位</li>
+        <li>セ・リーグまたはパ・リーグ内での位置づけ</li>
+        <li>チームの最大の強みと弱み</li>
+      </ul>
+
+      <h3>② 投手陣</h3>
+      <ul>
+        <li>先発ローテーションの質と安定性</li>
+        <li>エース級投手と先発陣全体の評価</li>
+        <li>抑え・セットアッパー・中継ぎの評価</li>
+        <li>故障や登板過多によるリスク</li>
+        <li>若手投手や二軍投手の台頭可能性</li>
+      </ul>
+
+      <h3>③ 打線</h3>
+      <ul>
+        <li>上位打線と中軸の得点能力</li>
+        <li>出塁力、長打力、本塁打、得点力</li>
+        <li>左右投手への対応力</li>
+        <li>下位打線の厚みと代打要員</li>
+        <li>主力打者への依存度</li>
+      </ul>
+
+      <h3>④ 守備・走塁</h3>
+      <ul>
+        <li>内野・外野の守備力</li>
+        <li>捕手の守備面の貢献</li>
+        <li>走塁、盗塁、進塁能力</li>
+        <li>守備位置の固定状況と選手起用</li>
+      </ul>
+
+      <h3>⑤ 選手層と将来性</h3>
+      <ul>
+        <li>主力の故障時に代役を務められる選手</li>
+        <li>若手選手の成長状況</li>
+        <li>二軍・育成選手の供給力</li>
+        <li>ベテラン選手への依存度</li>
+        <li>今後1～3年の戦力変化の可能性</li>
+      </ul>
+
+      <h3>⑥ 課題と補強提案</h3>
+      <p>
+        各球団について、優先度の高い補強ポイントを3つ挙げてください。
+        それぞれについて、課題、補強が必要な理由、期待できる効果を説明してください。
+        特定選手の獲得を提案する場合は、契約状況や獲得可能性が確認できない限り、
+        獲得が確実であるかのように表現しないでください。
+      </p>
+    </section>
+
+    <section>
+      <h2>6. 得点・失点と勝敗の分析</h2>
+      <p>勝率や順位だけでなく、次の指標も確認してください。</p>
+      <ul>
+        <li>総得点と総失点</li>
+        <li>得失点差</li>
+        <li>1試合当たりの得点と失点</li>
+        <li>接戦での勝敗</li>
+        <li>先制した試合での勝率（データが得られる場合）</li>
+        <li>得失点差と実際の勝率・順位との乖離</li>
+      </ul>
+      <p>
+        得失点差が良好なのに勝率が低い球団や、得失点差に比べて勝率が高い球団があれば、
+        その背景を分析してください。ただし、少数の接戦結果だけで将来の成績を断定しないでください。
+      </p>
+    </section>
+
+    <section>
+      <h2>7. リーグ別の比較</h2>
+      <p>セ・リーグとパ・リーグをそれぞれ比較し、以下を整理してください。</p>
+      <ul>
+        <li>リーグ内の総合戦力ランキング</li>
+        <li>投手力に優れる球団</li>
+        <li>打撃力に優れる球団</li>
+        <li>選手層が厚い球団</li>
+        <li>短期決戦に強いと考えられる球団</li>
+        <li>若手の成長によって上昇が期待できる球団</li>
+      </ul>
+      <p>
+        リーグ間の比較では、球場特性、日程、対戦相手、指名打者制などの違いも考慮し、
+        単純な数字の比較だけで結論を出さないでください。
+      </p>
+    </section>
+
+    <section>
+      <h2>8. 戦力ランキング表</h2>
+      <p>
+        分析結果は、まず次の形式の一覧表にまとめてください。
+        点数は実際の分析結果を反映して記入し、未確認の数値を作らないでください。
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>順位</th>
+            <th>球団</th>
+            <th>先発</th>
+            <th>救援</th>
+            <th>打撃</th>
+            <th>守備・走塁</th>
+            <th>選手層</th>
+            <th>将来性</th>
+            <th>総合点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>分析後に記入</td>
+            <td>球団名</td>
+            <td>25点満点</td>
+            <td>15点満点</td>
+            <td>25点満点</td>
+            <td>15点満点</td>
+            <td>15点満点</td>
+            <td>5点満点</td>
+            <td>100点満点</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        表は12球団すべてを掲載し、総合点の高い順に並べてください。
+        同点の場合は、先発投手力、打撃力、選手層などの優先順位をあらかじめ定め、
+        その基準を明記してください。
+      </p>
+    </section>
+
+    <section>
+      <h2>9. 今季の展望と今後の予測</h2>
+      <p>各球団について、以下の3つを分けて説明してください。</p>
+      <ul>
+        <li><strong>実績：</strong>現時点までに実際に記録された成績。</li>
+        <li><strong>現在の戦力：</strong>登録選手、健康状態、直近の調子を踏まえた評価。</li>
+        <li><strong>今後の予測：</strong>残り試合、ポストシーズン、翌季などに関する見通し。</li>
+      </ul>
+      <p>
+        予測には、前提条件と不確実性を明記してください。
+        十分なデータがある場合のみ、順位の範囲や確率を提示してください。
+        根拠が不十分な場合は、無理に数値化せず定性的な評価にとどめてください。
+      </p>
+    </section>
+
+    <section>
+      <h2>10. 最終結論</h2>
+      <p>レポートの最後に、次の質問に明確に回答してください。</p>
+      <ol>
+        <li>総合的に最も戦力が充実している球団はどこか。</li>
+        <li>短期決戦で優位に立ちやすい球団はどこか。その理由は何か。</li>
+        <li>長いシーズンを通じて安定した成績を残しやすい球団はどこか。</li>
+        <li>実際の成績と戦力評価に大きな差がある球団はどこか。</li>
+        <li>今後1～3年で成長が期待できる球団はどこか。</li>
+        <li>各球団が優勝を目指すうえで、最優先で改善すべき点は何か。</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>11. 分析時の追加ルール</h2>
+      <ul>
+        <li>最新の公式情報を確認し、分析対象日を必ず記載する。</li>
+        <li>全12球団を同じ評価基準で分析する。</li>
+        <li>確認できた事実、分析者の評価、将来予測を区別する。</li>
+        <li>故障者については、発表済みの情報と推測を混同しない。</li>
+        <li>主力の離脱だけでなく、代替選手の実力や選手層も評価する。</li>
+        <li>データの期間や定義が異なる場合は、その違いを説明する。</li>
+        <li>情報を取得できなかった項目は、未確認と明記する。</li>
+        <li>採点理由を説明し、点数だけで結論を出さない。</li>
+        <li>重要な主張には出典を付け、可能な限り原典を優先する。</li>
+        <li>不確実性を隠さず、予測を確定事項のように表現しない。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>12. 出力形式</h2>
+      <ol class="steps">
+        <li><strong>全12球団の総合ランキング：</strong>点数と順位を一覧表で提示。</li>
+        <li><strong>各球団の詳細分析：</strong>投手、打撃、守備、選手層、将来性、補強課題。</li>
+        <li><strong>リーグ別比較：</strong>セ・リーグとパ・リーグの特徴と戦力差。</li>
+        <li><strong>今後の展望と結論：</strong>優勝候補、短期決戦、成長期待、主要リスク。</li>
+        <li><strong>出典と留意事項：</strong>使用した情報源、確認日、データの制約。</li>
+      </ol>
+      <div class="info">
+        <strong>分析の最終目標：</strong>
+        単なる順位予想ではなく、戦力の強み・弱み、成績の背景、
+        補強の優先順位、今後の成長可能性を、客観的なデータと明確な根拠で説明する。
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    プロ野球12球団 戦力分析テンプレート
+  </footer>
+</body>
+</html>

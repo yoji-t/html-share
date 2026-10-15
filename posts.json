@@ -1,5 +1,19 @@
 [
     {
+        "id":  "npb-12teams-analysis",
+        "title":  "プロ野球12球団 戦力分析レポート",
+        "filename":  "posts/npb-12teams-analysis.html",
+        "createdAt":  "2026-10-15T12:43:43+09:00",
+        "dateFormatted":  "2026/10/15",
+        "description":  "NPB全12球団の戦力比較・シーズン展望・中長期的な戦力評価（分析目的・評価基準・採点ルール・出力形式のテンプレート）",
+        "tags":  [
+                     "野球",
+                     "NPB",
+                     "戦力分析",
+                     "スポーツ"
+                 ]
+    },
+    {
         "id":  "michelin-patent-portfolio",
         "title":  "ミシュラン特許ポートフォリオ分析",
         "filename":  "posts/michelin-patent-portfolio.html",

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure AI｜自律型二足歩行ロボットの最前線</title>
+<style>
+:root {
+  --navy: #17365d;
+  --blue: #2878c8;
+  --sky: #eaf5ff;
+  --mint: #e8f8f1;
+  --ink: #243247;
+  --muted: #607086;
+  --line: #dce6f0;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #f3f7fb;
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Noto Sans JP", Meiryo, sans-serif;
+  line-height: 1.9;
+}
+.hero {
+  background: linear-gradient(135deg, #e3f2ff, #f2f0ff 60%, #e5faf2);
+  padding: 64px 20px 52px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+.hero .tag {
+  display: inline-block;
+  background: white;
+  color: var(--blue);
+  border: 1px solid #c8e1fa;
+  padding: 5px 15px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.hero h1 {
+  color: var(--navy);
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.3;
+  margin: 20px 0 14px;
+}
+.hero p {
+  max-width: 720px;
+  margin: auto;
+  color: #455b75;
+  font-size: 17px;
+}
+.container {
+  max-width: 940px;
+  margin: 32px auto;
+  padding: 0 20px 60px;
+}
+.card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 26px;
+  margin: 22px 0;
+  box-shadow: 0 5px 18px rgba(31, 65, 100, .045);
+}
+h2 {
+  font-size: 25px;
+  color: var(--navy);
+  border-bottom: 2px solid #d9eaff;
+  padding-bottom: 12px;
+  margin: 0 0 20px;
+}
+h3 { color: #245e9a; margin-bottom: 8px; }
+p { margin: 10px 0; }
+.lead {
+  font-size: 17px;
+  background: var(--sky);
+  border-radius: 12px;
+  padding: 20px;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+.stat {
+  padding: 17px;
+  border-radius: 12px;
+  background: #f1f7ff;
+  border: 1px solid #dceafa;
+}
+.stat strong {
+  display: block;
+  color: var(--blue);
+  font-size: 21px;
+}
+.stat span { font-size: 13px; color: var(--muted); }
+.timeline {
+  display: grid;
+  gap: 14px;
+}
+.stage {
+  padding: 18px 20px;
+  border-left: 4px solid #6da8e8;
+  background: #f7faff;
+  border-radius: 0 12px 12px 0;
+}
+.stage h3 { margin: 0 0 7px; }
+.pill {
+  display: inline-block;
+  background: #e0efff;
+  color: #245e9a;
+  font-size: 12px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+ul, ol { padding-left: 24px; }
+li { margin: 8px 0; }
+.comparison {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+.comparison th, .comparison td {
+  text-align: left;
+  padding: 13px;
+  border: 1px solid var(--line);
+  vertical-align: top;
+}
+.comparison th {
+  background: #eaf3fd;
+  color: var(--navy);
+}
+.comparison tr:nth-child(even) td { background: #fafcff; }
+.note {
+  background: #fff8e7;
+  border-left: 4px solid #e8b44d;
+  padding: 14px 18px;
+  border-radius: 0 10px 10px 0;
+  font-size: 14px;
+}
+.conclusion {
+  background: linear-gradient(135deg, #e8f3ff, #e9faf2);
+  border: 1px solid #cde5df;
+  border-radius: 16px;
+  padding: 25px;
+}
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  padding: 25px;
+}
+a { color: #176bb5; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .hero { padding: 42px 18px; }
+  .card { padding: 19px; }
+  .comparison { font-size: 13px; }
+  .comparison th, .comparison td { padding: 8px; }
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <span class="tag">PHYSICAL AI REPORT</span>
+  <h1>Figure AIとは何か？</h1>
+  <p>自律型二足歩行ロボットが切り開く、工場・家庭・AIの未来</p>
+</header>
+
+<main class="container">
+<section class="card">
+  <h2>1. Figure AIの概要</h2>
+  <p class="lead"><strong>Figure AIは、人間のように歩き、物をつかみ、周囲の状況を理解して作業する汎用ヒューマノイドロボットを開発する米国企業です。</strong></p>
+  <p>従来の産業用ロボットが決められた動作を繰り返すのに対し、Figure AIは人工知能（AI）をロボットの身体に組み込み、工場や家庭などで幅広い仕事を自律的にこなすことを目指しています。</p>
+  <p>ロボット本体だけでなく、動作を制御するAI、学習用データ、量産体制まで一体的に開発している点が特徴です。AIがデジタル空間を飛び出して現実世界で仕事をする「フィジカルAI」の有力企業の一つです。</p>
+  <div class="stats">
+    <div class="stat"><strong>2022年</strong><span>創業年</span></div>
+    <div class="stat"><strong>米国</strong><span>本拠地：カリフォルニア州</span></div>
+    <div class="stat"><strong>汎用ロボット</strong><span>主要な開発領域</span></div>
+  </div>
+  <p><strong>創業者・CEO：</strong>Brett Adcock</p>
+  <p><strong>主な事業：</strong>二足歩行ロボット、ロボット向けAI、製造・家庭向け自動化</p>
+</section>
+
+<section class="card">
+  <h2>2. 成長を支える資金調達</h2>
+  <p>Figure AIは、ヒューマノイドロボットの商用化への期待を背景に、大規模な資金調達を実施してきました。</p>
+  <div class="timeline">
+    <div class="stage">
+      <span class="pill">2024年2月</span>
+      <h3>シリーズB</h3>
+      <p>6億7,500万ドルを調達。発表時の企業評価額は26億ドル。</p>
+    </div>
+    <div class="stage">
+      <span class="pill">2025年9月</span>
+      <h3>シリーズC</h3>
+      <p>10億ドル超を調達。発表時の企業評価額は390億ドルに達しました。</p>
+    </div>
+  </div>
+  <p>NVIDIA、Intel Capital、Qualcommなどの企業・投資家も支援に加わっています。</p>
+  <p class="note">注意：企業評価額は将来の成長期待を反映する数字です。売上高、利益、事業の成功を直接示すものではありません。</p>
+</section>
+
+<section class="card">
+  <h2>3. ロボットの進化</h2>
+  <div class="timeline">
+    <div class="stage">
+      <span class="pill">初期世代</span>
+      <h3>Figure 01 — 基礎技術の確立</h3>
+      <p>二足歩行、物体操作、身体制御など、ヒューマノイドに必要な基礎技術を積み上げた世代です。</p>
+    </div>
+    <div class="stage">
+      <span class="pill">工場への導入</span>
+      <h3>Figure 02 — 製造現場での実用化</h3>
+      <p>手先の器用さや内部構造を改良。BMWの米国工場で部品の取り出し・配置作業に利用されました。</p>
+    </div>
+    <div class="stage">
+      <span class="pill">次世代</span>
+      <h3>Figure 03 — 工場から家庭へ</h3>
+      <p>家庭での利用も視野に入れた世代。2026年にはHelix 02と組み合わせ、移動と物体操作を全身で統合する方向に進化しています。</p>
+    </div>
+  </div>
+  <p>重要なのは歩行性能だけではありません。実際の作業を安定して実行し、故障を抑え、安全に稼働できるかが商用化の鍵となります。</p>
+</section>
+
+<section class="card">
+  <h2>4. 最大の強み：AI「Helix」</h2>
+  <p>Figure AIの競争力を理解するうえで重要なのが、独自のロボット制御AI「Helix」です。カメラなどから得た情報と自然言語の指示を組み合わせ、状況に応じて動作を生成することを目指しています。</p>
+  <h3>主な技術的特徴</h3>
+  <ul>
+    <li><strong>視覚・言語・行動の統合：</strong>周囲の映像や指示を理解し、ロボットの動作へ変換する。</li>
+    <li><strong>細かな身体制御：</strong>手指、腕、胴体などを連携させて物体を操作する。</li>
+    <li><strong>未知の状況への対応：</strong>学習済みの動作を、異なる物体や環境にも応用することを目指す。</li>
+    <li><strong>実時間での制御：</strong>状況の変化に応じて動きを修正し、バランスを維持する。</li>
+  </ul>
+  <p>2025年に発表されたHelixでは、状況理解を担う比較的低速なシステムと、細かな動作を高速に制御するシステムを組み合わせる方式が説明されました。</p>
+  <p>2026年1月発表のHelix 02では、歩行、物体操作、バランス制御を全身で統合する方向へ進化しました。同社は、食器洗い機への食器の出し入れを約4分間、人間の介入なしで連続実行するデモを公表しています。</p>
+  <p class="note">デモの成功は、あらゆる家庭や工場で同じ成功率・速度を実現できることを保証するものではありません。</p>
+</section>
+
+<section class="card">
+  <h2>5. BMWとの提携と実用化</h2>
+  <p>Figure AIの大きな特徴は、実際の製造現場でロボットを稼働させていることです。</p>
+  <p>BMWとの協業では、米国サウスカロライナ州スパータンバーグ工場にFigure 02が導入されました。BMWの2026年2月の発表によると、10か月間の実証で次の実績が報告されています。</p>
+  <div class="stats">
+    <div class="stat"><strong>3万台超</strong><span>生産を支援したBMW X3</span></div>
+    <div class="stat"><strong>9万個超</strong><span>移動させた部品</span></div>
+    <div class="stat"><strong>約1,250時間</strong><span>ロボットの稼働時間</span></div>
+  </div>
+  <p>2026年6月にはFigure 03も同工場に導入され、部品の取り出し・配置に加え、台車を引きながら部品を扱うような作業に進みました。</p>
+  <p>実証の意義は、作業の正確性、安全性、連続稼働能力、保守のしやすさなどを現場で検証できる点にあります。</p>
+</section>
+
+<section class="card">
+  <h2>6. 競合企業との違い</h2>
+  <table class="comparison">
+    <thead>
+      <tr><th>企業</th><th>主な特徴</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Tesla</strong><br>Optimus</td>
+        <td>自社工場での活用と、大量生産によるコスト低減を重視。</td>
+      </tr>
+      <tr>
+        <td><strong>Boston Dynamics</strong><br>Atlas</td>
+        <td>高度な運動性能、移動能力、全身制御技術に強み。</td>
+      </tr>
+      <tr>
+        <td><strong>Figure AI</strong><br>Figureシリーズ</td>
+        <td>汎用AIと人型ロボットを一体的に開発し、工場での実証と家庭向け利用を並行して目指す。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>各社の技術や戦略には重なる部分もあります。Figure AIの特徴は、AIによる汎用的な動作生成と、実際の作業現場への導入を組み合わせている点です。</p>
+</section>
+
+<section class="card">
+  <h2>7. 今後の課題</h2>
+  <ol>
+    <li><strong>コストと量産性：</strong>高性能なロボットを、採算の取れる価格で大量生産できるか。</li>
+    <li><strong>信頼性と安全性：</strong>長時間の稼働でも故障せず、人間と同じ空間で安全に作業できるか。</li>
+    <li><strong>汎用性：</strong>特定の作業だけでなく、未知の物体や複雑な環境にも対応できるか。</li>
+    <li><strong>投資回収：</strong>生産性向上の効果が、導入費用や保守費用を上回るか。</li>
+  </ol>
+  <p>さらに、ロボットの学習には大量の実世界データと計算資源が必要です。2026年9月には、NscaleとNVIDIAの計算基盤を活用し、最大10万基のGPUを対象とする計算資源の整備計画が発表されました。</p>
+  <p>これは、ロボットの競争力が機械設計だけでなく、AIモデル、学習データ、計算能力にも左右されることを示しています。</p>
+</section>
+
+<section class="conclusion">
+  <h2>まとめ：Figure AIの将来性</h2>
+  <p>Figure AIは、二足歩行ロボットの開発企業であると同時に、<strong>現実世界で自律的に働くAIを開発する企業</strong>です。</p>
+  <p>ロボット本体、Helixという制御AI、BMWとの実証、量産・学習基盤を相互に結びつけている点が強みです。</p>
+  <p>工場での作業が安定して採算の取れる水準に達し、家庭での複雑な仕事にも対応できれば、ロボットの役割は単純作業の自動化から、多様な仕事を実行する段階へ広がる可能性があります。</p>
+  <p>今後はデモ映像だけでなく、実際の稼働時間、作業成功率、導入台数、製造コスト、顧客の継続利用に注目することが重要です。</p>
+</section>
+
+<section class="card">
+  <h2>参考情報・公式サイト</h2>
+  <ul>
+    <li><a href="https://www.figure.ai/" target="_blank" rel="noopener noreferrer">Figure AI 公式サイト</a></li>
+    <li><a href="https://www.bmwgroup.com/" target="_blank" rel="noopener noreferrer">BMW Group 公式サイト</a></li>
+    <li><a href="https://www.nvidia.com/" target="_blank" rel="noopener noreferrer">NVIDIA 公式サイト</a></li>
+  </ul>
+  <p class="note">本資料は公開発表に基づく概要です。資金調達額、企業評価額、導入実績、計画などは発表時点の情報であり、最新状況は各社の公式発表で確認してください。</p>
+</section>
+</main>
+<footer>Figure AI Research Brief｜自律型ヒューマノイドロボットの動向</footer>
+</body>
+</html>

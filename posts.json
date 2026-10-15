@@ -1,5 +1,21 @@
 [
     {
+        "id":  "figure-ai-report",
+        "title":  "Figure AI｜自律型二足歩行ロボットの最前線",
+        "filename":  "posts/figure-ai-report.html",
+        "createdAt":  "2026-10-16T07:19:20+09:00",
+        "dateFormatted":  "2026/10/16",
+        "description":  "人間のように歩き、物をつかみ、周囲を理解して作業する汎用ヒューマノイドロボットFigure AIの概要・技術・実用化の最新動向レポート",
+        "tags":  [
+                     "ロボット",
+                     "AI",
+                     "Figure AI",
+                     "ヒューマノイド",
+                     "フィジカルAI",
+                     "BMW"
+                 ]
+    },
+    {
         "id":  "ai-ip-legal-risk-report",
         "title":  "知財業務におけるAI活用の法的リスク調査報告書",
         "filename":  "posts/ai-ip-legal-risk-report.html",

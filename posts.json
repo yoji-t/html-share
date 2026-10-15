@@ -1,5 +1,21 @@
 [
     {
+        "id":  "antigravity-website-workflow",
+        "title":  "AntigravityでWebサイト作成→公開 ガイドまとめ",
+        "filename":  "posts/antigravity-website-workflow.html",
+        "createdAt":  "2026-10-16T07:32:20+09:00",
+        "dateFormatted":  "2026/10/16",
+        "description":  "Relume/Figmaでのデザイン生成からAntigravityでのコーディング、Netlifyでのデプロイ・Forms連携までの4ステップWeb制作ガイド",
+        "tags":  [
+                     "Antigravity",
+                     "Web制作",
+                     "Netlify",
+                     "Figma",
+                     "Relume",
+                     "ワークフロー"
+                 ]
+    },
+    {
         "id":  "shiropuro-iden-star6",
         "title":  "【城プロRE】強すぎる異伝★6城娘 改築解説まとめ",
         "filename":  "posts/shiropuro-iden-star6.html",

@@ -1,5 +1,21 @@
 ﻿[
     {
+        "id":  "google-ai-pro-antigravity-quota-analysis",
+        "title":  "Google AI ProのAntigravity専用枠 徹底調査",
+        "filename":  "posts/google-ai-pro-antigravity-quota-analysis.html",
+        "createdAt":  "2026-10-17T08:25:39+09:00",
+        "dateFormatted":  "2026/10/17",
+        "description":  "Google AI ProにおけるAntigravity専用枠（5時間枠・週次上限）の仕様、Electricity Benchの実測ベンチマーク、トークン・API換算、節約術をまとめた徹底調査レポート。",
+        "tags":  [
+                     "Antigravity",
+                     "Google AI Pro",
+                     "Gemini",
+                     "利用枠",
+                     "クオータ",
+                     "開発効率化"
+                 ]
+    },
+    {
         "id":  "triangle-similarity-congruence-conditions",
         "title":  "三角形の相似条件と合同条件",
         "filename":  "posts/triangle-similarity-congruence-conditions.html",

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google AI ProのAntigravity専用枠 徹底調査</title>
+<style>
+:root {
+  --primary: #2563eb;
+  --primary-light: #eff6ff;
+  --green: #15803d;
+  --green-light: #f0fdf4;
+  --orange: #c2410c;
+  --orange-light: #fff7ed;
+  --purple: #6d28d9;
+  --purple-light: #f5f3ff;
+  --text: #1f2937;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --bg: #f8fafc;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Noto Sans JP", sans-serif;
+  line-height: 1.85;
+}
+header {
+  padding: 52px 20px 42px;
+  color: #fff;
+  background: linear-gradient(135deg, #1d4ed8, #6366f1);
+}
+header .inner, main, footer {
+  max-width: 1000px;
+  margin: auto;
+}
+.eyebrow {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: .08em;
+  opacity: .85;
+}
+h1 {
+  margin: 12px 0;
+  font-size: clamp(27px, 5vw, 42px);
+  line-height: 1.4;
+}
+header p { max-width: 760px; margin-bottom: 0; }
+main { padding: 24px 16px 60px; }
+section {
+  margin: 24px 0;
+  padding: clamp(18px, 4vw, 30px);
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, .035);
+}
+h2 {
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  font-size: 24px;
+  border-bottom: 2px solid var(--border);
+}
+h3 { margin-top: 25px; font-size: 18px; }
+p { margin: 12px 0; }
+a { color: var(--primary); overflow-wrap: anywhere; }
+.small { color: var(--muted); font-size: 13px; }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+}
+.card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+}
+.card.blue { background: var(--primary-light); }
+.card.green { background: var(--green-light); }
+.card.orange { background: var(--orange-light); }
+.card.purple { background: var(--purple-light); }
+.metric {
+  display: block;
+  margin: 5px 0;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+.label { color: var(--muted); font-size: 13px; }
+.callout {
+  margin: 18px 0;
+  padding: 16px 18px;
+  border-left: 4px solid var(--primary);
+  border-radius: 8px;
+  background: var(--primary-light);
+}
+.warning {
+  border-left-color: var(--orange);
+  background: var(--orange-light);
+}
+.success {
+  border-left-color: var(--green);
+  background: var(--green-light);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+}
+th, td {
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+th { background: #f1f5f9; }
+ul, ol { padding-left: 24px; }
+li { margin: 7px 0; }
+.tag {
+  display: inline-block;
+  margin: 3px 4px 3px 0;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: #e0e7ff;
+  color: #3730a3;
+  font-size: 12px;
+  font-weight: bold;
+}
+footer {
+  padding: 24px 18px 40px;
+  color: var(--muted);
+  font-size: 13px;
+}
+@media (max-width: 600px) {
+  header { padding: 35px 18px; }
+  main { padding: 12px; }
+  section { padding: 18px 14px; }
+  h2 { font-size: 21px; }
+  table { font-size: 12px; }
+  th, td { padding: 8px 6px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <div class="eyebrow">AI DEVELOPMENT / USAGE LIMITS REPORT</div>
+    <h1>Google AI Proの<br>Antigravity専用枠 徹底調査</h1>
+    <p>
+      公式仕様、独立系ベンチマーク、利用者報告を整理し、
+      実際にどの程度の開発作業ができるのかを分析する。
+    </p>
+    <p class="small" style="color:#e0e7ff">
+      調査基準日：2026年10月17日
+    </p>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <h2>1. 調査結果の要約</h2>
+  <div class="cards">
+    <div class="card blue">
+      <span class="label">短期利用枠</span>
+      <span class="metric">5時間</span>
+      <div>一定時間ごとに更新</div>
+    </div>
+    <div class="card purple">
+      <span class="label">長期利用枠</span>
+      <span class="metric">週単位</span>
+      <div>短期枠とは別の上限</div>
+    </div>
+    <div class="card green">
+      <span class="label">公式の固定回数</span>
+      <span class="metric">非公表</span>
+      <div>リクエスト数・トークン数は一律でない</div>
+    </div>
+    <div class="card orange">
+      <span class="label">利用量の把握</span>
+      <span class="metric">実測推奨</span>
+      <div>自分の作業で残量を記録する</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>結論：</strong>
+    Google AI ProのAntigravity専用枠は、
+    一律のリクエスト数で管理できるサービスではない。
+    モデルやタスクの複雑さによって利用量が変わるため、
+    公式の残量表示を基準に判断する必要がある。
+  </div>
+  <p>
+    Google AI ProはAntigravityを利用するための上位枠を提供するが、
+    毎日何回、毎週何トークンといった固定容量は公式に示されていない。
+  </p>
+</section>
+
+<section>
+  <h2>2. 公式に確認できる基本仕様</h2>
+  <table>
+    <thead>
+      <tr><th>項目</th><th>内容</th><th>注意点</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>5時間枠</td>
+        <td>短期利用枠が一定間隔で更新される</td>
+        <td>週次上限に達した場合、更新だけでは再開できないことがある</td>
+      </tr>
+      <tr>
+        <td>週次上限</td>
+        <td>週単位の別の利用上限がある</td>
+        <td>短期枠と区別して確認する</td>
+      </tr>
+      <tr>
+        <td>利用量</td>
+        <td>エージェントの処理量などに依存する</td>
+        <td>単純な質問回数だけでは予測できない</td>
+      </tr>
+      <tr>
+        <td>モデルごとの枠</td>
+        <td>モデルや提供条件によって扱いが異なる場合がある</td>
+        <td>画面上のモデル別表示を確認する</td>
+      </tr>
+      <tr>
+        <td>残量確認</td>
+        <td>Antigravityの設定画面で確認する</td>
+        <td>更新予定時刻やモデル名も記録するとよい</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout warning">
+    <strong>重要：</strong>
+    5時間枠が更新されても、週次上限まで回復するわけではない。
+    短期枠と週次枠は別々に管理する必要がある。
+  </div>
+
+  <p>公式資料：
+    <a href="https://www.antigravity.google/docs/plans" target="_blank" rel="noopener">
+      Antigravity公式プラン説明
+    </a>
+  </p>
+</section>
+
+<section>
+  <h2>3. 独立系ベンチマークの実測結果</h2>
+  <p>
+    2026年9月30日公開のElectricity Benchの調査では、
+    Antigravity CLIを使い、Google AI Proアカウントで
+    653回の実行を41のセッション枠に分けて計測したと報告されている。
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>モデル</th>
+        <th>週あたりのテストセット</th>
+        <th>タスク換算</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Gemini 3.8 Flash</td>
+        <td>約4.2セット</td>
+        <td>約80タスク</td>
+      </tr>
+      <tr>
+        <td>Gemini 3.1 Pro</td>
+        <td>約6.3セット</td>
+        <td>約120タスク</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>数字の読み方：</strong>
+    1セットは19個の実開発タスクからなるテストセット。
+    約80〜120タスクは、特定のテストを繰り返した場合の換算値であり、
+    一般的なチャットの質問を80〜120回できるという意味ではない。
+  </div>
+
+  <p>
+    同調査では、週次上限は5時間分の利用枠を約6回使い切ると
+    到達するという結果も報告されている。
+  </p>
+
+  <p class="small">
+    出典：
+    <a href="https://electricitybench.com/limits/antigravity-cli/"
+       target="_blank" rel="noopener">
+      Electricity Bench — Antigravity CLI usage limits
+    </a>
+  </p>
+
+  <div class="callout warning">
+    これは2026年9月時点の特定条件下での測定である。
+    10月のモデル更新後にも同じ容量が保証されるわけではなく、
+    すべてのユーザーに適用できる公式基準でもない。
+  </div>
+</section>
+
+<section>
+  <h2>4. トークン数とAPI価格への換算</h2>
+  <p>
+    2026年9月18日、Google AI Developers Forumに、
+    利用者がLiteLLMで測定したトークン数を基に
+    API価格相当額を推定した投稿があった。
+  </p>
+
+  <div class="cards">
+    <div class="card blue">
+      <span class="label">5時間枠の推定API価値</span>
+      <span class="metric">$19.92</span>
+      <div>投稿者による推定値</div>
+    </div>
+    <div class="card purple">
+      <span class="label">週次枠の推定API価値</span>
+      <span class="metric">$214</span>
+      <div>投稿者による推定値</div>
+    </div>
+  </div>
+
+  <h3>投稿で示されたトークン計測値</h3>
+  <table>
+    <thead><tr><th>区分</th><th>計測値</th></tr></thead>
+    <tbody>
+      <tr><td>通常入力トークン</td><td>約566万</td></tr>
+      <tr><td>キャッシュ読み取り</td><td>約4,860万</td></tr>
+      <tr><td>出力トークン</td><td>約18.3万</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warning">
+    <strong>この金額はGoogleの公式給付額ではない。</strong>
+    投稿者が一定のトークン量と当時のAPI価格を仮定して換算した推定値である。
+    Google AI Proに19.92ドルや214ドル分のクレジットが
+    付与されるという意味ではない。
+  </div>
+
+  <p>
+    特に、キャッシュ読み取りは通常入力と料金体系が異なる。
+    トークン総数だけを比較して、ほかのAIサービスより
+    何倍使えるかを判断するのは適切ではない。
+  </p>
+
+  <p class="small">
+    出典：
+    <a href="https://discuss.ai.google.dev/t/estimating-included-quota-in-google-ai-pro/183629"
+       target="_blank" rel="noopener">
+      Google AI Developers Forum — Estimating included quota
+    </a>
+  </p>
+</section>
+
+<section>
+  <h2>5. 2026年10月の利用者報告</h2>
+  <p>
+    10月上旬のRedditコミュニティでは、以前より利用枠の減少が
+    速くなったという報告が投稿されている。
+  </p>
+
+  <div class="cards">
+    <div class="card orange">
+      <h3>報告例1</h3>
+      <span class="metric">約20% → 約40%</span>
+      <p>
+        あるProユーザーは、5時間枠を使い切った後の
+        週次枠の消費割合が以前より増えたと報告している。
+      </p>
+    </div>
+    <div class="card purple">
+      <h3>報告例2</h3>
+      <span class="metric">4セッションで82%</span>
+      <p>
+        別の利用者は4回のセッションで週次枠の82%を
+        消費したと報告している。
+      </p>
+    </div>
+  </div>
+
+  <p>
+    一方で、複数のセッションを実行しても週次枠が残っているという
+    反対の報告もある。
+  </p>
+
+  <div class="callout warning">
+    これらは個人の体験談であり、Googleが全ユーザーに対して
+    利用上限を引き下げたことを証明するものではない。
+    モデル、タスクの複雑さ、会話履歴などの違いが影響し得る。
+  </div>
+
+  <p class="small">
+    出典：
+    <a href="https://www.reddit.com/r/google_antigravity/comments/1wygnf4/google_ai_pro_plan_decreased_antigravity_tokens/"
+       target="_blank" rel="noopener">
+      Reddit — Google AI Pro plan usage reports
+    </a>
+  </p>
+</section>
+
+<section>
+  <h2>6. モデル別の利用枠に関する注意</h2>
+  <p>
+    2026年10月15日には、Gemini 4 ArgonがGoogle AI Proの
+    Antigravity利用者向けに順次提供され、独立した週次利用枠が
+    導入されたとの報告がある。
+  </p>
+
+  <div class="callout">
+    モデルごとに利用枠が分かれている場合、あるモデルの残量だけを
+    見ても、別のモデルの利用可能量は分からない。
+    モデルの名称、残量、更新予定時刻をそれぞれ記録するのがよい。
+  </div>
+
+  <p>
+    ただし、今回参照した情報だけでは、Gemini 4 Argonの
+    固定リクエスト数やトークン数を確定できない。
+    提供状況もアカウントやアプリのバージョンによって
+    異なる可能性がある。
+  </p>
+
+  <p class="small">
+    この項目は2026年10月の報道・利用者情報に基づくものであり、
+    公式仕様の確定情報と区別して扱う必要がある。
+  </p>
+</section>
+
+<section>
+  <h2>7. 日本のユーザーが注意すること</h2>
+  <ul>
+    <li>追加AIクレジットの購入可否は、居住地域やサービス条件によって異なる。</li>
+    <li>日本で追加購入できるとは限らないため、残量回復を前提に作業計画を立てない。</li>
+    <li>追加消費に関する設定項目が表示される場合は、内容を確認する。</li>
+    <li>モデルの利用枠、更新予定時刻、利用条件はアプリの表示を優先する。</li>
+  </ul>
+  <p class="small">
+    追加クレジットの地域制限については、
+    Google OneおよびAntigravityの最新の公式案内を確認すること。
+  </p>
+</section>
+
+<section>
+  <h2>8. 実際にどのくらい開発できるか測る方法</h2>
+  <p>
+    ベンチマークよりも、自分が実際に行う作業を使って
+    消費量を測る方が実用的である。
+  </p>
+
+  <ol>
+    <li>AntigravityのSettingsを開く。</li>
+    <li>使用モデル、5時間枠の残量、週次枠の残量を記録する。</li>
+    <li>普段行うHTML作成やサイト修正を1件実行する。</li>
+    <li>作業後の残量を再度記録する。</li>
+    <li>同様の作業を数回行い、消費割合を比較する。</li>
+  </ol>
+
+  <table>
+    <thead>
+      <tr><th>記録項目</th><th>記録例</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>日時</td><td>10月17日 10:00</td></tr>
+      <tr><td>使用モデル</td><td>実際に表示されたモデル名</td></tr>
+      <tr><td>作業内容</td><td>HTMLページの新規作成</td></tr>
+      <tr><td>作業前の残量</td><td>画面表示の数値・割合</td></tr>
+      <tr><td>作業後の残量</td><td>画面表示の数値・割合</td></tr>
+      <tr><td>実行時間</td><td>実測時間</td></tr>
+      <tr><td>更新予定時刻</td><td>画面に表示された日時</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout success">
+    <strong>ポイント：</strong>
+    「1回の作業で何%減るか」を測ると、
+    自分の普段の開発作業を何件程度続けられるか予測しやすくなる。
+    ただし、作業内容が変われば消費量も変わる。
+  </div>
+</section>
+
+<section>
+  <h2>9. HTML作成・GitHub Pages用途での節約策</h2>
+  <h3>① 指示を最初にまとめる</h3>
+  <p>
+    デザイン、必要な機能、対象ファイル、完成条件をまとめて伝え、
+    小さな修正指示を何度も繰り返すのを減らす。
+  </p>
+
+  <h3>② 完成条件を明確にする</h3>
+  <p>
+    「スマートフォンで表示できる」「リンク切れがない」
+    「既存機能を壊さない」など、検証条件を先に指定する。
+  </p>
+
+  <h3>③ 不要なブラウザ検証を減らす</h3>
+  <p>
+    変更のたびに大規模な検証を繰り返すのではなく、
+    必要な箇所に絞って確認する。
+  </p>
+
+  <h3>④ モデルの用途を分ける</h3>
+  <p>
+    利用可能なモデルと利用条件に応じて、軽微な修正と
+    複雑な設計・デバッグを使い分ける。
+    ただし、軽いモデルの方が必ず利用枠を節約できるとは限らない。
+  </p>
+</section>
+
+<section>
+  <h2>10. 総合評価</h2>
+  <table>
+    <thead><tr><th>評価項目</th><th>結論</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>公式に定められた回数</td>
+        <td>一律の固定回数は非公表</td>
+      </tr>
+      <tr>
+        <td>短期利用枠</td>
+        <td>5時間単位の更新</td>
+      </tr>
+      <tr>
+        <td>長期利用枠</td>
+        <td>週次上限あり</td>
+      </tr>
+      <tr>
+        <td>開発量の実測</td>
+        <td>特定ベンチマークでは約80〜120タスク</td>
+      </tr>
+      <tr>
+        <td>API価格相当額</td>
+        <td>利用者による推定はあるが公式の給付額ではない</td>
+      </tr>
+      <tr>
+        <td>利用枠の変化</td>
+        <td>2026年10月の利用者報告には消費増加の声があるが、個人報告にとどまる</td>
+      </tr>
+      <tr>
+        <td>最も確実な確認方法</td>
+        <td>Antigravityの設定画面と自分の実測記録</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout success">
+    <strong>最終結論</strong>
+    <p>
+      Google AI ProのAntigravity専用枠は、開発作業を継続するための
+      利用上限を備えているが、固定回数を保証するものではない。
+      2026年10月時点では、5時間枠と週次上限を分けて考え、
+      モデル別の残量を確認しながら使うのが最も確実である。
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>11. 参考資料・情報源</h2>
+  <ol>
+    <li>
+      <a href="https://www.antigravity.google/docs/plans"
+         target="_blank" rel="noopener">
+        Google Antigravity公式プラン説明
+      </a>
+      <p class="small">プラン、利用枠、アクセス条件の確認先。</p>
+    </li>
+    <li>
+      <a href="https://electricitybench.com/limits/antigravity-cli/"
+         target="_blank" rel="noopener">
+        Electricity Bench — Antigravity CLI usage limits
+      </a>
+      <p class="small">2026年9月公開の独立系ベンチマーク。</p>
+    </li>
+    <li>
+      <a href="https://discuss.ai.google.dev/t/estimating-included-quota-in-google-ai-pro/183629"
+         target="_blank" rel="noopener">
+        Google AI Developers Forum — Estimating included quota
+      </a>
+      <p class="small">利用者によるトークン数とAPI価格相当額の推定。</p>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/r/google_antigravity/comments/1wygnf4/google_ai_pro_plan_decreased_antigravity_tokens/"
+         target="_blank" rel="noopener">
+        Reddit — Google AI Proの利用枠に関する投稿
+      </a>
+      <p class="small">2026年10月の利用者による消費量の報告。</p>
+    </li>
+    <li>
+      <a href="https://www.antigravity.google/changelog"
+         target="_blank" rel="noopener">
+        Antigravity公式更新履歴
+      </a>
+      <p class="small">モデル追加や機能変更の確認先。</p>
+    </li>
+  </ol>
+  <p class="small">
+    注：公式仕様、独立系の測定、フォーラム投稿、SNSの体験談は
+    信頼性と意味が異なる。特に数値の比較では、
+    測定条件と公開日を必ず確認すること。
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <p>Google AI Pro / Antigravity 利用枠調査レポート</p>
+  <p>
+    調査基準日：2026年10月17日。
+    利用条件は変更される可能性があるため、
+    最新の公式資料とアプリ上の表示を優先してください。
+  </p>
+</footer>
+
+</body>
+</html>

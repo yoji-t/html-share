@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>はやぶさ1とはやぶさ2｜日本の小惑星探査</title>
+<style>
+:root {
+  --navy: #173b60;
+  --blue: #2878b5;
+  --sky: #eaf5ff;
+  --orange: #f4a340;
+  --text: #263747;
+  --muted: #5e7182;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Noto Sans JP", sans-serif;
+  background: #f3f7fb;
+  color: var(--text);
+  line-height: 1.85;
+}
+header {
+  background: linear-gradient(135deg, #173b60, #2878b5);
+  color: white;
+  padding: 52px 20px;
+  text-align: center;
+}
+header h1 { font-size: clamp(27px, 5vw, 42px); margin: 0 0 12px; }
+header p { margin: 0; color: #e3f2ff; }
+main { max-width: 1000px; margin: auto; padding: 24px 16px 48px; }
+section {
+  background: white;
+  padding: 24px;
+  margin: 20px 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px #173b6010;
+}
+h2 {
+  color: var(--navy);
+  font-size: 24px;
+  border-left: 5px solid var(--blue);
+  padding-left: 12px;
+  margin-top: 0;
+}
+h3 { color: var(--blue); margin-bottom: 8px; }
+.lead { font-size: 17px; }
+.highlight {
+  background: #fff5e5;
+  border-left: 4px solid var(--orange);
+  padding: 14px 18px;
+  border-radius: 8px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--sky);
+  padding: 20px;
+  border-radius: 12px;
+}
+.card h3 { margin-top: 0; }
+.tag {
+  display: inline-block;
+  background: #d5eaff;
+  color: #174d7c;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+table { width: 100%; border-collapse: collapse; }
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #dce5ee;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: #eaf5ff; color: var(--navy); }
+.timeline {
+  border-left: 3px solid #b7d9f5;
+  padding-left: 20px;
+}
+.event { position: relative; margin: 18px 0; }
+.event::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 9px;
+  width: 12px;
+  height: 12px;
+  background: var(--blue);
+  border-radius: 50%;
+}
+.date { color: var(--blue); font-weight: bold; }
+a { color: #1767a8; overflow-wrap: anywhere; }
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  padding: 24px 16px;
+}
+@media (max-width: 600px) {
+  section { padding: 18px; }
+  th, td { padding: 8px; font-size: 14px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>はやぶさ1とはやぶさ2</h1>
+  <p>小惑星のかけらから、太陽系と生命の起源に迫る日本の宇宙探査</p>
+</header>
+
+<main>
+
+<section>
+  <h2>1. そもそも、どんな探査機？</h2>
+  <p class="lead">
+    「はやぶさ」と「はやぶさ2」は、小惑星に向かい、
+    その表面などの物質を採取して地球に持ち帰ることを目指した探査機です。
+    このような探査を<strong>サンプルリターン</strong>と呼びます。
+  </p>
+  <p>
+    小惑星には、太陽系が誕生した約46億年前の物質や、
+    惑星が形成される過程を知る手がかりが残っていると考えられています。
+    地球上の望遠鏡で観測するだけでなく、実際の試料を地球の研究施設で
+    詳しく分析することが、これらのミッションの大きな目的です。
+  </p>
+  <div class="highlight">
+    <strong>最大の違い：</strong>
+    はやぶさ1は小惑星探査とサンプル回収の基礎技術を実証。
+    はやぶさ2はその技術を改良し、地下の物質まで採取することに挑戦しました。
+  </div>
+</section>
+
+<section>
+  <h2>2. 初代「はやぶさ」</h2>
+  <div class="cards">
+    <div class="card">
+      <span class="tag">2003年打ち上げ</span>
+      <h3>探査対象：イトカワ</h3>
+      <p>
+        地球に近づく軌道を持つ小惑星です。
+        はやぶさは2005年に到着し、形状や表面の様子などを観測しました。
+      </p>
+    </div>
+    <div class="card">
+      <span class="tag">2010年地球帰還</span>
+      <h3>世界初の快挙</h3>
+      <p>
+        多くのトラブルを乗り越え、小惑星の物質を収めたカプセルを地球に帰還させました。
+        回収された微粒子から、イトカワ由来の物質が確認されました。
+      </p>
+    </div>
+  </div>
+
+  <h3>どんな困難があったのか？</h3>
+  <ul>
+    <li>姿勢制御や通信、燃料漏れなど、さまざまな問題が発生。</li>
+    <li>化学エンジンの不具合などにより、地球への帰還が大幅に遅延。</li>
+    <li>イオンエンジンを工夫して運用するなど、地上チームが復旧に取り組んだ。</li>
+  </ul>
+  <p>
+    当初の計画どおりには進まなかったものの、2010年6月13日にカプセルが
+    地球の大気圏に再突入。カプセルはオーストラリアで回収されました。
+    分析により、イトカワの微粒子が入っていることが確認されました。
+  </p>
+  <div class="highlight">
+    <strong>はやぶさ1の意義：</strong>
+    小惑星まで往復し、実際の試料を地球に持ち帰るという、
+    極めて難しい宇宙探査技術を世界に先駆けて実証しました。
+  </div>
+</section>
+
+<section>
+  <h2>3. 「はやぶさ2」</h2>
+  <div class="cards">
+    <div class="card">
+      <span class="tag">2014年打ち上げ</span>
+      <h3>探査対象：リュウグウ</h3>
+      <p>
+        水や有機物に関係する物質を含むと考えられるC型小惑星。
+        太陽系初期の環境を調べるために選ばれました。
+      </p>
+    </div>
+    <div class="card">
+      <span class="tag">2020年地球帰還</span>
+      <h3>約5.4グラムを回収</h3>
+      <p>
+        リュウグウの試料を地球に持ち帰ることに成功。
+        目標としていた0.1グラムを大きく上回る量でした。
+      </p>
+    </div>
+  </div>
+
+  <h3>はやぶさ1から進化したポイント</h3>
+  <ul>
+    <li><strong>信頼性の向上：</strong>初代の経験をもとに、探査機や運用方法を改良。</li>
+    <li><strong>2回のタッチダウン：</strong>2019年2月と7月に小惑星表面に接近・着地して試料を採取。</li>
+    <li><strong>人工クレーターの作成：</strong>衝突装置を使い、小惑星表面に人工クレーターを作ることに成功。</li>
+    <li><strong>地下物質の採取：</strong>衝突で露出した地下由来の物質を採取し、宇宙空間の風化などの影響が少ない試料を持ち帰った。</li>
+    <li><strong>小型探査機の活用：</strong>小型ローバーなどを投下し、リュウグウ表面を調査。</li>
+  </ul>
+  <p>
+    はやぶさ2は2019年11月にリュウグウを出発し、
+    2020年12月6日に試料入りカプセルがオーストラリアで回収されました。
+    探査機本体はその後も宇宙を航行しています。
+  </p>
+  <div class="highlight">
+    <strong>はやぶさ2の意義：</strong>
+    小惑星表面だけでなく地下由来の試料も持ち帰り、
+    太陽系の成り立ちや水・有機物の起源を研究するための貴重な資料を提供しました。
+  </div>
+</section>
+
+<section>
+  <h2>4. 2機を比較すると？</h2>
+  <table>
+    <thead>
+      <tr><th>比較項目</th><th>はやぶさ1</th><th>はやぶさ2</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>打ち上げ</td><td>2003年5月</td><td>2014年12月</td></tr>
+      <tr><td>探査対象</td><td>イトカワ</td><td>リュウグウ</td></tr>
+      <tr><td>小惑星の分類</td><td>S型</td><td>C型</td></tr>
+      <tr><td>主な目的</td><td>往復探査・試料回収技術の実証</td><td>試料回収技術の向上と科学探査</td></tr>
+      <tr><td>地球帰還</td><td>2010年6月</td><td>2020年12月</td></tr>
+      <tr><td>試料の成果</td><td>イトカワ由来の微粒子</td><td>リュウグウの試料約5.4g</td></tr>
+      <tr><td>大きな特徴</td><td>数々の故障を克服して帰還</td><td>人工クレーターを作り地下物質も採取</td></tr>
+    </tbody>
+  </table>
+  <p>
+    ※S型・C型は、小惑星の反射スペクトルなどに基づく分類です。
+    大まかにいうと、S型はケイ酸塩鉱物などに富み、
+    C型は炭素を含む物質に富むタイプです。
+  </p>
+</section>
+
+<section>
+  <h2>5. ミッションの年表</h2>
+  <div class="timeline">
+    <div class="event">
+      <div class="date">2003年5月</div>
+      はやぶさ1を打ち上げ。
+    </div>
+    <div class="event">
+      <div class="date">2005年</div>
+      イトカワに到着し、観測と着地・試料採取に挑戦。
+    </div>
+    <div class="event">
+      <div class="date">2010年6月</div>
+      はやぶさ1のカプセルが地球に帰還。イトカワ由来の粒子を確認。
+    </div>
+    <div class="event">
+      <div class="date">2014年12月</div>
+      はやぶさ2を打ち上げ。
+    </div>
+    <div class="event">
+      <div class="date">2018年6月</div>
+      リュウグウに到着。
+    </div>
+    <div class="event">
+      <div class="date">2019年</div>
+      2回のタッチダウンと人工クレーター生成に成功。
+    </div>
+    <div class="event">
+      <div class="date">2020年12月</div>
+      はやぶさ2のカプセルが地球に帰還。約5.4gの試料を回収。
+    </div>
+    <div class="event">
+      <div class="date">2021年以降</div>
+      試料の分析を進めるとともに、探査機本体は拡張ミッションへ。
+    </div>
+    <div class="event">
+      <div class="date">2031年目標</div>
+      拡張ミッションでは、小惑星1998 KY26への到着・探査を目指す。
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>6. 持ち帰った試料から何がわかった？</h2>
+  <p>
+    はやぶさ2が持ち帰ったリュウグウの試料からは、水と関係する鉱物や、
+    アミノ酸を含む多様な有機物などが確認されています。
+    これらは、太陽系初期の物質がどのように変化してきたのかを理解する
+    重要な手がかりです。
+  </p>
+  <p>
+    ただし、試料から有機物が見つかったことは、
+    小惑星に生命が存在したことや、地球の生命が小惑星から直接生まれたことを
+    意味するわけではありません。地球の水や生命の材料の起源については、
+    ほかの天体の観測・試料分析などと合わせて研究が続いています。
+  </p>
+</section>
+
+<section>
+  <h2>7. まとめ：なぜ重要なのか？</h2>
+  <ol>
+    <li><strong>初代はやぶさ：</strong>困難を乗り越え、小惑星の物質を地球に持ち帰る技術を実証した。</li>
+    <li><strong>はやぶさ2：</strong>その経験を生かして技術を改良し、表面と地下由来の試料を回収した。</li>
+    <li><strong>科学的成果：</strong>地球の水や生命の原材料、太陽系の誕生と進化を研究するための資料を提供した。</li>
+    <li><strong>将来への貢献：</strong>深宇宙での航行、精密な着地、試料回収などの技術は、今後の惑星探査にも役立つ。</li>
+  </ol>
+  <p class="lead">
+    はやぶさ1が「道を切り開き」、はやぶさ2が「その道を発展させた」。
+    2機の成果は、日本の宇宙探査を代表する大きな業績です。
+  </p>
+</section>
+
+<section>
+  <h2>参考資料・公式情報</h2>
+  <ul>
+    <li>
+      <a href="https://www.isas.jaxa.jp/missions/spacecraft/past/hayabusa.html" target="_blank" rel="noopener">
+        JAXA宇宙科学研究所：小惑星探査機「はやぶさ」
+      </a>
+    </li>
+    <li>
+      <a href="https://www.isas.jaxa.jp/missions/spacecraft/current/hayabusa2" target="_blank" rel="noopener">
+        JAXA宇宙科学研究所：小惑星探査機「はやぶさ2」
+      </a>
+    </li>
+    <li>
+      <a href="https://www.hayabusa2.jaxa.jp/mission/" target="_blank" rel="noopener">
+        JAXAはやぶさ2プロジェクト：ミッション
+      </a>
+    </li>
+    <li>
+      <a href="https://curation.isas.jaxa.jp/research/hayabusa2/" target="_blank" rel="noopener">
+        JAXA宇宙科学研究所：はやぶさ2とリュウグウ
+      </a>
+    </li>
+  </ul>
+  <p>出典：JAXA公式資料。年表および成果の記述は、公開されているミッション情報に基づいています。</p>
+</section>
+
+</main>
+
+<footer>
+  はやぶさ1・はやぶさ2 解説資料
+</footer>
+
+</body>
+</html>

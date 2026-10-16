@@ -1,5 +1,21 @@
 ﻿[
     {
+        "id":  "hayabusa-1-and-2-asteroid-exploration",
+        "title":  "はやぶさ1とはやぶさ2｜日本の小惑星探査",
+        "filename":  "posts/hayabusa-1-and-2-asteroid-exploration.html",
+        "createdAt":  "2026-10-16T20:16:50+09:00",
+        "dateFormatted":  "2026/10/16",
+        "description":  "初代はやぶさ（イトカワ）と、はやぶさ2（リュウグウ）の目的、技術的進化、人工クレーターと地下試料回収の成果、ミッション年表の比較解説まとめ。",
+        "tags":  [
+                     "はやぶさ",
+                     "はやぶさ2",
+                     "JAXA",
+                     "宇宙探査",
+                     "小惑星",
+                     "理科・科学"
+                 ]
+    },
+    {
         "id":  "earthquake-early-warning-misreport-20261016",
         "title":  "2026年10月16日 緊急地震速報の誤報原因",
         "filename":  "posts/earthquake-early-warning-misreport-20261016.html",

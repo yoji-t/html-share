@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026年10月16日 緊急地震速報の誤報原因</title>
+  <style>
+    :root {
+      --navy: #17365d;
+      --blue: #2764a5;
+      --pale-blue: #eef6ff;
+      --red: #c0392b;
+      --pale-red: #fff0ed;
+      --green: #24754a;
+      --pale-green: #eaf7ef;
+      --gray: #526174;
+      --line: #dce4ed;
+      --bg: #f4f7fb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #253247;
+      font-family: -apple-system, BlinkMacSystemFont,
+        "Segoe UI", "Noto Sans JP", Meiryo, sans-serif;
+      line-height: 1.85;
+    }
+
+    header {
+      background: linear-gradient(135deg, #17365d, #286ca8);
+      color: white;
+      padding: 42px 20px;
+    }
+
+    .header-inner, main, footer {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .label {
+      display: inline-block;
+      padding: 3px 10px;
+      border: 1px solid #ffffff80;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+
+    h1 {
+      font-size: clamp(25px, 5vw, 37px);
+      line-height: 1.45;
+      margin: 16px 0;
+    }
+
+    header p { color: #e4efff; margin-bottom: 0; }
+
+    main { padding: 24px 16px 48px; }
+
+    section {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 18px 0;
+      box-shadow: 0 3px 12px #233b5510;
+    }
+
+    h2 {
+      font-size: 22px;
+      color: var(--navy);
+      margin: 0 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    h3 { font-size: 17px; color: var(--navy); }
+
+    .summary {
+      background: var(--pale-red);
+      border-left: 5px solid var(--red);
+    }
+
+    .summary strong { color: #982d24; }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .metric {
+      padding: 16px;
+      border-radius: 9px;
+      background: var(--pale-blue);
+    }
+
+    .metric span {
+      display: block;
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: clamp(22px, 4vw, 30px);
+      color: var(--blue);
+      overflow-wrap: anywhere;
+    }
+
+    .timeline {
+      border-left: 3px solid #a8c7eb;
+      margin-left: 8px;
+      padding-left: 20px;
+    }
+
+    .event {
+      position: relative;
+      padding: 0 0 20px;
+    }
+
+    .event::before {
+      content: "";
+      position: absolute;
+      left: -27px;
+      top: 9px;
+      width: 11px;
+      height: 11px;
+      background: var(--blue);
+      border-radius: 50%;
+    }
+
+    .event time {
+      font-weight: bold;
+      color: var(--blue);
+    }
+
+    .cause {
+      padding: 16px;
+      margin: 14px 0;
+      background: #f5f8fc;
+      border-radius: 8px;
+    }
+
+    .cause strong { color: var(--navy); }
+
+    .status {
+      display: inline-block;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 5px;
+      background: var(--pale-green);
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    .pending {
+      background: #fff2d9;
+      color: #875500;
+    }
+
+    .note {
+      background: var(--pale-blue);
+      padding: 16px;
+      border-radius: 8px;
+    }
+
+    ul { padding-left: 1.4em; }
+    li { margin: 8px 0; }
+
+    a { color: #175ca3; overflow-wrap: anywhere; }
+
+    .sources li { margin-bottom: 15px; }
+
+    .small {
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 0 20px 30px;
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+    @media (max-width: 520px) {
+      section { padding: 18px; }
+      .metrics { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      body { background: white; }
+      section { box-shadow: none; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="label">2026年10月16日・速報検証レポート</span>
+    <h1>緊急地震速報はなぜ誤報になったのか？</h1>
+    <p>
+      気象庁の公式発表と当日報道に基づく原因分析。
+      判明した技術的な問題と、今後の調査事項を整理する。
+    </p>
+  </div>
+</header>
+
+<main>
+
+  <section class="summary">
+    <h2>結論：地震の規模と震源の処理に問題</h2>
+    <p>
+      2026年10月16日昼、気象庁は千島列島を震源とする
+      マグニチュード（M）9.9、最大震度7の地震を想定し、
+      北海道から中部地方に緊急地震速報（警報）を発表した。
+    </p>
+    <p>
+      しかし、実際に発生したのはカムチャツカ半島付近の
+      M6.9の地震だった。気象庁は速報処理で地震の規模を
+      過大に推定し、約8分後に警報を取り消した。
+    </p>
+    <p>
+      <strong>
+        夕方の気象庁の説明によると、遠方の地震に国内用の
+        マグニチュード計算式を適用したことに加え、
+        マグニチュード計算と震度予測に使った震源が
+        異なっていたことが判明した。
+      </strong>
+    </p>
+    <p>
+      ただし、なぜこのような処理になったのかという
+      根本原因は、発表時点では調査中である。
+    </p>
+    <p class="small">
+      出典：
+      <a href="https://www.jma.go.jp/jma/press/2610/16c/202610161730.html">
+        気象庁・10月16日17時30分発表（第2報）
+      </a>
+    </p>
+  </section>
+
+  <section>
+    <h2>1. 今回、何が起きたのか</h2>
+
+    <div class="metrics">
+      <div class="metric">
+        <span>速報で推定した規模</span>
+        <strong>M9.9</strong>
+      </div>
+      <div class="metric">
+        <span>実際に発生した地震</span>
+        <strong>M6.9</strong>
+      </div>
+      <div class="metric">
+        <span>速報の予想最大震度</span>
+        <strong>震度7</strong>
+      </div>
+      <div class="metric">
+        <span>函館市で観測された震度</span>
+        <strong>震度1</strong>
+      </div>
+    </div>
+
+    <p class="small">
+      注：M9.9は速報処理による推定値であり、
+      実際にM9.9の地震が起きたわけではない。
+      観測された震度は地域によって異なる。
+    </p>
+  </section>
+
+  <section>
+    <h2>2. 発生から取り消しまでの経緯</h2>
+
+    <div class="timeline">
+      <div class="event">
+        <time>12時38分ごろ</time>
+        <p>
+          カムチャツカ半島付近でM6.9の地震が発生。
+          気象庁の緊急地震速報システムが地震波を検知した。
+        </p>
+      </div>
+
+      <div class="event">
+        <time>12時40分ごろ</time>
+        <p>
+          速報処理で震源を千島列島とし、M9.9と過大に推定。
+          北海道から中部地方にかけて警報が発表された。
+        </p>
+      </div>
+
+      <div class="event">
+        <time>12時48分ごろ</time>
+        <p>
+          気象庁が緊急地震速報（警報）を取り消した。
+          実際の揺れは速報の予測と大きく異なっていた。
+        </p>
+      </div>
+
+      <div class="event">
+        <time>14時ごろ</time>
+        <p>
+          気象庁が会見を開き、地震の規模を過大に推定した
+          ことを説明して謝罪。サイバー攻撃ではないとの
+          認識を示した。
+        </p>
+      </div>
+
+      <div class="event">
+        <time>17時30分</time>
+        <p>
+          第2報を公表。遠方の地震に国内用の計算式を適用した
+          こと、規模の計算と震度予測に用いた震源が異なって
+          いたことを明らかにした。
+        </p>
+      </div>
+    </div>
+
+    <p class="small">
+      参考：
+      <a href="https://www.data.jma.go.jp/eew/data/nc/pub_hist/2026/10/20261016123810/reachtime/reachtime.html">
+        気象庁・緊急地震速報の発表記録
+      </a>
+    </p>
+  </section>
+
+  <section>
+    <h2>3. 誤報の技術的な原因</h2>
+
+    <div class="cause">
+      <h3>原因① 遠方の地震に国内用の計算式を適用</h3>
+      <span class="status">気象庁が公表</span>
+      <p>
+        気象庁の第2報では、日本から非常に遠い地震に対して、
+        国内用のマグニチュードを求める式を適用したと説明している。
+      </p>
+      <p>
+        震源が遠い地震に対して計算式の適用条件が適切でなければ、
+        地震の規模を正しく評価できない可能性がある。
+        今回は規模が過大に推定され、M9.9という値につながった。
+      </p>
+      <p>
+        ただし、計算式の適用だけで今回の異常値が生じたのか、
+        具体的にどの計算過程に問題があったのかは、
+        第2報だけでは確定できない。
+      </p>
+    </div>
+
+    <div class="cause">
+      <h3>原因② 規模計算と震度予測で震源が食い違った</h3>
+      <span class="status">気象庁が公表</span>
+      <p>
+        本来、マグニチュードの計算と震度の予測に使う震源は、
+        同一の地点である必要がある。
+      </p>
+      <p>
+        ところが今回は、両方の処理で用いられた震源が異なっていた。
+        テレビ朝日の報道によると、震度予測に使われた震源は、
+        最初に震源とした場所よりも日本に1000km以上近い位置だった。
+      </p>
+      <p>
+        そのため、実際よりも日本に近い場所でM9.9の巨大地震が
+        起きたかのような予測となり、警報の対象地域が広がった。
+      </p>
+    </div>
+
+    <div class="cause">
+      <h3>原因③ なぜ異なる震源が使われたのか</h3>
+      <span class="pending">根本原因は調査中</span>
+      <p>
+        震源情報が食い違った理由については、
+        気象庁が引き続き調査するとしている。
+      </p>
+      <p>
+        現時点で、特定のプログラムの不具合、データの取り違え、
+        更新処理の競合などのどれが原因だったと断定することはできない。
+        これらは今後の調査で確認すべき可能性であり、
+        確定した事実ではない。
+      </p>
+    </div>
+
+    <p class="small">
+      主要出典：
+      <a href="https://www.jma.go.jp/jma/press/2610/16c/kaisetsu202610161730.pdf">
+        気象庁・第2報の資料全文（PDF）
+      </a>
+      ／
+      <a href="https://news.tv-asahi.co.jp/news_society/articles/000540776.html">
+        テレビ朝日・震源の食い違いに関する報道
+      </a>
+    </p>
+  </section>
+
+  <section>
+    <h2>4. サイバー攻撃が原因なのか？</h2>
+
+    <p>
+      気象庁は当日の会見で、サイバー攻撃によるものではない
+      との認識を示した。報道によると、当該時間帯に外部からの
+      アクセスは確認されていないという。
+    </p>
+
+    <p>
+      したがって、現時点で公表された情報からは、
+      外部からの攻撃よりも、速報処理の内部で発生した
+      技術的な問題が焦点となっている。
+    </p>
+
+    <p class="note">
+      注意：サイバー攻撃ではないという説明と、
+      ソフトウェアの処理に問題がなかったということは別である。
+      内部の計算・情報処理に不具合があった可能性については、
+      引き続き調査が必要となる。
+    </p>
+
+    <p class="small">
+      出典：
+      <a href="https://www.itmedia.co.jp/news/article/2610/16/2000002333/">
+        ITmedia NEWS・気象庁の会見報道
+      </a>
+    </p>
+  </section>
+
+  <section>
+    <h2>5. なぜ、これほど大きな誤報になったのか</h2>
+
+    <p>
+      今回は、単純に地震の規模を見誤っただけではなく、
+      地震の規模を求める処理と、日本の揺れを予測する処理の
+      両方に関係する問題が確認されている。
+    </p>
+
+    <ul>
+      <li>
+        <strong>遠方の地震への計算式の適用：</strong>
+        国内用の式が使われ、規模が過大に推定された。
+      </li>
+      <li>
+        <strong>震源情報の不一致：</strong>
+        規模の計算と震度の予測に異なる震源が使われた。
+      </li>
+      <li>
+        <strong>広範囲への警報：</strong>
+        M9.9という規模と日本に近い震源の組み合わせにより、
+        広い範囲で強い揺れが予測された。
+      </li>
+    </ul>
+
+    <p>
+      ただし、これらは公表された処理上の問題を整理したものであり、
+      なぜ異常な計算結果を発表前に検知できなかったのか、
+      どの段階で異常値を排除できたのかについては、
+      追加の検証が必要である。
+    </p>
+  </section>
+
+  <section>
+    <h2>6. 今後、気象庁に求められる検証</h2>
+
+    <ul>
+      <li>
+        遠方の地震に国内用の計算式が適用された経緯の解明
+      </li>
+      <li>
+        マグニチュード計算と震度予測で震源が異なった原因の特定
+      </li>
+      <li>
+        M9.9という異常な推定値を検出・抑制する仕組みの検証
+      </li>
+      <li>
+        警報を発表する前の整合性チェックの有効性の確認
+      </li>
+      <li>
+        再発防止策、システム改修の内容と実施時期の公表
+      </li>
+    </ul>
+
+    <p class="small">
+      以上は再発防止の観点から整理した確認事項であり、
+      気象庁がすべての対策を正式決定したという意味ではない。
+    </p>
+  </section>
+
+  <section>
+    <h2>7. 私たちは今後、どう受け止めればよいか</h2>
+
+    <p>
+      今回の誤報があったからといって、今後の緊急地震速報を
+      無視するのは適切ではない。緊急地震速報は、地震発生後に
+      観測されたデータから強い揺れを予測する仕組みであり、
+      予測には時間的・技術的な制約がある。
+    </p>
+
+    <ul>
+      <li>緊急地震速報を受けたら、まず身の安全を確保する。</li>
+      <li>警報の取り消しや続報が出た場合は、公式情報を確認する。</li>
+      <li>気象庁による原因調査と再発防止策の公表を確認する。</li>
+    </ul>
+
+    <p>
+      今回の重要な教訓は、予測値が間違う可能性をゼロにすること
+      だけでなく、異常な値や整合しない情報をシステムが検知し、
+      誤った警報の発表を防ぐ仕組みを検証する必要があるという点だ。
+    </p>
+  </section>
+
+  <section>
+    <h2>参考資料・情報源</h2>
+
+    <ol class="sources">
+      <li>
+        <strong>気象庁（2026年10月16日 17時30分）</strong><br>
+        緊急地震速報（警報）について（第2報）。<br>
+        <a href="https://www.jma.go.jp/jma/press/2610/16c/202610161730.html">
+          公式発表ページ
+        </a><br>
+        <a href="https://www.jma.go.jp/jma/press/2610/16c/kaisetsu202610161730.pdf">
+          公式発表資料PDF
+        </a>
+      </li>
+
+      <li>
+        <strong>気象庁（2026年10月16日 14時）</strong><br>
+        緊急地震速報（警報）について。<br>
+        <a href="https://www.jma.go.jp/jma/press/2610/16b/202610161400.html">
+          公式発表ページ
+        </a>
+      </li>
+
+      <li>
+        <strong>テレビ朝日（2026年10月16日 18時26分）</strong><br>
+        マグニチュード計算と震度予測に用いた震源が別々だった問題。<br>
+        <a href="https://news.tv-asahi.co.jp/news_society/articles/000540776.html">
+          報道記事
+        </a>
+      </li>
+
+      <li>
+        <strong>ITmedia NEWS（2026年10月16日）</strong><br>
+        気象庁の説明とサイバー攻撃の可能性に関する報道。<br>
+        <a href="https://www.itmedia.co.jp/news/article/2610/16/2000002333/">
+          報道記事
+        </a>
+      </li>
+
+      <li>
+        <strong>気象庁・緊急地震速報の発表記録</strong><br>
+        <a href="https://www.data.jma.go.jp/eew/data/nc/pub_hist/2026/10/20261016123810/reachtime/reachtime.html">
+          発表時刻・速報内容の記録
+        </a>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>調査結果のまとめ</h2>
+
+    <p>
+      <strong>
+        今回の誤報は、実際に起きた地震をM9.9と過大に推定し、
+        さらに規模計算と震度予測で異なる震源を使ったことによって、
+        広範囲への警報につながった。
+      </strong>
+    </p>
+
+    <p>
+      遠方の地震への計算式の適用と震源情報の不一致は、
+      気象庁が2026年10月16日夕方までに公表した事実である。
+      一方、なぜそのような処理になったのかという根本原因と、
+      具体的な再発防止策については、続報による確認が必要だ。
+    </p>
+
+    <p class="small">
+      作成日：2026年10月16日<br>
+      本資料は同日までに公表された情報に基づく。
+      後日、調査結果や説明が更新される可能性がある。
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    本資料は情報整理を目的としたものであり、
+    気象庁の公式発表および報道資料の内容を超えて
+    原因を断定するものではありません。
+  </p>
+</footer>
+
+</body>
+</html>

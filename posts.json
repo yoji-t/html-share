@@ -1,5 +1,21 @@
 ﻿[
     {
+        "id":  "earthquake-early-warning-misreport-20261016",
+        "title":  "2026年10月16日 緊急地震速報の誤報原因",
+        "filename":  "posts/earthquake-early-warning-misreport-20261016.html",
+        "createdAt":  "2026-10-16T19:32:23+09:00",
+        "dateFormatted":  "2026/10/16",
+        "description":  "カムチャツカ半島のM6.9地震に対してなぜM9.9・最大震度7の過大予測・広域警報が出されたのか？国内用計算式の適用と震源情報の食い違いに関する気象庁公式発表と原因分析まとめ。",
+        "tags":  [
+                     "緊急地震速報",
+                     "気象庁",
+                     "誤報",
+                     "地震",
+                     "システム障害",
+                     "技術検証"
+                 ]
+    },
+    {
         "id":  "japan-patent-litigation-recent",
         "title":  "国内知的財産訴訟・判決速報まとめ",
         "filename":  "posts/japan-patent-litigation-recent.html",

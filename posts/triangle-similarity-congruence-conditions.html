@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>三角形の相似条件と合同条件</title>
+  <style>
+    body {
+      font-family: "Yu Gothic", "Meiryo", sans-serif;
+      background: #f4f8ff;
+      color: #263448;
+      line-height: 1.8;
+      margin: 0;
+      padding: 20px;
+    }
+    main {
+      max-width: 850px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #2456a6;
+      font-size: 26px;
+    }
+    h2 {
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin-top: 28px;
+    }
+    .similar h2 {
+      background: #dceaff;
+      color: #174b99;
+    }
+    .congruent h2 {
+      background: #dff5e8;
+      color: #176b43;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      box-shadow: 0 2px 8px #0000000b;
+    }
+    .number {
+      font-size: 19px;
+      font-weight: bold;
+    }
+    .similar .number {
+      color: #2456a6;
+    }
+    .congruent .number {
+      color: #188052;
+    }
+    .example {
+      background: #fff8df;
+      padding: 14px 18px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .important {
+      font-weight: bold;
+      color: #c34b32;
+    }
+    .summary {
+      background: #ffffff;
+      border: 2px solid #9eb9e8;
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 24px;
+    }
+    footer {
+      text-align: center;
+      color: #64748b;
+      margin-top: 28px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>三角形の相似条件と合同条件</h1>
+
+  <section class="similar">
+    <h2>1．三角形の相似条件（3つ）</h2>
+    <p>相似とは、形が同じで、大きさが異なってもよい関係のこと。</p>
+
+    <div class="card">
+      <div class="number">① 3組の辺の比がすべて等しい</div>
+      対応する3組の辺の比が等しい。
+      <p>例：AB／DE ＝ BC／EF ＝ CA／FD</p>
+    </div>
+
+    <div class="card">
+      <div class="number">② 2組の辺の比と、その間の角がそれぞれ等しい</div>
+      2組の対応する辺の比が等しく、その2辺にはさまれた角が等しい。
+      <p>例：AB／DE ＝ AC／DF、∠A＝∠D</p>
+    </div>
+
+    <div class="card">
+      <div class="number">③ 2組の角がそれぞれ等しい</div>
+      2組の対応する角がそれぞれ等しい。
+      <p>例：∠A＝∠D、∠B＝∠E</p>
+    </div>
+  </section>
+
+  <section class="congruent">
+    <h2>2．三角形の合同条件（3つ）</h2>
+    <p>合同とは、形も大きさも同じで、ぴったり重ね合わせられる関係のこと。</p>
+
+    <div class="card">
+      <div class="number">① 3組の辺がそれぞれ等しい</div>
+      対応する3組の辺の長さがそれぞれ等しい。
+    </div>
+
+    <div class="card">
+      <div class="number">② 2組の辺と、その間の角がそれぞれ等しい</div>
+      2組の対応する辺の長さと、その2辺にはさまれた角がそれぞれ等しい。
+    </div>
+
+    <div class="card">
+      <div class="number">③ 1組の辺と、その両端の角がそれぞれ等しい</div>
+      1組の対応する辺の長さと、その辺の両端にある2つの角がそれぞれ等しい。
+    </div>
+  </section>
+
+  <div class="example">
+    <h2>3．相似と合同の違い</h2>
+    <p><strong>相似：</strong>形が同じ。辺の長さは同じ倍率で変わってよい。</p>
+    <p><strong>合同：</strong>形も大きさも同じ。対応する辺の長さも等しい。</p>
+    <p class="important">合同な三角形は、必ず相似でもある（相似比は1：1）。</p>
+  </div>
+
+  <div class="summary">
+    <h2>4．テスト前の暗記ポイント</h2>
+    <p><strong>相似条件：</strong>辺の比3組／辺の比2組＋間の角／角2組</p>
+    <p><strong>合同条件：</strong>辺3組／辺2組＋間の角／辺1組＋両端の角</p>
+    <p>相似は「比」、合同は「長さが等しい」と覚えよう！</p>
+  </div>
+
+  <footer>数学のまとめ：三角形の相似条件と合同条件</footer>
+</main>
+</body>
+</html>

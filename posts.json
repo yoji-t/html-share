@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id":  "triangle-similarity-congruence-conditions",
+        "title":  "三角形の相似条件と合同条件",
+        "filename":  "posts/triangle-similarity-congruence-conditions.html",
+        "createdAt":  "2026-10-16T20:31:40+09:00",
+        "dateFormatted":  "2026/10/16",
+        "description":  "中学数学で必須となる三角形の相似条件3つ・合同条件3つの違いと覚え方、テスト前の暗記ポイントを分かりやすく整理した解説まとめ。",
+        "tags":  [
+                     "数学",
+                     "中学数学",
+                     "幾何",
+                     "図形",
+                     "相似",
+                     "合同",
+                     "勉強"
+                 ]
+    },
+    {
         "id":  "hayabusa-1-and-2-asteroid-exploration",
         "title":  "はやぶさ1とはやぶさ2｜日本の小惑星探査",
         "filename":  "posts/hayabusa-1-and-2-asteroid-exploration.html",

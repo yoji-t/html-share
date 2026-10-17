@@ -1,5 +1,21 @@
 ﻿[
     {
+        "id":  "rakuten-denki-price-revision-202611",
+        "title":  "楽天でんき料金改定まとめ 2026年11月",
+        "filename":  "posts/rakuten-denki-price-revision-202611.html",
+        "createdAt":  "2026-10-18T08:58:20+09:00",
+        "dateFormatted":  "2026/10/18",
+        "description":  "2026年11月1日からの託送料金見直しに伴う楽天でんき（プランS・M・動力・オール電化）のエリア別料金改定単価、月額負担増の目安、注意点まとめ。",
+        "tags":  [
+                     "楽天でんき",
+                     "電気料金",
+                     "料金改定",
+                     "生活",
+                     "節約",
+                     "公共料金"
+                 ]
+    },
+    {
         "id":  "google-ai-pro-antigravity-quota-analysis",
         "title":  "Google AI ProのAntigravity専用枠 徹底調査",
         "filename":  "posts/google-ai-pro-antigravity-quota-analysis.html",

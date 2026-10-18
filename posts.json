@@ -1,5 +1,23 @@
 ﻿[
     {
+        "id":  "pirelli-wo2025-patent-dashboard",
+        "title":  "Pirelli WO2025 特許分析ダッシュボード",
+        "filename":  "posts/pirelli-wo2025-patent-dashboard.html",
+        "createdAt":  "2026-10-19T07:14:59+09:00",
+        "dateFormatted":  "2026/10/19",
+        "description":  "PIRELLI（ピレリ）の2025年公開WO特許49件を分析。タイヤセンシング・製造工程・持続可能ゴム材料・構造用途展開の4領域ポートフォリオとISR競合引用分析（Bridgestone, Continental等）ダッシュボード。",
+        "tags":  [
+                     "特許",
+                     "知財",
+                     "ピレリ",
+                     "タイヤ",
+                     "特許分析",
+                     "ダッシュボード",
+                     "WO特許",
+                     "センシング"
+                 ]
+    },
+    {
         "id":  "pirelli-wo2024-patent-dashboard",
         "title":  "ピレリ WO2024 特許分析ダッシュボード",
         "filename":  "posts/pirelli-wo2024-patent-dashboard.html",

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pirelli WO2025 特許分析ダッシュボード</title>
+<style>
+:root {
+  --navy:#172b4d; --blue:#2457a7; --light:#f2f5fa;
+  --line:#dce3ed; --text:#263447; --muted:#64748b;
+  --red:#b42318; --orange:#a15c00; --green:#18794e;
+}
+* {box-sizing:border-box}
+body {
+  margin:0; background:var(--light); color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",
+  "Noto Sans JP",Meiryo,sans-serif; line-height:1.7;
+}
+header {background:var(--navy);color:white;padding:32px 22px}
+header h1 {margin:0 0 8px;font-size:27px}
+header p {margin:0;color:#dce7f7}
+main {max-width:1200px;margin:auto;padding:22px}
+section,.metric {
+  background:white;border:1px solid var(--line);
+  border-radius:12px;padding:22px;margin-bottom:20px;
+}
+h2 {font-size:21px;color:var(--navy);margin:0 0 15px}
+h3 {font-size:16px;color:var(--navy);margin:18px 0 8px}
+.muted {color:var(--muted);font-size:13px}
+.metrics {display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.metric {margin:0;padding:17px}
+.metric strong {display:block;font-size:29px;color:var(--blue)}
+.metric span {font-size:13px;color:var(--muted)}
+.grid {display:grid;grid-template-columns:1fr 1fr;gap:16px}
+table {width:100%;border-collapse:collapse;font-size:13px}
+th,td {padding:10px;border-bottom:1px solid var(--line);
+text-align:left;vertical-align:top}
+th {background:#edf2f8;color:var(--navy)}
+.table-wrap {overflow-x:auto}
+.tag {display:inline-block;padding:2px 8px;border-radius:5px;
+font-size:12px;background:#eaf0fa;color:var(--blue)}
+.x {color:var(--red);font-weight:bold}
+.y {color:var(--orange);font-weight:bold}
+.ok {color:var(--green);font-weight:bold}
+.notice {background:#fff8e8;border-left:4px solid #d69e2e;
+padding:12px 15px;font-size:13px}
+.bar-row {display:grid;grid-template-columns:145px 1fr 35px;
+align-items:center;gap:10px;margin:12px 0;font-size:13px}
+.bar {height:13px;background:#e6ebf3;border-radius:8px;overflow:hidden}
+.bar i {display:block;height:100%;background:var(--blue)}
+a {color:var(--blue)}
+input,select {padding:10px;border:1px solid #cbd5e1;
+border-radius:6px;font-size:14px;max-width:100%}
+.controls {display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+footer {text-align:center;color:var(--muted);padding:20px;font-size:12px}
+@media(max-width:760px) {
+ .metrics {grid-template-columns:repeat(2,1fr)}
+ .grid {grid-template-columns:1fr}
+ header h1 {font-size:22px}
+ main {padding:12px}
+ section {padding:15px}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Pirelli WO2025 特許分析ダッシュボード</h1>
+  <p>公開特許49件の技術ポートフォリオ・ISR引用文献・競合分析</p>
+  <p class="muted" style="color:#dce7f7">
+    分析対象：Notion「ピレリWO2025」｜基準日：2026年10月19日
+  </p>
+</header>
+
+<main>
+<section>
+<h2>1. エグゼクティブサマリー</h2>
+<p>
+2025年公開の49件を俯瞰すると、Pirelliの技術開発は、
+タイヤそのものの構造・材料に加えて、タイヤ内部のセンサを使った
+状態検知、製造工程の自動化、機能性部材の組込みにも広がっています。
+</p>
+<div class="metrics">
+ <div class="metric"><strong>49件</strong><span>対象WO公報</span></div>
+ <div class="metric"><strong>4領域</strong><span>主要技術領域の整理</span></div>
+ <div class="metric"><strong>要確認</strong><span>全49件のX文献集計</span></div>
+ <div class="metric"><strong>2025年</strong><span>公開年</span></div>
+</div>
+<p class="muted">
+注：49件は対象ページに記載された公報数です。
+同一発明の関連公報や、同じ技術に属する複数案件が含まれる可能性があります。
+</p>
+
+<div class="notice">
+<strong>ISRの読み方：</strong>
+X文献は、単独で新規性または進歩性を否定し得る文献として扱われる区分です。
+Y文献は他の文献との組合せで進歩性に関係し、A文献は背景技術などを示します。
+国際調査段階の評価であり、最終的な各国の特許性判断と同一ではありません。
+</div>
+</section>
+
+<section>
+<h2>2. 技術ポートフォリオ</h2>
+<p>公報タイトル・要約を基にした定性的な分類です。
+厳密な件数比較には49件すべてのIPC・請求項を用いた再分類が必要です。</p>
+
+<div class="bar-row">
+ <span>タイヤセンシング・状態検知</span>
+ <div class="bar"><i style="width:85%"></i></div>
+ <span>重点</span>
+</div>
+<div class="bar-row">
+ <span>製造工程・設備</span>
+ <div class="bar"><i style="width:85%"></i></div>
+ <span>重点</span>
+</div>
+<div class="bar-row">
+ <span>ゴム・補強材料</span>
+ <div class="bar"><i style="width:70%"></i></div>
+ <span>重点</span>
+</div>
+<div class="bar-row">
+ <span>タイヤ構造・二輪車</span>
+ <div class="bar"><i style="width:70%"></i></div>
+ <span>重点</span>
+</div>
+<p class="muted">
+上記の棒の長さは分析上の注目度を示す概念図であり、
+実際の出願件数や構成比ではありません。
+</p>
+
+<div class="grid">
+ <div>
+  <h3>領域A：センシング・タイヤ管理</h3>
+  <ul>
+   <li>内面センサによるタイヤ状態の測定</li>
+   <li>ハイドロプレーニングの検知</li>
+   <li>路面とタイヤの相互作用の推定</li>
+   <li>センサの製造・取付け・通信</li>
+  </ul>
+  <p><strong>戦略的意味：</strong>
+  タイヤを単なる消耗品から、走行状態を計測する情報源へと拡張する方向です。</p>
+ </div>
+ <div>
+  <h3>領域B：製造プロセス</h3>
+  <ul>
+   <li>環状部材・多層部材の形成</li>
+   <li>グリーンタイヤの成形</li>
+   <li>機能性インサートの配置・固定</li>
+   <li>加硫金型・加硫工程</li>
+  </ul>
+  <p><strong>戦略的意味：</strong>
+  品質の再現性、工程の効率化、センサ等の部材を量産工程へ統合する能力が重要です。</p>
+ </div>
+ <div>
+  <h3>領域C：材料・環境対応</h3>
+  <ul>
+   <li>新規架橋システム</li>
+   <li>持続可能なポリマー</li>
+   <li>ポリエステルを用いたゴム配合</li>
+   <li>補強コードとゴムの接着</li>
+  </ul>
+  <p><strong>戦略的意味：</strong>
+  低転がり抵抗・耐久性と環境負荷低減の両立が重要な開発課題です。</p>
+ </div>
+ <div>
+  <h3>領域D：タイヤ構造・用途展開</h3>
+  <ul>
+   <li>乗用車用タイヤ</li>
+   <li>オフロード・二輪車用タイヤ</li>
+   <li>セルフシールタイヤ</li>
+   <li>トレッド・補強構造の改良</li>
+  </ul>
+  <p><strong>戦略的意味：</strong>
+  車種や用途ごとの性能要求に対応し、製品差別化を図る領域です。</p>
+ </div>
+</div>
+</section>
+
+<section>
+<h2>3. 公開件数の推移</h2>
+<p>
+公開番号の一覧からは、2025年の複数の時期に公報がまとまって公開されていることが確認できます。
+ただし、月別の正確な件数は全49件の公開日を集計して算出する必要があります。
+</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>時期</th><th>確認できる公開例</th><th>分析上の見方</th></tr></thead>
+<tbody>
+<tr>
+<td>2025年2～3月</td>
+<td>WO2025032403、WO2025032451、WO2025037203</td>
+<td>製造工程、補強コード、タイヤ構造などが見られる。</td>
+</tr>
+<tr>
+<td>2025年5～6月</td>
+<td>WO2025115047、WO2025120584、WO2025133881</td>
+<td>状態検知、ゴム材料、センサ機器の公開が見られる。</td>
+</tr>
+<tr>
+<td>2025年7～8月</td>
+<td>WO2025141451、WO2025141621</td>
+<td>ハイドロプレーニング検知、センシングデバイスの製造など。</td>
+</tr>
+<tr>
+<td>2025年10～12月</td>
+<td>WO2025203143、WO2025215520、WO2025257131</td>
+<td>モニタリング、オフロード二輪車用タイヤ、持続可能な材料など。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>件数推移を読む際の注意点</h3>
+<ul>
+<li>WO公報の公開時期は、出願時期や研究開発の開始時期とは一致しません。</li>
+<li>国際出願は通常、優先日から約18か月後に公開されるため、公開件数は過去の研究開発活動を反映します。</li>
+<li>公開件数の増加だけでは、研究開発投資の増加や技術的重要性の上昇を断定できません。</li>
+<li>月別集計では、公開日を基準に全49件を数え、同一発明の関連案件も識別する必要があります。</li>
+</ul>
+</section>
+
+<section>
+<h2>4. ISR・X文献の確認済み事例</h2>
+<p>
+以下はNotionの個別案件ページでISR欄を確認できた事例です。
+引用元企業は記載された出願人・権利者名に基づき整理しています。
+</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>対象公報</th><th>発明の要約</th><th>X文献・引用元</th><th>知財上の示唆</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025141451" target="_blank">WO2025141451</a></td>
+<td>トレッド溝のウェアバーと水膜との相互作用に関連するタイヤ変形の測定値から、ハイドロプレーニング状態を検知する。</td>
+<td>
+<span class="x">X文献あり</span><br>
+Bridgestone Corporation<br>
+Pirelli Tyre S.P.A.<br>
+Continental Automotive GmbH
+</td>
+<td>水膜検知だけでなく、タイヤ内面センサの配置、変形信号の特徴量、検知判定ロジックの差別化が重要です。</td>
+</tr>
+<tr>
+<td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025115047" target="_blank">WO2025115047</a></td>
+<td>タイヤ内面で取得した半径方向加速度信号を補正し、タイヤと路面の相互作用状態を検知する。</td>
+<td>
+<span class="x">X文献あり</span><br>
+Pirelli Pneumatici S.P.A.<br>
+Pirelli Tyre S.P.A.
+</td>
+<td>自社の先行技術との重複を含め、信号補正方式や路面状態の判定手法の権利範囲が焦点です。</td>
+</tr>
+<tr>
+<td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025120584" target="_blank">WO2025120584</a></td>
+<td>新規の二次架橋システムを利用し、タイヤ用ゴムの剛性、耐熱性、破断強度、補強材との接着性などを改善する。</td>
+<td>
+<span class="x">X文献あり</span><br>
+Thomas Adam Clayton
+<br><span class="y">Y文献あり</span><br>
+U.S. Rubber Co.、Goodyear Tire &amp; Rubber、Uniroyal Inc.
+</td>
+<td>従来のゴム・繊維接着技術との差異、架橋剤の構成、環境負荷低減効果を確認する必要があります。</td>
+</tr>
+<tr>
+<td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025257131" target="_blank">WO2025257131</a></td>
+<td>持続可能なポリエステルを含むエラストマー組成物と、その組成物を用いたタイヤを対象とする。</td>
+<td>
+<span class="x">X文献あり</span><br>
+Toyo Tire &amp; Rubber Co., Ltd.<br>
+Continental Aktiengesellschaft<br>
+Continental Reifen Deutschland GmbH<br>
+Pirelli Tyre S.P.A.<br>
+横浜ゴム株式会社
+</td>
+<td>持続可能な材料と低転がり抵抗などの性能の両立について、ポリエステルの構成・配合・物性範囲を比較すべきです。</td>
+</tr>
+<tr>
+<td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025133881" target="_blank">WO2025133881</a></td>
+<td>気体を通し、異物の侵入を防ぐシール構造を備えたタイヤ内面の圧力センサ装置。</td>
+<td>
+<span class="x">X文献あり</span><br>
+Bridgestone Corp.<br>
+Continental Reifen Deutschland GmbH
+<br><span class="y">Y文献あり</span><br>
+Bridgestone/Firestone, Inc.
+</td>
+<td>センサの保護構造、通気性膜、圧力検出部の配置に先行技術が存在するため、具体的な構造差異を確認する必要があります。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="muted">
+重要：この表は確認できた5案件の事例であり、49件全体のX文献調査結果ではありません。
+上記企業名は確認した個別ページの記載に基づくもので、全公報に共通する引用企業一覧ではありません。
+</p>
+</section>
+
+<section>
+<h2>5. 競合企業との技術的な接点</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>企業・組織</th><th>確認できた技術的接点</th><th>分析の観点</th></tr></thead>
+<tbody>
+<tr><td>Bridgestone</td><td>タイヤ摩耗検知、センサモジュール、タイヤ管理システム</td><td>センサ配置、信号取得、異物保護構造</td></tr>
+<tr><td>Continental</td><td>タイヤ挙動監視、電子モジュール、ゴム配合</td><td>センシングと材料技術の双方で請求項を比較</td></tr>
+<tr><td>Toyo Tire</td><td>タイヤ用ゴム組成物</td><td>材料構成、ポリマーの種類、物性値の比較</td></tr>
+<tr><td>横浜ゴム</td><td>ゴム組成物、スタッドレスタイヤ関連技術</td><td>低温性能、転がり抵抗、耐摩耗性の両立</td></tr>
+<tr><td>Goodyear</td><td>補強コードとゴムの接着技術</td><td>補強材の表面処理、接着剤、配合条件</td></tr>
+</tbody>
+</table>
+</div>
+<p>
+ISRに競合企業の文献が含まれることは、その技術領域で先行技術が存在することを示す重要な手掛かりです。
+ただし、引用されたことだけで競合他社が現在も同じ研究開発を重点化しているとは判断できません。
+</p>
+</section>
+
+<section>
+<h2>6. 49件の案件一覧・検索</h2>
+<p class="muted">
+以下は対象ページに掲載された公報の一覧です。要約は公報タイトルに基づく簡易分類であり、
+ISRの個別確認状況は一覧とは別に管理します。
+</p>
+<div class="controls">
+<input id="q" type="search" placeholder="公報番号・技術キーワードで検索" style="flex:1;min-width:200px">
+<select id="category">
+<option value="">すべての技術分野</option>
+<option value="sensor">センシング・管理</option>
+<option value="manufacturing">製造工程</option>
+<option value="material">材料・補強</option>
+<option value="structure">タイヤ構造・用途</option>
+<option value="other">その他</option>
+</select>
+</div>
+<div class="table-wrap">
+<table id="cases">
+<thead><tr><th>公報番号・リンク</th><th>簡易要約</th><th>分野</th><th>ISR確認状況</th></tr></thead>
+<tbody>
+<tr data-cat="material"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025120584">WO2025120584</a></td><td>新規架橋システムを含むエラストマー組成物</td><td>材料・補強</td><td>X・Y文献確認済み</td></tr>
+<tr data-cat="manufacturing"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025141367">WO2025141367</a></td><td>タイヤへの機能性インサートの適用装置・工程</td><td>製造工程</td><td>個別確認が必要</td></tr>
+<tr data-cat="manufacturing"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025253213">WO2025253213</a></td><td>加硫金型用ブラダーとタイヤ成形・加硫方法</td><td>製造工程</td><td>個別確認が必要</td></tr>
+<tr data-cat="material"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025257131">WO2025257131</a></td><td>持続可能なポリマーを含むタイヤ</td><td>材料・補強</td><td>X・Y文献確認済み</td></tr>
+<tr data-cat="structure"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025037203">WO2025037203</a></td><td>自動車用タイヤと製造方法</td><td>タイヤ構造・用途</td><td>個別確認が必要</td></tr>
+<tr data-cat="material"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025032451">WO2025032451</a></td><td>タイヤ用補強コードと、それを備えたタイヤ</td><td>材料・補強</td><td>個別確認が必要</td></tr>
+<tr data-cat="sensor"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025141451">WO2025141451</a></td><td>タイヤのハイドロプレーニング状態の検知</td><td>センシング・管理</td><td>X文献確認済み</td></tr>
+<tr data-cat="sensor"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025203143">WO2025203143</a></td><td>タイヤ内面に固定された監視装置との通信・相互作用</td><td>センシング・管理</td><td>個別確認が必要</td></tr>
+<tr data-cat="manufacturing"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025032403">WO2025032403</a></td><td>タイヤ用多層環状部材の製造工程・装置</td><td>製造工程</td><td>個別確認が必要</td></tr>
+<tr data-cat="structure"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025215520">WO2025215520</a></td><td>オフロード用二輪車タイヤ</td><td>タイヤ構造・用途</td><td>個別確認が必要</td></tr>
+<tr data-cat="sensor"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025133881">WO2025133881</a></td><td>電子ユニットを備えたタイヤ監視装置</td><td>センシング・管理</td><td>X・Y文献確認済み</td></tr>
+<tr data-cat="structure"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025253324">WO2025253324</a></td><td>二輪車用タイヤ</td><td>タイヤ構造・用途</td><td>個別確認が必要</td></tr>
+<tr data-cat="structure"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025057048">WO2025057048</a></td><td>二輪車用タイヤ</td><td>タイヤ構造・用途</td><td>個別確認が必要</td></tr>
+<tr data-cat="material"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025120585">WO2025120585</a></td><td>新規架橋システムを含むエラストマー組成物</td><td>材料・補強</td><td>個別確認が必要</td></tr>
+<tr data-cat="structure"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025109513">WO2025109513</a></td><td>二輪車用タイヤ</td><td>タイヤ構造・用途</td><td>個別確認が必要</td></tr>
+<tr data-cat="sensor"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025133798">WO2025133798</a></td><td>監視装置を備えたタイヤ</td><td>センシング・管理</td><td>個別確認が必要</td></tr>
+<tr data-cat="manufacturing"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025083559">WO2025083559</a></td><td>タイヤ用加硫金型の製造方法</td><td>製造工程</td><td>個別確認が必要</td></tr>
+<tr data-cat="structure"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025141395">WO2025141395</a></td><td>車輪用タイヤの構造・構成</td><td>タイヤ構造・用途</td><td>個別確認が必要</td></tr>
+<tr data-cat="manufacturing"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025093985">WO2025093985</a></td><td>層状環状部材の製造装置・方法</td><td>製造工程</td><td>個別確認が必要</td></tr>
+<tr data-cat="material"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025257129">WO2025257129</a></td><td>持続可能なポリエステルを含むタイヤ</td><td>材料・補強</td><td>個別確認が必要</td></tr>
+<tr data-cat="material"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025032449">WO2025032449</a></td><td>タイヤ用補強コードの製造方法</td><td>材料・補強</td><td>個別確認が必要</td></tr>
+<tr data-cat="structure"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025133772">WO2025133772</a></td><td>自動車用タイヤ</td><td>タイヤ構造・用途</td><td>個別確認が必要</td></tr>
+<tr data-cat="sensor"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025134165">WO2025134165</a></td><td>車両のアンチスキッド制御システムの調整</td><td>センシング・管理</td><td>個別確認が必要</td></tr>
+<tr data-cat="structure"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025215519">WO2025215519</a></td><td>オフロード用二輪車タイヤ</td><td>タイヤ構造・用途</td><td>個別確認が必要</td></tr>
+<tr data-cat="manufacturing"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025032417">WO2025032417</a></td><td>グリーンタイヤ用多層部材の成形ステーション</td><td>製造工程</td><td>個別確認が必要</td></tr>
+<tr data-cat="manufacturing"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025141357">WO2025141357</a></td><td>機能性インサートとタイヤの組合せ工程</td><td>製造工程</td><td>個別確認が必要</td></tr>
+<tr data-cat="sensor"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025115047">WO2025115047</a></td><td>タイヤと路面の相互作用状態の検知</td><td>センシング・管理</td><td>X文献確認済み</td></tr>
+<tr data-cat="structure"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025083557">WO2025083557</a></td><td>車輪用タイヤの構造・構成</td><td>タイヤ構造・用途</td><td>個別確認が必要</td></tr>
+<tr data-cat="structure"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025037205">WO2025037205</a></td><td>自動車用タイヤと製造方法</td><td>タイヤ構造・用途</td><td>個別確認が必要</td></tr>
+<tr data-cat="sensor"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025141453">WO2025141453</a></td><td>路面状態の推定方法・システム</td><td>センシング・管理</td><td>個別確認が必要</td></tr>
+<tr data-cat="structure"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025109478">WO2025109478</a></td><td>セルフシールタイヤ</td><td>タイヤ構造・用途</td><td>個別確認が必要</td></tr>
+<tr data-cat="structure"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025109530">WO2025109530</a></td><td>二輪車用タイヤ</td><td>タイヤ構造・用途</td><td>個別確認が必要</td></tr>
+<tr data-cat="sensor"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025141619">WO2025141619</a></td><td>タイヤセンシングデバイスの製造方法</td><td>センシング・管理</td><td>個別確認が必要</td></tr>
+<tr data-cat="manufacturing"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025083558">WO2025083558</a></td><td>車輪用タイヤの加硫金型</td><td>製造工程</td><td>個別確認が必要</td></tr>
+<tr data-cat="structure"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025052235">WO2025052235</a></td><td>車輪用タイヤの構造・構成</td><td>タイヤ構造・用途</td><td>個別確認が必要</td></tr>
+<tr data-cat="structure"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025078908">WO2025078908</a></td><td>タイヤの構造・構成</td><td>タイヤ構造・用途</td><td>個別確認が必要</td></tr>
+<tr data-cat="material"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025032450">WO2025032450</a></td><td>補強コードと、それを含むタイヤ</td><td>材料・補強</td><td>個別確認が必要</td></tr>
+<tr data-cat="sensor"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025133883">WO2025133883</a></td><td>電子ユニットを備えたタイヤ監視装置</td><td>センシング・管理</td><td>個別確認が必要</td></tr>
+<tr data-cat="sensor"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025141450">WO2025141450</a></td><td>タイヤと路面の相互作用を監視する装置の取付方法</td><td>センシング・管理</td><td>個別確認が必要</td></tr>
+<tr data-cat="sensor"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025115050">WO2025115050</a></td><td>タイヤのハイドロプレーニング状態の検知</td><td>センシング・管理</td><td>個別確認が必要</td></tr>
+<tr data-cat="manufacturing"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025141360">WO2025141360</a></td><td>機能性インサートをタイヤに固定する工程・設備</td><td>製造工程</td><td>個別確認が必要</td></tr>
+<tr data-cat="manufacturing"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025114801">WO2025114801</a></td><td>タイヤ製造における環状部材の搬送装置・工程</td><td>製造工程</td><td>個別確認が必要</td></tr>
+<tr data-cat="structure"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025133874">WO2025133874</a></td><td>乗用車用タイヤ</td><td>タイヤ構造・用途</td><td>個別確認が必要</td></tr>
+<tr data-cat="sensor"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025141621">WO2025141621</a></td><td>タイヤセンシングデバイスの製造方法</td><td>センシング・管理</td><td>個別確認が必要</td></tr>
+<tr data-cat="manufacturing"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025253212">WO2025253212</a></td><td>機能性インサートのタイヤへの取付方法</td><td>製造工程</td><td>個別確認が必要</td></tr>
+<tr data-cat="material"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025032452">WO2025032452</a></td><td>タイヤ用補強コードの製造方法</td><td>材料・補強</td><td>個別確認が必要</td></tr>
+<tr data-cat="structure"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025037204">WO2025037204</a></td><td>自動車用タイヤと製造方法</td><td>タイヤ構造・用途</td><td>個別確認が必要</td></tr>
+<tr data-cat="manufacturing"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025141362">WO2025141362</a></td><td>機能性インサートをタイヤに拘束・固定する装置・方法</td><td>製造工程</td><td>個別確認が必要</td></tr>
+<tr data-cat="other"><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2025145102">WO2025145102</a></td><td>個人の健康・ウェルビーイングの監視・改善</td><td>その他</td><td>個別確認が必要</td></tr>
+</tbody>
+</table>
+</div>
+<p id="count" class="muted"></p>
+</section>
+
+<section>
+<h2>7. 知財戦略への提言</h2>
+<ol>
+<li><strong>センシング技術：</strong>
+センサ自体だけでなく、信号補正、路面状態の推定、ハイドロプレーニング判定、
+通信・校正・取付けまでを一連の技術として比較する。</li>
+<li><strong>製造工程：</strong>
+機能性インサートの取付け技術と既存のタイヤ成形工程との関係を調べ、
+量産設備の構成、位置決め、固定方法の差異を把握する。</li>
+<li><strong>材料技術：</strong>
+持続可能なポリマー、架橋システム、補強コード接着について、
+組成・配合比・物性範囲と請求項の限定を比較する。</li>
+<li><strong>ISRの深掘り：</strong>
+X文献がある案件について、引用文献の独立請求項とPirelliの独立請求項を対比し、
+相違点、技術的効果、各国段階での補正・審査経過を確認する。</li>
+<li><strong>定量分析：</strong>
+全49件の公開日、IPC、優先日、X/Y/A区分、引用企業を表形式に統合し、
+月別件数と技術領域別件数を実データから再集計する。</li>
+</ol>
+</section>
+
+<section>
+<h2>8. 出典と分析上の限界</h2>
+<ul>
+<li>主資料：Notion「ピレリWO2025」ページ（対象49件）</li>
+<li>案件別の詳細：各公報に対応するNotion個別ページとPATENTSCOPEリンク</li>
+<li>ISRの具体例：上記5件の個別ページで確認した引用文献欄</li>
+</ul>
+<p class="notice">
+本ダッシュボードは技術戦略を検討するための一次整理です。
+全49件のISR欄を照合し終えた結果ではないため、
+「個別確認が必要」とした案件をX文献なしと解釈しないでください。
+また、タイトルから作成した簡易要約は、請求項に基づく法的な権利範囲の評価に代わるものではありません。
+</p>
+</section>
+</main>
+
+<footer>
+Pirelli WO2025 Patent Intelligence Dashboard | 2026-10-19
+</footer>
+
+<script>
+const q = document.getElementById('q');
+const cat = document.getElementById('category');
+const rows = [...document.querySelectorAll('#cases tbody tr')];
+function filterRows() {
+  const query = q.value.trim().toLowerCase();
+  const category = cat.value;
+  let shown = 0;
+  rows.forEach(row => {
+    const matchesText = row.innerText.toLowerCase().includes(query);
+    const matchesCategory = !category || row.dataset.cat === category;
+    const visible = matchesText && matchesCategory;
+    row.hidden = !visible;
+    if (visible) shown++;
+  });
+  document.getElementById('count').textContent =
+    '表示件数：' + shown + '件 / 一覧収録：' + rows.length + '件';
+}
+q.addEventListener('input', filterRows);
+cat.addEventListener('change', filterRows);
+filterRows();
+</script>
+</body>
+</html>

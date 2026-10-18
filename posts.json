@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id":  "pirelli-wo2024-patent-dashboard",
+        "title":  "ピレリ WO2024 特許分析ダッシュボード",
+        "filename":  "posts/pirelli-wo2024-patent-dashboard.html",
+        "createdAt":  "2026-10-18T15:23:27+09:00",
+        "dateFormatted":  "2026/10/18",
+        "description":  "PIRELLI（ピレリ）の2024年公開WO特許33件を分析。タイヤ構造・材料配合・製造検査設備・路面センシングの4領域ポートフォリオと知財戦略示唆をまとめたダッシュボード。",
+        "tags":  [
+                     "特許",
+                     "知財",
+                     "ピレリ",
+                     "タイヤ",
+                     "特許分析",
+                     "ダッシュボード",
+                     "WO特許"
+                 ]
+    },
+    {
         "id":  "rakuten-denki-price-revision-202611",
         "title":  "楽天でんき料金改定まとめ 2026年11月",
         "filename":  "posts/rakuten-denki-price-revision-202611.html",

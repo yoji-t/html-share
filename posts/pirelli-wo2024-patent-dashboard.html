@@ -2,285 +2,298 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ピレリ WO2024 特許分析ダッシュボード</title>
 <style>
-:root{
-  --bg:#f4f6fa;--card:#fff;--ink:#202938;--muted:#64748b;
-  --line:#dce3ec;--accent:#1769aa;--accent2:#e8f2fc;
-  --warn:#fff4d6;--warnink:#855b00;
-}
+:root{--navy:#18324b;--blue:#326b91;--pale:#edf4f8;--line:#d9e2e9;
+--text:#253746;--muted:#657786;--orange:#c46b32;--red:#b43c3c}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:"Yu Gothic",Meiryo,Arial,sans-serif;line-height:1.7}
-header{background:#172c46;color:#fff;padding:36px 22px}
-header .inner,main{max-width:1200px;margin:auto}
-header h1{margin:0 0 8px;font-size:clamp(24px,4vw,36px)}
-header p{margin:5px 0;color:#d9e7f5}
-main{padding:22px}
-h2{font-size:22px;margin:0 0 16px}
-h3{font-size:17px;margin:0 0 10px}
-section{margin-bottom:26px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;
-  padding:19px;box-shadow:0 2px 8px #182c4610}
-.metric{font-size:30px;font-weight:800;color:var(--accent)}
-.small{font-size:12px;color:var(--muted)}
-.muted{color:var(--muted)}
-.note{background:var(--warn);color:var(--warnink);padding:13px 16px;
-  border-radius:9px;margin:12px 0}
-.info{background:var(--accent2);padding:15px;border-radius:9px}
-.barrow{display:grid;grid-template-columns:minmax(120px,200px) 1fr 35px;
-  gap:10px;align-items:center;margin:12px 0}
-.bar{height:13px;background:#e6edf5;border-radius:20px;overflow:hidden}
-.fill{height:100%;background:var(--accent);border-radius:20px}
-.tablewrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:10px}
-table{border-collapse:collapse;width:100%;font-size:13px;min-width:1000px}
-th,td{padding:11px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
-th{background:#eaf0f7;position:sticky;top:0;z-index:1}
-tr:hover td{background:#f8fbff}
-a{color:#1769aa}
-.tag{display:inline-block;background:#edf3fa;border-radius:5px;
-  padding:2px 7px;margin:2px;font-size:11px}
-.status{color:#855b00;background:#fff4d6;padding:3px 7px;border-radius:5px}
-input,select{padding:10px;border:1px solid #cbd5e1;border-radius:7px;
-  background:white;font-size:14px;max-width:100%}
-.controls{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
-.controls input{flex:1;min-width:220px}
-footer{padding:24px;text-align:center;color:var(--muted);font-size:12px}
-@media(max-width:600px){main{padding:13px}header{padding:25px 16px}
-.barrow{grid-template-columns:110px 1fr 25px;font-size:12px}}
-@media print{body{background:white}.controls{display:none}.card{box-shadow:none}
-header{background:#172c46!important;-webkit-print-color-adjust:exact}}
+body{margin:0;background:#f4f7fa;color:var(--text);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+header{background:linear-gradient(120deg,#18324b,#326b91);color:white;padding:36px 22px}
+header .wrap,main{max-width:1180px;margin:auto}
+h1{font-size:clamp(25px,4vw,38px);margin:0 0 8px}
+.subtitle{opacity:.9}
+main{padding:24px 16px 50px}
+h2{font-size:22px;color:var(--navy);border-bottom:2px solid var(--line);
+padding-bottom:9px;margin-top:36px}
+h3{font-size:17px;color:var(--navy)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.card{background:white;border:1px solid var(--line);border-radius:12px;padding:18px}
+.metric{font-size:30px;font-weight:750;color:var(--navy)}
+.small{font-size:13px;color:var(--muted)}
+.panel{background:white;border:1px solid var(--line);border-radius:12px;
+padding:20px;margin:15px 0}
+.note{border-left:4px solid var(--orange);background:#fff7ef;padding:13px 16px}
+.good{border-left:4px solid var(--blue);background:var(--pale);padding:13px 16px}
+table{border-collapse:collapse;width:100%;background:white;font-size:14px}
+th,td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}
+th{background:var(--pale);color:var(--navy)}
+.tablewrap{overflow-x:auto;border-radius:9px}
+input,select{padding:10px;border:1px solid #bdcbd6;border-radius:7px;
+font-size:14px;background:white;max-width:100%}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.tag{display:inline-block;background:#eaf1f6;color:#234e6b;padding:3px 8px;
+border-radius:20px;font-size:12px;margin:2px}
+.x{color:var(--red);font-weight:700}.y{color:#9a6518;font-weight:700}
+footer{color:var(--muted);font-size:12px;margin-top:30px}
+a{color:#226b9b}
+.bar{height:12px;background:#e4ebf1;border-radius:8px;overflow:hidden}
+.bar span{display:block;height:100%;background:#326b91}
+@media(max-width:600px){header{padding:26px 17px}.panel{padding:14px}th,td{padding:8px}}
 </style>
 </head>
 <body>
-<header>
-<div class="inner">
-<h1>PIRELLI｜WO2024 特許分析ダッシュボード</h1>
-<p>国際公開特許の技術ポートフォリオ・競合引用文献・研究開発動向</p>
-<p>分析対象：Notion「ピレリWO2024」｜登録案件数：33件</p>
+<header><div class="wrap">
+<div>INTELLECTUAL PROPERTY / TECHNOLOGY INTELLIGENCE</div>
+<h1>ピレリ WO2024 特許分析ダッシュボード</h1>
+<div class="subtitle">公開特許33件｜技術ポートフォリオ・ISR引用文献・出願動向</div>
+<div class="small" style="color:#e5edf4;margin-top:10px">
+分析対象：Notion「ピレリWO2024」｜分析基準：2026年10月
 </div>
-</header>
+</div></header>
 
 <main>
-<section>
+<div class="cards">
+<div class="card"><div class="small">収録案件数</div><div class="metric">33</div>
+<div class="small">Notionページ掲載数</div></div>
+<div class="card"><div class="small">主な技術領域</div>
+<div class="metric">5領域</div><div class="small">タイヤ構造・材料・製造・センシング・用途別性能</div></div>
+<div class="card"><div class="small">公開時期</div><div class="metric">2024年</div>
+<div class="small">WO公開番号に基づく対象年</div></div>
+<div class="card"><div class="small">ISR確認状況</div><div class="metric">一部</div>
+<div class="small">個別ページの記載を確認できた案件を区別</div></div>
+</div>
+
 <h2>1. エグゼクティブサマリー</h2>
-<div class="grid">
-<div class="card"><div class="small">分析対象</div><div class="metric">33件</div>
-<div>2024年公開のWO公報</div></div>
-<div class="card"><div class="small">技術分析</div><div class="metric">4領域</div>
-<div>構造・材料・製造・センシング</div></div>
-<div class="card"><div class="small">X文献の確認</div><div class="metric">未確定</div>
-<div>国際調査報告書の原文確認が必要</div></div>
-<div class="card"><div class="small">競合引用元</div><div class="metric">未確定</div>
-<div>引用文献の出願人・権利者の照合が必要</div></div>
+<div class="panel">
+<p><b>① タイヤ本体の性能向上</b><br>
+摩耗・グリップ・冬用性能・トレッドパターン・騒音低減など、タイヤの基本性能を改良する案件が複数あります。</p>
+<p><b>② ゴム材料・配合技術</b><br>
+エラストマー、架橋剤、共役ジエンポリマー、炭素材料などを扱う案件があり、耐摩耗性とグリップの両立や、ヒステリシス低減が重要な開発テーマと考えられます。</p>
+<p><b>③ タイヤ製造プロセスの高度化</b><br>
+自転車タイヤの組立、グリーンタイヤ製造、加硫・成形、工程検査など、製品そのものだけでなく製造工程にも知財を展開しています。</p>
+<p><b>④ センサー・車両制御との連携</b><br>
+タイヤ内の監視デバイス、監視機能の復旧、路面との摩擦推定など、タイヤを車両制御・状態監視システムの一部として扱う技術が確認できます。</p>
+<div class="note"><b>知財戦略上の示唆：</b>
+タイヤの構造・材料だけでなく、製造設備、工程制御、センサー、車両側の推定アルゴリズムを組み合わせたポートフォリオを形成している点に注目できます。
+ただし、このページは公開案件の技術分類であり、各技術の投資額や事業上の重要度を直接示すものではありません。</div>
 </div>
-<div class="note">
-<strong>重要：</strong>33件はNotionページに列挙された対象件数です。
-本ダッシュボードの案件要約は公報タイトルを基にした概要であり、
-請求項の詳細な解釈や、国際調査報告書のX/Y/A評価を確定したものではありません。
-</div>
-</section>
 
-<section>
-<h2>2. 技術ポートフォリオの概観</h2>
-<div class="card">
-<h3>技術領域の分類（タイトルに基づく定性的整理）</h3>
-<div class="barrow"><span>タイヤ構造・性能</span><div class="bar"><div class="fill" style="width:100%"></div></div><span>多</span></div>
-<div class="barrow"><span>製造・検査設備</span><div class="bar"><div class="fill" style="width:65%"></div></div><span>多</span></div>
-<div class="barrow"><span>ゴム・材料配合</span><div class="bar"><div class="fill" style="width:35%"></div></div><span>中</span></div>
-<div class="barrow"><span>センシング・推定</span><div class="bar"><div class="fill" style="width:30%"></div></div><span>中</span></div>
-<p class="small">棒グラフは厳密な集計値ではなく、タイトル群を見渡すための概念表示です。
-定量分析には、全33件の分類ルールを確定して再集計する必要があります。</p>
+<h2>2. 公開件数の推移</h2>
+<div class="panel">
+<p>本ページに掲載された33件はいずれもWO2024公報です。したがって、<b>2024年の月別公開件数は集計できますが、2023年以前や2025年以降との増減比較は、このページだけでは評価できません。</b></p>
+<p>公開番号の並びからは、1月から12月にかけて複数の公開時期に案件が存在することがわかります。以下は公開番号から読み取れる月別の分布を概観するための参考値です。正式な月別件数として引用する前に、各公報の公開日を全件集計してください。</p>
+<div class="tablewrap"><table>
+<thead><tr><th>公開時期</th><th>観察できる傾向</th><th>解釈上の注意</th></tr></thead>
+<tbody>
+<tr><td>1～3月</td><td>タイヤ構造・ゴム材料などの公開が見られる</td><td>対象ページの全件公開日で集計が必要</td></tr>
+<tr><td>4～6月</td><td>材料、製造工程、監視機能関連の案件が見られる</td><td>出願日と公開日を混同しない</td></tr>
+<tr><td>7～9月</td><td>自転車タイヤ製造関連などの案件が見られる</td><td>公開番号だけで月別件数を断定しない</td></tr>
+<tr><td>10～12月</td><td>材料・摩耗・グリップ・路面推定などの案件が見られる</td><td>公開件数は出願活動の時期と一致しない</td></tr>
+</tbody></table></div>
+<div class="good"><b>分析コメント：</b>WO公報は通常、優先日から約18か月後に公開されるため、2024年の公開件数は2024年に行った出願件数そのものではありません。出願活動の増減を判断するには、優先日または国際出願日を基準に別途集計する必要があります。</div>
 </div>
-<div class="grid" style="margin-top:14px">
-<div class="card">
-<h3>タイヤ構造・走行性能</h3>
-車輪用タイヤ、冬用・スタッドタイヤ、二輪車用タイヤ、ベルトレス構造、
-耐摩耗性とグリップの両立など。製品性能を直接左右する構造設計が中心です。
-</div>
-<div class="card">
-<h3>製造・品質管理</h3>
-生タイヤの組立、製造工程の検査、自転車タイヤの製造装置、
-加硫・成形設備など。工程の再現性や生産品質の向上につながる領域です。
-</div>
-<div class="card">
-<h3>ゴム材料・配合</h3>
-架橋・官能基化剤、炭素材料を含むエラストマー組成物、
-ジカルボン酸を用いた組成物調製など。性能を材料面から制御する技術です。
-</div>
-<div class="card">
-<h3>センシング・推定</h3>
-タイヤの監視機能の復旧、タイヤと路面の相互作用推定など。
-タイヤ情報を車両制御や状態監視に利用する方向が見られます。
-</div>
-</div>
-</section>
 
-<section>
-<h2>3. 公開件数・技術分野の推移について</h2>
-<div class="card">
-<h3>公開時期の見方</h3>
-<p>対象はWO2024公報33件です。公報番号から公開月を推定して集計することは避け、
-各公報の公開日（Publication Date）を基準に月別件数を集計する必要があります。</p>
-<p>月別の正確な件数は、このページに列挙された公報タイトルだけでは確定していません。
-したがって、ここでは月別件数を捏造せず、集計欄を未確定としています。</p>
-<h3>技術分野の推移に関する仮説</h3>
+<h2>3. 技術分野の構成と推移</h2>
+<div class="panel">
+<p>33件のタイトル・要約から、主題を次の5領域に分類できます。以下の分類は分析用の整理であり、公式IPC集計や全件の定量分類ではありません。</p>
+<div style="margin:18px 0">
+<b>タイヤ構造・トレッド・走行性能</b><div class="bar"><span style="width:90%"></span></div>
+<div class="small">トレッド、サイプ、冬用タイヤ、摩耗、グリップ、騒音など</div>
+</div>
+<div style="margin:18px 0">
+<b>ゴム材料・配合・補強材</b><div class="bar"><span style="width:75%"></span></div>
+<div class="small">エラストマー、架橋、ポリマー、炭素材料など</div>
+</div>
+<div style="margin:18px 0">
+<b>製造設備・製造工程・検査</b><div class="bar"><span style="width:85%"></span></div>
+<div class="small">グリーンタイヤ組立、加硫、成形、工程確認など</div>
+</div>
+<div style="margin:18px 0">
+<b>監視・推定・車両連携</b><div class="bar"><span style="width:45%"></span></div>
+<div class="small">監視デバイス、機能復旧、路面摩擦推定など</div>
+</div>
+<div style="margin:18px 0">
+<b>用途別タイヤ</b><div class="bar"><span style="width:40%"></span></div>
+<div class="small">自転車、二輪車、レーシング用途など</div>
+</div>
+<div class="note">棒グラフは技術領域の相対的な注目度を示す概念図であり、件数を数えたグラフではありません。定量的な比較には、33件それぞれに主分類・副分類を付与する必要があります。</div>
+</div>
+
+<h2>4. ISR・X文献の確認結果</h2>
+<div class="panel">
+<p>Notion個別ページの「国際調査報告・引用文献 (ISR / Examiner Citations)」欄を確認できた案件の一部を示します。</p>
+<div class="tablewrap"><table>
+<thead><tr><th>公報番号</th><th>技術概要</th><th>X文献・引用元</th><th>知財上の読み方</th></tr></thead>
+<tbody>
+<tr>
+<td>WO2024023607</td>
+<td>トレッドブロック上のサイプ形状</td>
+<td><span class="x">Xあり</span><br>
+住友ゴム工業、ミシュラン、コンチネンタル、ピレリなど</td>
+<td>サイプ形状・トレッド設計に関する先行技術を重点確認</td>
+</tr>
+<tr>
+<td>WO2024223826</td>
+<td>耐摩耗性とグリップを両立するタイヤ用エラストマー</td>
+<td><span class="x">Xあり</span><br>
+ピレリ、ミシュランなど</td>
+<td>材料組成・ポリマー構造の差異と請求項の対応を確認</td>
+</tr>
+<tr>
+<td>WO2024134697</td>
+<td>タイヤ監視機能を復旧する方法</td>
+<td><span class="x">Xあり</span><br>
+ブリヂストン／ファイアストン、ピレリ</td>
+<td>センサーの取付位置、再設置手順、内面処理の限定を確認</td>
+</tr>
+<tr>
+<td>WO2024084386</td>
+<td>新規架橋・官能化剤を含むエラストマー組成物</td>
+<td><span class="x">Xあり</span><br>
+ピレリ、Glaxo Group Limited</td>
+<td>材料用途の近接性と引用文献の技術分野を精査</td>
+</tr>
+<tr>
+<td>WO2024013246</td>
+<td>炭素同素体とピロール誘導体を用いるエラストマー組成物</td>
+<td><span class="x">Xあり</span><br>
+ピレリ、ミラノ工科大学</td>
+<td>炭素材料と化合物の組合せ、既存配合との差異を確認</td>
+</tr>
+<tr>
+<td>WO2024228222</td>
+<td>タイヤと路面の相互作用・摩擦推定</td>
+<td><span class="x">Xあり</span><br>
+日産自動車</td>
+<td>摩擦推定アルゴリズム、車輪へのトルク付与条件を確認</td>
+</tr>
+</tbody></table></div>
+<p class="small">注意：上記は個別ページのISR欄で確認できた引用情報の要約です。引用文献の全件リストではありません。出願人名はページ記載に基づく略記を含みます。</p>
+</div>
+
+<h3>引用企業から読み取れる競争関係</h3>
+<div class="panel">
 <ul>
-<li><strong>製品性能：</strong>耐摩耗性とグリップ、冬季性能、二輪車用タイヤなど、用途ごとの性能最適化。</li>
-<li><strong>製造技術：</strong>生タイヤの組立や加硫設備など、製品設計だけでなく製造プロセスも保護対象。</li>
-<li><strong>材料：</strong>エラストマー配合や架橋技術を通じて、タイヤ特性を材料レベルで制御。</li>
-<li><strong>デジタル化：</strong>タイヤ監視機能や路面との相互作用推定を通じ、走行状態の把握を高度化。</li>
+<li><b>住友ゴム工業：</b>トレッド・サイプ構造の分野で先行技術が参照されています。</li>
+<li><b>ミシュラン：</b>トレッド設計やゴム材料に関連する文献が参照されています。</li>
+<li><b>コンチネンタル：</b>トレッド・タイヤ製造関連の技術で参照されています。</li>
+<li><b>ブリヂストン：</b>タイヤ内面への電子機器取付けに関する先行技術が参照されています。</li>
+<li><b>東洋ゴム：</b>タイヤ用ゴム組成物・トレッド関連の引用が見られます。</li>
+<li><b>日産自動車：</b>路面摩擦状態の推定技術で参照されています。</li>
+<li><b>ピレリ自身：</b>過去の自社特許がX文献として引用された案件もあります。これは自社の既存技術と新規出願の近接性を点検する手掛かりになります。</li>
 </ul>
-<p class="small">上記は2024年対象群の技術構成から読み取れる方向性です。
-前年との比較や月次の増減を証明するものではありません。</p>
+<div class="good"><b>分析コメント：</b>引用文献の出願人は、ピレリがどの企業・研究機関の先行技術と技術的に近接しているかを把握する手掛かりです。ただし、引用されたこと自体は、直接の競合関係、侵害、ライセンス関係を意味しません。</div>
 </div>
-</section>
 
-<section>
-<h2>4. 全33案件の一覧</h2>
-<p class="muted">検索欄で公報番号・タイトル・技術分野を絞り込めます。
-各リンクはNotionの対象案件ページではなく、WIPO PATENTSCOPEの公報詳細ページです。</p>
-<div class="controls">
-<input id="q" placeholder="公報番号・タイトル・要約で検索..." oninput="filterRows()">
-<select id="cat" onchange="filterRows()">
+<h2>5. 全33案件一覧</h2>
+<p>タイトルを基にした一次分類です。各案件名からPATENTSCOPEの公報ページを開けます。要約はタイトルから把握できる技術主題を短く整理したもので、請求項の厳密な解釈ではありません。</p>
+<div class="filters">
+<input id="search" placeholder="公報番号・技術キーワードで検索" aria-label="検索">
+<select id="category" aria-label="技術分野">
 <option value="">すべての技術分野</option>
 <option>タイヤ構造・性能</option>
 <option>材料・配合</option>
 <option>製造・検査</option>
-<option>センシング・推定</option>
+<option>監視・推定</option>
+<option>用途別タイヤ</option>
 </select>
-<select id="xfilter" onchange="filterRows()">
-<option value="">X文献：すべて</option>
-<option value="未確認">未確認</option>
+<select id="isr" aria-label="ISR確認状況">
+<option value="">ISR確認状況：すべて</option>
+<option value="confirmed">ISR欄確認済み</option>
+<option value="pending">ISR欄未確認</option>
 </select>
 </div>
-<div class="tablewrap">
-<table id="patents">
-<thead><tr>
-<th>公報番号</th><th>発明タイトル</th><th>技術分野</th>
-<th>簡単な要約（タイトルベース）</th><th>国際調査報告書 X文献</th>
-<th>X文献の引用元企業</th>
-</tr></thead>
+<div class="tablewrap"><table id="cases">
+<thead><tr><th>公報番号</th><th>技術分野</th><th>簡易要約</th><th>ISR・X文献</th><th>公報</th></tr></thead>
 <tbody>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024023606" target="_blank">WO2024023606</a></td><td>Vehicle wheel tyre</td><td>タイヤ構造・性能</td><td>車両用タイヤの構造に関する発明。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024023607" target="_blank">WO2024023607</a></td><td>Vehicle wheel tyre</td><td>タイヤ構造・性能</td><td>車両用タイヤの構造・性能に関する発明。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024013246" target="_blank">WO2024013246</a></td><td>Elastomer compositions comprising at least one sp2 hybridized carbon allotrope and a 2,5-disubstituted pyrrole derivative</td><td>材料・配合</td><td>炭素同素体と特定のピロール誘導体を含むエラストマー組成物。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024069324" target="_blank">WO2024069324</a></td><td>Tyre for racing bicycle wheels</td><td>タイヤ構造・性能</td><td>競技用自転車ホイール向けタイヤ。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024084386" target="_blank">WO2024084386</a></td><td>Elastomeric compositions for tyres comprising new cross-linking functionalising agents</td><td>材料・配合</td><td>架橋・官能基化剤を利用したタイヤ用エラストマー組成物。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024095092" target="_blank">WO2024095092</a></td><td>Vehicle wheel tyre</td><td>タイヤ構造・性能</td><td>車両用タイヤの構造に関する発明。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024100519" target="_blank">WO2024100519</a></td><td>Soundproof tyre for vehicle wheels</td><td>タイヤ構造・性能</td><td>車両用タイヤの騒音低減を目的とする構造。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024110832" target="_blank">WO2024110832</a></td><td>Front motorcycle tyre</td><td>タイヤ構造・性能</td><td>オートバイの前輪用タイヤに関する発明。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024121775" target="_blank">WO2024121775</a></td><td>Beltless tyre for motor vehicles</td><td>タイヤ構造・性能</td><td>ベルトを用いない自動車用タイヤ構造。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024127200" target="_blank">WO2024127200</a></td><td>Tyre for vehicle wheels</td><td>タイヤ構造・性能</td><td>車両ホイール用タイヤに関する発明。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024127203" target="_blank">WO2024127203</a></td><td>Tyre for vehicle wheels</td><td>タイヤ構造・性能</td><td>車両用タイヤの構造・設計に関する発明。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024127246" target="_blank">WO2024127246</a></td><td>Tyres for vehicle wheels</td><td>タイヤ構造・性能</td><td>車両ホイール用タイヤの構造に関する発明。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024127265" target="_blank">WO2024127265</a></td><td>Process for the preparation of an elastomer composition comprising a linear or cyclic di-carboxylic acid</td><td>材料・配合</td><td>直鎖または環状ジカルボン酸を含むエラストマー組成物の調製方法。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024134332" target="_blank">WO2024134332</a></td><td>Process and apparatus for building tyres for wheels of vehicles</td><td>製造・検査</td><td>車両用タイヤの組立工程および装置。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024134351" target="_blank">WO2024134351</a></td><td>Studded tyre for vehicle wheels</td><td>タイヤ構造・性能</td><td>スタッドを備えた車両用タイヤ。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024134419" target="_blank">WO2024134419</a></td><td>Winter car tyre</td><td>タイヤ構造・性能</td><td>乗用車用の冬季タイヤ。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024134693" target="_blank">WO2024134693</a></td><td>Method for checking a process for building a tyre and system for check thereof</td><td>製造・検査</td><td>タイヤ製造工程を検査・確認する方法とシステム。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024134697" target="_blank">WO2024134697</a></td><td>Method for restoring a monitoring functionality in a tyre and relative tyre</td><td>センシング・推定</td><td>タイヤの監視機能を復旧する方法と、そのタイヤ。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024141822" target="_blank">WO2024141822</a></td><td>Process and apparatus for building tyres for bicycles</td><td>製造・検査</td><td>自転車用タイヤの製造工程および装置。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024141825" target="_blank">WO2024141825</a></td><td>Process and apparatus for building tyres for bicycles</td><td>製造・検査</td><td>自転車用タイヤの組立・製造方法と装置。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024141831" target="_blank">WO2024141831</a></td><td>Process and apparatus for building tyres for bicycles</td><td>製造・検査</td><td>自転車用タイヤの製造工程・装置に関する発明。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024141857" target="_blank">WO2024141857</a></td><td>Apparatus for vulcanising and moulding tyres</td><td>製造・検査</td><td>タイヤの加硫・成形設備および周方向セクターの予熱方法。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024141866" target="_blank">WO2024141866</a></td><td>Apparatus and method for building green tyres for bicycles</td><td>製造・検査</td><td>自転車用生タイヤの組立装置と方法。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024141867" target="_blank">WO2024141867</a></td><td>Apparatus and process for building green tyres for bicycles</td><td>製造・検査</td><td>自転車用生タイヤの組立工程・装置。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024141869" target="_blank">WO2024141869</a></td><td>Method and apparatus for building green tyres for bicycles</td><td>製造・検査</td><td>自転車用生タイヤの製造方法と装置。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024150104" target="_blank">WO2024150104</a></td><td>Tyre for bicycle wheels</td><td>タイヤ構造・性能</td><td>自転車ホイール用タイヤに関する発明。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024223808" target="_blank">WO2024223808</a></td><td>Tyre for vehicle wheel with superior wear resistance and grip</td><td>タイヤ構造・性能</td><td>耐摩耗性とグリップの両立を狙う車両用タイヤ。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024223826" target="_blank">WO2024223826</a></td><td>Tyre for vehicle wheel with superior wear resistance and grip</td><td>タイヤ構造・性能</td><td>耐摩耗性とグリップ性能を両立するタイヤ設計。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024228221" target="_blank">WO2024228221</a></td><td>Method and system for estimating the interaction between tyre and road surface</td><td>センシング・推定</td><td>タイヤと路面の相互作用を推定する方法・システム。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024228222" target="_blank">WO2024228222</a></td><td>Method and system for estimating the interaction between tyre and road surface</td><td>センシング・推定</td><td>タイヤ・路面間の相互作用を推定する技術。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024228223" target="_blank">WO2024228223</a></td><td>Method and system for estimating the interaction between tyre and road surface</td><td>センシング・推定</td><td>路面との相互作用推定に関する方法とシステム。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024246644" target="_blank">WO2024246644</a></td><td>Winter tyre</td><td>タイヤ構造・性能</td><td>冬季走行向けタイヤの構造・性能に関する発明。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-<tr><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024246645" target="_blank">WO2024246645</a></td><td>Tyre</td><td>タイヤ構造・性能</td><td>タイヤ構造に関する発明。詳細は請求項と明細書で確認が必要。</td><td><span class="status">未確認</span></td><td>未確認</td></tr>
-</tbody>
-</table>
-</div>
-<p id="count" class="small"></p>
-</section>
+<tr data-cat="タイヤ構造・性能" data-isr="confirmed"><td>WO2024023607</td><td>タイヤ構造・性能</td><td>トレッドブロックに設けるサイプの形状・配置を工夫するタイヤ。</td><td>Xあり：住友ゴム、ミシュラン、コンチネンタル、ピレリ等</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024023607" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="材料・配合" data-isr="confirmed"><td>WO2024013246</td><td>材料・配合</td><td>炭素同素体とピロール誘導体を用いるエラストマー組成物。</td><td>Xあり：ピレリ、ミラノ工科大学</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024013246" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="材料・配合" data-isr="confirmed"><td>WO2024084386</td><td>材料・配合</td><td>架橋・官能化剤によってタイヤ用ゴムの特性を改善する組成物。</td><td>Xあり：ピレリ、Glaxo Group Limited</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024084386" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="監視・推定" data-isr="confirmed"><td>WO2024134697</td><td>監視・推定</td><td>既存の監視デバイスが機能を失った際、別の内面位置にデバイスを設置して監視機能を復旧する。</td><td>Xあり：ブリヂストン／ファイアストン、ピレリ</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024134697" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="材料・配合" data-isr="confirmed"><td>WO2024223826</td><td>材料・配合</td><td>特定の共役ジエンポリマーを用い、耐摩耗性とグリップを両立するタイヤ。</td><td>Xあり：ピレリ、ミシュラン等</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024223826" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="監視・推定" data-isr="confirmed"><td>WO2024228222</td><td>監視・推定</td><td>車輪へのトルク付与と車両状態からタイヤ・路面間の摩擦を推定する。</td><td>Xあり：日産自動車</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024228222" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="タイヤ構造・性能" data-isr="pending"><td>WO2024223808</td><td>タイヤ構造・性能</td><td>耐摩耗性とグリップの向上を目的とする車両用タイヤ。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024223808" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="タイヤ構造・性能" data-isr="pending"><td>WO2024246645</td><td>タイヤ構造・性能</td><td>車両用タイヤの構造に関する発明。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024246645" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="タイヤ構造・性能" data-isr="pending"><td>WO2024134419</td><td>タイヤ構造・性能</td><td>冬用乗用車タイヤの構造・走行性能に関する発明。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024134419" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="製造・検査" data-isr="pending"><td>WO2024141866</td><td>製造・検査</td><td>自転車タイヤのグリーンタイヤ製造装置・方法。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024141866" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="用途別タイヤ" data-isr="pending"><td>WO2024110832</td><td>用途別タイヤ</td><td>前輪用オートバイタイヤの構造・性能に関する発明。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024110832" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="タイヤ構造・性能" data-isr="pending"><td>WO2024121775</td><td>タイヤ構造・性能</td><td>ベルトレス構造を採用する自動車用タイヤ。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024121775" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="製造・検査" data-isr="pending"><td>WO2024141857</td><td>製造・検査</td><td>タイヤ加硫・成形装置と周方向セクターの予熱方法。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024141857" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="監視・推定" data-isr="pending"><td>WO2024228223</td><td>監視・推定</td><td>タイヤと路面の相互作用を推定する方法・システム。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024228223" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="タイヤ構造・性能" data-isr="pending"><td>WO2024095092</td><td>タイヤ構造・性能</td><td>車両ホイール用タイヤの構造に関する発明。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024095092" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="材料・配合" data-isr="pending"><td>WO2024127265</td><td>材料・配合</td><td>ジカルボン酸を用いたエラストマー組成物の製造方法。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024127265" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="用途別タイヤ" data-isr="pending"><td>WO2024150104</td><td>用途別タイヤ</td><td>自転車ホイール用タイヤの構造・性能。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024150104" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="製造・検査" data-isr="pending"><td>WO2024141822</td><td>製造・検査</td><td>自転車タイヤの製造工程・装置に関する発明。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024141822" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="タイヤ構造・性能" data-isr="pending"><td>WO2024127200</td><td>タイヤ構造・性能</td><td>車両用ホイールタイヤの構造に関する発明。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024127200" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="用途別タイヤ" data-isr="pending"><td>WO2024069324</td><td>用途別タイヤ</td><td>レーシング自転車向けタイヤ。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024069324" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="製造・検査" data-isr="pending"><td>WO2024141867</td><td>製造・検査</td><td>グリーンタイヤの製造装置・製造工程。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024141867" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="タイヤ構造・性能" data-isr="pending"><td>WO2024127203</td><td>タイヤ構造・性能</td><td>車両ホイール用タイヤの構造に関する発明。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024127203" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="監視・推定" data-isr="pending"><td>WO2024228221</td><td>監視・推定</td><td>タイヤと路面の相互作用を推定する方法・システム。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024228221" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="タイヤ構造・性能" data-isr="pending"><td>WO2024246644</td><td>タイヤ構造・性能</td><td>冬用タイヤの構造・走行性能に関する発明。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024246644" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="製造・検査" data-isr="pending"><td>WO2024134693</td><td>製造・検査</td><td>タイヤ製造工程を検査する方法・システム。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024134693" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="製造・検査" data-isr="pending"><td>WO2024141825</td><td>製造・検査</td><td>自転車タイヤの製造方法・装置。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024141825" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="製造・検査" data-isr="pending"><td>WO2024141831</td><td>製造・検査</td><td>自転車タイヤの製造方法・装置。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024141831" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="タイヤ構造・性能" data-isr="pending"><td>WO2024127246</td><td>タイヤ構造・性能</td><td>車両用タイヤの構造・性能に関する発明。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024127246" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="製造・検査" data-isr="pending"><td>WO2024141869</td><td>製造・検査</td><td>グリーンタイヤの製造方法・装置。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024141869" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="製造・検査" data-isr="pending"><td>WO2024134332</td><td>製造・検査</td><td>車両用ホイールタイヤの製造工程・装置。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024134332" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="用途別タイヤ" data-isr="pending"><td>WO2024134351</td><td>用途別タイヤ</td><td>スタッドを備える車両用タイヤ。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024134351" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="タイヤ構造・性能" data-isr="pending"><td>WO2024100519</td><td>タイヤ構造・性能</td><td>車両ホイール用の騒音低減タイヤ。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024100519" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+<tr data-cat="タイヤ構造・性能" data-isr="pending"><td>WO2024023606</td><td>タイヤ構造・性能</td><td>車両ホイール用タイヤの構造に関する発明。</td><td>個別ページのISR欄未確認</td><td><a href="https://patentscope2.wipo.int/search/ja/detail.jsf?docId=WO2024023606" target="_blank" rel="noopener">PATENTSCOPE</a></td></tr>
+</tbody></table></div>
+<div id="count" class="small" style="margin-top:8px"></div>
 
-<section>
-<h2>5. 国際調査報告書（ISR）の確認手順</h2>
-<div class="card">
-<ol>
-<li>各公報のWIPO PATENTSCOPE詳細ページを開く。</li>
-<li>Documents / 国際調査報告書（International Search Report）を確認する。</li>
-<li>引用文献ごとに、文献番号・評価記号（X、Y、Aなど）・出願人を転記する。</li>
-<li>X文献がある場合は、当該文献の出願人と現在の権利者を区別して記録する。</li>
-<li>複数文献がある場合は、X文献の件数と企業別件数を集計する。</li>
-</ol>
-<div class="info">
-<strong>判定上の注意：</strong>Xは、単独で請求項の新規性または進歩性に重大な影響を及ぼし得る文献として扱われる評価記号です。
-Y文献は他の文献との組合せが問題となる場合があります。
-X文献が存在することだけで、特許が成立しない、または無効になると決まるわけではありません。
-</div>
-</div>
-</section>
-
-<section>
-<h2>6. 知財・研究開発戦略への示唆</h2>
-<div class="grid">
-<div class="card">
-<h3>① タイヤ構造の競合分析</h3>
-耐摩耗性・グリップ・冬季性能・騒音低減・ベルトレス構造について、
-請求項の構成要件を比較し、他社の設計回避余地を確認する。
-</div>
-<div class="card">
-<h3>② 製造設備の権利網</h3>
-生タイヤ組立や加硫・成形関連は、製品だけでなく生産工程にも
-権利が及ぶ可能性がある。装置クレームと方法クレームを分けて比較する。
-</div>
-<div class="card">
-<h3>③ 材料技術の深掘り</h3>
-エラストマー組成物の成分、含有量、架橋条件、製造工程を確認し、
-材料性能の実現手段と他社との差異を抽出する。
-</div>
-<div class="card">
-<h3>④ タイヤ情報の活用</h3>
-監視機能の復旧や路面相互作用推定は、センサー、推定アルゴリズム、
-車両制御との関係を調べ、ソフトウェア・システム特許も含めて比較する。
-</div>
-</div>
-</section>
-
-<section>
-<h2>7. 次に完成させるべき分析</h2>
-<div class="card">
+<h2>6. 技術・知財戦略への示唆</h2>
+<div class="panel">
+<h3>研究開発部門向け</h3>
 <ul>
-<li>全33件の公開日を取得し、月別公開件数を正確に集計する。</li>
-<li>各案件の国際調査報告書を確認し、X/Y/A文献の件数を記録する。</li>
-<li>X文献の出願人を企業単位で名寄せし、競合企業別に集計する。</li>
-<li>前年のピレリWO公報と比較し、技術領域ごとの増減を分析する。</li>
-<li>請求項・実施形態・図面を確認して、重要度と自社開発への示唆を評価する。</li>
+<li>耐摩耗性、グリップ、低騒音など、性能間のトレードオフをどの材料・構造で解決しているか、独立請求項を比較する。</li>
+<li>自転車タイヤの製造案件は、製品性能だけでなく生産性・品質安定化の技術として整理する。</li>
+<li>監視デバイスと路面摩擦推定は、タイヤ単体から車両システムへの技術拡張として追跡する。</li>
 </ul>
-<p class="small">本ダッシュボードはタイトルベースの一次整理です。権利範囲・引用評価・競合企業の確定には、各公報の原文および国際調査報告書の確認が必要です。</p>
+<h3>知財部門向け</h3>
+<ul>
+<li>X文献の引用理由と請求項の対応関係を確認し、単なる文献数ではなく、どの構成要件が近いと判断されたかを記録する。</li>
+<li>ピレリ自身の先行特許が引用された案件では、改良発明の差異、権利範囲の重なり、継続的な出願系列を調査する。</li>
+<li>同一テーマの複数公報について、優先権、ファミリー、請求項、各国移行状況を確認する。</li>
+</ul>
 </div>
-</section>
+
+<h2>7. 分析上の制約・次の作業</h2>
+<div class="panel">
+<ol>
+<li>33件すべての個別ページから、公開日・出願日・優先日を取得し、月別・四半期別の件数を再集計する。</li>
+<li>ISR欄を全件確認し、X・Y・A文献の有無、引用された出願人、引用文献番号を記録する。</li>
+<li>IPC・CPCと要約を使い、技術分類を統一してから分野別件数を集計する。</li>
+<li>公開年だけでなく、優先年・国際出願年で集計し、出願活動と公開タイミングを区別する。</li>
+<li>重要案件は独立請求項、審査経過、ファミリー情報を確認し、競合リスク・技術的差異を評価する。</li>
+</ol>
+<div class="note"><b>データ品質に関する注意：</b>
+本ダッシュボードはNotion「ピレリWO2024」に掲載された33件をベースにした一次分析です。ISR欄の未確認案件について、X文献なしと判断してはいません。また、月別件数・技術分野の棒グラフは確定集計ではなく、定量分析の前段階です。</div>
+</div>
+<footer>出典：Notion「ピレリWO2024」および同ページ内の個別特許ページ。公報リンクはWIPO PATENTSCOPE。技術分類はタイトル・要約に基づく分析上の分類。</footer>
 </main>
-<footer>PIRELLI WO2024 Patent Portfolio Dashboard｜Notion格納情報を基に作成</footer>
 
 <script>
+const search=document.getElementById('search');
+const category=document.getElementById('category');
+const isr=document.getElementById('isr');
+const rows=[...document.querySelectorAll('#cases tbody tr')];
 function filterRows(){
- const q=document.getElementById('q').value.toLowerCase();
- const cat=document.getElementById('cat').value;
- const xf=document.getElementById('xfilter').value;
- const rows=[...document.querySelectorAll('#patents tbody tr')];
  let visible=0;
  rows.forEach(row=>{
-   const text=row.innerText.toLowerCase();
-   const category=row.cells[2].innerText;
-   const xstatus=row.cells[4].innerText;
-   const show=text.includes(q)&&(!cat||category===cat)&&(!xf||xstatus.includes(xf));
-   row.style.display=show?'':'none';
-   if(show)visible++;
+  const text=row.innerText.toLowerCase();
+  const okText=text.includes(search.value.toLowerCase());
+  const okCat=!category.value||row.dataset.cat===category.value;
+  const okIsr=!isr.value||row.dataset.isr===isr.value;
+  row.hidden=!(okText&&okCat&&okIsr);
+  if(!row.hidden)visible++;
  });
  document.getElementById('count').textContent=
-   '表示件数：'+visible+'件 / 全'+rows.length+'件';
+  '表示件数：'+visible+' / '+rows.length+'件';
 }
+[search,category,isr].forEach(el=>el.addEventListener('input',filterRows));
 filterRows();
 </script>
 </body>

@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id":  "culture-day-vs-constitution-memorial-day",
+        "title":  "文化の日と憲法記念日の違い",
+        "filename":  "posts/culture-day-vs-constitution-memorial-day.html",
+        "createdAt":  "2026-10-20T22:26:07+09:00",
+        "dateFormatted":  "2026/10/20",
+        "description":  "国民の祝日である「文化の日（11月3日）」と「憲法記念日（5月3日）」の趣旨・目的の違い、日本国憲法の「公布」と「施行」の歴史的背景、明治節との関わりをわかりやすく解説まとめ。",
+        "tags":  [
+                     "祝日",
+                     "文化の日",
+                     "憲法記念日",
+                     "社会",
+                     "日本国憲法",
+                     "豆知識",
+                     "歴史"
+                 ]
+    },
+    {
         "id":  "pirelli-wo2025-patent-dashboard",
         "title":  "Pirelli WO2025 特許分析ダッシュボード",
         "filename":  "posts/pirelli-wo2025-patent-dashboard.html",

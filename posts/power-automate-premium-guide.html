@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power Automate Premium 完全ガイド</title>
+<style>
+:root {
+  --primary: #1769aa;
+  --accent: #087e8b;
+  --bg: #f4f7fb;
+  --text: #263445;
+  --muted: #607080;
+  --border: #dce5ee;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Meiryo", sans-serif;
+  line-height: 1.8;
+}
+header {
+  background: linear-gradient(135deg, #07569b, #1689c7);
+  color: white;
+  padding: 44px 20px;
+}
+header .inner, main, footer {
+  max-width: 1000px;
+  margin: auto;
+}
+header h1 { margin: 0 0 10px; font-size: clamp(25px, 4vw, 38px); }
+header p { margin: 0; opacity: .94; }
+main { padding: 24px 16px 48px; }
+section {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 20px 0;
+  box-shadow: 0 3px 12px rgba(30, 60, 90, .04);
+}
+h2 {
+  font-size: 23px;
+  line-height: 1.5;
+  margin: 0 0 18px;
+  padding-left: 12px;
+  border-left: 5px solid var(--primary);
+}
+h3 { font-size: 18px; margin: 0 0 8px; }
+p { margin: 8px 0 14px; }
+ul { padding-left: 23px; }
+li { margin: 5px 0; }
+.small { font-size: 13px; color: var(--muted); }
+.price {
+  background: #edf6ff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 16px 0;
+}
+.price strong {
+  font-size: clamp(30px, 5vw, 42px);
+  color: var(--primary);
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+.card {
+  padding: 17px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: #fff;
+}
+.card h3 { color: var(--primary); }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 14px;
+}
+th, td {
+  padding: 11px 12px;
+  text-align: left;
+  border: 1px solid var(--border);
+  vertical-align: top;
+}
+th { background: #edf3f9; }
+.note {
+  border-left: 4px solid #d99b21;
+  background: #fff8e8;
+  padding: 13px 16px;
+  margin: 15px 0;
+  border-radius: 4px;
+}
+.good {
+  border-left: 4px solid var(--accent);
+  background: #edf9f7;
+  padding: 13px 16px;
+  margin: 15px 0;
+  border-radius: 4px;
+}
+a { color: var(--primary); overflow-wrap: anywhere; }
+footer { padding: 0 16px 30px; color: var(--muted); font-size: 13px; }
+@media(max-width: 600px) {
+  section { padding: 17px; }
+  .table-wrap { overflow-x: auto; }
+  table { min-width: 550px; }
+}
+@media print {
+  body { background: white; }
+  section { box-shadow: none; break-inside: avoid; }
+  header { background: #1769aa; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <h1>Power Automate Premium 完全ガイド</h1>
+    <p>料金・機能・無料版との違い・RPA・業務活用例をわかりやすく解説</p>
+    <p class="small" style="color:#e8f4ff">
+      2026年10月時点の情報を整理した参考資料
+    </p>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <h2>1. Power Automate Premiumとは？</h2>
+  <p>
+    Microsoft Power Automate Premiumは、クラウドサービス間の
+    業務自動化に加えて、パソコン上のアプリやブラウザーの操作を
+    自動化するRPA機能を利用できる有料プランです。
+  </p>
+  <div class="price">
+    <div>公式掲載価格の目安（年払い・税抜き）</div>
+    <strong>2,248円</strong> ／ ユーザー・月相当
+    <p>年間換算：26,976円／ユーザー（税抜き）</p>
+    <p class="small">
+      契約条件、販売経路、価格改定などによって異なる場合があります。
+    </p>
+  </div>
+  <div class="good">
+    <strong>主なメリット</strong><br>
+    クラウド連携だけでなく、Webサイトやデスクトップアプリの
+    繰り返し操作も自動化できることです。
+  </div>
+  <p>
+    <a href="https://www.microsoft.com/ja-jp/power-platform/products/power-automate/pricing"
+       target="_blank" rel="noopener">
+      Microsoft公式：料金・プラン一覧
+    </a>
+  </p>
+</section>
+
+<section>
+  <h2>2. Premiumで利用できる主な機能</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>① クラウドフロー</h3>
+      <p>クラウドサービス同士を連携して、条件に応じた処理を実行します。</p>
+      <ul>
+        <li>メール受信時の自動処理</li>
+        <li>Excelデータを使った通知</li>
+        <li>SharePointの更新検知</li>
+        <li>定期実行・承認フロー</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>② デスクトップフロー（RPA）</h3>
+      <p>PC画面を操作し、人が行う定型作業を自動化します。</p>
+      <ul>
+        <li>ブラウザーの起動・操作</li>
+        <li>Webページからの情報取得</li>
+        <li>画面への文字入力</li>
+        <li>コピー＆ペースト</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>③ プレミアムコネクタ</h3>
+      <p>対応する外部サービスやAPIと連携します。</p>
+      <ul>
+        <li>業務システムとの接続</li>
+        <li>独自APIを使ったデータ取得</li>
+        <li>カスタムコネクタの作成</li>
+      </ul>
+      <p class="small">接続先サービスの契約や認証設定が別途必要な場合があります。</p>
+    </div>
+    <div class="card">
+      <h3>④ プロセスマイニング</h3>
+      <p>業務の実行記録を分析し、改善ポイントを探します。</p>
+      <ul>
+        <li>時間がかかる工程の特定</li>
+        <li>業務プロセスのばらつき分析</li>
+        <li>自動化候補の発見</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>3. 無料版・Microsoft 365付属機能との比較</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>機能</th>
+          <th>無料・Microsoft 365付属</th>
+          <th>Premium</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>標準コネクタによる自動化</td>
+          <td>対応範囲内で利用可能</td>
+          <td>利用可能</td>
+        </tr>
+        <tr>
+          <td>メール通知・定期処理</td>
+          <td>対応範囲内で利用可能</td>
+          <td>利用可能</td>
+        </tr>
+        <tr>
+          <td>プレミアムコネクタ</td>
+          <td>原則として対象外</td>
+          <td>利用可能</td>
+        </tr>
+        <tr>
+          <td>カスタムコネクタ</td>
+          <td>追加ライセンス等が必要な場合あり</td>
+          <td>利用可能</td>
+        </tr>
+        <tr>
+          <td>デスクトップRPA</td>
+          <td>機能・実行方法に制限あり</td>
+          <td>有人RPAに対応</td>
+        </tr>
+        <tr>
+          <td>無人RPA</td>
+          <td>別途ライセンスを検討</td>
+          <td>別途ライセンスが必要</td>
+        </tr>
+        <tr>
+          <td>プロセスマイニング</td>
+          <td>利用範囲に制限あり</td>
+          <td>対象機能を利用可能</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small">
+    無料版とMicrosoft 365付属の利用権は同じではありません。
+    実際に利用できる機能は、契約内容や管理者の設定で変わります。
+  </p>
+</section>
+
+<section>
+  <h2>4. 有人RPAと無人RPAの違い</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>有人RPA</h3>
+      <p><strong>Premiumに含まれる機能</strong></p>
+      <p>
+        ユーザーが使用するPC上で、ユーザーの操作や監督のもとに
+        デスクトップフローを実行します。
+      </p>
+      <p>用途例：担当者が開始するWeb検索、データ転記、ファイル整理。</p>
+    </div>
+    <div class="card">
+      <h3>無人RPA</h3>
+      <p><strong>別途ライセンスが必要</strong></p>
+      <p>
+        人がPCを操作していないときにも、デスクトップフローを
+        自動実行する方式です。
+      </p>
+      <p>用途例：夜間の定型処理、定期的なデータ収集。</p>
+    </div>
+  </div>
+  <div class="note">
+    <strong>注意：</strong>
+    Premiumを契約しただけで、すべてのPC操作を無人で
+    無制限に実行できるわけではありません。
+    無人実行にはPower Automate Processなどの追加ライセンスや
+    実行環境の準備が必要です。
+  </div>
+</section>
+
+<section>
+  <h2>5. ライセンス上の主な制限・追加費用</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>Premiumの目安・注意点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>クラウドフローのアクション数</td>
+          <td>ライセンス上の基準として1ユーザーあたり1日40,000アクション</td>
+        </tr>
+        <tr>
+          <td>有人RPA</td>
+          <td>有人ボットを利用可能</td>
+        </tr>
+        <tr>
+          <td>無人RPA</td>
+          <td>別途Processなどのライセンスが必要</td>
+        </tr>
+        <tr>
+          <td>Hosted Process</td>
+          <td>Microsoft管理の仮想マシンを使う場合の選択肢。別途ライセンスを検討</td>
+        </tr>
+        <tr>
+          <td>Dataverseデータベース容量</td>
+          <td>250MB／ライセンス</td>
+        </tr>
+        <tr>
+          <td>Dataverseファイル容量</td>
+          <td>2GB／ライセンス</td>
+        </tr>
+        <tr>
+          <td>AI Builder</td>
+          <td>付与クレジットや利用条件を最新の契約内容で確認</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small">
+    アクション数などの値はライセンス上の基準です。
+    実際の適用条件、サービス保護制限、移行措置、AI機能の提供条件は
+    Microsoft公式の最新資料で確認してください。
+  </p>
+</section>
+
+<section>
+  <h2>6. 特許調査業務での活用例</h2>
+  <p>
+    特許公報の収集・整理など、繰り返し発生する作業に活用できます。
+  </p>
+  <div class="cards">
+    <div class="card">
+      <h3>公報の収集</h3>
+      <p>ブラウザーで検索画面を操作し、公報ファイルを取得する作業を自動化。</p>
+    </div>
+    <div class="card">
+      <h3>ファイル整理</h3>
+      <p>取得したファイルを所定のフォルダーに保存し、命名規則に沿って整理。</p>
+    </div>
+    <div class="card">
+      <h3>データ転記</h3>
+      <p>公開番号、出願人、公開日などの情報をExcelへ転記。</p>
+    </div>
+    <div class="card">
+      <h3>後続処理</h3>
+      <p>ファイル保存をきっかけに通知や別のクラウドフローを実行。</p>
+    </div>
+  </div>
+  <div class="note">
+    PATENTSCOPEなどのWebサイトを自動操作できるかどうかは、
+    ログイン要件、画面構成、利用規約、ダウンロード制限などに左右されます。
+    また、生成AIによる公報要約や特許評価のAPI利用料は、
+    Power Automate Premiumの料金に含まれるとは限りません。
+  </div>
+</section>
+
+<section>
+  <h2>7. 導入判断のポイント</h2>
+  <ul>
+    <li>標準コネクタだけで足りるなら、既存のMicrosoft 365ライセンスで実現できないか先に確認する。</li>
+    <li>プレミアムコネクタや独自APIが必要なら、Premiumを候補にする。</li>
+    <li>PC画面を操作する定型業務が多いなら、有人RPAの費用対効果を検討する。</li>
+    <li>夜間などに無人で動かすなら、追加ライセンスと実行環境の費用を含めて試算する。</li>
+    <li>AIによる文書解析を組み込む場合は、AIサービス側の料金・利用制限も別途確認する。</li>
+  </ul>
+  <div class="good">
+    <strong>結論</strong><br>
+    Power Automate Premiumの最大の価値は、
+    クラウドサービス連携に加え、有人RPAとプレミアムコネクタを
+    活用できることです。無人RPAやAIサービスまで含めた総費用を
+    確認してから契約するのが重要です。
+  </div>
+</section>
+
+<section>
+  <h2>8. Microsoft公式参考リンク</h2>
+  <ul>
+    <li>
+      <a href="https://www.microsoft.com/ja-jp/power-platform/products/power-automate/pricing"
+         target="_blank" rel="noopener">
+        Power Automate 料金・プラン一覧
+      </a>
+    </li>
+    <li>
+      <a href="https://learn.microsoft.com/ja-jp/power-platform/admin/power-automate-licensing/types"
+         target="_blank" rel="noopener">
+        Power Automate ライセンスの種類
+      </a>
+    </li>
+    <li>
+      <a href="https://learn.microsoft.com/ja-jp/power-automate/desktop-flows/introduction"
+         target="_blank" rel="noopener">
+        Power Automate for desktop の概要
+      </a>
+    </li>
+  </ul>
+  <p class="small">
+    価格・ライセンス条件は改定される場合があります。
+    契約前に公式ページで最新情報を確認してください。
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <p>Power Automate Premium ガイド｜業務自動化・RPA導入検討用</p>
+  <p>本資料は概要説明用です。正式なライセンス判断はMicrosoftの最新規約・契約条件に従ってください。</p>
+</footer>
+
+</body>
+</html>

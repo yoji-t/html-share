@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id":  "power-automate-premium-guide",
+        "title":  "Power Automate Premium 完全ガイド",
+        "filename":  "posts/power-automate-premium-guide.html",
+        "createdAt":  "2026-10-21T15:49:44+09:00",
+        "dateFormatted":  "2026/10/21",
+        "description":  "Microsoft Power Automate Premiumの料金（2,248円/月）、クラウドフロー・有人RPA（デスクトップ）・プレミアムコネクタ・プロセスマイニングの機能比較、特許業務自動化の活用例まとめ。",
+        "tags":  [
+                     "Power Automate",
+                     "Microsoft",
+                     "RPA",
+                     "自動化",
+                     "業務効率化",
+                     "知財業務",
+                     "クラウド"
+                 ]
+    },
+    {
         "id":  "culture-day-vs-constitution-memorial-day",
         "title":  "文化の日と憲法記念日の違い",
         "filename":  "posts/culture-day-vs-constitution-memorial-day.html",

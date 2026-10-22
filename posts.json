@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id":  "npb-draft-2026-summary",
+        "title":  "2026年プロ野球ドラフト総まとめ",
+        "filename":  "posts/npb-draft-2026-summary.html",
+        "createdAt":  "2026-10-23T08:55:26+09:00",
+        "dateFormatted":  "2026/10/23",
+        "description":  "2026年プロ野球ドラフト会議の12球団1位〜3位指名結果、注目選手（菰田陽生、織田翔希、鈴木泰成など）のプロフィール、球団別補強戦略と評価ポイント総まとめ。",
+        "tags":  [
+                     "野球",
+                     "プロ野球",
+                     "ドラフト",
+                     "NPB",
+                     "高校野球",
+                     "大学野球",
+                     "スポーツ"
+                 ]
+    },
+    {
         "id":  "solar-power-stability-cost-environment",
         "title":  "太陽光発電を考える｜安定供給・コスト・環境負荷",
         "filename":  "posts/solar-power-stability-cost-environment.html",

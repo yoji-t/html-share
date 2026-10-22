@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="2026年プロ野球ドラフト会議の指名結果、注目選手、球団別の補強方針をまとめたレポート">
+<title>2026年プロ野球ドラフト総まとめ</title>
+<style>
+:root {
+  --navy: #17365d;
+  --blue: #2864a5;
+  --light: #f1f5fa;
+  --line: #dce3ec;
+  --text: #243247;
+  --muted: #64748b;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #f4f6f9;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  line-height: 1.85;
+}
+header {
+  background: linear-gradient(135deg, #17365d, #2864a5);
+  color: white;
+  padding: 52px 20px 42px;
+}
+.hero, main, footer {
+  max-width: 1080px;
+  margin: auto;
+}
+.eyebrow {
+  font-size: .85rem;
+  letter-spacing: .12em;
+  opacity: .85;
+}
+h1 {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  line-height: 1.4;
+  margin: 12px 0;
+}
+header p { margin: 0; opacity: .92; }
+main { padding: 24px 18px 48px; }
+section {
+  background: white;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  margin: 22px 0;
+  box-shadow: 0 3px 12px rgba(20,40,70,.035);
+}
+h2 {
+  color: var(--navy);
+  font-size: 1.45rem;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+h3 { color: var(--navy); margin-bottom: 5px; }
+.lead { font-size: 1.08rem; }
+.note { color: var(--muted); font-size: .88rem; }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 22px 0;
+}
+.stat {
+  background: var(--light);
+  border-radius: 10px;
+  text-align: center;
+  padding: 16px 8px;
+}
+.stat strong {
+  display: block;
+  color: var(--blue);
+  font-size: 1.8rem;
+}
+.stat span { font-size: .88rem; }
+.table-wrap { overflow-x: auto; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .92rem;
+}
+th, td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: var(--light);
+  color: var(--navy);
+  white-space: nowrap;
+}
+tr:hover td { background: #fafcff; }
+.profiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+.profile {
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  padding: 18px;
+}
+.profile h3 { margin-top: 0; }
+.tag {
+  display: inline-block;
+  background: #e8f0fb;
+  color: #214f88;
+  padding: 2px 9px;
+  border-radius: 5px;
+  font-size: .82rem;
+  font-weight: 700;
+}
+.profile ul { padding-left: 20px; }
+.callout {
+  background: #f5f8fc;
+  border-left: 4px solid var(--blue);
+  padding: 15px 18px;
+  margin: 16px 0;
+}
+a { color: #205da5; overflow-wrap: anywhere; }
+footer {
+  padding: 0 20px 32px;
+  color: var(--muted);
+  font-size: .85rem;
+}
+@media(max-width:680px) {
+  header { padding: 35px 18px; }
+  main { padding: 12px; }
+  section { padding: 18px; }
+  .stats { grid-template-columns: 1fr; }
+  .profiles { grid-template-columns: 1fr; }
+  table { font-size: .85rem; }
+}
+@media print {
+  body { background: white; }
+  section { box-shadow: none; break-inside: avoid; }
+  header { background: #17365d !important; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hero">
+    <div class="eyebrow">NPB DRAFT REPORT / 2026</div>
+    <h1>2026年プロ野球ドラフト総まとめ</h1>
+    <p>12球団の指名結果・注目選手の特徴・補強戦略を読み解く</p>
+    <p class="note" style="color:#e2eaf5;margin-top:12px">
+      公開情報をもとにしたドラフト分析レポート
+    </p>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <h2>1. ドラフトの全体像</h2>
+  <p class="lead">
+    ドラフトは、単に有名選手を獲得する場ではありません。
+    球団の弱点を補い、数年後の主力選手を育成するための重要な機会です。
+  </p>
+  <div class="stats">
+    <div class="stat">
+      <strong>12球団</strong>
+      <span>参加球団</span>
+    </div>
+    <div class="stat">
+      <strong>即戦力</strong>
+      <span>大学生・社会人の評価軸</span>
+    </div>
+    <div class="stat">
+      <strong>将来性</strong>
+      <span>高校生の評価軸</span>
+    </div>
+  </div>
+  <h3>ドラフトを見る3つのポイント</h3>
+  <ul>
+    <li><strong>即戦力か将来性か：</strong>大学生・社会人は早期の戦力化、高校生は成長余地が主な評価軸。</li>
+    <li><strong>選手の強み：</strong>球速、制球力、変化球、打力、守備力、走力などを総合的に見る。</li>
+    <li><strong>球団との相性：</strong>先発投手、救援投手、捕手、内野手、外野手など、補強の必要性と照らし合わせる。</li>
+  </ul>
+  <p class="note">
+    注意：指名順位や選手情報は、NPB公式発表と各球団の発表で確認してください。
+    指名によって交渉権が得られても、入団が確定するわけではありません。
+  </p>
+</section>
+
+<section>
+  <h2>2. 12球団の1位指名結果</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>リーグ</th><th>球団</th><th>選手</th><th>所属・ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>セ</td><td>阪神</td><td>榊原七斗</td><td>明治大・外野手</td></tr>
+        <tr><td>セ</td><td>巨人</td><td>織田翔希</td><td>横浜高・投手</td></tr>
+        <tr><td>セ</td><td>DeNA</td><td>星野世那</td><td>大阪商業大・投手</td></tr>
+        <tr><td>セ</td><td>広島</td><td>山里宝</td><td>亜細亜大・内野手</td></tr>
+        <tr><td>セ</td><td>ヤクルト</td><td>藤澤涼介</td><td>東京ガス・外野手</td></tr>
+        <tr><td>セ</td><td>中日</td><td>宮原廉</td><td>近畿大・投手</td></tr>
+        <tr><td>パ</td><td>ソフトバンク</td><td>鈴木泰成</td><td>青山学院大・投手</td></tr>
+        <tr><td>パ</td><td>西武</td><td>川尻啓人</td><td>亜細亜大・投手</td></tr>
+        <tr><td>パ</td><td>日本ハム</td><td>菰田陽生</td><td>山梨学院高・投手／内野手</td></tr>
+        <tr><td>パ</td><td>オリックス</td><td>角田楓斗</td><td>富士大・投手</td></tr>
+        <tr><td>パ</td><td>ロッテ</td><td>米沢友翔</td><td>関西大・投手</td></tr>
+        <tr><td>パ</td><td>楽天</td><td>渡部海</td><td>青山学院大・捕手</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">
+    上記の指名結果は、変換元の回答に記載されていた情報です。
+    正式な公表結果との照合が完了するまでは、確定情報として転載しないでください。
+  </p>
+</section>
+
+<section>
+  <h2>3. 注目選手のプロフィール</h2>
+  <div class="profiles">
+
+    <article class="profile">
+      <span class="tag">日本ハム 1位</span>
+      <h3>菰田陽生</h3>
+      <p><strong>山梨学院高・投手／内野手</strong></p>
+      <p>大型の体格を持ち、投打両方で可能性を持つ二刀流候補として紹介された選手。</p>
+      <ul>
+        <li><strong>注目点：</strong>投手としての球威と打者としての長打力。</li>
+        <li><strong>課題：</strong>プロで投打両方を高い水準でこなせるか。</li>
+        <li><strong>将来性：</strong>どちらを主軸に育成するかが焦点。</li>
+      </ul>
+    </article>
+
+    <article class="profile">
+      <span class="tag">巨人 1位</span>
+      <h3>織田翔希</h3>
+      <p><strong>横浜高・投手</strong></p>
+      <p>高校生屈指の速球派右腕として注目された投手。</p>
+      <ul>
+        <li><strong>注目点：</strong>速球の威力と将来の先発候補としての能力。</li>
+        <li><strong>課題：</strong>制球、変化球、スタミナの向上。</li>
+        <li><strong>焦点：</strong>入団交渉と今後の進路。</li>
+      </ul>
+    </article>
+
+    <article class="profile">
+      <span class="tag">ソフトバンク 1位</span>
+      <h3>鈴木泰成</h3>
+      <p><strong>青山学院大・投手</strong></p>
+      <p>大学野球での実績を持つ、早期の戦力化が期待される右腕。</p>
+      <ul>
+        <li><strong>注目点：</strong>直球の球威と大学での経験。</li>
+        <li><strong>課題：</strong>プロの打者への対応。</li>
+        <li><strong>期待：</strong>先発ローテーション入り。</li>
+      </ul>
+    </article>
+
+    <article class="profile">
+      <span class="tag">楽天 1位</span>
+      <h3>渡部海</h3>
+      <p><strong>青山学院大・捕手</strong></p>
+      <p>大学日本代表での経験を持つ捕手として注目された選手。</p>
+      <ul>
+        <li><strong>注目点：</strong>捕手としての実戦経験とリーダーシップ。</li>
+        <li><strong>課題：</strong>プロの投手陣をリードする能力。</li>
+        <li><strong>期待：</strong>将来の正捕手候補。</li>
+      </ul>
+    </article>
+
+    <article class="profile">
+      <span class="tag">西武 1位</span>
+      <h3>川尻啓人</h3>
+      <p><strong>亜細亜大・投手</strong></p>
+      <p>球威を武器とする大型右腕として紹介された投手。</p>
+      <ul>
+        <li><strong>注目点：</strong>速球の威力と潜在能力。</li>
+        <li><strong>課題：</strong>変化球の精度と制球の安定。</li>
+        <li><strong>期待：</strong>先発・救援の両面での成長。</li>
+      </ul>
+    </article>
+
+    <article class="profile">
+      <span class="tag">阪神 1位</span>
+      <h3>榊原七斗</h3>
+      <p><strong>明治大・外野手</strong></p>
+      <p>走攻守のバランスが評価された大学生外野手。</p>
+      <ul>
+        <li><strong>注目点：</strong>走力、守備力、打撃の総合力。</li>
+        <li><strong>課題：</strong>プロでの出塁率と長打力。</li>
+        <li><strong>期待：</strong>将来のレギュラー外野手。</li>
+      </ul>
+    </article>
+
+    <article class="profile">
+      <span class="tag">ロッテ 1位</span>
+      <h3>米沢友翔</h3>
+      <p><strong>関西大・投手</strong></p>
+      <p>大学野球の大舞台での経験を持つ投手として注目された選手。</p>
+      <ul>
+        <li><strong>注目点：</strong>大学での実戦経験。</li>
+        <li><strong>課題：</strong>プロでの制球と投球の組み立て。</li>
+        <li><strong>期待：</strong>先発候補としての成長。</li>
+      </ul>
+    </article>
+
+    <article class="profile">
+      <span class="tag">中日 1位</span>
+      <h3>宮原廉</h3>
+      <p><strong>近畿大・投手</strong></p>
+      <p>直球とスライダーを軸にした投球が注目された大学生右腕。</p>
+      <ul>
+        <li><strong>注目点：</strong>球威と変化球。</li>
+        <li><strong>課題：</strong>変化球の精度と投球の組み立て。</li>
+        <li><strong>期待：</strong>投手陣の底上げ。</li>
+      </ul>
+    </article>
+
+  </div>
+  <p class="note">
+    選手紹介は変換元の回答を整理したものです。数値や実績の詳細は、
+    球団公式プロフィール、所属チームの発表、信頼できる報道で確認してください。
+  </p>
+</section>
+
+<section>
+  <h2>4. 2位・3位指名一覧</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>球団</th><th>2位指名</th><th>3位指名</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>阪神</td><td>馬場拓海（投手・日本体育大）</td><td>常深颯大（投手・大阪経済大）</td></tr>
+        <tr><td>巨人</td><td>平田玲翔（投手・大分商高）</td><td>池田聖摩（内野手・横浜高）</td></tr>
+        <tr><td>DeNA</td><td>保西雅則（投手・日本航空石川高）</td><td>杉本寛斎（投手・ブリティッシュコロンビア大）</td></tr>
+        <tr><td>広島</td><td>西野啓也（捕手・立命館大）</td><td>野原元気（投手・京都産業大）</td></tr>
+        <tr><td>ヤクルト</td><td>佐藤悠太（外野手・東北福祉大）</td><td>福原聖矢（捕手・明治大）</td></tr>
+        <tr><td>中日</td><td>柴崎聖人（外野手・王子）</td><td>前嶋藍（捕手・亜細亜大）</td></tr>
+        <tr><td>ソフトバンク</td><td>有馬伽久（投手・立命館大）</td><td>渡辺和大（投手・慶応大）</td></tr>
+        <tr><td>西武</td><td>柿本晟弥（投手・パナソニック）</td><td>沢山優介（投手・ヤマハ）</td></tr>
+        <tr><td>日本ハム</td><td>牟禮翔（外野手・九州国際大付高）</td><td>末吉良丞（投手・沖縄尚学高）</td></tr>
+        <tr><td>オリックス</td><td>仲井慎（投手・駒澤大）</td><td>春山陽登（外野手・大阪商業大）</td></tr>
+        <tr><td>ロッテ</td><td>前田侑大（投手・高岡第一高）</td><td>長屋竣大（投手・ENEOS）</td></tr>
+        <tr><td>楽天</td><td>岡田啓吾（内野手・明治大）</td><td>樋口新（投手・王子）</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">
+    この一覧も正式な指名結果との照合が必要です。
+    公開用に利用する場合は、NPB公式発表を優先してください。
+  </p>
+</section>
+
+<section>
+  <h2>5. 球団別に見る指名の傾向</h2>
+
+  <h3>阪神：外野手と投手を組み合わせる</h3>
+  <p>1位で大学生外野手を指名し、続く上位では大学生投手を獲得する構成。野手と投手の双方を補強する考え方が読み取れます。</p>
+
+  <h3>巨人：高校生中心の将来投資</h3>
+  <p>高校生投手と高校生内野手を上位で指名。将来性を重視する一方、入団交渉や育成環境が重要になります。</p>
+
+  <h3>日本ハム：将来性の大きな選手を確保</h3>
+  <p>二刀流候補を筆頭に、高校生外野手や高校生投手を指名。中長期の成長を見込む構成です。</p>
+
+  <h3>ソフトバンク：投手陣の充実</h3>
+  <p>上位で大学生投手を続けて指名。先発・救援を含む投手層の強化につながるかが注目されます。</p>
+
+  <h3>ロッテ：異なる経歴の投手を獲得</h3>
+  <p>大学生、高校生、社会人と異なる経歴の投手を組み合わせ、将来性と経験のバランスを図る構成です。</p>
+
+  <h3>楽天：捕手を最上位で指名</h3>
+  <p>1位で大学生捕手を指名。捕手は守備の中心となるため、投手陣との連携や打撃面の成長が重要になります。</p>
+
+  <p class="note">
+    以上は指名内容から読み取れる分析であり、各球団が公式に表明した補強方針そのものではありません。
+  </p>
+</section>
+
+<section>
+  <h2>6. 2026年ドラフトの注目ポイント</h2>
+
+  <div class="callout">
+    <h3>① 高校生の大器と大学生の即戦力候補</h3>
+    <p>高校生は成長余地と育成方法、大学生・社会人は実績とプロへの適応速度が重要です。指名順位だけでなく、入団後の育成環境も比較する必要があります。</p>
+  </div>
+
+  <div class="callout">
+    <h3>② 投手の指名動向</h3>
+    <p>1位指名で投手を選ぶ球団が多い場合、投手層の強化が各球団にとって重要なテーマだった可能性があります。ただし、全体の指名人数と選手の質も合わせて評価する必要があります。</p>
+  </div>
+
+  <div class="callout">
+    <h3>③ ドラフトの成功は数年後に分かる</h3>
+    <p>本当の評価は、入団直後の成績だけでは決まりません。3〜5年後に一軍の主力になったか、故障を乗り越えられたか、チームの課題を解決できたかが重要です。</p>
+  </div>
+</section>
+
+<section>
+  <h2>7. 公式情報・参考リンク</h2>
+  <ul>
+    <li>
+      <a href="https://draft.npb.jp/draft/2026/" target="_blank" rel="noopener">
+        NPB公式：2026年ドラフト会議
+      </a>
+      <br>指名結果の一次情報を確認するためのリンク。
+    </li>
+    <li>
+      <a href="https://www.hb-nippon.com/articles/18481" target="_blank" rel="noopener">
+        高校野球ドットコム：ドラフト指名速報
+      </a>
+      <br>高校野球関連の選手情報や指名状況の確認用。
+    </li>
+    <li>
+      <a href="https://sports.yahoo.co.jp/" target="_blank" rel="noopener">
+        スポーツナビ
+      </a>
+      <br>ドラフト関連ニュースや選手情報の確認用。
+    </li>
+  </ul>
+  <p class="note">
+    リンク先の公開状況や記事URLは変更される場合があります。
+    指名結果についてはNPB公式発表を優先してください。
+  </p>
+</section>
+
+<section>
+  <h2>総括</h2>
+  <p class="lead">
+    ドラフトを評価する際は、選手の知名度や球速だけでなく、
+    球団の補強事情、育成環境、入団後の成長を合わせて見ることが大切です。
+  </p>
+  <p>
+    2026年ドラフトについては、まず公式指名結果を確定させたうえで、
+    各選手の実績、ポジション、球団の既存戦力と照らし合わせると、
+    より精度の高い分析になります。
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <p>2026年プロ野球ドラフト分析レポート</p>
+  <p>このページはHTML・CSSのみで構成されています。外部ライブラリは不要です。</p>
+  <p>選手情報の正確性については、各球団およびNPBの公式発表をご確認ください。</p>
+</footer>
+
+</body>
+</html>

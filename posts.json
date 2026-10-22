@@ -1,5 +1,22 @@
 ﻿[
     {
+        "id":  "php-security-vulnerabilities-20261022",
+        "title":  "PHPの重大なセキュリティ問題まとめ｜2026年10月22日",
+        "filename":  "posts/php-security-vulnerabilities-20261022.html",
+        "createdAt":  "2026-10-22T18:05:24+09:00",
+        "dateFormatted":  "2026/10/22",
+        "description":  "PHP本体に発見された重大な脆弱性2件（CVSS 9.2・任意コード実行）の概要、想定リスク、各系列（8.2〜8.5）の修正版バージョン、管理者対応、AI脆弱性発見の動向まとめ。",
+        "tags":  [
+                     "セキュリティ",
+                     "PHP",
+                     "脆弱性",
+                     "WordPress",
+                     "Webサーバー",
+                     "サイバーセキュリティ",
+                     "速報"
+                 ]
+    },
+    {
         "id":  "power-automate-premium-guide",
         "title":  "Power Automate Premium 完全ガイド",
         "filename":  "posts/power-automate-premium-guide.html",

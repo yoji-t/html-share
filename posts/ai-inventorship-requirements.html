@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIを利用した発明における発明者の認定条件</title>
+<style>
+:root {
+  --primary: #174a72;
+  --secondary: #287b91;
+  --accent: #dceef4;
+  --bg: #f4f7fa;
+  --text: #263746;
+  --muted: #5e7180;
+  --border: #d9e2e9;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.85;
+}
+header {
+  background: linear-gradient(135deg, #123b5a, #287b91);
+  color: white;
+  padding: 54px 22px 46px;
+}
+.header-inner, main, footer {
+  max-width: 1050px;
+  margin: auto;
+}
+.eyebrow {
+  font-size: 0.82rem;
+  letter-spacing: .12em;
+  opacity: .85;
+}
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  line-height: 1.4;
+  margin: 14px 0;
+}
+header p { max-width: 780px; color: #e5f1f7; }
+main { padding: 28px 18px 60px; }
+section {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 26px;
+  margin: 22px 0;
+  box-shadow: 0 3px 12px rgba(26, 54, 75, .035);
+}
+h2 {
+  font-size: 1.45rem;
+  color: var(--primary);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+  margin-top: 0;
+}
+h3 { color: var(--secondary); margin-top: 25px; }
+p { margin: 12px 0; }
+.lead {
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+.keypoint {
+  background: #edf6fa;
+  border-left: 5px solid var(--secondary);
+  padding: 18px 20px;
+  margin: 20px 0;
+  border-radius: 4px 10px 10px 4px;
+}
+.warning {
+  background: #fff7e8;
+  border-left: 5px solid #d69b36;
+  padding: 16px 20px;
+  border-radius: 4px 10px 10px 4px;
+  margin: 18px 0;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+.card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  background: #fff;
+}
+.card h3 { margin-top: 0; font-size: 1.05rem; }
+.num {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--primary);
+  font-weight: bold;
+  margin-right: 7px;
+}
+.table-wrap { overflow-x: auto; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: .94rem;
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: #eaf2f7; color: var(--primary); }
+tbody tr:nth-child(even) { background: #f8fafc; }
+.case {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  margin: 14px 0;
+}
+.case h3 { margin-top: 0; }
+.tag {
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: bold;
+  padding: 3px 9px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+.tag-low { background: #fff0d5; color: #875a0b; }
+.tag-high { background: #dff4e7; color: #17643b; }
+.checklist {
+  list-style: none;
+  padding: 0;
+}
+.checklist li { margin: 13px 0; }
+.checklist label {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+.checklist input {
+  margin-top: 7px;
+  transform: scale(1.2);
+  accent-color: var(--secondary);
+}
+.progress-track {
+  height: 8px;
+  background: #e7edf2;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: var(--secondary);
+  transition: width .2s;
+}
+#progressText { color: var(--muted); font-size: .9rem; }
+.source-list li { margin: 10px 0; }
+a { color: #176a91; overflow-wrap: anywhere; }
+footer {
+  padding: 0 20px 35px;
+  color: var(--muted);
+  font-size: .85rem;
+}
+@media (max-width: 720px) {
+  .cards { grid-template-columns: 1fr; }
+  section { padding: 19px; }
+  th, td { padding: 9px; min-width: 130px; }
+}
+@media print {
+  body { background: white; }
+  header { background: white; color: #123b5a; padding: 20px 0; }
+  header p { color: #263746; }
+  section { box-shadow: none; break-inside: avoid; }
+  .checklist input { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="eyebrow">INTELLECTUAL PROPERTY &amp; AI</div>
+    <h1>AIを利用した発明における<br>発明者の認定条件</h1>
+    <p>日本・米国・欧州の制度比較と、企業の知財部門における実務対応</p>
+    <p>基準時：2026年10月</p>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <h2>1. 結論：AIを使ったかではなく、人間の創作的貢献が重要</h2>
+  <p class="lead">
+    AIを利用した発明でも、人間が発明者として認められる可能性があります。
+    重要なのは、AIの利用そのものではなく、人間が発明の技術的特徴部分の創作に
+    どのように関与したかという点です。
+  </p>
+  <div class="keypoint">
+    <strong>基本原則</strong><br>
+    AIを使って技術案を生成しただけなのか、人間が技術的な着想を得て、
+    発明の特徴となる構成を創作・具体化したのかを区別して判断します。
+  </div>
+  <p>
+    AIを発明者として記載することは、日本・米国・欧州のいずれでも認められていません。
+    発明者として記載されるのは人間です。
+  </p>
+  <p>
+    なお、発明者の認定と、発明が新規性・進歩性などの特許要件を満たすかどうかは
+    別の問題です。
+  </p>
+</section>
+
+<section>
+  <h2>2. 発明者性を判断する3つの観点</h2>
+  <div class="cards">
+    <div class="card">
+      <h3><span class="num">1</span>技術的な着想</h3>
+      <p>発明の核となる技術的アイデアや、課題を解決する具体的な手段を人間が考え出したか。</p>
+    </div>
+    <div class="card">
+      <h3><span class="num">2</span>技術的な具体化</h3>
+      <p>構造、寸法、材料、配置、制御条件など、発明の特徴を形成する構成を創作したか。</p>
+    </div>
+    <div class="card">
+      <h3><span class="num">3</span>創作への実質的関与</h3>
+      <p>AIの出力を受け取るだけでなく、技術的な検討や改良を通じて発明の完成に貢献したか。</p>
+    </div>
+  </div>
+  <div class="warning">
+    これらは実務上の整理であり、独立した法定チェック項目ではありません。
+    作業時間やプロンプトの長さだけで発明者性が決まるわけでもありません。
+  </div>
+</section>
+
+<section>
+  <h2>3. AIの利用方法と発明者としての評価</h2>
+  <p>タイヤの騒音低減技術を例に、代表的なケースを比較します。</p>
+
+  <div class="case">
+    <span class="tag tag-low">貢献が限定的な可能性</span>
+    <h3>ケースA：課題をAIに伝えただけ</h3>
+    <p>人間が「タイヤの騒音を減らしたい」と指示し、AIが具体的な構造を提案した。</p>
+    <p><strong>評価：</strong>課題の提示だけでは、発明の技術的特徴部分への創作的貢献が十分とは限りません。</p>
+  </div>
+
+  <div class="case">
+    <span class="tag tag-low">それだけでは不十分</span>
+    <h3>ケースB：AIの提案をそのまま採用</h3>
+    <p>AIが提案した構造を人間が選択し、そのまま製品に採用した。</p>
+    <p><strong>評価：</strong>選択や採用という事実だけで、発明者性が当然に認められるわけではありません。</p>
+  </div>
+
+  <div class="case">
+    <span class="tag tag-high">発明者性を裏付け得る</span>
+    <h3>ケースC：人間が独自の構造に改良</h3>
+    <p>AIの提案をもとに、人間が騒音低減と組付け性を両立させる独自の構造や配置を考案した。</p>
+    <p><strong>評価：</strong>その改良が発明の技術的特徴を形成するなら、発明者として認められる可能性があります。</p>
+  </div>
+
+  <div class="case">
+    <span class="tag tag-high">具体的な貢献次第</span>
+    <h3>ケースD：AIによる材料探索と人間の技術的判断</h3>
+    <p>AIが多数の材料候補を探索し、人間が独自の技術的仮説に基づいて新たな材料構成を考案した。</p>
+    <p><strong>評価：</strong>人間が発明の特徴となる構成を創作したと評価できれば、発明者となり得ます。</p>
+  </div>
+
+  <p>
+    <strong>ポイント：</strong>実験や検証をしただけで発明者になるとは限りません。
+    ただし、実験を通じて初めて具体的な技術的着想を得た場合は、
+    その内容を個別に検討する必要があります。
+  </p>
+</section>
+
+<section>
+  <h2>4. プロンプトの作成は発明者性に影響するか</h2>
+  <p>
+    プロンプトの内容は、人間がどのような技術的貢献をしたかを判断するうえで
+    関連する事情になり得ます。しかし、詳細なプロンプトを作成したというだけで
+    発明者性が認められるわけではありません。
+  </p>
+
+  <div class="case">
+    <span class="tag tag-low">一般的な指示</span>
+    <h3>例1：課題を示すだけのプロンプト</h3>
+    <blockquote>
+      タイヤの転がり抵抗を低減する方法を10個提案してください。
+    </blockquote>
+    <p>
+      目標を伝えただけで、発明の具体的な解決手段をAIが生成した場合、
+      人間の創作的貢献は限定的である可能性があります。
+    </p>
+  </div>
+
+  <div class="case">
+    <span class="tag tag-high">技術的知見を反映</span>
+    <h3>例2：技術的仮説や構成条件を指定</h3>
+    <blockquote>
+      ベルト端部のひずみを抑えながら、低転がり抵抗と耐久性を両立させるため、
+      コード角度、ベルト幅、ゴム弾性率の関係を検討し、
+      特定の構成条件を満たす案を比較してください。
+    </blockquote>
+    <p>
+      人間が独自の技術的仮説や構成条件を設定し、それが発明の特徴部分の創作に
+      結び付いている場合、発明者性を裏付ける事情となり得ます。
+    </p>
+  </div>
+
+  <div class="warning">
+    詳細な指示をした場合でも、発明の特徴部分をAIが生成し、人間が選択しただけなら、
+    発明者性が当然に認められるわけではありません。
+    プロンプトの技術的意味と、完成した発明との関係が重要です。
+  </div>
+</section>
+
+<section>
+  <h2>5. 日本・米国・欧州の比較</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>比較項目</th>
+          <th>日本</th>
+          <th>米国</th>
+          <th>欧州特許庁（EPO）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AIを発明者として記載</td>
+          <td>不可</td>
+          <td>不可</td>
+          <td>不可</td>
+        </tr>
+        <tr>
+          <td>人間がAIを利用した発明</td>
+          <td>従来の発明者認定の考え方に基づき、創作的関与を検討</td>
+          <td>人間による発明の着想への貢献を従来の基準で評価</td>
+          <td>人間の発明者を特定する必要がある</td>
+        </tr>
+        <tr>
+          <td>主な留意点</td>
+          <td>技術的特徴部分の創作への関与</td>
+          <td>AIの利用だけでは発明者性は決まらない</td>
+          <td>発明者の指定と権利承継の要件</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>米国の指針に関する注意</h3>
+  <p>
+    USPTOは2024年にAI支援発明の発明者性に関する指針を公表しましたが、
+    2025年11月に撤回しました。2024年指針の説明を、そのまま現行の米国実務として
+    適用しないよう注意が必要です。
+  </p>
+  <p>
+    各国の制度・審査運用は変更される可能性があります。
+    国際出願や外国出願では、出願時点の公式資料を確認してください。
+  </p>
+</section>
+
+<section>
+  <h2>6. 企業の知財部門で実施したい対策</h2>
+
+  <h3>① AI利用記録を保存する</h3>
+  <ul>
+    <li>プロンプトとAIの回答</li>
+    <li>生成日時と使用したAIモデル</li>
+    <li>参照した技術資料や先行技術</li>
+    <li>AIの回答を採用・不採用とした理由</li>
+  </ul>
+
+  <h3>② 人間による技術的な変更を記録する</h3>
+  <ul>
+    <li>AIの初期提案から変更した部分</li>
+    <li>変更の理由となった技術的知見</li>
+    <li>人間が独自に考案した構造・材料・条件</li>
+    <li>変更が発明の技術的特徴に与える効果</li>
+  </ul>
+
+  <h3>③ 実験・検証の経緯を区別する</h3>
+  <ul>
+    <li>実験前に人間が立てていた仮説</li>
+    <li>AIが提案した構成</li>
+    <li>実験によって判明した現象</li>
+    <li>結果を受けて新たに得られた技術的着想</li>
+  </ul>
+
+  <h3>④ 発明者候補ごとの貢献を確認する</h3>
+  <p>
+    研究者、設計者、実験担当者などについて、単なる作業分担ではなく、
+    誰がどの技術的特徴の創作に関与したかを確認します。
+    発明者の人数を役職や作業量だけで決めないことが重要です。
+  </p>
+
+  <div class="keypoint">
+    これらの記録は、後日、発明者の適切性を検討する際の証拠資料になり得ます。
+    ただし、記録の存在だけで発明者性が認められるわけではなく、
+    実際の技術的貢献が判断の中心となります。
+  </div>
+</section>
+
+<section>
+  <h2>7. 発明者確認チェックリスト</h2>
+  <p>出願前の発明提案面談や、発明者確認の際に利用できます。</p>
+
+  <ul class="checklist" id="checklist">
+    <li><label><input type="checkbox"><span>発明の技術的特徴部分を特定した。</span></label></li>
+    <li><label><input type="checkbox"><span>AIを使う前に人間が考えていた技術的仮説を確認した。</span></label></li>
+    <li><label><input type="checkbox"><span>AIの提案と、人間が独自に考案・改良した部分を区別した。</span></label></li>
+    <li><label><input type="checkbox"><span>人間による変更が発明の技術的特徴にどう寄与したか説明できる。</span></label></li>
+    <li><label><input type="checkbox"><span>実験・検証・改良の経緯を記録した。</span></label></li>
+    <li><label><input type="checkbox"><span>発明者候補ごとの創作的貢献を確認した。</span></label></li>
+  </ul>
+
+  <div class="progress-track">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+  <p id="progressText" aria-live="polite">0 / 6 項目確認済み</p>
+  <p class="warning">
+    このチェックリストは社内確認用の補助資料であり、
+    法的な発明者認定を確定するテストではありません。
+  </p>
+</section>
+
+<section>
+  <h2>8. 参考となる公的資料</h2>
+  <ul class="source-list">
+    <li>
+      <strong>日本・特許庁</strong><br>
+      <a href="https://www.jpo.go.jp/system/process/shutugan/hatsumei.html"
+         target="_blank" rel="noopener noreferrer">
+        発明者等の表示について
+      </a>
+    </li>
+    <li>
+      <strong>米国・USPTO</strong><br>
+      <a href="https://www.uspto.gov/subscription-center/2025/revised-inventorship-guidance-ai-assisted-inventions"
+         target="_blank" rel="noopener noreferrer">
+        Revised inventorship guidance for AI-assisted inventions（2025年）
+      </a>
+    </li>
+    <li>
+      <strong>欧州特許庁（EPO）</strong><br>
+      <a href="https://www.epo.org/en/news-events/in-focus/digital-innovations/inventorship"
+         target="_blank" rel="noopener noreferrer">
+        Inventorship
+      </a>
+    </li>
+  </ul>
+  <p>
+    公的資料の内容、適用時期、更新状況は、実際の出願に先立って各機関の公式サイトで
+    確認してください。
+  </p>
+</section>
+
+<section>
+  <h2>まとめ</h2>
+  <ol>
+    <li>AIを使ったこと自体は、人間の発明者性を否定する理由にはならない。</li>
+    <li>課題の提示、AI出力の選択、実験の実施だけでは、創作的貢献が十分とは限らない。</li>
+    <li>発明の技術的特徴部分を人間が創作・具体化したかどうかが重要である。</li>
+    <li>AIの出力と人間の技術的な着想・改良を区別して記録することが実務上有効である。</li>
+    <li>日本・米国・欧州の出願では、それぞれの発明者要件と手続を確認する必要がある。</li>
+  </ol>
+  <p>
+    <strong>実務上の推奨：</strong>
+    発明者を確定する際は、特許請求の範囲に記載する技術的特徴と、
+    各人が実際に行った創作的貢献との関係を確認し、必要に応じて弁理士・弁護士に
+    相談してください。
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <p>
+    本ページは一般的な情報整理を目的としています。個別案件の法的判断や、
+    各国における最新の制度・審査運用を保証するものではありません。
+  </p>
+</footer>
+
+<script>
+const checkboxes = document.querySelectorAll('#checklist input[type="checkbox"]');
+const progressBar = document.getElementById('progressBar');
+const progressText = document.getElementById('progressText');
+
+function updateProgress() {
+  const checked = [...checkboxes].filter(box => box.checked).length;
+  const total = checkboxes.length;
+  progressBar.style.width = (checked / total * 100) + '%';
+  progressText.textContent =
+    checked + ' / ' + total + ' 項目確認済み';
+}
+checkboxes.forEach(box => box.addEventListener('change', updateProgress));
+</script>
+
+</body>
+</html>

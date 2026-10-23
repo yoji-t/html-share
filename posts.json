@@ -1,5 +1,24 @@
 ﻿[
     {
+        "id":  "ai-inventorship-requirements",
+        "title":  "AIを利用した発明における発明者の認定条件",
+        "filename":  "posts/ai-inventorship-requirements.html",
+        "createdAt":  "2026-10-23T18:49:15+09:00",
+        "dateFormatted":  "2026/10/23",
+        "description":  "AI生成技術における人間の創作的貢献、日米欧（JPO・USPTO・EPO）の法制度比較、プロンプト指示の技術的評価、企業知財部門の証拠保全・チェックリストをまとめた実務ガイド。",
+        "tags":  [
+                     "知財",
+                     "特許",
+                     "AI発明",
+                     "発明者性",
+                     "特許法",
+                     "USPTO",
+                     "JPO",
+                     "EPO",
+                     "知財実務"
+                 ]
+    },
+    {
         "id":  "npb-draft-2026-summary",
         "title":  "2026年プロ野球ドラフト総まとめ",
         "filename":  "posts/npb-draft-2026-summary.html",

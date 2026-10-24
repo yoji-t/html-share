@@ -1,4 +1,21 @@
-﻿[
+[
+    {
+        "id":  "ip-database-daily-report-20261024",
+        "title":  "知財データベース最新情報レポート（2026年10月24日）",
+        "filename":  "posts/ip-database-daily-report-20261024.html",
+        "createdAt":  "2026-10-24T08:58:46+09:00",
+        "dateFormatted":  "2026/10/24",
+        "description":  "MyTokkyo.Aiによるセラミックス・ガラス特許動向とAI特許検索ノウハウ、J-PlatPatのJ-GLOBAL検索緊急停止・CSV休眠ID削除リマインダー等をまとめた知財DBデイリーレポート。",
+        "tags":  [
+                     "知財",
+                     "特許",
+                     "特許データベース",
+                     "J-PlatPat",
+                     "AI特許検索",
+                     "MyTokkyo.Ai",
+                     "知財実務"
+                 ]
+    },
     {
         "id":  "ai-inventorship-requirements",
         "title":  "AIを利用した発明における発明者の認定条件",

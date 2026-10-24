@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小学生向け ことわざを学ぼう</title>
+  <style>
+    body {
+      font-family: "Yu Gothic", "Meiryo", sans-serif;
+      line-height: 1.9;
+      margin: 0;
+      background: #f4f8fc;
+      color: #333;
+    }
+    header {
+      background: #3978b8;
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    header p {
+      margin-bottom: 0;
+    }
+    main {
+      max-width: 850px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+    .kotowaza {
+      background: white;
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 24px;
+      box-shadow: 0 3px 10px #0000000d;
+      border-top: 6px solid #69a9e8;
+    }
+    .kotowaza h2 {
+      color: #2866a3;
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+    .meaning {
+      background: #edf6ff;
+      padding: 12px 16px;
+      border-radius: 8px;
+    }
+    .example {
+      background: #fff7e5;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+    .memory {
+      color: #276b48;
+      font-weight: bold;
+      margin-top: 12px;
+    }
+    .comparison {
+      background: white;
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 24px;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 450px;
+    }
+    th, td {
+      border: 1px solid #d5dce5;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background: #e8f1fb;
+    }
+    .quiz {
+      background: white;
+      padding: 22px;
+      border-radius: 14px;
+      margin-bottom: 25px;
+    }
+    .question {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+    .question label {
+      display: block;
+      margin: 7px 0;
+      cursor: pointer;
+    }
+    button {
+      background: #3978b8;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button:hover {
+      background: #285c91;
+    }
+    #result {
+      margin-top: 18px;
+      padding: 15px;
+      border-radius: 8px;
+      background: #edf6ff;
+      display: none;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.45rem;
+      }
+      .kotowaza, .comparison, .quiz {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>ことわざを学ぼう！</h1>
+  <p>意味と使い方を知って、正しく使えるようになろう</p>
+</header>
+
+<main>
+
+  <section class="kotowaza">
+    <h2>① 長いものには巻かれろ</h2>
+
+    <div class="meaning">
+      <strong>【意味】</strong><br>
+      自分より力の強い人や、大きな勢力には、無理に逆らわず、
+      従ったほうがよいということ。
+    </div>
+
+    <div class="example">
+      <strong>【使い方の例】</strong><br>
+      クラスのみんなで決めたルールに納得できなかったけれど、
+      話し合っても変わらなかったので、今回はルールに従うことにした。<br>
+      こんなときに「長いものには巻かれろ」ということがあります。
+    </div>
+
+    <p class="memory">
+      【覚え方】大きなものには逆らわず、従う。
+    </p>
+  </section>
+
+  <section class="kotowaza">
+    <h2>② 猿も木から落ちる</h2>
+
+    <div class="meaning">
+      <strong>【意味】</strong><br>
+      どんなに得意なことでも、失敗することはあるということ。
+    </div>
+
+    <div class="example">
+      <strong>【使い方の例】</strong><br>
+      野球がとても上手な選手が、簡単なフライを取りそこねてしまった。<br>
+      そんなとき、「猿も木から落ちる」といいます。
+    </div>
+
+    <p class="memory">
+      【覚え方】得意な人でも失敗することがある。
+    </p>
+  </section>
+
+  <section class="kotowaza">
+    <h2>③ 瓜（うり）のつるには茄子（なす）はならぬ</h2>
+
+    <div class="meaning">
+      <strong>【意味】</strong><br>
+      原因や性質が違えば、それに応じた結果になるということ。
+      また、子どもには親に似た性質が現れやすいという意味でも使われる。
+    </div>
+
+    <div class="example">
+      <strong>【使い方の例】</strong><br>
+      お父さんもお母さんも絵を描くのが得意で、
+      子どもも絵を描くことが好きになった。<br>
+      このように、親子は性質が似ることがあるという意味で使われます。
+    </div>
+
+    <p class="memory">
+      【覚え方】瓜のつるからは瓜ができ、茄子はできない。
+    </p>
+  </section>
+
+  <section class="comparison">
+    <h2>3つのことわざを比べて覚えよう</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ことわざ</th>
+          <th>大切な意味</th>
+          <th>キーワード</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>長いものには巻かれろ</td>
+          <td>力の強い相手には逆らわず従う</td>
+          <td>従う</td>
+        </tr>
+        <tr>
+          <td>猿も木から落ちる</td>
+          <td>得意な人でも失敗する</td>
+          <td>失敗</td>
+        </tr>
+        <tr>
+          <td>瓜のつるには茄子はならぬ</td>
+          <td>性質に応じた結果になる・親子は似やすい</td>
+          <td>性質・親子</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="quiz">
+    <h2>確認クイズに挑戦！</h2>
+    <p>正しいと思う答えを1つ選んでください。</p>
+
+    <form id="quizForm">
+      <div class="question">
+        <strong>第1問</strong><br>
+        どんなに得意な人でも失敗することがある、という意味のことわざは？
+        <label><input type="radio" name="q1" value="a"> 長いものには巻かれろ</label>
+        <label><input type="radio" name="q1" value="b"> 猿も木から落ちる</label>
+        <label><input type="radio" name="q1" value="c"> 瓜のつるには茄子はならぬ</label>
+      </div>
+
+      <div class="question">
+        <strong>第2問</strong><br>
+        自分より力の強い相手には、無理に逆らわず従うという意味のことわざは？
+        <label><input type="radio" name="q2" value="a"> 長いものには巻かれろ</label>
+        <label><input type="radio" name="q2" value="b"> 猿も木から落ちる</label>
+        <label><input type="radio" name="q2" value="c"> 瓜のつるには茄子はならぬ</label>
+      </div>
+
+      <div class="question">
+        <strong>第3問</strong><br>
+        親子は性質が似やすい、という意味でも使われることわざは？
+        <label><input type="radio" name="q3" value="a"> 長いものには巻かれろ</label>
+        <label><input type="radio" name="q3" value="b"> 猿も木から落ちる</label>
+        <label><input type="radio" name="q3" value="c"> 瓜のつるには茄子はならぬ</label>
+      </div>
+
+      <button type="button" onclick="checkAnswers()">答え合わせ</button>
+      <button type="reset" onclick="resetResult()">やり直す</button>
+    </form>
+
+    <div id="result" aria-live="polite"></div>
+  </section>
+
+</main>
+
+<footer>
+  <p>ことわざを覚えて、国語の力をアップさせよう！</p>
+</footer>
+
+<script>
+  function checkAnswers() {
+    const answers = {
+      q1: "b",
+      q2: "a",
+      q3: "c"
+    };
+
+    const explanations = [
+      "第1問：猿も木から落ちる",
+      "第2問：長いものには巻かれろ",
+      "第3問：瓜のつるには茄子はならぬ"
+    ];
+
+    let score = 0;
+    const form = document.getElementById("quizForm");
+
+    for (const question in answers) {
+      const selected = form.querySelector(
+        'input[name="' + question + '"]:checked'
+      );
+      if (selected && selected.value === answers[question]) {
+        score++;
+      }
+    }
+
+    const result = document.getElementById("result");
+    result.style.display = "block";
+    result.innerHTML =
+      "<h3>あなたの結果は " + score + " / 3 問正解！</h3>" +
+      "<p>" + (score === 3
+        ? "全問正解！すばらしい！"
+        : "答えを確認して、もう一度挑戦してみよう！") +
+      "</p><ul>" +
+      explanations.map(item => "<li>" + item + "</li>").join("") +
+      "</ul>";
+  }
+
+  function resetResult() {
+    document.getElementById("result").style.display = "none";
+  }
+</script>
+
+</body>
+</html>

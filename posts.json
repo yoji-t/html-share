@@ -1,5 +1,21 @@
 [
     {
+        "id":  "elementary-proverbs-study-guide",
+        "title":  "小学生向け ことわざを学ぼう！",
+        "filename":  "posts/elementary-proverbs-study-guide.html",
+        "createdAt":  "2026-10-24T20:48:26+09:00",
+        "dateFormatted":  "2026/10/24",
+        "description":  "「長いものには巻かれろ」「猿も木から落ちる」「瓜のつるには茄子はならぬ」の3つのことわざの意味・例文・覚え方を整理し、確認クイズも備えた小学生向け国語学習ページ。",
+        "tags":  [
+                     "国語",
+                     "ことわざ",
+                     "小学生",
+                     "学習",
+                     "中学受験",
+                     "クイズ"
+                 ]
+    },
+    {
         "id":  "what-is-boring-survey-guide",
         "title":  "ボーリング調査って何？",
         "filename":  "posts/what-is-boring-survey-guide.html",

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ボーリング調査って何？</title>
+  <style>
+    body {
+      font-family: "Noto Sans JP", sans-serif;
+      line-height: 1.9;
+      color: #263445;
+      background: #f3f7fb;
+      margin: 0;
+      padding: 20px;
+    }
+    main {
+      max-width: 850px;
+      margin: auto;
+      background: #fff;
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px #0000000d;
+    }
+    h1 {
+      color: #1766a6;
+      font-size: 1.8em;
+      border-bottom: 4px solid #72b9e8;
+      padding-bottom: 12px;
+    }
+    h2 {
+      color: #1766a6;
+      background: #eaf5ff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+    h3 { color: #247a91; }
+    .intro, .summary {
+      background: #edf8f1;
+      padding: 16px;
+      border-radius: 10px;
+    }
+    .step {
+      border: 1px solid #d7e5ef;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 14px 0;
+    }
+    .number {
+      display: inline-block;
+      background: #1766a6;
+      color: white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      font-weight: bold;
+      margin-right: 6px;
+    }
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .good, .careful {
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .good { background: #eaf7ed; }
+    .careful { background: #fff2e5; }
+    .keyword {
+      color: #c05219;
+      font-weight: bold;
+    }
+    .illustration {
+      background: #f4f0e6;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      margin: 18px 0;
+    }
+    .ground {
+      height: 150px;
+      position: relative;
+      background: linear-gradient(
+        to bottom,
+        #b9d9a4 0 18%,
+        #d7b58b 18% 52%,
+        #b4a2c9 52% 75%,
+        #9daeb8 75% 100%
+      );
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 12px;
+    }
+    .hole {
+      position: absolute;
+      left: 48%;
+      top: 0;
+      height: 100%;
+      width: 22px;
+      background: #565b61;
+      border-left: 4px solid #777;
+      border-right: 4px solid #777;
+    }
+    .label {
+      position: absolute;
+      left: 10px;
+      font-size: 12px;
+      background: #ffffffd9;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .l1 { top: 23%; }
+    .l2 { top: 57%; }
+    .l3 { top: 80%; }
+    .note {
+      color: #5a6875;
+      font-size: 0.9em;
+    }
+    footer {
+      border-top: 1px solid #ddd;
+      margin-top: 30px;
+      padding-top: 15px;
+      color: #667;
+      font-size: 0.85em;
+    }
+    @media (max-width: 560px) {
+      body { padding: 8px; }
+      main { padding: 17px; }
+      h1 { font-size: 1.5em; }
+      .compare { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>ボーリング調査って何？</h1>
+  <p class="intro">
+    ボーリング調査とは、<strong>地面に細長い穴を掘って、
+    地面の下がどんな状態なのかを調べること</strong>です。
+    家や学校、ビル、橋などを安全につくるために行います。
+  </p>
+
+  <h2>1．誰が発明したの？</h2>
+  <p>
+    実は、ボーリング調査を発明した人を、
+    たった一人に決めることはできません。
+  </p>
+  <p>
+    昔から人々は、地下の水を見つけるために井戸を掘ったり、
+    金属などを探すために鉱山を掘ったりしていました。
+    そのような穴掘りの技術が発達し、
+    現在のボーリング調査につながっています。
+  </p>
+
+  <div class="step">
+    <h3>① 昔：井戸や鉱山を掘る</h3>
+    地下にある水や鉱石を見つけるために、
+    人々は地面を掘っていました。
+  </div>
+  <div class="step">
+    <h3>② 1800年代：機械で掘る技術が発達</h3>
+    機械で深く掘る技術や、地下の岩を取り出す技術が
+    発達していきました。
+  </div>
+  <div class="step">
+    <h3>③ 現在：安全な建物をつくるために調査</h3>
+    専用の機械で土を採取したり、地面のかたさを測ったりして、
+    建物を支えられる地盤かどうかを調べます。
+  </div>
+
+  <p class="note">
+    ※ボーリング技術は長い時間をかけて発展したもので、
+    現在の地盤調査にはさまざまな技術が使われています。
+  </p>
+
+  <h2>2．ボーリング調査では何をするの？</h2>
+
+  <div class="step">
+    <h3><span class="number">1</span>地面に穴を掘る</h3>
+    専用の機械を使って、地面に細長い穴を掘ります。
+    調べる深さは、土地や建物によって変わります。
+  </div>
+
+  <div class="step">
+    <h3><span class="number">2</span>土を取り出して調べる</h3>
+    砂やねん土、石などを採取します。
+    地面の深さによって、土の種類がどう変わるかを調べます。
+  </div>
+
+  <div class="step">
+    <h3><span class="number">3</span>地面のかたさを測る</h3>
+    代表的な方法に「標準貫入試験」があります。
+    決められた重さのハンマーで器具を打ち込み、
+    どれくらいの打撃で一定の深さまで入るかを調べます。
+    これにより、地盤のかたさなどを知る手がかりが得られます。
+  </div>
+
+  <div class="step">
+    <h3><span class="number">4</span>結果をまとめる</h3>
+    土の種類、かたさ、地下水の位置などを確認し、
+    建物を安全に支えられるかを検討します。
+    必要に応じて、地盤を補強したり、杭を打ったりします。
+  </div>
+
+  <h2>3．地面の下はどうなっているの？</h2>
+  <p>
+    地面の上からは同じように見えても、
+    地面の下は場所によって違います。
+  </p>
+
+  <div class="illustration">
+    <strong>地面の下を調べるイメージ</strong>
+    <div class="ground">
+      <span class="label l1">表面に近い土</span>
+      <span class="label l2">砂・ねん土など</span>
+      <span class="label l3">深い場所の地層</span>
+      <div class="hole"></div>
+    </div>
+    <p class="note">
+      ※図は説明のためのイメージです。
+      実際の地層の順番や厚さは場所によって異なります。
+    </p>
+  </div>
+
+  <div class="compare">
+    <div class="good">
+      <h3>かたい地盤</h3>
+      建物を支えやすい場合があります。
+      ただし、地盤全体の状態や建物の重さも調べる必要があります。
+    </div>
+    <div class="careful">
+      <h3>やわらかい地盤</h3>
+      建物の重さで地面が沈んだり、
+      建物が傾いたりするおそれがあります。
+      必要に応じて対策を考えます。
+    </div>
+  </div>
+
+  <h2>4．どうして調査が必要なの？</h2>
+  <p>
+    地面の状態を知らずに大きな建物を建てると、
+    建物が沈んだり、傾いたりするおそれがあります。
+  </p>
+  <p>
+    そこで、建物を建てる前に地面の下を調べ、
+    安全な設計や工事に役立てるのです。
+  </p>
+
+  <h2>5．まとめ</h2>
+  <div class="summary">
+    <ul>
+      <li><strong>何をする？</strong>
+        地面に穴を掘って、地下の様子を調べる。</li>
+      <li><strong>誰が発明した？</strong>
+        一人の発明者がいるわけではなく、
+        昔からの穴掘り技術が発展したもの。</li>
+      <li><strong>何を調べる？</strong>
+        土の種類、地盤のかたさ、地下水の位置など。</li>
+      <li><strong>何のため？</strong>
+        家や学校、ビル、橋などを安全につくるため。</li>
+    </ul>
+  </div>
+
+  <h2>覚え方</h2>
+  <p>
+    ボーリング調査は、<span class="keyword">「地面の下の健康診断」</span>
+    と覚えましょう！
+  </p>
+  <p>
+    人間が健康診断で体の中を調べるように、
+    ボーリング調査では地面の下を調べるのです。
+  </p>
+
+  <footer>
+    小学生向け学習資料｜地理・理科・建設のしくみ
+  </footer>
+</main>
+</body>
+</html>

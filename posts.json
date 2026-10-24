@@ -1,5 +1,21 @@
 [
     {
+        "id":  "what-is-boring-survey-guide",
+        "title":  "ボーリング調査って何？",
+        "filename":  "posts/what-is-boring-survey-guide.html",
+        "createdAt":  "2026-10-24T20:27:45+09:00",
+        "dateFormatted":  "2026/10/24",
+        "description":  "地面に穴を掘って地盤の硬さや土質を調べる「ボーリング調査（標準貫入試験など）」の歴史・調査手順・目的を、小学生にも分かりやすく解説した地盤調査ガイド。",
+        "tags":  [
+                     "科学",
+                     "理科",
+                     "地理",
+                     "地盤調査",
+                     "建築",
+                     "学習"
+                 ]
+    },
+    {
         "id":  "soyoocho-history-study-guide",
         "title":  "租庸調（そようちょう）を覚えよう！",
         "filename":  "posts/soyoocho-history-study-guide.html",

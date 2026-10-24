@@ -1,5 +1,21 @@
 [
     {
+        "id":  "soyoocho-history-study-guide",
+        "title":  "租庸調（そようちょう）を覚えよう！",
+        "filename":  "posts/soyoocho-history-study-guide.html",
+        "createdAt":  "2026-10-24T20:23:47+09:00",
+        "dateFormatted":  "2026/10/24",
+        "description":  "奈良時代の税制「租・庸・調」の違い（お米・労働代替の布・地方特産物）を分かりやすく整理し、クイズ形式の確認問題も備えた中学受験・歴史学習ガイド。",
+        "tags":  [
+                     "歴史",
+                     "日本史",
+                     "中学受験",
+                     "社会科",
+                     "租庸調",
+                     "学習"
+                 ]
+    },
+    {
         "id":  "fireworks-sound-propagation-conditions",
         "title":  "遠くの花火がよく聞こえる条件",
         "filename":  "posts/fireworks-sound-propagation-conditions.html",

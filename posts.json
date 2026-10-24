@@ -1,5 +1,21 @@
 [
     {
+        "id":  "fireworks-sound-propagation-conditions",
+        "title":  "遠くの花火がよく聞こえる条件",
+        "filename":  "posts/fireworks-sound-propagation-conditions.html",
+        "createdAt":  "2026-10-24T19:57:04+09:00",
+        "dateFormatted":  "2026/10/24",
+        "description":  "風向き・夜間の気温逆転による音の屈折・周囲の静けさなど、遠くの花火の音がよく聞こえる気象・物理的条件を分かりやすく解説した科学コラム。",
+        "tags":  [
+                     "科学",
+                     "音波",
+                     "花火",
+                     "気象",
+                     "気温逆転",
+                     "物理"
+                 ]
+    },
+    {
         "id":  "ip-database-daily-report-20261024",
         "title":  "知財データベース最新情報レポート（2026年10月24日）",
         "filename":  "posts/ip-database-daily-report-20261024.html",

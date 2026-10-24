@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>遠くの花火がよく聞こえる条件</title>
+<style>
+  :root {
+    --navy: #183153;
+    --blue: #2868a8;
+    --light: #eef5fc;
+    --gold: #f3b83f;
+    --text: #263445;
+    --muted: #5e6d7d;
+    --border: #dce5ee;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: #f3f6fa;
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    line-height: 1.85;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 18px 50px;
+  }
+
+  header {
+    padding: 34px 26px;
+    border-radius: 18px;
+    color: white;
+    background: linear-gradient(135deg, #102440, #285b8c);
+  }
+
+  header .label {
+    color: #fbd77b;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: .12em;
+  }
+
+  h1 {
+    margin: 10px 0;
+    font-size: clamp(25px, 5vw, 36px);
+    line-height: 1.4;
+  }
+
+  header p { margin-bottom: 0; color: #e3edf8; }
+
+  h2 {
+    margin-top: 36px;
+    padding: 0 0 10px 12px;
+    border-bottom: 2px solid var(--border);
+    border-left: 5px solid var(--blue);
+    color: var(--navy);
+    font-size: 23px;
+  }
+
+  h3 { color: var(--navy); font-size: 18px; }
+
+  .intro, .card, .diagram, .conclusion {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 18px;
+  }
+
+  .conditions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .condition {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+  }
+
+  .number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--light);
+    color: var(--blue);
+    font-weight: bold;
+  }
+
+  .condition h3 { margin: 10px 0 6px; }
+  .condition p { margin: 0; }
+
+  .note {
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .diagram {
+    background: #f8fbff;
+  }
+
+  .diagram h3 { margin-top: 0; }
+
+  .air {
+    margin: 14px 0;
+    padding: 12px;
+    border-radius: 9px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .warm { background: #fff0d7; color: #86520b; }
+  .cold { background: #e4f2ff; color: #205786; }
+
+  .ground {
+    background: #d9e3d1;
+    padding: 9px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: #35533b;
+  }
+
+  .arrow {
+    color: var(--blue);
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 8px 0;
+  }
+
+  .comparison {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    background: white;
+    font-size: 15px;
+  }
+
+  .comparison th, .comparison td {
+    padding: 12px;
+    border: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .comparison th {
+    background: var(--light);
+    color: var(--navy);
+  }
+
+  .highlight {
+    color: #a15d00;
+    font-weight: bold;
+  }
+
+  .conclusion {
+    background: #edf5ff;
+    border-color: #c5dafa;
+  }
+
+  .conclusion h2 {
+    margin-top: 0;
+    border-bottom: none;
+  }
+
+  footer {
+    margin-top: 32px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 14px 12px 35px; }
+    header { padding: 26px 20px; }
+    .conditions { grid-template-columns: 1fr; }
+    .comparison { font-size: 13px; }
+    .comparison th, .comparison td { padding: 8px; }
+  }
+</style>
+</head>
+
+<body>
+<main class="container">
+
+<header>
+  <div class="label">SCIENCE / SOUND PROPAGATION</div>
+  <h1>遠くの花火が<br>よく聞こえる条件</h1>
+  <p>風向き・気温・上空の空気・周囲の静けさから考える、音の伝わり方</p>
+</header>
+
+<section class="intro">
+  <h2>1. まず結論</h2>
+  遠くの花火の音がよく聞こえるかどうかは、主に
+  <strong>風向き、上空の気温分布、周囲の騒音</strong>
+  に左右されます。
+
+  特に、花火から自分のいる方向へ風が吹く場合や、夜間に気温逆転が起きて音が地面側へ曲がりやすくなる場合は、遠くまで音が届くことがあります。
+
+  ただし、これらの条件がそろえば必ず聞こえるというわけではありません。
+</section>
+
+<h2>2. 遠くの花火が聞こえやすい4つの条件</h2>
+
+<div class="conditions">
+  <article class="condition">
+    <div class="number">1</div>
+    <h3>花火の方向から風が吹く</h3>
+    <p>
+      花火から自分のいる場所へ向かう風があると、音が届きやすくなることがあります。
+      反対向きの風では、音が届きにくくなる場合があります。
+    </p>
+    <p class="note">※地上だけでなく、上空の風も影響します。</p>
+  </article>
+
+  <article class="condition">
+    <div class="number">2</div>
+    <h3>夜間に気温逆転が起きる</h3>
+    <p>
+      地表付近が冷え、上空のほうが暖かくなると、音波が地面側へ曲がりやすくなることがあります。
+      その結果、遠くでも花火の音が聞こえやすくなります。
+    </p>
+  </article>
+
+  <article class="condition">
+    <div class="number">3</div>
+    <h3>風や空気の状態が適している</h3>
+    <p>
+      風向きや上空の気温分布によって、音が遠くまで伝わる条件が整うことがあります。
+      風が弱いことだけで、音が遠くまで届くとは限りません。
+    </p>
+  </article>
+
+  <article class="condition">
+    <div class="number">4</div>
+    <h3>周囲が静かである</h3>
+    <p>
+      夜間などに交通や人の活動による騒音が減ると、小さな花火の音にも気づきやすくなります。
+      音自体が大きくなっていなくても、よく聞こえることがあります。
+    </p>
+  </article>
+</div>
+
+<h2>3. なぜ気温によって音の届き方が変わるの？</h2>
+
+<p>
+  音は空気中を波として伝わります。空気の温度や風の分布によって音速が変わるため、音波の進む方向が少しずつ曲がることがあります。
+</p>
+
+<div class="diagram">
+  <h3>通常の気温分布</h3>
+  <div class="air warm">地表付近：比較的暖かい空気</div>
+  <div class="air cold">上空：より冷たい空気</div>
+  <div class="arrow">音波が上向きに曲がりやすい場合がある ↑</div>
+  <div class="ground">地面</div>
+  <p>
+    通常の気温分布では、条件によって音波が上空側へ曲がり、遠くの地上で音が聞こえにくくなることがあります。
+  </p>
+</div>
+
+<div class="diagram">
+  <h3>夜間の気温逆転</h3>
+  <div class="air warm">上空：地表より暖かい空気</div>
+  <div class="air cold">地表付近：冷たい空気</div>
+  <div class="arrow">音波が地面側に曲がりやすい場合がある ↓</div>
+  <div class="ground">地面</div>
+  <p>
+    晴れた夜などに地表が冷えると、地表付近より上空のほうが暖かい「気温逆転」が起きることがあります。
+    この状態では、音波が地面側へ曲がり、遠くまで届く場合があります。
+  </p>
+  <p class="note">
+    ※図は仕組みを簡略化した模式図です。実際の音の進み方は、風向き・気温の変化・地形などによって変わります。
+  </p>
+</div>
+
+<h2>4. 条件を一覧で比較</h2>
+
+<table class="comparison">
+  <thead>
+    <tr>
+      <th>条件</th>
+      <th>音への影響</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>花火からこちらへ向かう風</td>
+      <td>音が届きやすくなる場合がある</td>
+    </tr>
+    <tr>
+      <td>気温逆転</td>
+      <td>音波が地面側へ曲がりやすくなる</td>
+    </tr>
+    <tr>
+      <td>周囲の騒音が少ない</td>
+      <td>花火の音を聞き取りやすくなる</td>
+    </tr>
+    <tr>
+      <td>地形や建物の遮りが少ない</td>
+      <td>音が遮られにくくなる場合がある</td>
+    </tr>
+    <tr>
+      <td>風向きや上空の気温分布が不適切</td>
+      <td>音が届きにくくなる場合がある</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>5. 花火の音から何がわかる？</h2>
+
+<div class="card">
+  <h3>昨日より大きく聞こえる</h3>
+  風向きや上空の気温分布、周囲の騒音が変化した可能性があります。
+</div>
+
+<div class="card">
+  <h3>夜遅くになるとはっきり聞こえる</h3>
+  地表の冷却によって気温逆転が発達した可能性があります。ただし、騒音の減少も理由になり得ます。
+</div>
+
+<div class="card">
+  <h3>近くでは聞こえるのに、別の場所では聞こえない</h3>
+  地形や建物、風向き、音波の曲がり方などが関係している可能性があります。
+</div>
+
+<p class="note">
+  花火の音だけから、雨が降るかどうかや翌日の天気を正確に予測することはできません。
+</p>
+
+<section class="conclusion">
+  <h2>まとめ</h2>
+  遠くの花火がよく聞こえる主な理由は、次の3つです。
+
+  <ol>
+    <li><strong>風向き：</strong>花火からこちらへ向かう風が音を運びやすくする。</li>
+    <li><strong>気温逆転：</strong>上空の気温分布によって音が地面側へ曲がりやすくなる。</li>
+    <li><strong>静けさ：</strong>周囲の騒音が少ないと、遠くの音にも気づきやすくなる。</li>
+  </ol>
+
+  <p>
+    特に重要なのは、<span class="highlight">風向きと上空の気温分布</span>です。
+    夜間にこれらの条件が重なると、普段は聞こえないほど遠くの花火の音が聞こえることがあります。
+  </p>
+</section>
+
+<footer>
+  <p>科学的な補足：音の伝わり方は、音源の大きさ、距離、空気による吸収、風、気温分布、地形、建物、背景騒音などの影響を受けます。本ページは一般的な物理現象の解説です。</p>
+</footer>
+
+</main>
+</body>
+</html>

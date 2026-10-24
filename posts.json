@@ -1,5 +1,21 @@
 [
     {
+        "id":  "kanji-review-test-worksheet",
+        "title":  "できなかった漢字 復習プリント（第1回）",
+        "filename":  "posts/kanji-review-test-worksheet.html",
+        "createdAt":  "2026-10-24T21:41:38+09:00",
+        "dateFormatted":  "2026/10/24",
+        "description":  "ことわざ・慣用句、同音異義語（支持/師事、保証など）、対義語、重要語句など全28問の書き取りテスト、暗記カード、解答・復習ガイド付きの印刷対応プリント。",
+        "tags":  [
+                     "国語",
+                     "漢字",
+                     "中学受験",
+                     "学習プリント",
+                     "復習",
+                     "テスト"
+                 ]
+    },
+    {
         "id":  "elementary-proverbs-study-guide",
         "title":  "小学生向け ことわざを学ぼう！",
         "filename":  "posts/elementary-proverbs-study-guide.html",

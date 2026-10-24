@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>御城プロジェクト｜所持城娘おすすめ編成</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --surface: #f9f8f7;
+      --text: #2c2c2b;
+      --muted: #625f5b;
+      --border: #e6e5e3;
+      --accent: #1768aa;
+      --accent-bg: #e5f2fc;
+      --warning-bg: #fbebde;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Noto Sans JP", sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    main {
+      max-width: 1080px;
+      margin: auto;
+      padding: 48px 24px;
+    }
+
+    header {
+      margin-bottom: 40px;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(28px, 5vw, 40px);
+      line-height: 1.4;
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      font-size: 24px;
+      line-height: 1.5;
+    }
+
+    h3 {
+      margin: 12px 0 8px;
+      font-size: 19px;
+      line-height: 1.5;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    section {
+      margin-top: 40px;
+    }
+
+    .lead {
+      max-width: 760px;
+      color: var(--muted);
+    }
+
+    .summary,
+    .note {
+      padding: 20px 24px;
+      border-radius: 12px;
+    }
+
+    .summary {
+      background: var(--accent-bg);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .card p {
+      margin-bottom: 0;
+    }
+
+    .role {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 6px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .form {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    ol,
+    ul {
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    li + li {
+      margin-top: 12px;
+    }
+
+    .note {
+      margin-top: 24px;
+      background: var(--warning-bg);
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding: 32px 20px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 20px;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #191919;
+        --surface: #202020;
+        --text: #ffffff;
+        --muted: #bcbab7;
+        --border: #50504d;
+        --accent: #8ec5ff;
+        --accent-bg: #203246;
+        --warning-bg: #382c21;
+      }
+    }
+
+    @media print {
+      :root {
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --text: #222222;
+        --muted: #555555;
+        --border: #cccccc;
+        --accent: #174f7b;
+        --accent-bg: #eef5fb;
+        --warning-bg: #faf1e8;
+      }
+
+      main {
+        padding: 0;
+      }
+
+      .card,
+      .note {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">御城プロジェクト：RE</p>
+      <h1>所持城娘から選ぶ<br>おすすめ汎用編成</h1>
+      <p class="lead">
+        地形制限のないステージを想定し、広範囲の殲滅力、
+        支援の相乗効果、立ち上がりの速さを重視した8人編成です。
+      </p>
+    </header>
+
+    <aside class="summary" aria-label="編成の結論">
+      <strong>編成の軸</strong>
+      <p>
+        ［無疆］江戸城と［絢爛］［裏］大宰府を主力に、
+        鼓舞・気生産・回復・敵弱体化を組み合わせます。
+      </p>
+      <p>
+        全ステージ共通の絶対的な最強ではありません。
+        地形一致や地獄の審議に応じて調整してください。
+      </p>
+    </aside>
+
+    <section aria-labelledby="team-heading">
+      <h2 id="team-heading">おすすめの8人</h2>
+
+      <div class="grid">
+        <article class="card">
+          <span class="role">主砲・火力支援</span>
+          <h3>［無疆］江戸城</h3>
+          <span class="form">改壱</span>
+          <p>
+            時間経過による自己強化を持つ継続火力の軸。
+            味方への火力支援と巨大化気軽減も担うため、
+            主力が支援範囲に入る配置を狙います。
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="role">集団殲滅・防御無視</span>
+          <h3>［絢爛］［裏］大宰府</h3>
+          <span class="form">改壱</span>
+          <p>
+            計略中の射程内全敵への防御無視3連撃が切り札。
+            平・地獄・絢爛城娘への与ダメージ支援と
+            吸収回復も兼ね備えます。
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="role">前線火力・攻防支援</span>
+          <h3>［暁星］大坂城</h3>
+          <span class="form">改壱</span>
+          <p>
+            攻撃速度、被ダメージ軽減、全体射程を支援。
+            計略では同種効果と重複する攻撃・防御強化も行い、
+            自身も前線の火力を担当します。
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="role">攻撃切替・万能支援</span>
+          <h3>常盤台中学</h3>
+          <span class="form">改壱</span>
+          <p>
+            自身の攻撃を味方に加算しつつ、
+            術攻撃・防御無視・物理連撃を使い分けます。
+            敵の性質に合わせて対応でき、伏兵による足止めも可能です。
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="role">鼓舞・展開支援</span>
+          <h3>［正月］小早川城</h3>
+          <span class="form">改壱</span>
+          <p>
+            鼓舞で味方の攻撃・防御・射程を底上げ。
+            配置時から巨大化気を軽減できるため、
+            主力を早く完成させるための中心役です。
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="role">回復・状態異常対策</span>
+          <h3>［活命］富山城</h3>
+          <span class="form">改壱</span>
+          <p>
+            ハコタンの歌舞と状態異常無効化で戦線を維持。
+            緊急回復と気支援も担い、
+            攻撃役が戦い続けられる環境を整えます。
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="role">気生産・計略回転</span>
+          <h3>［絢爛］彦根城</h3>
+          <span class="form">改壱</span>
+          <p>
+            隠密の招き猫による気支援を担当。
+            全体の射程支援と計略再使用時間短縮、
+            敵への弱体化をまとめて担います。
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="role">全体弱体化・射程支援</span>
+          <h3>平城京</h3>
+          <span class="form">改弐</span>
+          <p>
+            射程外の敵にも攻撃・防御・与ダメージ低下が届く
+            安定化の要。射程内ではさらに強く弱体化し、
+            計略で攻撃・射程の固定値支援も行えます。
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="strategy-heading">
+      <h2 id="strategy-heading">運用のポイント</h2>
+      <ol>
+        <li>
+          <strong>正月小早川城を配置の中心にする。</strong>
+          主力を鼓舞の範囲に収め、無疆江戸城と
+          活命富山城の支援も重ねる形を狙います。
+        </li>
+        <li>
+          <strong>序盤は気と巨大化軽減を優先する。</strong>
+          絢爛彦根城の招き猫を設置し、
+          支援範囲を作ってから主力の巨大化を進めます。
+        </li>
+        <li>
+          <strong>敵に合わせて殲滅手段を選ぶ。</strong>
+          ラッシュには絢爛裏大宰府、
+          硬い敵には常盤台中学の攻撃切替を活用して突破を図ります。
+        </li>
+      </ol>
+    </section>
+
+    <aside class="note" aria-label="編成の注意点">
+      <strong>注意点・入れ替えの目安</strong>
+      <p>
+        地形一致ボーナスが重要な高難度マップや、地獄の審議（特定武器種の弱体化や出撃制限など）に応じて、適宜対応する城娘と入れ替えて調整してください。
+      </p>
+    </aside>
+
+    <footer>
+      御城プロジェクト：RE おすすめ汎用編成まとめ
+    </footer>
+  </main>
+</body>
+</html>

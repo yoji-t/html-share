@@ -1,5 +1,20 @@
 [
     {
+        "id":  "shiropuro-recommended-team",
+        "title":  "御城プロジェクト：RE｜所持城娘おすすめ汎用編成",
+        "filename":  "posts/shiropuro-recommended-team.html",
+        "createdAt":  "2026-10-25T07:34:42+09:00",
+        "dateFormatted":  "2026/10/25",
+        "description":  "［無疆］江戸城や［絢爛］［裏］大宰府を主軸に、鼓舞・気生産・回復・弱体化を組み合わせた地形不問のおすすめ8人汎用編成と運用ポイントの解説。",
+        "tags":  [
+                     "ゲーム",
+                     "城プロRE",
+                     "攻略",
+                     "編成",
+                     "キャラクター解説"
+                 ]
+    },
+    {
         "id":  "kanji-review-test-worksheet",
         "title":  "できなかった漢字 復習プリント（第1回）",
         "filename":  "posts/kanji-review-test-worksheet.html",

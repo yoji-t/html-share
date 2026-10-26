@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ミシュラン米国特許分析 2026年8月</title>
+<style>
+:root {
+  --navy: #183153;
+  --blue: #285da8;
+  --light: #f2f6fb;
+  --border: #d9e2ef;
+  --text: #243247;
+  --muted: #627187;
+  --green: #eaf5ef;
+  --orange: #fff3df;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Noto Sans JP", Meiryo, sans-serif;
+  color: var(--text);
+  line-height: 1.8;
+  background: #f5f7fa;
+}
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 24px;
+}
+header {
+  background: linear-gradient(135deg, #183153, #356eb5);
+  color: white;
+  padding: 34px 28px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+header h1 { margin: 0 0 10px; font-size: 1.8rem; }
+header p { margin: 5px 0; }
+section {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 20px 0;
+}
+h2 {
+  color: var(--navy);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 10px;
+  font-size: 1.4rem;
+}
+h3 { color: var(--blue); margin-bottom: 6px; }
+a { color: var(--blue); overflow-wrap: anywhere; }
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+}
+.summary-card {
+  background: var(--light);
+  border: 1px solid var(--border);
+  padding: 16px;
+  border-radius: 10px;
+}
+.summary-card strong {
+  display: block;
+  color: var(--navy);
+  font-size: 1.15rem;
+}
+.patent {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  margin: 16px 0;
+  break-inside: avoid;
+}
+.patent h3 { margin-top: 0; }
+.meta { color: var(--muted); font-size: .92rem; }
+.tag {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 20px;
+  background: #e9eff8;
+  color: #214b83;
+  font-size: .82rem;
+  margin: 3px 0;
+}
+.keypoint {
+  background: var(--light);
+  padding: 10px 14px;
+  border-left: 4px solid var(--blue);
+  margin: 10px 0;
+}
+.warning {
+  background: var(--orange);
+  padding: 14px;
+  border-radius: 8px;
+}
+.conclusion {
+  background: var(--green);
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid #c8e4d4;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: .95rem;
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--light); }
+footer {
+  color: var(--muted);
+  font-size: .85rem;
+  padding: 20px 0;
+}
+@media (max-width: 600px) {
+  main { padding: 12px; }
+  header, section { padding: 18px; }
+  header h1 { font-size: 1.45rem; }
+  table { font-size: .85rem; }
+  th, td { padding: 7px; }
+}
+@media print {
+  body { background: white; }
+  main { max-width: none; padding: 0; }
+  header, section { box-shadow: none; }
+  a { color: black; }
+  .patent { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>ミシュラン米国特許分析</h1>
+  <p><strong>対象：</strong>ミシュランUS202608</p>
+  <p><strong>対象期間：</strong>2026年8月に公開・登録された米国特許公報</p>
+  <p><strong>分析対象：</strong>重複を除いた15件</p>
+  <p>材料設計・タイヤ構造・製造設備・非空気入りタイヤ・資源循環の観点から整理</p>
+</header>
+
+<section>
+  <h2>1. 全体分析の結論</h2>
+  <p>
+    今回の特許群からは、ミシュランがタイヤそのものの性能だけでなく、
+    ゴム材料の設計から、タイヤの成形・加硫・搬送、非空気入りタイヤの組立て、
+    原料の再生まで幅広い技術領域を権利化していることが読み取れる。
+  </p>
+  <div class="summary-grid">
+    <div class="summary-card">
+      <strong>ゴム材料・ポリマー</strong>
+      7件<br>官能基、樹脂、可塑剤、再生ゴム
+    </div>
+    <div class="summary-card">
+      <strong>製造・自動化設備</strong>
+      5件<br>折り返し、成形、金型、搬送
+    </div>
+    <div class="summary-card">
+      <strong>タイヤ構造</strong>
+      2件<br>サイドウォール、スポーク補強
+    </div>
+    <div class="summary-card">
+      <strong>化学原料の再生</strong>
+      1件<br>スチレン系原料の精製
+    </div>
+  </div>
+  <p class="meta">
+    ※分類は各公報の主題に基づく分析上の区分。複数分野に関わる特許は主分類で集計。
+  </p>
+</section>
+
+<section>
+  <h2>2. タイヤ構造・非空気入りタイヤ</h2>
+
+  <article class="patent">
+    <h3>1. US-20260225403-A1 — TIRE WITH AN IMPROVED INTERFACE</h3>
+    <p class="meta">公開日：2026年8月6日｜公開出願</p>
+    <span class="tag">タイヤ構造</span>
+    <p><strong>概要：</strong>
+      ビードからサイドウォールに延びる補強層と、補強層・外側サイドウォール層の間に配置する剛性調整層を組み合わせる。各層の弾性率の関係を数値条件で規定し、タイヤ側部の変形を制御する設計。</p>
+    <p><strong>技術的ポイント：</strong>
+      単に層を追加するのではなく、異なる層の剛性の関係を規定する点。</p>
+    <p><strong>知財上の注目点：</strong>
+      サイドウォールの剛性・変形特性を調整する競合技術について、層の配置と弾性率条件の双方を比較する。</p>
+    <a href="https://ppubs.uspto.gov/api/patents/html/US-20260225403-A1">USPTO公報を確認</a>
+  </article>
+
+  <article class="patent">
+    <h3>2. US-12697839-B2 — SPOKE FOR NON-PNEUMATIC TIRE HAVING EXTENDED NOSE REINFORCEMENT</h3>
+    <p class="meta">登録日：2026年8月4日｜登録特許</p>
+    <span class="tag">非空気入りタイヤ</span>
+    <p><strong>概要：</strong>
+      非空気入りタイヤのスポークについて、ノーズ部から延びるパネルと足部にまたがる補強構造を設ける。</p>
+    <p><strong>技術的ポイント：</strong>
+      スポークの接続部周辺を補強し、荷重を受ける部分の耐久性を高める構造。</p>
+    <p><strong>知財上の注目点：</strong>
+      補強材の形状に加え、どの部位にまたがって配置されるかが比較ポイント。</p>
+    <a href="https://ppubs.uspto.gov/api/patents/html/US-12697839-B2">USPTO公報を確認</a>
+  </article>
+</section>
+
+<section>
+  <h2>3. ゴム材料・ポリマー設計</h2>
+
+  <article class="patent">
+    <h3>3. US-12698382-B2 — RUBBER COMPOSITION</h3>
+    <p class="meta">登録日：2026年8月4日</p>
+    <p><strong>概要：</strong>
+      シラン系官能基などを持つジエンエラストマー、無機系補強材、官能基を持つ液状ジエンポリマーを含むゴム組成物。</p>
+    <p><strong>技術的ポイント：</strong>
+      ポリマーの官能基の性質と、補強材・液状ポリマーとの組み合わせによって材料特性を制御する。</p>
+    <p><strong>注目点：</strong>
+      補強材とポリマーの相互作用、官能基の構造・位置、配合条件を確認する。</p>
+    <a href="https://ppubs.uspto.gov/api/patents/html/US-12698382-B2">USPTO公報を確認</a>
+  </article>
+
+  <article class="patent">
+    <h3>4. US-12698379-B2 — METHOD FOR PRODUCING A RUBBER COMPOSITION COMPRISING A RUBBER CRUMB</h3>
+    <p class="meta">登録日：2026年8月4日</p>
+    <p><strong>概要：</strong>
+      ジエンエラストマー、補強材、ゴムクラムを含むゴム組成物の製造方法。補強材を混合した後、混合物が100℃を超えた段階でゴムクラムを添加し、最高温度や冷却、架橋剤添加時の温度を規定する。</p>
+    <p><strong>技術的ポイント：</strong>
+      再生ゴムの添加タイミングと混練温度を工程条件として規定する。</p>
+    <p><strong>注目点：</strong>
+      再生材料の分散や劣化を左右する工程条件が権利範囲の中心となり得る。</p>
+    <a href="https://ppubs.uspto.gov/api/patents/html/US-12698379-B2">USPTO公報を確認</a>
+  </article>
+
+  <article class="patent">
+    <h3>5. US-20260234383-A1 — RUBBER COMPOSITION BASED ON A HIGHLY SATURATED DIENE ELASTOMER AND A REINFORCING RESIN</h3>
+    <p class="meta">公開日：2026年8月13日｜公開出願</p>
+    <p><strong>概要：</strong>
+      エチレン単位と1,3-ジエン単位を含む高飽和ジエンエラストマー、補強材、加硫系に、特定のエポキシ樹脂とアミン系硬化剤を規定量含める。</p>
+    <p><strong>技術的ポイント：</strong>
+      エラストマーだけでなく、樹脂と硬化剤の種類・配合量まで組み合わせて材料特性を設計する。</p>
+    <p><strong>注目点：</strong>
+      ポリマー、補強樹脂、硬化剤の組み合わせと、それぞれの数値範囲を確認する。</p>
+    <a href="https://ppubs.uspto.gov/api/patents/html/US-20260234383-A1">USPTO公報を確認</a>
+  </article>
+
+  <article class="patent">
+    <h3>6. US-20260242568-A1 — RUBBER COMPOSITION COMPRISING A FATTY ACID ESTER AS PLASTICIZER</h3>
+    <p class="meta">公開日：2026年8月20日｜公開出願</p>
+    <p><strong>概要：</strong>
+      エラストマー、補強材、加硫系に、分子量などを規定した脂肪酸エステル系可塑剤を組み合わせる。</p>
+    <p><strong>技術的ポイント：</strong>
+      可塑剤の分子構造と分子量を絞り込んだ材料設計。バイオ由来原料の活用にもつながるテーマ。</p>
+    <p><strong>注目点：</strong>
+      加工性、耐久性、動的特性、原料の由来を含めて評価する。</p>
+    <a href="https://ppubs.uspto.gov/api/patents/html/US-20260242568-A1">USPTO公報を確認</a>
+  </article>
+
+  <article class="patent">
+    <h3>7. US-20260242573-A1 — RUBBER COMPOSITION COMPRISING A BIO-BASED PLASTICIZER FROM THE FAMILY OF ESTOLIDES</h3>
+    <p class="meta">公開日：2026年8月20日｜公開出願</p>
+    <p><strong>概要：</strong>
+      イソプレン系・ブタジエン系エラストマー、主にカーボンブラックからなる補強材、架橋系に、エストライド系バイオ由来可塑剤を組み合わせる。可塑剤の重量平均分子量も規定する。</p>
+    <p><strong>技術的ポイント：</strong>
+      バイオ由来という原料の由来に加え、分子量条件を含めた材料設計を行う。</p>
+    <p><strong>注目点：</strong>
+      脂肪酸エステル系可塑剤の出願と併せて比較し、可塑剤技術の広がりを把握する。</p>
+    <a href="https://ppubs.uspto.gov/api/patents/html/US-20260242573-A1">USPTO公報を確認</a>
+  </article>
+
+  <article class="patent">
+    <h3>8. US-20260250490-A1 — RUBBER COMPOSITION COMPRISING A HIGHLY SATURATED DIENE ELASTOMER</h3>
+    <p class="meta">公開日：2026年8月27日｜公開出願</p>
+    <p><strong>概要：</strong>
+      高飽和ジエンエラストマー、シス結合比率の高いポリイソプレン、カーボンブラックとシリカの混合補強材、加硫系を組み合わせ、引裂き強度の改善を狙う。</p>
+    <p><strong>技術的ポイント：</strong>
+      ポリマーの種類・比率と、カーボンブラック・シリカの配合比を組み合わせている。</p>
+    <p><strong>注目点：</strong>
+      サイドウォールを含むタイヤ部材の耐引裂き性に関わるため、材料分野の競合分析で優先して確認したい出願。</p>
+    <a href="https://ppubs.uspto.gov/api/patents/html/US-20260250490-A1">USPTO公報を確認</a>
+  </article>
+
+  <article class="patent">
+    <h3>9. US-20260250497-A1 — FUNCTIONAL ETHYLENE AND 1,3-DIENE COPOLYMERS</h3>
+    <p class="meta">公開日：2026年8月27日｜公開出願</p>
+    <p><strong>概要：</strong>
+      エチレンと1,3-ジエンの共重合体にシラノールまたはアルコキシシラン官能基を持たせる。エチレン含有量、結晶性、ゴム組成物の剛性のバランス改善を狙う。</p>
+    <p><strong>技術的ポイント：</strong>
+      最終配合だけでなく、配合に使うポリマー自体の分子設計を保護する。</p>
+    <p><strong>注目点：</strong>
+      高飽和ジエン系ゴム組成物の出願と併せ、基本ポリマーと完成配合の双方から材料設計を分析する。</p>
+    <a href="https://ppubs.uspto.gov/api/patents/html/US-20260250497-A1">USPTO公報を確認</a>
+  </article>
+</section>
+
+<section>
+  <h2>4. タイヤ製造設備・自動化</h2>
+
+  <article class="patent">
+    <h3>10. US-12703164-B2 — TILTING ROLLER SYSTEM FOR FOLDING A PNEUMATIC TIRE CARCASS INSERT AROUND A BEAD CORE AND FOLDING-UP METHOD</h3>
+    <p class="meta">登録日：2026年8月11日</p>
+    <p><strong>概要：</strong>
+      カーカス端部をビードコアの周りに折り返す装置。ローラーを部分的に傾け、カーカスを一定角度ずつ回転させながら折り返す。移動時にはローラーを退避させる。</p>
+    <p><strong>技術的ポイント：</strong>
+      周方向に引きずる力を抑え、補強コードのずれやしわを防ぎながら折り返す。</p>
+    <p><strong>注目点：</strong>
+      大型タイヤや長いカーカス端部を持つタイヤの品質安定化・自動化に関連する。</p>
+    <a href="https://ppubs.uspto.gov/api/patents/html/US-12703164-B2">USPTO公報を確認</a>
+  </article>
+
+  <article class="patent">
+    <h3>11. US-12703163-B2 — DEVICE FOR SHAPING A PNEUMATIC TIRE COMPRISING A CONDITIONAL ASSISTANCE SYSTEM FOR THE ROTATION OF THE FLANGES CARRYING THE BEADS OF THE TIRE</h3>
+    <p class="meta">登録日：2026年8月11日</p>
+    <p><strong>概要：</strong>
+      タイヤの両ビードを保持するフランジを軸方向に近づけ、相対回転させる成形装置。両フランジの角度差が許容範囲を外れた場合に限り、回転を補助する。</p>
+    <p><strong>技術的ポイント：</strong>
+      常時補助するのではなく、角度差に応じて補助動作を条件付きで発動させる。</p>
+    <p><strong>注目点：</strong>
+      成形工程の安定化や装置動作の効率化に関わる制御技術。</p>
+    <a href="https://ppubs.uspto.gov/api/patents/html/US-12703163-B2">USPTO公報を確認</a>
+  </article>
+
+  <article class="patent">
+    <h3>12. US-12698165-B2 — SYSTEM AND PROCESS FOR PICKING TIRES IN AN UNKNOWN ARRANGEMENT</h3>
+    <p class="meta">登録日：2026年8月4日</p>
+    <p><strong>概要：</strong>
+      不規則に積まれたタイヤ群から対象を特定し、ロボットと把持具で取り出すシステム。対象タイヤの直径、タイヤ半径、リム半径などを求め、接近・把持・取り出しを行う。</p>
+    <p><strong>技術的ポイント：</strong>
+      タイヤの配置が事前に分からない状況でも対象を特定して取り出す。</p>
+    <p><strong>注目点：</strong>
+      タイヤ工場や物流工程のロボット化に関連。認識方法と把持動作の制御条件を比較する。</p>
+    <a href="https://ppubs.uspto.gov/api/patents/html/US-12698165-B2">USPTO公報を確認</a>
+  </article>
+
+  <article class="patent">
+    <h3>13. US-12697794-B2 — TIRE CURING MOLD HAVING A SEALING ELEMENT</h3>
+    <p class="meta">登録日：2026年8月4日</p>
+    <p><strong>概要：</strong>
+      サイドウォールを成形する金型シェルと、トレッドを成形する分割セクターとの境界の隙間を、専用部材で埋める構造。部材は金型の成形面と同一面にならないように配置される。</p>
+    <p><strong>技術的ポイント：</strong>
+      金型部品の接合部の隙間・シール性を、成形面との位置関係も含めて解決する。</p>
+    <p><strong>注目点：</strong>
+      ゴムのはみ出し、成形不良、金型メンテナンスなどの課題との関係を確認する。</p>
+    <a href="https://ppubs.uspto.gov/api/patents/html/US-12697794-B2">USPTO公報を確認</a>
+  </article>
+
+  <article class="patent">
+    <h3>14. US-12709078-B2 — DEVICE FOR ASSEMBLING THE SPOKES OF A TIRE FOR A WHEEL BY MEANS OF THRUST MEMBERS ACTUATED BY RAMPED PUNCHES</h3>
+    <p class="meta">登録日：2026年8月18日</p>
+    <p><strong>概要：</strong>
+      非空気入りタイヤのハブ、外周リング、スポークを組み立てる装置。軸方向に動くパンチの傾斜面で押圧部材を径方向に動かし、スポークの両端をハブと外周リングに押し付ける。</p>
+    <p><strong>技術的ポイント：</strong>
+      パンチの軸方向移動を、スポーク端部を押し付ける径方向の動きへ変換する。</p>
+    <p><strong>注目点：</strong>
+      スポーク補強構造の特許と対比し、製品構造と製造方法の両面から権利化の方向を分析する。</p>
+    <a href="https://ppubs.uspto.gov/api/patents/html/US-12709078-B2">USPTO公報を確認</a>
+  </article>
+</section>
+
+<section>
+  <h2>5. 原料の再生・化学プロセス</h2>
+  <article class="patent">
+    <h3>15. US-12703670-B2 — METHOD FOR PURIFYING A FEEDSTOCK RESULTING FROM A METHOD FOR DEPOLYMERIZING STYRENE COMPOUNDS</h3>
+    <p class="meta">登録日：2026年8月11日</p>
+    <p><strong>概要：</strong>
+      スチレン系化合物を解重合した後に得られる原料を精製する。軽質成分が多い抽出液、重質成分が多いラフィネート、スチレンを多く含む流れなどに分離し、さらにエチルベンゼン、スチレン、重質成分を分ける。</p>
+    <p><strong>技術的ポイント：</strong>
+      混合原料を再利用しやすい化学成分に分離・精製する工程。</p>
+    <p><strong>注目点：</strong>
+      タイヤの構造や配合そのものではないが、化学原料の回収・再利用という上流工程を対象とする。原料品質、収率、精製コストの比較に有用。</p>
+    <a href="https://ppubs.uspto.gov/api/patents/html/US-12703670-B2">USPTO公報を確認</a>
+  </article>
+</section>
+
+<section>
+  <h2>6. 技術テーマ別の比較</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>技術テーマ</th>
+        <th>今回の特許から読み取れる方向性</th>
+        <th>知財分析で見るべき点</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ゴム材料</td>
+        <td>ポリマー構造、官能基、樹脂・硬化剤、可塑剤の組み合わせ</td>
+        <td>独立請求項の組成範囲、材料の必須条件、配合量</td>
+      </tr>
+      <tr>
+        <td>再生材料</td>
+        <td>ゴムクラムの混練条件、スチレン系原料の精製</td>
+        <td>再生材の種類、工程順序、温度条件、分離条件</td>
+      </tr>
+      <tr>
+        <td>タイヤ製造</td>
+        <td>折り返し、成形、加硫金型、ロボット搬送</td>
+        <td>装置の機構、動作条件、自動化範囲</td>
+      </tr>
+      <tr>
+        <td>非空気入りタイヤ</td>
+        <td>スポーク補強、スポークの組立て</td>
+        <td>接合部の構造、補強の配置、組立機構</td>
+      </tr>
+      <tr>
+        <td>サイドウォール</td>
+        <td>層の配置と剛性条件</td>
+        <td>弾性率条件、層の位置関係、対象タイヤの範囲</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>7. 優先的に深掘りしたい特許</h2>
+
+  <h3>優先度1：ゴム材料の特許群</h3>
+  <p>
+    US-20260234383-A1、US-20260242568-A1、US-20260242573-A1、
+    US-20260250490-A1、US-20260250497-A1
+  </p>
+  <p>
+    材料の選択肢と配合条件が複数の特許に分かれている。
+    独立請求項の必須要件と数値範囲を横並びにすると、ミシュランが確保しようとする材料設計の範囲を比較しやすい。
+  </p>
+
+  <h3>優先度2：再生ゴム・再生原料</h3>
+  <p>US-12698379-B2、US-12703670-B2</p>
+  <p>
+    再生材料の利用を、材料配合と製造・精製工程の両面から検討できる。
+    サステナビリティ関連技術を競合比較するうえでも有用。
+  </p>
+
+  <h3>優先度3：非空気入りタイヤ</h3>
+  <p>US-12697839-B2、US-12709078-B2</p>
+  <p>
+    スポークの補強構造と組立装置を併せて読むことで、
+    製品設計と量産工程の双方にどのような技術的障壁を設けているかを検討できる。
+  </p>
+
+  <h3>優先度4：製造設備</h3>
+  <p>
+    US-12703164-B2、US-12703163-B2、US-12698165-B2、US-12697794-B2
+  </p>
+  <p>
+    工程安定化、成形品質、搬送自動化に関わるため、
+    自社設備や生産技術との比較がしやすい領域。
+  </p>
+</section>
+
+<section>
+  <h2>8. 分析上の注意点</h2>
+  <div class="warning">
+    <ul>
+      <li>本レポートは公報の要約・書誌情報に基づく一次分析であり、独立請求項の全要件を精査した侵害・無効性判断ではない。</li>
+      <li>公開出願（A1）は審査・権利化の状況によって権利範囲が変わり得る。登録特許（B2）と同じ確度で扱わない。</li>
+      <li>技術的重要度や事業上の価値を確定するには、独立請求項、従属請求項、実施例、引用文献、特許ファミリー、法的状態の確認が必要。</li>
+      <li>特許の技術内容と実際の製品への採用状況は別問題であり、本分析だけでは採用を断定できない。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>9. 総括</h2>
+  <div class="conclusion">
+    <p>
+      今回のミシュラン米国特許群で特に目立つのは、ゴム材料の分子・配合設計と、
+      タイヤの製造工程を支える設備技術である。さらに、再生ゴムや化学原料の精製、
+      非空気入りタイヤの構造・組立ても含まれる。
+    </p>
+    <p>
+      したがって、ミシュランの競争力を分析する際は、完成タイヤの形状だけでなく、
+      <strong>材料・工程・資源循環を一体として見る</strong>ことが重要である。
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>出典：各公報のUSPTO Patent Public Search 公開ページ。Notion「ミシュランUS202608」掲載情報をもとに整理。</p>
+  <p>本資料は技術動向の一次整理用。法的判断には各公報の請求項、審査経過、ファミリー、法的状態の確認が必要。</p>
+  <p><a href="https://app.notion.com/p/4054483132d380989d7dcde8eb39fb1d">Notion元ページを開く</a></p>
+</footer>
+
+</main>
+</body>
+</html>

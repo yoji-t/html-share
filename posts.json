@@ -1,5 +1,22 @@
 [
     {
+        "id":  "michelin-us-patent-analysis-202608",
+        "title":  "ミシュラン米国特許分析（2026年8月）",
+        "filename":  "posts/michelin-us-patent-analysis-202608.html",
+        "createdAt":  "2026-10-26T18:33:13+09:00",
+        "dateFormatted":  "2026/10/26",
+        "description":  "2026年8月に公開・登録されたミシュランの米国特許15件（ゴム材料・ポリマー設計、成形・加硫自動化設備、非空気入りタイヤ、スチレン解重合精製など）の技術動向・知財分析レポート。",
+        "tags":  [
+                     "特許",
+                     "知財",
+                     "ミシュラン",
+                     "タイヤ",
+                     "技術動向",
+                     "USPTO",
+                     "ゴム材料"
+                 ]
+    },
+    {
         "id":  "shiropuro-recommended-team",
         "title":  "御城プロジェクト：RE｜所持城娘おすすめ汎用編成",
         "filename":  "posts/shiropuro-recommended-team.html",

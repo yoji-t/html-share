@@ -1,5 +1,22 @@
 [
     {
+        "id":  "michelin-us-patent-dashboard-202607",
+        "title":  "ミシュランUS202607 特許ダッシュボード",
+        "filename":  "posts/michelin-us-patent-dashboard-202607.html",
+        "createdAt":  "2026-10-28T21:50:15+09:00",
+        "dateFormatted":  "2026/10/28",
+        "description":  "2026年7月のミシュラン米国特許（A1公開29件、B2登録6件）のNotion連携データ、注目特許（セルロースナノ結晶、重荷重タイヤ用配合、加硫漏れ検出等）、検索・絞り込み付き一覧ダッシュボード。",
+        "tags":  [
+                     "特許",
+                     "知財",
+                     "ミシュラン",
+                     "ダッシュボード",
+                     "Notion",
+                     "特許分析",
+                     "タイヤ"
+                 ]
+    },
+    {
         "id":  "open-notion-ai-with-iphone-siri",
         "title":  "iPhoneのSiriからNotion・Notion AIを開く方法",
         "filename":  "posts/open-notion-ai-with-iphone-siri.html",

@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ミシュランUS202607 特許ダッシュボード</title>
+<style>
+:root {
+  --bg: #f4f7fb;
+  --card: #fff;
+  --ink: #182333;
+  --muted: #627086;
+  --line: #dce4ee;
+  --blue: #2459a9;
+  --accent: #eaf1fc;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.6 system-ui, sans-serif;
+}
+header {
+  background: #132b4a;
+  color: white;
+  padding: 28px 5%;
+}
+header p { color: #d7e4f7; }
+main {
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 0 18px;
+}
+h1 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+h2 { font-size: 1.25rem; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.kpi { font-size: 1.8rem; font-weight: 750; }
+.label, .muted { color: var(--muted); }
+.notice {
+  background: #fff7e6;
+  border: 1px solid #efd69c;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+input, select {
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+}
+.tablewrap {
+  overflow: auto;
+  max-height: 620px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: .9rem;
+}
+th, td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+th { background: #f0f4f9; position: sticky; top: 0; }
+a { color: var(--blue); }
+.bars { display: grid; gap: 10px; }
+.barrow {
+  display: grid;
+  grid-template-columns: minmax(120px, 240px) 1fr 36px;
+  gap: 10px;
+  align-items: center;
+}
+.bar {
+  height: 12px;
+  background: var(--accent);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.bar span {
+  display: block;
+  height: 100%;
+  background: var(--blue);
+}
+.pill {
+  display: inline-block;
+  background: var(--accent);
+  padding: 3px 8px;
+  border-radius: 99px;
+}
+footer {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 18px 30px;
+  color: var(--muted);
+  font-size: .85rem;
+}
+@media (max-width: 800px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .two { grid-template-columns: 1fr; }
+}
+@media (max-width: 420px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+  .kpi { font-size: 1.45rem; }
+  input, select { width: 100%; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>ミシュランUS202607</h1>
+  <p>Notion特許情報ダッシュボード</p>
+  <p>取得確認日：2026-10-28</p>
+</header>
+
+<main>
+  <div class="notice">
+    <strong>データ取得上の注意</strong><br>
+    Notionの親ページと直下の公報リンクページを確認しました。
+    確認できた子ページは35件です。ただし、全件の書誌事項や
+    請求項を取得できたわけではありません。35件をミシュランの
+    確定出願件数や特許ファミリー数と解釈しないでください。
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="label">確認した子ページ</div>
+      <div class="kpi">35</div>
+      <div class="muted">公報リンクページ</div>
+    </div>
+    <div class="card">
+      <div class="label">A1公開公報</div>
+      <div class="kpi">29</div>
+      <div class="muted">タイトルの種別に基づく</div>
+    </div>
+    <div class="card">
+      <div class="label">B2登録公報</div>
+      <div class="kpi">6</div>
+      <div class="muted">タイトルの種別に基づく</div>
+    </div>
+    <div class="card">
+      <div class="label">詳細書誌情報</div>
+      <div class="kpi">一部</div>
+      <div class="muted">取得できた範囲のみ</div>
+    </div>
+  </div>
+
+  <div class="two">
+    <section class="card">
+      <h2>公報種別</h2>
+      <div class="bars" id="kindBars"></div>
+      <p class="muted">公報リンクページのタイトルに基づく集計。</p>
+    </section>
+    <section class="card">
+      <h2>技術分野（暫定）</h2>
+      <div class="bars" id="themeBars"></div>
+      <p class="muted">取得済み要約の範囲のみ。全件集計ではありません。</p>
+    </section>
+  </div>
+
+  <section class="card">
+    <h2>注目特許</h2>
+    <h3>1. ゴム用チオール官能化セルロースナノ結晶</h3>
+    <p>
+      公報：US-20260217950-A1<br>
+      公開日：2026年7月30日
+    </p>
+    <p>
+      セルロースナノ結晶の表面にチオールやジスルフィド等を導入し、
+      ゴム用フィラーとしての性能改善を目指す技術です。
+      タイヤ用ゴムの補強材や界面設計との関係を確認する価値があります。
+    </p>
+
+    <h3>2. 重荷重タイヤ用エラストマー組成物</h3>
+    <p>公報：US-20260217944-A1、US-20260217949-A1</p>
+    <p>
+      ジエン系エラストマー、黒鉛、補強性フィラー等を組み合わせた
+      重荷重タイヤ用組成物です。請求項や実施例を比較し、
+      配合範囲と材料要件の違いを確認する必要があります。
+    </p>
+
+    <h3>3. 加硫膜・膨張回路の漏れ検出</h3>
+    <p>公報：US-20260219126-A1</p>
+    <p>
+      タイヤ加硫後の膜を再加圧し、所定時間経過後の状態から
+      漏れを検出する工程関連技術です。製造品質管理の観点から
+      追加調査候補になります。
+    </p>
+
+    <h3>4. 自律フォークリフトによる環状荷の位置決め</h3>
+    <p>公報：US-20260217505-A1</p>
+    <p>
+      3Dカメラ画像から環状荷の内径・外径に対応する円を検出し、
+      フォークリフトとの位置ずれを計算する方法です。
+      タイヤ製造物流や自動搬送との接点が考えられます。
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>公報一覧</h2>
+    <div class="controls">
+      <input id="q" placeholder="公報番号で検索">
+      <select id="kind">
+        <option value="">すべての種別</option>
+        <option value="A1">A1</option>
+        <option value="B2">B2</option>
+      </select>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th>公報番号</th>
+            <th>種別</th>
+            <th>Notionページ</th>
+            <th>取得状況</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>競合・知財戦略への示唆</h2>
+    <ul>
+      <li>
+        <strong>材料：</strong>
+        セルロースナノ結晶等のフィラーと既存の補強材との
+        性能・加工性・耐久性の比較を追跡する。
+      </li>
+      <li>
+        <strong>重荷重タイヤ：</strong>
+        黒鉛を含む配合組成の技術的狙いを明細書・実施例で確認する。
+      </li>
+      <li>
+        <strong>製造工程：</strong>
+        加硫設備の漏れ検出や環状荷の自動搬送も監視対象に含める。
+      </li>
+      <li>
+        <strong>注意：</strong>
+        フォルダ名だけでは各公報の出願人がすべてミシュランであるとは
+        確定できない。件数だけから自由実施可能性を判断しない。
+      </li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>優先アクション</h2>
+    <ol>
+      <li>
+        <strong>高：</strong>
+        US-20260217944-A1とUS-20260217949-A1の請求項・実施例を比較する。
+      </li>
+      <li>
+        <strong>高：</strong>
+        US-20260217950-A1の表面改質技術と先行技術を確認する。
+      </li>
+      <li>
+        <strong>中：</strong>
+        US-20260219126-A1の漏れ検出方式を既存技術と比較する。
+      </li>
+      <li>
+        <strong>中：</strong>
+        残りの公報について出願人、IPC/CPC、優先日、ファミリー、
+        ISR・引用文献を補完する。
+      </li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  出典：Notion「ミシュランUS202607」と同ページ直下の公報リンクページ。
+  技術評価は取得済み要約に基づく予備的な分析です。
+  権利範囲・有効性・侵害の法的判断を示すものではありません。
+</footer>
+
+<script>
+const records = [
+  ["US-20260217950-A1","A1","e7785ef2-149d-472b-b625-3a059f6d9b1c","要約等を一部確認"],
+  ["US-20260217944-A1","A1","00b8335f-52a8-4bb6-a3c5-924ece0a01e7","要約等を一部確認"],
+  ["US-20260217949-A1","A1","d2710d23-6207-421d-87d1-a0cb5b2d0611","要約等を一部確認"],
+  ["US-20260219126-A1","A1","2173d67e-a0b5-4ad9-aba5-034d863de20c","要約等を一部確認"],
+  ["US-20260217505-A1","A1","59506cdf-dc73-4c8c-b8e3-2dcbc1e7592f","要約等を一部確認"],
+  ["US-20260217879-A1","A1","70f7a3e9-3d28-4287-9392-f95d66e8ecea","公報番号確認"],
+  ["US-20260210934-A1","A1","572d7cb7-25a3-4f29-a80a-f76aae06233e","公報番号確認"],
+  ["US-12692355-B2","B2","d5be287e-0319-4dc5-be28-9cf3de473665","公報番号確認"],
+  ["US-12692373-B2","B2","db033cf2-cd2d-4c56-aa9d-7f35d5ff5f11","公報番号確認"],
+  ["US-20260217063-A1","A1","ac5253c9-d00e-47fe-ab08-b617d2dce230","公報番号確認"],
+  ["US-20260217059-A1","A1","244f3300-5673-40fc-b4f2-cc845b5b6941","公報番号確認"],
+  ["US-20260217062-A1","A1","56340619-4126-45d4-869c-22f06e077be2","公報番号確認"],
+  ["US-20260208541-A1","A1","3ebaabe2-bab2-488a-836e-3289d125f564","公報番号確認"],
+  ["US-20260208536-A1","A1","f98c05cc-9b9f-47d1-9d10-124e9eb09682","公報番号確認"],
+  ["US-20260209505-A1","A1","b5f991d2-cdca-456c-9d9c-24a103233d3e","公報番号確認"],
+  ["US-20260209448-A1","A1","ca31a509-15cb-41d6-9890-28c51cd8e87e","公報番号確認"],
+  ["US-20260209489-A1","A1","cbaab247-beca-44ca-ae83-24bb1c70153d","公報番号確認"],
+  ["US-20260209482-A1","A1","ce173254-ebbf-4c86-aaa8-13ca570ae7e9","公報番号確認"],
+  ["US-20260208530-A1","A1","fa4e6697-d61e-4e4d-8014-4b46eec044b7","公報番号確認"],
+  ["US-20260208534-A1","A1","e66bb188-cf7e-406a-9e71-4a250295f404","公報番号確認"],
+  ["US-20260208423-A1","A1","7db165a4-728c-413e-bc3a-449c99315714","公報番号確認"],
+  ["US-20260208443-A1","A1","1709b863-2131-4bd2-b7f9-ffb662531a89","公報番号確認"],
+  ["US-20260201147-A1","A1","17985ff0-271c-41f0-9ac5-53ab4b0e8aaf","公報番号確認"],
+  ["US-20260200268-A1","A1","05f02188-b7ca-434f-9163-2d873569d316","公報番号確認"],
+  ["US-20260200709-A1","A1","a9cc681a-017b-457f-ab64-b1d6795d6625","公報番号確認"],
+  ["US-20260200272-A1","A1","ccb25eb0-2aa8-41ed-87da-7509436d41d5","公報番号確認"],
+  ["US-20260202221-A1","A1","0f458d34-76e8-441a-8b9c-0e81f1de6cd6","公報番号確認"],
+  ["US-20260184109-A1","A1","2fb3dfb8-b801-4014-8646-cfa076106157","公報番号確認"],
+  ["US-20260192605-A1","A1","eb557148-7f82-4025-8d47-4f7d9f1a6b46","公報番号確認"],
+  ["US-20260192613-A1","A1","f1c81cdf-bd69-4544-96d3-b177a5b8a375","公報番号確認"],
+  ["US-20260193389-A1","A1","1a431d2c-f151-4c6e-a2dc-380498d2d6a6","公報番号確認"],
+  ["US-20260193900-A1","A1","5a6ec8b5-43ed-49eb-ac55-9172ea11dfb1","公報番号確認"],
+  ["US-12679935-B2","B2","d467df11-0e83-4ecf-94af-008c6db6181c","公報番号確認"],
+  ["US-12679016-B2","B2","f0c15b3c-de72-4924-97b5-b26bb5656bff","公報番号確認"],
+  ["US-12686190-B2","B2","214c8991-672c-4994-9a5f-f14b44d7091c","公報番号確認"],
+  ["US-12673520-B2","B2","f347943e-c901-41cf-b476-92cfa52622d6","公報番号確認"]
+];
+
+function render() {
+  const q = document.getElementById("q").value.toLowerCase();
+  const k = document.getElementById("kind").value;
+  document.getElementById("rows").innerHTML = records
+    .filter(r => r[0].toLowerCase().includes(q) && (!k || r[1] === k))
+    .map(r => `<tr>
+      <td>${r[0]}</td>
+      <td><span class="pill">${r[1]}</span></td>
+      <td><a target="_blank" rel="noopener" href="https://app.notion.com/p/${r[2].replaceAll("-","")}">Notionページ</a></td>
+      <td>${r[3]}</td>
+    </tr>`).join("");
+}
+
+document.getElementById("q").addEventListener("input", render);
+document.getElementById("kind").addEventListener("change", render);
+render();
+
+document.getElementById("kindBars").innerHTML = [
+  ["A1 公開公報",29],["B2 登録公報",6]
+].map(([name,value]) => `
+  <div class="barrow">
+    <div>${name}</div>
+    <div class="bar"><span style="width:${value/29*100}%"></span></div>
+    <strong>${value}</strong>
+  </div>`).join("");
+
+document.getElementById("themeBars").innerHTML = [
+  ["ゴム材料・配合",3],
+  ["製造・検査工程",1],
+  ["自動搬送・位置決め",1]
+].map(([name,value]) => `
+  <div class="barrow">
+    <div>${name}</div>
+    <div class="bar"><span style="width:${value/3*100}%"></span></div>
+    <strong>${value}</strong>
+  </div>`).join("");
+</script>
+</body>
+</html>

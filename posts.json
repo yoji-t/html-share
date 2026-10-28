@@ -1,5 +1,22 @@
 [
     {
+        "id":  "open-notion-ai-with-iphone-siri",
+        "title":  "iPhoneのSiriからNotion・Notion AIを開く方法",
+        "filename":  "posts/open-notion-ai-with-iphone-siri.html",
+        "createdAt":  "2026-10-28T21:34:02+09:00",
+        "dateFormatted":  "2026/10/28",
+        "description":  "iPhoneのSiri音声コマンドやショートカットアプリを活用してNotionおよびNotion AIをスムーズに起動・操作する手順と特許分析などの活用例。",
+        "tags":  [
+                     "Notion",
+                     "Notion AI",
+                     "iPhone",
+                     "Siri",
+                     "ショートカット",
+                     "活用術",
+                     "仕事効率化"
+                 ]
+    },
+    {
         "id":  "notion-chatgpt-patent-analysis-system",
         "title":  "Notion × ChatGPTによる特許分析システム",
         "filename":  "posts/notion-chatgpt-patent-analysis-system.html",

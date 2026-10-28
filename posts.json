@@ -1,5 +1,22 @@
 [
     {
+        "id":  "notion-chatgpt-patent-analysis-system",
+        "title":  "Notion × ChatGPTによる特許分析システム",
+        "filename":  "posts/notion-chatgpt-patent-analysis-system.html",
+        "createdAt":  "2026-10-28T19:34:27+09:00",
+        "dateFormatted":  "2026/10/28",
+        "description":  "Notionを特許DB、ChatGPTを分析エンジンとして活用し、競合動向・重要特許・技術トレンドを継続的に分析・レポート化する運用設計と実務ガイド。",
+        "tags":  [
+                     "特許",
+                     "知財",
+                     "Notion",
+                     "ChatGPT",
+                     "AI活用",
+                     "特許分析",
+                     "知財実務"
+                 ]
+    },
+    {
         "id":  "michelin-us-patent-analysis-202608",
         "title":  "ミシュラン米国特許分析（2026年8月）",
         "filename":  "posts/michelin-us-patent-analysis-202608.html",

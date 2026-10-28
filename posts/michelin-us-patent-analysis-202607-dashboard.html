@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ミシュラン US 202607 特許分析ダッシュボード</title>
+<style>
+:root {
+  --bg: #f4f6fa;
+  --card: #ffffff;
+  --text: #202b3c;
+  --muted: #68758a;
+  --line: #e1e7f0;
+  --blue: #2457a7;
+  --blue-light: #eaf1ff;
+  --green: #237b61;
+  --orange: #a45b18;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Yu Gothic", "Meiryo", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+header {
+  padding: 34px 24px;
+  background: linear-gradient(120deg, #142c50, #2457a7);
+  color: white;
+}
+header .eyebrow {
+  font-size: 12px;
+  letter-spacing: .12em;
+  opacity: .8;
+}
+header h1 { margin: 8px 0; font-size: 27px; }
+header p { margin: 0; color: #e1eaff; }
+main { max-width: 1250px; margin: 24px auto; padding: 0 18px 40px; }
+h2 { font-size: 21px; margin: 32px 0 14px; }
+h3 { font-size: 16px; margin: 0 0 8px; }
+.small { color: var(--muted); font-size: 12px; }
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 2px 8px rgba(25,45,80,.035);
+}
+.metric-label { color: var(--muted); font-size: 13px; }
+.metric-value { font-size: 29px; font-weight: 700; margin-top: 4px; }
+.metric-note { font-size: 12px; color: var(--muted); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.bar-row { margin: 13px 0; }
+.bar-label { display:flex; justify-content:space-between; font-size:13px; gap:12px; }
+.bar-track { height: 9px; background:#e8edf5; border-radius:10px; overflow:hidden; margin-top:5px; }
+.bar-fill { height:100%; background:var(--blue); border-radius:10px; }
+.callout {
+  background: var(--blue-light);
+  border-left: 4px solid var(--blue);
+  border-radius: 6px;
+  padding: 14px 16px;
+  margin: 12px 0;
+}
+.tag {
+  display:inline-block; padding:3px 8px; border-radius:20px;
+  background:#eef2f7; color:#42516a; font-size:11px;
+}
+.tag-a { background:#e7f2ff; color:#2457a7; }
+.tag-b { background:#e4f5ed; color:#237b61; }
+.controls {
+  display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;
+}
+input, select {
+  border:1px solid #d4dce8; border-radius:8px; padding:10px 12px;
+  font:inherit; background:white; color:var(--text);
+}
+input { flex:1; min-width:220px; }
+.table-wrap { overflow-x:auto; background:white; border:1px solid var(--line); border-radius:10px; }
+table { width:100%; border-collapse:collapse; font-size:13px; }
+th, td { text-align:left; padding:12px 11px; border-bottom:1px solid var(--line); vertical-align:top; }
+th { background:#edf2f9; position:sticky; top:0; z-index:1; white-space:nowrap; }
+tr:hover td { background:#f8faff; }
+td.pub { min-width:155px; white-space:nowrap; font-weight:600; }
+td.title { min-width:270px; }
+td.summary { min-width:320px; }
+td.field { min-width:130px; }
+.priority { border-left:4px solid var(--green); }
+.priority p { margin:5px 0; font-size:14px; }
+footer { color:var(--muted); font-size:12px; padding:24px 0; }
+@media (max-width:800px) {
+  .metrics { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .grid2 { grid-template-columns:1fr; }
+  header h1 { font-size:22px; }
+}
+@media print {
+  body { background:white; }
+  header { background:#18375f !important; print-color-adjust:exact; }
+  .controls { display:none; }
+  .card { box-shadow:none; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">INTELLECTUAL PROPERTY / TECHNOLOGY INTELLIGENCE</div>
+  <h1>ミシュラン US 202607 特許分析ダッシュボード</h1>
+  <p>米国公開・登録特許の技術テーマ整理と研究開発・知財戦略への示唆</p>
+</header>
+
+<main>
+  <section class="metrics">
+    <div class="card">
+      <div class="metric-label">確認対象ページ</div>
+      <div class="metric-value">37</div>
+      <div class="metric-note">Notionの対象ページ群に基づく</div>
+    </div>
+    <div class="card">
+      <div class="metric-label">主要技術領域</div>
+      <div class="metric-value">5</div>
+      <div class="metric-note">材料・タイヤ構造・製造・管理・その他</div>
+    </div>
+    <div class="card">
+      <div class="metric-label">注目テーマ</div>
+      <div class="metric-value">4</div>
+      <div class="metric-note">低損失・再生材・製造DX・センサー</div>
+    </div>
+    <div class="card">
+      <div class="metric-label">分析ステータス</div>
+      <div class="metric-value" style="font-size:21px">一次分析</div>
+      <div class="metric-note">請求項・法的状態の追加確認が必要</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>1. エグゼクティブサマリー</h2>
+    <div class="card">
+      <p>
+        対象ページ群では、ゴム配合・補強材に関する材料技術に加え、
+        タイヤの耐久性、摩耗計測、製造設備、電子部品の組込み、
+        農業車両のタイヤ管理など、幅広い技術領域が確認される。
+      </p>
+      <div class="callout">
+        <strong>知財分析上の重要ポイント</strong><br>
+        材料単独の性能向上だけでなく、再生材料の利用、製造工程の効率化、
+        タイヤ状態の計測・制御を組み合わせた技術群に注目する。
+        ただし、公開公報のタイトルや要約だけでは権利範囲や事業上の重要度は確定できない。
+      </div>
+      <ul>
+        <li><strong>材料：</strong>低ヒステリシス、カーボンブラック、シリカ、アルミナ、耐オゾン性など。</li>
+        <li><strong>構造：</strong>重荷重用タイヤ、航空機用タイヤ、シアバンド、トレッド耐久性。</li>
+        <li><strong>製造：</strong>押出設備、加硫用ブラダー、電子部品組込み、付加製造、金属補強材の検出。</li>
+        <li><strong>管理：</strong>トレッド摩耗の計測、農業車両の空気圧制御、土壌特性の推定。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. 技術分野別の整理</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>ゴム材料・配合技術</h3>
+        <div class="bar-row">
+          <div class="bar-label"><span>配合・補強・耐久性</span><span>重点領域</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
+        </div>
+        <p class="small">機能化エラストマー、カーボンブラック、熱可塑性エラストマー、シリカ、アルミナ、耐オゾン性など。</p>
+      </div>
+      <div class="card">
+        <h3>タイヤ構造・トレッド</h3>
+        <div class="bar-row">
+          <div class="bar-label"><span>耐久性・摩耗・補強</span><span>重点領域</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:72%"></div></div>
+        </div>
+        <p class="small">重荷重用タイヤ、航空機タイヤ、シアバンド、コードを利用した摩耗計測。</p>
+      </div>
+      <div class="card">
+        <h3>製造・設備・工程</h3>
+        <div class="bar-row">
+          <div class="bar-label"><span>生産技術・自動化</span><span>重点領域</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:78%"></div></div>
+        </div>
+        <p class="small">押出設備、加硫ブラダー、電子部品の組込み、付加製造、材料除去装置。</p>
+      </div>
+      <div class="card">
+        <h3>センサー・タイヤ管理</h3>
+        <div class="bar-row">
+          <div class="bar-label"><span>計測・制御・車両連携</span><span>注目領域</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:62%"></div></div>
+        </div>
+        <p class="small">農業車両の空気圧管理、タイヤ形状・摩耗の情報利用、土壌特性推定。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. 技術戦略上の注目テーマ</h2>
+    <div class="grid2">
+      <div class="card priority">
+        <h3>① 低転がり抵抗・低ヒステリシス材料</h3>
+        <p>シアバンドや各種ゴム配合の損失低減を狙う技術群。転がり抵抗、発熱、耐久性、ウェット性能の両立を確認したい。</p>
+        <span class="tag">優先度：高</span>
+      </div>
+      <div class="card priority">
+        <h3>② 再生材料・新規補強材</h3>
+        <p>再生ゴム、熱分解由来カーボンブラック、セルロースナノ結晶など。環境負荷低減と性能維持の両立が分析ポイント。</p>
+        <span class="tag">優先度：高</span>
+      </div>
+      <div class="card priority">
+        <h3>③ 製造工程のデジタル化</h3>
+        <p>金属補強材の検出、電子部品の組込み、押出設備の構造など。品質検査・自動化・設備保全との関連を調査する。</p>
+        <span class="tag">優先度：中〜高</span>
+      </div>
+      <div class="card priority">
+        <h3>④ タイヤ状態の計測・管理</h3>
+        <p>摩耗計測や中央空気圧制御など。センサー、データ処理、制御方法、車両側システムとの連携を確認する。</p>
+        <span class="tag">優先度：中〜高</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. 特許一覧</h2>
+    <p class="small">
+      下表は対象ページのタイトル・概要を基にした一次整理。要約は技術内容を把握するための簡略説明であり、
+      独立請求項の限定事項を表すものではない。公開番号・登録番号は原公報との照合を推奨。
+    </p>
+    <div class="controls">
+      <input id="searchBox" type="search" placeholder="番号・タイトル・キーワードで検索">
+      <select id="fieldFilter">
+        <option value="">すべての技術分野</option>
+        <option value="材料">ゴム材料・配合</option>
+        <option value="構造">タイヤ構造・摩耗</option>
+        <option value="製造">製造・設備</option>
+        <option value="管理">センサー・タイヤ管理</option>
+        <option value="その他">その他の材料・技術</option>
+      </select>
+      <select id="kindFilter">
+        <option value="">公開・登録すべて</option>
+        <option value="A1">A1 公開公報</option>
+        <option value="B2">B2 登録特許</option>
+      </select>
+    </div>
+    <div class="table-wrap">
+      <table id="patentTable">
+        <thead>
+          <tr>
+            <th>番号</th>
+            <th>技術分野</th>
+            <th>発明の名称</th>
+            <th>技術概要・分析ポイント</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-field="材料" data-kind="A1">
+            <td class="pub">US-20260217950-A1</td><td class="field">材料</td>
+            <td class="title">Thiol-functionalized cellulose nanocrystals for applications in rubber</td>
+            <td class="summary">チオール官能化セルロースナノ結晶をゴム用途に利用する技術。バイオ由来補強材とゴムとの相互作用、分散性、補強効果を確認したい。</td>
+          </tr>
+          <tr data-field="材料" data-kind="A1">
+            <td class="pub">US-20260217944-A1</td><td>材料</td>
+            <td>Elastomer compositions with improved properties（acetylene black）</td>
+            <td>アセチレンブラックを用いたエラストマー配合。導電性、補強性、発熱、損失特性など、従来配合との差を確認する。</td>
+          </tr>
+          <tr data-field="材料" data-kind="A1">
+            <td class="pub">US-20260217949-A1</td><td>材料</td>
+            <td>Elastomer compositions with improved properties（carbon black）</td>
+            <td>カーボンブラックを含むエラストマー配合の性能改善。フィラー特性とポリマーとの相互作用が重要な調査対象。</td>
+          </tr>
+          <tr data-field="材料" data-kind="B2">
+            <td class="pub">US-12692373-B2</td><td>材料</td>
+            <td>Rubber composition based on functionalized elastomer and polyphenolic compound</td>
+            <td>極性基を有する機能化エラストマーとポリフェノール化合物を組み合わせるゴム組成物。分散性や機械特性への効果を確認する。</td>
+          </tr>
+          <tr data-field="材料" data-kind="A1">
+            <td class="pub">US-20260217063-A1</td><td>材料</td>
+            <td>Tire with recycled rubber in bead</td>
+            <td>ビード部に再生ゴムを用いるタイヤ。再生材の適用部位、接着性、疲労耐久性、製造条件を調査する。</td>
+          </tr>
+          <tr data-field="材料" data-kind="A1">
+            <td class="pub">US-20260217059-A1</td><td>材料</td>
+            <td>Shear band having ultra-low hysteresis rubber</td>
+            <td>超低ヒステリシスゴムを用いたシアバンド。非空気入りタイヤなどにおけるエネルギー損失と耐久性の両立が焦点。</td>
+          </tr>
+          <tr data-field="構造" data-kind="A1">
+            <td class="pub">US-20260217062-A1</td><td>構造</td>
+            <td>Method for measuring tread wear of a non-pneumatic tire using a code</td>
+            <td>コードを利用して非空気入りタイヤのトレッド摩耗を計測する方法。コードの配置、読取方法、摩耗量への変換を確認する。</td>
+          </tr>
+          <tr data-field="材料" data-kind="A1">
+            <td class="pub">US-20260209505-A1</td><td>材料</td>
+            <td>Polymer composition comprising a thermoplastic elastomer and a hydrocarbon plasticizer resin</td>
+            <td>熱可塑性エラストマーと炭化水素系可塑化樹脂を含む組成物。加工性、柔軟性、相溶性、用途を確認する。</td>
+          </tr>
+          <tr data-field="材料" data-kind="A1">
+            <td class="pub">US-20260209448-A1</td><td>材料</td>
+            <td>Elastomer compositions comprising a pyrolysis carbon black</td>
+            <td>熱分解由来カーボンブラックを含むエラストマー組成物。再生原料の品質変動や、補強性・耐久性への影響が論点。</td>
+          </tr>
+          <tr data-field="材料" data-kind="A1">
+            <td class="pub">US-20260208530-A1</td><td>材料</td>
+            <td>Improved alumina reinforced rubber composition</td>
+            <td>アルミナ補強ゴム組成物の改善。フィラー表面、配合、分散性とゴム物性の関係を調査する。</td>
+          </tr>
+          <tr data-field="材料" data-kind="A1">
+            <td class="pub">US-20260200268-A1</td><td>材料</td>
+            <td>Rubber composition（highly saturated diene elastomer, silica and azosilane）</td>
+            <td>高飽和ジエン系エラストマー、シリカ、アゾシランを組み合わせる配合。シラン系カップリングや補強効果の差を確認する。</td>
+          </tr>
+          <tr data-field="材料" data-kind="A1">
+            <td class="pub">US-20260209489-A1</td><td>材料</td>
+            <td>Rubber composition comprising a highly saturated diene elastomer</td>
+            <td>高飽和ジエン系エラストマーを含むゴム組成物。ポリマー構造、配合条件、対象性能を請求項から確認する。</td>
+          </tr>
+          <tr data-field="材料" data-kind="A1">
+            <td class="pub">US-20260193389-A1</td><td>材料</td>
+            <td>Rubber composition</td>
+            <td>ゴム組成物に関する発明。タイトルだけでは発明の特徴を特定できないため、要約・独立請求項・実施例の追加確認が必要。</td>
+          </tr>
+          <tr data-field="材料" data-kind="A1">
+            <td class="pub">US-20260209482-A1</td><td>材料</td>
+            <td>Rubber composition with longer lasting antiozonation system</td>
+            <td>耐オゾン保護を長持ちさせるゴム組成物。保護剤の種類、移行・消耗、表面保護の持続性を確認する。</td>
+          </tr>
+          <tr data-field="材料" data-kind="B2">
+            <td class="pub">US-12679935-B2</td><td>材料</td>
+            <td>Masterbatch based on a modified polymer and an organophosphorus additive</td>
+            <td>変性ポリマーと有機リン添加剤を用いたマスターバッチ。添加剤の役割、混練工程、最終配合への効果を確認する。</td>
+          </tr>
+          <tr data-field="構造" data-kind="A1">
+            <td class="pub">US-20260208541-A1</td><td>構造</td>
+            <td>Method for measuring tread wear of a tire using a code</td>
+            <td>コードを利用したタイヤトレッド摩耗の計測方法。非空気入りタイヤ向けの関連出願との共通点・相違点を比較する。</td>
+          </tr>
+          <tr data-field="構造" data-kind="A1">
+            <td class="pub">US-20260208536-A1</td><td>構造</td>
+            <td>Optimized architecture of a civil engineering tire</td>
+            <td>土木・鉱山車両向けタイヤの構造最適化。荷重、耐久性、発熱、構造部材の配置を重点的に確認する。</td>
+          </tr>
+          <tr data-field="構造" data-kind="A1">
+            <td class="pub">US-20260210808-A1</td><td>構造</td>
+            <td>Method for measuring tread wear of a track</td>
+            <td>トラック／履帯の摩耗計測に関する技術。対象物の定義、計測原理、コード技術との関連を原公報で確認する。</td>
+          </tr>
+          <tr data-field="構造" data-kind="A1">
+            <td class="pub">US-20260184109-A1</td><td>構造</td>
+            <td>Aircraft tire carcass reinforcements</td>
+            <td>航空機タイヤのカーカス補強構造。高荷重・高速条件における補強材の配置や耐久性が主要な確認ポイント。</td>
+          </tr>
+          <tr data-field="構造" data-kind="B2">
+            <td class="pub">US-12673520-B2</td><td>構造</td>
+            <td>Heavy-duty vehicle tire tread with improved robustness</td>
+            <td>重荷重車両用タイヤのトレッド耐久性を改善する技術。溝、ブロック形状、ゴム配合、欠け・摩耗への効果を確認する。</td>
+          </tr>
+          <tr data-field="構造" data-kind="A1">
+            <td class="pub">US-20260192605-A1</td><td>構造</td>
+            <td>Tire for a heavy goods vehicle with a tread having improved sturdiness</td>
+            <td>重貨物車用タイヤの堅牢性を高めるトレッド構造。登録特許や関連出願とのファミリー関係を確認する。</td>
+          </tr>
+          <tr data-field="管理" data-kind="A1">
+            <td class="pub">US-20260192613-A1</td><td>管理</td>
+            <td>System and process for operating a central tire inflation system</td>
+            <td>農業車両の各タイヤに関するスペクトル基準を利用し、中央空気圧制御システムを運用する技術。判定指標と制御ロジックが焦点。</td>
+          </tr>
+          <tr data-field="製造" data-kind="A1">
+            <td class="pub">US-20260219126-A1</td><td>製造</td>
+            <td>Leak detection method with time delay for tire curing membrane/inflation circuit</td>
+            <td>タイヤ加硫用ブラダーまたは膨張回路の漏れを時間遅延条件で検出する方法。誤検出抑制や保全効率への効果を確認する。</td>
+          </tr>
+          <tr data-field="製造" data-kind="B2">
+            <td class="pub">US-12692355-B2</td><td>製造</td>
+            <td>Method for modifying expandable curing membranes for manufacturing tyres</td>
+            <td>タイヤ製造用の拡張可能な加硫ブラダーを改変する方法。ブラダーの構造・加工・寿命や工程条件を確認する。</td>
+          </tr>
+          <tr data-field="製造" data-kind="B2">
+            <td class="pub">US-12686190-B2</td><td>製造</td>
+            <td>Process for manufacturing semi-finished products incorporating electronic device</td>
+            <td>電子デバイスを組み込んだ半製品の製造工程。電子部品の位置決め、保護、埋込み、製造時の信頼性が焦点。</td>
+          </tr>
+          <tr data-field="製造" data-kind="B2">
+            <td class="pub">US-12679016-B2</td><td>製造</td>
+            <td>Extrusion facility with underground transfer of the tool module</td>
+            <td>工具モジュールを地下経路で搬送する押出設備。設備レイアウト、交換作業、安全性、生産効率の改善を確認する。</td>
+          </tr>
+          <tr data-field="製造" data-kind="A1">
+            <td class="pub">US-20260208423-A1</td><td>製造</td>
+            <td>Miniaturized volumetric extruder using twin conical screws</td>
+            <td>二本の円錐スクリューを用いた小型容積式押出機。材料供給、吐出精度、小型化、工程への適用性が分析対象。</td>
+          </tr>
+          <tr data-field="製造" data-kind="A1">
+            <td class="pub">US-20260208443-A1</td><td>製造</td>
+            <td>Device and method for the additive manufacture of a three-dimensional object</td>
+            <td>三次元物体の付加製造装置・方法。タイヤ部品への応用可能性や材料・造形条件は、明細書で追加確認する。</td>
+          </tr>
+          <tr data-field="製造" data-kind="A1">
+            <td class="pub">US-20260202221-A1</td><td>製造</td>
+            <td>Material removal device comprising an impedance detection system</td>
+            <td>金属補強材への工具接触をインピーダンス検出で判断する材料除去装置。補強材の損傷防止や工程安全性に注目する。</td>
+          </tr>
+          <tr data-field="製造" data-kind="A1">
+            <td class="pub">US-20260200272-A1</td><td>製造</td>
+            <td>Device for attaching an electronic component to a tire casing</td>
+            <td>タイヤケーシングに電子部品を取り付ける装置。センサー搭載工程や部品固定の再現性、耐久性との関係を確認する。</td>
+          </tr>
+          <tr data-field="製造" data-kind="A1">
+            <td class="pub">US-20260193900-A1</td><td>製造</td>
+            <td>Inflatable structure and method for producing an inflatable structure</td>
+            <td>膨張可能な構造体とその製造方法。タイヤ関連用途かどうかを含め、構造・材料・製造方法を原公報で確認する。</td>
+          </tr>
+          <tr data-field="管理" data-kind="A1">
+            <td class="pub">US-20260210934-A1</td><td>管理</td>
+            <td>Method for determining a mechanical property of an agricultural soil</td>
+            <td>タイヤの曲率センサー情報などから農地土壌の機械的特性を推定する技術。タイヤ情報と農業データの連携が注目点。</td>
+          </tr>
+          <tr data-field="その他" data-kind="A1">
+            <td class="pub">US-20260217505-A1</td><td>その他</td>
+            <td>Method for controlling the positioning of an autonomous forklift relative to an annular load</td>
+            <td>環状荷物に対する自律フォークリフトの位置決め制御。タイヤ技術そのものとは異なる可能性があり、出願人・技術分野の確認が必要。</td>
+          </tr>
+          <tr data-field="その他" data-kind="A1">
+            <td class="pub">US-20260200709-A1</td><td>その他</td>
+            <td>Method for lifting and transporting a load using an autonomous forklift truck</td>
+            <td>自律フォークリフトによる荷物の持上げ・搬送方法。対象ページ群に含まれる周辺技術として、技術分野と事業上の関係を確認する。</td>
+          </tr>
+          <tr data-field="その他" data-kind="A1">
+            <td class="pub">US-20260217879-A1</td><td>その他</td>
+            <td>Copolymers of ethylene and 1,3-butadiene</td>
+            <td>エチレンと1,3-ブタジエンの共重合体に関する技術。潤滑油用増粘剤などの用途、分子構造、物性を確認する。</td>
+          </tr>
+          <tr data-field="材料" data-kind="A1">
+            <td class="pub">US-20260201147-A1</td><td>材料</td>
+            <td>Rubber composition with longer lasting antiozonation system</td>
+            <td>耐オゾン保護システムの持続性を改善するゴム組成物。US-20260209482-A1との関係、優先権、請求項の差異を照合する。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p id="resultCount" class="small"></p>
+  </section>
+
+  <section>
+    <h2>5. 知財部門向けの追加調査アクション</h2>
+    <div class="card">
+      <ol>
+        <li><strong>独立請求項の抽出：</strong>各公報の独立請求項から、必須構成・数値範囲・材料要件・工程条件を整理する。</li>
+        <li><strong>ファミリー照合：</strong>同一発明の米国・WO・EP・日本出願を特定し、国別の権利化状況を確認する。</li>
+        <li><strong>審査経過の確認：</strong>拒絶理由、補正、引用文献、登録時の限定事項を確認する。</li>
+        <li><strong>競合比較：</strong>ブリヂストン、住友ゴム、横浜ゴム、コンチネンタル、ピレリなどの関連技術と比較する。</li>
+        <li><strong>事業適合性：</strong>対象製品、製造工程、想定用途、量産可能性、環境性能との関係を評価する。</li>
+        <li><strong>権利評価：</strong>請求項の広さ、代替設計の可能性、残存期間、各国の権利状態を確認してから重要度を判定する。</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2>6. 分析上の注意事項</h2>
+    <div class="card">
+      <ul>
+        <li>このレポートは、Notionに格納されたページ群を基にした技術テーマの一次整理であり、法的な権利範囲の判断ではない。</li>
+        <li>公報番号・発明の名称・登録状態は、USPTOなどの公式公報データと照合すること。</li>
+        <li>タイトルが類似する公報でも、別発明・別ファミリー・異なる請求項である可能性がある。</li>
+        <li>公開番号の「A1」と登録番号の「B2」は区別し、重複計上やファミリーの混同を避けること。</li>
+        <li>技術分野の分類は一次分析用であり、正式なIPC/CPC分類を代替するものではない。</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>出典：Notion「ミシュランUS202607」の対象ページ群。概要は技術内容を把握するための要約。</p>
+    <p>次工程：公報本文・独立請求項・ISR／審査経過・ファミリー・法的状態を確認し、分析結果を更新する。</p>
+  </footer>
+</main>
+
+<script>
+const searchBox = document.getElementById("searchBox");
+const fieldFilter = document.getElementById("fieldFilter");
+const kindFilter = document.getElementById("kindFilter");
+const rows = Array.from(document.querySelectorAll("#patentTable tbody tr"));
+const resultCount = document.getElementById("resultCount");
+
+function filterRows() {
+  const query = searchBox.value.trim().toLowerCase();
+  const field = fieldFilter.value;
+  const kind = kindFilter.value;
+  let visible = 0;
+
+  rows.forEach(row => {
+    const text = row.innerText.toLowerCase();
+    const matchesQuery = !query || text.includes(query);
+    const matchesField = !field || row.dataset.field === field;
+    const matchesKind = !kind || row.dataset.kind === kind;
+    const show = matchesQuery && matchesField && matchesKind;
+    row.hidden = !show;
+    if (show) visible++;
+  });
+
+  resultCount.textContent = `表示中：${visible}件 ／ 一覧掲載：${rows.length}件`;
+}
+
+searchBox.addEventListener("input", filterRows);
+fieldFilter.addEventListener("change", filterRows);
+kindFilter.addEventListener("change", filterRows);
+filterRows();
+</script>
+</body>
+</html>

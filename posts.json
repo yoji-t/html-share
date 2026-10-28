@@ -1,5 +1,22 @@
 [
     {
+        "id":  "michelin-us-patent-analysis-202607-dashboard",
+        "title":  "ミシュラン US 202607 特許分析ダッシュボード",
+        "filename":  "posts/michelin-us-patent-analysis-202607-dashboard.html",
+        "createdAt":  "2026-10-29T08:00:43+09:00",
+        "dateFormatted":  "2026/10/29",
+        "description":  "2026年7月公開・登録のミシュラン米国特許37件を対象に、ゴム配合・補強材、タイヤ構造、製造設備DX、センサー・タイヤ管理の5領域で分析・整理したインタラクティブダッシュボード。",
+        "tags":  [
+                     "特許",
+                     "知財",
+                     "ミシュラン",
+                     "ダッシュボード",
+                     "タイヤ",
+                     "技術動向",
+                     "USPTO"
+                 ]
+    },
+    {
         "id":  "michelin-us-patent-dashboard-202607",
         "title":  "ミシュランUS202607 特許ダッシュボード",
         "filename":  "posts/michelin-us-patent-dashboard-202607.html",

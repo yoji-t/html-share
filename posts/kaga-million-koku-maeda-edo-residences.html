@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>加賀百万石と前田家の江戸屋敷｜赤門から板橋区加賀まで</title>
+<style>
+  :root {
+    --primary: #8b2635;
+    --secondary: #c5a56b;
+    --bg: #f7f5f0;
+    --paper: #fffefa;
+    --text: #292929;
+    --muted: #686868;
+    --border: #e4ded3;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+      "Yu Gothic", Meiryo, sans-serif;
+    line-height: 1.9;
+  }
+
+  header {
+    background: linear-gradient(135deg, #70202c, #a84943);
+    color: white;
+    padding: 54px 20px 42px;
+    text-align: center;
+    border-bottom: 5px solid var(--secondary);
+  }
+
+  header .eyebrow {
+    letter-spacing: .18em;
+    font-size: .8rem;
+  }
+
+  header h1 {
+    font-size: clamp(1.65rem, 5vw, 2.7rem);
+    line-height: 1.4;
+    margin: 14px auto;
+    max-width: 900px;
+  }
+
+  header p {
+    max-width: 720px;
+    margin: 0 auto;
+    color: #f7e9e5;
+  }
+
+  main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 18px;
+  }
+
+  section {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: clamp(18px, 4vw, 34px);
+    margin-bottom: 24px;
+    box-shadow: 0 3px 12px rgba(40, 30, 20, .035);
+  }
+
+  h2 {
+    color: var(--primary);
+    font-size: 1.45rem;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 10px;
+    margin-top: 0;
+  }
+
+  h3 {
+    font-size: 1.12rem;
+    margin-top: 25px;
+    color: #62303a;
+  }
+
+  .lead {
+    font-size: 1.08rem;
+  }
+
+  .key-point {
+    border-left: 4px solid var(--primary);
+    background: #f8f0ed;
+    padding: 14px 18px;
+    margin: 18px 0;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 22px 0;
+  }
+
+  .stat {
+    background: #f6f0e6;
+    padding: 18px;
+    border-radius: 9px;
+    text-align: center;
+  }
+
+  .stat strong {
+    display: block;
+    color: var(--primary);
+    font-size: 1.65rem;
+  }
+
+  .stat span {
+    font-size: .9rem;
+    color: var(--muted);
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 18px 0;
+    font-size: .95rem;
+  }
+
+  th, td {
+    border: 1px solid var(--border);
+    padding: 11px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    background: #eee5d8;
+    white-space: nowrap;
+  }
+
+  .timeline {
+    border-left: 3px solid var(--secondary);
+    margin: 25px 0 15px 8px;
+    padding-left: 23px;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 18px;
+  }
+
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -31px;
+    top: 9px;
+    width: 13px;
+    height: 13px;
+    background: var(--primary);
+    border: 2px solid var(--paper);
+    border-radius: 50%;
+  }
+
+  .year {
+    color: var(--primary);
+    font-weight: bold;
+  }
+
+  .residence {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+    margin: 16px 0;
+  }
+
+  .residence h3 { margin-top: 0; }
+
+  .location {
+    display: inline-block;
+    background: #eee5d8;
+    color: #5e4032;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: .85rem;
+  }
+
+  .note {
+    color: var(--muted);
+    font-size: .88rem;
+  }
+
+  .flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .flow div {
+    width: 100%;
+    max-width: 580px;
+    background: #f4ece2;
+    padding: 10px 15px;
+    border-radius: 7px;
+  }
+
+  .flow .arrow {
+    background: none;
+    padding: 0;
+    color: var(--primary);
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 20px;
+    font-size: .85rem;
+  }
+
+  @media (max-width: 600px) {
+    header { padding: 38px 17px; }
+    main { padding: 0 10px; margin-top: 16px; }
+    section { padding: 17px; }
+    table { font-size: .84rem; }
+    th, td { padding: 8px; }
+  }
+
+  @media print {
+    body { background: white; }
+    header { background: white; color: black; border-bottom: 2px solid #888; }
+    header p { color: #333; }
+    section { box-shadow: none; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">江戸の歴史を現在の東京からたどる</div>
+  <h1>加賀百万石と前田家の江戸屋敷</h1>
+  <p>東京大学の赤門から、駒込の中屋敷、板橋区「加賀」の下屋敷跡まで</p>
+</header>
+
+<main>
+
+<section id="overview">
+  <h2>1．加賀百万石とは？</h2>
+  <p class="lead">
+    江戸時代に「百万石」といえば、加賀藩を治めた前田家が有名です。
+    加賀藩は約102万石とされ、徳川将軍家を除けば日本最大級の大名家でした。
+  </p>
+
+  <div class="stat-grid">
+    <div class="stat"><strong>約102万石</strong><span>加賀藩の石高の目安</span></div>
+    <div class="stat"><strong>前田家</strong><span>藩主の家</span></div>
+    <div class="stat"><strong>金沢城</strong><span>藩の中心となる城</span></div>
+  </div>
+
+  <table>
+    <tr><th>項目</th><th>内容</th></tr>
+    <tr><td>藩名</td><td>加賀藩</td></tr>
+    <tr><td>主な領地</td><td>現在の石川県・富山県を中心とする地域</td></tr>
+    <tr><td>代表的人物</td><td>前田利家、前田利長、前田斉泰</td></tr>
+    <tr><td>石高の意味</td><td>米の生産量を基準に、領地の規模や大名の格式を示す目安</td></tr>
+  </table>
+
+  <div class="key-point">
+    「加賀百万石」は、前田家の広大な領地と、江戸時代における大きな存在感を象徴する呼び名です。
+  </div>
+</section>
+
+<section id="other-domains">
+  <h2>2．加賀藩以外の大きな藩</h2>
+  <p>100万石規模で特に有名なのは加賀藩ですが、ほかにも50万～70万石級の大藩がありました。</p>
+
+  <table>
+    <tr><th>藩</th><th>石高の目安</th><th>現在の主な地域</th><th>藩主</th></tr>
+    <tr><td>加賀藩</td><td>約102万石</td><td>石川県・富山県</td><td>前田家</td></tr>
+    <tr><td>薩摩藩</td><td>約73万石</td><td>鹿児島県</td><td>島津家</td></tr>
+    <tr><td>仙台藩</td><td>約62万石</td><td>宮城県</td><td>伊達家</td></tr>
+    <tr><td>尾張藩</td><td>約62万石</td><td>愛知県</td><td>尾張徳川家</td></tr>
+    <tr><td>紀州藩</td><td>約55万石</td><td>和歌山県</td><td>紀州徳川家</td></tr>
+    <tr><td>熊本藩</td><td>約54万石</td><td>熊本県</td><td>細川家</td></tr>
+  </table>
+  <p class="note">※石高は時期や集計方法によって異なります。表は代表的な規模の目安です。薩摩藩などは、表向きの石高だけで実際の経済力を判断できません。</p>
+</section>
+
+<section id="akamon">
+  <h2>3．東京大学の赤門と加賀藩</h2>
+  <p class="lead">
+    東京大学の赤門は、加賀藩前田家と徳川将軍家の婚姻関係に由来する門です。
+  </p>
+
+  <h3>赤門が建てられた経緯</h3>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="year">1827年（文政10年）</div>
+      加賀藩13代藩主・前田斉泰が、江戸幕府11代将軍・徳川家斉の娘である溶姫を正室に迎えました。
+    </div>
+    <div class="timeline-item">
+      <div class="year">御守殿門の建設</div>
+      溶姫の住まいである御守殿と、その入口となる朱塗りの門が設けられました。この門が現在の赤門です。
+    </div>
+    <div class="timeline-item">
+      <div class="year">明治時代以降</div>
+      加賀藩の屋敷は政府の管理下に入り、1877年の東京大学創設後、赤門は大学の歴史を伝える建造物となりました。
+    </div>
+  </div>
+
+  <table>
+    <tr><th>項目</th><th>内容</th></tr>
+    <tr><td>正式名称</td><td>旧加賀屋敷御守殿門</td></tr>
+    <tr><td>建設年</td><td>1827年</td></tr>
+    <tr><td>関係する藩主</td><td>前田斉泰</td></tr>
+    <tr><td>関係する将軍</td><td>徳川家斉</td></tr>
+    <tr><td>関係する姫</td><td>溶姫</td></tr>
+    <tr><td>文化財</td><td>国の重要文化財</td></tr>
+  </table>
+
+  <h3>なぜ赤く塗られているのか？</h3>
+  <p>
+    将軍家の娘を正室に迎えた大名家では、朱塗りの「御守殿門」を設ける慣習がありました。
+    赤門は、前田家と徳川将軍家の結びつきを今に伝えるものです。
+  </p>
+
+  <div class="key-point">
+    赤門は単なる大学のシンボルではありません。江戸時代の大名家と将軍家の婚姻関係を伝える歴史的建造物です。
+  </div>
+</section>
+
+<section id="hongo">
+  <h2>4．東京大学は加賀藩の何屋敷だったのか？</h2>
+  <p class="lead">
+    東京大学本郷キャンパスの中心部は、加賀藩前田家の上屋敷跡にあたります。
+  </p>
+
+  <h3>上屋敷の役割</h3>
+  <p>
+    上屋敷は、大名が江戸で藩の運営や政治を行う主要な拠点でした。
+    藩主や家族の居住にも使われました。
+  </p>
+
+  <h3>本郷の屋敷が上屋敷になるまで</h3>
+  <p>
+    本郷の屋敷は、もともと下屋敷でした。1657年の明暦の大火で江戸の上屋敷が焼失した後、
+    本郷の屋敷が重要な拠点となり、1683年以降は上屋敷として使われるようになりました。
+  </p>
+
+  <h3>現在に残るもの</h3>
+  <ul>
+    <li><strong>赤門：</strong> 前田家と徳川将軍家の婚姻に由来する門。</li>
+    <li><strong>三四郎池：</strong> 本郷キャンパスに残る池で、旧大名屋敷の庭園の歴史を伝えます。</li>
+    <li><strong>東京大学本郷キャンパス：</strong> 前田家の上屋敷跡を含む、歴史的な土地です。</li>
+  </ul>
+</section>
+
+<section id="residences">
+  <h2>5．前田家が江戸に持っていた3つの屋敷</h2>
+  <p>
+    大名は用途に応じて複数の屋敷を持つことがありました。
+    前田家も上屋敷・中屋敷・下屋敷を所有していました。
+  </p>
+
+  <div class="residence">
+    <h3>① 上屋敷：東京大学本郷キャンパス</h3>
+    <span class="location">東京都文京区本郷</span>
+    <p><strong>役割：</strong> 江戸での主要な拠点。藩の運営や藩主の生活に関わる重要な屋敷でした。</p>
+    <p><strong>現在：</strong> 東京大学本郷キャンパス。</p>
+    <p><strong>歴史的な見どころ：</strong> 赤門、三四郎池など。</p>
+  </div>
+
+  <div class="residence">
+    <h3>② 中屋敷：駒込邸</h3>
+    <span class="location">東京都文京区本駒込6丁目周辺</span>
+    <p><strong>役割：</strong> 上屋敷を補う、前田家の江戸屋敷の一つ。</p>
+    <p><strong>現在：</strong> 市街地となっており、屋敷全体がそのまま残っているわけではありません。</p>
+    <p>
+      六義園のある一帯の近くに位置していました。ただし、六義園そのものは加賀藩の中屋敷ではありません。
+      六義園は、江戸時代に柳沢吉保が造営した別の大名庭園です。
+    </p>
+  </div>
+
+  <div class="residence">
+    <h3>③ 下屋敷：平尾邸</h3>
+    <span class="location">東京都板橋区加賀1・2丁目、板橋3・4丁目の一部など</span>
+    <p><strong>広さ：</strong> 約21万7千～22万坪とされる広大な敷地。</p>
+    <p><strong>役割：</strong> 江戸の中心部から離れた大規模な屋敷。</p>
+    <p><strong>現在：</strong> 住宅地、学校、研究施設、公園など。</p>
+    <p><strong>歴史的な見どころ：</strong> 加賀公園の築山跡や石碑。</p>
+    <p>
+      明治時代以降、この地域には火薬製造所が設けられ、近代日本の工業・研究の歴史ともつながっています。
+    </p>
+  </div>
+</section>
+
+<section id="itabashi">
+  <h2>6．板橋区「加賀」という地名</h2>
+  <p class="lead">
+    現在の東京都板橋区にある「加賀」という地名は、加賀藩前田家の下屋敷があった歴史と深い関係があります。
+  </p>
+
+  <h3>下屋敷跡の現在</h3>
+  <ul>
+    <li>広大だった屋敷跡は、現在、住宅地・学校・研究施設・公園などに変わっています。</li>
+    <li>加賀公園には、当時の庭園に関係する築山跡などが残っています。</li>
+    <li>明治時代以降、この地域は火薬製造所としても利用されました。</li>
+    <li>周辺には石神井川が流れています。</li>
+  </ul>
+
+  <h3>金沢とのつながり</h3>
+  <p>
+    板橋区と金沢市は友好交流都市として交流しています。
+    その背景の一つに、加賀藩の下屋敷に由来する歴史的なつながりがあります。
+  </p>
+
+  <div class="key-point">
+    東京大学の赤門だけでなく、板橋区の「加賀」という地名も、加賀百万石の前田家の歴史を今に伝えています。
+  </div>
+</section>
+
+<section id="comparison">
+  <h2>7．上屋敷・中屋敷・下屋敷の比較</h2>
+
+  <table>
+    <tr><th>屋敷</th><th>江戸時代の役割</th><th>現在の場所</th><th>現在の主な姿</th></tr>
+    <tr>
+      <td>上屋敷</td><td>江戸での主要拠点</td>
+      <td>文京区本郷</td><td>東京大学本郷キャンパス</td>
+    </tr>
+    <tr>
+      <td>中屋敷</td><td>上屋敷を補う拠点</td>
+      <td>文京区本駒込周辺</td><td>市街地</td>
+    </tr>
+    <tr>
+      <td>下屋敷</td><td>広大な敷地を持つ屋敷</td>
+      <td>板橋区加賀など</td><td>住宅地・学校・研究施設・公園</td>
+    </tr>
+  </table>
+
+  <p class="note">
+    屋敷の正確な範囲や変遷は時期によって異なります。現在の町名や施設の範囲と、江戸時代の敷地が完全に一致するとは限りません。
+  </p>
+</section>
+
+<section id="timeline">
+  <h2>8．加賀百万石から現代までの歴史年表</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="year">江戸時代初期</div>
+      前田家が加賀を中心とする広大な領地を治め、江戸にも複数の屋敷を持ちました。
+    </div>
+    <div class="timeline-item">
+      <div class="year">1657年</div>
+      明暦の大火で江戸の上屋敷が焼失。本郷の屋敷が重要な拠点となりました。
+    </div>
+    <div class="timeline-item">
+      <div class="year">1683年以降</div>
+      本郷の屋敷が上屋敷として使われるようになりました。
+    </div>
+    <div class="timeline-item">
+      <div class="year">1827年</div>
+      前田斉泰が溶姫を迎え、現在の赤門にあたる御守殿門が建てられました。
+    </div>
+    <div class="timeline-item">
+      <div class="year">明治時代</div>
+      加賀藩の屋敷は政府の管理下に入り、下屋敷跡などは新たな用途に利用されました。
+    </div>
+    <div class="timeline-item">
+      <div class="year">1877年</div>
+      東京大学が創設され、赤門は大学の歴史を伝える建造物となりました。
+    </div>
+    <div class="timeline-item">
+      <div class="year">現在</div>
+      東京大学の赤門や三四郎池、板橋区加賀の地名や公園などに、前田家の歴史の面影が残っています。
+    </div>
+  </div>
+</section>
+
+<section id="summary">
+  <h2>9．全体のまとめ</h2>
+
+  <div class="flow">
+    <div><strong>加賀百万石</strong><br>約102万石を領した前田家</div>
+    <div class="arrow">↓</div>
+    <div>江戸に上屋敷・中屋敷・下屋敷を所有</div>
+    <div class="arrow">↓</div>
+    <div>前田斉泰が将軍・徳川家斉の娘、溶姫を迎える</div>
+    <div class="arrow">↓</div>
+    <div><strong>1827年：赤門の由来となる御守殿門が建設</strong></div>
+    <div class="arrow">↓</div>
+    <div>上屋敷跡は東京大学本郷キャンパスへ</div>
+    <div class="arrow">↓</div>
+    <div>下屋敷跡は板橋区「加賀」の歴史につながる</div>
+  </div>
+
+  <p class="lead">
+    東京大学の赤門と板橋区の「加賀」は、どちらも加賀百万石の前田家が江戸に残した歴史的なつながりを伝えています。
+  </p>
+</section>
+
+<section id="references">
+  <h2>10．参考資料・確認先</h2>
+  <p>詳しい歴史や文化財の情報を調べる場合は、以下の公式資料を確認してください。</p>
+  <ul>
+    <li><a href="https://www.u-tokyo.ac.jp/" target="_blank" rel="noopener">東京大学公式サイト</a> — 赤門、本郷キャンパスの歴史</li>
+    <li><a href="https://www.city.bunkyo.lg.jp/" target="_blank" rel="noopener">文京区公式サイト</a> — 区史、文化財、地域の歴史</li>
+    <li><a href="https://www.city.itabashi.tokyo.jp/" target="_blank" rel="noopener">板橋区公式サイト</a> — 加賀公園、前田家下屋敷跡、地域の歴史</li>
+    <li><a href="https://www4.city.kanazawa.lg.jp/" target="_blank" rel="noopener">金沢市公式サイト</a> — 加賀藩、前田家の歴史</li>
+  </ul>
+  <p class="note">
+    本ページは会話内容を整理した歴史解説です。石高、屋敷の面積、屋敷境界、各施設の変遷は、史料や時期によって異なる場合があります。詳細な調査では公式資料や自治体史をご確認ください。
+  </p>
+</section>
+
+</main>
+
+<footer>
+  加賀百万石と前田家の江戸屋敷 — 歴史解説
+</footer>
+
+</body>
+</html>

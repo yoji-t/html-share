@@ -1,5 +1,23 @@
 [
     {
+        "id":  "kaga-million-koku-maeda-edo-residences",
+        "title":  "加賀百万石と前田家の江戸屋敷｜赤門から板橋区加賀まで",
+        "filename":  "posts/kaga-million-koku-maeda-edo-residences.html",
+        "createdAt":  "2026-10-29T22:10:00+09:00",
+        "dateFormatted":  "2026/10/29",
+        "description":  "加賀藩前田家の上屋敷（東京大学本郷キャンパスと赤門）、中屋敷（駒込）、下屋敷（板橋区加賀）の歴史的役割や変遷、現在に残る史跡をまとめた歴史解説ページ。",
+        "tags":  [
+                     "歴史",
+                     "日本史",
+                     "江戸時代",
+                     "加賀藩",
+                     "東京大学",
+                     "赤門",
+                     "前田家",
+                     "板橋区"
+                 ]
+    },
+    {
         "id":  "spacex-financial-results-2026q3",
         "title":  "SpaceX 最新決算分析｜2026年第3四半期",
         "filename":  "posts/spacex-financial-results-2026q3.html",

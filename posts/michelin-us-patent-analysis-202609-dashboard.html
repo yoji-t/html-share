@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ミシュランUS202609 特許分析ダッシュボード</title>
+<style>
+:root {
+  --bg: #f4f6f9;
+  --card: #ffffff;
+  --text: #202b3c;
+  --muted: #667085;
+  --line: #e2e7ef;
+  --blue: #2457a7;
+  --blue-light: #eaf1ff;
+  --green: #24744b;
+  --orange: #a85c13;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Noto Sans JP", Meiryo, sans-serif;
+  line-height: 1.7;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 28px 18px 48px;
+}
+header {
+  background: linear-gradient(120deg, #183b70, #3266ad);
+  color: white;
+  padding: 30px;
+  border-radius: 16px;
+  margin-bottom: 22px;
+}
+header h1 { margin: 0 0 8px; font-size: 27px; }
+header p { margin: 5px 0; opacity: .92; }
+h2 { font-size: 20px; margin: 0 0 15px; }
+h3 { font-size: 16px; margin: 0 0 8px; }
+section {
+  background: var(--card);
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  margin-bottom: 20px;
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.metric {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 18px;
+}
+.metric .label { color: var(--muted); font-size: 13px; }
+.metric .number { font-size: 32px; font-weight: 750; margin-top: 5px; }
+.metric .detail { font-size: 12px; color: var(--muted); }
+.tag {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 650;
+  background: var(--blue-light);
+  color: var(--blue);
+  white-space: nowrap;
+}
+.tag.grant { background: #e7f5ec; color: var(--green); }
+.tag.application { background: #fff0dc; color: var(--orange); }
+.table-wrap { overflow-x: auto; }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 760px;
+  font-size: 13px;
+}
+th, td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+th { background: #f7f9fc; font-weight: 700; }
+td a { color: var(--blue); text-decoration: none; }
+td a:hover { text-decoration: underline; }
+.bars { display: grid; gap: 13px; }
+.bar-row {
+  display: grid;
+  grid-template-columns: minmax(140px, 230px) 1fr 30px;
+  gap: 12px;
+  align-items: center;
+  font-size: 13px;
+}
+.track { background: #edf0f5; height: 12px; border-radius: 20px; overflow: hidden; }
+.fill { height: 100%; background: #4779c7; border-radius: 20px; }
+.timeline { border-left: 3px solid #d8e3f5; padding-left: 20px; margin-left: 7px; }
+.event { position: relative; margin-bottom: 18px; }
+.event::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 7px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #4779c7;
+  border: 2px solid white;
+}
+.date { color: var(--blue); font-weight: 750; font-size: 13px; }
+.insights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.insight {
+  background: #f8faff;
+  border: 1px solid #dce6f8;
+  border-radius: 10px;
+  padding: 16px;
+}
+.note {
+  background: #fff8e9;
+  border-left: 4px solid #d79b32;
+  padding: 14px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+footer { color: var(--muted); font-size: 12px; padding: 8px 2px; }
+@media (max-width: 760px) {
+  .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .insights { grid-template-columns: 1fr; }
+  header { padding: 22px; }
+  header h1 { font-size: 22px; }
+  section { padding: 16px; }
+  .bar-row { grid-template-columns: 115px 1fr 20px; }
+}
+@media print {
+  body { background: white; }
+  .container { max-width: none; padding: 0; }
+  section, .metric, header { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>ミシュラン US 2026年9月 特許分析ダッシュボード</h1>
+  <p>Michelin US Patent Portfolio Review</p>
+  <p>分析対象：Notion「ミシュランUS202609」配下のサブページ全8件</p>
+  <p>対象期間：2026年9月公開・登録公報</p>
+</header>
+
+<div class="metrics">
+  <div class="metric">
+    <div class="label">確認した特許</div>
+    <div class="number">8</div>
+    <div class="detail">サブページ全件</div>
+  </div>
+  <div class="metric">
+    <div class="label">公開公報（A1）</div>
+    <div class="number">4</div>
+    <div class="detail">2026年9月17日公開</div>
+  </div>
+  <div class="metric">
+    <div class="label">登録特許（B2）</div>
+    <div class="number">4</div>
+    <div class="detail">2026年9月登録</div>
+  </div>
+  <div class="metric">
+    <div class="label">主な技術領域</div>
+    <div class="number">8</div>
+    <div class="detail">各案件を主分類で整理</div>
+  </div>
+</div>
+
+<section>
+  <h2>1. エグゼクティブサマリー</h2>
+  <p>
+    今回確認した8件では、エチレン含有量の高いジエン系エラストマーを中心とする
+    ポリマー設計、ゴム組成物の耐亀裂性・補強性、トレッドの多層構造、
+    炭化水素樹脂による配合設計など、タイヤ材料技術に関連する案件が目立ちます。
+  </p>
+  <p>
+    一方、エンジン潤滑油用ポリマーや、状態変化に応じて識別情報を送信する電子部材も含まれます。
+    したがって、全件をタイヤそのものの技術とみなさず、材料技術・周辺用途・電子システムに分けて
+    評価することが重要です。
+  </p>
+  <div class="note">
+    <strong>分析上の注意：</strong>
+    本ダッシュボードは各Notionサブページに記載された概要を整理したものです。
+    請求項全文、優先権情報、ファミリー、審査経過、最新の法的状態を網羅的に照合した
+    法的評価やFTO（他社特許侵害予防調査）ではありません。
+  </div>
+</section>
+
+<section>
+  <h2>2. 公報一覧・技術分析</h2>
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>公報番号</th>
+        <th>種別</th>
+        <th>発明の名称</th>
+        <th>技術の要点</th>
+        <th>知財・開発上の注目点</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>US-20260275093</td>
+        <td><span class="tag application">A1 公開</span></td>
+        <td>RUBBER COMPOSITION</td>
+        <td>エチレン比率の高いジエン系エラストマー、カーボンブラック主体の補強材、末端水酸基を持つポリアルキレングリコールなどを組み合わせ、亀裂進展への抵抗性を狙う。</td>
+        <td>配合範囲、エラストマー構造、亀裂進展評価の試験条件を確認する。</td>
+      </tr>
+      <tr>
+        <td>US-20260275076</td>
+        <td><span class="tag application">A1 公開</span></td>
+        <td>DIENE RUBBER COMPOSITION COMPRISING A POLYNITRONE</td>
+        <td>ジエン系エラストマーと補強材にポリニトロン化合物を組み合わせるゴム組成物。</td>
+        <td>ポリニトロンの化学構造、配合量、従来添加剤に対する効果を比較する。</td>
+      </tr>
+      <tr>
+        <td>US-20260275221</td>
+        <td><span class="tag application">A1 公開</span></td>
+        <td>ETHYLENE-RICH DIENE POLYMERS HAVING A POLYVINYLPYRIDINE BLOCK AND THEIR USE IN ENGINE LUBRICANT COMPOSITIONS</td>
+        <td>エチレンリッチなジエン系ブロックとポリビニルピリジンブロックを有するポリマーを、エンジン潤滑油用添加剤として利用。</td>
+        <td>タイヤ用途と区別し、潤滑油・ポリマー技術の周辺領域として把握する。</td>
+      </tr>
+      <tr>
+        <td>US-20260275021</td>
+        <td><span class="tag application">A1 公開</span></td>
+        <td>ETHYLENE-RICH DIENE POLYMERS HAVING A POLYVINYLPYRIDINE BLOCK, AND METHOD FOR THE SYNTHESIS THEREOF</td>
+        <td>特定のネオジム系錯体と有機マグネシウム化合物を用いた、ブロックポリマーの合成方法。</td>
+        <td>触媒系、重合順序、分子構造の制御条件を確認し、製造プロセス特許として評価する。</td>
+      </tr>
+      <tr>
+        <td>US-12723116</td>
+        <td><span class="tag grant">B2 登録</span></td>
+        <td>Rubber composition based on a highly saturated diene elastomer</td>
+        <td>高飽和ジエン系エラストマー、イミダゾール環を持つ特定化合物、主としてシリカの補強材、ラジカル開始剤などを組み合わせる。</td>
+        <td>架橋反応、シリカとの相互作用、登録請求項の権利範囲を確認する。</td>
+      </tr>
+      <tr>
+        <td>US-12728672</td>
+        <td><span class="tag grant">B2 登録</span></td>
+        <td>Tread for a tire</td>
+        <td>新品時と摩耗後のいずれでも接地を想定した、半径方向に配置される2層トレッド構造。内層側のゴム配合も特徴となる。</td>
+        <td>摩耗後の性能、層の配置、内外層の配合条件を競合製品と比較する。</td>
+      </tr>
+      <tr>
+        <td>US-12728675</td>
+        <td><span class="tag grant">B2 登録</span></td>
+        <td>Electronic member transmitting an item of identification information during a state change</td>
+        <td>状態変化を検出すると識別情報を無線送信し、一定時間後に送信を停止する電子部材。</td>
+        <td>タイヤ材料とは異なる周辺技術。センサー、識別、通信機能の用途・請求項を確認する。</td>
+      </tr>
+      <tr>
+        <td>US-12729292</td>
+        <td><span class="tag grant">B2 登録</span></td>
+        <td>Tire incorporating a rubber composition including a specific hydrocarbon resin</td>
+        <td>芳香族プロトン含有量、ガラス転移温度、数平均分子量などを特徴とする炭化水素樹脂を含むゴム組成物。</td>
+        <td>樹脂の物性パラメータと配合範囲、トレッド等での性能効果を確認する。</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2>3. 技術領域別ポートフォリオ</h2>
+  <p>以下は8件を主な技術テーマで1件ずつ分類した集計です。複数技術にまたがる案件もあり、正式な分類コード別集計ではありません。</p>
+  <div class="bars">
+    <div class="bar-row">
+      <span>ゴム組成・耐亀裂性</span>
+      <div class="track"><div class="fill" style="width:12.5%"></div></div><strong>1</strong>
+    </div>
+    <div class="bar-row">
+      <span>ポリニトロン添加剤</span>
+      <div class="track"><div class="fill" style="width:12.5%"></div></div><strong>1</strong>
+    </div>
+    <div class="bar-row">
+      <span>ポリマー・潤滑油用途</span>
+      <div class="track"><div class="fill" style="width:12.5%"></div></div><strong>1</strong>
+    </div>
+    <div class="bar-row">
+      <span>ブロックポリマー合成</span>
+      <div class="track"><div class="fill" style="width:12.5%"></div></div><strong>1</strong>
+    </div>
+    <div class="bar-row">
+      <span>シリカ・架橋設計</span>
+      <div class="track"><div class="fill" style="width:12.5%"></div></div><strong>1</strong>
+    </div>
+    <div class="bar-row">
+      <span>多層トレッド構造</span>
+      <div class="track"><div class="fill" style="width:12.5%"></div></div><strong>1</strong>
+    </div>
+    <div class="bar-row">
+      <span>識別・無線通信電子部材</span>
+      <div class="track"><div class="fill" style="width:12.5%"></div></div><strong>1</strong>
+    </div>
+    <div class="bar-row">
+      <span>炭化水素樹脂</span>
+      <div class="track"><div class="fill" style="width:12.5%"></div></div><strong>1</strong>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>4. 公開・登録のタイムライン</h2>
+  <div class="timeline">
+    <div class="event">
+      <div class="date">2026年9月1日</div>
+      <strong>US-12723116（B2）</strong>
+      <div>高飽和ジエン系エラストマーを用いたゴム組成物</div>
+    </div>
+    <div class="event">
+      <div class="date">2026年9月8日</div>
+      <strong>US-12728672 / US-12728675 / US-12729292（B2）</strong>
+      <div>多層トレッド、識別情報を送信する電子部材、特定炭化水素樹脂を含むゴム組成物</div>
+    </div>
+    <div class="event">
+      <div class="date">2026年9月17日</div>
+      <strong>US-20260275021 / 075076 / 075093 / 075221（A1）</strong>
+      <div>ブロックポリマー合成、ポリニトロン添加剤、耐亀裂性ゴム、エンジン潤滑油用ポリマー</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>5. 知財・研究開発戦略への示唆</h2>
+  <div class="insights">
+    <div class="insight">
+      <h3>① ポリマー設計を起点とした材料開発</h3>
+      <p>エチレン比率やブロック構造など、ポリマー自体の設計が複数案件に登場します。ポリマー構造からゴム物性へのつながりを整理すると、研究開発の重点が見えやすくなります。</p>
+    </div>
+    <div class="insight">
+      <h3>② 配合・架橋技術の組み合わせ</h3>
+      <p>補強材、添加剤、架橋系、樹脂物性の組み合わせが重要です。単一材料だけでなく、配合条件と評価結果をセットで確認する必要があります。</p>
+    </div>
+    <div class="insight">
+      <h3>③ 摩耗後も考慮したトレッド構造</h3>
+      <p>多層トレッドの案件は、摩耗の進行に伴う性能や接地層の変化という観点で重要です。層構成と各層の組成を分けて比較することを推奨します。</p>
+    </div>
+    <div class="insight">
+      <h3>④ 材料以外の周辺技術を分離管理</h3>
+      <p>潤滑油用ポリマーや電子部材も含まれるため、タイヤ材料、製造方法、周辺用途・電子システムに分類して分析すると、競合比較の精度を高められます。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>6. 次に実施する調査</h2>
+  <ol>
+    <li>各案件の独立請求項（Claim 1）を抽出し、必須構成要件を対比する。</li>
+    <li>実施例・比較例の数値を整理し、効果が確認された配合・構造条件を特定する。</li>
+    <li>優先権、国際公開、米国出願、関連ファミリーを照合して重複や継続出願を確認する。</li>
+    <li>登録公報（B2）は登録請求項と審査経過を確認し、公開公報（A1）は審査・登録状況を別途確認する。</li>
+    <li>自社の開発テーマと対比し、回避設計・追加調査・共同開発検討の優先順位を付ける。</li>
+  </ol>
+  <div class="note">
+    公開公報（A1）は公開時点の請求項と、その後の審査結果が異なる場合があります。
+    登録の有無や権利の存続状況も、現時点の公的データベースで別途確認してください。
+  </div>
+</section>
+
+<section>
+  <h2>7. Notion原資料</h2>
+  <p>
+    <a href="https://app.notion.com/p/4014483132d380d5b51cda5f35c1ba04" target="_blank" rel="noopener">
+      Notion「ミシュランUS202609」親ページを開く
+    </a>
+  </p>
+  <p>各公報の詳細要約・原資料は、親ページ配下の8つのサブページを参照してください。</p>
+</section>
+
+<footer>
+  作成資料：ミシュランUS202609 特許分析ダッシュボード｜対象：8件｜社内検討用の一次整理
+</footer>
+
+</div>
+</body>
+</html>

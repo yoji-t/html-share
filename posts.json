@@ -1,5 +1,23 @@
 [
     {
+        "id":  "michelin-us-patent-analysis-202609-dashboard",
+        "title":  "ミシュランUS202609 特許分析ダッシュボード",
+        "filename":  "posts/michelin-us-patent-analysis-202609-dashboard.html",
+        "createdAt":  "2026-10-29T15:58:47+09:00",
+        "dateFormatted":  "2026/10/29",
+        "description":  "2026年9月に公開・登録されたミシュランの米国特許8件（エチレンリッチジエンポリマー、耐亀裂性ゴム、多層トレッド、状態変化通知電子部材など）の技術動向・タイムライン・知財戦略ダッシュボード。",
+        "tags":  [
+                     "特許",
+                     "知財",
+                     "ミシュラン",
+                     "ダッシュボード",
+                     "タイヤ",
+                     "技術動向",
+                     "USPTO",
+                     "ポリマー"
+                 ]
+    },
+    {
         "id":  "michelin-us-patent-analysis-202607-dashboard",
         "title":  "ミシュラン US 202607 特許分析ダッシュボード",
         "filename":  "posts/michelin-us-patent-analysis-202607-dashboard.html",

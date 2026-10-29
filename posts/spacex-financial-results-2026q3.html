@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpaceX 最新決算分析｜2026年第3四半期</title>
+<style>
+:root {
+  --bg: #f4f6f9;
+  --card: #ffffff;
+  --text: #1d2939;
+  --muted: #667085;
+  --blue: #2459a9;
+  --green: #16845b;
+  --orange: #b76e16;
+  --border: #e4e7ec;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Noto Sans JP", sans-serif;
+  line-height: 1.8;
+}
+header {
+  background: #111827;
+  color: white;
+  padding: 42px 20px;
+}
+header .inner, main, footer {
+  max-width: 1000px;
+  margin: auto;
+}
+.eyebrow {
+  color: #a9c7ff;
+  font-size: 13px;
+  letter-spacing: .12em;
+  font-weight: bold;
+}
+h1 { font-size: clamp(27px, 5vw, 40px); line-height: 1.35; }
+header p { color: #d0d5dd; }
+main { padding: 24px 16px 50px; }
+section { margin: 30px 0; }
+h2 {
+  font-size: 23px;
+  border-left: 5px solid var(--blue);
+  padding-left: 12px;
+  margin-bottom: 18px;
+}
+h3 { font-size: 18px; margin: 0 0 8px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 2px 7px rgba(16,24,40,.03);
+}
+.metric-label { color: var(--muted); font-size: 14px; }
+.metric {
+  font-size: clamp(25px, 4vw, 34px);
+  font-weight: 750;
+  line-height: 1.4;
+  margin: 5px 0;
+}
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.small { font-size: 13px; color: var(--muted); }
+.callout {
+  background: #eaf2ff;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #d5e4ff;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+th, td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+th { background: #edf1f7; }
+td:last-child, th:last-child { text-align: right; }
+.bar-row { margin: 20px 0; }
+.bar-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.bar-bg {
+  height: 14px;
+  background: #e6eaf0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.bar {
+  height: 100%;
+  background: var(--blue);
+  border-radius: 20px;
+}
+.business {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+.business:last-child { border-bottom: 0; }
+.tag {
+  display: inline-block;
+  padding: 3px 9px;
+  background: #edf2fa;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #344054;
+}
+ul { padding-left: 22px; }
+li { margin: 5px 0; }
+a { color: var(--blue); overflow-wrap: anywhere; }
+footer {
+  padding: 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+  .business { grid-template-columns: 1fr; }
+  th, td { padding: 10px 8px; font-size: 13px; }
+  header { padding: 30px 18px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <div class="eyebrow">FINANCIAL RESULTS REPORT</div>
+    <h1>SpaceX 最新決算分析</h1>
+    <p>2026年第3四半期｜7月〜9月</p>
+    <p>ロケット・衛星通信企業から、AI・計算基盤を持つ複合企業へ。</p>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="callout">
+    <h2>エグゼクティブ・サマリー</h2>
+    <p>
+      SpaceXは、2026年第3四半期に売上高146億ドル、
+      純利益44億ドルを計上したとする決算情報が報じられています。
+      AI・計算基盤事業が急拡大し、Starlinkの通信事業も
+      高い収益性を維持しています。
+    </p>
+    <p>
+      一方、AI向け設備やデータセンターへの投資負担は大きく、
+      今後は売上成長だけでなく、キャッシュフローと投資効率が
+      重要な評価ポイントになります。
+    </p>
+    <p class="small">
+      注意：SpaceXは非上場企業です。以下の数値は本レポート作成時に
+      参照した報道ベースの情報であり、監査済みの公式開示資料との
+      照合が必要です。
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>1. 主要業績指標</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="metric-label">売上高</div>
+      <div class="metric">146億ドル</div>
+      <div class="green">前年同期比 +161%</div>
+      <div class="small">約2兆1,900億円（1ドル150円換算）</div>
+    </div>
+    <div class="card">
+      <div class="metric-label">純利益</div>
+      <div class="metric">44億ドル</div>
+      <div class="green">前年同期は11億ドルの赤字</div>
+      <div class="small">約6,600億円（1ドル150円換算）</div>
+    </div>
+    <div class="card">
+      <div class="metric-label">営業利益</div>
+      <div class="metric">27.9億ドル</div>
+      <div class="green">前年同期は2.73億ドルの赤字</div>
+    </div>
+    <div class="card">
+      <div class="metric-label">調整後EBITDA</div>
+      <div class="metric">88.1億ドル</div>
+      <div class="green">前年同期比 +306%</div>
+      <div class="small">純利益とは異なる収益指標</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>2. 事業別の売上高</h2>
+  <div class="card">
+    <p class="small">
+      事業別売上高の比較（単位：10億米ドル）
+    </p>
+    <div class="bar-row">
+      <div class="bar-label">
+        <span>AI・計算基盤</span><strong>75.6億ドル</strong>
+      </div>
+      <div class="bar-bg"><div class="bar" style="width:100%"></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">
+        <span>Starlink・通信</span><strong>52.5億ドル</strong>
+      </div>
+      <div class="bar-bg"><div class="bar" style="width:69.4%"></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">
+        <span>ロケット・宇宙輸送</span><strong>17.7億ドル</strong>
+      </div>
+      <div class="bar-bg"><div class="bar" style="width:23.4%"></div></div>
+    </div>
+    <p class="small">
+      数値は参照した報道情報に基づく概算です。
+      事業区分や連結消去などにより、単純合算と連結売上高が
+      一致しない場合があります。
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>3. 主要事業の分析</h2>
+
+  <div class="card">
+    <div class="business">
+      <div>
+        <span class="tag">安定収益の柱</span>
+        <h3>① Starlink・衛星通信</h3>
+        <p>
+          衛星インターネットを中心とする通信事業。
+          個人向けだけでなく、企業・政府向けの通信需要も
+          収益拡大を支えます。
+        </p>
+        <ul>
+          <li>売上高：約52.5億ドル</li>
+          <li>前年同期比：約69%増</li>
+          <li>営業利益：約23.7億ドル</li>
+          <li>報道ベースの契約者数：約1,360万人</li>
+        </ul>
+        <p>
+          <strong>評価：</strong>
+          高い営業利益率を持ち、ほかの成長事業を支える
+          キャッシュ創出源として重要です。
+        </p>
+      </div>
+    </div>
+
+    <div class="business">
+      <div>
+        <span class="tag">成長エンジン</span>
+        <h3>② AI・計算基盤事業</h3>
+        <p>
+          AIモデルやソフトウェア、計算基盤などに関連する事業。
+          売上規模が急拡大し、今回の業績を大きく押し上げたとされています。
+        </p>
+        <ul>
+          <li>売上高：約75.6億ドル</li>
+          <li>前年同期：約8.13億ドル</li>
+          <li>営業利益：約4.31億ドル</li>
+        </ul>
+        <p>
+          <strong>評価：</strong>
+          売上高は最大規模ですが、通信事業と比較すると
+          営業利益率は低く、今後の収益性改善が焦点です。
+        </p>
+      </div>
+    </div>
+
+    <div class="business">
+      <div>
+        <span class="tag">長期戦略</span>
+        <h3>③ ロケット・宇宙輸送</h3>
+        <p>
+          Falcon 9やStarshipなどの打ち上げ・宇宙輸送を担う事業。
+          Starlink衛星の打ち上げ能力を確保するうえでも重要です。
+        </p>
+        <ul>
+          <li>売上高：約17.7億ドル</li>
+          <li>前年同期比：約6%増</li>
+          <li>営業損失：約700万ドル</li>
+        </ul>
+        <p>
+          <strong>評価：</strong>
+          現時点の売上規模だけでは測れない戦略的重要性があります。
+          Starshipの開発進展と打ち上げコスト低減が注目点です。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>4. 設備投資と財務リスク</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="metric-label">第3四半期の設備投資</div>
+      <div class="metric orange">195.9億ドル</div>
+      <p>AI向けデータセンター、計算設備、通信インフラなどへの投資が焦点です。</p>
+    </div>
+    <div class="card">
+      <div class="metric-label">1〜9月の設備投資</div>
+      <div class="metric orange">480.7億ドル</div>
+      <p>巨額の資金を将来の成長に振り向けていることがわかります。</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>投資家・経営分析上のチェックポイント</h3>
+    <ul>
+      <li>設備投資に見合う営業キャッシュフローが得られるか。</li>
+      <li>AI・計算基盤事業の営業利益率が改善するか。</li>
+      <li>Starlinkの契約者増加と平均収入が維持されるか。</li>
+      <li>Starshipの開発費用と商業化の進捗がどう推移するか。</li>
+      <li>借入金、現金残高、資金調達を含めた財務余力は十分か。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>5. 2026年1〜9月の累計業績</h2>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>指標</th><th>累計</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>売上高</td><td>270.8億ドル</td></tr>
+        <tr><td>営業利益</td><td>7.05億ドル</td></tr>
+        <tr><td>純損益</td><td>4.13億ドルの赤字</td></tr>
+        <tr><td>設備投資</td><td>480.7億ドル</td></tr>
+      </tbody>
+    </table>
+    <p>
+      第3四半期単独では大幅な黒字となった一方、
+      年初からの累計では赤字とされています。
+      単一四半期の好業績だけで通期の収益力を判断せず、
+      累計業績とキャッシュフローを併せて確認する必要があります。
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>6. 総合評価</h2>
+  <div class="grid">
+    <div class="card">
+      <h3 class="green">成長性：非常に強い</h3>
+      <p>
+        Starlinkに加え、AI・計算基盤事業が急成長。
+        事業構造が変化しています。
+      </p>
+    </div>
+    <div class="card">
+      <h3 class="green">収益性：大幅改善</h3>
+      <p>
+        第3四半期単独では営業利益・純利益が黒字となり、
+        EBITDAも増加したとされています。
+      </p>
+    </div>
+    <div class="card">
+      <h3 class="orange">投資効率：要注目</h3>
+      <p>
+        設備投資が巨額です。売上成長だけでなく、
+        投資回収とフリーキャッシュフローが重要です。
+      </p>
+    </div>
+    <div class="card">
+      <h3>事業戦略：大きく転換</h3>
+      <p>
+        宇宙輸送、衛星通信、AI計算基盤を組み合わせた
+        複合的な事業モデルを構築しています。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>7. 今後の注目ポイント</h2>
+  <ol>
+    <li><strong>AI事業：</strong>売上成長が利益成長につながるか。</li>
+    <li><strong>Starlink：</strong>利用者増加と通信サービスの収益性を維持できるか。</li>
+    <li><strong>設備投資：</strong>投資拡大に対して十分な現金を生み出せるか。</li>
+    <li><strong>Starship：</strong>打ち上げコスト低減と大型衛星展開を実現できるか。</li>
+    <li><strong>資本政策：</strong>今後の資金調達や株式公開の動向がどうなるか。</li>
+  </ol>
+</section>
+
+<section>
+  <h2>8. 情報源・確認事項</h2>
+  <div class="card">
+    <ul>
+      <li>
+        <a href="https://ir.spacex.com/investors/" target="_blank" rel="noopener">
+          SpaceX Investor Relations
+        </a>
+        <br><span class="small">公式投資家向け情報の確認先</span>
+      </li>
+      <li>
+        <a href="https://www.sec.gov/edgar/search/" target="_blank" rel="noopener">
+          米国SEC EDGAR
+        </a>
+        <br><span class="small">企業の提出書類を検索する公式データベース</span>
+      </li>
+    </ul>
+    <p class="small">
+      重要：SpaceXは非上場企業であり、上場企業と同じ形式で
+      四半期決算を一般公開しているとは限りません。
+      本HTML内の決算数値は参照した報道情報に基づくもので、
+      公式資料との照合が必要です。公開資料で確認できない数値を
+      確定的な監査済み数値として扱わないでください。
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="callout">
+    <h2>結論</h2>
+    <p>
+      SpaceXの成長を支えるのは、Starlinkによる通信収益と、
+      AI・計算基盤事業の拡大です。今回の四半期業績は
+      大幅な改善を示す一方、設備投資も非常に大きくなっています。
+    </p>
+    <p>
+      今後の評価では、売上高の伸びだけでなく、
+      AI事業の利益率、フリーキャッシュフロー、設備投資の回収、
+      Starshipの商業化を重点的に追跡することが重要です。
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  SpaceX Financial Results Report｜2026年第3四半期<br>
+  本資料は情報整理を目的としたものであり、投資助言ではありません。
+  数値・事業区分は一次資料での検証を推奨します。
+</footer>
+
+</body>
+</html>

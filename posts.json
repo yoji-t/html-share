@@ -1,5 +1,22 @@
 [
     {
+        "id":  "spacex-financial-results-2026q3",
+        "title":  "SpaceX 最新決算分析｜2026年第3四半期",
+        "filename":  "posts/spacex-financial-results-2026q3.html",
+        "createdAt":  "2026-10-29T21:47:12+09:00",
+        "dateFormatted":  "2026/10/29",
+        "description":  "SpaceXの2026年Q3決算分析。売上高146億ドル・純利益44億ドルの業績急拡大、AI計算基盤とStarlinkの二大収益柱、設備投資負担とStarship開発の財務リスク解説。",
+        "tags":  [
+                     "SpaceX",
+                     "決算分析",
+                     "宇宙ビジネス",
+                     "Starlink",
+                     "AI計算基盤",
+                     "財務分析",
+                     "Starship"
+                 ]
+    },
+    {
         "id":  "michelin-us-patent-cards-dashboard-202607",
         "title":  "ミシュラン US 2026年7月公開特許分析ダッシュボード（カード版）",
         "filename":  "posts/michelin-us-patent-cards-dashboard-202607.html",

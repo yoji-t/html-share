@@ -1,5 +1,23 @@
 [
     {
+        "id":  "siri-shortcuts-notion-mcp-guide",
+        "title":  "Siri × Appleショートカット × Notion MCP 連携構築ガイド",
+        "filename":  "posts/siri-shortcuts-notion-mcp-guide.html",
+        "createdAt":  "2026-10-30T07:25:00+09:00",
+        "dateFormatted":  "2026/10/30",
+        "description":  "iPhoneのSiriとAppleショートカットから、クラウド中継サーバー（Node.js/Render）経由でNotion公式Remote MCPと連携し、音声でNotion内の特許情報を検索・要約・参照するシステムの構築ガイド。",
+        "tags":  [
+                     "Siri",
+                     "Appleショートカット",
+                     "Notion",
+                     "MCP",
+                     "AI",
+                     "特許",
+                     "Node.js",
+                     "Render"
+                 ]
+    },
+    {
         "id":  "kaga-million-koku-maeda-edo-residences",
         "title":  "加賀百万石と前田家の江戸屋敷｜赤門から板橋区加賀まで",
         "filename":  "posts/kaga-million-koku-maeda-edo-residences.html",

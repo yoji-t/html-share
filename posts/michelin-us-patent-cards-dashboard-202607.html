@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ミシュランUS202607 特許分析ダッシュボード</title>
+<style>
+:root {
+  --navy: #142c4e;
+  --blue: #2457a7;
+  --light: #f3f6fa;
+  --line: #dce3ed;
+  --text: #263449;
+  --muted: #65748a;
+  --white: #fff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--light);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  line-height: 1.7;
+}
+header {
+  background: linear-gradient(120deg, #142c4e, #2864ad);
+  color: white;
+  padding: 34px 22px;
+}
+.header-inner, main, footer {
+  max-width: 1200px;
+  margin: auto;
+}
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: .14em;
+  opacity: .8;
+}
+h1 { font-size: clamp(25px, 4vw, 38px); margin: 8px 0; }
+header p { margin-bottom: 0; opacity: .9; }
+main { padding: 24px 18px 45px; }
+.section-title {
+  font-size: 21px;
+  color: var(--navy);
+  margin: 30px 0 14px;
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 14px;
+}
+.metric, .panel, .patent-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.metric { padding: 18px; }
+.metric-label { color: var(--muted); font-size: 13px; }
+.metric-value { font-size: 28px; font-weight: 750; color: var(--navy); }
+.panel { padding: 20px; margin-top: 18px; }
+.panel h3 { margin-top: 0; color: var(--navy); }
+.insight-list { padding-left: 22px; margin-bottom: 0; }
+.insight-list li { margin: 8px 0; }
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+input, select {
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #bdc9da;
+  border-radius: 8px;
+  background: white;
+  color: var(--text);
+  font: inherit;
+}
+input { flex: 1 1 260px; }
+select { flex: 0 1 250px; }
+.results-label { color: var(--muted); font-size: 14px; margin: 8px 0 14px; }
+.patent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr));
+  gap: 14px;
+}
+.patent-card { padding: 18px; }
+.patent-card h3 {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 10px 0;
+  color: var(--navy);
+  overflow-wrap: anywhere;
+}
+.category {
+  display: inline-block;
+  background: #eaf1fc;
+  color: #234f91;
+  padding: 4px 9px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 650;
+}
+.patent-no { font-size: 12px; color: var(--muted); }
+.patent-card p { font-size: 14px; margin: 9px 0; }
+.patent-card strong { color: #31496b; }
+.note {
+  border-left: 4px solid #d19a31;
+  padding: 12px 15px;
+  background: #fff9ec;
+  border-radius: 5px;
+  font-size: 13px;
+}
+a { color: #1d58a6; }
+footer {
+  padding: 0 18px 30px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.hidden { display: none !important; }
+@media print {
+  body { background: white; }
+  header { background: #142c4e !important; print-color-adjust: exact; }
+  .controls { display: none; }
+  .patent-card { break-inside: avoid; }
+  main { max-width: none; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="eyebrow">PATENT INTELLIGENCE DASHBOARD</div>
+    <h1>ミシュラン US 2026年7月公開特許</h1>
+    <p>技術分野別の特許要約・研究開発動向・知財戦略上の注目点</p>
+    <p>対象ページ：
+      <a href="https://app.notion.com/p/4074483132d3803e805be8d6c66a6a80"
+         style="color:white">Notion「ミシュランUS202607」</a>
+    </p>
+  </div>
+</header>
+
+<main>
+  <h2 class="section-title">1. ダッシュボード概要</h2>
+  <div class="metrics">
+    <div class="metric">
+      <div class="metric-label">親ページの登録件数</div>
+      <div class="metric-value">37件</div>
+      <div class="metric-label">サブページ数として確認された件数</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">主な技術領域</div>
+      <div class="metric-value">6分野</div>
+      <div class="metric-label">材料・タイヤ構造・製造技術など</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">分析の主眼</div>
+      <div class="metric-value">技術把握</div>
+      <div class="metric-label">課題・手段・応用可能性</div>
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:18px">
+    <strong>データ確認上の注意：</strong>
+    以下は前回の要約に基づく整理です。登録件数37件に対して、
+    全サブページの書誌情報・要約・請求項を完全に照合できていない項目があります。
+    特許タイトルと公報番号の対応、重複、各技術の詳細は、Notionの原ページと公報全文で
+    確認してください。法的な権利範囲を判断するものではありません。
+  </div>
+
+  <h2 class="section-title">2. 技術動向の俯瞰</h2>
+  <div class="panel">
+    <h3>注目すべき技術テーマ</h3>
+    <ul class="insight-list">
+      <li><strong>ゴム材料の高機能化：</strong>
+        再生原料、熱分解カーボンブラック、セルロースナノ結晶、
+        ポリマー添加剤など、補強性・耐久性・環境性能に関係する材料技術。</li>
+      <li><strong>大型・特殊用途タイヤ：</strong>
+        建設車両用タイヤ、重荷重用タイヤ、航空機用タイヤなど、
+        高荷重条件に対応する構造・補強設計。</li>
+      <li><strong>摩耗計測と農業分野：</strong>
+        コードを使った摩耗計測、農業用車両のタイヤ空気圧管理、
+        土壌の機械的特性の把握。</li>
+      <li><strong>製造工程の高度化：</strong>
+        押出、加硫膜、積層造形、材料除去、製造装置の制御・異常検知。</li>
+      <li><strong>自動化と電子デバイス：</strong>
+        自律フォークリフトの位置制御・荷役、タイヤへの電子部品の取り付け。</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title">3. 特許一覧</h2>
+  <div class="controls">
+    <input id="search" type="search"
+      placeholder="タイトル・技術・キーワードで検索…"
+      aria-label="特許を検索">
+    <select id="category" aria-label="技術分野で絞り込む">
+      <option value="all">すべての技術分野</option>
+      <option value="材料">ゴム・ポリマー材料</option>
+      <option value="構造">タイヤ構造・補強設計</option>
+      <option value="計測">摩耗計測・農業管理</option>
+      <option value="製造">製造・品質管理</option>
+      <option value="自動化">自動化・電子デバイス</option>
+      <option value="その他">その他の技術</option>
+    </select>
+  </div>
+  <div id="count" class="results-label" aria-live="polite"></div>
+  <div id="patents" class="patent-grid"></div>
+
+  <h2 class="section-title">4. 知財・研究開発への示唆</h2>
+  <div class="panel">
+    <h3>材料技術</h3>
+    <ul class="insight-list">
+      <li>再生材料や熱分解由来原料を使用する場合、従来材料との性能差と、
+        配合・分散・界面制御の工夫を比較する。</li>
+      <li>ゴム組成物の発明は、ポリマーの種類、充填剤、添加剤、配合量、
+        製造条件の組合せを請求項で確認する。</li>
+    </ul>
+    <h3>タイヤ構造</h3>
+    <ul class="insight-list">
+      <li>重荷重・建設車両用タイヤは、耐久性、耐損傷性、接地状態、
+        トレッド設計の関係に注目する。</li>
+      <li>航空機用タイヤなど用途特化型の構造は、補強材の配置・構成と
+        使用条件の限定を確認する。</li>
+    </ul>
+    <h3>計測・製造・自動化</h3>
+    <ul class="insight-list">
+      <li>摩耗計測やタイヤ状態管理は、計測原理、識別コード、判定処理、
+        センサーとの組合せが差別化点になり得る。</li>
+      <li>製造装置の特許では、装置構成だけでなく、工程制御、異常検知、
+        作業時間や品質への効果を比較する。</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title">5. 調査時のチェックリスト</h2>
+  <div class="panel">
+    <ul class="insight-list">
+      <li>公報番号・公開日・出願人の照合</li>
+      <li>独立請求項に記載された必須構成の抽出</li>
+      <li>従来技術と発明の差分の確認</li>
+      <li>国際調査報告（ISR）や審査官引用文献の確認</li>
+      <li>同族出願、各国での権利化状況、法的状態の確認</li>
+      <li>自社製品・研究開発テーマとの関連性の評価</li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  本ダッシュボードは技術情報の整理・一次スクリーニング用です。
+  特許の有効性、侵害、実施自由（FTO）を判断するには、
+  最新の公報・審査経過・法的状態の確認が必要です。
+</footer>
+
+<script>
+const patents = [
+  {
+    title: "THIOL-FUNCTIONALIZED CELLULOSE NANOCRYSTALS FOR APPLICATIONS IN RUBBER",
+    category: "材料",
+    summary: "セルロースナノ結晶の表面をチオール、ジスルフィド、チオエステル等で機能化し、ゴムとの親和性や補強材としての利用を狙う技術。",
+    focus: "バイオ由来補強材の分散性、ゴムとの界面結合、従来充填剤との性能差。"
+  },
+  {
+    title: "ELASTOMER COMPOSITIONS WITH IMPROVED PROPERTIES",
+    category: "材料",
+    summary: "ジエン系エラストマーにアセチレンブラックとグラファイトを組み合わせるゴム組成物。",
+    focus: "導電性・補強性・ヒステリシスなどの性能バランスと配合条件。"
+  },
+  {
+    title: "ELASTOMER COMPOSITIONS WITH IMPROVED PROPERTIES",
+    category: "材料",
+    summary: "カーボンブラックを含むエラストマー組成物により、ゴム材料の特性改善を狙う技術。",
+    focus: "充填剤の種類・特性、配合比率、対象とするゴム部材。"
+  },
+  {
+    title: "RUBBER COMPOSITION BASED ON A FUNCTIONALIZED ELASTOMER AND A SPECIFIC POLYPHENOLIC COMPOUND",
+    category: "材料",
+    summary: "官能化エラストマーと特定のポリフェノール化合物を組み合わせたゴム組成物。",
+    focus: "添加剤とポリマーの相互作用、耐久性や力学特性への寄与。"
+  },
+  {
+    title: "TIRE WITH RECYCLED RUBBER IN BEAD",
+    category: "構造",
+    summary: "タイヤのビード部に再生ゴムを使用する構成に関する技術。",
+    focus: "再生材の適用位置、ビード部の耐久性、材料使用量と性能の両立。"
+  },
+  {
+    title: "SHEAR BAND HAVING ULTRA-LOW HYSTERESIS RUBBER",
+    category: "構造",
+    summary: "超低ヒステリシスゴムを用いたシアバンドに関する技術。",
+    focus: "変形損失の低減、転がり抵抗への影響、構造全体での耐久性。"
+  },
+  {
+    title: "POLYMER COMPOSITION COMPRISING A THERMOPLASTIC ELASTOMER AND A HYDROCARBON PLASTICIZER RESIN",
+    category: "材料",
+    summary: "熱可塑性エラストマーと炭化水素系可塑剤樹脂を含むポリマー組成物。",
+    focus: "柔軟性、加工性、相溶性、温度依存性などの材料設計。"
+  },
+  {
+    title: "ELASTOMER COMPOSITIONS COMPRISING A PYROLYSIS CARBON BLACK",
+    category: "材料",
+    summary: "熱分解由来カーボンブラックを含むエラストマー組成物。",
+    focus: "再生原料の品質ばらつき、補強効果、環境負荷と性能のバランス。"
+  },
+  {
+    title: "RUBBER COMPOSITION",
+    category: "材料",
+    summary: "ゴム組成物の構成に関する技術。詳細な配合・効果は原公報との照合が必要。",
+    focus: "独立請求項に規定された材料、配合比率、対象性能を確認する。"
+  },
+  {
+    title: "RUBBER COMPOSITION COMPRISING A HIGHLY SATURATED DIENE ELASTOMER",
+    category: "材料",
+    summary: "高飽和ジエンエラストマーを含むゴム組成物。",
+    focus: "ポリマー構造、耐熱性・耐老化性、他のゴム成分との組合せ。"
+  },
+  {
+    title: "RUBBER COMPOSITION",
+    category: "材料",
+    summary: "ゴム材料の配合に関する発明。具体的な構成は原公報で確認する必要がある。",
+    focus: "材料の限定と、従来配合に対する効果の差分。"
+  },
+  {
+    title: "RUBBER COMPOSITION WITH LONGER LASTING ANTIOZONATION SYSTEM",
+    category: "材料",
+    summary: "オゾンによるゴムの劣化を抑える保護システムの持続性向上を狙う技術。",
+    focus: "保護剤の組合せ、移行・消耗挙動、亀裂発生の抑制効果。"
+  },
+  {
+    title: "RUBBER COMPOSITION WITH LONGER LASTING ANTIOZONATION SYSTEM",
+    category: "材料",
+    summary: "長期的な耐オゾン性を目指すゴム組成物に関する別の登録ページ。",
+    focus: "同一ファミリーか別発明かを確認し、請求項と公開番号を照合する。"
+  },
+  {
+    title: "IMPROVED ALUMINA REINFORCED RUBBER COMPOSITION",
+    category: "材料",
+    summary: "アルミナを補強材として用いるゴム組成物の改善に関する技術。",
+    focus: "アルミナの表面特性、分散、界面結合、従来充填剤との比較。"
+  },
+  {
+    title: "MASTERBATCH BASED ON A MODIFIED POLYMER AND AN ORGANOPHOSPHORUS ADDITIVE, AND METHOD FOR MANUFACTURING SAME",
+    category: "材料",
+    summary: "改質ポリマーと有機リン系添加剤を含むマスターバッチ、およびその製造方法。",
+    focus: "添加剤の機能、混練工程、分散性、最終ゴム物性への影響。"
+  },
+  {
+    title: "OPTIMIZED ARCHITECTURE OF A CIVIL ENGINEERING TIRE",
+    category: "構造",
+    summary: "建設機械用タイヤの構造設計を最適化する技術。",
+    focus: "高荷重条件での構造配置、耐久性、損傷抑制、接地性能。"
+  },
+  {
+    title: "HEAVY-DUTY VEHICLE TIRE TREAD WITH IMPROVED ROBUSTNESS",
+    category: "構造",
+    summary: "重荷重車両用タイヤのトレッドの頑健性向上を狙う技術。",
+    focus: "トレッド形状、溝やブロックの構成、耐損傷性との関係。"
+  },
+  {
+    title: "TIRE FOR A HEAVY GOODS VEHICLE WITH A TREAD HAVING IMPROVED STURDINESS",
+    category: "構造",
+    summary: "重貨物車両向けタイヤのトレッド耐久性・頑健性を改善する技術。",
+    focus: "トレッド設計と耐摩耗性、耐欠け性、走行性能の両立。"
+  },
+  {
+    title: "AIRCRAFT TIRE CARCASS REINFORCEMENTS",
+    category: "構造",
+    summary: "航空機用タイヤのカーカス補強構造に関する技術。",
+    focus: "補強材の配置・構成、繰り返し変形、高荷重への対応。"
+  },
+  {
+    title: "METHOD FOR MEASURING TREAD WEAR OF A TIRE USING A CODE",
+    category: "計測",
+    summary: "コードを利用してタイヤのトレッド摩耗を測定する方法。",
+    focus: "コードの配置・読取り、摩耗量への変換、測定精度。"
+  },
+  {
+    title: "METHOD FOR MEASURING TREAD WEAR OF A NON-PNEUMATIC TIRE USING A CODE",
+    category: "計測",
+    summary: "非空気入りタイヤのトレッド摩耗をコードで測定する方法。",
+    focus: "非空気入り構造への適用、摩耗状態の識別、計測手順。"
+  },
+  {
+    title: "METHOD FOR MEASURING TREAD WEAR OF A TRACK",
+    category: "計測",
+    summary: "履帯の摩耗を測定する方法。",
+    focus: "タイヤ以外の走行部材への技術展開、摩耗判定の信頼性。"
+  },
+  {
+    title: "METHOD FOR DETERMINING A MECHANICAL PROPERTY OF AN AGRICULTURAL SOIL",
+    category: "計測",
+    summary: "農地土壌の機械的特性を判定する方法。",
+    focus: "土壌情報と農業車両の走行・タイヤ選択との連携可能性。"
+  },
+  {
+    title: "SYSTEM AND PROCESS FOR OPERATING A CENTRAL TIRE INFLATION SYSTEM FROM THE SPECTRAL CRITERIA OF EACH TIRE OF AN AGRICULTURAL VEHICLE",
+    category: "計測",
+    summary: "農業車両の各タイヤのスペクトル基準をもとに、集中空気圧調整システムを運用する技術。",
+    focus: "各タイヤの情報取得、判断ロジック、空気圧制御との連動。"
+  },
+  {
+    title: "LEAK DETECTION METHOD WITH TIME DELAY FOR DETECTING A LEAK THAT AFFECTS A TIRE CURING MEMBRANE OR THE INFLATION CIRCUIT THEREOF",
+    category: "製造",
+    summary: "タイヤ加硫用ブラダーまたはその膨張回路の漏れを、時間遅延を利用して検出する方法。",
+    focus: "誤検出の抑制、検出タイミング、設備停止や品質管理への効果。"
+  },
+  {
+    title: "METHOD FOR MODIFYING EXPANDABLE CURING MEMBRANES FOR MANUFACTURING TYRES",
+    category: "製造",
+    summary: "タイヤ製造用の拡張可能な加硫膜を改質する方法。",
+    focus: "加硫膜の表面・材料・処理条件、寿命や離型性への影響。"
+  },
+  {
+    title: "MINIATURIZED VOLUMETRIC EXTRUDER USING TWIN CONICAL SCREWS",
+    category: "製造",
+    summary: "二本の円錐スクリューを使用する小型容積式押出機。",
+    focus: "押出量の制御、混練・搬送の安定性、装置の小型化。"
+  },
+  {
+    title: "DEVICE AND METHOD FOR THE ADDITIVE MANUFACTURE OF A THREE-DIMENSIONAL OBJECT",
+    category: "製造",
+    summary: "三次元物体の積層造形を行う装置と方法。",
+    focus: "造形材料、積層プロセス、形状精度、タイヤ製造への応用可能性。"
+  },
+  {
+    title: "EXTRUSION FACILITY WITH UNDERGROUND TRANSFER OF THE TOOL MODULE",
+    category: "製造",
+    summary: "工具モジュールを地下経路で移送する押出設備。",
+    focus: "設備レイアウト、モジュール交換、保守性と作業効率。"
+  },
+  {
+    title: "PROCESS FOR MANUFACTURING SEMI-FINISHED PRODUCTS",
+    category: "製造",
+    summary: "タイヤ等の製造に用いる半製品の製造工程に関する技術。",
+    focus: "工程順序、材料の取り扱い、品質安定性、製造効率。"
+  },
+  {
+    title: "MATERIAL REMOVAL DEVICE COMPRISING AN IMPEDANCE DETECTION SYSTEM",
+    category: "製造",
+    summary: "インピーダンス検出システムを備えた材料除去装置。",
+    focus: "除去対象の検出、加工量の制御、異常や加工終点の判断。"
+  },
+  {
+    title: "METHOD FOR CONTROLLING THE POSITIONING OF AN AUTONOMOUS FORKLIFT RELATIVE TO AN ANNULAR LOAD TO BE LIFTED",
+    category: "自動化",
+    summary: "環状荷物に対する自律フォークリフトの位置決めを制御する方法。",
+    focus: "荷物認識、位置合わせ、搬送対象の形状に応じた制御。"
+  },
+  {
+    title: "METHOD FOR LIFTING AND TRANSPORTING A LOAD USING AN AUTONOMOUS FORKLIFT TRUCK",
+    category: "自動化",
+    summary: "自律フォークリフトを使用して荷物を持ち上げ、搬送する方法。",
+    focus: "荷役動作の自動化、安全制御、搬送工程の最適化。"
+  },
+  {
+    title: "DEVICE FOR ATTACHING AN ELECTRONIC COMPONENT TO A TIRE CASING",
+    category: "自動化",
+    summary: "電子部品をタイヤケーシングに取り付ける装置。",
+    focus: "部品の固定方法、取付工程、タイヤ構造や耐久性への影響。"
+  },
+  {
+    title: "COPOLYMERS OF ETHYLENE AND 1,3-BUTADIENE",
+    category: "材料",
+    summary: "エチレンと1,3-ブタジエンの共重合体に関する技術。",
+    focus: "共重合体の構造・組成、物性、タイヤ用ポリマーとしての適用。"
+  },
+  {
+    title: "INFLATABLE STRUCTURE AND METHOD FOR PRODUCING AN INFLATABLE STRUCTURE",
+    category: "その他",
+    summary: "膨張可能な構造体と、その製造方法に関する技術。",
+    focus: "構造体の構成、気密性、製造工程、タイヤ関連技術との関係。"
+  }
+];
+
+const patentsEl = document.getElementById("patents");
+const searchEl = document.getElementById("search");
+const categoryEl = document.getElementById("category");
+const countEl = document.getElementById("count");
+
+function render() {
+  const q = searchEl.value.trim().toLowerCase();
+  const cat = categoryEl.value;
+  const filtered = patents.filter(p => {
+    const text = (p.title + " " + p.summary + " " + p.focus + " " + p.category).toLowerCase();
+    return text.includes(q) && (cat === "all" || p.category === cat);
+  });
+
+  countEl.textContent =
+    `表示中：${filtered.length}件 ／ この一覧に収録：${patents.length}件`;
+
+  patentsEl.innerHTML = filtered.map((p, i) => `
+    <article class="patent-card">
+      <span class="category">${escapeHtml(p.category)}</span>
+      <h3>${escapeHtml(p.title)}</h3>
+      <p><strong>技術の概要：</strong>${escapeHtml(p.summary)}</p>
+      <p><strong>注目ポイント：</strong>${escapeHtml(p.focus)}</p>
+      <div class="patent-no">一覧番号：${i + 1}</div>
+    </article>
+  `).join("");
+
+  if (!filtered.length) {
+    patentsEl.innerHTML = '<div class="panel">該当する特許はありません。検索語を変更してください。</div>';
+  }
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[c]));
+}
+
+searchEl.addEventListener("input", render);
+categoryEl.addEventListener("change", render);
+render();
+</script>
+</body>
+</html>

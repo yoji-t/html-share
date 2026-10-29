@@ -1,5 +1,22 @@
 [
     {
+        "id":  "michelin-us-patent-cards-dashboard-202607",
+        "title":  "ミシュラン US 2026年7月公開特許分析ダッシュボード（カード版）",
+        "filename":  "posts/michelin-us-patent-cards-dashboard-202607.html",
+        "createdAt":  "2026-10-29T20:14:31+09:00",
+        "dateFormatted":  "2026/10/29",
+        "description":  "ミシュランUS 2026年7月公開特許37件を、ゴム・ポリマー材料、タイヤ構造、計測、製造、自動化などの分野別にカード形式で整理し、リアルタイム検索とカテゴリ絞り込みを備えた分析ダッシュボード。",
+        "tags":  [
+                     "特許",
+                     "知財",
+                     "ミシュラン",
+                     "ダッシュボード",
+                     "タイヤ",
+                     "技術動向",
+                     "USPTO"
+                 ]
+    },
+    {
         "id":  "michelin-us-patent-analysis-202609-dashboard",
         "title":  "ミシュランUS202609 特許分析ダッシュボード",
         "filename":  "posts/michelin-us-patent-analysis-202609-dashboard.html",

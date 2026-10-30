@@ -1,5 +1,23 @@
 [
     {
+        "id":  "sophia-igc-statement-verification-analysis",
+        "title":  "上智大学グローバル・コンサーン研究所の声明に対する検証・評価",
+        "filename":  "posts/sophia-igc-statement-verification-analysis.html",
+        "createdAt":  "2026-10-31T07:23:00+09:00",
+        "dateFormatted":  "2026/10/31",
+        "description":  "上智大学グローバル・コンサーン研究所の外国人政策に関する声明を対象に、入管法改正・永住資格取消・手数料改定などの論点、国家の基本的責任や主権、経済的・制度的合理性との整合性を客観的に検証・評価したレポート。",
+        "tags":  [
+                     "上智大学",
+                     "出入国在留管理",
+                     "入管法",
+                     "外国人政策",
+                     "声明検証",
+                     "法制度",
+                     "社会正義",
+                     "政策評価"
+                 ]
+    },
+    {
         "id":  "tax-policy-and-fall-of-nations-history",
         "title":  "減税・増税と国家の崩壊｜世界史の事例分析",
         "filename":  "posts/tax-policy-and-fall-of-nations-history.html",

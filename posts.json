@@ -1,5 +1,23 @@
 [
     {
+        "id":  "tax-policy-and-fall-of-nations-history",
+        "title":  "減税・増税と国家の崩壊｜世界史の事例分析",
+        "filename":  "posts/tax-policy-and-fall-of-nations-history.html",
+        "createdAt":  "2026-10-30T20:39:00+09:00",
+        "dateFormatted":  "2026/10/30",
+        "description":  "世界史における減税・軽税（清朝など）と増税・重税（秦、明、フランス革命、ポルトガル独立、英ピューリタン革命、オランダ独立、米独立革命など）が王朝・国家の存亡に及ぼした影響とリスク構造を比較分析した歴史論考。",
+        "tags":  [
+                     "歴史",
+                     "世界史",
+                     "税制",
+                     "財政",
+                     "国家崩壊",
+                     "フランス革命",
+                     "経済史",
+                     "政治史"
+                 ]
+    },
+    {
         "id":  "uranium-enrichment-and-iran-nuclear-issue",
         "title":  "ウラン濃縮とイランの核問題",
         "filename":  "posts/uranium-enrichment-and-iran-nuclear-issue.html",

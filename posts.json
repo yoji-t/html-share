@@ -1,5 +1,23 @@
 [
     {
+        "id":  "uranium-enrichment-and-iran-nuclear-issue",
+        "title":  "ウラン濃縮とイランの核問題",
+        "filename":  "posts/uranium-enrichment-and-iran-nuclear-issue.html",
+        "createdAt":  "2026-10-30T19:18:00+09:00",
+        "dateFormatted":  "2026/10/30",
+        "description":  "原子力発電に必要なウラン濃縮度（軽水炉3〜5%）と、イランの核開発（20%・60%濃縮、IAEA査察、NPTと平和利用の論点）をわかりやすく整理・解説したレポート。",
+        "tags":  [
+                     "ウラン濃縮",
+                     "原子力発電",
+                     "イラン",
+                     "核問題",
+                     "IAEA",
+                     "NPT",
+                     "国際政治",
+                     "安全保障"
+                 ]
+    },
+    {
         "id":  "sophia-institute-of-global-concerns",
         "title":  "上智大学グローバル・コンサーン研究所とは？",
         "filename":  "posts/sophia-institute-of-global-concerns.html",

@@ -1,5 +1,22 @@
 [
     {
+        "id":  "sophia-institute-of-global-concerns",
+        "title":  "上智大学グローバル・コンサーン研究所とは？",
+        "filename":  "posts/sophia-institute-of-global-concerns.html",
+        "createdAt":  "2026-10-30T19:15:00+09:00",
+        "dateFormatted":  "2026/10/30",
+        "description":  "上智大学グローバル・コンサーン研究所（IGC）の概要、設立経緯、貧困・格差・人権・難民・平和などの研究テーマ、政治思想的傾向（左派・リベラル寄りの問題意識）や実際の活動実態を整理・解説したレポート。",
+        "tags":  [
+                     "上智大学",
+                     "大学研究機関",
+                     "社会正義",
+                     "人権",
+                     "平和研究",
+                     "思想傾向",
+                     "リベラル"
+                 ]
+    },
+    {
         "id":  "siri-shortcuts-notion-mcp-guide",
         "title":  "Siri × Appleショートカット × Notion MCP 連携構築ガイド",
         "filename":  "posts/siri-shortcuts-notion-mcp-guide.html",

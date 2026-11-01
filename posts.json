@@ -1,5 +1,21 @@
 [
     {
+        "id":  "baseball-score-tanibata-vs-toshimahorifune",
+        "title":  "試合結果｜谷端ジュニア vs 豊島堀船（5 - 4）",
+        "filename":  "posts/baseball-score-tanibata-vs-toshimahorifune.html",
+        "createdAt":  "2026-11-02T07:28:00+09:00",
+        "dateFormatted":  "2026/11/02",
+        "description":  "少年野球試合スコアボード。谷端ジュニア 対 豊島堀船（5対4で谷端ジュニアの勝利）。各回の得点詳細と試合展開サマリー。",
+        "tags":  [
+                     "野球",
+                     "少年野球",
+                     "スコアボード",
+                     "試合結果",
+                     "谷端ジュニア",
+                     "豊島堀船"
+                 ]
+    },
+    {
         "id":  "ashikaga-clan-history-muromachi-shogunate",
         "title":  "足利家の歴史｜室町幕府を築いた名門武家",
         "filename":  "posts/ashikaga-clan-history-muromachi-shogunate.html",

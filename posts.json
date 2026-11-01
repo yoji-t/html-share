@@ -1,5 +1,22 @@
 [
     {
+        "id":  "baseball-score-tanibata-vs-asukajunior",
+        "title":  "試合結果｜谷端ジュニア vs 飛鳥ジュニア（7 - 0）",
+        "filename":  "posts/baseball-score-tanibata-vs-asukajunior.html",
+        "createdAt":  "2026-11-02T07:30:00+09:00",
+        "dateFormatted":  "2026/11/02",
+        "description":  "少年野球試合スコアボード。谷端ジュニア 対 飛鳥ジュニア（7対0で谷端ジュニアの完封勝利）。各回の得点詳細と試合展開サマリー。",
+        "tags":  [
+                     "野球",
+                     "少年野球",
+                     "スコアボード",
+                     "試合結果",
+                     "谷端ジュニア",
+                     "飛鳥ジュニア",
+                     "完封勝利"
+                 ]
+    },
+    {
         "id":  "baseball-score-tanibata-vs-toshimahorifune",
         "title":  "試合結果｜谷端ジュニア vs 豊島堀船（5 - 4）",
         "filename":  "posts/baseball-score-tanibata-vs-toshimahorifune.html",

@@ -1,5 +1,23 @@
 [
     {
+        "id":  "ashikaga-clan-history-muromachi-shogunate",
+        "title":  "足利家の歴史｜室町幕府を築いた名門武家",
+        "filename":  "posts/ashikaga-clan-history-muromachi-shogunate.html",
+        "createdAt":  "2026-11-01T17:27:00+09:00",
+        "dateFormatted":  "2026/11/01",
+        "description":  "清和源氏の名門・足利氏のルーツから、足利尊氏による室町幕府創設、3代義満の南北朝統一と最盛期（北山文化・勘合貿易）、応仁の乱以降の衰退、15代義昭と幕府終焉までの歴史と一族の系譜をわかりやすく解説。",
+        "tags":  [
+                     "歴史",
+                     "日本史",
+                     "足利氏",
+                     "室町幕府",
+                     "足利尊氏",
+                     "足利義満",
+                     "応仁の乱",
+                     "戦国時代"
+                 ]
+    },
+    {
         "id":  "sophia-igc-statement-verification-analysis",
         "title":  "上智大学グローバル・コンサーン研究所の声明に対する検証・評価",
         "filename":  "posts/sophia-igc-statement-verification-analysis.html",

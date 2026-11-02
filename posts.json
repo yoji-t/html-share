@@ -1,5 +1,23 @@
 [
     {
+        "id":  "racehorse-lifetime-earnings-top10",
+        "title":  "競走馬 歴代獲得賞金ランキング TOP10",
+        "filename":  "posts/racehorse-lifetime-earnings-top10.html",
+        "createdAt":  "2026-11-03T08:28:00+09:00",
+        "dateFormatted":  "2026/11/03",
+        "description":  "日本の競走馬歴代獲得賞金ランキングTOP10（フォーエバーヤング、ウシュバテソーロ、イクイノックス、アーモンドアイなど）。海外高額賞金レースを含めた獲得総額と上位馬の解説。",
+        "tags":  [
+                     "競馬",
+                     "競走馬",
+                     "ランキング",
+                     "獲得賞金",
+                     "フォーエバーヤング",
+                     "イクイノックス",
+                     "アーモンドアイ",
+                     "スポーツ"
+                 ]
+    },
+    {
         "id":  "difference-between-sessho-and-kanpaku",
         "title":  "摂政と関白の違い｜日本史の基礎知識",
         "filename":  "posts/difference-between-sessho-and-kanpaku.html",

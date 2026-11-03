@@ -1,5 +1,25 @@
 [
     {
+        "id":  "difference-history-sessho-and-kanpaku",
+        "title":  "摂政と関白の違い・歴史と成立の経緯",
+        "filename":  "posts/difference-history-sessho-and-kanpaku.html",
+        "createdAt":  "2026-11-03T12:07:00+09:00",
+        "dateFormatted":  "2026/11/03",
+        "description":  "摂政と関白の役割の違い（代理と補佐）、聖徳太子が推古天皇の摂政となった背景、藤原基経・忠平による関白の成立と使い分けの定着、摂関政治と五摂家、豊臣秀吉、現代の皇室典範における摂政制度までを詳しく解説。",
+        "tags":  [
+                     "日本史",
+                     "歴史",
+                     "摂政",
+                     "関白",
+                     "聖徳太子",
+                     "藤原氏",
+                     "摂関政治",
+                     "五摂家",
+                     "豊臣秀吉",
+                     "皇室典範"
+                 ]
+    },
+    {
         "id":  "why-chatgpt-text-chat-is-competitive-advantage",
         "title":  "ChatGPTのテキストチャットが強力な競争力になる理由",
         "filename":  "posts/why-chatgpt-text-chat-is-competitive-advantage.html",

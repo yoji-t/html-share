@@ -1,5 +1,22 @@
 [
     {
+        "id":  "junior-high-girls-basketball-rules-guide",
+        "title":  "中学生女子バスケットボール ルール完全ガイド",
+        "filename":  "posts/junior-high-girls-basketball-rules-guide.html",
+        "createdAt":  "2026-11-03T17:34:00+09:00",
+        "dateFormatted":  "2026/11/03",
+        "description":  "中学生女子バスケットボールのルール解説。ヘルドボール（ポゼッションアロー）、ボールの扱い（トラベリング、ダブルドリブル）、時間制限（24秒・8秒・3秒）、ファウル、試合観戦用数字早見表、理解度チェッククイズ付き。",
+        "tags":  [
+                     "バスケットボール",
+                     "中学生",
+                     "ルール解説",
+                     "スポーツ",
+                     "部活動",
+                     "クイズ",
+                     "体育"
+                 ]
+    },
+    {
         "id":  "difference-history-sessho-and-kanpaku",
         "title":  "摂政と関白の違い・歴史と成立の経緯",
         "filename":  "posts/difference-history-sessho-and-kanpaku.html",

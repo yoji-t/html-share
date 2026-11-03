@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>試合結果｜谷端ジュニア vs マイハブレーブス</title>
+<style>
+  :root {
+    --primary: #1a472a;
+    --primary-light: #e9f5ee;
+    --win: #dc2626;
+    --bg: #f4f6f4;
+    --card: #ffffff;
+    --text: #212529;
+    --muted: #6c757d;
+    --border: #dee2e6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, -apple-system, BlinkMacSystemFont, "Noto Sans JP", sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+  header {
+    background: linear-gradient(135deg, #123720, #1a472a);
+    color: white;
+    padding: 36px 20px;
+    text-align: center;
+  }
+  header h1 { margin: 0 0 10px; font-size: 26px; }
+  header p { margin: 0; opacity: 0.9; font-size: 14px; }
+  .container {
+    max-width: 780px;
+    margin: 28px auto;
+    padding: 0 16px 50px;
+  }
+  .card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 22px;
+    border: 1px solid var(--border);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+  }
+  .result-header {
+    text-align: center;
+    padding: 10px 0 20px;
+    border-bottom: 1px dashed var(--border);
+    margin-bottom: 20px;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .matchup {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 15px 0;
+  }
+  .team {
+    flex: 1;
+    text-align: center;
+  }
+  .team-name-lg {
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  .team.winner .team-name-lg {
+    color: var(--primary);
+  }
+  .manager-sub {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: normal;
+  }
+  .win-label {
+    display: inline-block;
+    background: var(--win);
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-top: 4px;
+  }
+  .score-lg {
+    font-size: 40px;
+    font-weight: 800;
+    padding: 0 15px;
+    color: #111;
+  }
+  .score-divider {
+    color: var(--muted);
+    font-size: 24px;
+  }
+  .scoreboard-wrap {
+    overflow-x: auto;
+    margin: 15px 0;
+    border-radius: 8px;
+  }
+  .scoreboard-container {
+    background-color: #1a472a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    color: #fff;
+    min-width: 620px;
+  }
+  table.scoreboard {
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+  }
+  table.scoreboard th, table.scoreboard td {
+    border: 1px solid #2d6a4f;
+    padding: 8px 12px;
+  }
+  table.scoreboard th {
+    background-color: #0f301c;
+    color: #ffde59;
+    font-weight: bold;
+  }
+  .team-name {
+    text-align: left;
+    white-space: nowrap;
+    padding-left: 15px !important;
+    font-weight: bold;
+  }
+  .manager {
+    font-size: 0.85em;
+    font-weight: normal;
+    color: #ccc;
+    margin-left: 6px;
+  }
+  .score {
+    font-size: 1.1em;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    width: 34px;
+  }
+  .total-score {
+    background-color: #0f301c;
+    color: #ffde59;
+    font-size: 1.25em;
+    font-weight: bold;
+    font-family: "Courier New", Courier, monospace;
+    width: 48px;
+  }
+  .summary-list {
+    padding-left: 20px;
+    margin: 12px 0;
+  }
+  .summary-list li {
+    margin: 8px 0;
+  }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 30px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>少年野球 試合結果速報</h1>
+  <p>試合終了（完封勝利）</p>
+</header>
+
+<main class="container">
+
+  <div class="card">
+    <div class="result-header">
+      <span class="badge">試合結果</span>
+      <div class="matchup">
+        <div class="team winner">
+          <div class="team-name-lg">谷端ジュニア</div>
+          <div class="manager-sub">（川野）</div>
+          <span class="win-label">WIN</span>
+        </div>
+        <div class="score-lg">4</div>
+        <div class="score-divider">-</div>
+        <div class="score-lg">0</div>
+        <div class="team">
+          <div class="team-name-lg">マイハブレーブス</div>
+          <div class="manager-sub">（近藤）</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="text-align: center; font-size: 16px; margin: 15px 0 10px; color: var(--primary);">スコアボード</h3>
+    <div class="scoreboard-wrap">
+      <div class="scoreboard-container">
+        <table class="scoreboard">
+          <thead>
+            <tr>
+              <th>チーム名</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>計</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 先攻 -->
+            <tr>
+              <td class="team-name">マイハブレーブス <span class="manager">（近藤）</span></td>
+              <td class="score">0</td>
+              <td class="score">0</td>
+              <td class="score">0</td>
+              <td class="score">0</td>
+              <td class="score">0</td>
+              <td class="score">0</td>
+              <td class="total-score">0</td>
+            </tr>
+            <!-- 後攻 -->
+            <tr>
+              <td class="team-name">谷端ジュニア <span class="manager">（川野）</span></td>
+              <td class="score">1</td>
+              <td class="score">1</td>
+              <td class="score">0</td>
+              <td class="score">0</td>
+              <td class="score">2</td>
+              <td class="score">X</td>
+              <td class="total-score">4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0; color: var(--primary);">イニング展開・試合経過</h3>
+    <ul class="summary-list">
+      <li><strong>1回表・裏：</strong> 谷端ジュニアが初回に先制の1点を奪い、リズムを掴む（1-0）。</li>
+      <li><strong>2回表・裏：</strong> 2回裏にも谷端ジュニアが着実に追加点を挙げ、2-0とリードを広げる。</li>
+      <li><strong>3〜4回：</strong> 両チームの投手戦となり、互いに決定打を許さずスコアボードに0が並ぶ。</li>
+      <li><strong>5回表・裏：</strong> 谷端ジュニアが5回裏に貴重な2点を追加して4-0と突き放す。</li>
+      <li><strong>6回表：</strong> マイハブレーブスの反撃を無得点に抑え、4-0で谷端ジュニアが見事な完封勝利を収めた。</li>
+    </ul>
+  </div>
+
+</main>
+
+<footer>
+  少年野球スコア記録
+</footer>
+
+</body>
+</html>

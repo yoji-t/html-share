@@ -1,5 +1,22 @@
 [
     {
+        "id":  "baseball-score-tanibata-vs-maihabraves",
+        "title":  "試合結果｜谷端ジュニア vs マイハブレーブス（4 - 0）",
+        "filename":  "posts/baseball-score-tanibata-vs-maihabraves.html",
+        "createdAt":  "2026-11-04T07:14:00+09:00",
+        "dateFormatted":  "2026/11/04",
+        "description":  "少年野球試合スコアボード。谷端ジュニア（川野） 対 マイハブレーブス（近藤）（4対0で谷端ジュニアの完封勝利）。イニング別スコア詳細と試合経過サマリー。",
+        "tags":  [
+                     "野球",
+                     "少年野球",
+                     "スコアボード",
+                     "試合結果",
+                     "谷端ジュニア",
+                     "マイハブレーブス",
+                     "完封勝利"
+                 ]
+    },
+    {
         "id":  "junior-high-girls-basketball-rules-guide",
         "title":  "中学生女子バスケットボール ルール完全ガイド",
         "filename":  "posts/junior-high-girls-basketball-rules-guide.html",

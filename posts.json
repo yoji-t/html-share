@@ -1,5 +1,23 @@
 [
     {
+        "id":  "why-chatgpt-text-chat-is-competitive-advantage",
+        "title":  "ChatGPTのテキストチャットが強力な競争力になる理由",
+        "filename":  "posts/why-chatgpt-text-chat-is-competitive-advantage.html",
+        "createdAt":  "2026-11-03T11:59:00+09:00",
+        "dateFormatted":  "2026/11/03",
+        "description":  "ChatGPTのテキストチャットが持つ計算コスト特性、OpenAIのビジネスモデル、利用障壁の低さから利用習慣の形成、スイッチングコストの上昇に至る3段階の競争優位メカニズムを分析した考察。",
+        "tags":  [
+                     "AI",
+                     "ChatGPT",
+                     "OpenAI",
+                     "ビジネスモデル",
+                     "競争戦略",
+                     "UX",
+                     "テキストチャット",
+                     "生成AI"
+                 ]
+    },
+    {
         "id":  "racehorse-lifetime-earnings-top10",
         "title":  "競走馬 歴代獲得賞金ランキング TOP10",
         "filename":  "posts/racehorse-lifetime-earnings-top10.html",

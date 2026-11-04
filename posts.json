@@ -1,5 +1,23 @@
 [
     {
+        "id":  "ntt-docomo-comprehensive-analysis-report-2026",
+        "title":  "NTTドコモ 総合企業分析レポート 2026｜業績・経営状況・将来性の総合分析",
+        "filename":  "posts/ntt-docomo-comprehensive-analysis-report-2026.html",
+        "createdAt":  "2026-11-04T23:16:00+09:00",
+        "dateFormatted":  "2026/11/04",
+        "description":  "NTTドコモの直近6年間（2020～2025年度）および2026年度上期の業績推移、営業利益率低下の構造的要因、国内通信市場シェア比較、法人DX・金融・AI・データセンター戦略、2030年度目標をChart.jsで可視化・分析した企業レポート。",
+        "tags":  [
+                     "NTTドコモ",
+                     "企業分析",
+                     "通信",
+                     "財務分析",
+                     "DX",
+                     "AI",
+                     "IOWN",
+                     "決算分析"
+                 ]
+    },
+    {
         "id":  "apple-fy2026-financial-results-analysis",
         "title":  "Apple 2026年度 業績分析｜過去最高売上とiPhone・サービス牽引",
         "filename":  "posts/apple-fy2026-financial-results-analysis.html",

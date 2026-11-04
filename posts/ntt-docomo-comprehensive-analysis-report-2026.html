@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NTTドコモ 総合企業分析レポート 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+:root {
+  --red:#c90036;
+  --navy:#172b45;
+  --blue:#2874a6;
+  --bg:#f3f5f8;
+  --text:#263445;
+  --muted:#68778a;
+  --border:#dce2e9;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:"Yu Gothic","Meiryo",sans-serif;
+  line-height:1.8;
+}
+header{
+  background:linear-gradient(125deg,#192d47,#394e69);
+  color:white;padding:48px 22px;
+}
+.header-inner{max-width:1100px;margin:auto}
+header .eyebrow{color:#ffb6c8;font-size:13px}
+header h1{font-size:clamp(26px,4vw,40px);margin:12px 0}
+header p{color:#e2e8ef}
+.container{max-width:1100px;margin:28px auto;padding:0 18px}
+section{
+  background:white;border-radius:12px;padding:26px;
+  margin-bottom:22px;box-shadow:0 2px 8px #152c4410;
+}
+h2{
+  font-size:23px;border-left:5px solid var(--red);
+  padding-left:13px;margin-top:0;color:var(--navy);
+}
+h3{color:var(--navy);margin-top:26px}
+p{margin:10px 0}
+small,.muted{color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:16px 0}
+th,td{padding:11px 10px;border-bottom:1px solid var(--border);text-align:right}
+th{background:#edf1f6;color:var(--navy)}
+th:first-child,td:first-child{text-align:left}
+.important{background:#fff5f7;border-left:4px solid var(--red);padding:17px;margin:18px 0}
+.bluebox{background:#eef5fb;padding:17px;border-radius:8px;margin:15px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.kpi{padding:19px;background:#f6f8fb;border-radius:9px}
+.kpi .label{font-size:12px;color:var(--muted)}
+.kpi strong{font-size:25px;color:var(--navy);display:block}
+.kpi span{font-size:12px;color:var(--muted)}
+.tag{display:inline-block;padding:3px 9px;border-radius:20px;background:#e9eef5;font-size:12px}
+.tag.red{background:#ffe8ee;color:#a90030}
+.tag.green{background:#e5f5eb;color:#167442}
+.tag.yellow{background:#fff2d8;color:#956000}
+.chartbox{max-width:850px;margin:22px auto;height:320px;position:relative}
+.chartbox canvas{max-height:320px}
+ul{padding-left:22px}
+li{margin:7px 0}
+a{color:#1768a3;overflow-wrap:anywhere}
+.source{font-size:13px;border-bottom:1px solid var(--border);padding:10px 0}
+footer{text-align:center;padding:30px;color:var(--muted);font-size:12px}
+@media(max-width:650px){
+ section{padding:18px}
+ th,td{padding:8px 5px;font-size:12px}
+ .chartbox{height:250px}
+}
+@media print{
+ body{background:white}
+ section{box-shadow:none;break-inside:avoid}
+ header{background:#263b54!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="header-inner">
+<div class="eyebrow">CORPORATE ANALYSIS REPORT / NOVEMBER 2026</div>
+<h1>NTTドコモ<br>業績・経営状況・将来性の総合分析</h1>
+<p>通信事業の収益力、法人DX、金融・決済、AI・データセンター戦略を総合評価する。</p>
+<p>調査基準日：2026年11月4日<br>対象期間：2020～2025年度、2026年度第2四半期</p>
+</div>
+</header>
+
+<div class="container">
+
+<section>
+<h2>1. エグゼクティブ・サマリー</h2>
+<div class="important">
+<strong>総合結論</strong><br>
+NTTドコモは強固な顧客基盤とNTTグループの資金力を持つ一方、通信事業の利益率低下に直面している。今後は法人DX、金融、AI、データセンターを収益の柱に育てられるかが重要となる。
+</div>
+<div class="grid">
+<div class="kpi"><div class="label">2025年度営業収益</div><strong>6兆4,581億円</strong><span>前年比 +3.9%</span></div>
+<div class="kpi"><div class="label">2025年度営業利益</div><strong>9,421億円</strong><span>前年比 ▲7.7%</span></div>
+<div class="kpi"><div class="label">2025年度営業利益率</div><strong>14.6%</strong><span>2023年度は18.6%</span></div>
+<div class="kpi"><div class="label">2026年度設備投資計画</div><strong>9,000億円</strong><span>前年比 約+5%</span></div>
+</div>
+<h3>重要ポイント</h3>
+<ul>
+<li>売上高は拡大しているが、営業利益は2023年度をピークに減少。</li>
+<li>通信事業は安定収益を生む一方、国内市場の成熟化と価格競争が課題。</li>
+<li>法人DX、金融、決済、AIが将来の成長領域。</li>
+<li>通信品質の改善とネットワーク投資の効率化が必要。</li>
+<li>2030年度に向けた非通信事業の拡大が経営戦略の中心。</li>
+</ul>
+</section>
+
+<section>
+<h2>2. 会社概要と事業構造</h2>
+<p>NTTドコモはNTTの完全子会社であり、NTTグループの総合ICT事業の中核を担う。2020年12月にNTTの完全子会社となった。</p>
+<table>
+<tr><th>事業</th><th>主な内容</th><th>経営上の役割</th></tr>
+<tr><td>コンシューマ通信</td><td>携帯電話、ahamo、ドコモ光、home 5G</td><td>安定収益の確保</td></tr>
+<tr><td>法人・ソリューション</td><td>DX、クラウド、IoT、セキュリティ、SI</td><td>成長エンジン</td></tr>
+<tr><td>スマートライフ</td><td>dポイント、コンテンツ、広告</td><td>顧客接点の収益化</td></tr>
+<tr><td>金融・決済</td><td>dカード、d払い、銀行、証券</td><td>顧客基盤の収益化</td></tr>
+<tr><td>AI・インフラ</td><td>AI基盤、データセンター、次世代ネットワーク</td><td>中長期の成長基盤</td></tr>
+</table>
+<div class="bluebox">
+<strong>重要な会計上の注意</strong><br>
+ドコモグループの連結業績とNTT連結の総合ICT事業セグメントは異なる集計範囲である。両者を混同してはならない。
+</div>
+</section>
+
+<section>
+<h2>3. 直近6年間の業績推移</h2>
+<p>ドコモグループの公表財務数値。単位：億円。</p>
+<table>
+<tr><th>年度</th><th>営業収益</th><th>前年比</th><th>営業利益</th><th>前年比</th><th>利益率</th></tr>
+<tr><td>2020</td><td>58,809</td><td>―</td><td>10,600</td><td>―</td><td>18.0%</td></tr>
+<tr><td>2021</td><td>58,702</td><td>▲0.2%</td><td>10,725</td><td>+1.2%</td><td>18.3%</td></tr>
+<tr><td>2022</td><td>60,590</td><td>+3.2%</td><td>10,939</td><td>+2.0%</td><td>18.1%</td></tr>
+<tr><td>2023</td><td>61,400</td><td>+1.3%</td><td>11,444</td><td>+4.6%</td><td>18.6%</td></tr>
+<tr><td>2024</td><td>62,131</td><td>+1.2%</td><td>10,205</td><td>▲10.8%</td><td>16.4%</td></tr>
+<tr><td>2025</td><td>64,581</td><td>+3.9%</td><td>9,421</td><td>▲7.7%</td><td>14.6%</td></tr>
+</table>
+<div class="chartbox"><canvas id="revenueChart"></canvas></div>
+<div class="chartbox"><canvas id="profitChart"></canvas></div>
+<h3>業績の分析</h3>
+<p>2020～2023年度は比較的安定した増益傾向だったが、2024年度以降は営業利益が減少。2025年度は営業収益が過去最高水準に達した一方、営業利益は9,421億円まで低下した。</p>
+<div class="important">
+<strong>重要なポイント：</strong><br>
+売上高が増加しているのに利益が減少している。収益拡大と利益成長が乖離しており、コスト構造と事業別の採算性を見直す必要がある。
+</div>
+</section>
+
+<section>
+<h2>4. キャッシュフローと設備投資</h2>
+<p>単位：億円。</p>
+<table>
+<tr><th>指標</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th></tr>
+<tr><td>営業CF</td><td>18,875</td><td>12,307</td><td>14,226</td><td>9,525</td><td>3,928</td></tr>
+<tr><td>投資CF</td><td>▲6,511</td><td>▲6,441</td><td>▲5,736</td><td>▲6,953</td><td>+3,083</td></tr>
+<tr><td>設備投資</td><td>6,986</td><td>7,063</td><td>7,054</td><td>7,143</td><td>8,575</td></tr>
+<tr><td>フリーCF</td><td>11,333</td><td>5,936</td><td>8,488</td><td>2,573</td><td>7,158</td></tr>
+</table>
+<p>2025年度は営業CFが大幅に減少した一方、投資CFがプラスに転じたためフリーCFは増加した。これは本業のキャッシュ創出力が大幅に改善したことを意味しない。</p>
+</section>
+
+<section>
+<h2>5. 2026年度第2四半期の最新業績</h2>
+<p>2026年度上期（4～9月）。単位：億円。</p>
+<table>
+<tr><th>指標</th><th>前年上期</th><th>当年上期</th><th>増減率</th></tr>
+<tr><td>営業収益</td><td>30,327</td><td>32,821</td><td>+8.2%</td></tr>
+<tr><td>営業利益</td><td>4,747</td><td>4,747</td><td>約0.0%</td></tr>
+<tr><td>営業利益率</td><td>15.6%</td><td>14.5%</td><td>▲1.1pt</td></tr>
+</table>
+<h3>2026年度通期会社予想</h3>
+<table>
+<tr><th>指標</th><th>2025年度実績</th><th>2026年度予想</th><th>前年比</th></tr>
+<tr><td>営業収益</td><td>64,581</td><td>68,410</td><td>+5.9%</td></tr>
+<tr><td>営業利益</td><td>9,421</td><td>9,630</td><td>+2.2%</td></tr>
+<tr><td>EBITDA</td><td>17,431</td><td>17,980</td><td>+3.2%</td></tr>
+<tr><td>設備投資</td><td>8,575</td><td>9,000</td><td>+5.0%</td></tr>
+</table>
+<div class="kpi">
+<div class="label">営業利益の上期進捗率</div>
+<strong>49.3%</strong>
+<span>上期実績4,747億円 ÷ 通期予想9,630億円</span>
+</div>
+<p>売上高の成長に対して利益は横ばい。通期計画の達成だけでなく、利益率の回復が重要な課題となる。</p>
+</section>
+
+<section>
+<h2>6. 事業別の収益構造と成長性</h2>
+<h3>① コンシューマ通信事業</h3>
+<ul>
+<li>携帯電話、ahamo、ドコモ光、home 5Gが主な収益源。</li>
+<li>安定したストック型収益を確保できる。</li>
+<li>国内市場の成熟化、低価格競争、通信品質が課題。</li>
+</ul>
+<span class="tag yellow">成長性：中程度</span>
+<h3>② 法人・ソリューション事業</h3>
+<ul>
+<li>法人DX、クラウド、セキュリティ、IoT、SIが中心。</li>
+<li>通信とシステムを組み合わせた高付加価値サービスを展開。</li>
+<li>NTTドコモビジネスを中心とした法人事業の統合・強化が進む。</li>
+</ul>
+<span class="tag green">成長性：高い</span>
+<h3>③ スマートライフ事業</h3>
+<ul>
+<li>dポイント、d払い、広告、コンテンツなどを展開。</li>
+<li>通信契約者との接点を活用して収益化する。</li>
+<li>ポイント還元やコンテンツ調達費用を踏まえた採算性が重要。</li>
+</ul>
+<span class="tag green">成長性：高い</span>
+<h3>④ 金融・決済事業</h3>
+<ul>
+<li>dカード、d払い、銀行、証券、ローンなど。</li>
+<li>金融事業再編により事業基盤の強化を目指す。</li>
+<li>信用コスト、貸倒リスク、規制対応が重要。</li>
+</ul>
+<span class="tag green">成長性：高い</span>
+</section>
+
+<section>
+<h2>7. 国内通信市場の競争力</h2>
+<p>2026年6月末の移動系通信契約数シェア。</p>
+<table>
+<tr><th>事業者</th><th>シェア</th></tr>
+<tr><td>NTTドコモ</td><td>32.2%</td></tr>
+<tr><td>KDDI</td><td>26.5%</td></tr>
+<tr><td>ソフトバンク</td><td>19.1%</td></tr>
+<tr><td>楽天モバイル</td><td>3.8%</td></tr>
+<tr><td>MVNO</td><td>18.6%</td></tr>
+</table>
+<div class="chartbox"><canvas id="shareChart"></canvas></div>
+<h3>競合比較</h3>
+<table>
+<tr><th>企業</th><th>主な強み</th><th>主な課題</th></tr>
+<tr><td>ドコモ</td><td>顧客基盤、全国網、ブランド</td><td>通信品質、シェア維持</td></tr>
+<tr><td>KDDI</td><td>au・UQ、金融・生活サービス</td><td>国内市場成熟</td></tr>
+<tr><td>ソフトバンク</td><td>PayPay、法人DX、AI</td><td>競争激化、投資負担</td></tr>
+<tr><td>楽天</td><td>楽天経済圏、価格競争力</td><td>ネットワーク投資回収</td></tr>
+</table>
+<p>ドコモは依然として最大の事業者だが、市場シェアは低下傾向にある。顧客基盤の大きさだけでなく、ARPU、解約率、通信品質の改善が重要。</p>
+</section>
+
+<section>
+<h2>8. AI・データセンター・次世代インフラ</h2>
+<h3>AI戦略</h3>
+<p>ドコモは1億超の会員基盤とAIを組み合わせ、金融、決済、生活サービスなどの利用拡大を目指している。AIエージェントプラットフォーム「SyncMe」なども注目される。</p>
+<h3>データセンター</h3>
+<ul>
+<li>GPUを利用したAI計算基盤</li>
+<li>企業向けクラウド・データ保管</li>
+<li>セキュリティ・ネットワーク運用</li>
+<li>AIモデルの開発・運用環境</li>
+</ul>
+<h3>5G・6G・IOWN</h3>
+<p>NTTグループのIOWN構想は光技術を活用して通信・情報処理の電力効率を高めるもの。自動運転、ロボティクス、工場の自動化などへの応用が期待される。</p>
+<div class="important">
+<strong>独自分析：</strong><br>
+AI・データセンターは成長余地が大きいが、設備投資が先行する。稼働率、顧客獲得、投資回収期間が成否を決める。
+</div>
+</section>
+
+<section>
+<h2>9. 経営課題とリスク</h2>
+<table>
+<tr><th>順位</th><th>課題</th><th>重要度</th></tr>
+<tr><td>1</td><td>通信品質の改善</td><td>非常に高い</td></tr>
+<tr><td>2</td><td>通信事業の利益率回復</td><td>非常に高い</td></tr>
+<tr><td>3</td><td>非通信事業の利益拡大</td><td>非常に高い</td></tr>
+<tr><td>4</td><td>設備投資の効率化</td><td>高い</td></tr>
+<tr><td>5</td><td>金融事業の信用リスク管理</td><td>高い</td></tr>
+<tr><td>6</td><td>法人IT市場での競争力</td><td>高い</td></tr>
+<tr><td>7</td><td>NTTグループ内の連携</td><td>中～高</td></tr>
+</table>
+<h3>最大の課題</h3>
+<p>通信品質の改善が最優先課題である。品質が改善しなければ顧客流出につながり、料金やポイント還元だけでは顧客維持に限界がある。</p>
+<p>第二の課題は、非通信事業の収益化である。売上高や決済取扱高の拡大だけでなく、営業利益率と投資効率の向上が必要。</p>
+</section>
+
+<section>
+<h2>10. 2030年度に向けた成長戦略</h2>
+<div class="grid">
+<div class="kpi"><div class="label">スマートライフ・法人事業収益目標</div><strong>5兆円</strong><span>2030年度</span></div>
+<div class="kpi"><div class="label">EBITDA目標</div><strong>2兆円</strong><span>2030年度</span></div>
+<div class="kpi"><div class="label">ROIC目標</div><strong>11.4%</strong><span>金融事業を除く</span></div>
+</div>
+<p>これらは会社公表の中期財務目標であり、独自予測ではない。</p>
+<table>
+<tr><th>成長分野</th><th>期待</th><th>実現条件</th></tr>
+<tr><td>通信</td><td>収益基盤維持</td><td>品質改善、コスト削減</td></tr>
+<tr><td>法人DX</td><td>大きな成長余地</td><td>高付加価値化、採算改善</td></tr>
+<tr><td>金融・決済</td><td>顧客基盤の収益化</td><td>信用リスク管理</td></tr>
+<tr><td>AI・データセンター</td><td>市場拡大</td><td>稼働率と投資回収</td></tr>
+<tr><td>6G・IOWN</td><td>長期競争力</td><td>商用化・収益化</td></tr>
+</table>
+</section>
+
+<section>
+<h2>11. 総合評価</h2>
+<table>
+<tr><th>評価軸</th><th>評価</th><th>理由</th></tr>
+<tr><td>財務基盤</td><td><span class="tag green">比較的強固</span></td><td>NTTグループの信用力と通信収入</td></tr>
+<tr><td>事業構造</td><td><span class="tag">転換期</span></td><td>非通信事業の拡大を推進</td></tr>
+<tr><td>競争力</td><td><span class="tag yellow">改善が必要</span></td><td>シェア低下と通信品質</td></tr>
+<tr><td>成長性</td><td><span class="tag green">中長期に期待</span></td><td>法人DX・AI・金融に成長余地</td></tr>
+</table>
+<h3>最終結論</h3>
+<div class="important">
+<strong>NTTドコモは、強固な顧客基盤を持ちながら、収益構造の転換を迫られている企業である。</strong>
+</div>
+<p>通信事業は今後も安定収益を生む基盤となる。しかし、通信料金競争と市場成熟化により、通信事業だけで大幅な利益成長を実現することは難しい。</p>
+<p>今後の成長を担うのは法人DX、金融・決済、AI・データセンターである。これらの事業を売上拡大だけでなく、営業利益とキャッシュフローの成長につなげられるかが重要となる。</p>
+<p>特に、通信品質の回復と非通信事業の利益成長を両立できるかが、今後3～5年間の業績を左右する。</p>
+</section>
+
+<section>
+<h2>12. 参考資料・出典</h2>
+<div class="source">
+<strong>NTTドコモ IR</strong><br>
+<a href="https://www.docomo.ne.jp/corporate/ir/" target="_blank">https://www.docomo.ne.jp/corporate/ir/</a>
+</div>
+<div class="source">
+<strong>NTTドコモ 財務・業績</strong><br>
+<a href="https://www.docomo.ne.jp/corporate/ir/finance/" target="_blank">https://www.docomo.ne.jp/corporate/ir/finance/</a>
+</div>
+<div class="source">
+<strong>NTT IR</strong><br>
+<a href="https://group.ntt/jp/ir/" target="_blank">https://group.ntt/jp/ir/</a>
+</div>
+<div class="source">
+<strong>総務省 情報通信統計</strong><br>
+<a href="https://www.soumu.go.jp/johotsusintokei/" target="_blank">https://www.soumu.go.jp/johotsusintokei/</a>
+</div>
+<div class="source">
+<strong>電気通信事業者協会（TCA）</strong><br>
+<a href="https://www.tca.or.jp/database/" target="_blank">https://www.tca.or.jp/database/</a>
+</div>
+<p class="muted">注：本レポートの数値は2026年11月4日時点の調査内容を基にしたもの。年度区分、集計範囲、会計基準の違いに注意すること。非公表値は推測で補わない。</p>
+</section>
+
+</div>
+
+<footer>
+NTT DOCOMO CORPORATE ANALYSIS REPORT / 2026.11.04
+</footer>
+
+<script>
+const years=['2020','2021','2022','2023','2024','2025'];
+new Chart(document.getElementById('revenueChart'),{
+ type:'line',
+ data:{labels:years,datasets:[{
+ label:'営業収益（億円）',
+ data:[58809,58702,60590,61400,62131,64581],
+ borderColor:'#2874a6',backgroundColor:'#2874a622',
+ fill:true,tension:.25
+ }]},
+ options:{responsive:true,maintainAspectRatio:false,
+ plugins:{title:{display:true,text:'営業収益の推移'},legend:{display:true}},
+ scales:{y:{beginAtZero:false}}}
+});
+new Chart(document.getElementById('profitChart'),{
+ type:'bar',
+ data:{labels:years,datasets:[{
+ label:'営業利益（億円）',
+ data:[10600,10725,10939,11444,10205,9421],
+ backgroundColor:'#c90036'
+ }]},
+ options:{responsive:true,maintainAspectRatio:false,
+ plugins:{title:{display:true,text:'営業利益の推移'},legend:{display:false}},
+ scales:{y:{beginAtZero:false}}}
+});
+new Chart(document.getElementById('shareChart'),{
+ type:'doughnut',
+ data:{labels:['ドコモ','KDDI','ソフトバンク','楽天','MVNO'],
+ datasets:[{data:[32.2,26.5,19.1,3.8,18.6],
+ backgroundColor:['#c90036','#2874a6','#e6a12a','#7c55a5','#8b99a9']}]},
+ options:{responsive:true,maintainAspectRatio:false,
+ plugins:{title:{display:true,text:'国内移動系通信契約数シェア'},legend:{position:'bottom'}}}
+});
+</script>
+</body>
+</html>

@@ -1,5 +1,23 @@
 [
     {
+        "id":  "apple-fy2026-financial-results-analysis",
+        "title":  "Apple 2026年度 業績分析｜過去最高売上とiPhone・サービス牽引",
+        "filename":  "posts/apple-fy2026-financial-results-analysis.html",
+        "createdAt":  "2026-11-04T19:07:00+09:00",
+        "dateFormatted":  "2026/11/04",
+        "description":  "Appleの2026年度Q4および通期決算分析。過去最高の年間売上高約4,790億ドル（約72兆円）、iPhone（576億ドル・前年比+17%）とサービス事業の牽引、新CEOジョン・ターナス体制とAI戦略の展望を整理。",
+        "tags":  [
+                     "Apple",
+                     "決算分析",
+                     "iPhone",
+                     "業績",
+                     "財務分析",
+                     "米国株",
+                     "AI戦略",
+                     "テクノロジー"
+                 ]
+    },
+    {
         "id":  "baseball-score-tanibata-vs-maihabraves",
         "title":  "試合結果｜谷端ジュニア vs マイハブレーブス（4 - 0）",
         "filename":  "posts/baseball-score-tanibata-vs-maihabraves.html",

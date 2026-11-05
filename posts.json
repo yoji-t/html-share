@@ -1,5 +1,25 @@
 [
     {
+        "id":  "japanese-grammar-rareru-souda-nai-guide",
+        "title":  "中学受験 国語文法｜「られる・そうだ・ない」の見分け方完全マスター",
+        "filename":  "posts/japanese-grammar-rareru-souda-nai-guide.html",
+        "createdAt":  "2026-11-05T21:18:00+09:00",
+        "dateFormatted":  "2026/11/05",
+        "description":  "中学受験・国語文法頻出の3大識別問題。「られる」（受け身・可能・尊敬・自発の4種）、「そうだ」（様態・伝聞の2種）、「ない」（打消の助動詞・形容詞の2種）の見分け方と確認問題（全8問・自動採点付き）。",
+        "tags":  [
+                     "国語",
+                     "中学受験",
+                     "文法",
+                     "助動詞",
+                     "品詞識別",
+                     "られる",
+                     "そうだ",
+                     "ない",
+                     "学習ガイド",
+                     "クイズ"
+                 ]
+    },
+    {
         "id":  "japanese-grammar-identifying-nai-guide",
         "title":  "中学受験 国語文法｜「ない」の見分け方（打消の助動詞 vs 形容詞）",
         "filename":  "posts/japanese-grammar-identifying-nai-guide.html",

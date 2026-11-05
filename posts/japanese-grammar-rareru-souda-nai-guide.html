@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中学受験 国語文法「られる・そうだ・ない」の見分け方</title>
+<style>
+:root {
+  --blue:#245a91;
+  --light-blue:#eaf3fc;
+  --green:#28794c;
+  --light-green:#eaf6ee;
+  --orange:#b76a18;
+  --light-orange:#fff3e4;
+  --text:#263445;
+  --line:#dce3eb;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  background:#f3f6fa;
+  color:var(--text);
+  font-family:"Yu Gothic","Meiryo",sans-serif;
+  line-height:1.8;
+}
+.container {
+  max-width:900px;
+  margin:auto;
+  padding:22px;
+}
+header {
+  background:linear-gradient(135deg,#214c7b,#397bb5);
+  color:white;
+  padding:32px 24px;
+  border-radius:16px;
+  margin-bottom:25px;
+}
+header h1 { margin:0 0 10px; font-size:27px; }
+header p { margin:0; opacity:.95; }
+h2 {
+  font-size:22px;
+  border-left:6px solid var(--blue);
+  padding-left:12px;
+  margin-top:35px;
+}
+h3 { font-size:17px; margin-bottom:8px; }
+.card {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:20px;
+  margin:15px 0;
+}
+.point {
+  background:var(--light-blue);
+  border-radius:9px;
+  padding:14px;
+  margin:12px 0;
+}
+.example {
+  background:#f7f9fc;
+  border-left:4px solid var(--blue);
+  padding:10px 14px;
+  margin:10px 0;
+}
+.answer {
+  background:var(--light-green);
+  border-radius:8px;
+  padding:10px 14px;
+  margin-top:8px;
+}
+.warning {
+  background:var(--light-orange);
+  border-radius:8px;
+  padding:12px;
+  margin:12px 0;
+}
+table {
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+  font-size:14px;
+}
+th,td {
+  border:1px solid var(--line);
+  padding:10px;
+  text-align:left;
+}
+th { background:#edf2f8; }
+.tag {
+  display:inline-block;
+  background:#e7eff9;
+  color:#245a91;
+  padding:2px 10px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
+.quiz {
+  background:white;
+  border:1px solid var(--line);
+  padding:17px;
+  border-radius:10px;
+  margin:15px 0;
+}
+.quiz label {
+  display:block;
+  padding:6px 8px;
+  cursor:pointer;
+}
+.quiz label:hover { background:#f1f5fa; }
+button {
+  background:#245a91;
+  color:white;
+  border:0;
+  padding:12px 22px;
+  border-radius:8px;
+  font-size:15px;
+  cursor:pointer;
+  margin:8px 4px;
+}
+button:hover { opacity:.85; }
+.result {
+  display:none;
+  padding:12px;
+  background:#edf6ef;
+  border-radius:8px;
+  margin-top:10px;
+}
+.summary {
+  background:#eaf3fc;
+  border:2px solid #b9d3ed;
+  padding:20px;
+  border-radius:12px;
+  margin-top:25px;
+}
+footer {
+  text-align:center;
+  color:#718096;
+  font-size:12px;
+  margin:35px 0 10px;
+}
+@media(max-width:600px) {
+  .container { padding:12px; }
+  header h1 { font-size:22px; }
+  table { font-size:12px; }
+  th,td { padding:7px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>中学受験 国語文法</h1>
+  <p>「られる」「そうだ」「ない」の見分け方をマスターしよう！</p>
+</header>
+
+<div class="card">
+<h2>最初に覚える3つの基本</h2>
+<table>
+<tr><th>言葉</th><th>見分ける種類</th><th>覚えること</th></tr>
+<tr><td>られる</td><td>4種類</td><td>受け身・可能・尊敬・自発</td></tr>
+<tr><td>そうだ</td><td>2種類</td><td>様態・伝聞</td></tr>
+<tr><td>ない</td><td>2種類</td><td>打消の助動詞・形容詞</td></tr>
+</table>
+<div class="point">
+<strong>大切な考え方：</strong><br>
+同じ言葉でも、文の中での働きによって品詞や意味が変わる。前後の言葉と文全体の意味を確認しよう。
+</div>
+</div>
+
+<!-- られる -->
+<h2>1.「られる」の見分け方</h2>
+<div class="card">
+<p>「られる」には、主に4つの意味がある。</p>
+<table>
+<tr><th>種類</th><th>意味</th><th>例文</th></tr>
+<tr><td>受け身</td><td>～される</td><td>私は先生にほめられた。</td></tr>
+<tr><td>可能</td><td>～することができる</td><td>この魚は食べられる。</td></tr>
+<tr><td>尊敬</td><td>相手を敬う</td><td>先生が来られる。</td></tr>
+<tr><td>自発</td><td>自然にそう感じる</td><td>昔のことが思い出される。</td></tr>
+</table>
+
+<h3>① 受け身：誰かに何かをされている？</h3>
+<div class="example">
+私は先生にほめられた。
+</div>
+<div class="answer">
+先生が私をほめた、ということ。<br>
+→ <strong>受け身</strong>
+</div>
+
+<h3>② 可能：～することができる？</h3>
+<div class="example">
+この魚は食べられる。
+</div>
+<div class="answer">
+この魚を食べることができる。<br>
+→ <strong>可能</strong>
+</div>
+
+<h3>③ 尊敬：動作をする人を敬っている？</h3>
+<div class="example">
+校長先生が話をされる。
+</div>
+<div class="answer">
+校長先生への敬意を表している。<br>
+→ <strong>尊敬</strong>
+</div>
+
+<h3>④ 自発：自然にそういう気持ちになる？</h3>
+<div class="example">
+故郷のことが思い出される。
+</div>
+<div class="answer">
+自然と思い出す。<br>
+→ <strong>自発</strong>
+</div>
+
+<div class="point">
+<strong>覚え方：</strong><br>
+受け身・可能・尊敬・自発の4つ！
+</div>
+<div class="warning">
+<strong>注意：</strong>「泳げる」「読める」のような可能表現は、可能動詞であり、「られる」が付いた形ではない。「食べられる」「見られる」などが「られる」の可能の例。
+</div>
+</div>
+
+<!-- そうだ -->
+<h2>2.「そうだ」の見分け方</h2>
+<div class="card">
+<p>「そうだ」には2種類ある。</p>
+<table>
+<tr><th>種類</th><th>意味</th><th>例文</th></tr>
+<tr><td>様態</td><td>見た目や様子から判断</td><td>雨が降りそうだ。</td></tr>
+<tr><td>伝聞</td><td>人から聞いたこと</td><td>明日は雨が降るそうだ。</td></tr>
+</table>
+
+<h3>① 様態：見た目で判断している</h3>
+<div class="example">
+このケーキはおいしそうだ。
+</div>
+<div class="answer">
+見た目から、おいしいと判断している。<br>
+→ <strong>様態</strong>
+</div>
+
+<h3>② 伝聞：人から聞いたこと</h3>
+<div class="example">
+このケーキはおいしいそうだ。
+</div>
+<div class="answer">
+誰かから、おいしいと聞いた。<br>
+→ <strong>伝聞</strong>
+</div>
+
+<h3>直前の言葉で判断する方法</h3>
+<table>
+<tr><th>直前の形</th><th>種類</th><th>例</th></tr>
+<tr><td>動詞のます形の語幹</td><td>様態</td><td>降りそうだ・泣きそうだ</td></tr>
+<tr><td>形容詞の語幹</td><td>様態</td><td>おいしそうだ・楽しそうだ</td></tr>
+<tr><td>動詞の終止形</td><td>伝聞</td><td>降るそうだ・泣くそうだ</td></tr>
+<tr><td>形容詞の終止形</td><td>伝聞</td><td>おいしいそうだ</td></tr>
+<tr><td>名詞・形容動詞</td><td>伝聞</td><td>学生だそうだ・元気だそうだ</td></tr>
+</table>
+
+<div class="point">
+<strong>特に重要！</strong><br>
+「おいしそうだ」＝見た目で判断（様態）<br>
+「おいしいそうだ」＝人から聞いた（伝聞）
+</div>
+</div>
+
+<!-- ない -->
+<h2>3.「ない」の見分け方</h2>
+<div class="card">
+<p>「ない」には、大きく分けて2種類ある。</p>
+<table>
+<tr><th>種類</th><th>品詞</th><th>例文</th></tr>
+<tr><td>打消の助動詞</td><td>助動詞</td><td>ご飯を食べない。</td></tr>
+<tr><td>形容詞</td><td>形容詞</td><td>お金がない。</td></tr>
+</table>
+
+<h3>① 打消の助動詞：動作を否定している</h3>
+<div class="example">
+私は学校に行かない。
+</div>
+<div class="answer">
+「行く」という動作を否定している。<br>
+→ <strong>打消の助動詞</strong>
+</div>
+
+<h3>② 形容詞：存在しない状態を表している</h3>
+<div class="example">
+お金がない。
+</div>
+<div class="answer">
+お金が存在しない状態を表している。<br>
+→ <strong>形容詞</strong>
+</div>
+
+<h3>判定のヒント</h3>
+<div class="point">
+「ない」を「ぬ」に置き換えてみよう。
+</div>
+<table>
+<tr><th>文章</th><th>置き換え</th><th>判断</th></tr>
+<tr><td>学校に行かない。</td><td>学校に行かぬ。</td><td>打消の助動詞</td></tr>
+<tr><td>お金がない。</td><td>お金がぬ。</td><td>形容詞</td></tr>
+</table>
+
+<div class="warning">
+<strong>注意：</strong><br>
+「ぬ」への置き換えは判定のヒント。これだけで判断せず、直前の言葉とのつながりも確認しよう。
+</div>
+
+<h3>活用について</h3>
+<p>形容詞の「ない」は、次のように活用する。</p>
+<table>
+<tr><th>活用形</th><th>例</th></tr>
+<tr><td>未然形</td><td>なかろう</td></tr>
+<tr><td>連用形</td><td>なくなる</td></tr>
+<tr><td>終止形</td><td>ない</td></tr>
+<tr><td>連体形</td><td>ない人</td></tr>
+<tr><td>仮定形</td><td>なければ</td></tr>
+</table>
+<p>打消の助動詞「ない」も同じように活用するため、活用だけでは区別できない。</p>
+<div class="point">
+<strong>一番大切な判断方法：</strong><br>
+動詞の未然形＋ない → 打消の助動詞<br>
+存在しない状態などを表す → 形容詞
+</div>
+</div>
+
+<!-- まとめ -->
+<h2>4. 3つの見分け方まとめ</h2>
+<div class="card">
+<table>
+<tr><th>言葉</th><th>種類</th><th>見分けるポイント</th></tr>
+<tr><td rowspan="4">られる</td><td>受け身</td><td>～される</td></tr>
+<tr><td>可能</td><td>～できる</td></tr>
+<tr><td>尊敬</td><td>動作をする人を敬う</td></tr>
+<tr><td>自発</td><td>自然にそう感じる</td></tr>
+<tr><td rowspan="2">そうだ</td><td>様態</td><td>見た目・様子</td></tr>
+<tr><td>伝聞</td><td>人から聞いた</td></tr>
+<tr><td rowspan="2">ない</td><td>打消の助動詞</td><td>動作・状態の打消</td></tr>
+<tr><td>形容詞</td><td>存在しない状態など</td></tr>
+</table>
+</div>
+
+<!-- 確認問題 -->
+<h2>5. 確認問題（全8問）</h2>
+<div class="card">
+<p>選択肢から正しい答えを選ぼう。最後に「採点する」を押すと、点数と解説が表示されるよ。</p>
+<div id="questions"></div>
+<button onclick="grade()">採点する</button>
+<button onclick="resetQuiz()" style="background:#667788">やり直す</button>
+<div id="score" class="summary" style="display:none"></div>
+</div>
+
+<div class="summary">
+<h3>最後に覚えておこう！</h3>
+<ol>
+<li>「られる」は4種類。受け身・可能・尊敬・自発。</li>
+<li>「そうだ」は2種類。見た目なら様態、聞いた話なら伝聞。</li>
+<li>「ない」は2種類。打消の助動詞と形容詞。</li>
+</ol>
+<strong>問題を見たら、最初から意味を決めつけず、前後の言葉と文全体の意味を確認しよう！</strong>
+</div>
+
+<footer>
+中学受験 国語文法 学習教材
+</footer>
+</div>
+
+<script>
+const data = [
+{
+ q:"先生が明日、学校に来られる。",
+ opts:["受け身","可能","尊敬","自発"],
+ a:2,
+ why:"先生の動作に敬意を表しているので尊敬。"
+},
+{
+ q:"「られる」が可能の意味で使われている文はどれ？",
+ opts:["食べられる","先生にほめられる","先生が来られる","昔が思い出される"],
+ a:0,
+ why:"食べることができる、という可能の意味。"
+},
+{
+ q:"空が暗くなってきた。雨が降りそうだ。",
+ opts:["様態","伝聞"],
+ a:0,
+ why:"空の様子を見て雨が降ると判断している。"
+},
+{
+ q:"天気予報によると、明日は雨が降るそうだ。",
+ opts:["様態","伝聞"],
+ a:1,
+ why:"天気予報で聞いた情報なので伝聞。"
+},
+{
+ q:"この料理はおいしそうだ。",
+ opts:["様態","伝聞"],
+ a:0,
+ why:"おいしそうに見える、という見た目の判断。"
+},
+{
+ q:"彼は今日は学校に行かない。",
+ opts:["形容詞","打消の助動詞"],
+ a:1,
+ why:"「行く」という動作を打ち消している。"
+},
+{
+ q:"今日はお金がない。",
+ opts:["形容詞","打消の助動詞"],
+ a:0,
+ why:"お金が存在しない状態を表す形容詞。"
+},
+{
+ q:"昔の友人のことが思い出される。",
+ opts:["受け身","可能","尊敬","自発"],
+ a:3,
+ why:"自然と思い出す、という意味なので自発。"
+}
+];
+
+function render() {
+ const root=document.getElementById("questions");
+ root.innerHTML="";
+ data.forEach((q,i)=>{
+  const div=document.createElement("div");
+  div.className="quiz";
+  div.innerHTML=`<strong>問題 ${i+1}</strong><p>${q.q}</p>`;
+  q.opts.forEach((o,j)=>{
+   div.innerHTML+=`<label><input type="radio" name="q${i}" value="${j}"> ${o}</label>`;
+  });
+  div.innerHTML+=`<div class="result" id="r${i}"></div>`;
+  root.appendChild(div);
+ });
+}
+function grade() {
+ let score=0;
+ let unanswered=0;
+ data.forEach((q,i)=>{
+  const selected=document.querySelector(`input[name="q${i}"]:checked`);
+  const result=document.getElementById(`r${i}`);
+  result.style.display="block";
+  if(!selected) {
+   unanswered++;
+   result.innerHTML="未回答です。正解："+q.opts[q.a]+"<br>"+q.why;
+   result.style.background="#fff3e4";
+  } else if(Number(selected.value)===q.a) {
+   score++;
+   result.innerHTML="○ 正解！<br>"+q.why;
+   result.style.background="#eaf6ee";
+  } else {
+   result.innerHTML="× 不正解。正解："+q.opts[q.a]+"<br>"+q.why;
+   result.style.background="#fff0ef";
+  }
+ });
+ const box=document.getElementById("score");
+ box.style.display="block";
+ box.innerHTML=`<h3>結果：${score} / ${data.length} 点</h3>
+ ${unanswered>0?"未回答："+unanswered+"問あります。":"全問回答しました！"}
+ <p>${score===8?"すばらしい！全問正解！":score>=6?"あと少し！間違えた問題を復習しよう。":"解説を読んでもう一度挑戦しよう！"}</p>`;
+ box.scrollIntoView({behavior:"smooth",block:"center"});
+}
+function resetQuiz() {
+ document.querySelectorAll('input[type="radio"]').forEach(x=>x.checked=false);
+ document.querySelectorAll(".result").forEach(x=>x.style.display="none");
+ document.getElementById("score").style.display="none";
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+render();
+</script>
+</body>
+</html>

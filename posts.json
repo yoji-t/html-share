@@ -1,5 +1,23 @@
 [
     {
+        "id":  "japanese-grammar-identifying-nai-guide",
+        "title":  "中学受験 国語文法｜「ない」の見分け方（打消の助動詞 vs 形容詞）",
+        "filename":  "posts/japanese-grammar-identifying-nai-guide.html",
+        "createdAt":  "2026-11-05T21:15:00+09:00",
+        "dateFormatted":  "2026/11/05",
+        "description":  "中学受験・国語文法で頻出の「ない」の品詞識別法。打消の助動詞と形容詞の違い、「ぬ」に置き換えて判定するコツ、活用形の解説とインタラクティブな確認問題（全6問・自動採点付き）。",
+        "tags":  [
+                     "国語",
+                     "中学受験",
+                     "文法",
+                     "品詞識別",
+                     "助動詞",
+                     "形容詞",
+                     "学習ガイド",
+                     "クイズ"
+                 ]
+    },
+    {
         "id":  "ntt-docomo-comprehensive-analysis-report-2026",
         "title":  "NTTドコモ 総合企業分析レポート 2026｜業績・経営状況・将来性の総合分析",
         "filename":  "posts/ntt-docomo-comprehensive-analysis-report-2026.html",

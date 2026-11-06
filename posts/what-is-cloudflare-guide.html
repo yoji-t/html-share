@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloudflareとは？仕組み・機能・活用方法を解説</title>
+<style>
+:root {
+  --primary: #e87524;
+  --dark: #243247;
+  --light: #f4f7fb;
+  --blue: #eaf3ff;
+  --green: #e8f7ef;
+  --border: #dce3eb;
+  --text: #344054;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Noto Sans JP", sans-serif;
+  line-height: 1.85;
+  color: var(--text);
+  background: var(--light);
+}
+header {
+  background: linear-gradient(135deg, #26384f, #e87524);
+  color: white;
+  padding: 55px 20px;
+  text-align: center;
+}
+header h1 { font-size: 2rem; margin: 0 0 12px; }
+header p { margin: 0; opacity: .95; }
+main {
+  max-width: 950px;
+  margin: 30px auto;
+  padding: 0 18px 50px;
+}
+section {
+  background: white;
+  padding: 25px;
+  margin-bottom: 22px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.04);
+}
+h2 {
+  color: var(--dark);
+  font-size: 1.45rem;
+  border-left: 5px solid var(--primary);
+  padding-left: 13px;
+  margin-top: 0;
+}
+h3 { color: #354b64; margin-top: 25px; }
+p { margin: 12px 0; }
+strong { color: #243247; }
+.lead {
+  font-size: 1.12rem;
+  font-weight: 600;
+}
+.highlight {
+  background: #fff3e9;
+  border-radius: 8px;
+  padding: 17px;
+  margin: 18px 0;
+}
+.info {
+  background: var(--blue);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 15px 0;
+}
+.success {
+  background: var(--green);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 15px 0;
+}
+.diagram {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  margin: 20px 0;
+  text-align: center;
+}
+.node {
+  padding: 15px;
+  border-radius: 8px;
+  margin: 8px auto;
+  max-width: 500px;
+  font-weight: 600;
+}
+.node.user { background: #eaf3ff; }
+.node.cloudflare { background: #e8f7ef; }
+.node.server { background: #f0f1f4; }
+.node.redirect { background: #fff2e4; }
+.arrow {
+  font-size: 25px;
+  color: #8492a6;
+  line-height: 1.3;
+}
+.small {
+  font-size: .87rem;
+  color: #667085;
+  font-weight: normal;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 13px;
+  margin: 18px 0;
+}
+.feature {
+  background: #f7f9fc;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 17px;
+}
+.feature h3 { margin: 0 0 8px; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: .94rem;
+}
+th,td {
+  border: 1px solid var(--border);
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: #edf1f6;
+  color: var(--dark);
+}
+ul { padding-left: 23px; }
+li { margin-bottom: 7px; }
+a { color: #1769aa; overflow-wrap: anywhere; }
+footer {
+  text-align: center;
+  color: #788394;
+  padding: 25px;
+  font-size: .85rem;
+}
+@media(max-width:600px) {
+  header h1 { font-size: 1.55rem; }
+  section { padding: 18px; }
+  table { font-size: .83rem; }
+  th,td { padding: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Cloudflareとは？</h1>
+  <p>仕組み・主な機能・サイト移転での活用方法を徹底解説</p>
+</header>
+
+<main>
+
+<section>
+  <h2>1. Cloudflareとは何か？</h2>
+  <p class="lead">
+    Cloudflare（クラウドフレア）は、インターネット上の
+    Webサイトと訪問者の間に入り、Webサイトの表示・高速化・
+    セキュリティ・通信制御などを担当するサービスです。
+  </p>
+
+  <div class="highlight">
+    <strong>重要なポイント：</strong><br>
+    Cloudflareは、Webサイトそのものを作るサービスというより、
+    Webサイトの前段に立ってアクセスを管理する
+    インターネットインフラのプラットフォームです。
+  </div>
+
+  <p>
+    一般に、このような仕組みを
+    <strong>リバースプロキシ（Reverse Proxy）</strong>
+    と呼びます。
+  </p>
+
+  <div class="diagram">
+    <div class="node user">
+      訪問者のパソコン・スマートフォン<br>
+      <span class="small">Webサイトを見たい人</span>
+    </div>
+    <div class="arrow">↓ アクセス要求</div>
+    <div class="node cloudflare">
+      Cloudflare<br>
+      <span class="small">
+        高速化・セキュリティ・転送・通信制御
+      </span>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="node server">
+      Webサイトのサーバー<br>
+      <span class="small">実際のWebサイトのデータを保管・配信</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>2. Cloudflareの主な機能</h2>
+
+  <div class="grid">
+    <div class="feature">
+      <h3>① DNS</h3>
+      <p>
+        ドメイン名と接続先のIPアドレスを結びつけます。
+        例えば、example.comにアクセスしたとき、
+        どこに接続するかを管理します。
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>② CDN</h3>
+      <p>
+        Webサイトの画像やファイルなどを世界各地の
+        サーバーにキャッシュします。
+        訪問者に近い場所から配信することで表示を高速化します。
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>③ セキュリティ</h3>
+      <p>
+        不正アクセス、DDoS攻撃、悪意のある通信などを
+        検知・遮断します。
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>④ リダイレクト</h3>
+      <p>
+        古いURLにアクセスした人を、新しいURLに
+        自動的に転送します。今回利用した機能です。
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>⑤ Workers</h3>
+      <p>
+        Cloudflareの世界各地のサーバー上でプログラムを
+        実行できます。APIや独自のアクセス制御などを
+        構築できます。
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>⑥ Pages</h3>
+      <p>
+        HTML・CSS・JavaScriptなどで作った静的Webサイトを
+        公開できます。GitHubとの連携にも対応しています。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>3. 今回利用したURL転送の仕組み</h2>
+
+  <p>
+    例えば、古いサイトが
+    <strong>old-site.com</strong>、
+    新しいサイトが
+    <strong>new-site.com</strong>の場合を考えます。
+  </p>
+
+  <div class="diagram">
+    <div class="node user">
+      ① 古いサイトにアクセス<br>
+      https://old-site.com
+    </div>
+    <div class="arrow">↓</div>
+    <div class="node cloudflare">
+      ② Cloudflareがアクセスを受け取る<br>
+      <span class="small">設定された転送ルールを確認</span>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="node redirect">
+      ③ 新しいURLへの転送を指示<br>
+      <span class="small">HTTP 301（恒久的な移転）</span>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="node user">
+      ④ 新しいサイトを表示<br>
+      https://new-site.com
+    </div>
+  </div>
+
+  <div class="success">
+    <strong>重要：</strong><br>
+    古いサイトのWebサーバーを停止していても、
+    Cloudflareが古いドメインへのアクセスを受け取り、
+    転送処理を行える場合があります。
+    ただし、古いドメインの契約とDNS設定は維持する必要があり、
+    Cloudflareを経由するDNS・プロキシ設定も必要です。
+  </div>
+
+  <h3>301と302の違い</h3>
+
+  <table>
+    <tr>
+      <th>種類</th>
+      <th>意味</th>
+      <th>用途</th>
+    </tr>
+    <tr>
+      <td><strong>301</strong></td>
+      <td>恒久的な転送</td>
+      <td>サイトを完全に移転するとき</td>
+    </tr>
+    <tr>
+      <td><strong>302</strong></td>
+      <td>一時的な転送</td>
+      <td>メンテナンスや期間限定の移動</td>
+    </tr>
+  </table>
+
+  <p>
+    今回のように古いサイトを閉じて新しいサイトに
+    完全移転する場合は、基本的に301を使用します。
+  </p>
+
+  <p>
+    SEOの観点でも、恒久的なサイト移転には301が基本です。
+    古いページと新しいページの内容が対応する場合は、
+    ページ単位で転送先を設定することが望ましいです。
+  </p>
+</section>
+
+<section>
+  <h2>4. ムームードメイン・サーバー・Cloudflareの違い</h2>
+
+  <p>
+    Webサイトを運営するサービスは、それぞれ役割が異なります。
+  </p>
+
+  <table>
+    <tr>
+      <th>サービス</th>
+      <th>役割</th>
+    </tr>
+    <tr>
+      <td>ムームードメイン</td>
+      <td>ドメインの取得・契約・更新</td>
+    </tr>
+    <tr>
+      <td>レンタルサーバー</td>
+      <td>Webサイトのファイルを保管・公開</td>
+    </tr>
+    <tr>
+      <td>Cloudflare</td>
+      <td>DNS・転送・高速化・セキュリティ</td>
+    </tr>
+    <tr>
+      <td>Google Search Console</td>
+      <td>Google検索での掲載状況の確認</td>
+    </tr>
+  </table>
+
+  <h3>サービス間の関係</h3>
+
+  <div class="diagram">
+    <div class="node user">
+      ムームードメイン<br>
+      <span class="small">ドメインの契約管理</span>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="node cloudflare">
+      Cloudflare<br>
+      <span class="small">DNS管理・転送・通信制御</span>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="node server">
+      新しいWebサイト<br>
+      <span class="small">実際のサイトの公開場所</span>
+    </div>
+  </div>
+
+  <div class="info">
+    <strong>ドメイン契約先とDNS管理先は別々にできる</strong><br>
+    ムームードメインでドメインを契約したまま、
+    DNSの管理だけをCloudflareに移すことができます。
+    ドメインの契約そのものをCloudflareに移す必要はありません。
+  </div>
+</section>
+
+<section>
+  <h2>5. Cloudflareはどんな企業に使われている？</h2>
+
+  <table>
+    <tr>
+      <th>利用者</th>
+      <th>主な利用目的</th>
+    </tr>
+    <tr>
+      <td>個人ブログ</td>
+      <td>DNS管理、URL転送、表示高速化</td>
+    </tr>
+    <tr>
+      <td>企業サイト</td>
+      <td>不正アクセス防止、CDN</td>
+    </tr>
+    <tr>
+      <td>ECサイト</td>
+      <td>大量アクセスへの対応、セキュリティ</td>
+    </tr>
+    <tr>
+      <td>Webサービス</td>
+      <td>APIの保護、通信制御</td>
+    </tr>
+    <tr>
+      <td>アプリ開発企業</td>
+      <td>Workersによるプログラム実行</td>
+    </tr>
+    <tr>
+      <td>大規模サービス</td>
+      <td>負荷分散、DDoS対策</td>
+    </tr>
+  </table>
+
+  <p>
+    世界中からアクセスされるWebサイトでは、
+    Cloudflareの世界各地のネットワークを活用することで、
+    アクセスを効率よく処理できます。
+  </p>
+</section>
+
+<section>
+  <h2>6. Cloudflareは無料でも使える</h2>
+
+  <p>
+    Cloudflareには無料プランがあり、個人サイトの運営でも
+    多くの機能を利用できます。
+  </p>
+
+  <h3>無料プランで利用できる代表的な機能</h3>
+  <ul>
+    <li>DNS管理</li>
+    <li>CDNによる高速化</li>
+    <li>基本的なセキュリティ対策</li>
+    <li>SSL/TLS対応</li>
+    <li>URL転送ルール</li>
+    <li>Workersの無料利用枠</li>
+  </ul>
+
+  <p class="small">
+    ※各機能の利用条件・上限・対象プランは変更される場合があります。
+    Workersなどには利用量の制限があります。
+  </p>
+
+  <div class="highlight">
+    公式サイト：
+    <a href="https://www.cloudflare.com/" target="_blank" rel="noopener">
+      https://www.cloudflare.com/
+    </a>
+  </div>
+</section>
+
+<section>
+  <h2>7. 今後のWebサイト運営での活用方法</h2>
+
+  <p>
+    CloudflareはURL転送だけでなく、Webサイトのインフラを
+    幅広く管理できます。今後は次のような使い方が考えられます。
+  </p>
+
+  <table>
+    <tr>
+      <th>やりたいこと</th>
+      <th>Cloudflareの機能</th>
+    </tr>
+    <tr>
+      <td>古いドメインから新ドメインへの転送</td>
+      <td>Redirect Rules</td>
+    </tr>
+    <tr>
+      <td>Webサイトの表示高速化</td>
+      <td>CDN</td>
+    </tr>
+    <tr>
+      <td>不正アクセスの防止</td>
+      <td>WAF・DDoS対策</td>
+    </tr>
+    <tr>
+      <td>独自のアクセス解析・制御</td>
+      <td>Workers</td>
+    </tr>
+    <tr>
+      <td>静的Webサイトの公開</td>
+      <td>Cloudflare Pages</td>
+    </tr>
+    <tr>
+      <td>独自APIの構築</td>
+      <td>Workers</td>
+    </tr>
+  </table>
+
+  <h3>特に注目したいCloudflare Pages</h3>
+
+  <p>
+    Cloudflare Pagesは、HTML・CSS・JavaScriptで作った
+    静的Webサイトを公開できるサービスです。
+  </p>
+
+  <div class="info">
+    <strong>GitHubとの連携が便利</strong><br>
+    GitHubにHTMLファイルを保存しておき、
+    Cloudflare Pagesと連携すると、
+    ファイルを更新するたびにWebサイトを自動的に
+    更新する仕組みを構築できます。
+  </div>
+
+  <p>
+    GitHub Pagesと同じように、HTMLで作ったサイトを
+    インターネット上に公開する用途に使えます。
+  </p>
+
+  <p>
+    例えば、チームの活動紹介、試合結果、特許分析レポート、
+    技術情報の公開などにも応用できます。
+  </p>
+</section>
+
+<section>
+  <h2>8. まとめ</h2>
+
+  <div class="highlight">
+    <p class="lead">
+      Cloudflareは単なるURL転送サービスではなく、
+      Webサイトのインフラを管理する総合プラットフォームです。
+    </p>
+  </div>
+
+  <ul>
+    <li>DNSによってドメインと接続先を管理する</li>
+    <li>CDNによってWebサイトの表示を高速化する</li>
+    <li>セキュリティ機能によって不正アクセスを防ぐ</li>
+    <li>リダイレクト機能によって古いサイトから新しいサイトに転送する</li>
+    <li>Workersによって独自プログラムを実行する</li>
+    <li>PagesによってHTMLサイトを公開する</li>
+  </ul>
+
+  <p>
+    今回のように転送だけに使うのもよいですが、
+    今後Webサイトを複数運営したり、
+    GitHubでHTMLを公開したりする場合にも活用できます。
+  </p>
+</section>
+
+<section>
+  <h2>9. 公式情報・参考リンク</h2>
+  <ul>
+    <li>
+      <a href="https://www.cloudflare.com/" target="_blank" rel="noopener">
+        Cloudflare公式サイト
+      </a>
+    </li>
+    <li>
+      <a href="https://developers.cloudflare.com/fundamentals/concepts/how-cloudflare-works/"
+         target="_blank" rel="noopener">
+        Cloudflareの仕組み
+      </a>
+    </li>
+    <li>
+      <a href="https://developers.cloudflare.com/rules/url-forwarding/"
+         target="_blank" rel="noopener">
+        URL転送の設定方法
+      </a>
+    </li>
+    <li>
+      <a href="https://developers.cloudflare.com/pages/"
+         target="_blank" rel="noopener">
+        Cloudflare Pages公式ドキュメント
+      </a>
+    </li>
+    <li>
+      <a href="https://developers.cloudflare.com/workers/"
+         target="_blank" rel="noopener">
+        Cloudflare Workers公式ドキュメント
+      </a>
+    </li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  Cloudflareの仕組みと活用方法についての解説
+</footer>
+
+</body>
+</html>

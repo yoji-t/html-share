@@ -1,5 +1,23 @@
 [
     {
+        "id":  "what-is-cloudflare-guide",
+        "title":  "Cloudflareとは？仕組み・機能・活用方法を解説",
+        "filename":  "posts/what-is-cloudflare-guide.html",
+        "createdAt":  "2026-11-07T08:37:00+09:00",
+        "dateFormatted":  "2026/11/07",
+        "description":  "インターネットインフラ基盤「Cloudflare」の仕組み（リバースプロキシ）、主要機能（DNS・CDN・セキュリティ・301転送・Workers・Pages）、ドメイン契約会社やサーバーとの違い、無料プランの活用法をわかりやすく解説。",
+        "tags":  [
+                     "Cloudflare",
+                     "DNS",
+                     "CDN",
+                     "Webインフラ",
+                     "リダイレクト",
+                     "サーバー",
+                     "ネットワーク",
+                     "解説"
+                 ]
+    },
+    {
         "id":  "why-australians-fear-the-north",
         "title":  "動画解説：なぜオーストラリア人は自国の北部を恐れるのか",
         "filename":  "posts/why-australians-fear-the-north.html",

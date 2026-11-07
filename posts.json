@@ -1,5 +1,21 @@
 [
     {
+        "id":  "baseball-score-tanibata-vs-motokaga",
+        "title":  "試合結果｜谷端ジュニア vs 元加賀 7-6",
+        "filename":  "posts/baseball-score-tanibata-vs-motokaga.html",
+        "createdAt":  "2026-11-07T17:03:00+09:00",
+        "dateFormatted":  "2026/11/07",
+        "description":  "学童野球 試合結果スコアボード。谷端ジュニア vs 元加賀。序盤リードを許すも6回表に一挙5得点で大逆転、7-6で谷端ジュニアが勝利。",
+        "tags":  [
+                     "野球",
+                     "学童野球",
+                     "スコアボード",
+                     "試合結果",
+                     "谷端ジュニア",
+                     "元加賀"
+                 ]
+    },
+    {
         "id":  "gemini-web-app-offline-converter-guide",
         "title":  "Geminiで作ったWebアプリを「完全オフライン化」解説まとめ",
         "filename":  "posts/gemini-web-app-offline-converter-guide.html",

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geminiで作ったWebアプリを「完全オフライン化」解説まとめ</title>
+  <style>
+    :root {
+      --primary: #1a73e8;
+      --primary-dark: #1557b0;
+      --bg-page: #f8f9fa;
+      --bg-card: #ffffff;
+      --text-main: #202124;
+      --text-muted: #5f6368;
+      --border: #dadce0;
+      --accent: #e8f0fe;
+      --code-bg: #282c34;
+      --code-text: #abb2bf;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 32px 16px;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+      color: white;
+      padding: 40px 32px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(26, 115, 232, 0.25);
+      margin-bottom: 32px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 1.85rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .meta-info {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin: 20px 0 10px 0;
+      color: var(--text-main);
+    }
+
+    p {
+      margin-bottom: 14px;
+      color: #3c4043;
+    }
+
+    ul, ol {
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .highlight-box {
+      background-color: var(--accent);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      border-left: 4px solid var(--primary);
+    }
+
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .step-item {
+      background: #f1f3f4;
+      padding: 20px;
+      border-radius: 10px;
+      border-top: 4px solid var(--primary);
+      position: relative;
+    }
+
+    .step-number {
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .step-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .step-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    pre {
+      background: var(--code-bg);
+      color: var(--code-text);
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: Consolas, Monaco, "Courier New", monospace;
+      font-size: 0.9rem;
+      margin: 14px 0;
+    }
+
+    code {
+      font-family: Consolas, Monaco, "Courier New", monospace;
+      background: #eef1f5;
+      color: #c7254e;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    pre code {
+      background: transparent;
+      color: inherit;
+      padding: 0;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table th, .comparison-table td {
+      border: 1px solid var(--border);
+      padding: 12px 14px;
+      text-align: left;
+    }
+
+    .comparison-table th {
+      background: #f1f3f4;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 0;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    a.video-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ff0000;
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: 14px;
+    }
+
+    a.video-btn:hover {
+      background: #cc0000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="badge">YouTube解説まとめ</div>
+      <h1>Geminiで作ったWebアプリを「完全オフライン化」！</h1>
+      <div class="meta-info">
+        <span>チャンネル：こーすけ先生のGoogle塾</span>
+        <span>動画ID：FznZ9EJyJX8</span>
+      </div>
+      <div>
+        <a class="video-btn" href="https://youtu.be/FznZ9EJyJX8" target="_blank" rel="noopener noreferrer">
+          YouTubeで元動画を見る
+        </a>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2>1. バイブコーディングがもたらす開発革命</h2>
+      <p>「バイブコーディング（Vibe Coding）」とは、複雑なソースコードを1行ずつ手打ちするのではなく、Geminiなどの対話型AIに自然言語（バイブス・熱意）で指示を伝え、直感的にアプリケーションを即座に試作・構築していく新しい開発手法です。</p>
+      
+      <div class="highlight-box">
+        <strong>現場の変化：</strong>
+        「マクロ職人が辞めたから改修できない」「触ってはいけないパンドラの箱」といった属人化の時代は終わりを告げ、アイデアを持つ誰もが数秒〜数分で開発者になれる時代へシフトしています。
+      </div>
+
+      <h3>バイブコーディングの3大要素</h3>
+      <ul>
+        <li><strong>直感的な指示：</strong> 魂の熱意・やりたいことを自然言語でそのまま伝えるだけ。</li>
+        <li><strong>超高速プロトタイピング：</strong> Flashモデル等とCanvas（リアルタイムプレビュー）を活用し、20〜30秒〜数分で動作アプリを生成。</li>
+        <li><strong>手軽なトライ＆エラー：</strong> 動かしてエラーが出たら「エラーを修正」ボタンやGeminiへのチャット指示で即座に直すループ開発。</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>2. オフライン環境で動かない「CDN依存問題」</h2>
+      <p>GeminiのCanvas等で生成されたHTMLアプリは、Tailwind CSS、Lucide Icons、PDF-libなどの外部ライブラリを<strong>CDN（Content Delivery Network: cdnjsやcdn.tailwindcss.comなど）</strong>経由で読み込んでいるケースがほとんどです。</p>
+
+      <div class="highlight-box">
+        <strong>なぜオフラインで動かないのか？</strong><br>
+        社内イントラ、工場内端末、自治体・公共機関の「LGWAN環境」など、安全のため外部インターネットが遮断されている環境にHTMLファイルだけを持参しても、CDNへの通信が遮断されてスタイル崩れやJavaScriptエラーが発生し、アプリが起動しません。
+      </div>
+
+      <h3>完全オフライン化に必要な手動手順</h3>
+      <ol>
+        <li>HTMLファイル本体をローカルへ保存する。</li>
+        <li>利用している外部ライブラリ（JS/CSS）の実体をすべてローカルフォルダ（<code>./lib/</code> など）にダウンロードする。</li>
+        <li>HTML内の <code>&lt;script src="https://..."&gt;</code> や <code>&lt;link href="https://..."&gt;</code> をローカル相対パス（<code>./lib/...</code>）に書き換える。</li>
+        <li>完全オフライン状態で正しく動くか動作検証を行う。</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>3. Geminiの新機能「スキル（Skills）」で自動化</h2>
+      <p>毎回手作業でライブラリを収集・置換するのは手間がかかります。そこで活用するのがGeminiの拡張機能<strong>「スキル（Skills）」</strong>です。</p>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>従来のGem（Gems）</th>
+            <th>新機能「スキル（Skills）」</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>利用形態</strong></td>
+            <td>個別のGem部屋に入って会話する</td>
+            <td>普段のチャットフローの中で自然に呼び出し可能</td>
+          </tr>
+          <tr>
+            <td><strong>複数利用</strong></td>
+            <td>1つの会話に1つのGem</td>
+            <td>1つの会話内で複数のスキルを併用可能</td>
+          </tr>
+          <tr>
+            <td><strong>呼び出し方</strong></td>
+            <td>Gemを選択して起動</td>
+            <td>メンション（<code>@スキル名</code>）またはAIによる文脈の自動認識</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>スキル「HTMLオフラインコンバーター」の動き</h3>
+      <ul>
+        <li>Canvasでアプリをバイブコーディングした後、同じチャットで<strong>「作成したアプリのオフライン化をよろしく」</strong>と指示する。</li>
+        <li>スキルがHTMLコードを自動解析し、CDN参照をローカルパスへ一括変換。</li>
+        <li>必要な外部ライブラリを一括ダウンロード・配置するための<strong>PowerShellスクリプト</strong>を自動生成して案内。</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>4. 完全オフライン運用の実践フロー</h2>
+      <div class="flow-steps">
+        <div class="step-item">
+          <div class="step-number">Step 01</div>
+          <div class="step-title">Canvas開発</div>
+          <div class="step-desc">オンライン環境でGemini Canvasを使い、欲しいWebアプリをバイブコーディングで試作・完成させる。</div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">Step 02</div>
+          <div class="step-title">スキルで変換</div>
+          <div class="step-desc">同じチャットでオフライン化スキルを発動。置換済みHTMLとライブラリ取得スクリプトを受け取る。</div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">Step 03</div>
+          <div class="step-title">資材ダウンロード</div>
+          <div class="step-desc">スクリプトを実行して <code>lib/</code> フォルダに全ライブラリを収集。一式をひとつのフォルダにまとめる。</div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">Step 04</div>
+          <div class="step-title">隔離環境へ移送</div>
+          <div class="step-desc">USBメモリ等でLGWANやオフラインPCへフォルダごと持ち込み、ブラウザで開くだけで完全稼働。</div>
+        </div>
+      </div>
+
+      <h3>フォルダ構成イメージ</h3>
+      <pre><code>app-folder/
+├── index.html        # CDN参照がローカルパス（./lib/...）に書き換わったHTML
+└── lib/              # スクリプトで一括取得した外部JS/CSSライブラリ群
+    ├── tailwind.js
+    └── pdf-lib.min.js</code></pre>
+    </section>
+
+    <footer>
+      <p>YouTube「【Skills】Geminiで作ったWebアプリを「完全オフライン化」！」解説レポート</p>
+    </footer>
+  </div>
+
+</body>
+</html>

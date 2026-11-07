@@ -1,5 +1,23 @@
 [
     {
+        "id":  "gemini-web-app-offline-converter-guide",
+        "title":  "Geminiで作ったWebアプリを「完全オフライン化」解説まとめ",
+        "filename":  "posts/gemini-web-app-offline-converter-guide.html",
+        "createdAt":  "2026-11-07T16:57:00+09:00",
+        "dateFormatted":  "2026/11/07",
+        "description":  "YouTube「こーすけ先生のGoogle塾」動画要約。Gemini CanvasによるバイブコーディングWebアプリのCDN依存問題を解決し、新機能「スキル（Skills）」でLGWANや隔離環境向けに完全オフライン化する実践手法。",
+        "tags":  [
+                     "YouTube要約",
+                     "Gemini",
+                     "AI活用",
+                     "オフライン化",
+                     "バイブコーディング",
+                     "スキル",
+                     "Web開発",
+                     "LGWAN"
+                 ]
+    },
+    {
         "id":  "fujita-shinji-tahara-seiki-jockey-stories",
         "title":  "藤田伸二×田原成貴｜競馬裏話まとめ（なぜレース前に風呂へ入るのか？）",
         "filename":  "posts/fujita-shinji-tahara-seiki-jockey-stories.html",

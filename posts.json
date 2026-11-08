@@ -1,5 +1,22 @@
 [
     {
+        "id":  "baseball-score-tanibata-vs-motokaga-5-5",
+        "title":  "試合結果｜谷端ジュニア vs 元加賀 5-5（引き分け・Time up）",
+        "filename":  "posts/baseball-score-tanibata-vs-motokaga-5-5.html",
+        "createdAt":  "2026-11-08T09:38:00+09:00",
+        "dateFormatted":  "2026/11/08",
+        "description":  "学童野球 試合結果スコアボード。谷端ジュニア（田所監督） vs 元加賀（須藤監督）。初回に5点を奪われるも2回・3回・4回と小刻みに追い上げ、5-5の同点で時間切れ（Time up）引き分け。",
+        "tags":  [
+                     "野球",
+                     "学童野球",
+                     "スコアボード",
+                     "試合結果",
+                     "谷端ジュニア",
+                     "元加賀",
+                     "引き分け"
+                 ]
+    },
+    {
         "id":  "junior-high-entrance-exam-kanji-review-test-55",
         "title":  "中学受験 漢字復習テスト（全55問・解答解説付き）",
         "filename":  "posts/junior-high-entrance-exam-kanji-review-test-55.html",

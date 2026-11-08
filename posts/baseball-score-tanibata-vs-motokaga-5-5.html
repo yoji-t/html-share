@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スコアボード</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 30px 15px;
+      background-color: #f0f2f5;
+    }
+
+    .scoreboard-container {
+      background-color: #1a2e1f; /* グラウンド・掲示板風の深緑 */
+      border: 4px solid #333;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      overflow-x: auto;
+      max-width: 100%;
+    }
+
+    table.scoreboard {
+      border-collapse: collapse;
+      color: #fff;
+      text-align: center;
+      white-space: nowrap;
+      min-width: 600px;
+    }
+
+    table.scoreboard th,
+    table.scoreboard td {
+      border: 1px solid #4a6851;
+      padding: 8px 12px;
+      font-size: 16px;
+    }
+
+    /* ヘッダー行 */
+    table.scoreboard thead th {
+      background-color: #132217;
+      font-weight: bold;
+    }
+
+    /* チーム名カラム */
+    .team-name {
+      text-align: left;
+      font-weight: bold;
+      min-width: 160px;
+      padding-left: 15px !important;
+    }
+
+    .manager {
+      font-size: 13px;
+      font-weight: normal;
+      color: #c8d6cb;
+      margin-left: 6px;
+    }
+
+    /* 得点部分（電光掲示風イエロー） */
+    .inning-score {
+      font-size: 18px;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+      color: #ffd700;
+      width: 35px;
+    }
+
+    /* 合計得点 */
+    .total-score {
+      font-size: 20px;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+      color: #ff6b6b;
+      background-color: rgba(255, 255, 255, 0.05);
+      width: 50px;
+    }
+
+    /* 記事・備考欄 */
+    .remarks {
+      font-size: 13px;
+      color: #e0e0e0;
+      text-align: left;
+      min-width: 90px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scoreboard-container">
+    <table class="scoreboard">
+      <thead>
+        <tr>
+          <th>チーム名（監督名）</th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>計</th>
+          <th>記事</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 先攻 -->
+        <tr>
+          <td class="team-name">谷端ジュニア <span class="manager">(田所)</span></td>
+          <td class="inning-score">0</td>
+          <td class="inning-score">2</td>
+          <td class="inning-score">1</td>
+          <td class="inning-score">2</td>
+          <td class="inning-score"></td>
+          <td class="inning-score"></td>
+          <td class="inning-score"></td>
+          <td class="total-score">5</td>
+          <td class="remarks"></td>
+        </tr>
+        <!-- 後攻 -->
+        <tr>
+          <td class="team-name">元加賀 <span class="manager">(須藤)</span></td>
+          <td class="inning-score">5</td>
+          <td class="inning-score">0</td>
+          <td class="inning-score">0</td>
+          <td class="inning-score">0</td>
+          <td class="inning-score"></td>
+          <td class="inning-score"></td>
+          <td class="inning-score"></td>
+          <td class="total-score">5</td>
+          <td class="remarks">Time up</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>スコアボード</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .scoreboard-container {
+      background: #1e3a1e;
+      border: 4px solid #0f200f;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      color: #fff;
+      display: inline-block;
+    }
+    table.scoreboard {
+      border-collapse: collapse;
+      text-align: center;
+      font-size: 18px;
+    }
+    table.scoreboard th, table.scoreboard td {
+      border: 2px solid #2e5a2e;
+      padding: 10px 14px;
+      min-width: 32px;
+    }
+    table.scoreboard th {
+      background-color: #142a14;
+      font-weight: bold;
+      color: #ddd;
+    }
+    table.scoreboard td.team-name {
+      text-align: left;
+      font-weight: bold;
+      padding-left: 16px;
+      padding-right: 20px;
+      white-space: nowrap;
+    }
+    table.scoreboard td.total {
+      background-color: #142a14;
+      font-weight: bold;
+      font-size: 20px;
+      color: #ffeb3b;
+    }
+    .sub-name {
+      font-size: 13px;
+      color: #bbb;
+      font-weight: normal;
+      margin-left: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="scoreboard-container">
+  <table class="scoreboard">
+    <thead>
+      <tr>
+        <th>チーム名</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>計</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="team-name">小松フェニックス <span class="sub-name">(宮内)</span></td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>4</td>
+        <td class="total">5</td>
+      </tr>
+      <tr>
+        <td class="team-name">谷端ジュニア <span class="sub-name">(田所)</span></td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td>1</td>
+        <td>0</td>
+        <td class="total">4</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

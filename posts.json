@@ -1,5 +1,21 @@
 [
     {
+        "id":  "baseball-score-komatsu-phoenix-vs-tanibata",
+        "title":  "試合結果｜小松フェニックス vs 谷端ジュニア 5-4",
+        "filename":  "posts/baseball-score-komatsu-phoenix-vs-tanibata.html",
+        "createdAt":  "2026-11-08T10:48:00+09:00",
+        "dateFormatted":  "2026/11/08",
+        "description":  "学童野球 試合結果スコアボード。小松フェニックス（宮内監督） vs 谷端ジュニア（田所監督）。中盤まで谷端ジュニアが4-1とリードするも、6回表に小松フェニックスが一挙4得点で逆転、5-4の激戦。",
+        "tags":  [
+                     "野球",
+                     "学童野球",
+                     "スコアボード",
+                     "試合結果",
+                     "小松フェニックス",
+                     "谷端ジュニア"
+                 ]
+    },
+    {
         "id":  "baseball-score-tanibata-vs-motokaga-5-5",
         "title":  "試合結果｜谷端ジュニア vs 元加賀 5-5（引き分け・Time up）",
         "filename":  "posts/baseball-score-tanibata-vs-motokaga-5-5.html",

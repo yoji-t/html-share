@@ -1,5 +1,22 @@
 [
     {
+        "id":  "baseball-score-tanibata-vs-komatsu-phoenix",
+        "title":  "試合結果｜谷端ジュニア vs 小松フェニックス 2-7（2回コールド TIME UP）",
+        "filename":  "posts/baseball-score-tanibata-vs-komatsu-phoenix.html",
+        "createdAt":  "2026-11-09T07:35:00+09:00",
+        "dateFormatted":  "2026/11/09",
+        "description":  "学童野球 試合結果スコアボード。谷端ジュニア vs 小松フェニックス。初回に2点を先制するも小松フェニックスが5得点・2得点と逆転、2回コールド（TIME UP）2-7で小松フェニックスが勝利。",
+        "tags":  [
+                     "野球",
+                     "学童野球",
+                     "スコアボード",
+                     "試合結果",
+                     "谷端ジュニア",
+                     "小松フェニックス",
+                     "コールド"
+                 ]
+    },
+    {
         "id":  "baseball-score-komatsu-phoenix-vs-tanibata",
         "title":  "試合結果｜小松フェニックス vs 谷端ジュニア 5-4",
         "filename":  "posts/baseball-score-komatsu-phoenix-vs-tanibata.html",

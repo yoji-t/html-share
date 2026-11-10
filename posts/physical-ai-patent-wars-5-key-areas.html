@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フィジカルAI特許戦争の5大係争領域 | IP戦略レポート</title>
+<style>
+:root {
+  --navy: #142b46;
+  --blue: #2463a6;
+  --light: #eef4fa;
+  --text: #263445;
+  --muted: #65758a;
+  --line: #dce4ed;
+  --red: #b94b4b;
+  --orange: #bd792c;
+  --green: #357b67;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #f3f6fa;
+  color: var(--text);
+  font-family: "Yu Gothic", "Meiryo", sans-serif;
+  line-height: 1.85;
+}
+.hero {
+  background: linear-gradient(125deg,#10263f,#245b86);
+  color: white;
+  padding: 65px 24px 55px;
+}
+.hero-inner, main, footer {
+  max-width: 1050px;
+  margin: auto;
+}
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #b9d7f2;
+  font-weight: bold;
+}
+.hero h1 {
+  font-size: clamp(27px,5vw,43px);
+  line-height: 1.4;
+  margin: 18px 0;
+}
+.hero p { color: #dceafa; max-width: 760px; }
+.hero-meta { font-size: 13px; color: #bdd0e3; }
+main { padding: 35px 20px 65px; }
+section { margin: 45px 0; }
+h2 {
+  color: var(--navy);
+  font-size: 24px;
+  border-left: 5px solid var(--blue);
+  padding-left: 15px;
+  margin-bottom: 23px;
+}
+h3 { color: var(--navy); font-size: 19px; }
+h4 { color: var(--blue); margin-bottom: 7px; }
+p { margin: 10px 0; }
+.lead {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 25px;
+  font-size: 16px;
+}
+.highlight {
+  color: var(--blue);
+  font-weight: bold;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 13px;
+  margin-top: 20px;
+}
+.summary-item {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  padding: 17px;
+}
+.summary-item strong {
+  display: block;
+  color: var(--blue);
+  font-size: 18px;
+}
+.summary-item span {
+  font-size: 13px;
+  color: var(--muted);
+}
+.area-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: 0 3px 12px rgba(20,43,70,.04);
+}
+.area-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 15px;
+}
+.number {
+  background: var(--navy);
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+.risk {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: #fceaea;
+  color: var(--red);
+  font-weight: bold;
+  white-space: nowrap;
+}
+.risk.orange {
+  background: #fff2df;
+  color: var(--orange);
+}
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  background: var(--light);
+  color: var(--blue);
+  padding: 4px 10px;
+  border-radius: 5px;
+  margin: 3px;
+}
+.case {
+  background: #f5f8fc;
+  border-left: 3px solid var(--blue);
+  padding: 14px 18px;
+  margin-top: 15px;
+  border-radius: 0 8px 8px 0;
+}
+.case strong { color: var(--navy); }
+.keypoint {
+  background: #edf4fb;
+  border-radius: 9px;
+  padding: 15px 18px;
+  margin-top: 15px;
+}
+.keypoint strong { color: var(--blue); }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: white;
+  font-size: 14px;
+}
+th, td {
+  padding: 13px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: #eaf1f8;
+  color: var(--navy);
+}
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 15px;
+}
+.strategy {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  padding: 20px;
+}
+.strategy .num {
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: bold;
+}
+.strategy h3 { font-size: 17px; }
+.tire-box {
+  background: linear-gradient(135deg,#142b46,#245b86);
+  color: white;
+  padding: 28px;
+  border-radius: 14px;
+}
+.tire-box h2, .tire-box h3 { color: white; }
+.tire-box h2 { border-color: #8fc5f2; }
+.tire-table th { background: #eaf1f8; }
+.tire-table td { background: white; }
+.conclusion {
+  background: #fff;
+  border: 2px solid #c8d9e9;
+  border-radius: 13px;
+  padding: 25px;
+}
+.conclusion strong { color: var(--blue); }
+.source {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+a { color: var(--blue); }
+footer {
+  border-top: 1px solid var(--line);
+  padding: 25px 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+@media(max-width:600px) {
+  .hero { padding: 45px 20px; }
+  main { padding: 25px 14px 45px; }
+  .area-card { padding: 18px; }
+  .area-header { flex-wrap: wrap; }
+  table { font-size: 12px; }
+  th,td { padding: 9px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">INTELLECTUAL PROPERTY STRATEGY REPORT</div>
+    <h1>フィジカルAI特許戦争の<br>5大係争領域</h1>
+    <p>Foley & Lardnerが分析する、ロボット・自動車・物流業界における次世代の特許競争と知財戦略</p>
+    <div class="hero-meta">出典：Foley & Lardner LLP ｜ 2026年11月10日公開</div>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <h2>1. エグゼクティブサマリー</h2>
+  <div class="lead">
+    フィジカルAIの普及に伴い、AIが現実世界の機械やロボットを認識・判断・操作する技術をめぐる特許競争が激化すると予想される。
+    <br><br>
+    競争の対象はAIアルゴリズムだけではない。機械構造、駆動機構、センサー、制御ソフトウェア、通信技術など、幅広い技術領域に及ぶ。
+    <br><br>
+    <span class="highlight">今後の知財戦略では、個別の製品・部品の特許だけでなく、システム全体を押さえるポートフォリオ構築が重要になる。</span>
+  </div>
+  <div class="summary-grid">
+    <div class="summary-item">
+      <strong>01</strong>
+      <span>産業用・協働ロボット</span>
+    </div>
+    <div class="summary-item">
+      <strong>02</strong>
+      <span>四足歩行・ヒューマノイド</span>
+    </div>
+    <div class="summary-item">
+      <strong>03</strong>
+      <span>自律動作の基盤ソフトウェア</span>
+    </div>
+    <div class="summary-item">
+      <strong>04</strong>
+      <span>通信・標準必須特許（SEP）</span>
+    </div>
+    <div class="summary-item">
+      <strong>05</strong>
+      <span>倉庫・物流自動化</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>2. フィジカルAIとは何か</h2>
+  <div class="lead">
+    フィジカルAIとは、AIがセンサーなどを通じて現実世界の状況を認識し、自ら判断して物理的な動作を実行する技術である。
+  </div>
+  <div class="summary-grid">
+    <div class="summary-item">
+      <strong>ヒューマノイド</strong>
+      <span>人間のように歩き、作業するロボット</span>
+    </div>
+    <div class="summary-item">
+      <strong>自動運転</strong>
+      <span>周囲を認識して自律的に走行する車両</span>
+    </div>
+    <div class="summary-item">
+      <strong>産業用ロボット</strong>
+      <span>工場で自律的に作業する機械</span>
+    </div>
+    <div class="summary-item">
+      <strong>物流ロボット</strong>
+      <span>倉庫内で荷物を運搬・仕分けする機械</span>
+    </div>
+  </div>
+  <p>生成AIがデジタル情報を扱うのに対し、フィジカルAIは現実世界に働きかける点が大きな違いである。</p>
+</section>
+
+<section>
+  <h2>3. 特許戦争の5大係争領域</h2>
+
+  <article class="area-card">
+    <div class="area-header">
+      <div class="number">01</div>
+      <h3>産業用ロボット・協働ロボット</h3>
+      <span class="risk">注目領域</span>
+    </div>
+    <h4>対象となる技術</h4>
+    <span class="tag">ロボットアーム</span>
+    <span class="tag">関節構造</span>
+    <span class="tag">協調制御</span>
+    <span class="tag">安全制御</span>
+    <span class="tag">操作ソフトウェア</span>
+    <div class="case">
+      <strong>事例：Teradyne Robotics 対 JAKA</strong>
+      <p>Teradyne RoboticsがJAKAに対し、欧州統一特許裁判所（UPC）で特許侵害訴訟を提起。欧州特許3件が対象となった。</p>
+    </div>
+    <div class="keypoint">
+      <strong>知財上のポイント</strong><br>
+      中国などの新興ロボットメーカーが欧州市場へ進出する際、既存メーカーの特許網との抵触が問題になる。製品開発と並行したFTO調査が重要。
+    </div>
+  </article>
+
+  <article class="area-card">
+    <div class="area-header">
+      <div class="number">02</div>
+      <h3>四足歩行・ヒューマノイドロボット</h3>
+      <span class="risk">重要領域</span>
+    </div>
+    <h4>対象となる技術</h4>
+    <span class="tag">歩行制御</span>
+    <span class="tag">姿勢維持</span>
+    <span class="tag">転倒防止</span>
+    <span class="tag">アクチュエーター</span>
+    <span class="tag">関節機構</span>
+    <div class="case">
+      <strong>事例①：Boston Dynamics 対 Ghost Robotics</strong>
+      <p>四足歩行ロボットに関する特許紛争。合計11件の特許が対象となった。2025年1月に再提訴を認めない形で取り下げられた。</p>
+      <br>
+      <strong>事例②：Unitree Robotics関連の特許紛争</strong>
+      <p>中国で四足歩行ロボットをめぐる特許関連訴訟が発生。最終的に請求は棄却された。</p>
+    </div>
+    <div class="keypoint">
+      <strong>知財上のポイント</strong><br>
+      歩行、姿勢制御、駆動機構はヒューマノイドの競争力を左右する中核技術。基本動作を広くカバーする特許の価値が高まる可能性がある。
+    </div>
+  </article>
+
+  <article class="area-card">
+    <div class="area-header">
+      <div class="number">03</div>
+      <h3>自律動作を実現する基盤ソフトウェア</h3>
+      <span class="risk orange">技術横断型</span>
+    </div>
+    <h4>対象となる技術</h4>
+    <span class="tag">ロボットOS</span>
+    <span class="tag">環境認識</span>
+    <span class="tag">経路計画</span>
+    <span class="tag">センサー統合</span>
+    <span class="tag">動作計画</span>
+    <div class="case">
+      <strong>事例：Perrone Robotics 対自動車メーカー7社</strong>
+      <p>2025年11月、Tesla、Toyota、Volkswagen、Hyundai、Kia、Mazda、Nissanを相手に訴訟を提起。自律走行車両にも関連する汎用ロボットOS技術が争点となった。</p>
+    </div>
+    <div class="keypoint">
+      <strong>知財上のポイント</strong><br>
+      基盤ソフトウェアの特許は、特定のロボットだけでなく、自動車、ドローン、物流ロボットなど複数の産業に影響する可能性がある。
+    </div>
+  </article>
+
+  <article class="area-card">
+    <div class="area-header">
+      <div class="number">04</div>
+      <h3>通信技術・標準必須特許（SEP）</h3>
+      <span class="risk orange">ライセンス問題</span>
+    </div>
+    <h4>対象となる技術</h4>
+    <span class="tag">5G・4G</span>
+    <span class="tag">Wi-Fi</span>
+    <span class="tag">V2X</span>
+    <span class="tag">遠隔操作</span>
+    <span class="tag">ロボット間通信</span>
+    <div class="case">
+      <strong>事例：Tesla 対 Avanci</strong>
+      <p>Avanciが提供する5G車載通信ライセンスプログラムをめぐり、Teslaの訴えについて英国最高裁が2026年7月に一部請求を審理に進める判断をした。</p>
+    </div>
+    <div class="keypoint">
+      <strong>知財上のポイント</strong><br>
+      通信機能を備えるロボットやドローンにもSEPのライセンス問題が波及する可能性がある。製品価格に占めるライセンス費用の把握が重要。
+    </div>
+  </article>
+
+  <article class="area-card">
+    <div class="area-header">
+      <div class="number">05</div>
+      <h3>倉庫・物流・マテリアルハンドリング</h3>
+      <span class="risk">既に紛争発生</span>
+    </div>
+    <h4>対象となる技術</h4>
+    <span class="tag">自律搬送ロボット</span>
+    <span class="tag">荷物仕分け</span>
+    <span class="tag">ピッキング</span>
+    <span class="tag">コンベヤー制御</span>
+    <span class="tag">協調制御</span>
+    <div class="case">
+      <strong>事例①：OPEX 対 HC Robotics</strong>
+      <p>倉庫内の物品搬送・配送システムに関する特許紛争。ITCの特許侵害認定を2025年8月にCAFCが支持した。</p>
+      <br>
+      <strong>事例②：Fortna Systems 対 Plus One Robotics</strong>
+      <p>荷物の仕分けやコンベヤーシステムに関する紛争。2025年12月に再提訴を認めない形で終了した。</p>
+    </div>
+    <div class="keypoint">
+      <strong>知財上のポイント</strong><br>
+      大規模な物流設備は導入後の変更が容易ではない。輸入差止めや販売差止めが生じた場合、メーカーだけでなく導入企業にも影響が及ぶ。
+    </div>
+  </article>
+</section>
+
+<section>
+  <h2>4. 5大領域の比較</h2>
+  <div style="overflow-x:auto">
+  <table>
+    <thead>
+      <tr>
+        <th>領域</th>
+        <th>主な特許技術</th>
+        <th>代表的な企業・事例</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>①産業用ロボット</td><td>関節・協調制御・操作ソフト</td><td>Teradyne、JAKA</td></tr>
+      <tr><td>②歩行ロボット</td><td>歩行・姿勢制御・駆動機構</td><td>Boston Dynamics、Unitree</td></tr>
+      <tr><td>③基盤ソフトウェア</td><td>OS・自律制御・環境認識</td><td>Perrone Robotics</td></tr>
+      <tr><td>④通信・SEP</td><td>5G・V2X・無線通信</td><td>Avanci、Tesla</td></tr>
+      <tr><td>⑤物流自動化</td><td>搬送・仕分け・ピッキング</td><td>OPEX、HC Robotics、Fortna</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2>5. 知的財産戦略上の重要ポイント</h2>
+  <div class="strategy-grid">
+    <div class="strategy">
+      <div class="num">STRATEGY 01</div>
+      <h3>ハード・ソフトの両面で権利化</h3>
+      <p>機械構造だけでなく、AI、センサー、制御、通信まで横断的に特許網を構築する。</p>
+    </div>
+    <div class="strategy">
+      <div class="num">STRATEGY 02</div>
+      <h3>中国企業との競争を意識</h3>
+      <p>中国企業の出願・権利取得・海外展開を継続監視し、FTO調査を強化する。</p>
+    </div>
+    <div class="strategy">
+      <div class="num">STRATEGY 03</div>
+      <h3>権利行使できる特許を重視</h3>
+      <p>権利範囲、侵害発見可能性、権利行使の実効性、権利帰属の明確性を考慮する。</p>
+    </div>
+    <div class="strategy">
+      <div class="num">STRATEGY 04</div>
+      <h3>グローバル出願戦略</h3>
+      <p>米国・欧州・中国など、製造拠点と主要販売市場を意識して出願国を選択する。</p>
+    </div>
+    <div class="strategy">
+      <div class="num">STRATEGY 05</div>
+      <h3>クロスライセンスへの備え</h3>
+      <p>自社の特許ポートフォリオを充実させ、他社との交渉力・防御力を高める。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="tire-box">
+    <h2>6. タイヤ・自動車業界への波及</h2>
+    <p>フィジカルAIの特許競争は、ロボット業界だけの問題ではない。タイヤ・自動車メーカーにも直接的な影響が考えられる。</p>
+    <h3>注目すべき技術領域</h3>
+  </div>
+  <div style="overflow-x:auto">
+  <table class="tire-table">
+    <thead>
+      <tr><th>技術領域</th><th>タイヤ・自動車業界との接点</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>自律制御</td><td>自動運転車両の走行制御</td></tr>
+      <tr><td>センサー</td><td>路面状態・障害物・タイヤ状態の認識</td></tr>
+      <tr><td>駆動機構</td><td>車輪・モーター・駆動システム</td></tr>
+      <tr><td>姿勢制御</td><td>車両安定性・振動制御</td></tr>
+      <tr><td>通信</td><td>コネクテッドカー・V2X</td></tr>
+      <tr><td>AI解析</td><td>摩耗予測・故障予測・保守管理</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>特に注目したい5つの研究開発テーマ</h3>
+  <div class="summary-grid">
+    <div class="summary-item">
+      <strong>AI摩耗予測</strong>
+      <span>タイヤの摩耗・損傷を予測する技術</span>
+    </div>
+    <div class="summary-item">
+      <strong>路面認識</strong>
+      <span>センサーを利用した路面状態の推定</span>
+    </div>
+    <div class="summary-item">
+      <strong>走行制御連携</strong>
+      <span>タイヤ特性と車両制御の統合</span>
+    </div>
+    <div class="summary-item">
+      <strong>ロボット用タイヤ</strong>
+      <span>自律搬送・作業ロボット向けの特殊タイヤ</span>
+    </div>
+    <div class="summary-item">
+      <strong>予知保全</strong>
+      <span>AIによるタイヤの状態監視・保守管理</span>
+    </div>
+  </div>
+  <div class="keypoint">
+    <strong>タイヤメーカーへの示唆</strong><br>
+    従来のタイヤ構造・材料に関する特許だけでなく、センサー、AI、車両制御、ロボットとの連携まで知財調査の対象を広げる価値がある。
+  </div>
+</section>
+
+<section>
+  <h2>7. 今後の特許調査で注目したいIPC</h2>
+  <div style="overflow-x:auto">
+  <table>
+    <thead>
+      <tr><th>IPC分類</th><th>技術領域</th><th>調査の観点</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>G06N</td><td>AI・機械学習</td><td>学習モデル・推論技術</td></tr>
+      <tr><td>G05B</td><td>制御システム</td><td>ロボット・自律制御</td></tr>
+      <tr><td>G05D</td><td>非電気的変数の制御等</td><td>位置・姿勢・速度制御</td></tr>
+      <tr><td>B25J</td><td>マニピュレーター</td><td>ロボットアーム・関節</td></tr>
+      <tr><td>H04W</td><td>無線通信ネットワーク</td><td>5G・ロボット通信</td></tr>
+      <tr><td>B60C</td><td>車両用タイヤ</td><td>タイヤ構造・状態監視</td></tr>
+      <tr><td>B60W</td><td>車両の統合制御</td><td>車両・タイヤ連携制御</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p style="font-size:12px;color:#65758a">※ IPCは調査の出発点となる代表例。実際の検索ではCPC分類、キーワード、引用文献、ファミリー情報などを組み合わせる。</p>
+</section>
+
+<section>
+  <h2>8. 総括・今後の方向性</h2>
+  <div class="conclusion">
+    <h3>フィジカルAIは、AI競争から知財競争へ</h3>
+    フィジカルAIの競争は、AIモデルの性能だけで決まるものではない。機械構造、センサー、制御、ソフトウェア、通信を統合した技術力が重要になる。
+    <br><br>
+    <strong>知財部門にとっての重要課題は、技術分野を横断した特許ポートフォリオの把握と、競合企業の権利化動向の継続監視である。</strong>
+    <br><br>
+    タイヤ・自動車業界においても、従来の機械・材料分野に加え、AI・制御・センサー・通信分野を組み合わせた知財戦略が求められる。
+  </div>
+</section>
+
+<section>
+  <h2>9. 参考資料</h2>
+  <div class="source">
+    <strong>Foley & Lardner LLP</strong>
+    <p>Where Will the Physical AI Patent Wars Begin?</p>
+    <p>公開日：2026年11月10日</p>
+    <a href="https://www.foley.com/" target="_blank" rel="noopener">Foley & Lardner 公式サイト</a>
+    <p style="font-size:12px;color:#65758a">
+      ※本ページは記事の論点を日本語で整理した解説資料。訴訟の経過・判断内容は、原文および各裁判所の公式記録で確認すること。
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div>
+    PHYSICAL AI × INTELLECTUAL PROPERTY STRATEGY<br>
+    Foley & Lardner分析記事に基づく解説レポート ｜ 2026
+  </div>
+</footer>
+
+</body>
+</html>

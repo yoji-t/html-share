@@ -1,5 +1,23 @@
 [
     {
+        "id":  "what-is-muse-ember-guide",
+        "title":  "Muse Emberとは？通常のMuseアプリで使える？特徴・料金・特許業務への活用",
+        "filename":  "posts/what-is-muse-ember-guide.html",
+        "createdAt":  "2026-11-10T13:22:00+09:00",
+        "dateFormatted":  "2026/11/10",
+        "description":  "Metaが発表した低コスト・大量処理特化AIモデル「Muse Ember（muse-ember-1.0）」の概要。WonderやSparkとの違い、通常アプリでの対応状況、料金体系、特許公報分類など知財実務への活用シナリオを解説。",
+        "tags":  [
+                     "AI",
+                     "Meta",
+                     "Muse Ember",
+                     "Muse",
+                     "LLM",
+                     "知財",
+                     "特許",
+                     "エージェント"
+                 ]
+    },
+    {
         "id":  "junior-high-science-calcium-carbonate-guide",
         "title":  "炭酸カルシウムの覚え方｜中学受験理科（石・貝・卵・サンゴ＆塩酸実験）",
         "filename":  "posts/junior-high-science-calcium-carbonate-guide.html",

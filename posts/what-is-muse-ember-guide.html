@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muse Emberとは？通常のMuseアプリで使える？</title>
+<style>
+:root {
+  --primary: #3157a4;
+  --light: #eef3fc;
+  --dark: #24334d;
+  --accent: #eaf5ee;
+  --border: #dce3ed;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 24px 16px;
+  background: #f4f6fa;
+  color: #303846;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Noto Sans JP", sans-serif;
+  line-height: 1.85;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.05);
+}
+h1 {
+  color: var(--dark);
+  font-size: 28px;
+  line-height: 1.5;
+  border-bottom: 3px solid var(--primary);
+  padding-bottom: 15px;
+}
+h2 {
+  font-size: 21px;
+  color: var(--primary);
+  margin-top: 38px;
+  padding-left: 12px;
+  border-left: 5px solid var(--primary);
+}
+h3 { color: var(--dark); font-size: 17px; }
+.lead {
+  background: var(--light);
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.answer {
+  background: var(--accent);
+  border-left: 5px solid #3b9861;
+  padding: 18px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 14px;
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 12px;
+  text-align: left;
+}
+th { background: var(--light); color: var(--dark); }
+.bad { color: #c0392b; font-weight: bold; }
+.good { color: #23834b; font-weight: bold; }
+ul { padding-left: 24px; }
+li { margin: 7px 0; }
+.note {
+  font-size: 13px;
+  color: #687386;
+  background: #f7f8fa;
+  padding: 14px;
+  border-radius: 8px;
+}
+a { color: var(--primary); }
+footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: #7a8493;
+}
+@media(max-width:600px) {
+  .container { padding: 20px 15px; }
+  h1 { font-size: 23px; }
+  table { font-size: 12px; }
+  th, td { padding: 8px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Muse Emberとは？通常のMuseアプリで使えるの？</h1>
+
+<p class="lead">
+Muse Emberは、AIモデル「Muse」シリーズの一つです。
+大量の反復作業を低コストで処理することを重視したモデルで、
+AIエージェントや開発者向けの用途が想定されています。
+</p>
+
+<h2>1. Muse Emberとは？</h2>
+
+<p>
+Muse Emberは、Metaが2026年11月9日に発表したAIモデルです。
+高度な推論だけでなく、大量のデータ処理や繰り返し発生するタスクを
+効率よく実行することを重視しています。
+</p>
+
+<p>想定される用途は次のとおりです。</p>
+<ul>
+<li>大量の文書の読み込み・要約</li>
+<li>プログラムの修正</li>
+<li>データの抽出・分類</li>
+<li>AIエージェントからのツール呼び出し</li>
+<li>画像・音声・動画・PDFの解析</li>
+</ul>
+
+<h2>2. Museシリーズの位置づけ</h2>
+
+<table>
+<tr><th>モデル</th><th>主な役割</th></tr>
+<tr>
+<td>Muse Wonder</td>
+<td>複雑な問題の推論・計画</td>
+</tr>
+<tr>
+<td>Muse Spark</td>
+<td>コーディング・エージェント処理</td>
+</tr>
+<tr>
+<td><strong>Muse Ember</strong></td>
+<td>大量の反復作業・低コスト処理</td>
+</tr>
+</table>
+
+<p>
+イメージとしては、Wonderが司令塔、Sparkが高度な実行担当、
+Emberが大量処理担当という役割分担です。
+</p>
+
+<h2>3. Muse Emberの性能・料金</h2>
+
+<table>
+<tr><th>項目</th><th>内容</th></tr>
+<tr><td>モデルID</td><td>muse-ember-1.0</td></tr>
+<tr><td>コンテキスト</td><td>約100万トークン</td></tr>
+<tr><td>入力形式</td><td>テキスト・画像・音声・動画・PDF</td></tr>
+<tr><td>入力料金</td><td>100万トークンあたり0.10ドル</td></tr>
+<tr><td>出力料金</td><td>100万トークンあたり0.50ドル</td></tr>
+<tr><td>発表日</td><td>2026年11月9日</td></tr>
+</table>
+
+<p>
+発表情報では、Muse Spark 1.3と比較して、
+評価タスクあたりのコストを約17分の1に抑えたとされています。
+</p>
+
+<h2>4. 普通のMuseアプリの中で使えるの？</h2>
+
+<div class="answer">
+<strong>結論：通常のMuseアプリ内で、Muse Emberを選択して使うことはできません。</strong>
+</div>
+
+<table>
+<tr><th>利用環境</th><th>Emberの利用</th></tr>
+<tr><td>通常のMuseアプリ（iPhone）</td><td class="bad">非対応</td></tr>
+<tr><td>muse.ai（一般向け）</td><td class="bad">非対応</td></tr>
+<tr><td>Muse Code</td><td class="good">対応</td></tr>
+<tr><td>Meta Model API</td><td class="good">対応</td></tr>
+</table>
+
+<p>
+つまり、一般ユーザーが通常のMuseアプリを開いて、
+設定画面などからSparkやEmberを切り替えるような使い方は、
+現時点では確認できていません。
+</p>
+
+<p>
+Emberは一般消費者向けの追加機能というより、
+開発者やAIエージェント向けのモデルと考えるのが適切です。
+</p>
+
+<h2>5. 特許業務への活用可能性</h2>
+
+<p>
+Muse Emberのような低コストで大量処理を行うAIモデルは、
+特許調査や知的財産部門の業務にも活用できる可能性があります。
+</p>
+
+<table>
+<tr><th>特許業務</th><th>活用イメージ</th></tr>
+<tr>
+<td>特許公報の分類</td>
+<td>数千件の公報を技術分野別に分類する</td>
+</tr>
+<tr>
+<td>請求項の抽出</td>
+<td>独立請求項・従属請求項を整理する</td>
+</tr>
+<tr>
+<td>競合分析</td>
+<td>Michelinなどの競合企業の特許情報を抽出する</td>
+</tr>
+<tr>
+<td>要約作成</td>
+<td>発明のポイントを開発者向けに整理する</td>
+</tr>
+<tr>
+<td>Notion登録</td>
+<td>特許公報の情報を構造化してデータベースに登録する</td>
+</tr>
+</table>
+
+<h3>複数モデルを組み合わせる活用方法</h3>
+
+<p>
+例えば、Muse Wonderなどで分析方針を決め、
+Muse Emberで大量の特許公報を処理する構成が考えられます。
+</p>
+
+<ul>
+<li><strong>Wonder：</strong>分析方針の決定、重要特許の評価</li>
+<li><strong>Ember：</strong>大量の公報の分類、項目抽出、要約</li>
+<li><strong>Notion：</strong>分析結果の蓄積、検索、ダッシュボード化</li>
+</ul>
+
+<p>
+このような構成により、特許調査の一部を自動化し、
+処理コストを抑えられる可能性があります。
+ただし、実際の導入にはAPIの提供条件、精度検証、
+機密情報の取り扱いなどの確認が必要です。
+</p>
+
+<h2>6. 公式情報</h2>
+
+<ul>
+<li><a href="https://dev.meta.ai/models/muse-ember" target="_blank" rel="noopener">Muse Ember（Meta公式モデルページ）</a></li>
+<li><a href="https://research.meta.ai/blog/muse-ember" target="_blank" rel="noopener">MetaのMuse Ember発表記事</a></li>
+</ul>
+
+<div class="note">
+※本ページの提供状況・料金・性能に関する記述は、
+2026年11月10日時点の情報を前提としています。
+サービスの提供条件や対応環境は変更される可能性があります。
+導入前には公式情報で最新状況をご確認ください。
+</div>
+
+<footer>
+Muse Ember解説｜2026年11月10日作成
+</footer>
+
+</div>
+</body>
+</html>

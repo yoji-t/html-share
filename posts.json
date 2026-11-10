@@ -1,5 +1,23 @@
 [
     {
+        "id":  "what-is-terminus-intelligence-guide",
+        "title":  "Terminus Intelligenceとは？会社概要・機能・活用可能性｜AIエージェント基盤と知財業務への応用",
+        "filename":  "posts/what-is-terminus-intelligence-guide.html",
+        "createdAt":  "2026-11-10T20:08:00+09:00",
+        "dateFormatted":  "2026/11/10",
+        "description":  "AIエージェント構築・実行プラットフォーム「Terminus Intelligence」の概要。Apps/Agents/Skills/Servicesの4機能、ChatGPT・Notion・Cursorとの違い、競合特許監視やNotion連携など知財業務への応用シナリオを解説。",
+        "tags":  [
+                     "AI",
+                     "AIエージェント",
+                     "Terminus",
+                     "スタートアップ",
+                     "知財",
+                     "特許",
+                     "Notion",
+                     "自動化"
+                 ]
+    },
+    {
         "id":  "what-is-muse-ember-guide",
         "title":  "Muse Emberとは？通常のMuseアプリで使える？特徴・料金・特許業務への活用",
         "filename":  "posts/what-is-muse-ember-guide.html",

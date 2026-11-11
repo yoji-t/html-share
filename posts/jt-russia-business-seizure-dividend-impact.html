@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JTのロシア事業「接収」リスクと株価・配当への影響まとめ</title>
+<style>
+  :root {
+    --primary: #1e3a8a;
+    --primary-light: #3b82f6;
+    --accent: #dc2626;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #4b5563;
+    --border: #e5e7eb;
+    --table-header: #f1f5f9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    background-color: var(--bg);
+    color: var(--text-main);
+    line-height: 1.7;
+    padding: 24px 16px;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    color: #ffffff;
+    padding: 36px 32px;
+  }
+  header h1 {
+    font-size: 1.65rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+  .meta-info {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .meta-info a {
+    color: #60a5fa;
+    text-decoration: none;
+  }
+  .meta-info a:hover { text-decoration: underline; }
+  .content {
+    padding: 32px;
+  }
+  .summary-box {
+    background-color: #eff6ff;
+    border-left: 4px solid var(--primary-light);
+    padding: 18px 20px;
+    border-radius: 6px;
+    margin-bottom: 32px;
+  }
+  .summary-box h3 {
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  .summary-box ul {
+    margin-left: 20px;
+    color: var(--text-main);
+  }
+  h2 {
+    font-size: 1.35rem;
+    color: var(--primary);
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin: 36px 0 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  h2:first-of-type { margin-top: 0; }
+  h3 {
+    font-size: 1.1rem;
+    margin: 20px 0 10px 0;
+    color: #0f172a;
+  }
+  p {
+    margin-bottom: 14px;
+    color: var(--text-muted);
+  }
+  .highlight-badge {
+    display: inline-block;
+    background-color: #fee2e2;
+    color: var(--accent);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.85rem;
+  }
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .data-card {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+  }
+  .data-card .label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .data-card .val {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+  .data-card .val.danger {
+    color: var(--accent);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95rem;
+  }
+  th, td {
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    text-align: left;
+  }
+  th {
+    background-color: var(--table-header);
+    font-weight: 600;
+  }
+  .point-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+  }
+  .point-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 12px;
+    color: var(--text-muted);
+  }
+  .point-list li strong {
+    color: var(--text-main);
+  }
+  .point-list li::before {
+    content: "■";
+    position: absolute;
+    left: 8px;
+    color: var(--primary-light);
+    font-size: 0.9rem;
+  }
+  .danger-callout {
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 24px 0;
+  }
+  .danger-callout h4 {
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 20px 32px;
+    background-color: #f8fafc;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>JTのロシア事業が没収（一時管理）！？で暴落！配当はどうなるのか話します</h1>
+    <div class="meta-info">
+      <span>配信元：田端大学 投資学部</span>
+      <span>公開日：2026年11月10日</span>
+      <span>動画URL：<a href="https://youtu.be/YLsSo8SPyAs" target="_blank" rel="noopener">YouTubeで視聴</a></span>
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="summary-box">
+      <h3>【動画の要約ポイント】</h3>
+      <ul>
+        <li><strong>事象：</strong>プーチン大統領令によりJTのロシア子会社7社・工場等が「一時管理」（事実上の接収）下に。</li>
+        <li><strong>実質的影響：</strong>ロシア国内に滞留していた預金約3,500億円および現地資産約1.5兆円が事実上凍結。</li>
+        <li><strong>配当への懸念：</strong>JT利益の約25%を稼ぎ出すロシア事業が消滅した場合、EPS低下に伴い年間配当は200円前後に減配の可能性。</li>
+        <li><strong>投資の教訓：</strong>「利益＝手元キャッシュ」ではない。地政学・カントリーリスクと情報開示の盲点、単一高配当銘柄への集中投資（ノーガードFIRE）の危険性。</li>
+      </ul>
+    </div>
+
+    <h2>1. 何が起きたのか？（事実関係と構造）</h2>
+    <p>
+      これまで「超安定・高配当・世界3強のディフェンシブ優良株」と評価されてきた日本たばこ産業（JT / 2914）。
+      ロシア・ウクライナ戦争後も事業を継続していましたが、ロシア側によって突如として現地事業・子会社群が「一時管理」下に置かれました。
+    </p>
+
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="label">ロシア事業の利益構成比</div>
+        <div class="val">約 25%</div>
+      </div>
+      <div class="data-card">
+        <div class="label">ロシア国内滞留キャッシュ</div>
+        <div class="val danger">約 3,500 億円</div>
+      </div>
+      <div class="data-card">
+        <div class="label">ロシア関連資産総額</div>
+        <div class="val danger">約 1.5 兆円</div>
+      </div>
+      <div class="data-card">
+        <div class="label">現地関連負債</div>
+        <div class="val">約 2,000 億円</div>
+      </div>
+    </div>
+
+    <ul class="point-list">
+      <li><strong>所有権はあるが鍵を取り上げられた状態：</strong>形式上「所有権はJTにある」とされつつも、管理権はプーチン政権・FSB（連邦保安庁）関係者が設立したペーパーカンパニー等に移管された構造。</li>
+      <li><strong>ウクライナ戦争以降の送金停止状態：</strong>SWIFT排除や金融規制により、過去4〜5年間のロシア現地利益（年800〜900億円規模）は日本本社（またはジュネーブ／オランダ統括会社）へ送金できず現地口座に積み上がっていた。</li>
+    </ul>
+
+    <h2>2. 配当シミュレーションと株価水準の検証</h2>
+    <p>
+      JTは「配当性向75%を目安」として株主還元を行ってきました。しかし、配当の算出根拠であるEPS（1株当たり利益）の約25%がロシア事業由来だったため、今後の配当に大きな下押し圧力が生じます。
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>従前会社予想</th>
+          <th>ロシア事業（約25%）除外試算</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>予想EPS（1株利益）</strong></td>
+          <td>約 372 円</td>
+          <td>約 270 〜 280 円</td>
+        </tr>
+        <tr>
+          <td><strong>予想配当金（性向75%）</strong></td>
+          <td>272 円 / 年</td>
+          <td><strong>約 200 円 / 年（減配リスク）</strong></td>
+        </tr>
+        <tr>
+          <td><strong>配当利回り 4.0% の株価目処</strong></td>
+          <td>6,800 円</td>
+          <td>5,000 円</td>
+        </tr>
+        <tr>
+          <td><strong>配当利回り 5.0% の株価目処</strong></td>
+          <td>5,440 円</td>
+          <td>4,000 円</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="danger-callout">
+      <h4>【株価水準に対する田端氏の見立て】</h4>
+      <p style="margin-bottom: 0; color: #7f1d1d;">
+        「減配リスクを考慮すると、配当200円前提で利回り4%なら株価5,000円、利回り5%なら4,000円。少なくとも<strong>株価5,000円を割り込むまでは安易に買い向かうのは手出し無用</strong>。倒産はないが、従来の優等生プレミアムは剥落したと見るべき。」
+      </p>
+    </div>
+
+    <h2>3. 投資家が今回の件から学ぶべき4大教訓</h2>
+    
+    <h3>① 会計上の「利益」と手元の「キャッシュ」の違い</h3>
+    <p>
+      連結決算上は子会社の利益もB/S・P/Lに計上されるが、外貨規制や経済制裁下では「日本本社に送金できないお金」が存在する。
+      キャッシュが手元に戻らない中、他地域のキャッシュを原資に配当を払い続けていた歪みに注意が必要。
+    </p>
+
+    <h3>② カントリーリスク・独裁国家リスクの恐ろしさ</h3>
+    <p>
+      ロシアや中国など議会制民主主義が機能していない国家では、指導者の一声で法解釈や契約が反故にされる。
+      過去のダノン（Danone）等の先例があったにもかかわらず、市場は「JTは日の丸銘柄だから大丈夫」と油断していた。
+    </p>
+
+    <h3>③ IR（情報開示）の開示姿勢への疑問</h3>
+    <p>
+      JTはイラン事業については「制裁により約1,600億円が送金不能」と注記していた一方、ロシアの約3,500億円の送金困難リスクについては事前の開示が曖昧だった。開示姿勢に対する市場の不信感も急落の一因。
+    </p>
+
+    <h3>④ 「高配当株1本でFIRE」の盲点（フリーランチはない）</h3>
+    <p>
+      国債利回りが2〜3%の時代に配当利回り5〜6%を得られる背景には、必ず「見えないリスクプレミアム」が存在する。
+      1社集中投資（1億円投入して年500万円生活など）を行っていた投資家は致命的な打撃を受ける。最低でも5〜10銘柄への分散投資が鉄則。
+    </p>
+  </div>
+
+  <footer>
+    <p>出典：YouTubeチャンネル「田端大学 投資学部」該当解説動画より要約作成</p>
+  </footer>
+</div>
+
+</body>
+</html>

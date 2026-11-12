@@ -1,5 +1,23 @@
 [
     {
+        "id":  "what-is-imacel-image-analysis-ai-guide",
+        "title":  "IMACELとは？画像解析AIの概要・機能・活用事例・導入方法（エルピクセル）",
+        "filename":  "posts/what-is-imacel-image-analysis-ai-guide.html",
+        "createdAt":  "2026-11-12T19:04:00+09:00",
+        "dateFormatted":  "2026/11/12",
+        "description":  "東大発AIベンチャー・エルピクセルの画像解析AI「IMACEL（イマセル）」の概要。物体検出・セグメンテーション・定量評価の8大機能、創薬・病理・第一三共との実験自動化などの導入事例、独自AI開発フローを徹底解説。",
+        "tags":  [
+                     "AI",
+                     "画像解析",
+                     "IMACEL",
+                     "エルピクセル",
+                     "創薬",
+                     "ライフサイエンス",
+                     "品質管理",
+                     "機械学習"
+                 ]
+    },
+    {
         "id":  "italy-china-spy-network-crackdown-case",
         "title":  "イタリア政府による中国スパイ網の摘発事件｜越境弾圧と国家安全保障の深層",
         "filename":  "posts/italy-china-spy-network-crackdown-case.html",

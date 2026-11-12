@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMACEL｜画像解析AIの概要と活用方法</title>
+<style>
+:root {
+  --primary: #245b83;
+  --secondary: #eaf3f9;
+  --accent: #17a2a0;
+  --text: #263445;
+  --muted: #64748b;
+  --bg: #f4f7fa;
+  --border: #dce5ec;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.85;
+}
+.container {
+  max-width: 1050px;
+  margin: auto;
+  padding: 24px 20px 60px;
+}
+header {
+  background: linear-gradient(135deg,#173c5c,#287e9d);
+  color: white;
+  padding: 55px 25px;
+  border-radius: 18px;
+  margin-bottom: 30px;
+}
+header .label {
+  font-size: 13px;
+  letter-spacing: 2px;
+  opacity: .85;
+}
+header h1 {
+  font-size: clamp(30px,5vw,43px);
+  margin: 10px 0;
+}
+header p { margin: 0; opacity: .9; }
+h2 {
+  font-size: 23px;
+  color: var(--primary);
+  border-left: 5px solid var(--accent);
+  padding-left: 13px;
+  margin: 42px 0 20px;
+}
+h3 { color: var(--primary); font-size: 18px; }
+p { margin: 10px 0; }
+a { color: #1675ad; }
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 23px;
+  margin: 16px 0;
+  box-shadow: 0 3px 12px rgba(30,60,90,.04);
+}
+.summary {
+  background: var(--secondary);
+  border-radius: 13px;
+  padding: 22px;
+  border: 1px solid #d2e5f0;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 15px;
+}
+.grid .card { margin: 0; }
+.number {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 13px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: #e5f2f5;
+  color: #176c78;
+  font-size: 12px;
+  margin: 3px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin: 15px 0;
+  font-size: 14px;
+}
+th,td {
+  border: 1px solid var(--border);
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: #eaf1f6;
+  color: var(--primary);
+}
+.flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+  gap: 10px;
+  margin: 20px 0;
+}
+.flow div {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+}
+.flow strong {
+  display: block;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+.arrow {
+  color: var(--accent);
+  font-size: 22px;
+}
+.note {
+  color: var(--muted);
+  font-size: 13px;
+}
+.highlight {
+  color: var(--primary);
+  font-weight: bold;
+}
+footer {
+  border-top: 1px solid var(--border);
+  margin-top: 45px;
+  padding-top: 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+@media(max-width:600px) {
+  .container { padding: 12px; }
+  header { padding: 35px 20px; }
+  table { font-size: 12px; }
+  th,td { padding: 8px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <div class="label">AI IMAGE ANALYSIS PLATFORM</div>
+  <h1>IMACEL</h1>
+  <p>画像解析AIの概要・機能・活用事例・導入方法</p>
+</header>
+
+<section class="summary">
+  <h2 style="margin-top:0">IMACELとは？</h2>
+  <p>
+    IMACEL（イマセル）は、画像をAIで解析し、
+    画像内に存在する物体や領域、形状、特徴などを
+    自動的に認識・分類・定量化する画像解析AIプラットフォームです。
+  </p>
+  <p>
+    単に画像に何が写っているかを判定するだけでなく、
+    画像内の対象物の大きさ、個数、形状、分布などを分析し、
+    研究開発や品質管理に活用できます。
+  </p>
+  <div>
+    <span class="tag">画像認識</span>
+    <span class="tag">AI解析</span>
+    <span class="tag">自動計測</span>
+    <span class="tag">定量評価</span>
+    <span class="tag">研究開発</span>
+  </div>
+</section>
+
+<h2>1. 開発会社とサービスの位置づけ</h2>
+<div class="card">
+  <h3>エルピクセル株式会社</h3>
+  <p>
+    IMACELの開発会社はエルピクセル株式会社です。
+    東京大学発のAIベンチャー企業であり、
+    画像解析技術と人工知能技術を組み合わせて、
+    医療・製薬・ライフサイエンス分野を中心に事業を展開しています。
+  </p>
+  <p>
+    IMACELは2017年に正式販売が開始され、
+    2025年7月にはクラウド型の新サービス
+    「IMACEL Platform」が正式リリースされました。
+  </p>
+  <p>
+    <a href="https://lpixel.net/" target="_blank" rel="noopener">
+      エルピクセル株式会社 公式サイト
+    </a>
+  </p>
+  <p>
+    <a href="https://imacel.net/" target="_blank" rel="noopener">
+      IMACEL公式サイト
+    </a>
+  </p>
+</div>
+
+<h2>2. 具体的に何ができるのか</h2>
+<div class="grid">
+  <div class="card">
+    <div class="number">01 / OBJECT DETECTION</div>
+    <h3>物体・細胞の検出</h3>
+    <p>画像の中から対象物を自動的に見つけ、位置や個数を認識します。</p>
+  </div>
+  <div class="card">
+    <div class="number">02 / CLASSIFICATION</div>
+    <h3>画像分類</h3>
+    <p>画像を正常・異常などのカテゴリーに自動分類します。</p>
+  </div>
+  <div class="card">
+    <div class="number">03 / SEGMENTATION</div>
+    <h3>領域抽出</h3>
+    <p>画像内の特定領域を識別し、対象部分を切り分けます。</p>
+  </div>
+  <div class="card">
+    <div class="number">04 / MORPHOLOGY</div>
+    <h3>形態解析</h3>
+    <p>対象物の大きさ、形状、構造などを評価します。</p>
+  </div>
+  <div class="card">
+    <div class="number">05 / COUNTING</div>
+    <h3>個数の計測</h3>
+    <p>細胞や画像内の対象物を自動でカウントします。</p>
+  </div>
+  <div class="card">
+    <div class="number">06 / QUANTIFICATION</div>
+    <h3>定量評価</h3>
+    <p>画像から得られる特徴を数値化し、比較・分析します。</p>
+  </div>
+  <div class="card">
+    <div class="number">07 / TIME SERIES</div>
+    <h3>動態解析</h3>
+    <p>時系列画像から対象物の動きや変化を分析します。</p>
+  </div>
+  <div class="card">
+    <div class="number">08 / ANOMALY DETECTION</div>
+    <h3>異常検出</h3>
+    <p>通常とは異なる特徴を持つ対象を検出します。</p>
+  </div>
+</div>
+<p class="note">
+  ※上記はIMACELの技術・活用領域を整理したものです。
+  すべての機能が標準搭載されているわけではなく、
+  解析内容によって個別のAIモデル開発が必要になります。
+</p>
+
+<h2>3. 主な活用事例</h2>
+
+<div class="card">
+  <h3>① 細胞の形態解析・創薬研究</h3>
+  <p>
+    細胞の形状や状態をAIで解析し、
+    薬剤を投与したときの細胞の変化を評価します。
+  </p>
+  <ul>
+    <li>薬剤候補のスクリーニング</li>
+    <li>細胞の形態変化の比較</li>
+    <li>薬剤の作用機序や毒性の研究</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>② 病理標本の画像解析</h3>
+  <p>
+    顕微鏡で撮影した組織画像をAIで分析します。
+  </p>
+  <ul>
+    <li>正常・異常領域の識別</li>
+    <li>組織の特徴抽出</li>
+    <li>病理画像のスクリーニング</li>
+    <li>バーチャル染色</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>③ 蛍光多重免疫染色画像の解析</h3>
+  <p>
+    複数の蛍光マーカーを使った画像から、
+    細胞の種類や位置関係を解析します。
+  </p>
+  <ul>
+    <li>細胞の識別</li>
+    <li>細胞同士の空間的な関係の分析</li>
+    <li>がん微小環境の解析</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>④ 動物の行動解析</h3>
+  <p>
+    動画や画像を用いて動物の動きを分析します。
+  </p>
+  <ul>
+    <li>行動パターンの把握</li>
+    <li>動きの定量評価</li>
+    <li>目視評価では捉えにくい特徴の発見</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>⑤ 製造工程における氷晶解析</h3>
+  <p>
+    凍結乾燥工程における氷晶の画像を解析し、
+    製造条件の最適化に役立てます。
+  </p>
+</div>
+
+<div class="card">
+  <h3>⑥ 実験装置の自動化</h3>
+  <p>
+    第一三共との共同開発事例では、
+    反応溶液の液面・界面を画像解析AIで検出し、
+    実験装置の自動化に活用しています。
+  </p>
+</div>
+
+<h2>4. IMACELの基本的な利用方法</h2>
+<p>
+  IMACEL Platformでは、ブラウザを利用して画像解析を進めることができます。
+</p>
+
+<div class="flow">
+  <div>
+    <strong>STEP 1</strong>
+    画像データをアップロード
+    <p class="note">解析したい画像を登録</p>
+  </div>
+  <div>
+    <strong>STEP 2</strong>
+    AIモデルを選択
+    <p class="note">用途に合った解析モデルを選択</p>
+  </div>
+  <div>
+    <strong>STEP 3</strong>
+    AI解析を実行
+    <p class="note">クラウド環境で画像を処理</p>
+  </div>
+  <div>
+    <strong>STEP 4</strong>
+    結果を取得
+    <p class="note">解析結果を確認・ダウンロード</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>利用上の特徴</h3>
+  <ul>
+    <li>GPUなどの高性能なコンピューターを自社で準備する必要がない。</li>
+    <li>AIのプログラミング知識がなくても利用できる。</li>
+    <li>既存モデルのカスタマイズに対応する。</li>
+    <li>企業ごとの専用AIモデルの開発にも対応する。</li>
+  </ul>
+</div>
+
+<h2>5. 独自の画像解析AIを開発できる</h2>
+<p>
+  IMACELの重要な特徴は、既存のAIモデルを利用するだけでなく、
+  企業独自の画像解析AIを開発できることです。
+</p>
+
+<table>
+  <thead>
+    <tr><th>段階</th><th>内容</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>課題設定</td>
+      <td>何を画像から判定・計測したいかを決める。</td>
+    </tr>
+    <tr>
+      <td>PoC</td>
+      <td>画像データを用いてAIの実現可能性を検証する。</td>
+    </tr>
+    <tr>
+      <td>実装</td>
+      <td>AIモデルの精度改善やシステム開発を進める。</td>
+    </tr>
+    <tr>
+      <td>実運用</td>
+      <td>実際の業務に組み込み、保守・改善を行う。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>6. メリットと注意点</h2>
+<table>
+  <thead>
+    <tr><th>評価項目</th><th>内容</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>導入の容易さ</td>
+      <td>クラウド型で導入しやすい。</td>
+    </tr>
+    <tr>
+      <td>AI専門知識</td>
+      <td>標準モデルならプログラミング不要で利用できる。</td>
+    </tr>
+    <tr>
+      <td>GPU環境</td>
+      <td>自社でGPUを準備する必要がない。</td>
+    </tr>
+    <tr>
+      <td>独自AI開発</td>
+      <td>個別の課題に合わせたモデル開発に対応する。</td>
+    </tr>
+    <tr>
+      <td>研究開発への適性</td>
+      <td>画像を用いた研究・実験・評価に適している。</td>
+    </tr>
+    <tr>
+      <td>費用</td>
+      <td>具体的な料金は問い合わせが必要。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>企業導入時に確認したい事項</h3>
+<ul>
+  <li>画像データの保存場所と機密情報の取り扱い</li>
+  <li>クラウドへの画像アップロードに関するセキュリティ</li>
+  <li>AIの判定精度と誤検出率</li>
+  <li>解析結果のデータ形式や外部システムとの連携</li>
+  <li>利用料金と独自モデル開発費用</li>
+</ul>
+
+<h2>7. 総合評価</h2>
+<div class="summary">
+  <h3>IMACELの本質</h3>
+  <p>
+    画像解析の専門家が行っていた作業を、
+    AIで自動化・定量化するためのプラットフォームです。
+  </p>
+  <p>
+    単なる画像認識ツールではなく、
+    企業独自の研究・評価・検査プロセスにAIを組み込むことまで
+    視野に入れている点が特徴です。
+  </p>
+</div>
+
+<div class="grid" style="margin-top:18px">
+  <div class="card">
+    <h3>研究開発の高度化</h3>
+    <p>
+      人間が目視では発見しにくい微細な特徴を抽出し、
+      数値化・比較できる可能性があります。
+    </p>
+  </div>
+  <div class="card">
+    <h3>熟練者のノウハウのAI化</h3>
+    <p>
+      熟練者の画像判定基準を学習させ、
+      評価の標準化や自動化につなげられます。
+    </p>
+  </div>
+</div>
+
+<h2>8. 公式サイト・参考情報</h2>
+<div class="card">
+  <ul>
+    <li>
+      <a href="https://imacel.net/" target="_blank" rel="noopener">
+        IMACEL公式サイト
+      </a>
+    </li>
+    <li>
+      <a href="https://imacel.net/cases" target="_blank" rel="noopener">
+        IMACELの導入・支援事例
+      </a>
+    </li>
+    <li>
+      <a href="https://lpixel.net/" target="_blank" rel="noopener">
+        エルピクセル株式会社公式サイト
+      </a>
+    </li>
+    <li>
+      <a href="https://lpixel.net/news/press-release/2025/11915/" target="_blank" rel="noopener">
+        IMACEL Platformの2025年正式リリース発表
+      </a>
+    </li>
+  </ul>
+</div>
+
+<footer>
+  <p>
+    IMACEL 画像解析AI 調査・概要資料
+  </p>
+  <p>
+    ※本資料は公開情報をもとにした概要整理です。
+    個別機能・導入条件・料金については公式情報をご確認ください。
+  </p>
+</footer>
+
+</div>
+</body>
+</html>

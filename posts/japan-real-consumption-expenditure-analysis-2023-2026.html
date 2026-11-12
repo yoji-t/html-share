@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本の実質消費支出・月次推移分析</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+:root {
+  --navy:#17324d;
+  --blue:#2878b5;
+  --red:#d9534f;
+  --bg:#f3f6fa;
+  --text:#263445;
+}
+*{box-sizing:border-box}
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Yu Gothic","Meiryo",sans-serif;
+  line-height:1.8;
+}
+header {
+  background:linear-gradient(135deg,#17324d,#2878b5);
+  color:white;
+  padding:48px 20px;
+  text-align:center;
+}
+header h1{font-size:clamp(24px,4vw,36px);margin:0 0 12px}
+header p{margin:0;color:#e1edf7}
+.container{max-width:1050px;margin:30px auto;padding:0 18px}
+.card {
+  background:white;
+  border-radius:14px;
+  padding:25px;
+  margin-bottom:22px;
+  box-shadow:0 3px 14px rgba(0,0,0,.05);
+}
+h2 {
+  color:var(--navy);
+  font-size:22px;
+  border-left:5px solid var(--blue);
+  padding-left:13px;
+  margin-top:0;
+}
+h3{color:var(--navy);font-size:18px}
+.lead{font-size:16px}
+.small{font-size:12px;color:#718096}
+.stats {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
+}
+.stat {
+  background:#f4f7fb;
+  border-radius:12px;
+  padding:18px;
+}
+.stat .label{font-size:13px;color:#64748b}
+.stat .value{font-size:30px;font-weight:bold}
+.negative{color:var(--red)}
+.positive{color:#198754}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:10px 12px;border-bottom:1px solid #e5eaf0;text-align:center}
+th{background:#edf3f8;color:var(--navy)}
+td:first-child,th:first-child{text-align:left}
+.year-title{margin:25px 0 10px;color:var(--navy)}
+.note {
+  background:#fff7e8;
+  border-left:4px solid #e4a63b;
+  padding:14px 18px;
+  border-radius:5px;
+}
+.analysis {
+  border:1px solid #e5eaf0;
+  border-radius:10px;
+  padding:17px;
+  margin:12px 0;
+}
+.analysis strong{color:var(--navy)}
+footer{
+  text-align:center;
+  padding:30px;
+  color:#718096;
+  font-size:12px;
+}
+a{color:#2878b5}
+@media(max-width:600px){
+ .card{padding:18px}
+ th,td{padding:8px 6px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>日本の実質消費支出の推移</h1>
+  <p>2023年10月～2026年9月｜家計消費の実態を月次分析</p>
+</header>
+
+<main class="container">
+
+<section class="card">
+<h2>1. 分析の概要</h2>
+<p class="lead">
+総務省の家計調査を基に、日本の二人以上世帯における
+実質消費支出の推移を確認する。
+</p>
+<ul>
+<li>対象：全国・二人以上の世帯</li>
+<li>期間：2023年10月～2026年9月</li>
+<li>指標：消費支出の実質前年同月比</li>
+<li>プラス：前年同月より実質消費が増加</li>
+<li>マイナス：前年同月より実質消費が減少</li>
+</ul>
+<div class="note">
+<strong>注意：</strong>
+前年同月比は、前年の同じ月との比較である。
+季節要因や前年の特殊な支出の影響も受けるため、
+単月だけでなく複数月の傾向を見ることが重要。
+</div>
+</section>
+
+<section class="card">
+<h2>2. 重要な数字</h2>
+<div class="stats">
+ <div class="stat">
+  <div class="label">2023年・年間実質増減率</div>
+  <div class="value negative">▲2.6%</div>
+ </div>
+ <div class="stat">
+  <div class="label">2024年・年間実質増減率</div>
+  <div class="value negative">▲1.1%</div>
+ </div>
+ <div class="stat">
+  <div class="label">2025年・年間実質増減率</div>
+  <div class="value positive">+0.9%</div>
+ </div>
+ <div class="stat">
+  <div class="label">2026年9月・前年同月比</div>
+  <div class="value negative">▲6.8%</div>
+ </div>
+</div>
+<p class="small">年間数値は各年の年間実質増減率。2026年は9月までの月次データ。</p>
+</section>
+
+<section class="card">
+<h2>3. 月別の実質消費支出</h2>
+<p>前年同月比（％）。▲はマイナスを示す。</p>
+
+<h3 class="year-title">2023年</h3>
+<div class="table-wrap">
+<table>
+<tr><th>月</th><th>実質増減率</th></tr>
+<tr><td>10月</td><td class="negative">▲2.5%</td></tr>
+<tr><td>11月</td><td class="negative">▲2.9%</td></tr>
+<tr><td>12月</td><td class="negative">▲2.5%</td></tr>
+</table>
+</div>
+
+<h3 class="year-title">2024年</h3>
+<div class="table-wrap">
+<table>
+<tr><th>月</th><th>実質増減率</th></tr>
+<tr><td>1月</td><td class="negative">▲6.3%</td></tr>
+<tr><td>2月</td><td class="negative">▲0.5%</td></tr>
+<tr><td>3月</td><td class="negative">▲1.2%</td></tr>
+<tr><td>4月</td><td class="positive">+0.5%</td></tr>
+<tr><td>5月</td><td class="negative">▲1.8%</td></tr>
+<tr><td>6月</td><td class="negative">▲1.4%</td></tr>
+<tr><td>7月</td><td class="positive">+0.1%</td></tr>
+<tr><td>8月</td><td class="negative">▲1.9%</td></tr>
+<tr><td>9月</td><td class="negative">▲1.1%</td></tr>
+<tr><td>10月</td><td class="negative">▲1.3%</td></tr>
+<tr><td>11月</td><td class="negative">▲0.4%</td></tr>
+<tr><td>12月</td><td class="positive">+2.7%</td></tr>
+</table>
+</div>
+
+<h3 class="year-title">2025年</h3>
+<div class="table-wrap">
+<table>
+<tr><th>月</th><th>実質増減率</th></tr>
+<tr><td>1月</td><td class="positive">+0.8%</td></tr>
+<tr><td>2月</td><td class="negative">▲0.5%</td></tr>
+<tr><td>3月</td><td class="positive">+2.1%</td></tr>
+<tr><td>4月</td><td class="negative">▲0.1%</td></tr>
+<tr><td>5月</td><td class="positive">+4.7%</td></tr>
+<tr><td>6月</td><td class="positive">+1.3%</td></tr>
+<tr><td>7月</td><td class="positive">+1.4%</td></tr>
+<tr><td>8月</td><td class="positive">+2.3%</td></tr>
+<tr><td>9月</td><td class="positive">+1.8%</td></tr>
+<tr><td>10月</td><td class="negative">▲3.0%</td></tr>
+<tr><td>11月</td><td class="positive">+2.9%</td></tr>
+<tr><td>12月</td><td class="negative">▲2.6%</td></tr>
+</table>
+</div>
+
+<h3 class="year-title">2026年（1～9月）</h3>
+<div class="table-wrap">
+<table>
+<tr><th>月</th><th>実質増減率</th></tr>
+<tr><td>1月</td><td class="negative">▲1.0%</td></tr>
+<tr><td>2月</td><td class="negative">▲1.8%</td></tr>
+<tr><td>3月</td><td class="negative">▲2.9%</td></tr>
+<tr><td>4月</td><td class="negative">▲0.5%</td></tr>
+<tr><td>5月</td><td class="negative">▲0.4%</td></tr>
+<tr><td>6月</td><td class="negative">▲3.3%</td></tr>
+<tr><td>7月</td><td class="negative">▲3.6%</td></tr>
+<tr><td>8月</td><td class="negative">▲3.1%</td></tr>
+<tr><td>9月</td><td class="negative">▲6.8%</td></tr>
+</table>
+</div>
+</section>
+
+<section class="card">
+<h2>4. 月次推移グラフ</h2>
+<p class="small">実質消費支出・前年同月比（％）</p>
+<div style="height:390px;position:relative">
+<canvas id="consumptionChart"></canvas>
+</div>
+</section>
+
+<section class="card">
+<h2>5. 3年間の動向分析</h2>
+
+<div class="analysis">
+<strong>① 2023～2024年：消費の停滞</strong>
+<p>
+2023年は年間2.6％減、2024年も1.1％減。
+物価上昇に対して家計の購買力が十分に追いつかず、
+消費が抑制されていたことがうかがえる。
+</p>
+</div>
+
+<div class="analysis">
+<strong>② 2025年：一時的な回復</strong>
+<p>
+2025年は年間0.9％増に転じた。
+特に5月は4.7％増となった。
+ただし、月によって増減の振れがあり、
+持続的な消費回復と判断するには慎重な見方が必要。
+</p>
+</div>
+
+<div class="analysis">
+<strong>③ 2026年：再び消費が弱含む</strong>
+<p>
+2026年は9月まで9か月連続で前年同月比マイナス。
+9月は6.8％減と大きな落ち込みとなった。
+家計消費の弱さが目立つ状況である。
+</p>
+</div>
+</section>
+
+<section class="card">
+<h2>6. 経済を見るうえで重要な3指標</h2>
+<div class="table-wrap">
+<table>
+<tr><th>指標</th><th>分かること</th></tr>
+<tr><td>実質消費支出</td><td>物価変動を除いた家計の消費水準</td></tr>
+<tr><td>名目消費支出</td><td>家計が実際に支払った金額</td></tr>
+<tr><td>実質賃金</td><td>給料で購入できる商品・サービスの量</td></tr>
+</table>
+</div>
+<p>
+賃金が上昇していても、物価上昇率がそれを上回れば、
+家計の購買力は低下する。
+そのため、実質賃金と実質消費支出を併せて確認することが重要。
+</p>
+</section>
+
+<section class="card">
+<h2>7. 総合評価</h2>
+<p class="lead">
+2025年に一時的な回復が見られたものの、
+2026年には消費の弱さが再び顕在化している。
+</p>
+<p>
+特に重要なのは、物価上昇だけでなく、
+物価変動を除いた実質消費支出も減少している点である。
+これは家計が購入する商品・サービスの量を抑えている可能性を示している。
+</p>
+<div class="note">
+<strong>注目すべきポイント</strong><br>
+景気の実態を評価する際には、賃金が上昇しているかだけでなく、
+その賃金で実際にどれだけの商品やサービスを購入できているかを見る必要がある。
+</div>
+</section>
+
+<section class="card">
+<h2>8. 出典・参考資料</h2>
+<ul>
+<li><a href="https://www.stat.go.jp/data/kakei/" target="_blank" rel="noopener">総務省統計局：家計調査</a></li>
+<li><a href="https://www.e-stat.go.jp/" target="_blank" rel="noopener">政府統計の総合窓口 e-Stat</a></li>
+<li><a href="https://www.jil.go.jp/" target="_blank" rel="noopener">労働政策研究・研修機構</a></li>
+</ul>
+<p class="small">
+※掲載数値は前段の整理に基づく。正式な統計資料への転記・公開時には、
+総務省の公表表および基準改定後の系列との照合を推奨する。
+</p>
+</section>
+
+</main>
+
+<footer>
+日本の家計消費動向分析｜2023年10月～2026年9月
+</footer>
+
+<script>
+const labels = [
+"23/10","23/11","23/12",
+"24/01","24/02","24/03","24/04","24/05","24/06",
+"24/07","24/08","24/09","24/10","24/11","24/12",
+"25/01","25/02","25/03","25/04","25/05","25/06",
+"25/07","25/08","25/09","25/10","25/11","25/12",
+"26/01","26/02","26/03","26/04","26/05","26/06",
+"26/07","26/08","26/09"
+];
+
+const values = [
+-2.5,-2.9,-2.5,
+-6.3,-0.5,-1.2,0.5,-1.8,-1.4,
+0.1,-1.9,-1.1,-1.3,-0.4,2.7,
+0.8,-0.5,2.1,-0.1,4.7,1.3,
+1.4,2.3,1.8,-3.0,2.9,-2.6,
+-1.0,-1.8,-2.9,-0.5,-0.4,-3.3,
+-3.6,-3.1,-6.8
+];
+
+new Chart(document.getElementById("consumptionChart"), {
+ type:"line",
+ data:{
+  labels,
+  datasets:[{
+   label:"実質消費支出（前年同月比）",
+   data:values,
+   borderColor:"#2878b5",
+   backgroundColor:"rgba(40,120,181,.12)",
+   fill:true,
+   tension:.25,
+   pointRadius:3,
+   pointHoverRadius:6
+  }]
+ },
+ options:{
+  responsive:true,
+  maintainAspectRatio:false,
+  interaction:{mode:"index",intersect:false},
+  plugins:{
+   legend:{display:true},
+   tooltip:{callbacks:{
+    label:ctx=>" "+ctx.parsed.y+"%"
+   }}
+  },
+  scales:{
+   y:{
+    title:{display:true,text:"前年同月比（％）"},
+    suggestedMin:-8,
+    suggestedMax:6,
+    grid:{color:"#e5eaf0"}
+   },
+   x:{
+    ticks:{maxRotation:60,minRotation:45,autoSkip:true}
+   }
+  }
+ }
+});
+</script>
+</body>
+</html>

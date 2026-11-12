@@ -1,5 +1,23 @@
 [
     {
+        "id":  "japan-real-consumption-expenditure-analysis-2023-2026",
+        "title":  "日本の実質消費支出の推移（2023年10月～2026年9月）｜家計調査・月次分析レポート",
+        "filename":  "posts/japan-real-consumption-expenditure-analysis-2023-2026.html",
+        "createdAt":  "2026-11-12T10:15:00+09:00",
+        "dateFormatted":  "2026/11/12",
+        "description":  "総務省「家計調査」に基づく日本の実質消費支出（二人以上世帯）の月次推移レポート。2023年〜2026年9月の前年同月比データ、Chart.js折れ線グラフ、実質賃金との連動関係や消費動向を分析。",
+        "tags":  [
+                     "経済",
+                     "家計調査",
+                     "実質消費支出",
+                     "統計",
+                     "物価",
+                     "実質賃金",
+                     "グラフ",
+                     "Chart.js"
+                 ]
+    },
+    {
         "id":  "jt-russia-business-seizure-dividend-impact",
         "title":  "JTのロシア事業「接収」リスクと株価・配当への影響まとめ（田端大学 投資学部）",
         "filename":  "posts/jt-russia-business-seizure-dividend-impact.html",

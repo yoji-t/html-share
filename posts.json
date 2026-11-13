@@ -1,5 +1,24 @@
 [
     {
+        "id": "takadanobaba-station-notable-companies-guide",
+        "title": "高田馬場駅周辺の有名企業ガイド｜東京都新宿区・豊島区の企業と産業",
+        "filename": "posts/takadanobaba-station-notable-companies-guide.html",
+        "createdAt": "2026-11-13T14:38:00+09:00",
+        "dateFormatted": "2026/11/13",
+        "description": "東京都新宿区・豊島区にまたがる高田馬場駅周辺の有名企業・事業所ガイド。大正製薬、JR東日本情報システム（JEIS）、鷺宮製作所、ベーシック、トクホン、SANKO MARKETING FOODS、エスケイケイ等の事業内容・特徴を解説。",
+        "tags": [
+            "企業ガイド",
+            "東京都新宿区",
+            "東京都豊島区",
+            "高田馬場駅",
+            "大正製薬",
+            "JR東日本情報システム",
+            "鷺宮製作所",
+            "IT企業",
+            "製薬"
+        ]
+    },
+    {
         "id": "sugamo-station-notable-companies-guide",
         "title": "巣鴨駅周辺の有名企業ガイド｜東京都豊島区・巣鴨エリアの企業と産業",
         "filename": "posts/sugamo-station-notable-companies-guide.html",

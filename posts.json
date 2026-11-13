@@ -1,5 +1,23 @@
 [
     {
+        "id": "sugamo-station-notable-companies-guide",
+        "title": "巣鴨駅周辺の有名企業ガイド｜東京都豊島区・巣鴨エリアの企業と産業",
+        "filename": "posts/sugamo-station-notable-companies-guide.html",
+        "createdAt": "2026-11-13T12:27:00+09:00",
+        "dateFormatted": "2026/11/13",
+        "description": "東京都豊島区・巣鴨駅周辺の有名企業・事業所ガイド。トーエネック東京本部、科研製薬本社、CAPITA、中央理化工業、東京サイエンス、久保電話機、アガック等の事業内容と注目ポイントを解説。",
+        "tags": [
+            "企業ガイド",
+            "東京都豊島区",
+            "巣鴨駅",
+            "トーエネック",
+            "科研製薬",
+            "CAPITA",
+            "地域情報",
+            "上場企業"
+        ]
+    },
+    {
         "id":  "oji-station-notable-companies-guide",
         "title":  "王子駅周辺の有名企業ガイド｜東京都北区・王子エリアの産業と企業",
         "filename":  "posts/oji-station-notable-companies-guide.html",

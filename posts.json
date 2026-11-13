@@ -1,5 +1,23 @@
 [
     {
+        "id":  "oji-station-notable-companies-guide",
+        "title":  "王子駅周辺の有名企業ガイド｜東京都北区・王子エリアの産業と企業",
+        "filename":  "posts/oji-station-notable-companies-guide.html",
+        "createdAt":  "2026-11-13T12:23:00+09:00",
+        "dateFormatted":  "2026/11/13",
+        "description":  "東京都北区・王子駅周辺の有名企業・主要事業所ガイド。近代製紙発祥の地としての歴史、国立印刷局王子工場、日本製紙研究開発拠点、日本電設工業、明治アニマルヘルス、ホシザキ等の事業所と王子ホールディングスとの関係を解説。",
+        "tags":  [
+                     "企業ガイド",
+                     "東京都北区",
+                     "王子駅",
+                     "国立印刷局",
+                     "日本製紙",
+                     "産業歴史",
+                     "地域情報",
+                     "インフラ"
+                 ]
+    },
+    {
         "id":  "what-is-imacel-image-analysis-ai-guide",
         "title":  "IMACELとは？画像解析AIの概要・機能・活用事例・導入方法（エルピクセル）",
         "filename":  "posts/what-is-imacel-image-analysis-ai-guide.html",

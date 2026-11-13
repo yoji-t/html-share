@@ -1,5 +1,25 @@
 [
     {
+        "id": "junior-high-science-limestone-limewater-acid-alkali-guide",
+        "title": "石灰石・石灰水・酸性とアルカリ性｜中学受験理科（化学反応・指示薬・重要確認クイズ）",
+        "filename": "posts/junior-high-science-limestone-limewater-acid-alkali-guide.html",
+        "createdAt": "2026-11-14T08:14:00+09:00",
+        "dateFormatted": "2026/11/14",
+        "description": "中学受験理科で混同しやすい「石灰石（炭酸カルシウム）」と「石灰水（水酸化カルシウム）」の違い、塩酸との反応による二酸化炭素の発生、二酸化炭素を通したときの白濁現象、酸性・アルカリ性と指示薬（BTB液・リトマス紙・フェノールフタレイン液）の変化を整理。全6問のクイズ付き。",
+        "tags": [
+            "中学受験",
+            "理科",
+            "石灰石",
+            "石灰水",
+            "炭酸カルシウム",
+            "二酸化炭素",
+            "酸性・アルカリ性",
+            "指示薬",
+            "BTB液",
+            "勉強用クイズ"
+        ]
+    },
+    {
         "id": "junior-high-science-aqueous-solution-evaporation-guide",
         "title": "水溶液の種類と加熱したときの変化｜中学受験理科（固体・気体・液体の蒸発実験とクイズ）",
         "filename": "posts/junior-high-science-aqueous-solution-evaporation-guide.html",

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中学受験 漢字復習テスト</title>
+<style>
+:root {
+  --main:#234b70;
+  --light:#edf4fa;
+  --border:#d5dee8;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  padding:20px;
+  background:#f3f5f8;
+  color:#263445;
+  font-family:"Yu Gothic","Meiryo",sans-serif;
+  line-height:1.8;
+}
+.container {
+  max-width:900px;
+  margin:auto;
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 2px 12px #0000000c;
+}
+h1 {
+  color:var(--main);
+  text-align:center;
+  font-size:26px;
+}
+h2 {
+  color:var(--main);
+  border-left:5px solid var(--main);
+  padding-left:12px;
+  margin-top:38px;
+  font-size:21px;
+}
+.description {
+  background:var(--light);
+  padding:14px 18px;
+  border-radius:8px;
+  margin:20px 0;
+}
+.info {
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  margin:20px 0;
+}
+.info span {
+  border-bottom:1px solid #777;
+  min-width:180px;
+}
+.question {
+  padding:12px 8px;
+  border-bottom:1px solid #e5e9ee;
+}
+.num {
+  color:var(--main);
+  font-weight:bold;
+  margin-right:7px;
+}
+.blank {
+  display:inline-block;
+  min-width:115px;
+  border-bottom:2px solid #333;
+  height:27px;
+  vertical-align:middle;
+  margin:0 3px;
+}
+input {
+  border:0;
+  border-bottom:2px solid #555;
+  width:150px;
+  padding:5px;
+  font-size:17px;
+  outline:none;
+  background:#fff;
+}
+input:focus {
+  border-color:#2874b9;
+  background:#f0f7ff;
+}
+.reading input { width:130px; }
+button {
+  border:0;
+  background:var(--main);
+  color:white;
+  padding:11px 20px;
+  margin:8px 5px 8px 0;
+  border-radius:7px;
+  font-size:15px;
+  cursor:pointer;
+}
+button.secondary { background:#68798a; }
+button.answer { background:#35835e; }
+button:hover { opacity:.85; }
+#answers {
+  display:none;
+  background:#f0f7f2;
+  padding:20px;
+  margin-top:20px;
+  border-radius:8px;
+}
+.answer-item {
+  padding:5px 0;
+  border-bottom:1px dotted #bbb;
+}
+.small { font-size:13px;color:#657487; }
+@media print {
+  body { background:white;padding:0; }
+  .container { box-shadow:none;padding:10px; }
+  button,.description { display:none; }
+  input { border-bottom:1px solid black; }
+  h2 { break-after:avoid; }
+  .question { break-inside:avoid; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>中学受験 漢字復習テスト</h1>
+<p style="text-align:center;color:#68798a;">
+  間違えた漢字をもう一度マスターしよう！
+</p>
+
+<div class="info">
+  <span>名前：</span>
+  <span>日付：</span>
+  <span>得点：　　　　点／　点</span>
+</div>
+
+<div class="description">
+  <b>【取り組み方】</b><br>
+  ・書き取り問題は、ひらがなの部分を漢字に直しましょう。<br>
+  ・読み問題は、漢字の読み方をひらがなで書きましょう。<br>
+  ・最後まで解いたら「答えを見る」で答え合わせをしましょう。
+</div>
+
+<h2>第1問　漢字の書き取り</h2>
+<p class="small">次の文のカタカナ・ひらがなを漢字に直しましょう。</p>
+
+<div id="section1"></div>
+
+<h2>第2問　対義語・ことわざ・慣用句</h2>
+<p class="small">意味を考えながら、正しい漢字を書きましょう。</p>
+<div id="section2"></div>
+
+<h2>第3問　漢字の読み</h2>
+<p class="small">太字の漢字の読み方をひらがなで書きましょう。</p>
+<div id="section3"></div>
+
+<h2>第4問　漢字の書き取り・熟語</h2>
+<p class="small">（　）のひらがなを漢字に直しましょう。</p>
+<div id="section4"></div>
+
+<div style="text-align:center;margin-top:35px;">
+  <button onclick="showAnswers()">答えを見る・答え合わせ</button>
+  <button class="secondary" onclick="window.print()">印刷する</button>
+  <button class="secondary" onclick="location.reload()">最初からやり直す</button>
+</div>
+
+<div id="answers">
+  <h2>解答一覧</h2>
+  <div id="answerList"></div>
+</div>
+
+</div>
+
+<script>
+const sections = [
+{
+ id:"section1",
+ items:[
+ ["はらを割って話をしよう","腹"],
+ ["悪事せんりを走る","千里"],
+ ["姉はかたをすくめて苦笑した","肩"],
+ ["すずめ百まで踊り忘れず","雀"],
+ ["民衆のしじを得る","支持"],
+ ["有名な画家にしじして学ぶ","師事"],
+ ["人間のかんかくきかんは5つある","感覚器官"],
+ ["だらしないしせいで先生の話を聞く","姿勢"],
+ ["親孝行につとめる","努"],
+ ["お月見に団子をそなえる","供"],
+ ["事件をめんみつに調べる","綿密"],
+ ["あんぜんほしょう条約","安全保障"],
+ ["商品の品質をほしょうする","保証"],
+ ["べんかいの余地がない","弁解"],
+ ["地震をよちする","予知"],
+ ["さいげんなく続く赤字","際限"],
+ ["スペシャルゲストをおむかえします","迎"],
+ ["手帳に今日の予定を書きしるす","記"],
+ ["けいとう立てて考える","系統"],
+ ["抽象とぐたい","具体"],
+ ["偶然とひつぜん","必然"],
+ ["絶対とそうたい","相対"],
+ ["喜びいさんで走っていった","勇"],
+ ["森の中をさんさくした","散策"],
+ ["小学校のきょういくかていを終える","教育課程"],
+ ["人間関係をこうちくする","構築"],
+ ["ようりょうを得ない話し方","要領"],
+ ["てんちそうぞうの神話","天地創造"],
+ ["受付を一階にもうける","設"],
+ ["駅のにゅうじょうけんを買う","入場券"],
+ ["めきめきととうかくを現す","頭角"],
+ ["事態のしゅうしゅうをはかる","収拾"],
+ ["能あるたかはつめを隠す","鷹・爪"],
+ ["意を決して、じたいを申し入れた","辞退"],
+ ["百聞は一見にしかず","如"],
+ ["三つ子のたましい百まで","魂"],
+ ["背に腹はかえられぬ","代"],
+ ["親のななひかり","七光り"],
+ ["裁判で身のけっぱくを証明する","潔白"],
+ ["悪銭身につかず","付"],
+ ["とらの威を借る狐","虎"],
+ ["虫のしらせを感じて電話した","知らせ"],
+ ["いいかげんなことを言う","加減"],
+ ["えいりの追求という目的","営利"],
+ ["責任をついきゅうする","追及"],
+ ["高層ビルのきこうしき","起工式"],
+ ["旅の思い出をきこう文に残す","紀行"],
+ ["きんせいの取れた体つきだ","均整"],
+ ["経済活動のきかんとなる産業","基幹"],
+ ["過去をせいさんする","清算"],
+ ["勝利のせいさんがある","成算"],
+ ["話がかくしんに触れる","核心"],
+ ["雨でも体育祭をけっこうする","決行"],
+ ["けっこうつらい作業だった","結構"]
+ ]
+},
+{
+ id:"section2",
+ items:[
+ ["抽象の反対語","具体"],
+ ["偶然の反対語","必然"],
+ ["絶対の反対語","相対"],
+ ["「腹を割って話す」の意味","本音で話す"],
+ ["「百聞は一見に如かず」の意味","実際に見ることが大切"],
+ ["「三つ子の魂百まで」の意味","幼いころの性質は一生変わらない"],
+ ["「背に腹は代えられぬ」の意味","大切なものを守るためには他を犠牲にすることもある"],
+ ["「悪銭身に付かず」の意味","不正に得たお金はすぐなくなる"],
+ ["「能ある鷹は爪を隠す」の意味","実力のある人はむやみにそれを見せびらかさない"],
+ ["「虎の威を借る狐」の意味","他人の権力を利用して威張る人"],
+ ["「雀百まで踊り忘れず」の意味","幼いころに身についた習慣は年をとっても変わらない"],
+ ["「親の七光り」の意味","親の地位や名声のおかげで得をすること"]
+ ]
+},
+{
+ id:"section3",
+ items:[
+ ["湯治","とうじ"],
+ ["強いる","しいる"],
+ ["承る","うけたまわる"],
+ ["著す","あらわす"],
+ ["素行","そこう"],
+ ["元来","がんらい"],
+ ["奏でる","かなでる"],
+ ["精進","しょうじん"],
+ ["割愛","かつあい"],
+ ["柔和","にゅうわ"],
+ ["骨子","こっし"],
+ ["穀倉","こくそう"]
+ ]
+},
+{
+ id:"section4",
+ items:[
+ ["卒業式が（おごそかに）執り行われた","厳か"],
+ ["日本有数の（こくそう）地帯","穀倉"],
+ ["王様に（つか）えて10年たつ","仕"],
+ ["世界記録を（じゅりつ）する","樹立"],
+ ["船で（こうかい）に出る","航海"],
+ ["ここが（しあん）のしどころだ","思案"],
+ ["対人関係に（ししょう）をきたす","支障"],
+ ["消防の仕事に（じゅうじ）する","従事"],
+ ["（ととう）を組む","徒党"],
+ ["（いきとうごう）する","意気投合"],
+ ["（しようまっせつ）にこだわらない","枝葉末節"],
+ ["（かちょうふうげつ）を楽しむ","花鳥風月"],
+ ["（ゆうめいむじつ）な会社","有名無実"],
+ ["非常に（いさぎよい）態度だった","潔い"]
+ ]
+}
+];
+
+function render() {
+ sections.forEach((s,si)=>{
+  const el=document.getElementById(s.id);
+  s.items.forEach((item,i)=>{
+   const div=document.createElement("div");
+   div.className="question";
+   let q=item[0];
+   if(si===2) {
+     q='<b>'+q+'</b> の読み方：';
+   }
+   div.innerHTML='<span class="num">'+(i+1)+'.</span> '+q+
+     ' <input aria-label="解答" autocomplete="off">';
+   el.appendChild(div);
+  });
+ });
+}
+function showAnswers() {
+ const box=document.getElementById("answers");
+ const list=document.getElementById("answerList");
+ list.innerHTML="";
+ sections.forEach((s,si)=>{
+  const heading=document.createElement("h3");
+  heading.textContent=["第1問　漢字の書き取り","第2問　対義語・ことわざ","第3問　漢字の読み","第4問　漢字の書き取り・熟語"][si];
+  list.appendChild(heading);
+  s.items.forEach((item,i)=>{
+   const div=document.createElement("div");
+   div.className="answer-item";
+   div.textContent=(i+1)+". "+item[1];
+   list.appendChild(div);
+  });
+ });
+ box.style.display="block";
+ box.scrollIntoView({behavior:"smooth"});
+}
+render();
+</script>
+</body>
+</html>

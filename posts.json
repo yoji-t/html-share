@@ -1,5 +1,24 @@
 [
     {
+        "id": "junior-high-entrance-exam-kanji-review-test-comprehensive",
+        "title": "中学受験 漢字復習テスト（総合92問・書き取り・対義語・ことわざ・慣用句・読み・四字熟語）",
+        "filename": "posts/junior-high-entrance-exam-kanji-review-test-comprehensive.html",
+        "createdAt": "2026-11-14T21:21:00+09:00",
+        "dateFormatted": "2026/11/14",
+        "description": "中学受験国語の頻出・間違いやすい漢字を網羅した総合復習テスト（全92問）。同音異義語（支持/師事、保障/保証、清算/成算等）、対義語、ことわざ・慣用句の意味、難読漢字の読み、四字熟語の書き取りを収録。インタラクティブ解答・印刷対応。",
+        "tags": [
+            "中学受験",
+            "国語",
+            "漢字テスト",
+            "同音異義語",
+            "ことわざ",
+            "慣用句",
+            "対義語",
+            "四字熟語",
+            "印刷対応"
+        ]
+    },
+    {
         "id": "junior-high-science-limestone-limewater-acid-alkali-guide",
         "title": "石灰石・石灰水・酸性とアルカリ性｜中学受験理科（化学反応・指示薬・重要確認クイズ）",
         "filename": "posts/junior-high-science-limestone-limewater-acid-alkali-guide.html",

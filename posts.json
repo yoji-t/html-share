@@ -1,5 +1,23 @@
 [
     {
+        "id": "junior-high-science-pendulum-mechanism-and-problem-solving",
+        "title": "中学受験理科｜振り子の仕組みと解き方（周期・糸の長さ・おもり・振れ幅・条件制御・確認テスト）",
+        "filename": "posts/junior-high-science-pendulum-mechanism-and-problem-solving.html",
+        "createdAt": "2026-11-16T07:52:00+09:00",
+        "dateFormatted": "2026/11/16",
+        "description": "中学受験理科の頻出単元「振り子」の完全解説。周期を決める3条件（糸の長さ・おもりの重さ・振れ幅）、支点からおもりの中心（重心）までの測り方、長さ4倍で周期2倍（平方根の法則）、条件制御の対照実験、理解度チェック確認テスト（全5問・解説付き）を網羅。",
+        "tags": [
+            "中学受験",
+            "理科",
+            "振り子",
+            "周期",
+            "条件制御",
+            "対照実験",
+            "物理",
+            "勉強用クイズ"
+        ]
+    },
+    {
         "id": "junior-high-math-three-person-traveler-problem-guide",
         "title": "中学受験算数｜3人の旅人算の解き方・公式・図解・練習問題（出会いと追いつき）",
         "filename": "posts/junior-high-math-three-person-traveler-problem-guide.html",

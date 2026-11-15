@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中学受験理科｜振り子の仕組みと解き方</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Yu Gothic", "Meiryo", sans-serif;
+  background: #f3f6fa;
+  color: #263445;
+  line-height: 1.8;
+}
+header {
+  background: linear-gradient(135deg,#173c69,#2875a9);
+  color: white;
+  padding: 35px 20px;
+  text-align: center;
+}
+header h1 { margin: 0; font-size: 27px; }
+header p { margin: 8px 0 0; }
+main {
+  max-width: 900px;
+  margin: 25px auto;
+  padding: 0 15px;
+}
+section {
+  background: white;
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 22px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.05);
+}
+h2 {
+  color: #205b91;
+  border-bottom: 2px solid #d8e8f5;
+  padding-bottom: 8px;
+  font-size: 21px;
+}
+h3 { color: #2875a9; margin-top: 22px; }
+.important {
+  background: #eaf4ff;
+  border-left: 5px solid #2875c5;
+  padding: 14px;
+  margin: 15px 0;
+  border-radius: 6px;
+  font-weight: bold;
+}
+.warning {
+  background: #fff4e5;
+  border-left: 5px solid #e99a35;
+  padding: 14px;
+  border-radius: 6px;
+  margin: 15px 0;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 15px 0;
+}
+th,td {
+  border: 1px solid #d5dce5;
+  padding: 10px;
+  text-align: center;
+}
+th { background: #eaf2fa; }
+.diagram {
+  background: #f7faff;
+  border: 1px solid #dce8f5;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px 0;
+  text-align: center;
+}
+.diagram svg { max-width: 100%; height: auto; }
+.formula {
+  background: #eef5fc;
+  padding: 14px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+.question {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+.question p { font-weight: bold; }
+label {
+  display: block;
+  padding: 5px;
+  cursor: pointer;
+}
+button {
+  background: #2169a5;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 7px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+button:hover { background: #174c7c; }
+.result {
+  margin-top: 15px;
+  padding: 15px;
+  background: #edf6ee;
+  border-radius: 8px;
+  display: none;
+}
+footer {
+  text-align: center;
+  color: #777;
+  padding: 25px;
+  font-size: 13px;
+}
+@media(max-width:600px) {
+  header h1 { font-size: 23px; }
+  section { padding: 16px; }
+  th,td { padding: 6px; font-size: 13px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>中学受験理科｜振り子の仕組みと解き方</h1>
+  <p>周期・糸の長さ・おもりの重さ・振れ幅を完全理解！</p>
+</header>
+
+<main>
+
+<section>
+<h2>1. 振り子とは？</h2>
+<p>
+振り子とは、糸の先におもりをつけて、左右に往復運動させるものです。
+中学受験では、振り子が1往復する時間がどのように変わるかがよく出題されます。
+</p>
+
+<div class="diagram">
+<svg viewBox="0 0 500 300" role="img" aria-label="振り子の模式図">
+  <line x1="250" y1="30" x2="250" y2="48" stroke="#333" stroke-width="4"/>
+  <circle cx="250" cy="48" r="6" fill="#333"/>
+  <path d="M250 48 L115 215" stroke="#2875a9" stroke-width="3" fill="none"/>
+  <path d="M250 48 L385 215" stroke="#2875a9" stroke-width="3" fill="none"/>
+  <path d="M250 48 L250 235" stroke="#999" stroke-width="2" stroke-dasharray="6 5"/>
+  <circle cx="115" cy="215" r="18" fill="#e5a33a"/>
+  <circle cx="385" cy="215" r="18" fill="#e5a33a"/>
+  <circle cx="250" cy="235" r="18" fill="#e5a33a"/>
+  <path d="M250 48 L115 215" stroke="#2875a9" stroke-width="3"/>
+  <path d="M250 48 L385 215" stroke="#2875a9" stroke-width="3"/>
+  <text x="260" y="42" font-size="13">支点</text>
+  <text x="80" y="250" font-size="14">左端</text>
+  <text x="390" y="250" font-size="14">右端</text>
+  <text x="265" y="245" font-size="14">中央</text>
+  <text x="155" y="125" font-size="14" fill="#2875a9">糸の長さ</text>
+</svg>
+<p>左右に揺れるおもりの動きを観察しよう。</p>
+</div>
+
+<ul>
+<li><b>支点：</b>糸をつるしている固定された場所</li>
+<li><b>振り子の長さ：</b>支点からおもりの中心まで</li>
+<li><b>振れ幅：</b>中央の位置から左右に振れた大きさ</li>
+<li><b>1往復：</b>右端から左端へ行き、再び右端に戻ること</li>
+</ul>
+</section>
+
+<section>
+<h2>2. 振り子の周期を決める3つの条件</h2>
+<p>振り子が1往復する時間を「周期」といいます。</p>
+
+<table>
+<tr><th>変える条件</th><th>1往復する時間</th></tr>
+<tr><td>糸を長くする</td><td><b style="color:#d34b35">長くなる</b></td></tr>
+<tr><td>おもりを重くする</td><td><b>変わらない</b></td></tr>
+<tr><td>振れ幅を大きくする</td><td><b>ほぼ変わらない</b></td></tr>
+</table>
+
+<div class="important">
+最重要！ 振り子の周期に影響するのは、基本的に糸の長さです。
+</div>
+
+<h3>① 糸の長さ</h3>
+<div class="diagram">
+<svg viewBox="0 0 500 190" role="img" aria-label="長い振り子と短い振り子">
+  <circle cx="150" cy="20" r="5" fill="#333"/>
+  <circle cx="350" cy="20" r="5" fill="#333"/>
+  <line x1="150" y1="20" x2="150" y2="150" stroke="#2875a9" stroke-width="3"/>
+  <line x1="350" y1="20" x2="350" y2="85" stroke="#2875a9" stroke-width="3"/>
+  <circle cx="150" cy="150" r="17" fill="#e5a33a"/>
+  <circle cx="350" cy="85" r="17" fill="#e5a33a"/>
+  <text x="115" y="185" font-size="15">長い糸</text>
+  <text x="310" y="125" font-size="15">短い糸</text>
+</svg>
+</div>
+<ul>
+<li>糸が長いほど、1往復する時間は長い。</li>
+<li>糸が短いほど、1往復する時間は短い。</li>
+</ul>
+
+<h3>② おもりの重さ</h3>
+<p>
+10gのおもりでも100gのおもりでも、糸の長さが同じなら、1往復する時間は同じです。
+おもりを重くしても速くなりません。
+</p>
+
+<h3>③ 振れ幅</h3>
+<p>
+振れ幅を少し大きくしても、1往復する時間はほぼ変わりません。
+中学受験では、通常、振れ幅は周期に影響しないものとして考えます。
+</p>
+<div class="warning">
+※極端に大きな角度で振る場合は、厳密には周期が少し長くなります。
+</div>
+</section>
+
+<section>
+<h2>3. 糸の長さと周期の関係</h2>
+<p>
+振り子の長さと1往復する時間には、平方根の関係があります。
+</p>
+
+<div class="formula">
+周期 ∝ √（振り子の長さ）
+</div>
+
+<table>
+<tr><th>糸の長さ</th><th>周期（1往復の時間）</th></tr>
+<tr><td>1倍</td><td>1倍</td></tr>
+<tr><td>2倍</td><td>約1.4倍</td></tr>
+<tr><td>3倍</td><td>約1.7倍</td></tr>
+<tr><td>4倍</td><td>2倍</td></tr>
+<tr><td>9倍</td><td>3倍</td></tr>
+</table>
+
+<div class="important">
+長さを4倍にすると、1往復する時間は2倍になる！
+</div>
+
+<p>例えば、糸の長さを100cmから25cmにすると、長さは4分の1になります。</p>
+<p>したがって、周期は2分の1になります。</p>
+</section>
+
+<section>
+<h2>4. 振り子の長さはどこからどこまで？</h2>
+
+<div class="diagram">
+<svg viewBox="0 0 500 280" role="img" aria-label="支点からおもりの中心までの長さ">
+  <circle cx="250" cy="35" r="6" fill="#333"/>
+  <line x1="250" y1="35" x2="250" y2="190" stroke="#2875a9" stroke-width="3"/>
+  <circle cx="250" cy="210" r="28" fill="#e5a33a"/>
+  <line x1="275" y1="35" x2="275" y2="210" stroke="#d34b35" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="285" y="45" font-size="15">支点</text>
+  <text x="290" y="125" font-size="15" fill="#d34b35">振り子の長さ</text>
+  <text x="290" y="215" font-size="15">おもりの中心</text>
+</svg>
+</div>
+
+<div class="important">
+振り子の長さ ＝ 支点からおもりの中心（重心）まで
+</div>
+
+<ul>
+<li>糸だけの長さではない。</li>
+<li>おもりの上端まででもない。</li>
+<li>おもりの中心まで測る。</li>
+</ul>
+<div class="warning">
+おもりを2個縦につなぐと、重心の位置が変わり、振り子の長さも変わります。
+</div>
+</section>
+
+<section>
+<h2>5. 10往復・20往復の時間を求める</h2>
+<p>実験では、1往復の時間を正確に測るため、10往復や20往復の時間を測ります。</p>
+
+<div class="formula">
+1往復の時間 ＝ 全体の時間 ÷ 往復回数
+</div>
+
+<h3>例題①</h3>
+<p>10往復するのに15秒かかりました。1往復する時間は？</p>
+<p><b>15 ÷ 10 ＝ 1.5秒</b></p>
+
+<h3>例題②</h3>
+<p>1往復が1.5秒の振り子が20往復するには何秒かかる？</p>
+<p><b>1.5 × 20 ＝ 30秒</b></p>
+</section>
+
+<section>
+<h2>6. 実験問題の解き方</h2>
+<p>次の4つの振り子を比較してみましょう。</p>
+
+<table>
+<tr><th>実験</th><th>糸の長さ</th><th>おもり</th><th>振れ幅</th></tr>
+<tr><td>A</td><td>20cm</td><td>10g</td><td>20度</td></tr>
+<tr><td>B</td><td>20cm</td><td>20g</td><td>20度</td></tr>
+<tr><td>C</td><td>40cm</td><td>10g</td><td>20度</td></tr>
+<tr><td>D</td><td>20cm</td><td>10g</td><td>40度</td></tr>
+</table>
+
+<ul>
+<li><b>AとB：</b>おもりの重さの影響を調べる。</li>
+<li><b>AとC：</b>糸の長さの影響を調べる。</li>
+<li><b>AとD：</b>振れ幅の影響を調べる。</li>
+</ul>
+
+<div class="important">
+実験問題では、比較する条件のうち、1つだけを変えることが大切です。これを「条件制御」といいます。
+</div>
+</section>
+
+<section>
+<h2>7. 確認テスト</h2>
+<p>5問に挑戦して、振り子の理解度を確認しよう！</p>
+
+<form id="quiz">
+
+<div class="question">
+<p>第1問：糸の長さを2倍にすると、周期はどうなる？</p>
+<label><input type="radio" name="q1" value="0"> 2倍になる</label>
+<label><input type="radio" name="q1" value="1"> 約1.4倍になる</label>
+<label><input type="radio" name="q1" value="2"> 変わらない</label>
+</div>
+
+<div class="question">
+<p>第2問：おもりを10gから50gに変えると、周期はどうなる？（ほかの条件は同じ）</p>
+<label><input type="radio" name="q2" value="0"> 5倍になる</label>
+<label><input type="radio" name="q2" value="1"> 短くなる</label>
+<label><input type="radio" name="q2" value="2"> 変わらない</label>
+</div>
+
+<div class="question">
+<p>第3問：振り子の長さはどこからどこまで？</p>
+<label><input type="radio" name="q3" value="0"> 支点からおもりの上端</label>
+<label><input type="radio" name="q3" value="1"> 支点からおもりの中心</label>
+<label><input type="radio" name="q3" value="2"> 糸の部分だけ</label>
+</div>
+
+<div class="question">
+<p>第4問：10往復に20秒かかった。1往復は何秒？</p>
+<label><input type="radio" name="q4" value="0"> 0.5秒</label>
+<label><input type="radio" name="q4" value="1"> 2秒</label>
+<label><input type="radio" name="q4" value="2"> 10秒</label>
+</div>
+
+<div class="question">
+<p>第5問：振り子の長さを4倍にすると、周期はどうなる？</p>
+<label><input type="radio" name="q5" value="0"> 2倍になる</label>
+<label><input type="radio" name="q5" value="1"> 4倍になる</label>
+<label><input type="radio" name="q5" value="2"> 変わらない</label>
+</div>
+
+<button type="button" onclick="checkAnswers()">採点する</button>
+<button type="reset" onclick="resetResult()" style="background:#777">やり直す</button>
+</form>
+
+<div id="result" class="result"></div>
+</section>
+
+<section>
+<h2>8. 最後に覚える5つの重要ポイント</h2>
+
+<div class="important">
+① 糸が長いほど、1往復する時間は長い。
+</div>
+<div class="important">
+② おもりの重さを変えても、時間は変わらない。
+</div>
+<div class="important">
+③ 通常の小さな振れ幅では、振れ幅を変えても時間はほぼ変わらない。
+</div>
+<div class="important">
+④ 振り子の長さは、支点からおもりの中心まで。
+</div>
+<div class="important">
+⑤ 糸の長さを4倍にすると、1往復する時間は2倍。
+</div>
+
+<p><b>この5つを覚えれば、振り子の基本問題はかなり解けるようになります！</b></p>
+</section>
+
+</main>
+
+<footer>
+中学受験 理科・重要単元解説｜振り子
+</footer>
+
+<script>
+const answers = [1,2,1,1,0];
+
+const explanations = [
+"長さが2倍なら周期は√2倍、約1.4倍です。",
+"おもりの重さは周期に影響しません。",
+"支点からおもりの中心（重心）までです。",
+"20÷10＝2秒です。",
+"長さが4倍なら周期は√4＝2倍です。"
+];
+
+function checkAnswers() {
+  let score = 0;
+  let detail = "";
+
+  for(let i=0;i<5;i++) {
+    const selected = document.querySelector(
+      'input[name="q'+(i+1)+'"]:checked'
+    );
+
+    if(!selected) {
+      alert("すべての問題に回答してください。");
+      return;
+    }
+
+    const correct = Number(selected.value) === answers[i];
+
+    if(correct) score++;
+
+    detail += "<p><b>第"+(i+1)+"問："+ 
+      (correct ? "正解！" : "不正解") +
+      "</b><br>"+explanations[i]+"</p>";
+  }
+
+  const result = document.getElementById("result");
+  result.style.display = "block";
+  result.innerHTML =
+    "<h3>結果："+score+" / 5 問正解</h3>" +
+    detail +
+    (score===5
+      ? "<b>全問正解！振り子をよく理解できています。</b>"
+      : "<b>間違えた問題をもう一度復習しましょう。</b>");
+  result.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+
+function resetResult() {
+  document.getElementById("result").style.display="none";
+}
+</script>
+
+</body>
+</html>

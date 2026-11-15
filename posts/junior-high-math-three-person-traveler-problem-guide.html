@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中学受験｜3人の旅人算の解き方</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Meiryo", sans-serif;
+  background: #f3f6fb;
+  color: #263445;
+  line-height: 1.85;
+}
+.container {
+  max-width: 850px;
+  margin: auto;
+}
+header {
+  background: linear-gradient(135deg,#174a7e,#2879b9);
+  color: white;
+  padding: 30px 22px;
+  border-radius: 16px;
+  text-align: center;
+}
+header h1 { margin: 0; font-size: 27px; }
+header p { margin-bottom: 0; }
+section {
+  background: white;
+  padding: 23px;
+  margin-top: 20px;
+  border-radius: 13px;
+  box-shadow: 0 3px 12px #0000000c;
+}
+h2 {
+  font-size: 21px;
+  color: #17558a;
+  border-left: 5px solid #2879b9;
+  padding-left: 12px;
+}
+h3 { color: #2879b9; }
+.formula {
+  background: #edf5ff;
+  padding: 15px;
+  margin: 12px 0;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #17558a;
+}
+.point {
+  background: #fff6df;
+  padding: 13px 16px;
+  border-radius: 9px;
+  margin-top: 12px;
+}
+.answer {
+  background: #e9f7ef;
+  padding: 13px;
+  border-radius: 9px;
+  margin-top: 12px;
+}
+.diagram {
+  background: #f5f7fa;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 15px 0;
+}
+.runner {
+  display: inline-block;
+  padding: 7px 12px;
+  margin: 5px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+}
+.a { background: #2879b9; }
+.b { background: #24966a; }
+.c { background: #e28a29; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+th,td {
+  border: 1px solid #dce3ec;
+  padding: 10px;
+  text-align: center;
+}
+th { background: #edf4fa; }
+.question {
+  padding: 15px;
+  border: 1px solid #dce3ec;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+button {
+  background: #216ca8;
+  color: white;
+  border: none;
+  padding: 11px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 12px;
+}
+button:hover { background: #174a7e; }
+.result {
+  margin-top: 10px;
+  font-weight: bold;
+}
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #718096;
+  font-size: 13px;
+}
+@media(max-width:600px) {
+  body { padding: 10px; }
+  section { padding: 16px; }
+  header h1 { font-size: 23px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>3人の旅人算をマスターしよう！</h1>
+  <p>中学受験・算数の重要単元</p>
+  <p>公式・図解・例題・練習問題</p>
+</header>
+
+<section>
+<h2>1．3人の旅人算とは？</h2>
+<p>
+旅人算とは、歩く人や走る人の速さ・時間・距離を考える問題です。
+3人の旅人算では、A君・B君・C君の3人が登場します。
+</p>
+<p>よく出る問題は次のようなものです。</p>
+<ul>
+<li>3人が同じ場所から同時に出発する。</li>
+<li>3人が別々の場所から出発する。</li>
+<li>2人が先に出発し、あとから1人が出発する。</li>
+<li>同じ方向に進み、追いつく。</li>
+<li>反対方向に進み、出会う。</li>
+</ul>
+<div class="diagram">
+  <span class="runner a">A君</span>
+  <span class="runner b">B君</span>
+  <span class="runner c">C君</span>
+  <p>3人の位置・速さ・出発時間を整理して考えよう！</p>
+</div>
+</section>
+
+<section>
+<h2>2．絶対に覚えたい3つの公式</h2>
+
+<div class="formula">
+距離 ＝ 速さ × 時間
+</div>
+<div class="formula">
+出会う速さ ＝ 2人の速さの和
+</div>
+<div class="formula">
+追いつく速さ ＝ 2人の速さの差
+</div>
+
+<h3>① 距離の公式</h3>
+<p>分速100mで5分歩いた場合</p>
+<p>100 × 5 ＝ 500m</p>
+
+<h3>② 出会う場合（反対方向）</h3>
+<p>A君が分速80m、B君が分速60mで向かい合って進む場合</p>
+<p>80 ＋ 60 ＝ 140m</p>
+<p>1分間に140mずつ距離が縮まります。</p>
+
+<h3>③ 追いつく場合（同じ方向）</h3>
+<p>A君が分速80m、B君が分速60mで同じ方向に進む場合</p>
+<p>80 － 60 ＝ 20m</p>
+<p>1分間に20mずつ距離が縮まります。</p>
+
+<div class="point">
+<strong>覚え方！</strong><br>
+向かい合うときは「足し算」<br>
+同じ方向に進むときは「引き算」
+</div>
+</section>
+
+<section>
+<h2>3．例題① 3人が同じ場所から出発</h2>
+<p><strong>問題</strong></p>
+<p>
+A君・B君・C君の3人が同じ場所から同時に出発しました。
+</p>
+<ul>
+<li>A君：分速100m</li>
+<li>B君：分速80m</li>
+<li>C君：分速60m</li>
+</ul>
+<p>5分後、それぞれ何m進んでいますか？</p>
+
+<div class="diagram">
+  <span class="runner a">A君 100m/分</span>
+  <span class="runner b">B君 80m/分</span>
+  <span class="runner c">C君 60m/分</span>
+  <p>→ 同じ方向に5分進む</p>
+</div>
+
+<h3>解き方</h3>
+<p>A君：100 × 5 ＝ 500m</p>
+<p>B君：80 × 5 ＝ 400m</p>
+<p>C君：60 × 5 ＝ 300m</p>
+
+<div class="answer">
+<strong>答え</strong><br>
+A君：500m<br>
+B君：400m<br>
+C君：300m
+</div>
+</section>
+
+<section>
+<h2>4．例題② 3人のうち2人が追いつく</h2>
+<p><strong>問題</strong></p>
+<p>
+A君は分速100mで進んでいます。
+C君はA君より200m後ろから分速120mで出発しました。
+C君は何分後にA君に追いつきますか？
+</p>
+
+<div class="diagram">
+  <span class="runner c">C君 120m/分</span>
+  <span>← 200m →</span>
+  <span class="runner a">A君 100m/分</span>
+  <p>2人とも同じ方向へ進む</p>
+</div>
+
+<h3>解き方</h3>
+<p><strong>① 速さの差を求める</strong></p>
+<p>120 － 100 ＝ 20m</p>
+<p>1分間に20mずつ距離が縮まります。</p>
+
+<p><strong>② 最初の距離を速さの差で割る</strong></p>
+<p>200 ÷ 20 ＝ 10分</p>
+
+<div class="answer">
+<strong>答え：10分後</strong>
+</div>
+</section>
+
+<section>
+<h2>5．例題③ 2人が向かい合って出会う</h2>
+<p><strong>問題</strong></p>
+<p>
+A君とB君が540m離れた場所から同時に向かい合って進みます。
+</p>
+<ul>
+<li>A君：分速90m</li>
+<li>B君：分速60m</li>
+</ul>
+<p>何分後に出会いますか？</p>
+
+<div class="diagram">
+  <span class="runner a">A君 →</span>
+  <span>540m</span>
+  <span class="runner b">← B君</span>
+</div>
+
+<h3>解き方</h3>
+<p><strong>① 2人の速さを足す</strong></p>
+<p>90 ＋ 60 ＝ 150m</p>
+
+<p><strong>② 距離を速さの和で割る</strong></p>
+<p>540 ÷ 150 ＝ 3.6分</p>
+<p>0.6分 × 60秒 ＝ 36秒</p>
+
+<div class="answer">
+<strong>答え：3分36秒後</strong>
+</div>
+</section>
+
+<section>
+<h2>6．3人の旅人算で重要な考え方</h2>
+<table>
+<tr><th>問題の状況</th><th>考え方</th></tr>
+<tr><td>同じ方向</td><td>速さの差</td></tr>
+<tr><td>反対方向</td><td>速さの和</td></tr>
+<tr><td>同時に出発</td><td>距離＝速さ×時間</td></tr>
+<tr><td>時間差で出発</td><td>先に進んだ距離を考える</td></tr>
+<tr><td>3人が登場</td><td>まず2人ずつ考える</td></tr>
+</table>
+
+<div class="point">
+<strong>中学受験での重要ポイント</strong><br>
+3人が登場しても、いきなり3人の速さを足したり引いたりしないこと！
+まず、誰と誰の関係を考えるのか整理しましょう。
+</div>
+</section>
+
+<section>
+<h2>7．理解度チェック！練習問題</h2>
+<p>自分で考えてから「答え合わせ」を押しましょう。</p>
+
+<div class="question">
+<strong>第1問</strong>
+<p>
+A君は分速100m、B君は分速80mです。
+同じ場所から同時に同じ方向へ進みます。
+5分後の2人の距離は何mですか？
+</p>
+<label><input type="radio" name="q1" value="0"> 20m</label><br>
+<label><input type="radio" name="q1" value="1"> 100m</label><br>
+<label><input type="radio" name="q1" value="2"> 500m</label>
+<div id="r1" class="result"></div>
+</div>
+
+<div class="question">
+<strong>第2問</strong>
+<p>
+A君は分速120m、B君は分速80mです。
+A君がB君の400m後ろから同時に出発し、同じ方向へ進みます。
+A君が追いつくのは何分後ですか？
+</p>
+<label><input type="radio" name="q2" value="0"> 5分</label><br>
+<label><input type="radio" name="q2" value="1"> 10分</label><br>
+<label><input type="radio" name="q2" value="2"> 20分</label>
+<div id="r2" class="result"></div>
+</div>
+
+<div class="question">
+<strong>第3問</strong>
+<p>
+A君は分速90m、B君は分速60mです。
+2人が540m離れた場所から向かい合って進みます。
+何分後に出会いますか？
+</p>
+<label><input type="radio" name="q3" value="0"> 3分</label><br>
+<label><input type="radio" name="q3" value="1"> 3分36秒</label><br>
+<label><input type="radio" name="q3" value="2"> 6分</label>
+<div id="r3" class="result"></div>
+</div>
+
+<button onclick="checkAnswers()">答え合わせ</button>
+<button onclick="resetQuiz()" style="background:#65758a">もう一度解く</button>
+<div id="score" class="result"></div>
+</section>
+
+<section>
+<h2>8．最後に覚えておこう！</h2>
+<div class="formula">出会い ＝ 速さの和</div>
+<div class="formula">追いつき ＝ 速さの差</div>
+<div class="formula">距離 ＝ 速さ × 時間</div>
+
+<p>
+3人の旅人算は、3人を一度に考える必要はありません。
+まず2人の速さと距離の関係を整理することが、正解への近道です。
+</p>
+</section>
+
+<footer>
+中学受験 算数学習教材｜3人の旅人算
+</footer>
+</div>
+
+<script>
+function checkAnswers() {
+  const answers = [1,1,1];
+  const explanations = [
+    "正解！速さの差は100－80＝20m。20×5＝100mです。",
+    "正解！速さの差は120－80＝40m。400÷40＝10分です。",
+    "正解！速さの和は90＋60＝150m。540÷150＝3.6分＝3分36秒です。"
+  ];
+  let score = 0;
+
+  for(let i=1;i<=3;i++){
+    const selected = document.querySelector(
+      'input[name="q'+i+'"]:checked'
+    );
+    const result = document.getElementById("r"+i);
+
+    if(!selected){
+      result.textContent = "答えを選んでください。";
+      result.style.color = "#d97706";
+    } else if(Number(selected.value) === answers[i-1]){
+      score++;
+      result.textContent = explanations[i-1];
+      result.style.color = "#16834a";
+    } else {
+      result.textContent = "残念！もう一度、速さの和・差を考えてみよう。";
+      result.style.color = "#d33";
+    }
+  }
+  document.getElementById("score").textContent =
+    "正解数：" + score + " / 3問";
+}
+
+function resetQuiz(){
+  document.querySelectorAll('input[type="radio"]').forEach(
+    el => el.checked = false
+  );
+  document.querySelectorAll(".result").forEach(
+    el => el.textContent = ""
+  );
+  document.getElementById("score").textContent = "";
+}
+</script>
+</body>
+</html>

@@ -1,5 +1,23 @@
 [
     {
+        "id": "junior-high-math-three-person-traveler-problem-guide",
+        "title": "中学受験算数｜3人の旅人算の解き方・公式・図解・練習問題（出会いと追いつき）",
+        "filename": "posts/junior-high-math-three-person-traveler-problem-guide.html",
+        "createdAt": "2026-11-16T07:48:00+09:00",
+        "dateFormatted": "2026/11/16",
+        "description": "中学受験算数の重要単元「旅人算（3人の旅人算）」。基本の3大公式（距離＝速さ×時間、出会う速さ＝和、追いつく速さ＝差）の覚え方から、同方向・向かい合い・時間差出発の図解例題、2人ずつに分解して解く鉄則、理解度チェック練習問題（全3問・解説付き）までを分かりやすく整理。",
+        "tags": [
+            "中学受験",
+            "算数",
+            "旅人算",
+            "速さ",
+            "出会い算",
+            "追いつき算",
+            "3人の旅人算",
+            "勉強用クイズ"
+        ]
+    },
+    {
         "id": "baseball-score-inada-club-vs-tanibata",
         "title": "試合結果｜稲田クラブ vs 谷端ジュニア 0-9（3回コールド）",
         "filename": "posts/baseball-score-inada-club-vs-tanibata.html",

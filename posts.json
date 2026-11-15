@@ -1,5 +1,22 @@
 [
     {
+        "id": "baseball-score-inada-club-vs-tanibata",
+        "title": "試合結果｜稲田クラブ vs 谷端ジュニア 0-9（3回コールド）",
+        "filename": "posts/baseball-score-inada-club-vs-tanibata.html",
+        "createdAt": "2026-11-15T15:02:00+09:00",
+        "dateFormatted": "2026/11/15",
+        "description": "少年野球の試合結果スコアボード。稲田クラブ vs 谷端ジュニア。1回表裏から3回裏までのスコア（稲田クラブ 0-0-0 計0、谷端ジュニア 4-3-2x 計9）で谷端ジュニアが3回コールド勝利。",
+        "tags": [
+            "野球",
+            "試合結果",
+            "スコアボード",
+            "谷端ジュニア",
+            "稲田クラブ",
+            "少年野球",
+            "コールドゲーム"
+        ]
+    },
+    {
         "id": "nomura-holdings-stock-game-investment-analysis",
         "title": "野村ホールディングス 投資分析｜中学校の株式ゲームで勝つための企業研究（8604）",
         "filename": "posts/nomura-holdings-stock-game-investment-analysis.html",

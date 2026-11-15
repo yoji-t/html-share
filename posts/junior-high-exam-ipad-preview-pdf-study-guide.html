@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中学受験｜iPad純正プレビューでPDF演習</title>
+<style>
+:root {
+  --main: #245a83;
+  --light: #edf5fb;
+  --border: #dce4ec;
+  --text: #263445;
+  --muted: #687789;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 20px;
+  background: #f3f6f9;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Helvetica Neue", "Yu Gothic", Meiryo, sans-serif;
+  line-height: 1.8;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+}
+h1 {
+  font-size: 27px;
+  line-height: 1.4;
+  color: var(--main);
+}
+h2 {
+  font-size: 21px;
+  margin-top: 38px;
+  padding: 10px 14px;
+  background: var(--light);
+  border-left: 5px solid var(--main);
+}
+h3 { font-size: 17px; margin-bottom: 6px; }
+p { margin: 8px 0 14px; }
+.lead {
+  font-size: 16px;
+  color: #44566a;
+}
+.point {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin: 15px 0;
+}
+.recommend {
+  background: #edf7f0;
+  border: 1px solid #b9ddc4;
+  padding: 18px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: #e4eef8;
+  color: var(--main);
+  font-size: 12px;
+  font-weight: bold;
+}
+ul, ol { padding-left: 24px; }
+li { margin: 5px 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+th { background: var(--light); }
+.step {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+  align-items: flex-start;
+}
+.number {
+  flex: 0 0 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--main);
+  color: white;
+  text-align: center;
+  line-height: 34px;
+  font-weight: bold;
+}
+.folder {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  background: #fafbfd;
+  font-family: monospace;
+  line-height: 2;
+}
+.note {
+  background: #fff8e8;
+  border-left: 4px solid #e3ad39;
+  padding: 13px;
+  margin: 15px 0;
+  border-radius: 5px;
+}
+.footer {
+  margin-top: 35px;
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+a { color: #1769aa; }
+@media(max-width:600px) {
+  body { padding: 8px; }
+  .container { padding: 17px; }
+  h1 { font-size: 23px; }
+  table { font-size: 12px; }
+  th, td { padding: 7px; }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>中学受験のPDF演習環境を整える</h1>
+<p class="lead">
+iPad（2020年モデル）とApple Pencilを使い、
+純正「プレビュー」アプリで問題PDFに直接書き込みながら
+学習する方法をまとめたガイドです。
+</p>
+
+<div class="recommend">
+<strong>今回のおすすめ：</strong><br>
+iPad純正の「プレビュー」アプリを利用する。<br>
+有料アプリを購入せず、PDFの読み込み・手書き・保存を
+シンプルに行うことを目指します。
+</div>
+
+<h2>1. 利用する環境</h2>
+<table>
+<tr><th>項目</th><th>利用環境</th></tr>
+<tr><td>端末</td><td>iPad（2020年モデル・第8世代）</td></tr>
+<tr><td>ペン</td><td>Apple Pencil 第1世代</td></tr>
+<tr><td>アプリ</td><td>Apple純正「プレビュー」</td></tr>
+<tr><td>ファイル形式</td><td>PDF</td></tr>
+<tr><td>利用目的</td><td>中学受験の問題演習・解き直し</td></tr>
+<tr><td>費用</td><td>プレビューは無料</td></tr>
+</table>
+
+<div class="note">
+<strong>対応OSに注意：</strong><br>
+iPad第8世代はiPadOS 26に対応しています。
+プレビューアプリを利用するにはiPadOS 26以降が必要です。
+「設定」→「一般」→「ソフトウェアアップデート」で
+確認してください。
+</div>
+
+<h2>2. プレビューでできること</h2>
+<div class="point">
+<h3>① PDFへの直接書き込み</h3>
+<ul>
+<li>Apple Pencilで計算式を書く</li>
+<li>算数の図形に補助線を引く</li>
+<li>線分図・面積図を描く</li>
+<li>問題文の重要箇所にマーカーを引く</li>
+</ul>
+</div>
+
+<div class="point">
+<h3>② 書き込みの修正</h3>
+<ul>
+<li>消しゴムで不要な線を消す</li>
+<li>書き直しや修正ができる</li>
+<li>必要に応じて図形や注釈を追加する</li>
+</ul>
+</div>
+
+<div class="point">
+<h3>③ PDFとして保存</h3>
+<ul>
+<li>書き込み済みPDFを保存する</li>
+<li>元の問題PDFを残しておく</li>
+<li>解答済みPDFを別ファイルとして管理する</li>
+</ul>
+</div>
+
+<h2>3. 実際の操作手順</h2>
+
+<div class="step">
+<div class="number">1</div>
+<div>
+<h3>問題PDFを開く</h3>
+<ol>
+<li>iPadの「ファイル」アプリを開く。</li>
+<li>問題PDFが保存されている場所を開く。</li>
+<li>PDFをタップしてプレビューで開く。</li>
+</ol>
+</div>
+</div>
+
+<div class="step">
+<div class="number">2</div>
+<div>
+<h3>Apple Pencilで書き込む</h3>
+<ol>
+<li>マークアップツールを表示する。</li>
+<li>ペンや蛍光ペンを選択する。</li>
+<li>問題用紙に直接書き込む。</li>
+<li>消しゴムで不要な部分を修正する。</li>
+</ol>
+</div>
+</div>
+
+<div class="step">
+<div class="number">3</div>
+<div>
+<h3>解答済みPDFを保存する</h3>
+<ol>
+<li>共有メニューなどからPDFの書き出し・保存操作を行う。</li>
+<li>「ファイルに保存」を選択する。</li>
+<li>保存先のフォルダを指定する。</li>
+<li>解答済みと分かるファイル名を付ける。</li>
+</ol>
+</div>
+</div>
+
+<div class="note">
+<strong>注意：</strong><br>
+プレビューの編集内容は保存操作によって元ファイルに反映される場合があります。
+原本を残したい場合は、最初にファイルアプリでPDFを複製し、
+複製した方に書き込む運用がおすすめです。
+</div>
+
+<h2>4. おすすめのペンの使い分け</h2>
+<table>
+<tr><th>色</th><th>使い方</th><th>具体例</th></tr>
+<tr><td>黒</td><td>通常の解答</td><td>計算式・答え</td></tr>
+<tr><td>青</td><td>補助線・メモ</td><td>図形・線分図</td></tr>
+<tr><td>赤</td><td>間違い・重要事項</td><td>間違えた箇所</td></tr>
+<tr><td>黄色</td><td>重要箇所の強調</td><td>問題文の条件</td></tr>
+</table>
+
+<h2>5. 科目別の使い方</h2>
+
+<div class="point">
+<h3>算数</h3>
+<ul>
+<li>計算式を問題用紙の余白に書く。</li>
+<li>図形問題に補助線を引く。</li>
+<li>旅人算や割合の線分図を描く。</li>
+<li>面積図・表を作成する。</li>
+</ul>
+</div>
+
+<div class="point">
+<h3>国語</h3>
+<ul>
+<li>文章の重要箇所にマーカーを引く。</li>
+<li>登場人物の気持ちをメモする。</li>
+<li>接続語や指示語に印を付ける。</li>
+<li>選択肢の根拠を線で示す。</li>
+</ul>
+</div>
+
+<div class="point">
+<h3>理科</h3>
+<ul>
+<li>実験結果に印を付ける。</li>
+<li>回路図や実験器具に書き込む。</li>
+<li>計算問題の式を書く。</li>
+<li>重要な用語をマーカーで強調する。</li>
+</ul>
+</div>
+
+<div class="point">
+<h3>社会</h3>
+<ul>
+<li>地図に地名を書き込む。</li>
+<li>重要な年代に印を付ける。</li>
+<li>資料やグラフの特徴をメモする。</li>
+<li>間違えた用語を赤字で記入する。</li>
+</ul>
+</div>
+
+<h2>6. おすすめのフォルダ構成</h2>
+<p>ファイルアプリで、次のように整理します。</p>
+
+<div class="folder">
+📁 中学受験<br>
+　├ 📁 算数<br>
+　│　├ 📁 原本<br>
+　│　├ 📁 1回目<br>
+　│　├ 📁 2回目<br>
+　│　└ 📁 間違い直し<br>
+　├ 📁 国語<br>
+　│　├ 📁 原本<br>
+　│　├ 📁 演習済み<br>
+　│　└ 📁 間違い直し<br>
+　├ 📁 理科<br>
+　│　├ 📁 原本<br>
+　│　├ 📁 演習済み<br>
+　│　└ 📁 間違い直し<br>
+　└ 📁 社会<br>
+　　　├ 📁 原本<br>
+　　　├ 📁 演習済み<br>
+　　　└ 📁 間違い直し
+</div>
+
+<h2>7. ファイル名の付け方</h2>
+<table>
+<tr><th>ファイル名</th><th>内容</th></tr>
+<tr><td>算数_旅人算_原本.pdf</td><td>元の問題</td></tr>
+<tr><td>算数_旅人算_1回目.pdf</td><td>初回の解答</td></tr>
+<tr><td>算数_旅人算_2回目.pdf</td><td>解き直し</td></tr>
+<tr><td>算数_旅人算_解説.pdf</td><td>解説・復習用</td></tr>
+<tr><td>算数_旅人算_間違い直し.pdf</td><td>間違えた問題の再演習</td></tr>
+</table>
+
+<h2>8. おすすめの復習サイクル</h2>
+<div class="point">
+<strong>1回目：通常演習</strong>
+<p>問題PDFに書き込みながら解く。</p>
+<hr>
+<strong>2回目：採点・分析</strong>
+<p>間違えた問題を確認し、赤字で印を付ける。</p>
+<hr>
+<strong>3回目：解き直し</strong>
+<p>原本を複製して、もう一度自力で解く。</p>
+<hr>
+<strong>4回目：定着確認</strong>
+<p>前回間違えた問題が解けるようになったか確認する。</p>
+</div>
+
+<h2>9. Goodnotesとの比較</h2>
+<table>
+<tr><th>比較項目</th><th>プレビュー</th><th>Goodnotes</th></tr>
+<tr><td>PDFへの書き込み</td><td>○</td><td>○</td></tr>
+<tr><td>Apple Pencil対応</td><td>○</td><td>○</td></tr>
+<tr><td>無料利用</td><td>○</td><td>制限あり</td></tr>
+<tr><td>PDFの整理</td><td>ファイルアプリ</td><td>アプリ内で管理</td></tr>
+<tr><td>ノート機能</td><td>基本的な注釈</td><td>充実</td></tr>
+<tr><td>今回の用途</td><td>◎</td><td>◎</td></tr>
+</table>
+
+<p>
+PDFに直接書き込んで保存することが中心なら、
+純正プレビューで十分です。
+大量の問題をノート形式でまとめたり、独自の学習ノートを
+作ったりする場合にはGoodnotesも候補になります。
+</p>
+
+<h2>10. 参考リンク</h2>
+<ul>
+<li>
+<a href="https://www.apple.com/jp/newsroom/2025/06/ipados-26-introduces-powerful-new-features-that-push-ipad-even-further/" target="_blank" rel="noopener">
+Apple公式：iPadOS 26の新機能
+</a>
+</li>
+<li>
+<a href="https://support.apple.com/ja-jp/" target="_blank" rel="noopener">
+Appleサポート
+</a>
+</li>
+</ul>
+
+<div class="recommend">
+<strong>最終結論</strong>
+<p>
+iPad（2020年モデル）とApple Pencilを活用し、
+純正プレビューで問題PDFに直接書き込む方法がおすすめです。
+</p>
+<p>
+元の問題PDFを保存し、解答済みPDFを別に管理することで、
+中学受験の過去問・模試・復習問題を効率よく繰り返し演習できます。
+</p>
+</div>
+
+<div class="footer">
+中学受験 PDF学習環境ガイド<br>
+iPad純正プレビュー・Apple Pencil活用編
+</div>
+
+</div>
+</body>
+</html>

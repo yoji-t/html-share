@@ -1,5 +1,23 @@
 [
     {
+        "id": "junior-high-exam-ipad-preview-pdf-study-guide",
+        "title": "中学受験のPDF演習環境を整える｜iPad（第8世代）と純正プレビュー・Apple Pencil活用ガイド",
+        "filename": "posts/junior-high-exam-ipad-preview-pdf-study-guide.html",
+        "createdAt": "2026-11-16T08:16:00+09:00",
+        "dateFormatted": "2026/11/16",
+        "description": "iPad（2020年モデル/第8世代）とApple Pencilを使い、iPadOS純正「プレビュー」アプリで問題PDFに直接書き込み・解き直しを行う学習環境構築ガイド。無料アプリでの運用手順、ペンの色分け、科目別活用法、ファイルアプリでのフォルダ構成・原本管理、Goodnotesとの比較を整理。",
+        "tags": [
+            "中学受験",
+            "iPad",
+            "Apple Pencil",
+            "プレビュー",
+            "PDF学習",
+            "勉強法",
+            "ペーパーレス",
+            "過去問演習"
+        ]
+    },
+    {
         "id": "junior-high-science-pendulum-mechanism-and-problem-solving",
         "title": "中学受験理科｜振り子の仕組みと解き方（周期・糸の長さ・おもり・振れ幅・条件制御・確認テスト）",
         "filename": "posts/junior-high-science-pendulum-mechanism-and-problem-solving.html",

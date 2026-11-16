@@ -1,5 +1,23 @@
 [
     {
+        "id": "junior-high-math-median-data-analysis-guide",
+        "title": "中学受験算数｜中央値（メディアン）の求め方・平均値との違い・練習問題（データの整理）",
+        "filename": "posts/junior-high-math-median-data-analysis-guide.html",
+        "createdAt": "2026-11-16T14:29:00+09:00",
+        "dateFormatted": "2026/11/16",
+        "description": "中学受験算数「データの活用・整理」の重要概念「中央値（メディアン）」。小さい順に並べる鉄則、奇数個（真ん中の1つ）と偶数個（真ん中2つの平均）の求め方の違い、外れ値に強い中央値と平均値の比較、理解度チェッククイズ（全3問・解説付き）を分かりやすく解説。",
+        "tags": [
+            "中学受験",
+            "算数",
+            "中央値",
+            "メディアン",
+            "平均値",
+            "データの整理",
+            "練習問題",
+            "勉強用クイズ"
+        ]
+    },
+    {
         "id": "sunday-racing-strength-secret-business-model",
         "title": "サンデーレーシングの強さの秘密｜ノーザンファーム・社台グループとの関係から読み解く日本競馬の垂直統合ビジネスモデル",
         "filename": "posts/sunday-racing-strength-secret-business-model.html",

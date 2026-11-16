@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中学受験 算数｜中央値をマスターしよう</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background: #f3f6fb;
+  color: #263449;
+  line-height: 1.8;
+  margin: 0;
+}
+.container {
+  max-width: 850px;
+  margin: auto;
+  padding: 20px;
+}
+header {
+  background: linear-gradient(135deg,#2455a4,#4285cf);
+  color: white;
+  padding: 30px 20px;
+  border-radius: 18px;
+  text-align: center;
+}
+header h1 { margin: 0; font-size: 27px; }
+header p { margin-bottom: 0; }
+section {
+  background: white;
+  margin-top: 20px;
+  padding: 22px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px #0000000c;
+}
+h2 {
+  color: #2455a4;
+  border-left: 5px solid #4285cf;
+  padding-left: 12px;
+  font-size: 21px;
+}
+h3 { color: #345d91; }
+.highlight {
+  background: #e8f5eb;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  color: #187342;
+  font-weight: bold;
+}
+.number-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 18px 0;
+}
+.number {
+  background: #edf1f7;
+  border-radius: 9px;
+  padding: 12px 8px;
+  flex: 1;
+  max-width: 100px;
+  text-align: center;
+  font-size: 21px;
+  font-weight: bold;
+}
+.middle {
+  background: #d8f0df;
+  color: #16733b;
+  border: 2px solid #53a873;
+}
+.small {
+  display: block;
+  font-size: 11px;
+  font-weight: normal;
+}
+.formula {
+  background: #fff5dd;
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 12px 0;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 15px 0;
+}
+th,td {
+  border: 1px solid #dce3ed;
+  padding: 10px;
+  text-align: center;
+}
+th { background: #eaf1fa; }
+.point {
+  background: #fff8e8;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+.quiz {
+  border: 1px solid #dce3ed;
+  padding: 15px;
+  border-radius: 12px;
+  margin: 18px 0;
+}
+.quiz label {
+  display: block;
+  padding: 7px;
+  cursor: pointer;
+}
+button {
+  background: #2864b1;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 12px 22px;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover { background: #174987; }
+.result {
+  margin-top: 12px;
+  padding: 12px;
+  background: #eef5ff;
+  border-radius: 9px;
+  display: none;
+}
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #718096;
+  font-size: 13px;
+}
+@media(max-width:480px) {
+  .container { padding: 12px; }
+  section { padding: 16px; }
+  .number { font-size: 17px; padding: 10px 3px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>中央値（ちゅうおうち）</h1>
+  <p>中学受験・算数の重要ポイント</p>
+  <p>数字を並べて真ん中を見つけよう！</p>
+</header>
+
+<section>
+<h2>1. 中央値とは？</h2>
+<p>
+中央値とは、いくつかの数字を小さい順に並べたとき、
+<strong>ちょうど真ん中にくる数字</strong>のことです。
+</p>
+
+<h3>例：5人のテストの点数</h3>
+<p>80点、60点、90点、70点、100点</p>
+<p>まず、小さい順に並べます。</p>
+
+<div class="number-row">
+  <div class="number">60</div>
+  <div class="number">70</div>
+  <div class="number middle">80<span class="small">真ん中</span></div>
+  <div class="number">90</div>
+  <div class="number">100</div>
+</div>
+
+<div class="highlight">
+  中央値は80点！
+</div>
+<p>
+5人のうち、3番目にある80点が中央値です。
+</p>
+</section>
+
+<section>
+<h2>2. 数字が偶数個の場合</h2>
+<p>
+数字が4個や6個など、偶数個の場合は、
+真ん中の数字が2つになります。
+</p>
+
+<h3>例：4人のテストの点数</h3>
+<p>40点、60点、80点、100点</p>
+
+<div class="number-row">
+  <div class="number">40</div>
+  <div class="number middle">60<span class="small">真ん中</span></div>
+  <div class="number middle">80<span class="small">真ん中</span></div>
+  <div class="number">100</div>
+</div>
+
+<p>真ん中の2つの数字の平均を計算します。</p>
+
+<div class="formula">
+(60＋80)÷2＝70
+</div>
+
+<div class="highlight">
+  中央値は70点！
+</div>
+<p>
+偶数個の場合は、真ん中2つの数字を足して2で割ります。
+</p>
+</section>
+
+<section>
+<h2>3. 中央値と平均値の違い</h2>
+
+<p>
+中央値と平均値は、どちらもデータの特徴を表す数字ですが、
+求め方が違います。
+</p>
+
+<h3>例：5人の貯金額</h3>
+<p>100円、200円、300円、400円、5,000円</p>
+
+<table>
+<tr>
+  <th>種類</th>
+  <th>求め方</th>
+  <th>答え</th>
+</tr>
+<tr>
+  <td>平均値</td>
+  <td>合計÷人数</td>
+  <td>1,200円</td>
+</tr>
+<tr>
+  <td><strong>中央値</strong></td>
+  <td>真ん中の数字</td>
+  <td><strong>300円</strong></td>
+</tr>
+</table>
+
+<h3>なぜこんなに違うの？</h3>
+<p>
+1人だけ5,000円という大きな貯金を持っているため、
+平均値は大きくなります。
+</p>
+<p>
+一方、中央値は順番の真ん中を見るだけなので、
+大きすぎる数字や小さすぎる数字に影響されにくいのです。
+</p>
+
+<div class="point">
+<strong>覚えよう！</strong><br>
+平均値：全部を足して人数で割る。<br>
+中央値：順番に並べて真ん中を見る。
+</div>
+</section>
+
+<section>
+<h2>4. 中学受験で覚えるルール</h2>
+
+<table>
+<tr>
+  <th>データの個数</th>
+  <th>中央値の位置・求め方</th>
+</tr>
+<tr><td>5個</td><td>3番目</td></tr>
+<tr><td>7個</td><td>4番目</td></tr>
+<tr><td>9個</td><td>5番目</td></tr>
+<tr><td>6個</td><td>3番目と4番目の平均</td></tr>
+<tr><td>8個</td><td>4番目と5番目の平均</td></tr>
+</table>
+
+<div class="formula">
+奇数個：真ん中の1つ<br>
+偶数個：真ん中2つの平均
+</div>
+
+<div class="point">
+<strong>入試での注意点</strong><br>
+必ず小さい順、または大きい順に並べてから
+真ん中を探しましょう。
+並べ替えを忘れると間違えてしまいます。
+</div>
+</section>
+
+<section>
+<h2>5. 練習問題に挑戦！</h2>
+<p>3問に挑戦して、中央値をマスターしよう！</p>
+
+<div class="quiz">
+<h3>第1問</h3>
+<p>次の5つの数字の中央値は？</p>
+<p><strong>3、8、5、1、9</strong></p>
+<div id="q1">
+<label><input type="radio" name="q1" value="3"> 3</label>
+<label><input type="radio" name="q1" value="5"> 5</label>
+<label><input type="radio" name="q1" value="8"> 8</label>
+<label><input type="radio" name="q1" value="9"> 9</label>
+</div>
+<div class="result" id="r1">
+<strong>正解：5</strong><br>
+1、3、5、8、9と並べます。
+3番目の5が中央値です。
+</div>
+</div>
+
+<div class="quiz">
+<h3>第2問</h3>
+<p>次の4つの数字の中央値は？</p>
+<p><strong>2、10、6、4</strong></p>
+<div id="q2">
+<label><input type="radio" name="q2" value="4"> 4</label>
+<label><input type="radio" name="q2" value="5"> 5</label>
+<label><input type="radio" name="q2" value="6"> 6</label>
+<label><input type="radio" name="q2" value="8"> 8</label>
+</div>
+<div class="result" id="r2">
+<strong>正解：5</strong><br>
+2、4、6、10と並べます。<br>
+(4＋6)÷2＝5です。
+</div>
+</div>
+
+<div class="quiz">
+<h3>第3問</h3>
+<p>次の7つの数字の中央値は？</p>
+<p><strong>12、5、9、3、15、7、11</strong></p>
+<div id="q3">
+<label><input type="radio" name="q3" value="7"> 7</label>
+<label><input type="radio" name="q3" value="9"> 9</label>
+<label><input type="radio" name="q3" value="11"> 11</label>
+<label><input type="radio" name="q3" value="12"> 12</label>
+</div>
+<div class="result" id="r3">
+<strong>正解：9</strong><br>
+3、5、7、9、11、12、15と並べます。<br>
+4番目の9が中央値です。
+</div>
+</div>
+
+<button onclick="checkAnswers()">答え合わせ</button>
+<button onclick="resetQuiz()" style="background:#68778c;">やり直す</button>
+<div id="score" class="result"></div>
+</section>
+
+<section>
+<h2>6. 最後にこれだけ覚えよう！</h2>
+
+<div class="highlight">
+中央値 ＝ 数字を順番に並べたときの真ん中
+</div>
+
+<ul>
+<li>最初に数字を小さい順に並べる。</li>
+<li>奇数個なら真ん中の1つ。</li>
+<li>偶数個なら真ん中2つの平均。</li>
+<li>平均値とは求め方が違う。</li>
+</ul>
+
+<p style="text-align:center;font-weight:bold;color:#2455a4;">
+並べる → 真ん中を探す → 偶数なら平均！
+</p>
+</section>
+
+<footer>
+中学受験 算数｜データの整理・中央値
+</footer>
+</div>
+
+<script>
+function checkAnswers() {
+  const answers = {q1:"5",q2:"5",q3:"9"};
+  let score = 0;
+
+  for (const q in answers) {
+    const selected = document.querySelector(
+      'input[name="'+q+'"]:checked'
+    );
+    document.getElementById(
+      "r"+q.substring(1)
+    ).style.display = "block";
+
+    if (selected && selected.value === answers[q]) {
+      score++;
+    }
+  }
+
+  const result = document.getElementById("score");
+  result.style.display = "block";
+  result.innerHTML =
+    "<strong>結果："+score+"問／3問正解！</strong><br>" +
+    (score===3 ? "全問正解！すばらしい！" :
+     "解説を確認して、もう一度挑戦しよう！");
+}
+
+function resetQuiz() {
+  document.querySelectorAll('input[type="radio"]')
+    .forEach(el => el.checked = false);
+
+  document.querySelectorAll(".result")
+    .forEach(el => el.style.display = "none");
+}
+</script>
+
+</body>
+</html>

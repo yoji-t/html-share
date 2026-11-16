@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中学受験算数｜同じ値が複数回出てくるときの中央値</title>
+<style>
+  body {
+    font-family: "Noto Sans JP", "Yu Gothic", sans-serif;
+    line-height: 1.9;
+    background: #f4f7fb;
+    color: #263445;
+    margin: 0;
+    padding: 20px;
+  }
+  .container {
+    max-width: 850px;
+    margin: auto;
+  }
+  h1 {
+    color: #174a78;
+    font-size: 25px;
+    border-bottom: 3px solid #3985bd;
+    padding-bottom: 12px;
+  }
+  h2 {
+    color: #205b8c;
+    font-size: 20px;
+    margin-top: 35px;
+    border-left: 5px solid #3985bd;
+    padding-left: 12px;
+  }
+  .card {
+    background: white;
+    padding: 20px;
+    margin: 18px 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #0000000d;
+  }
+  .numbers {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+  .number {
+    background: #e9eff5;
+    border-radius: 9px;
+    padding: 12px 15px;
+    min-width: 35px;
+    text-align: center;
+    font-size: 23px;
+    font-weight: bold;
+  }
+  .median {
+    background: #d9f1df;
+    color: #18753b;
+    border: 2px solid #52a76b;
+  }
+  .middle {
+    background: #dcecff;
+    color: #175b9c;
+    border: 2px solid #5596d3;
+  }
+  .answer {
+    text-align: center;
+    color: #18753b;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 15px;
+  }
+  .point {
+    background: #fff5dc;
+    border-left: 5px solid #e6aa32;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 15px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+  }
+  th, td {
+    border: 1px solid #d8e0e8;
+    padding: 12px;
+    text-align: center;
+  }
+  th {
+    background: #e8f1fa;
+  }
+  .question {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f7faff;
+    border-radius: 9px;
+  }
+  button {
+    background: #286da5;
+    color: white;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 5px;
+  }
+  button:hover {
+    background: #174a78;
+  }
+  .result {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  .formula {
+    text-align: center;
+    font-size: 21px;
+    font-weight: bold;
+    padding: 12px;
+  }
+  footer {
+    text-align: center;
+    color: #718096;
+    margin-top: 40px;
+    font-size: 13px;
+  }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>中学受験算数<br>同じ値が複数回出てくるときの中央値</h1>
+
+<div class="card">
+  <h2>1. 中央値とは？</h2>
+  <p>
+    中央値（メジアン）とは、数字を小さい順に並べたとき、
+    真ん中にくる数字のことです。
+  </p>
+  <div class="point">
+    <strong>大切なルール</strong><br>
+    同じ数字が何回出てきても、1つずつ数えます。
+    同じ数字だからといって、1つにまとめてはいけません。
+  </div>
+</div>
+
+<h2>2. 奇数個の場合（5個の数字）</h2>
+<div class="card">
+  <p>次の5つの数字の中央値を求めてみましょう。</p>
+  <div class="formula">2、3、3、5、8</div>
+
+  <p>小さい順に並んだ数字を1つずつ数えます。</p>
+
+  <div class="numbers">
+    <div class="number">2<br><small>1番目</small></div>
+    <div class="number">3<br><small>2番目</small></div>
+    <div class="number median">3<br><small>3番目</small></div>
+    <div class="number">5<br><small>4番目</small></div>
+    <div class="number">8<br><small>5番目</small></div>
+  </div>
+
+  <p>全部で5個なので、真ん中は3番目です。</p>
+  <div class="answer">中央値は 3</div>
+
+  <div class="point">
+    同じ「3」が2回ありますが、どちらも別々に数えます。
+  </div>
+</div>
+
+<h2>3. 偶数個の場合（6個の数字）</h2>
+<div class="card">
+  <p>次の6つの数字の中央値を求めてみましょう。</p>
+  <div class="formula">1、2、3、3、5、8</div>
+
+  <div class="numbers">
+    <div class="number">1<br><small>1番目</small></div>
+    <div class="number">2<br><small>2番目</small></div>
+    <div class="number middle">3<br><small>3番目</small></div>
+    <div class="number middle">3<br><small>4番目</small></div>
+    <div class="number">5<br><small>5番目</small></div>
+    <div class="number">8<br><small>6番目</small></div>
+  </div>
+
+  <p>全部で6個なので、真ん中は3番目と4番目です。</p>
+  <div class="formula">(3 ＋ 3) ÷ 2 ＝ 3</div>
+  <div class="answer">中央値は 3</div>
+
+  <div class="point">
+    偶数個の場合は、真ん中の2つの数字を足して2で割ります。
+  </div>
+</div>
+
+<h2>4. 中央値の求め方まとめ</h2>
+<div class="card">
+  <table>
+    <tr>
+      <th>数字の個数</th>
+      <th>中央値の求め方</th>
+    </tr>
+    <tr>
+      <td>奇数個（5個など）</td>
+      <td>真ん中の1つの数字</td>
+    </tr>
+    <tr>
+      <td>偶数個（6個など）</td>
+      <td>真ん中2つの平均</td>
+    </tr>
+  </table>
+
+  <div class="point">
+    <strong>絶対に覚えておこう！</strong>
+    <ol>
+      <li>数字を小さい順に並べる。</li>
+      <li>同じ数字も1つずつ数える。</li>
+      <li>全部で何個あるか確認する。</li>
+      <li>真ん中の位置を見つける。</li>
+      <li>偶数個なら真ん中2つの平均を求める。</li>
+    </ol>
+  </div>
+</div>
+
+<h2>5. 確認問題に挑戦！</h2>
+<div class="card">
+
+  <div class="question">
+    <strong>第1問</strong>
+    <p>2、2、4、6、9 の中央値は？</p>
+    <button onclick="check(1, '2')">2</button>
+    <button onclick="check(1, '4')">4</button>
+    <button onclick="check(1, '6')">6</button>
+    <div id="result1" class="result"></div>
+  </div>
+
+  <div class="question">
+    <strong>第2問</strong>
+    <p>1、3、3、3、7、9 の中央値は？</p>
+    <button onclick="check(2, '3')">3</button>
+    <button onclick="check(2, '4')">4</button>
+    <button onclick="check(2, '5')">5</button>
+    <div id="result2" class="result"></div>
+  </div>
+
+  <div class="question">
+    <strong>第3問</strong>
+    <p>2、2、2、4、6、8、10 の中央値は？</p>
+    <button onclick="check(3, '2')">2</button>
+    <button onclick="check(3, '4')">4</button>
+    <button onclick="check(3, '6')">6</button>
+    <div id="result3" class="result"></div>
+  </div>
+
+  <div class="question">
+    <strong>第4問</strong>
+    <p>1、2、2、5、5、8 の中央値は？</p>
+    <button onclick="check(4, '2')">2</button>
+    <button onclick="check(4, '3.5')">3.5</button>
+    <button onclick="check(4, '5')">5</button>
+    <div id="result4" class="result"></div>
+  </div>
+
+</div>
+
+<h2>6. 最後に覚えておくこと</h2>
+<div class="card">
+  <div class="answer">同じ数字も全部数える！</div>
+  <p>
+    例えば、2、2、2、3、5 なら、
+    数字の種類は3種類ですが、全部で5個です。
+  </p>
+  <p>
+    したがって、3番目の「2」が中央値になります。
+  </p>
+  <p>
+    入試では、同じ数字が何回も登場する問題があるので、
+    数字の種類ではなく、数字の個数に注目しましょう。
+  </p>
+</div>
+
+<footer>
+  中学受験 算数・中央値の学習資料
+</footer>
+
+</div>
+
+<script>
+const answers = {
+  1: {
+    value: "4",
+    explanation: "5個なので3番目の4が中央値です。"
+  },
+  2: {
+    value: "3",
+    explanation: "6個なので3番目と4番目の平均です。(3＋3)÷2＝3。"
+  },
+  3: {
+    value: "4",
+    explanation: "7個なので4番目の4が中央値です。"
+  },
+  4: {
+    value: "3.5",
+    explanation: "6個なので3番目の2と4番目の5の平均です。(2＋5)÷2＝3.5。"
+  }
+};
+
+function check(no, selected) {
+  const result = document.getElementById("result" + no);
+  const correct = answers[no];
+
+  if (selected === correct.value) {
+    result.style.color = "#18753b";
+    result.innerHTML = "◎ 正解！ " + correct.explanation;
+  } else {
+    result.style.color = "#c0392b";
+    result.innerHTML = "× もう一度考えてみよう！ " +
+      correct.explanation;
+  }
+}
+</script>
+</body>
+</html>

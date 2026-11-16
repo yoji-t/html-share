@@ -1,5 +1,23 @@
 [
     {
+        "id": "junior-high-math-median-with-duplicate-values-guide",
+        "title": "中学受験算数｜同じ値が複数回出てくるときの中央値の求め方（重複データの扱い・確認問題）",
+        "filename": "posts/junior-high-math-median-with-duplicate-values-guide.html",
+        "createdAt": "2026-11-16T22:20:00+09:00",
+        "dateFormatted": "2026/11/16",
+        "description": "中学受験算数で受験生がつまずきやすい「同じ値が重複しているデータの中央値（メジアン）」。種類数ではなく総個数で数える鉄則、奇数個・偶数個それぞれの具体例と図解、全4問のインタラクティブ確認問題（即時判定・解説付き）で完全マスター。",
+        "tags": [
+            "中学受験",
+            "算数",
+            "中央値",
+            "メジアン",
+            "重複データ",
+            "データの活用",
+            "練習問題",
+            "勉強用クイズ"
+        ]
+    },
+    {
         "id": "junior-high-math-median-data-analysis-guide",
         "title": "中学受験算数｜中央値（メディアン）の求め方・平均値との違い・練習問題（データの整理）",
         "filename": "posts/junior-high-math-median-data-analysis-guide.html",

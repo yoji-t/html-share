@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>発電所建設関連企業と業績分析</title>
+<style>
+:root {
+  --navy:#173653;
+  --blue:#246b9e;
+  --light:#eef5fa;
+  --green:#247653;
+  --orange:#d77a29;
+  --text:#263746;
+  --muted:#667788;
+  --border:#dce5ec;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:#f3f6f9;
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",
+  "Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  line-height:1.8;
+}
+header{
+  background:linear-gradient(135deg,#15324f,#246b9e);
+  color:white;
+  padding:55px 20px;
+}
+header .inner,main{max-width:1050px;margin:auto}
+header h1{font-size:clamp(27px,5vw,40px);line-height:1.4}
+header p{color:#dceaf5}
+main{padding:25px 18px 60px}
+section{
+  background:white;
+  padding:25px;
+  margin:24px 0;
+  border-radius:14px;
+  border:1px solid var(--border);
+}
+h2{
+  font-size:23px;
+  color:var(--navy);
+  border-left:5px solid var(--blue);
+  padding-left:13px;
+  margin-top:0;
+}
+h3{color:var(--navy);font-size:19px}
+.lead{font-size:17px}
+.note{color:var(--muted);font-size:13px}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:15px;
+}
+.card{
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:17px;
+  background:#fff;
+}
+.card h3{margin:0 0 8px}
+.tag{
+  display:inline-block;
+  padding:3px 10px;
+  border-radius:20px;
+  background:#e7f1f8;
+  color:#245d84;
+  font-size:12px;
+  font-weight:bold;
+}
+.tag.green{background:#e5f4ec;color:#247653}
+.tag.orange{background:#fff0df;color:#a85c16}
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin:15px 0;
+  font-size:14px;
+}
+th,td{
+  padding:11px 10px;
+  border-bottom:1px solid var(--border);
+  text-align:left;
+}
+th{background:#edf3f8;color:var(--navy)}
+tr:hover{background:#f8fafc}
+.highlight{
+  background:var(--light);
+  padding:18px;
+  border-radius:10px;
+  margin:15px 0;
+}
+.company{
+  padding:17px 0;
+  border-bottom:1px solid var(--border);
+}
+.company:last-child{border-bottom:none}
+.company h3{margin:0 0 5px}
+.number{font-size:23px;font-weight:bold;color:var(--navy)}
+.reason{
+  display:flex;
+  gap:13px;
+  margin:18px 0;
+  align-items:flex-start;
+}
+.reason .num{
+  background:var(--navy);
+  color:white;
+  border-radius:50%;
+  min-width:34px;
+  height:34px;
+  text-align:center;
+  line-height:34px;
+}
+footer{
+  text-align:center;
+  padding:25px;
+  color:var(--muted);
+  font-size:12px;
+}
+a{color:#216b9f}
+@media(max-width:600px){
+  section{padding:17px}
+  table{font-size:12px}
+  th,td{padding:8px 5px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="inner">
+  <span class="tag green">企業研究・投資分析</span>
+  <h1>発電所建設関連企業と業績分析</h1>
+  <p>火力・原子力・再生可能エネルギーから送電インフラまで、日本の主要企業を整理する</p>
+  <p>調査テーマ：AI時代の電力需要増加と発電設備投資</p>
+</div>
+</header>
+
+<main>
+
+<section>
+<h2>1. 発電所建設の全体像</h2>
+<p class="lead">
+発電所の建設は、発電設備メーカー、プラントエンジニアリング会社、
+電機メーカー、建設会社、ポンプメーカー、電線メーカーなど、
+多くの企業が関係する大規模産業である。
+</p>
+<div class="grid">
+<div class="card">
+<h3>発電設備</h3>
+タービン・発電機・ボイラー<br>
+<strong>三菱重工、IHI</strong>
+</div>
+<div class="card">
+<h3>プラント設計・建設</h3>
+設計・調達・建設（EPC）<br>
+<strong>日揮HD、千代田化工建設</strong>
+</div>
+<div class="card">
+<h3>変電・制御設備</h3>
+変圧器・制御システム<br>
+<strong>日立、富士電機</strong>
+</div>
+<div class="card">
+<h3>建設工事</h3>
+建屋・基礎・土木工事<br>
+<strong>鹿島、大林組、大成建設</strong>
+</div>
+<div class="card">
+<h3>ポンプ・補機</h3>
+冷却水・排水・流体設備<br>
+<strong>荏原製作所</strong>
+</div>
+<div class="card">
+<h3>送電インフラ</h3>
+電力ケーブル・送電網<br>
+<strong>住友電工、古河電工</strong>
+</div>
+</div>
+</section>
+
+<section>
+<h2>2. 主要企業と業績</h2>
+
+<div class="company">
+<h3>三菱重工業（7011） <span class="tag green">最重要注目</span></h3>
+<p>ガスタービン、蒸気タービン、発電機、火力・原子力発電設備を供給する総合重工メーカー。</p>
+<ul>
+<li>大型ガスタービン</li>
+<li>LNG火力発電所</li>
+<li>原子力発電設備</li>
+<li>水素・アンモニア発電技術</li>
+</ul>
+<table>
+<tr><th>2026年度上期</th><th>実績</th></tr>
+<tr><td>売上収益</td><td>2兆5,232億円</td></tr>
+<tr><td>事業利益</td><td>2,493億円</td></tr>
+<tr><td>受注高</td><td>3兆6,125億円</td></tr>
+</table>
+<p class="note">出典：2026年度第2四半期決算資料。数値は前回調査時点の整理。</p>
+</div>
+
+<div class="company">
+<h3>IHI（7013）</h3>
+<p>ガスタービン、ボイラー、発電設備、アンモニア燃焼技術などを手掛ける。</p>
+<table>
+<tr><th>2026年度上期</th><th>実績</th></tr>
+<tr><td>売上収益</td><td>7,793億円</td></tr>
+<tr><td>営業利益</td><td>1,149億円</td></tr>
+</table>
+<p>不動産売却益426億円を含むため、本業の収益力を見る際は一時要因を除く必要がある。</p>
+</div>
+
+<div class="company">
+<h3>日立製作所（6501） <span class="tag green">送電インフラ</span></h3>
+<p>変圧器、送配電設備、電力系統制御などを展開。日立エナジーが海外の電力インフラ需要を取り込む。</p>
+<table>
+<tr><th>2026年3月期</th><th>実績</th></tr>
+<tr><td>売上収益</td><td>10兆5,867億円</td></tr>
+<tr><td>営業利益</td><td>1兆1,992億円</td></tr>
+<tr><td>当期利益</td><td>8,023億円</td></tr>
+</table>
+</div>
+
+<div class="company">
+<h3>富士電機（6504）</h3>
+<p>火力・地熱発電設備、変電設備、電源システムなどを手掛ける。</p>
+<table>
+<tr><th>2025年度エネルギー事業</th><th>実績</th></tr>
+<tr><td>売上高</td><td>3,964億円</td></tr>
+<tr><td>営業利益</td><td>595億円</td></tr>
+<tr><td>2026年度売上計画</td><td>4,550億円</td></tr>
+<tr><td>2026年度営業利益計画</td><td>710億円</td></tr>
+</table>
+<p class="note">エネルギー事業全体の数値であり、発電設備単独の数値ではない。</p>
+</div>
+
+<div class="company">
+<h3>日揮ホールディングス（1963）</h3>
+<p>発電所やLNGプラントの設計・調達・建設を担うEPC企業。水素、アンモニア、CCSなども展開。</p>
+<p>大型プロジェクトの受注高、受注残高、工事採算が重要。</p>
+</div>
+
+<div class="company">
+<h3>千代田化工建設（6366）</h3>
+<p>LNGプラント、石油・ガス関連設備、水素などのプラントエンジニアリング企業。</p>
+<p>大型案件の受注と採算管理、財務健全性に注意する必要がある。</p>
+</div>
+
+<div class="company">
+<h3>鹿島建設（1812）</h3>
+<p>発電所建屋、基礎工事、土木工事、原子力関連施設などを担当。</p>
+<table>
+<tr><th>2026年3月期</th><th>実績</th></tr>
+<tr><td>売上高</td><td>3兆672億円</td></tr>
+<tr><td>営業利益</td><td>2,407億円</td></tr>
+</table>
+</div>
+
+<div class="company">
+<h3>大林組（1802）・大成建設（1801）</h3>
+<p>発電所の建屋、土木、原子力関連施設などの建設を担当。大型インフラ工事の受注が業績に影響する。</p>
+</div>
+
+<div class="company">
+<h3>荏原製作所（6361）</h3>
+<p>大型ポンプ、冷却水設備、排水設備などを供給。新設だけでなく既設発電所の更新・保守も事業機会となる。</p>
+</div>
+
+<div class="company">
+<h3>太平電業（1968）</h3>
+<p>発電設備の据付、火力・原子力発電所の定期点検・補修を行う専門工事会社。</p>
+<p>2026年3月末の手持工事高：約1,809億円。</p>
+</div>
+
+<div class="company">
+<h3>住友電気工業（5802） <span class="tag green">送電需要</span></h3>
+<p>高圧・超高圧電力ケーブル、海底ケーブル、電力インフラを供給する。</p>
+<table>
+<tr><th>2026年3月期</th><th>実績</th></tr>
+<tr><td>売上高</td><td>5兆1,102億円</td></tr>
+<tr><td>営業利益</td><td>4,182億円</td></tr>
+</table>
+</div>
+
+<div class="company">
+<h3>古河電気工業（5801）</h3>
+<p>電力ケーブル、超高圧送電設備などを手掛ける。電力網の増強や再生可能エネルギーの接続需要が成長機会。</p>
+</div>
+
+</section>
+
+<section>
+<h2>3. 企業比較一覧</h2>
+<table>
+<tr><th>企業</th><th>コード</th><th>主な事業</th><th>注目度</th></tr>
+<tr><td>三菱重工</td><td>7011</td><td>タービン・発電設備</td><td>非常に高い</td></tr>
+<tr><td>日立製作所</td><td>6501</td><td>変電・送配電</td><td>非常に高い</td></tr>
+<tr><td>住友電工</td><td>5802</td><td>送電ケーブル</td><td>非常に高い</td></tr>
+<tr><td>IHI</td><td>7013</td><td>タービン・ボイラー</td><td>高い</td></tr>
+<tr><td>富士電機</td><td>6504</td><td>発電・変電設備</td><td>高い</td></tr>
+<tr><td>古河電工</td><td>5801</td><td>電力ケーブル</td><td>高い</td></tr>
+<tr><td>日揮HD</td><td>1963</td><td>プラント建設</td><td>高い</td></tr>
+<tr><td>千代田化工建設</td><td>6366</td><td>プラント建設</td><td>高い</td></tr>
+<tr><td>荏原製作所</td><td>6361</td><td>ポンプ・補機</td><td>高い</td></tr>
+<tr><td>太平電業</td><td>1968</td><td>据付・保守</td><td>高い</td></tr>
+<tr><td>鹿島建設</td><td>1812</td><td>建屋・土木</td><td>中程度</td></tr>
+<tr><td>大林組</td><td>1802</td><td>建屋・土木</td><td>中程度</td></tr>
+<tr><td>大成建設</td><td>1801</td><td>建屋・土木</td><td>中程度</td></tr>
+</table>
+<p class="note">注目度は事業との関連性を示す独自評価。株価の割安度や投資推奨順位ではない。</p>
+</section>
+
+<section>
+<h2>4. 発電所建設が増える5つの理由</h2>
+<div class="reason">
+<div class="num">1</div>
+<div><strong>AI・データセンターの電力需要</strong><br>
+AI向けデータセンターの増加によって大量の電力が必要となる。発電設備と送電網の増強が必要。</div>
+</div>
+<div class="reason">
+<div class="num">2</div>
+<div><strong>原子力発電所の再稼働・新増設</strong><br>
+安全対策工事、設備更新、次世代革新炉の開発などが関連企業の事業機会となる。</div>
+</div>
+<div class="reason">
+<div class="num">3</div>
+<div><strong>火力発電所の更新</strong><br>
+老朽化した設備を高効率LNG火力などに置き換える需要がある。</div>
+</div>
+<div class="reason">
+<div class="num">4</div>
+<div><strong>再生可能エネルギーの拡大</strong><br>
+洋上風力、太陽光、地熱、水力などの設備増加に伴い送電網も必要になる。</div>
+</div>
+<div class="reason">
+<div class="num">5</div>
+<div><strong>老朽化した電力インフラの更新</strong><br>
+変圧器、送電線、制御システムなどの更新需要が発生する。</div>
+</div>
+</section>
+
+<section>
+<h2>5. 注目企業のグループ分け</h2>
+<div class="grid">
+<div class="card">
+<span class="tag green">第1グループ</span>
+<h3>発電設備メーカー</h3>
+<p class="number">三菱重工・IHI</p>
+<p>大型発電設備の受注増加が業績に結びつく。ガスタービン、火力、原子力に注目。</p>
+</div>
+<div class="card">
+<span class="tag green">第2グループ</span>
+<h3>電力インフラ企業</h3>
+<p class="number">日立・住友電工・富士電機</p>
+<p>送電網、変電設備、蓄電設備など、幅広い電力需要を取り込める。</p>
+</div>
+<div class="card">
+<span class="tag orange">第3グループ</span>
+<h3>建設・保守企業</h3>
+<p class="number">日揮・太平電業・荏原</p>
+<p>新設工事だけでなく、既設発電所の更新や保守が収益機会となる。</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>6. 投資判断で確認する5つの指標</h2>
+<table>
+<tr><th>指標</th><th>確認する内容</th></tr>
+<tr><td>受注高</td><td>新規の発電所建設案件を獲得できているか</td></tr>
+<tr><td>受注残高</td><td>将来の売上につながる工事を確保しているか</td></tr>
+<tr><td>営業利益率</td><td>大型案件が適正な利益を生んでいるか</td></tr>
+<tr><td>設備投資</td><td>生産能力を増強できているか</td></tr>
+<tr><td>海外事業</td><td>為替や海外案件の採算に問題がないか</td></tr>
+</table>
+<div class="highlight">
+<strong>重要な注意点</strong><br>
+発電所建設が増えても、必ずしも関連企業の利益が増えるとは限らない。特にプラント企業は大型案件の採算悪化によって業績が変動することがある。
+</div>
+</section>
+
+<section>
+<h2>7. 参考資料・IR情報</h2>
+<ul>
+<li><a href="https://www.mhi.com/jp/finance/library/result" target="_blank" rel="noopener">三菱重工 決算資料</a></li>
+<li><a href="https://www.ihi.co.jp/ir/" target="_blank" rel="noopener">IHI IR情報</a></li>
+<li><a href="https://www.hitachi.com/ja-jp/ir/" target="_blank" rel="noopener">日立製作所 IR情報</a></li>
+<li><a href="https://www.fujielectric.co.jp/ir/" target="_blank" rel="noopener">富士電機 IR情報</a></li>
+<li><a href="https://sumitomoelectric.com/jp/ir" target="_blank" rel="noopener">住友電工 IR情報</a></li>
+<li><a href="https://www.jgc.com/jp/ir/" target="_blank" rel="noopener">日揮HD IR情報</a></li>
+</ul>
+</section>
+
+<section>
+<h2>8. 総合結論</h2>
+<p class="lead">
+発電所建設関連企業を調べる際には、建設会社だけでなく、発電設備と送電インフラを提供する企業にも注目することが重要である。
+</p>
+<div class="highlight">
+<h3>特に注目したい4社</h3>
+<ol>
+<li><strong>三菱重工：</strong> 大型ガスタービン・発電設備</li>
+<li><strong>日立製作所：</strong> 変電・送配電インフラ</li>
+<li><strong>住友電工：</strong> 電力ケーブル・送電網</li>
+<li><strong>富士電機：</strong> 発電・変電設備</li>
+</ol>
+</div>
+<p>
+AI・データセンターによる電力需要増加を起点として、発電所の新設、既存設備の更新、送電網の増強まで、幅広い企業に事業機会が生まれる可能性がある。
+</p>
+</section>
+
+<footer>
+発電所建設関連企業・業績分析<br>
+数値は調査時点の参考情報です。投資判断に利用する際は各社の最新決算短信・説明資料をご確認ください。
+</footer>
+
+</main>
+</body>
+</html>

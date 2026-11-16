@@ -1,5 +1,23 @@
 [
     {
+        "id": "laughter-lines-pedigree-analysis",
+        "title": "ラフターラインズの血統解説｜アルアイン×キングカメハメハ×バラ一族（ローザネイ牝系）の魅力",
+        "filename": "posts/laughter-lines-pedigree-analysis.html",
+        "createdAt": "2026-11-17T06:28:00+09:00",
+        "dateFormatted": "2026/11/17",
+        "description": "注目の競走馬「ラフターラインズ（父アルアイン×母バンゴール）」の血統徹底解説。ディープインパクト直系アルアインの瞬発力と中距離持続力、母父キングカメハメハのスピード・パワー、クロフネの底力、名牝ローザネイから連なる「バラ一族（ローズバド、ローズキングダム、スタニングローズ）」の牝系、サンデーサイレンス3×4の配合妙味を紐解く。",
+        "tags": [
+            "競馬",
+            "血統",
+            "ラフターラインズ",
+            "アルアイン",
+            "ディープインパクト",
+            "キングカメハメハ",
+            "バラ一族",
+            "ローザネイ"
+        ]
+    },
+    {
         "id": "junior-high-math-median-with-duplicate-values-guide",
         "title": "中学受験算数｜同じ値が複数回出てくるときの中央値の求め方（重複データの扱い・確認問題）",
         "filename": "posts/junior-high-math-median-with-duplicate-values-guide.html",

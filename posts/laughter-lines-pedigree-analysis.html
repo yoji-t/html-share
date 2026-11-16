@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ラフターラインズの血統解説</title>
+<style>
+:root {
+  --navy: #172b49;
+  --blue: #315b87;
+  --gold: #c39a45;
+  --bg: #f4f6fa;
+  --text: #26332d;
+  --muted: #68768a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  line-height: 1.85;
+}
+header {
+  background: linear-gradient(135deg, #172b49, #315b87);
+  color: white;
+  padding: 55px 20px;
+  text-align: center;
+}
+header .sub {
+  color: #e6c77e;
+  letter-spacing: .15em;
+  font-size: 13px;
+}
+header h1 {
+  font-size: clamp(27px, 5vw, 42px);
+  margin: 12px 0;
+}
+header p { color: #e4eaf2; }
+.container {
+  max-width: 950px;
+  margin: auto;
+  padding: 25px 18px 60px;
+}
+section {
+  background: white;
+  border-radius: 14px;
+  padding: 25px;
+  margin: 22px 0;
+  box-shadow: 0 3px 15px rgba(0,0,0,.045);
+}
+h2 {
+  color: var(--navy);
+  font-size: 23px;
+  border-left: 5px solid var(--gold);
+  padding-left: 13px;
+  margin-top: 0;
+}
+h3 { color: var(--blue); }
+.hero {
+  text-align: center;
+}
+.hero img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.note {
+  background: #f1f5fa;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 15px 0;
+}
+.highlight {
+  background: #fff7e7;
+  border-left: 4px solid var(--gold);
+  padding: 16px;
+  border-radius: 5px;
+  margin: 18px 0;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 15px 0;
+}
+th, td {
+  border-bottom: 1px solid #e4e9ef;
+  padding: 12px;
+  text-align: left;
+}
+th {
+  background: #edf2f8;
+  color: var(--navy);
+  width: 35%;
+}
+.tree {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+.tree-node {
+  background: #edf2f8;
+  padding: 13px;
+  border-radius: 9px;
+  margin: 5px auto;
+  font-weight: bold;
+}
+.tree-node.main {
+  background: #203c61;
+  color: white;
+}
+.tree-node.gold {
+  background: #fff1ce;
+  border: 1px solid #dfbf76;
+}
+.arrow {
+  color: var(--gold);
+  font-size: 22px;
+  line-height: 1.3;
+}
+.horse-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+.horse {
+  background: #f5f7fa;
+  border-radius: 10px;
+  padding: 14px;
+}
+.horse img {
+  width: 100%;
+  aspect-ratio: 5/3;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.horse strong { display: block; margin-top: 8px; }
+.small { color: var(--muted); font-size: 13px; }
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 30px 15px;
+  font-size: 12px;
+}
+a { color: #315b87; }
+@media(max-width:600px) {
+  section { padding: 19px; }
+  .horse-grid { grid-template-columns: 1fr; }
+  th, td { padding: 9px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="sub">HORSE RACING / PEDIGREE ANALYSIS</div>
+  <h1>ラフターラインズの血統解説</h1>
+  <p>ディープインパクト系 × キングカメハメハ系 × ローザネイ牝系</p>
+</header>
+
+<main class="container">
+
+<section class="hero">
+  <h2>注目の競走馬・ラフターラインズ</h2>
+  <img src="https://placehold.co/900x450?text=Laughter+Lines"
+       alt="ラフターラインズの写真">
+  <p>
+    父アルアイン、母バンゴールという血統。
+    父系と母系の双方に日本競馬を代表する名血が入っている。
+  </p>
+</section>
+
+<section>
+  <h2>1. 基本的なプロフィールと血統</h2>
+  <table>
+    <tr><th>馬名</th><td>ラフターラインズ</td></tr>
+    <tr><th>性別</th><td>牝馬</td></tr>
+    <tr><th>父</th><td>アルアイン</td></tr>
+    <tr><th>母</th><td>バンゴール</td></tr>
+    <tr><th>母父</th><td>キングカメハメハ</td></tr>
+    <tr><th>生産者</th><td>ノーザンファーム（要確認）</td></tr>
+  </table>
+  <div class="highlight">
+    <strong>血統のポイント</strong><br>
+    父系にはディープインパクト、母系にはキングカメハメハ、
+    クロフネ、そして名牝ローザネイの血が受け継がれている。
+  </div>
+</section>
+
+<section>
+  <h2>2. 父系：アルアイン</h2>
+  <h3>ディープインパクトの血を受け継ぐ実力馬</h3>
+  <p>
+    アルアインは2017年の皐月賞、2019年の大阪杯を制した競走馬。
+    父はディープインパクト、母はドバイマジェスティ。
+  </p>
+  <table>
+    <tr><th>父</th><td>ディープインパクト</td></tr>
+    <tr><th>母</th><td>ドバイマジェスティ</td></tr>
+    <tr><th>主な勝鞍</th><td>皐月賞・大阪杯</td></tr>
+    <tr><th>全兄</th><td>シャフリヤール</td></tr>
+  </table>
+  <div class="note">
+    <strong>ディープインパクト系の特徴</strong>
+    <ul>
+      <li>芝の中長距離で活躍する産駒が多い</li>
+      <li>瞬発力や末脚に優れた馬が多い</li>
+      <li>日本競馬を代表する父系の一つ</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>3. 母系：バンゴール</h2>
+  <p>
+    母のバンゴールは父キングカメハメハ、母ローザブランカ。
+    その母系をさかのぼると、名牝ローザネイにたどり着く。
+  </p>
+
+  <div class="tree">
+    <div class="tree-node main">ラフターラインズ</div>
+    <div class="arrow">↓</div>
+    <div class="tree-node">バンゴール</div>
+    <div class="arrow">↓</div>
+    <div class="tree-node">ローザブランカ</div>
+    <div class="arrow">↓</div>
+    <div class="tree-node">ローズバド</div>
+    <div class="arrow">↓</div>
+    <div class="tree-node">ロゼカラー</div>
+    <div class="arrow">↓</div>
+    <div class="tree-node gold">ローザネイ</div>
+  </div>
+
+  <div class="note">
+    <strong>母系に含まれる主な血統</strong>
+    <ul>
+      <li>キングカメハメハ：母バンゴールの父</li>
+      <li>クロフネ：ローザブランカの父</li>
+      <li>ローズバド：母系の重要な活躍馬</li>
+      <li>ローザネイ：母系の基礎となった名牝</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>4. ローザネイ牝系の活躍馬</h2>
+  <p>
+    ローザネイを起点とする牝系は、
+    日本競馬で数多くの活躍馬を生み出してきた。
+    いわゆる「バラ一族」として知られる血統である。
+  </p>
+
+  <div class="horse-grid">
+    <div class="horse">
+      <img src="https://placehold.co/500x300?text=Rose+Bud"
+           alt="ローズバド">
+      <strong>ローズバド</strong>
+      <p class="small">
+        重賞勝ち馬。エリザベス女王杯2着などの実績を持つ。
+      </p>
+    </div>
+    <div class="horse">
+      <img src="https://placehold.co/500x300?text=Rose+Color"
+           alt="ロゼカラー">
+      <strong>ロゼカラー</strong>
+      <p class="small">
+        デイリー杯3歳ステークス優勝。
+      </p>
+    </div>
+    <div class="horse">
+      <img src="https://placehold.co/500x300?text=Rose+Kingdom"
+           alt="ローズキングダム">
+      <strong>ローズキングダム</strong>
+      <p class="small">
+        ジャパンカップ優勝などの実績を持つ。
+      </p>
+    </div>
+    <div class="horse">
+      <img src="https://placehold.co/500x300?text=Stunning+Rose"
+           alt="スタニングローズ">
+      <strong>スタニングローズ</strong>
+      <p class="small">
+        秋華賞、エリザベス女王杯優勝。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>5. 血統の面白いポイント</h2>
+
+  <h3>① サンデーサイレンスの3×4</h3>
+  <p>
+    父アルアインの父系にはディープインパクトがいる。
+    また、母系のローズバドにもサンデーサイレンスが入っている。
+  </p>
+  <div class="highlight">
+    <strong>3×4とは？</strong><br>
+    血統表の3代目と4代目に同じ祖先が現れる配合をいう。
+    一般に「奇跡の血量」と呼ばれることがある。
+    ただし、3×4だから必ず能力が高くなるわけではない。
+  </div>
+
+  <h3>② クロフネの血</h3>
+  <p>
+    母系にはクロフネが入っている。
+    クロフネは芝・ダート双方で活躍した名馬。
+    パワーやスピードを伝える血統として注目される。
+  </p>
+
+  <h3>③ エリザベス女王杯と縁のある牝系</h3>
+  <p>
+    母系のローザネイ牝系には、エリザベス女王杯で
+    実績を残したローズバドやスタニングローズがいる。
+    こうした牝系のつながりも興味深い。
+  </p>
+</section>
+
+<section>
+  <h2>6. 血統から考える特徴</h2>
+  <table>
+    <tr><th>血統</th><th>期待される特徴</th></tr>
+    <tr><td>ディープインパクト</td><td>瞬発力・芝適性</td></tr>
+    <tr><td>アルアイン</td><td>中距離適性・持続力</td></tr>
+    <tr><td>キングカメハメハ</td><td>スピード・パワー</td></tr>
+    <tr><td>クロフネ</td><td>パワー・底力</td></tr>
+    <tr><td>ローザネイ牝系</td><td>優秀な牝系の継続性</td></tr>
+  </table>
+  <p class="small">
+    ※血統から考えられる一般的な傾向であり、
+    実際の競走能力や適性を保証するものではない。
+  </p>
+</section>
+
+<section>
+  <h2>7. まとめ：ラフターラインズの血統の魅力</h2>
+  <div class="highlight">
+    <strong>最大の魅力は、父系と母系の両方に優秀な血統が集まっていること。</strong>
+  </div>
+  <ul>
+    <li>父系はディープインパクトにつながるアルアイン</li>
+    <li>母父は日本を代表する種牡馬キングカメハメハ</li>
+    <li>母系にはクロフネやローズバドの血が入る</li>
+    <li>さらに名牝ローザネイにつながる牝系</li>
+    <li>エリザベス女王杯に縁のある一族</li>
+  </ul>
+  <p>
+    父系のスピードと瞬発力、母系のパワーや底力という
+    異なる要素を受け継ぐ可能性を持った血統構成である。
+  </p>
+</section>
+
+<section>
+  <h2>8. 血統をさらに調べるための参考サイト</h2>
+  <ul>
+    <li>
+      <a href="https://www.jbis.or.jp/" target="_blank">
+        JBISサーチ
+      </a>
+      ：競走馬の血統・産駒・生産情報
+    </li>
+    <li>
+      <a href="https://www.jra.go.jp/" target="_blank">
+        JRA公式サイト
+      </a>
+      ：競走成績・レース結果
+    </li>
+    <li>
+      <a href="https://www.netkeiba.com/" target="_blank">
+        netkeiba
+      </a>
+      ：競走馬情報・血統表・レース情報
+    </li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  HORSE RACING PEDIGREE GUIDE<br>
+  ラフターラインズの血統解説
+</footer>
+
+</body>
+</html>

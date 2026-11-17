@@ -1,5 +1,22 @@
 [
     {
+        "id": "antigravity-remote-control-ipad-setup-guide",
+        "title": "iPadでAntigravity Remote Controlを使う手順｜Safariアクセス・PWAアプリ化・活用Tips",
+        "filename": "posts/antigravity-remote-control-ipad-setup-guide.html",
+        "createdAt": "2026-11-17T22:38:00+09:00",
+        "dateFormatted": "2026/11/17",
+        "description": "iPhoneで導入済みのAntigravity Remote ControlをiPad（iPad Pro）でも利用するための手順解説。PC側追加設定不要でSafariから同アカウントログインするだけの簡単接続、ホーム画面追加（PWA化）によるアプリ運用、画面表示切り替えや複数端末併用のポイントをまとめました。",
+        "tags": [
+            "Antigravity",
+            "Remote Control",
+            "iPad",
+            "PWA",
+            "設定ガイド",
+            "Safari",
+            "遠隔操作"
+        ]
+    },
+    {
         "id": "microsoft-365-global-outage-cause-analysis-2026",
         "title": "Microsoft 365 世界規模の大規模障害｜原因・技術的仕組み・復旧過程・企業影響と教訓の解説まとめ（2026年11月）",
         "filename": "posts/microsoft-365-global-outage-cause-analysis-2026.html",

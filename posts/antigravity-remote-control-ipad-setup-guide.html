@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iPadでAntigravity Remote Controlを使う手順</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      line-height: 1.7;
+      color: #333;
+      max-width: 720px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+    p {
+      margin-bottom: 16px;
+    }
+    h3 {
+      font-size: 1.15rem;
+      color: #1a73e8;
+      border-bottom: 2px solid #e8f0fe;
+      padding-bottom: 6px;
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    ol, ul {
+      padding-left: 24px;
+      margin-bottom: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    code {
+      background-color: #f1f3f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.9em;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #e0e0e0;
+      margin: 28px 0;
+    }
+    .tips-box {
+      background-color: #f8f9fa;
+      border-left: 4px solid #1a73e8;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+    }
+    .tips-title {
+      font-weight: bold;
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #202124;
+    }
+    .tips-box ul {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <p>iPhoneですでにAntigravityの「Remote Control」が使える状態になっているのであれば、<strong>PC側の追加設定は一切不要</strong>です。iPad側でブラウザからアクセスするだけで、すぐに同じように使えます。</p>
+
+  <p>iPad Proでの設定手順は以下の通りです。</p>
+
+  <h3>1. iPadのSafariからアクセスしてログインする</h3>
+  <ol>
+    <li>iPadで <strong>Safari</strong> を開き、Antigravity Remote Controlのダッシュボード（<code>https://antigravity.google.com/</code> またはPC側のRemote Control設定画面に表示されている接続用URL）にアクセスします。</li>
+    <li>PC（MacBook ProやMac miniなど）およびiPhoneで使っているのと<strong>同じGoogleアカウント</strong>でログインします。</li>
+    <li>オンラインになっているホストPCの一覧が表示されるので、「Connect」をタップすればそのまま操作できます。</li>
+  </ol>
+
+  <h3>2. ホーム画面に追加してアプリ化する（おすすめ）</h3>
+  <p>iPhoneと同様に、iPadでもPWA（Webアプリ）としてホーム画面に追加しておくと起動やプッシュ通知の受け取りがスムーズになります。</p>
+  <ol>
+    <li>SafariでRemote Controlのダッシュボードを開いた状態で、画面右上の<strong>共有ボタン（四角から上矢印が出ているアイコン）</strong>をタップします。</li>
+    <li>メニューから <strong>「ホーム画面に追加」</strong> を選択します。</li>
+    <li>「Webアプリとして開く」がオンになっていることを確認して「追加」をタップします。</li>
+  </ol>
+
+  <hr>
+
+  <div class="tips-box">
+    <p class="tips-title">💡 iPadで使う際のちょっとしたポイント</p>
+    <ul>
+      <li><strong>レイアウトの表示切り替え：</strong> iPadの画面サイズだとPC版に近い表示になることがありますが、もし画面が崩れたりボタンが押しにくかったりする場合は、Safariのアドレスバー左側のアイコンから「モバイル用Webサイトを表示」と「デスクトップ用Webサイトを表示」を切り替えてみてください。</li>
+      <li><strong>複数端末の切り替え：</strong> iPhoneとiPadの両方に設定しておいても競合することはなく、外出先ではiPhone、自宅のリビングやカフェで画面を広く見たいときはiPad、という形でシームレスに同じセッションを引き継いで操作できます。</li>
+    </ul>
+  </div>
+
+</body>
+</html>

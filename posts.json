@@ -1,5 +1,23 @@
 [
     {
+        "id": "gemini-4-argon-task-feature-agentic-workspace-analysis",
+        "title": "【Gemini 4 Argon】品質を高める効果はモデルの賢さよりも「見直す作業場」にあった｜動画まとめ（NI-WORK）",
+        "filename": "posts/gemini-4-argon-task-feature-agentic-workspace-analysis.html",
+        "createdAt": "2026-11-18T08:46:00+09:00",
+        "dateFormatted": "2026/11/18",
+        "description": "Googleのフロンティアモデル「Gemini 4 Argon」の登場と、実務資料作成における「タスク（旧Spark）」機能の自律的エージェント環境（仮想作業場）の重要性を徹底解説。3.8 Flash×タスクとArgon×チャットの比較検証、Excel・PPT・Word一括生成の挙動、自己修正ループ、Google Workspace利用者の代替手段としてのAntigravity活用まで動画の内容を網羅。",
+        "tags": [
+            "Gemini",
+            "Gemini 4 Argon",
+            "AIエージェント",
+            "Google Workspace",
+            "Antigravity",
+            "業務効率化",
+            "YouTube要約",
+            "生成AI"
+        ]
+    },
+    {
         "id": "what-is-mba-careers-and-job-roles-guide",
         "title": "MBAとは？取得者が活躍する職種とキャリア｜戦略コンサル・PEファンド・CFO・経営企画から学ぶ経営学修士の価値",
         "filename": "posts/what-is-mba-careers-and-job-roles-guide.html",

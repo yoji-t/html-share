@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ただよびとは？サービス概要と経営破綻の理由</title>
+<style>
+:root {
+  --main: #2457a6;
+  --light: #edf4ff;
+  --text: #263449;
+  --muted: #68778b;
+  --red: #c94b4b;
+  --green: #24865b;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #f3f6fa;
+  color: var(--text);
+  font-family: "Noto Sans JP", "Yu Gothic", sans-serif;
+  line-height: 1.85;
+}
+.container {
+  max-width: 920px;
+  margin: auto;
+  padding: 24px 18px 60px;
+}
+header {
+  background: linear-gradient(135deg,#183d78,#347ac5);
+  color: white;
+  padding: 42px 25px;
+  border-radius: 18px;
+  margin-bottom: 28px;
+}
+header .tag {
+  display: inline-block;
+  background: #ffffff25;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+h1 { font-size: clamp(25px,5vw,36px); line-height: 1.4; }
+header p { color: #e6efff; }
+h2 {
+  font-size: 23px;
+  border-left: 5px solid var(--main);
+  padding-left: 13px;
+  margin-top: 45px;
+}
+h3 { font-size: 18px; margin-bottom: 8px; }
+p { margin: 10px 0 16px; }
+.card {
+  background: white;
+  border-radius: 13px;
+  padding: 22px;
+  margin: 17px 0;
+  box-shadow: 0 3px 12px #19385c0c;
+}
+.summary {
+  background: var(--light);
+  border: 1px solid #d6e5ff;
+  border-radius: 13px;
+  padding: 22px;
+}
+.highlight { color: var(--main); font-weight: bold; }
+.red { color: var(--red); font-weight: bold; }
+.green { color: var(--green); font-weight: bold; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 13px;
+}
+.stat {
+  background: white;
+  border-radius: 12px;
+  padding: 19px;
+  border: 1px solid #e5eaf1;
+}
+.stat small { color: var(--muted); display:block; }
+.stat strong { font-size: 25px; color: var(--red); }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin: 15px 0;
+  font-size: 14px;
+}
+th,td {
+  padding: 13px;
+  border: 1px solid #e1e7ef;
+  text-align: left;
+}
+th { background: #edf3fb; }
+.timeline {
+  border-left: 3px solid #b7cceb;
+  margin: 20px 0 20px 9px;
+  padding-left: 22px;
+}
+.timeline-item { margin-bottom: 25px; position: relative; }
+.timeline-item::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: var(--main);
+  border-radius: 50%;
+  position: absolute;
+  left: -30px;
+  top: 8px;
+}
+.date { color: var(--main); font-weight: bold; }
+a { color: var(--main); }
+footer {
+  margin-top: 45px;
+  padding-top: 20px;
+  border-top: 1px solid #dce3ec;
+  color: var(--muted);
+  font-size: 12px;
+}
+@media(max-width:600px) {
+  .grid { grid-template-columns: 1fr; }
+  .container { padding: 14px 12px 40px; }
+  header { padding: 30px 20px; }
+  th,td { padding: 9px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <span class="tag">教育ビジネス・企業分析</span>
+  <h1>ただよびとは？<br>なぜ経営破綻したのか？</h1>
+  <p>無料のオンライン予備校として注目された「ただよび」の仕組み、経営破綻の背景、そして再出発までを解説します。</p>
+</header>
+
+<section class="summary">
+  <h3>まず結論</h3>
+  <p>ただよびは、YouTubeを活用して有名講師の大学受験授業を無料で提供するオンライン予備校です。</p>
+  <p>旧運営会社のStuDeeplは2023年7月に事業を停止し、破産手続きに入りました。</p>
+  <p>主な問題は、<strong>無料サービスの収益化の難しさ、動画制作費や人件費、資金繰り、経営管理上の問題</strong>にありました。</p>
+  <p>その後、事業は新しい運営体制に引き継がれ、サービスは再出発しました。</p>
+</section>
+
+<h2>1. ただよびとはどんなサービス？</h2>
+
+<div class="card">
+  <h3>無料で一流講師の授業を受けられるオンライン予備校</h3>
+  <p>ただよびは2020年4月に始まったオンライン予備校です。</p>
+  <p>大手予備校で活躍した有名講師の授業をYouTubeで配信し、誰でも無料で視聴できる仕組みを目指しました。</p>
+  <ul>
+    <li>大手予備校で活躍した有名講師が参加</li>
+    <li>授業動画をYouTubeで無料配信</li>
+    <li>大学受験に必要な教科・科目をカバー</li>
+    <li>経済力や住んでいる地域による教育格差の解消を目指す</li>
+  </ul>
+  <p class="highlight">高額な予備校に通わなくても、一流講師の授業を受けられることが最大の特徴でした。</p>
+</div>
+
+<h2>2. なぜ経営破綻したのか？</h2>
+
+<div class="card">
+  <h3>① 動画制作費・人件費が大きかった</h3>
+  <p>ただよびは、単にYouTubeに動画を投稿するだけの事業ではありません。</p>
+  <ul>
+    <li>有名講師への出演依頼・報酬</li>
+    <li>授業動画の企画・撮影・編集</li>
+    <li>教材やカリキュラムの整備</li>
+    <li>広告宣伝・プロモーション</li>
+    <li>多くの教科・科目のコンテンツ制作</li>
+  </ul>
+  <p>授業動画を増やすほど制作費や運営費がかかります。一方、YouTubeの広告収入だけでこれらを賄うのは簡単ではありませんでした。</p>
+</div>
+
+<div class="card">
+  <h3>② 無料サービスの収益化が難しかった</h3>
+  <p>ただよびの基本モデルは無料動画の配信でした。</p>
+  <p>しかし、無料利用者が増えても、そのまま売上や利益が増えるわけではありません。</p>
+  <table>
+    <tr><th>項目</th><th>経営上の問題</th></tr>
+    <tr><td>無料動画</td><td>視聴者が増えても広告収入には限界がある</td></tr>
+    <tr><td>有料会員</td><td>無料動画との差別化が必要</td></tr>
+    <tr><td>講師</td><td>優秀な講師を確保するための費用がかかる</td></tr>
+    <tr><td>動画制作</td><td>コンテンツを増やすほどコストが増える</td></tr>
+  </table>
+  <p>報道では、広告収入から経費を差し引いた金額を講師側に分配する契約について、経費が収入を上回り、講師への報酬が支払われない状態が続いたとされています。</p>
+</div>
+
+<div class="card">
+  <h3>③ 本業以外の事業にも問題があった</h3>
+  <p>旧運営会社のStuDeepl（旧レッドクイーン）は、ただよび以外にもスマートフォン向けゲームアプリなどを手掛けていました。</p>
+  <p>報道では、複数事業への投資がうまくいかず、資金繰りが厳しくなったことも指摘されています。</p>
+</div>
+
+<div class="card">
+  <h3>④ 経営陣と講師の間にも対立があった</h3>
+  <p>当時の中心的な講師だった宗慶二先生は、運営会社の破綻について「人災」と批判しました。</p>
+  <p>森田鉄也先生などの関係者からも、経営や出資に関する問題が公に語られました。</p>
+  <p>ただし、これらは関係者による証言・批判であり、すべてが裁判などで認定された事実ではありません。</p>
+</div>
+
+<h2>3. 運営会社の財務状況</h2>
+
+<p>旧運営会社の財務状況を見ると、経営破綻の前から厳しい状態だったことが分かります。</p>
+
+<div class="grid">
+  <div class="stat">
+    <small>2021年12月期 純損失</small>
+    <strong>約1.87億円</strong>
+  </div>
+  <div class="stat">
+    <small>利益剰余金</small>
+    <strong>約▲5.53億円</strong>
+  </div>
+  <div class="stat">
+    <small>2021年12月期 総資産</small>
+    <strong style="color:#2457a6">約2.93億円</strong>
+  </div>
+  <div class="stat">
+    <small>破産時の負債</small>
+    <strong style="color:#2457a6">約1.66億円</strong>
+  </div>
+</div>
+
+<p><small>※2021年12月期の決算情報と2023年の破産時の負債額。異なる時点の数値です。</small></p>
+
+<p>2023年7月6日に事業停止を発表し、同月31日に東京地方裁判所が破産手続き開始を決定しました。</p>
+
+<h2>4. ただよびのその後</h2>
+
+<div class="card">
+  <span class="green">サービスは再出発</span>
+  <p>旧運営会社が倒産した後、ただよびに関わっていた講師たちが中心となり、サービスの再建に動きました。</p>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="date">2020年4月</div>
+      <strong>ただよびスタート</strong>
+      <p>YouTubeを活用した無料オンライン予備校としてサービス開始。</p>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2023年7月</div>
+      <strong>旧運営会社が事業停止</strong>
+      <p>StuDeeplが事業を停止し、破産手続き開始。</p>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2023年秋</div>
+      <strong>新体制で再出発</strong>
+      <p>事業承継が進み、ただよびが再始動。</p>
+    </div>
+    <div class="timeline-item">
+      <div class="date">その後</div>
+      <strong>サービス継続</strong>
+      <p>新しい運営体制のもとで無料授業などを展開。</p>
+    </div>
+  </div>
+  <p>旧運営会社の破産と、ただよびという教育サービスの存続は別の話です。</p>
+</div>
+
+<h2>5. ただよびの失敗から学べること</h2>
+
+<div class="card">
+  <h3>教育理念とビジネスの両立</h3>
+  <table>
+    <tr><th>教訓</th><th>内容</th></tr>
+    <tr>
+      <td>無料と収益性は別</td>
+      <td>利用者が増えても利益が出るとは限らない。</td>
+    </tr>
+    <tr>
+      <td>制作費の管理</td>
+      <td>動画を大量に制作するほど運営コストが増える。</td>
+    </tr>
+    <tr>
+      <td>収益モデルの設計</td>
+      <td>広告、有料会員、教材販売などを組み合わせる必要がある。</td>
+    </tr>
+    <tr>
+      <td>経営管理</td>
+      <td>優れた講師やコンテンツがあっても経営が悪ければ事業は続かない。</td>
+    </tr>
+  </table>
+</div>
+
+<div class="summary">
+  <h3>まとめ：ただよびの本質的な問題</h3>
+  <p>ただよびは、教育格差をなくすという素晴らしい理念を持ったサービスでした。</p>
+  <p>しかし、優れた授業を提供することと、それを継続できるビジネスを作ることは別問題です。</p>
+  <p><strong>無料サービスを維持するための収益構造、コスト管理、資金繰り、経営体制を十分に維持できなかったことが、旧運営会社の破綻につながったと考えられます。</strong></p>
+  <p>一方、教育コンテンツという資産が新しい体制に引き継がれたことは、注目すべき点です。</p>
+</div>
+
+<h2>6. 参考リンク</h2>
+<ul>
+  <li><a href="https://tadayobi.com/" target="_blank" rel="noopener">ただよび公式サイト</a></li>
+  <li><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></li>
+  <li><a href="https://www.tdb.co.jp/" target="_blank" rel="noopener">帝国データバンク</a></li>
+</ul>
+
+<footer>
+  <p>※本ページは公開情報・報道をもとにした解説です。財務数値は対象年度・時点を区別して掲載しています。運営体制やサービス内容は変更される可能性があります。</p>
+  <p>教育ビジネス・企業経営分析</p>
+</footer>
+
+</div>
+</body>
+</html>

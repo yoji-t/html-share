@@ -1,5 +1,24 @@
 [
     {
+        "id": "microsoft-365-global-outage-cause-analysis-2026",
+        "title": "Microsoft 365 世界規模の大規模障害｜原因・技術的仕組み・復旧過程・企業影響と教訓の解説まとめ（2026年11月）",
+        "filename": "posts/microsoft-365-global-outage-cause-analysis-2026.html",
+        "createdAt": "2026-11-17T11:27:00+09:00",
+        "dateFormatted": "2026/11/17",
+        "description": "2026年11月に発生したMicrosoft 365（Outlook, Teams, SharePoint, OneDrive等）の世界規模障害を技術的に徹底解説。潜在的バグ（ロック競合）×Teams通信経路変更×サーバー容量14%減少の3要素が重なったメカニズム、フェイルオーバー連鎖による障害拡散、段階的復旧に約24時間を要した理由、知財部門等への影響と企業がとるべき教訓を整理。",
+        "tags": [
+            "Microsoft 365",
+            "システム障害",
+            "クラウド",
+            "インシデント解説",
+            "Outlook",
+            "Teams",
+            "ネットワーク",
+            "IT運用",
+            "BCP"
+        ]
+    },
+    {
         "id": "meta-muse-ai-agent-automated-sns-affiliate-guide",
         "title": "【解説まとめ】Meta最新AIエージェント「Muse（ミューズ）」を使った全自動SNSアフィリエイト術（Threads×定期タスク）",
         "filename": "posts/meta-muse-ai-agent-automated-sns-affiliate-guide.html",

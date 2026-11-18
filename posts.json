@@ -1,5 +1,23 @@
 [
     {
+        "id": "us-patents-15-overview-and-technology-trend-analysis",
+        "title": "米国特許15件の概要と技術動向分析（熱分解カーボンブラック・クラムラバー・製造自動化・スマートタイヤ）",
+        "filename": "posts/us-patents-15-overview-and-technology-trend-analysis.html",
+        "createdAt": "2026-11-18T23:34:00+09:00",
+        "dateFormatted": "2026/11/18",
+        "description": "Notionの親ページに格納されている米国特許15件について、発明の内容、技術的特徴、タイヤ・ゴム事業への示唆を整理。熱分解カーボンブラック（PCB）やクラムラバーなど再生資源を活用したゴム材料、協働ロボットや3Dプリンター等による製造自動化、RFIDや内部温度計測によるスマートタイヤ、トレッド構造等の動向を網羅。",
+        "tags": [
+            "特許",
+            "知財",
+            "技術動向",
+            "タイヤ",
+            "ゴム材料",
+            "サステナブル",
+            "スマートタイヤ",
+            "製造技術"
+        ]
+    },
+    {
         "id": "junior-high-history-kenshuishi-kentoushi-timeline",
         "title": "遣隋使・遣唐使の流れ｜中学受験対策（小野妹子・阿倍仲麻呂・空海・最澄・菅原道真の停止提案・重要年号とクイズ）",
         "filename": "posts/junior-high-history-kenshuishi-kentoushi-timeline.html",

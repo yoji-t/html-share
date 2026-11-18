@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>米国特許15件の概要と技術動向分析</title>
+<style>
+  :root {
+    --navy: #18324b;
+    --blue: #28618b;
+    --light: #eef4f8;
+    --border: #d9e2ea;
+    --text: #263442;
+    --muted: #647586;
+    --green: #e9f4ee;
+  }
+  body {
+    margin: 0;
+    padding: 24px;
+    background: #f5f7f9;
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    line-height: 1.8;
+  }
+  .container {
+    max-width: 1050px;
+    margin: auto;
+    background: white;
+    padding: 36px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(20,40,60,.06);
+  }
+  h1 {
+    color: var(--navy);
+    font-size: 27px;
+    line-height: 1.4;
+    border-bottom: 3px solid var(--blue);
+    padding-bottom: 16px;
+  }
+  h2 {
+    color: var(--navy);
+    font-size: 21px;
+    margin-top: 42px;
+    padding: 10px 14px;
+    background: var(--light);
+    border-left: 5px solid var(--blue);
+  }
+  h3 {
+    color: var(--blue);
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+  p { margin: 8px 0 14px; }
+  .lead {
+    font-size: 16px;
+    color: #425466;
+  }
+  .meta {
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .summary {
+    background: #f7f9fb;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin: 18px 0;
+  }
+  .patent {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 16px 0;
+    break-inside: avoid;
+  }
+  .patent-number {
+    color: var(--blue);
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .category {
+    display: inline-block;
+    background: #eaf1f7;
+    color: #315d7d;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  .keypoint {
+    border-left: 3px solid #4b8b68;
+    background: var(--green);
+    padding: 10px 14px;
+    margin-top: 12px;
+    font-size: 14px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: var(--light);
+    color: var(--navy);
+  }
+  ul { padding-left: 22px; }
+  li { margin-bottom: 7px; }
+  .conclusion {
+    background: #f0f5f8;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  @media(max-width:700px) {
+    body { padding: 8px; }
+    .container { padding: 18px; }
+    h1 { font-size: 22px; }
+    table { font-size: 12px; }
+    th, td { padding: 7px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>米国特許15件の概要と技術動向分析</h1>
+<p class="lead">
+Notionの親ページに格納されている15件の特許について、
+発明の内容、技術的特徴、タイヤ・ゴム事業への示唆を整理した。
+</p>
+<p class="meta">対象：米国特許15件｜分析対象：各特許の概要・技術的特徴</p>
+
+<h2>1. 全体概要</h2>
+<div class="summary">
+  <p><strong>今回の15件では、ゴム材料の高機能化・再生資源の活用に関する発明が目立つ。</strong></p>
+  <p>
+  特に、熱分解カーボンブラック（Pyrolysis Carbon Black）や
+  クラムラバー（Crumb Rubber）を利用したゴム組成物に関する出願が複数確認できる。
+  また、タイヤ製造工程の自動化、タイヤ内部の温度計測、
+  シーラント構造やトレッド設計など、材料から製造・製品構造まで幅広い。
+  </p>
+</div>
+
+<h2>2. 特許一覧</h2>
+<table>
+<thead>
+<tr>
+  <th>No.</th>
+  <th>特許番号</th>
+  <th>発明の名称・概要</th>
+  <th>技術分野</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>US20260145470</td><td>車両搭載型の高周波読み取りシステム</td><td>RFID・センシング</td></tr>
+<tr><td>2</td><td>US12638337</td><td>走行中のタイヤ内部温度を測定する方法</td><td>スマートタイヤ</td></tr>
+<tr><td>3</td><td>US12636832</td><td>透明な副チャンバーを備えた3Dプリンター</td><td>製造装置</td></tr>
+<tr><td>4</td><td>US20260139125</td><td>クラムラバーを含むゴム組成物</td><td>ゴム材料</td></tr>
+<tr><td>5</td><td>US20260139124</td><td>微細クラムラバーを含むゴム組成物</td><td>ゴム材料</td></tr>
+<tr><td>6</td><td>US20260131598</td><td>熱分解カーボンブラックを含むサイドウォール</td><td>タイヤ・ゴム材料</td></tr>
+<tr><td>7</td><td>US20260132275</td><td>熱分解カーボンブラックを含むゴム組成物</td><td>ゴム材料</td></tr>
+<tr><td>8</td><td>US12623496</td><td>厚さを最適化したセルフシーリング層</td><td>タイヤ構造</td></tr>
+<tr><td>9</td><td>US12623423</td><td>協働ロボットを用いたタイヤブランク製造方法</td><td>製造自動化</td></tr>
+<tr><td>10</td><td>US20260125542</td><td>引裂性とヒステリシスを改善するゴム組成物</td><td>ゴム材料</td></tr>
+<tr><td>11</td><td>US20260124859</td><td>摩耗均一性と低騒音性を備えたトレッド</td><td>タイヤ構造</td></tr>
+<tr><td>12</td><td>US20260125543</td><td>熱分解カーボンブラック等を用いたゴム組成物</td><td>ゴム材料</td></tr>
+<tr><td>13</td><td>US12616917</td><td>エタノール・アセトアルデヒド混合原料の精製方法</td><td>化学プロセス</td></tr>
+<tr><td>14</td><td>US12617167</td><td>排水領域を備えたタイヤ加硫方法</td><td>製造工程</td></tr>
+<tr><td>15</td><td>US12617939</td><td>機能化エチレン・ジエン共重合体</td><td>高機能ゴム材料</td></tr>
+</tbody>
+</table>
+
+<h2>3. 個別特許の内容</h2>
+
+<div class="patent">
+<span class="patent-number">01｜US20260145470</span>
+<h3>車両搭載型の高周波読み取りシステム</h3>
+<span class="category">RFID・センシング</span>
+<p>
+車両に搭載する高周波読み取りシステムに関する発明。
+蛇行形状の放射体を備えたケーブルを利用し、
+タイヤに取り付けられたRFIDタグなどとの通信を改善する。
+</p>
+<div class="keypoint">
+<strong>技術的ポイント：</strong>
+タイヤが回転している状態でも、タイヤ側の情報を安定して読み取るための
+車両側アンテナ・通信構造。
+</div>
+</div>
+
+<div class="patent">
+<span class="patent-number">02｜US12638337</span>
+<h3>走行中のタイヤ内部温度を測定する方法</h3>
+<span class="category">スマートタイヤ</span>
+<p>
+タイヤ内部の空洞部分などにセンサーを組み込み、
+タイヤの使用中に内部温度を測定する技術。
+センサーを所定位置に保持し、測定データを無線で送信する。
+</p>
+<div class="keypoint">
+<strong>技術的ポイント：</strong>
+タイヤ内部の温度情報を走行中に取得し、
+タイヤの状態監視や保守管理に利用する。
+</div>
+</div>
+
+<div class="patent">
+<span class="patent-number">03｜US12636832</span>
+<h3>透明な副チャンバーを備えた3Dプリンター</h3>
+<span class="category">製造装置</span>
+<p>
+メインチャンバー内に、透明な副チャンバーを配置する3Dプリンター。
+副チャンバーは伸縮可能な構造を持ち、制御された雰囲気の中で造形を行いながら、
+内部の状態を観察できるようにする。
+</p>
+<div class="keypoint">
+<strong>技術的ポイント：</strong>
+造形環境の制御と、造形中の視認性を両立する装置構成。
+</div>
+</div>
+
+<div class="patent">
+<span class="patent-number">04｜US20260139125</span>
+<h3>クラムラバーを含むゴム組成物</h3>
+<span class="category">ゴム材料・リサイクル</span>
+<p>
+イソプレン系エラストマーとブタジエン系エラストマーを含むゴム組成物。
+補強性充填剤、耐オゾン性ワックス、クラムラバーなどを組み合わせる。
+</p>
+<div class="keypoint">
+<strong>技術的ポイント：</strong>
+再生ゴム由来の材料を活用しながら、
+表面へのワックスの析出・ブルームを抑え、耐オゾン性を維持する。
+</div>
+</div>
+
+<div class="patent">
+<span class="patent-number">05｜US20260139124</span>
+<h3>微細クラムラバーを含むゴム組成物</h3>
+<span class="category">ゴム材料・リサイクル</span>
+<p>
+イソプレン系エラストマー、耐オゾン性ワックス、
+粒径74μm未満の微細なクラムラバーを含むゴム組成物。
+</p>
+<div class="keypoint">
+<strong>技術的ポイント：</strong>
+クラムラバーの粒径を細かく制御することで、
+材料表面への析出を抑えながら耐オゾン性を確保する。
+</div>
+</div>
+
+<div class="patent">
+<span class="patent-number">06｜US20260131598</span>
+<h3>熱分解カーボンブラックを含むサイドウォール</h3>
+<span class="category">タイヤ・ゴム材料</span>
+<p>
+タイヤの外側サイドウォールに、
+熱分解カーボンブラックを含むゴム組成物を使用する技術。
+</p>
+<div class="keypoint">
+<strong>技術的ポイント：</strong>
+廃タイヤなどから得られる熱分解カーボンブラックを
+タイヤ部材に再利用する材料設計。
+</div>
+</div>
+
+<div class="patent">
+<span class="patent-number">07｜US20260132275</span>
+<h3>熱分解カーボンブラックを含むゴム組成物</h3>
+<span class="category">ゴム材料・リサイクル</span>
+<p>
+ジエン系エラストマー、熱分解カーボンブラック、
+エポキシ樹脂および硬化剤を組み合わせたゴム組成物。
+</p>
+<div class="keypoint">
+<strong>技術的ポイント：</strong>
+熱分解カーボンブラックと樹脂系成分を組み合わせ、
+再生由来材料を利用したゴムの性能設計を行う。
+</div>
+</div>
+
+<div class="patent">
+<span class="patent-number">08｜US12623496</span>
+<h3>厚さを最適化したセルフシーリング層</h3>
+<span class="category">タイヤ構造・パンク対策</span>
+<p>
+タイヤ内部に配置するセルフシーリング材の厚さを、
+トレッドの溝の深さに応じて変化させる構造。
+深い溝の下ではシーラントを厚くし、浅い溝の下では薄くする。
+</p>
+<div class="keypoint">
+<strong>技術的ポイント：</strong>
+必要な箇所にシーラントを重点配置することで、
+パンクシール性能と材料使用量のバランスを改善する。
+</div>
+</div>
+
+<div class="patent">
+<span class="patent-number">09｜US12623423</span>
+<h3>協働ロボットを用いたタイヤブランク製造方法</h3>
+<span class="category">製造自動化</span>
+<p>
+協働ロボットアームを用いて、ドラム上にゴムなどの弾性材料を配置し、
+タイヤブランクを製造する方法。
+自動作業と人による介入を組み合わせた工程を含む。
+</p>
+<div class="keypoint">
+<strong>技術的ポイント：</strong>
+ロボットによる材料配置と人の作業を組み合わせ、
+タイヤ製造工程の柔軟性と自動化を高める。
+</div>
+</div>
+
+<div class="patent">
+<span class="patent-number">10｜US20260125542</span>
+<h3>引裂性とヒステリシスを改善するゴム組成物</h3>
+<span class="category">ゴム材料</span>
+<p>
+エラストマー、補強性充填剤、可塑剤、クラムラバーなどを含むゴム組成物。
+引裂きに対する性能を改善しながら、ヒステリシス特性を維持または改善することを狙う。
+</p>
+<div class="keypoint">
+<strong>技術的ポイント：</strong>
+再生ゴムを配合しながら、ゴム材料の耐久性とエネルギー損失特性を両立させる。
+</div>
+</div>
+
+<div class="patent">
+<span class="patent-number">11｜US20260124859</span>
+<h3>摩耗均一性と低騒音性を備えたトレッド</h3>
+<span class="category">タイヤ構造・低騒音</span>
+<p>
+トレッドの中央部や側方のリブに、
+幅の異なる横方向の切り込みを設けるタイヤ構造。
+非常に狭い切り込みも利用し、摩耗の均一化と騒音低減を目指す。
+</p>
+<div class="keypoint">
+<strong>技術的ポイント：</strong>
+トレッドパターンの細かな設計によって、
+摩耗特性と走行時の騒音性能を同時に改善する。
+</div>
+</div>
+
+<div class="patent">
+<span class="patent-number">12｜US20260125543</span>
+<h3>熱分解カーボンブラック等を用いたゴム組成物</h3>
+<span class="category">ゴム材料・リサイクル</span>
+<p>
+天然ゴムを主体とするゴム組成物に、
+熱分解カーボンブラック、従来型カーボンブラック、
+カルダノール系フェノール樹脂を組み合わせる。
+</p>
+<div class="keypoint">
+<strong>技術的ポイント：</strong>
+再生由来のカーボンブラックと従来材料を組み合わせ、
+天然ゴム系材料の性能を設計する。
+</div>
+</div>
+
+<div class="patent">
+<span class="patent-number">13｜US12616917</span>
+<h3>エタノール・アセトアルデヒド混合原料の精製方法</h3>
+<span class="category">化学プロセス</span>
+<p>
+エタノールとアセトアルデヒドを含む水・アルコール系原料を精製する方法。
+液液抽出と逆抽出を利用して成分を分離する。
+共同出願人にはIFP Energies NouvellesとMichelinが含まれる。
+</p>
+<div class="keypoint">
+<strong>技術的ポイント：</strong>
+タイヤ製品そのものではなく、
+化学原料や製造プロセスに関連する技術領域の発明。
+</div>
+</div>
+
+<div class="patent">
+<span class="patent-number">14｜US12617167</span>
+<h3>排水領域を備えたタイヤ加硫方法</h3>
+<span class="category">製造工程・加硫</span>
+<p>
+タイヤ加硫用のブラダーに、
+深さが異なる複数の排水領域を設ける技術。
+トレッド側からサイドウォール、ビード側に向けて、
+排水領域の深さを段階的に変化させる。
+</p>
+<div class="keypoint">
+<strong>技術的ポイント：</strong>
+加硫工程で発生する流体の排出を考慮したブラダー構造により、
+加硫品質や製造工程の改善を狙う。
+</div>
+</div>
+
+<div class="patent">
+<span class="patent-number">15｜US12617939</span>
+<h3>機能化エチレン・ジエン共重合体</h3>
+<span class="category">高機能ゴム材料</span>
+<p>
+エチレンと1,3-ジエンの共重合体を、
+シラノール基またはアルコキシシラン基などで機能化する技術。
+エチレン含有量や結晶性、ゴムの剛性などのバランスを考慮する。
+</p>
+<div class="keypoint">
+<strong>技術的ポイント：</strong>
+ポリマー構造と官能基を制御することで、
+ゴム材料の機械特性や他の材料との相互作用を調整する。
+</div>
+</div>
+
+<h2>4. 技術分野別の整理</h2>
+<table>
+<thead>
+<tr><th>技術分野</th><th>件数</th><th>主な対象</th></tr>
+</thead>
+<tbody>
+<tr><td>ゴム材料</td><td>7件</td><td>クラムラバー、熱分解カーボンブラック、機能性ポリマー</td></tr>
+<tr><td>製造・製造装置</td><td>3件</td><td>協働ロボット、3Dプリンター、加硫工程</td></tr>
+<tr><td>センシング・計測</td><td>2件</td><td>RFID、タイヤ内部温度計測</td></tr>
+<tr><td>タイヤ構造</td><td>2件</td><td>セルフシーリング層、トレッド設計</td></tr>
+<tr><td>化学プロセス</td><td>1件</td><td>エタノール系原料の精製</td></tr>
+</tbody>
+</table>
+
+<h2>5. 注目すべき技術動向</h2>
+
+<h3>① 再生資源を利用したゴム材料の開発</h3>
+<p>
+今回、特に注目されるのが熱分解カーボンブラックとクラムラバーの活用である。
+複数の特許がこれらの再生由来材料をゴム組成物に取り入れている。
+</p>
+<ul>
+  <li>熱分解カーボンブラックをタイヤ部材に利用する。</li>
+  <li>クラムラバーの粒径や配合を制御する。</li>
+  <li>再生材料の使用と、耐久性・耐オゾン性・ヒステリシス特性を両立させる。</li>
+</ul>
+<p>
+単純に再生材料を配合するだけでなく、
+再生材料を使用した際に生じる性能上の課題を解決することが重要な技術テーマとなっている。
+</p>
+
+<h3>② タイヤ製造工程の自動化・高度化</h3>
+<p>
+協働ロボットによるタイヤブランク製造や、
+加硫ブラダーの排水構造など、製造工程に関する発明も確認できる。
+</p>
+<ul>
+  <li>ロボットによる材料配置の自動化。</li>
+  <li>人とロボットの協働による柔軟な製造工程。</li>
+  <li>加硫時の流体排出を考慮した設備・部材の設計。</li>
+</ul>
+
+<h3>③ スマートタイヤ・状態監視</h3>
+<p>
+RFIDの読み取り技術やタイヤ内部温度の測定技術は、
+タイヤの状態をデータとして把握する方向性を示している。
+</p>
+<ul>
+  <li>タイヤ内部の温度情報を取得する。</li>
+  <li>タイヤに取り付けた識別・情報記録デバイスと通信する。</li>
+  <li>取得データを保守管理や予防保全に活用する。</li>
+</ul>
+
+<h3>④ タイヤ構造による性能改善</h3>
+<p>
+セルフシーリング層の厚さの最適化や、
+トレッドの細かな切り込み設計など、
+材料だけでなくタイヤ構造そのものによって性能を改善する発明も見られる。
+</p>
+
+<h2>6. 知財・研究開発戦略上の示唆</h2>
+<div class="summary">
+<h3>重点テーマ1：再生材料の高性能化</h3>
+<p>
+熱分解カーボンブラックやクラムラバーについて、
+配合量、粒径、表面特性、ポリマーとの組み合わせなどが
+権利化の重要なポイントになる可能性がある。
+</p>
+
+<h3>重点テーマ2：材料と製造プロセスの一体的な権利化</h3>
+<p>
+材料組成だけでなく、材料をタイヤ部材に適用する方法や
+製造条件、製造設備まで含めて技術を把握する必要がある。
+</p>
+
+<h3>重点テーマ3：タイヤのデータ活用</h3>
+<p>
+温度測定やRFIDなどの技術は、
+タイヤの状態監視、保守管理、データサービスとの接続が考えられる。
+</p>
+
+<h3>重点テーマ4：低騒音・耐久性・省資源の両立</h3>
+<p>
+トレッド構造やシーラント配置など、
+タイヤの性能を構造設計によって改善する技術にも注目したい。
+</p>
+</div>
+
+<h2>7. 総合評価</h2>
+<div class="conclusion">
+<p>
+今回の15件からは、次の3つの方向性が読み取れる。
+</p>
+<ol>
+  <li><strong>サステナブル材料：</strong>
+  熱分解カーボンブラックやクラムラバーなど、
+  再生資源を活用しながらゴム性能を維持・改善する。</li>
+  <li><strong>製造技術の高度化：</strong>
+  ロボットや加硫工程の工夫によって、
+  製造品質と生産効率を改善する。</li>
+  <li><strong>タイヤの高機能化：</strong>
+  センシング、シーラント、トレッド設計などにより、
+  タイヤの安全性・耐久性・快適性を高める。</li>
+</ol>
+<p>
+特に、再生由来材料を利用しながら従来のゴム性能を確保する技術は、
+今後の研究開発・知財分析において継続的に追跡する価値がある。
+</p>
+</div>
+
+<h2>8. 次に実施したい特許分析</h2>
+<ul>
+  <li>各特許の独立請求項を比較し、権利範囲の違いを整理する。</li>
+  <li>熱分解カーボンブラック関連特許の材料組成・配合条件を横断比較する。</li>
+  <li>クラムラバー関連特許の粒径・配合量・性能要件を比較する。</li>
+  <li>同族特許、優先日、各国移行状況を確認する。</li>
+  <li>引用文献・被引用文献を調査し、競合他社との技術関係を把握する。</li>
+</ul>
+
+<p class="meta">
+※本資料は各特許ページの概要に基づく技術整理であり、
+法的な権利範囲や有効性を判断するものではない。
+実際の権利範囲を評価する際は、公開公報・登録公報の請求項、
+審査経過およびファミリー情報を確認する必要がある。
+</p>
+
+</div>
+</body>
+</html>

@@ -1,5 +1,24 @@
 [
     {
+        "id": "michelin-us-patent-analysis-report-2026-june",
+        "title": "ミシュラン米国特許分析レポート（2026年6月・全21件｜トレッド摩耗制御・高機能ポリマー・製造DX・AI物流・非空気入りタイヤ）",
+        "filename": "posts/michelin-us-patent-analysis-report-2026-june.html",
+        "createdAt": "2026-11-19T08:20:00+09:00",
+        "dateFormatted": "2026/11/19",
+        "description": "2026年6月に公開・登録されたミシュランの米国特許全21件を徹底分析。トレッドの不規則摩耗制御・グリップ・低騒音設計から、高エチレン含有ジエン共重合体・還元型酸化グラフェン等の高機能ゴム材料、柔軟金型や電子デバイス押出成形、臭気検知による混練制御（製造DX）、AIピッキングロボット、鉱山向けRFID管理、非空気入りタイヤ、廃ゴム熱分解リサイクルまで多面的に整理。",
+        "tags": [
+            "特許",
+            "知財",
+            "ミシュラン",
+            "タイヤ",
+            "ゴム材料",
+            "技術動向",
+            "製造技術",
+            "AI",
+            "スマートタイヤ"
+        ]
+    },
+    {
         "id": "us-patents-15-overview-and-technology-trend-analysis",
         "title": "米国特許15件の概要と技術動向分析（熱分解カーボンブラック・クラムラバー・製造自動化・スマートタイヤ）",
         "filename": "posts/us-patents-15-overview-and-technology-trend-analysis.html",

@@ -1,5 +1,25 @@
 [
     {
+        "id": "michelin-us-patent-analysis-report-2026-october",
+        "title": "ミシュラン米国特許分析レポート（2026年10月・全26件｜熱分解カーボンブラック・高荷重サイドウォール・AI金型ベント自動認識・ゴム粉リサイクル）",
+        "filename": "posts/michelin-us-patent-analysis-report-2026-october.html",
+        "createdAt": "2026-11-19T18:26:00+09:00",
+        "dateFormatted": "2026/11/19",
+        "description": "2026年10月に公開・登録されたミシュランの米国特許全26件を徹底分析。熱分解カーボンブラック（PCB）やゴム粉をカーカス内部・ビード・サイドウォールへ再利用する資源循環材料技術、高コントラスト意匠と耐オゾン・耐ブルーミング・耐引裂性の両立、3次元カメラ・RGB-DとAIニューラルネットによる金型ベント自動認識・バルブ挿入ロボット、共押出インサート埋込設備、機能性ポリマー末端修飾まで網羅。",
+        "tags": [
+            "特許",
+            "知財",
+            "ミシュラン",
+            "タイヤ",
+            "ゴム材料",
+            "リサイクル",
+            "AI",
+            "スマートファクトリー",
+            "製造技術",
+            "サイドウォール"
+        ]
+    },
+    {
         "id": "michelin-us-patent-analysis-report-2026-april",
         "title": "ミシュラン米国特許分析レポート（2026年4月・全13件｜繊維製軽量ビード・AI音響摩耗推定・テレケリックポリマー・EV空力サイドウォール）",
         "filename": "posts/michelin-us-patent-analysis-report-2026-april.html",

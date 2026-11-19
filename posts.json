@@ -1,5 +1,24 @@
 [
     {
+        "id": "difference-between-rabies-infection-and-onset",
+        "title": "狂犬病の感染と発症の違い｜潜伏期間・神経移行の仕組みと曝露後予防（PEP）",
+        "filename": "posts/difference-between-rabies-infection-and-onset.html",
+        "createdAt": "2026-11-19T20:12:00+09:00",
+        "dateFormatted": "2026/11/19",
+        "description": "狂犬病における「感染」と「発症」の本質的な違いを解説。ウイルス侵入から筋肉内増殖、末梢神経・脊髄・脳へ移行する潜伏メカニズム、発症後に致死率ほぼ100％となる危険性、そして脳到達前の時間差を利用して発症を防ぐ曝露後予防（PEP：洗浄・ワクチン・免疫グロブリン）の重要性を整理。",
+        "tags": [
+            "医学",
+            "狂犬病",
+            "感染症",
+            "感染と発症",
+            "潜伏期間",
+            "暴露後予防",
+            "PEP",
+            "公衆衛生",
+            "救急医療"
+        ]
+    },
+    {
         "id": "media-and-power-history-freedom-of-information-in-internet-era",
         "title": "メディアと権力の歴史 ― 情報の自由とインターネット時代の新しい問題 ―",
         "filename": "posts/media-and-power-history-freedom-of-information-in-internet-era.html",

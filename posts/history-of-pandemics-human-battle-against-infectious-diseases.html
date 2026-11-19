@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人類と感染症の戦い｜世界のパンデミックの歴史</title>
+<style>
+:root {
+  --navy:#18334d;
+  --blue:#2878a8;
+  --light:#edf5fa;
+  --red:#b64b4b;
+  --green:#347d65;
+  --text:#293746;
+  --muted:#687887;
+  --border:#dce4eb;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  background:#f3f6f9;
+  color:var(--text);
+  font-family:"Yu Gothic","Meiryo",sans-serif;
+  line-height:1.9;
+}
+.container {
+  max-width:1050px;
+  margin:30px auto;
+  padding:20px;
+}
+.hero {
+  background:linear-gradient(135deg,#18334d,#2878a8);
+  color:white;
+  padding:48px 35px;
+  border-radius:18px;
+}
+.hero h1 {
+  font-size:clamp(25px,4vw,36px);
+  line-height:1.5;
+  margin:0 0 15px;
+}
+.hero p { margin:0; color:#e1edf6; }
+h2 {
+  font-size:25px;
+  color:var(--navy);
+  border-left:6px solid var(--blue);
+  padding:5px 0 5px 15px;
+  margin:50px 0 20px;
+}
+h3 {
+  color:var(--navy);
+  font-size:20px;
+  margin-top:0;
+}
+p { margin:10px 0; }
+.lead {
+  font-size:17px;
+  margin:25px 0;
+}
+.card {
+  background:white;
+  border:1px solid var(--border);
+  border-radius:13px;
+  padding:24px;
+  margin:20px 0;
+  box-shadow:0 3px 12px rgba(30,50,70,.04);
+}
+.stats {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:14px;
+  margin:25px 0;
+}
+.stat {
+  background:white;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:20px;
+}
+.stat strong {
+  display:block;
+  color:var(--red);
+  font-size:25px;
+}
+.stat span {
+  color:var(--muted);
+  font-size:13px;
+}
+table {
+  width:100%;
+  border-collapse:collapse;
+  background:white;
+  margin:20px 0;
+  font-size:14px;
+}
+th,td {
+  border:1px solid var(--border);
+  padding:12px;
+  text-align:left;
+  vertical-align:top;
+}
+th {
+  background:var(--navy);
+  color:white;
+}
+tr:nth-child(even) { background:#f7f9fb; }
+.disease {
+  border-top:4px solid var(--blue);
+}
+.number {
+  display:inline-block;
+  color:var(--blue);
+  font-weight:bold;
+  font-size:13px;
+  margin-bottom:8px;
+}
+.deaths {
+  color:var(--red);
+  font-weight:bold;
+}
+.solution {
+  background:#edf7f1;
+  border-left:4px solid var(--green);
+  padding:14px 18px;
+  margin-top:15px;
+  border-radius:5px;
+}
+.warning {
+  background:#fff5eb;
+  border-left:4px solid #d18a3e;
+  padding:15px;
+  margin:20px 0;
+}
+.tag {
+  display:inline-block;
+  background:#e8f1f8;
+  color:#285d81;
+  padding:3px 10px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
+.timeline {
+  border-left:3px solid var(--blue);
+  margin:25px 0 25px 10px;
+  padding-left:25px;
+}
+.event {
+  position:relative;
+  margin-bottom:25px;
+}
+.event:before {
+  content:"";
+  position:absolute;
+  left:-33px;
+  top:9px;
+  width:13px;
+  height:13px;
+  background:var(--blue);
+  border-radius:50%;
+}
+.year {
+  color:var(--blue);
+  font-weight:bold;
+  font-size:18px;
+}
+.conclusion {
+  background:var(--navy);
+  color:white;
+  padding:30px;
+  border-radius:15px;
+  margin-top:35px;
+}
+.conclusion h2 {
+  color:white;
+  border-color:#7bc2e8;
+  margin-top:0;
+}
+.small {
+  font-size:12px;
+  color:var(--muted);
+}
+ul { padding-left:23px; }
+li { margin:6px 0; }
+@media(max-width:650px) {
+  .container { padding:12px; }
+  .hero { padding:30px 22px; }
+  .card { padding:18px; }
+  table { font-size:12px; }
+  th,td { padding:8px; }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header class="hero">
+  <span class="tag">医学史・世界史・科学技術</span>
+  <h1>人類と感染症の戦い</h1>
+  <p>世界で流行した感染症、その犠牲者、そして人類はいかにして克服してきたのか。</p>
+</header>
+
+<p class="lead">
+人類の歴史は、感染症との戦いの歴史でもある。
+ペスト、天然痘、コレラ、スペインかぜ、新型コロナウイルスなど、
+世界中で数百万人から数億人もの命を奪った感染症があった。
+しかし人類は、そのたびに科学、医学、衛生制度、国際協力を発展させてきた。
+</p>
+
+<div class="stats">
+  <div class="stat">
+    <strong>約2億人</strong>
+    <span>ペストの死者数の推計上限</span>
+  </div>
+  <div class="stat">
+    <strong>数億人</strong>
+    <span>天然痘による歴史上の犠牲者の規模</span>
+  </div>
+  <div class="stat">
+    <strong>約5,000万人以上</strong>
+    <span>スペインかぜの死者数の推計</span>
+  </div>
+  <div class="stat">
+    <strong>1980年</strong>
+    <span>WHOが天然痘根絶を宣言</span>
+  </div>
+</div>
+
+<div class="warning">
+  <strong>数字について</strong><br>
+  死者数は歴史的推計を含む。特に古代・中世の感染症は正確な記録が残っておらず、
+  研究者によって数字に大きな幅がある。
+  また、感染症によっては現在も流行しており、克服とは根絶だけでなく、
+  治療や予防によって被害を抑えることも意味する。
+</div>
+
+<h2>1. 世界で流行した主要な感染症</h2>
+
+<table>
+<thead>
+<tr>
+<th>感染症</th>
+<th>主な流行時期</th>
+<th>推定犠牲者数</th>
+<th>克服・制御の方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ペスト</td>
+<td>14世紀など</td>
+<td>約7,500万〜2億人</td>
+<td>検疫、衛生改善、抗生物質</td>
+</tr>
+<tr>
+<td>天然痘</td>
+<td>古代〜20世紀</td>
+<td>歴史全体で数億人規模</td>
+<td>ワクチン、世界的予防接種</td>
+</tr>
+<tr>
+<td>コレラ</td>
+<td>19世紀〜現在</td>
+<td>歴史的に数千万人規模との推計</td>
+<td>上下水道、清潔な水、経口補水</td>
+</tr>
+<tr>
+<td>スペインかぜ</td>
+<td>1918〜1920年</td>
+<td>約2,000万〜5,000万人以上</td>
+<td>感染対策、集団免疫、後のワクチン</td>
+</tr>
+<tr>
+<td>アジアかぜ</td>
+<td>1957〜1958年</td>
+<td>約100万〜200万人以上</td>
+<td>ワクチン、医療体制</td>
+</tr>
+<tr>
+<td>香港かぜ</td>
+<td>1968〜1970年</td>
+<td>約100万〜400万人</td>
+<td>ワクチン、医療体制</td>
+</tr>
+<tr>
+<td>HIV/AIDS</td>
+<td>1981年〜現在</td>
+<td>累計約4,000万人</td>
+<td>抗レトロウイルス薬、感染予防</td>
+</tr>
+<tr>
+<td>新型コロナ</td>
+<td>2019年〜現在</td>
+<td>公式報告で約700万人以上</td>
+<td>ワクチン、治療薬、検査、感染対策</td>
+</tr>
+</tbody>
+</table>
+
+<h2>2. 特に大きな被害をもたらした感染症</h2>
+
+<section class="card disease">
+  <span class="number">01 / 中世ヨーロッパ</span>
+  <h3>ペスト（黒死病）</h3>
+  <p class="deaths">推定死者：約7,500万〜2億人</p>
+  <p><strong>流行：</strong>1347〜1351年ごろ</p>
+  <p><strong>原因：</strong>ペスト菌という細菌</p>
+  <p><strong>感染経路：</strong>主に感染したノミなど。肺ペストでは飛沫感染も起こる。</p>
+  <p>
+  中央アジアからヨーロッパなどに広がり、ヨーロッパの人口の約3分の1から半数が
+  亡くなった地域もあった。
+  当時は病原菌という概念がなく、効果的な治療もできなかった。
+  </p>
+  <div class="solution">
+    <strong>克服・制御の方法</strong>
+    <ul>
+      <li>感染者や感染地域からの移動を制限する検疫制度</li>
+      <li>ネズミやノミなどの媒介動物への対策</li>
+      <li>19世紀末のペスト菌の発見</li>
+      <li>20世紀の抗生物質の開発</li>
+    </ul>
+    現在もペストは存在するが、早期診断と抗生物質による治療が可能。
+  </div>
+</section>
+
+<section class="card disease">
+  <span class="number">02 / 人類が根絶に成功</span>
+  <h3>天然痘</h3>
+  <p class="deaths">推定犠牲者：歴史全体で数億人規模</p>
+  <p><strong>流行：</strong>古代から20世紀まで</p>
+  <p><strong>原因：</strong>天然痘ウイルス</p>
+  <p><strong>症状：</strong>高熱、全身の発疹、水ぶくれ、失明、死亡など。</p>
+  <p>
+  天然痘は非常に恐ろしい感染症だった。一般的な天然痘の死亡率は約30％に達し、
+  生き残っても顔などに深いあばたが残ることがあった。
+  </p>
+  <h3>歴史的な転換点：1796年</h3>
+  <p>
+  イギリスの医師エドワード・ジェンナーは、牛痘に感染した人が天然痘に
+  かかりにくいことに着目し、種痘を実施した。
+  これが予防接種の歴史における重要な出発点となった。
+  </p>
+  <div class="solution">
+    <strong>克服の方法</strong>
+    <ul>
+      <li>牛痘を利用した種痘の実施</li>
+      <li>ワクチン技術の発展</li>
+      <li>WHOによる世界規模の根絶計画</li>
+      <li>世界各国での予防接種</li>
+    </ul>
+    1977年に最後の自然感染例が確認され、1980年にWHOが根絶を宣言した。
+    <strong>人類が根絶した唯一のヒトの感染症である。</strong>
+  </div>
+</section>
+
+<section class="card disease">
+  <span class="number">03 / 衛生革命</span>
+  <h3>コレラ</h3>
+  <p class="deaths">歴史的に数千万人規模との推計</p>
+  <p><strong>流行：</strong>19世紀以降、世界各地で繰り返し流行</p>
+  <p><strong>原因：</strong>コレラ菌</p>
+  <p><strong>感染経路：</strong>汚染された水や食べ物</p>
+  <p>
+  激しい下痢や嘔吐を引き起こし、短時間で体内の水分が失われる。
+  治療しなければ数時間で死亡することもある。
+  </p>
+  <h3>歴史的な転換点：1854年</h3>
+  <p>
+  ロンドンで医師ジョン・スノウが患者の発生場所を地図に記録し、
+  特定の井戸の周辺で患者が多発していることを発見した。
+  ブロード・ストリートの井戸のポンプの取っ手を外すよう提案したことは、
+  疫学の歴史における重要な出来事である。
+  </p>
+  <div class="solution">
+    <strong>克服・制御の方法</strong>
+    <ul>
+      <li>上下水道の整備</li>
+      <li>飲料水の浄化・消毒</li>
+      <li>食品衛生の改善</li>
+      <li>経口補水液（ORS）による治療</li>
+      <li>ワクチンの開発</li>
+    </ul>
+    医学だけでなく、都市のインフラ整備が多くの命を救った。
+  </div>
+</section>
+
+<section class="card disease">
+  <span class="number">04 / 近代史上最大級のパンデミック</span>
+  <h3>スペインかぜ</h3>
+  <p class="deaths">推定死者：約2,000万〜5,000万人以上</p>
+  <p><strong>流行：</strong>1918〜1920年</p>
+  <p><strong>原因：</strong>H1N1型インフルエンザウイルス</p>
+  <p>
+  第一次世界大戦の終盤から終戦後にかけて世界中に広がった。
+  兵士の移動、船舶による国際移動、過密な兵営や都市環境などが
+  感染拡大を加速させた。
+  若く健康な成人にも多数の死者が出たことが特徴である。
+  </p>
+  <div class="solution">
+    <strong>克服の方法</strong>
+    <ul>
+      <li>学校や集会の制限</li>
+      <li>マスクの着用</li>
+      <li>患者の隔離</li>
+      <li>都市間の移動制限</li>
+      <li>時間の経過による集団の免疫の形成</li>
+    </ul>
+    当時は現代のようなワクチンや抗ウイルス薬がなかった。
+    1930年代にはインフルエンザウイルスが分離され、
+    1940年代にはワクチンが実用化された。
+  </div>
+</section>
+
+<section class="card disease">
+  <span class="number">05 / ワクチン時代のパンデミック</span>
+  <h3>アジアかぜ・香港かぜ</h3>
+  <table>
+    <tr><th>項目</th><th>アジアかぜ</th><th>香港かぜ</th></tr>
+    <tr><td>時期</td><td>1957年</td><td>1968年</td></tr>
+    <tr><td>ウイルス</td><td>H2N2</td><td>H3N2</td></tr>
+    <tr><td>推定死者</td><td>約100万〜200万人以上</td><td>約100万〜400万人</td></tr>
+  </table>
+  <p>
+  インフルエンザウイルスの変化によって、従来の免疫を持たない人々の間で
+  世界的に流行した。
+  </p>
+  <div class="solution">
+    <strong>克服・制御の方法</strong>
+    <ul>
+      <li>ワクチンの開発と接種</li>
+      <li>医療体制の整備</li>
+      <li>ウイルスの監視と研究</li>
+    </ul>
+    スペインかぜの時代と異なり、ワクチンによる対策が可能になっていた。
+  </div>
+</section>
+
+<section class="card disease">
+  <span class="number">06 / 薬による長期管理</span>
+  <h3>HIV/AIDS</h3>
+  <p class="deaths">累計死者：約4,000万人</p>
+  <p><strong>流行が認識された時期：</strong>1981年</p>
+  <p><strong>原因：</strong>HIV（ヒト免疫不全ウイルス）</p>
+  <p>
+  HIVは免疫の中心的な役割を果たす細胞を破壊する。
+  治療しなければ免疫機能が低下し、さまざまな感染症やがんを
+  発症しやすくなる。この状態がAIDSである。
+  </p>
+  <div class="solution">
+    <strong>克服・制御の方法</strong>
+    <ul>
+      <li>抗レトロウイルス療法（ART）の発展</li>
+      <li>複数の薬を組み合わせてウイルスの増殖を抑制</li>
+      <li>血液中のウイルス量を検出限界未満にする</li>
+      <li>感染予防と検査の普及</li>
+    </ul>
+    適切な治療を継続すれば長期にわたって健康的な生活を送れる。
+    ただし、一般的な完全治癒法はまだない。
+  </div>
+</section>
+
+<section class="card disease">
+  <span class="number">07 / 現代科学の挑戦</span>
+  <h3>新型コロナウイルス感染症</h3>
+  <p class="deaths">公式報告の死者：約700万人以上</p>
+  <p><strong>流行開始：</strong>2019年末</p>
+  <p><strong>原因：</strong>SARS-CoV-2</p>
+  <p>
+  世界各地で感染が急速に広がり、医療崩壊、経済活動の停止、
+  学校の休校、国際移動の制限など、社会全体に大きな影響を与えた。
+  </p>
+  <div class="solution">
+    <strong>克服・制御の方法</strong>
+    <ul>
+      <li>PCR検査などによる感染者の把握</li>
+      <li>マスク、換気、隔離などの感染対策</li>
+      <li>mRNAワクチンなどの開発</li>
+      <li>抗ウイルス薬などの治療法の発展</li>
+      <li>国際的なウイルス監視と情報共有</li>
+    </ul>
+    mRNAワクチンは短期間で実用化され、医学史上の大きな進歩となった。
+    ただし、ウイルスは現在も存在している。
+  </div>
+</section>
+
+<h2>3. 感染症を克服するために発展した7つの技術</h2>
+
+<div class="card">
+  <h3>① ワクチンの開発</h3>
+  <p>
+  病原体に対する免疫を事前につくる技術。
+  天然痘の根絶やポリオの大幅な減少に貢献した。
+  </p>
+</div>
+
+<div class="card">
+  <h3>② 抗生物質の開発</h3>
+  <p>
+  細菌を殺したり増殖を抑えたりする薬。
+  ペストや結核など、細菌感染症の治療を大きく変えた。
+  </p>
+</div>
+
+<div class="card">
+  <h3>③ 上下水道・衛生設備の整備</h3>
+  <p>
+  汚染された水や排泄物を通じた感染を防ぐ仕組み。
+  コレラなどの水系感染症を減らした。
+  </p>
+</div>
+
+<div class="card">
+  <h3>④ 細菌学・ウイルス学の発展</h3>
+  <p>
+  病気の原因となる病原体を特定する技術。
+  感染経路や予防方法を科学的に解明できるようになった。
+  </p>
+</div>
+
+<div class="card">
+  <h3>⑤ 医療技術・治療薬の発展</h3>
+  <p>
+  集中治療、人工呼吸器、抗ウイルス薬、輸液などによって、
+  感染しても救命できる可能性が高まった。
+  </p>
+</div>
+
+<div class="card">
+  <h3>⑥ 検疫・感染症監視制度</h3>
+  <p>
+  感染者の発見、隔離、接触者の調査、国際的な情報共有によって
+  感染拡大を防ぐ。
+  </p>
+</div>
+
+<div class="card">
+  <h3>⑦ 国際協力</h3>
+  <p>
+  WHOなどが各国の感染状況を把握し、ワクチンや医療支援を提供する。
+  国境を越えて感染症に対応できるようになった。
+  </p>
+</div>
+
+<h2>4. 人類は感染症を完全に克服できたのか？</h2>
+
+<table>
+<thead>
+<tr><th>段階</th><th>意味</th><th>代表例</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>根絶</td>
+<td>自然界から病原体による感染がなくなる</td>
+<td>天然痘</td>
+</tr>
+<tr>
+<td>地域的排除</td>
+<td>特定地域での感染伝播がなくなる</td>
+<td>ポリオ（一部地域）</td>
+</tr>
+<tr>
+<td>制御</td>
+<td>感染は残るが被害を抑えられる</td>
+<td>HIV/AIDS、結核</td>
+</tr>
+<tr>
+<td>流行の収束</td>
+<td>大規模な流行が終わる</td>
+<td>スペインかぜ</td>
+</tr>
+<tr>
+<td>継続的な管理</td>
+<td>感染を繰り返し監視・予防する</td>
+<td>インフルエンザ、新型コロナ</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+重要なのは、感染症がなくなることと、感染症で人が亡くならなくなることは
+別の問題だということである。
+</p>
+
+<p>
+HIVは現在も世界中に存在するが、治療薬によって長期間にわたり健康的な生活を
+送れるようになった。一方、天然痘はワクチンによって世界から根絶された。
+この2つは、人類が感染症に勝つ方法の違いを示している。
+</p>
+
+<h2>5. まだ人類が克服できていない感染症</h2>
+
+<table>
+<thead>
+<tr><th>感染症</th><th>現在の課題</th></tr>
+</thead>
+<tbody>
+<tr><td>HIV/AIDS</td><td>一般的な完全治癒法や予防ワクチンがない</td></tr>
+<tr><td>結核</td><td>薬剤耐性菌の増加、治療の長期化</td></tr>
+<tr><td>マラリア</td><td>蚊による感染、薬剤耐性、医療格差</td></tr>
+<tr><td>デング熱</td><td>蚊の生息域拡大、ワクチンの適用上の課題</td></tr>
+<tr><td>エボラ出血熱</td><td>流行地域での医療体制、感染拡大への対応</td></tr>
+<tr><td>インフルエンザ</td><td>ウイルスの変異と新たなパンデミックの可能性</td></tr>
+<tr><td>新型コロナ</td><td>変異株、後遺症、重症化リスクへの対応</td></tr>
+</tbody>
+</table>
+
+<h2>6. 人類と感染症の戦いの年表</h2>
+
+<div class="card">
+  <div class="timeline">
+    <div class="event">
+      <div class="year">14世紀：黒死病</div>
+      <p>原因が分からず膨大な犠牲者を出す。検疫や隔離の考え方が発達する。</p>
+    </div>
+    <div class="event">
+      <div class="year">1796年：天然痘ワクチンの原型</div>
+      <p>ジェンナーが種痘を実施。予防接種によって感染症を防ぐ時代が始まる。</p>
+    </div>
+    <div class="event">
+      <div class="year">1854年：コレラの感染経路を解明</div>
+      <p>ジョン・スノウが疫学的調査を行い、水の衛生管理の重要性を示す。</p>
+    </div>
+    <div class="event">
+      <div class="year">19世紀後半：細菌学の発展</div>
+      <p>パスツールやコッホらの研究によって、感染症と微生物の関係が明らかになる。</p>
+    </div>
+    <div class="event">
+      <div class="year">1928年：ペニシリンの発見</div>
+      <p>フレミングが抗生物質につながる重要な発見をする。</p>
+    </div>
+    <div class="event">
+      <div class="year">1940年代：抗生物質の実用化</div>
+      <p>細菌感染症の治療が大きく進歩する。</p>
+    </div>
+    <div class="event">
+      <div class="year">1980年：天然痘の根絶宣言</div>
+      <p>WHOが世界規模の予防接種による根絶を達成する。</p>
+    </div>
+    <div class="event">
+      <div class="year">1990年代：HIV治療の大きな進歩</div>
+      <p>複数の抗ウイルス薬を組み合わせる治療が普及する。</p>
+    </div>
+    <div class="event">
+      <div class="year">2020年代：新型コロナワクチン</div>
+      <p>mRNA技術などを活用したワクチンが急速に実用化される。</p>
+    </div>
+  </div>
+</div>
+
+<h2>7. 感染症の歴史から学ぶ3つの教訓</h2>
+
+<div class="card">
+  <h3>① 科学は、目に見えない敵の正体を明らかにした</h3>
+  <p>
+  昔の人々は、なぜ病気になるのか分からず、原因不明のまま多くの命を失った。
+  しかし、顕微鏡、細菌学、ウイルス学、遺伝子解析などの発展によって、
+  感染症の原因を特定できるようになった。
+  </p>
+</div>
+
+<div class="card">
+  <h3>② 社会の仕組みを変えることが、多くの命を救った</h3>
+  <p>
+  コレラの例が象徴的である。
+  薬だけではなく、上下水道を整備し、清潔な水を確保することで、
+  社会全体の感染リスクを下げることができた。
+  </p>
+</div>
+
+<div class="card">
+  <h3>③ 人類が協力しなければ感染症には勝てない</h3>
+  <p>
+  天然痘の根絶は、一つの国や一人の医師だけでは実現できなかった。
+  世界各国が協力し、予防接種を広げたからこそ達成できた。
+  </p>
+</div>
+
+<div class="conclusion">
+  <h2>まとめ：感染症との戦いは現在も続いている</h2>
+  <p>
+  人類は、ペストによって数億人規模の犠牲を出し、
+  天然痘によって何億人もの命を失い、
+  スペインかぜによって近代史上最大級のパンデミックを経験した。
+  </p>
+  <p>
+  しかし、その経験から科学を発展させ、ワクチン、抗生物質、衛生設備、
+  医療制度、国際協力を生み出してきた。
+  </p>
+  <p>
+  そして、天然痘という感染症を地球上から根絶することにも成功した。
+  </p>
+  <h3 style="color:#fff;">
+  感染症の歴史は、人類が自然の脅威に対して、
+  知識と技術と協力によって立ち向かってきた歴史でもある。
+  </h3>
+  <p>
+  過去の感染症から学んだ知識は、次の未知の感染症と戦うための
+  土台になっている。
+  </p>
+</div>
+
+<h2>参考資料・学習に役立つサイト</h2>
+<div class="card">
+  <ul>
+    <li><a href="https://www.who.int/" target="_blank" rel="noopener">WHO（世界保健機関）</a></li>
+    <li><a href="https://ourworldindata.org/" target="_blank" rel="noopener">Our World in Data</a></li>
+    <li><a href="https://www.cdc.gov/" target="_blank" rel="noopener">CDC（米国疾病予防管理センター）</a></li>
+    <li><a href="https://www.nih.gov/" target="_blank" rel="noopener">NIH（米国国立衛生研究所）</a></li>
+  </ul>
+  <p class="small">
+    ※死者数は各機関の歴史的推計を参考にした概数。
+    集計期間や推計方法によって異なる。
+  </p>
+</div>
+
+<footer style="text-align:center;color:#8996a2;font-size:12px;padding:30px 0;">
+人類と感染症の戦い｜医学・科学・世界史
+</footer>
+
+</div>
+</body>
+</html>

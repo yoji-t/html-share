@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gemini Neon 徹底解説</title>
+<style>
+:root {
+  --main: #3157a4;
+  --sub: #eaf0fc;
+  --accent: #7856c9;
+  --text: #253047;
+  --muted: #68758a;
+  --border: #dce3ef;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #f4f6fa;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Noto Sans JP", sans-serif;
+  line-height: 1.85;
+}
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 24px;
+}
+.hero {
+  padding: 42px 30px;
+  border-radius: 18px;
+  color: white;
+  background: linear-gradient(135deg,#182c58,#4266bb,#8657c9);
+}
+.hero h1 { font-size: 34px; margin: 8px 0; }
+.hero p { opacity: .94; }
+.tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 20px;
+  font-size: 13px;
+}
+section {
+  background: white;
+  margin-top: 24px;
+  padding: 26px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(20,40,80,.05);
+}
+h2 {
+  color: var(--main);
+  font-size: 23px;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 10px;
+}
+h3 { color: #394f7e; margin-top: 24px; }
+p { margin: 12px 0; }
+strong { color: #294d99; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 14px;
+}
+th,td {
+  border: 1px solid var(--border);
+  padding: 11px;
+  text-align: left;
+}
+th { background: var(--sub); }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 14px;
+}
+.card {
+  background: #f5f7fc;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+.card h3 { margin-top: 0; }
+.highlight {
+  background: #edf2ff;
+  border-left: 5px solid var(--main);
+  padding: 16px;
+  margin: 18px 0;
+  border-radius: 5px;
+}
+.price {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--main);
+}
+.small { color: var(--muted); font-size: 12px; }
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+.flow span {
+  background: var(--sub);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 30px 0;
+  font-size: 12px;
+}
+a { color: #3157a4; }
+@media(max-width:600px) {
+  .container { padding: 12px; }
+  .hero { padding: 28px 20px; }
+  .hero h1 { font-size: 27px; }
+  section { padding: 18px; }
+  table { font-size: 12px; }
+  th,td { padding: 7px; }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header class="hero">
+  <span class="tag">Google DeepMind・AIモデル</span>
+  <h1>Gemini Neon 徹底解説</h1>
+  <p>AIは「質問に答える存在」から「仕事を完遂する存在」へ。</p>
+  <p>性能・料金・自律型エージェント・ChatGPTとの比較・特許業務への応用を解説。</p>
+  <p class="small">※2026年11月19日時点の情報として整理</p>
+</header>
+
+<section>
+<h2>1. Gemini Neonとは？</h2>
+<p>
+Gemini Neonは、GoogleのAIモデルとして紹介されている名称です。
+従来の質問応答型AIだけでなく、複数の工程にわたる仕事を
+自律的に進める用途に注目したモデルとされています。
+</p>
+
+<div class="highlight">
+<strong>最大のポイント：</strong><br>
+単に質問に回答するだけでなく、資料を読み込み、
+分析し、プログラムやレポートなどの成果物を完成させる
+AIを目指す方向性です。
+</div>
+
+<div class="card-grid">
+<div class="card">
+<h3>プログラミング</h3>
+複数ファイルの開発、デバッグ、プログラムの改善。
+</div>
+<div class="card">
+<h3>情報分析</h3>
+PDF・Excel・画像などを横断した分析。
+</div>
+<div class="card">
+<h3>自律型エージェント</h3>
+複数のツールを使い、複雑な作業を連続実行。
+</div>
+</div>
+</section>
+
+<section>
+<h2>2. Gemini 4シリーズの位置づけ</h2>
+<p>紹介されているシリーズ構成は、用途に応じた3モデルです。</p>
+<table>
+<tr><th>モデル</th><th>位置づけ</th><th>想定用途</th></tr>
+<tr>
+<td><strong>Carbon</strong></td>
+<td>最上位モデル</td>
+<td>高度な推論、複雑な長期プロジェクト</td>
+</tr>
+<tr>
+<td><strong>Neon</strong></td>
+<td>性能と効率の両立</td>
+<td>高度な分析、業務自動化</td>
+</tr>
+<tr>
+<td><strong>Hydrogen</strong></td>
+<td>高速処理モデル</td>
+<td>日常的な質問、軽量タスク</td>
+</tr>
+</table>
+<div class="highlight">
+Neonは、最上位モデルの能力と高速・低コスト処理の
+バランスを重視する位置づけです。
+</div>
+</section>
+
+<section>
+<h2>3. 主な性能・スペック</h2>
+<table>
+<tr><th>項目</th><th>紹介されている仕様</th></tr>
+<tr><td>コンテキスト長</td><td>100万トークン</td></tr>
+<tr><td>思考レベル</td><td>4段階</td></tr>
+<tr><td>入力形式</td><td>テキスト・画像・音声・動画</td></tr>
+<tr><td>出力上限</td><td>最大64Kトークン（通常の同期処理）</td></tr>
+<tr><td>長時間処理</td><td>エージェント型ワークフロー</td></tr>
+<tr><td>得意分野</td><td>コーディング・分析・研究・業務自動化</td></tr>
+</table>
+<p>
+特に100万トークンのコンテキストは、大量の資料を
+まとめて読み込んで分析する用途で重要です。
+</p>
+</section>
+
+<section>
+<h2>4. 注目したい3つの能力</h2>
+
+<h3>① 大量資料の横断分析</h3>
+<ul>
+<li>大量のPDFから情報を抽出</li>
+<li>Excelデータの集計と傾向分析</li>
+<li>複数資料の比較</li>
+<li>画像やグラフの読み取り</li>
+<li>分析結果をレポート化</li>
+</ul>
+
+<h3>② 自律型エージェント</h3>
+<div class="flow">
+<span>情報収集</span> →
+<span>資料読解</span> →
+<span>分析</span> →
+<span>成果物作成</span> →
+<span>検証</span>
+</div>
+<p>
+複数工程を連続して実行し、最終的な成果物まで
+仕上げることを目指します。
+</p>
+
+<h3>③ プログラミング</h3>
+<ul>
+<li>大規模プログラムの構造理解</li>
+<li>複数ファイルの同時修正</li>
+<li>バグの発見と修正</li>
+<li>既存プログラムの改善</li>
+<li>テストと検証</li>
+</ul>
+</section>
+
+<section>
+<h2>5. 公表されている性能評価</h2>
+<p>紹介されている評価値は以下のとおりです。</p>
+<table>
+<tr><th>評価項目</th><th>数値</th></tr>
+<tr><td>Artificial Analysis Intelligence Index</td><td>61</td></tr>
+<tr><td>Vals Index</td><td>70.9%</td></tr>
+<tr><td>Terminal-Bench 4.1</td><td>65.2%</td></tr>
+<tr><td>FrontierCode 2.0</td><td>46.2%</td></tr>
+<tr><td>HLE-Diamond</td><td>71.3%</td></tr>
+<tr><td>AutomationBench</td><td>56.3%</td></tr>
+<tr><td>SEC-bench Pro</td><td>90.5%</td></tr>
+</table>
+<p class="small">
+注意：ベンチマークは評価条件によって結果が異なります。
+他のAIとの優劣を判断するには、同一条件での比較が必要です。
+各数値の公式な出典・評価条件についても確認が必要です。
+</p>
+</section>
+
+<section>
+<h2>6. 料金と利用方法</h2>
+<h3>API料金として紹介されている数値</h3>
+<div class="card-grid">
+<div class="card">
+<p>入力・100万トークン</p>
+<div class="price">$3</div>
+</div>
+<div class="card">
+<p>出力・100万トークン</p>
+<div class="price">$15</div>
+</div>
+<div class="card">
+<p>キャッシュ入力・100万トークン</p>
+<div class="price">$0.15</div>
+</div>
+</div>
+<p class="small">
+※これらの料金は、公式価格表との照合が必要です。
+API料金とGeminiアプリの月額利用料金は別です。
+</p>
+
+<h3>利用先として想定されるサービス</h3>
+<ul>
+<li>Geminiアプリ</li>
+<li>Google AI Studio</li>
+<li>Gemini API</li>
+<li>Google Antigravity</li>
+<li>法人向けGeminiサービス</li>
+</ul>
+</section>
+
+<section>
+<h2>7. 特許・知的財産業務への活用</h2>
+<p>
+Neonのような高度な分析・エージェント型AIは、
+企業の知的財産部門でも活用が期待できます。
+</p>
+<table>
+<tr><th>業務</th><th>活用方法</th></tr>
+<tr><td>特許公報分析</td><td>大量公報から発明の特徴を抽出</td></tr>
+<tr><td>競合分析</td><td>Michelin、Bridgestoneなどの特許を比較</td></tr>
+<tr><td>技術動向分析</td><td>過去5年間の出願傾向を分析</td></tr>
+<tr><td>クレーム比較</td><td>複数公報の請求項を対比</td></tr>
+<tr><td>特許DB管理</td><td>Notionの特許情報を整理・更新</td></tr>
+<tr><td>レポート作成</td><td>分析結果をHTML形式に変換</td></tr>
+<tr><td>業務自動化</td><td>検索・分析・登録を連携</td></tr>
+</table>
+
+<h3>想定する自動化の流れ</h3>
+<div class="flow">
+<span>特許公報取得</span> →
+<span>AI読解</span> →
+<span>技術分類</span> →
+<span>競合分析</span> →
+<span>Notion登録</span> →
+<span>HTML報告書</span>
+</div>
+
+<div class="highlight">
+<strong>重要：</strong><br>
+特許公報の取得、Notionへの書き込み、
+各サービスとの連携にはAPIや外部ツールの設定が必要です。
+モデル単体ですべての作業が自動化されるわけではありません。
+</div>
+</section>
+
+<section>
+<h2>8. ChatGPT・Gemini・Antigravityの比較</h2>
+<table>
+<tr><th>サービス</th><th>主な役割</th></tr>
+<tr><td>ChatGPT</td><td>調査・分析・文章作成・幅広い業務支援</td></tr>
+<tr><td>Gemini Neon</td><td>高度な分析・複雑なタスク処理</td></tr>
+<tr><td>Gemini Carbon</td><td>最も難しい長期プロジェクト</td></tr>
+<tr><td>Gemini Hydrogen</td><td>高速な日常処理</td></tr>
+<tr><td>Google Antigravity</td><td>AIエージェントによる開発・作業実行環境</td></tr>
+</table>
+
+<h3>モデルと作業環境の違い</h3>
+<div class="card-grid">
+<div class="card">
+<h3>Neon</h3>
+<p>AIの頭脳。考える、判断する、分析する。</p>
+</div>
+<div class="card">
+<h3>Antigravity</h3>
+<p>AIの作業環境。開発やファイル操作などを実行する。</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>9. 総合評価</h2>
+<div class="highlight">
+<h3>Gemini Neonの本質</h3>
+<p>
+AIに質問して回答を得る段階から、
+AIに仕事を依頼して成果物を完成させてもらう段階への進化です。
+</p>
+</div>
+
+<ul>
+<li>大量の資料をまとめて理解する能力</li>
+<li>複雑な仕事を複数工程に分解する能力</li>
+<li>外部ツールを組み合わせる能力</li>
+<li>コーディングやレポート作成の自動化</li>
+</ul>
+
+<p>
+特に、特許調査、競合分析、Notionへの情報蓄積、
+HTMLレポート作成などを連携させる業務では、
+エージェント型AIの進化が大きな意味を持ちます。
+</p>
+</section>
+
+<section>
+<h2>10. 参考情報・公式サイト</h2>
+<ul>
+<li><a href="https://deepmind.google/" target="_blank" rel="noopener">Google DeepMind</a></li>
+<li><a href="https://ai.google.dev/" target="_blank" rel="noopener">Google AI for Developers</a></li>
+<li><a href="https://aistudio.google.com/" target="_blank" rel="noopener">Google AI Studio</a></li>
+<li><a href="https://antigravity.google/" target="_blank" rel="noopener">Google Antigravity</a></li>
+</ul>
+<p class="small">
+※本ページに記載したGemini 4 Neonの名称、発表内容、
+モデル仕様、ベンチマーク、価格は、公式一次資料で
+確認できていない項目を含みます。利用・導入の判断前に
+Googleの公式発表および最新の料金表を確認してください。
+</p>
+</section>
+
+<footer>
+Gemini Neon 解説レポート｜2026年11月19日
+</footer>
+
+</div>
+</body>
+</html>

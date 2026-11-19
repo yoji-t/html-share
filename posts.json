@@ -1,5 +1,23 @@
 [
     {
+        "id": "gemini-neon-comprehensive-guide-benchmarks-and-agentic-usecases",
+        "title": "Gemini Neon 徹底解説（性能・スペック・100万トークン・自律型エージェント・ChatGPT比較・知財特許業務への応用）",
+        "filename": "posts/gemini-neon-comprehensive-guide-benchmarks-and-agentic-usecases.html",
+        "createdAt": "2026-11-19T15:15:30+09:00",
+        "dateFormatted": "2026/11/19",
+        "description": "質問応答から「仕事を完遂する自律型AI」へ進化したGoogle DeepMindの次世代モデル「Gemini Neon」の徹底解説。Gemini 4シリーズ（Carbon / Neon / Hydrogen）の位置づけ、100万トークンのコンテキスト長、ベンチマーク評価、API料金、プログラミングや大量資料の横断分析、特許・知的財産業務（公報分析・競合比較・Notion連携）への実践的な自動化ワークフローを整理。",
+        "tags": [
+            "AI",
+            "Google DeepMind",
+            "Gemini",
+            "Gemini Neon",
+            "自律型エージェント",
+            "知財",
+            "特許",
+            "Antigravity"
+        ]
+    },
+    {
         "id": "kyoshin-company-analysis-cram-school-competitor-comparison",
         "title": "京進の企業分析｜学習塾事業・保育介護への多角化・明光や早稲アカ等との業績比較・成長性（証券コード4735）",
         "filename": "posts/kyoshin-company-analysis-cram-school-competitor-comparison.html",

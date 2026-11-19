@@ -1,5 +1,23 @@
 [
     {
+        "id": "space-elevator-possibility-mechanism-and-future-space-development",
+        "title": "宇宙エレベーターの可能性｜人類は宇宙への階段をつくれるのか（仕組み・CNTケーブル・大林組2050年構想・宇宙デブリ・月面火星探査）",
+        "filename": "posts/space-elevator-possibility-mechanism-and-future-space-development.html",
+        "createdAt": "2026-11-19T15:18:00+09:00",
+        "dateFormatted": "2026/11/19",
+        "description": "ロケットから「宇宙への日常的物流インフラ」へ。赤道上空約96,000kmに延びる宇宙エレベーター（軌道エレベーター）の原理、カーボンナノチューブ等の超高強度材料の課題、宇宙ゴミ（スペースデブリ）対策、大林組の2050年建設構想、月面基地や火星探査への影響、実現への5段階プロセスを徹底解説。",
+        "tags": [
+            "宇宙開発",
+            "宇宙エレベーター",
+            "未来技術",
+            "大林組",
+            "科学技術",
+            "カーボンナノチューブ",
+            "宇宙探査",
+            "インフラ"
+        ]
+    },
+    {
         "id": "gemini-neon-comprehensive-guide-benchmarks-and-agentic-usecases",
         "title": "Gemini Neon 徹底解説（性能・スペック・100万トークン・自律型エージェント・ChatGPT比較・知財特許業務への応用）",
         "filename": "posts/gemini-neon-comprehensive-guide-benchmarks-and-agentic-usecases.html",

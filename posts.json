@@ -1,5 +1,25 @@
 [
     {
+        "id": "bridgestone-us-patent-analysis-report-2026-october",
+        "title": "ブリヂストン米国特許要約一覧（2026年10月・全26件｜音響摩耗AI・廃タイヤケミカルリサイクル・エアレスタイヤ・電気加熱リトレッド）",
+        "filename": "posts/bridgestone-us-patent-analysis-report-2026-october.html",
+        "createdAt": "2026-11-19T22:04:00+09:00",
+        "dateFormatted": "2026/11/19",
+        "description": "2026年10月に公開・登録されたブリヂストンの米国特許全26件を徹底要約・技術分析。接地音響・振動スペクトルによるAI摩耗推定や熱画像による故障判定、使用済みタイヤ由来の合成ガスからポリエチレン・スチレン・PET・ナイロンを製造するケミカルリサイクル技術群、導電性クッションゴムの通電加熱リトレッド、エアレスタイヤのスポーク・リム接続部補強、EVバッテリー筐体用電磁シールド複合材料まで網羅。",
+        "tags": [
+            "特許",
+            "知財",
+            "ブリヂストン",
+            "タイヤ",
+            "ケミカルリサイクル",
+            "AI",
+            "エアレスタイヤ",
+            "リトレッド",
+            "TPMS",
+            "ゴム材料"
+        ]
+    },
+    {
         "id": "difference-between-rabies-infection-and-onset",
         "title": "狂犬病の感染と発症の違い｜潜伏期間・神経移行の仕組みと曝露後予防（PEP）",
         "filename": "posts/difference-between-rabies-infection-and-onset.html",

@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ブリヂストン US202609 特許分析レポート</title>
+<style>
+:root {
+  --navy:#17365d;
+  --blue:#2873b9;
+  --light:#edf4fb;
+  --bg:#f4f6f9;
+  --text:#263445;
+  --muted:#697789;
+  --border:#dce3eb;
+  --green:#25836a;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:"Yu Gothic","Meiryo",sans-serif;
+  line-height:1.8;
+}
+header{
+  background:linear-gradient(120deg,#102c4c,#28669e);
+  color:white;padding:48px 22px;
+}
+.header-inner{max-width:1100px;margin:auto}
+header h1{font-size:29px;margin:0 0 12px}
+header p{color:#e0eaf5;margin:0}
+.container{max-width:1100px;margin:30px auto;padding:0 18px}
+.summary{
+  background:white;border-radius:12px;padding:24px;
+  margin-bottom:28px;border:1px solid var(--border);
+}
+.summary h2{color:var(--navy);margin-top:0}
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:12px;margin:20px 0;
+}
+.stat{
+  background:var(--light);padding:17px;border-radius:9px;
+}
+.stat strong{display:block;font-size:27px;color:var(--navy)}
+.stat span{font-size:13px;color:var(--muted)}
+h2.section-title{
+  font-size:22px;color:var(--navy);
+  border-bottom:3px solid var(--blue);
+  padding-bottom:10px;margin-top:40px;
+}
+.category{
+  margin:30px 0 14px;color:var(--blue);
+  font-size:18px;border-left:5px solid var(--blue);
+  padding-left:12px;
+}
+.patent{
+  background:white;border:1px solid var(--border);
+  border-radius:12px;padding:24px;margin:15px 0;
+  box-shadow:0 2px 8px rgba(20,40,60,.035);
+}
+.patent h3{margin:0 0 5px;color:var(--navy);font-size:19px}
+.number{font-size:13px;color:var(--muted);margin-bottom:13px}
+.tag{
+  display:inline-block;background:#eaf2fa;color:#245b8b;
+  padding:3px 9px;border-radius:5px;font-size:12px;
+  margin:0 5px 8px 0;
+}
+.patent h4{
+  font-size:14px;color:var(--blue);margin:15px 0 4px;
+}
+.patent p{margin:3px 0}
+.point{
+  background:#f0f6fc;padding:12px 15px;
+  border-radius:7px;margin-top:13px;
+}
+.evaluation{
+  border-left:3px solid var(--green);
+  padding:8px 13px;margin-top:12px;
+  background:#f3f9f6;
+}
+.note{
+  background:#fff8e9;border:1px solid #f0dfb8;
+  padding:13px;border-radius:8px;font-size:13px;
+}
+.toc{
+  display:flex;flex-wrap:wrap;gap:8px;margin:15px 0;
+}
+.toc a{
+  text-decoration:none;color:var(--blue);
+  background:white;border:1px solid var(--border);
+  padding:7px 12px;border-radius:6px;font-size:13px;
+}
+footer{
+  background:#17365d;color:#dce8f5;
+  padding:25px;text-align:center;margin-top:50px;font-size:12px;
+}
+@media(max-width:600px){
+  header{padding:30px 18px}
+  header h1{font-size:23px}
+  .patent{padding:17px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="header-inner">
+  <div style="font-size:13px;letter-spacing:2px">INTELLECTUAL PROPERTY ANALYSIS</div>
+  <h1>ブリヂストン US202609<br>特許技術分析レポート</h1>
+  <p>2026年9月関連公報・全24件の技術内容と研究開発動向</p>
+  <p>対象：BRIDGESTONE CORPORATION / Bridgestone Americas</p>
+</div>
+</header>
+
+<div class="container">
+
+<section class="summary">
+<h2>1. エグゼクティブサマリー</h2>
+
+<p>
+本レポートは、Notionに格納されたブリヂストン関連の米国特許公報24件を対象に、
+発明の技術的特徴と事業上の意味を整理したものである。
+</p>
+
+<div class="stats">
+<div class="stat"><strong>24件</strong><span>対象特許公報</span></div>
+<div class="stat"><strong>5分野</strong><span>主要技術領域の大分類</span></div>
+<div class="stat"><strong>材料・構造</strong><span>タイヤ技術の主要テーマ</span></div>
+<div class="stat"><strong>DX・循環</strong><span>新しい事業領域</span></div>
+</div>
+
+<h3>主要な技術開発テーマ</h3>
+<ol>
+<li><b>タイヤ構造・非空気入りタイヤ：</b>
+小径タイヤの乗り心地、耐久性、金属繊維構造など。</li>
+<li><b>トレッド・接地性能：</b>
+サイプ配置、溝形状、氷上・ウェット性能の最適化。</li>
+<li><b>ゴム材料：</b>
+自己修復性、耐劣化性、加工性、低温特性の改善。</li>
+<li><b>タイヤ製造・リトレッド：</b>
+製造装置、再生タイヤの品質検査、加工技術。</li>
+<li><b>デジタル・サーキュラーエコノミー：</b>
+タイヤ管理、リサイクル情報管理、再資源化の高度化。</li>
+</ol>
+
+<div class="point">
+<b>総合的な見解</b><br>
+ブリヂストンの技術開発は、従来のタイヤ単体の性能向上だけではなく、
+材料・製造・再生・管理・リサイクルまでを含むライフサイクル全体へ広がっている。
+特に、リトレッドと材料技術、非空気入りタイヤ、デジタル管理は注目すべき領域である。
+</div>
+</section>
+
+<section>
+<h2 class="section-title">2. 個別特許の技術解説</h2>
+
+<div class="toc">
+<a href="#structure">タイヤ構造</a>
+<a href="#tread">トレッド・接地性能</a>
+<a href="#material">材料技術</a>
+<a href="#manufacturing">製造・リトレッド</a>
+<a href="#digital">デジタル・リサイクル</a>
+<a href="#golf">ゴルフボール</a>
+</div>
+
+<h3 class="category" id="structure">A. タイヤ構造・非空気入りタイヤ</h3>
+
+<article class="patent">
+<h3>1. Knit Body And Tire</h3>
+<div class="number">US 12746780 B2</div>
+<span class="tag">非空気入りタイヤ</span>
+<span class="tag">金属繊維</span>
+<span class="tag">タイヤ骨格</span>
+
+<h4>発明の概要</h4>
+<p>
+金属繊維を含むフィラメントを編み込んだニット構造体を、
+タイヤのトレッド部に利用する技術。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+コイルスプリングを組み合わせた非空気入りタイヤでは、
+構造体の隙間から砂などが侵入する問題がある。
+砂地などでは走行性能が低下し、駆動機構にも悪影響を与える可能性がある。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+断面形状が凸多角形となる金属繊維を含むフィラメントを編み込む。
+タイヤの骨格を構成するボディスプリングと連結スプリングの間に形成される溝に、
+ニット構造体を配置する。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+金属繊維の断面形状と編み構造を組み合わせ、
+非空気入りタイヤの骨格部分とトレッド部分を一体的に機能させる構成。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+非空気入りタイヤの実用化に向けた重要な構造技術。
+特に、異物侵入への対応や、従来の空気入りタイヤとは異なる
+トレッド形成方法という点で注目できる。
+</div>
+</article>
+
+<article class="patent">
+<h3>2. High-Visibility Non-Pneumatic Tire</h3>
+<div class="number">US 20260285090 A1</div>
+<span class="tag">非空気入りタイヤ</span>
+<span class="tag">視認性</span>
+<span class="tag">小型モビリティ</span>
+
+<h4>発明の概要</h4>
+<p>
+非空気入りタイヤの表面に、特定の光学特性を持つ視認領域を設ける技術。
+小型モビリティなどに使用するタイヤの視認性を高める。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+電動モビリティなどでは非空気入りタイヤの採用が進んでいる。
+しかし、ホイールやタイヤのデザイン性だけでなく、
+周囲からの視認性も重要になっている。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+内側リム、外側リム、連結部材の少なくとも一つに視認領域を設ける。
+500～510nmの波長範囲における反射率を40～80%とし、
+特定波長に対する反射特性を制御する。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+タイヤの構造部材を利用して光学的な視認性を確保する点。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+タイヤの基本性能だけでなく、モビリティの安全性・デザイン性に
+技術領域を拡張する発明。
+小型EVやパーソナルモビリティへの応用が考えられる。
+</div>
+</article>
+
+<article class="patent">
+<h3>3. Non-Pneumatic Tire with Specified Resin Properties</h3>
+<div class="number">US 12722423 B2</div>
+<span class="tag">非空気入りタイヤ</span>
+<span class="tag">樹脂材料</span>
+<span class="tag">乗り心地</span>
+
+<h4>発明の概要</h4>
+<p>
+小径の非空気入りタイヤにおいて、
+骨格部材に使用する樹脂組成物の温度依存性を制御する技術。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+非空気入りタイヤでは、空気圧による弾性変形を利用できない。
+特に小径化すると、乗り心地と耐久性の両立が難しくなる。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+タイヤ径を35cm以下とし、骨格部材に使用する樹脂組成物について、
+ISO 178に基づく低温・高温での曲げ弾性率を規定する。
+請求項では、-20℃で125MPa以下、
+60℃で32～90MPaという範囲を設定している。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+樹脂の温度別の機械特性とタイヤの小径化を組み合わせた点。
+熱可塑性エラストマー、特にポリエステル系材料も対象となる。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+小型モビリティ向けの非空気入りタイヤを実用化するための材料設計。
+材料の温度依存性をタイヤ性能に結び付けている点が重要。
+</div>
+</article>
+
+<article class="patent">
+<h3>4. Tire Having External Flexible Sidewall Support Structure</h3>
+<div class="number">US 12734847 B2</div>
+<span class="tag">タイヤ構造</span>
+<span class="tag">サイドウォール</span>
+<span class="tag">軽量化</span>
+
+<h4>発明の概要</h4>
+<p>
+タイヤのサイドウォールの外側に、
+環状の柔軟な支持構造体を配置するタイヤアセンブリ。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+タイヤの重量は走行時のエネルギー消費に影響する。
+一方、タイヤの構造を軽量化すると、剛性や支持性能との両立が問題となる。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+サイドウォールを片持ち梁状の形状とし、
+ショルダー部分を軸方向外側に突出させる。
+その外側に、サイドウォールおよびビード部に接触する
+独立した環状の柔軟支持構造体を配置する。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+タイヤ本体とは別体の支持構造体を組み合わせることにより、
+タイヤの支持構造を設計する点。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+タイヤの構造設計をタイヤ単体から周辺構造との組み合わせへ拡張する発明。
+軽量化と支持性能の両立という観点で注目できる。
+</div>
+</article>
+
+<h3 class="category" id="tread">B. トレッド・接地性能・サイプ技術</h3>
+
+<article class="patent">
+<h3>5. Tire with Specified Center and Shoulder Land Positions</h3>
+<div class="number">US 20260285092 A1</div>
+<span class="tag">トレッドパターン</span>
+<span class="tag">排水性能</span>
+<span class="tag">軽量化</span>
+
+<h4>発明の概要</h4>
+<p>
+タイヤのセンターランド部とショルダーランド部について、
+接地面における周方向端部の位置関係を制御する技術。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+転がり抵抗を低減するためにトレッドゴムを薄くすると、
+主溝が浅くなり、ハイドロプレーニング性能が低下する可能性がある。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+接地面において、センターランド部の周方向端部を
+ショルダーランド部の対応する端部より周方向の一方側に配置する。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+溝の深さだけでなく、接地時のランド部の周方向位置関係を
+設計パラメータとして利用する点。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+低転がり抵抗とウェット性能の両立を目指すトレッド設計。
+ゴム量を減らしながら接地性能を確保する技術として注目できる。
+</div>
+</article>
+
+<article class="patent">
+<h3>6. Directional Tire with Repeated Inclined Groove Groups</h3>
+<div class="number">US 20260285091 A1</div>
+<span class="tag">トレッドパターン</span>
+<span class="tag">方向性パターン</span>
+<span class="tag">排水設計</span>
+
+<h4>発明の概要</h4>
+<p>
+回転方向が指定された空気入りタイヤにおいて、
+左右のトレッド領域に繰り返し配置する傾斜溝群を設ける技術。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+トレッドの溝配置は、排水性能や接地剛性、走行安定性に影響する。
+特に方向性パターンでは、溝の配置と交差関係の設計が重要となる。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+周方向に連続する環状主溝を設けず、
+タイヤ赤道面の左右に複数の傾斜溝を繰り返し配置する。
+第1傾斜溝は赤道面を横断し、第2傾斜溝は第1傾斜溝に沿うように配置する。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+方向性を持つ複数の傾斜溝の配置と交差関係を規定している点。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+トレッドパターンの幾何学的な最適化に関する発明。
+溝の配置によって接地・排水性能を調整する設計思想に注目したい。
+</div>
+</article>
+
+<article class="patent">
+<h3>7. Tire Tread with Two Intersecting Sipe Sets</h3>
+<div class="number">US 12741490 B2</div>
+<span class="tag">サイプ</span>
+<span class="tag">トレッド設計</span>
+
+<h4>発明の概要</h4>
+<p>
+トレッドの長手方向に対して異なる角度を持つ
+2組のサイプを交差させるタイヤトレッド技術。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+サイプは水膜の除去や接地時のブロック変形を助け、
+トラクションを改善する一方、配置によってはトレッド剛性に影響する。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+第1のサイプ群と第2のサイプ群を、
+それぞれ異なる非ゼロ角度で配置する。
+両者を交差させ、サイプの長さや終端位置を規定する。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+単純な平行サイプではなく、異なる方向のサイプを交差させる幾何学的配置。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+サイプの配置と長さを制御するトレッド設計技術。
+接地性能と剛性のバランスを考える上で注目できる。
+</div>
+</article>
+
+<article class="patent">
+<h3>8. Pneumatic Tire with Specified Micro Sipes</h3>
+<div class="number">US 20260274009 A1</div>
+<span class="tag">マイクロサイプ</span>
+<span class="tag">氷上性能</span>
+<span class="tag">スタッドレス</span>
+
+<h4>発明の概要</h4>
+<p>
+トレッドのランド部に設ける微細なサイプを、
+2つの異なる方向の要素で構成する技術。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+スタッドレスタイヤでは、氷上の水膜を排出してグリップ力を確保するため、
+ランド部に高密度のサイプを配置する。
+しかし、サイプを増やしすぎるとランド部の剛性が低下する。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+ランド部の幅方向端部に沿う第1要素と、
+異なる方向に延びる短い第2要素からマイクロサイプを構成する。
+第2要素は第1要素より短く設定される。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+サイプを単純な直線ではなく、異なる方向の短い要素を組み合わせた構造とする点。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+氷上グリップとランド部剛性の両立を狙った微細構造技術。
+スタッドレスタイヤの性能改善に直結するテーマである。
+</div>
+</article>
+
+<article class="patent">
+<h3>9. Tire Tread with Adjustable Sipe Geometry</h3>
+<div class="number">US 12741490 B2</div>
+<span class="tag">サイプ形状</span>
+<span class="tag">トレッド性能</span>
+
+<h4>補足</h4>
+<p>
+本公報は、異なる方向に延びる2組のサイプを交差させ、
+その長さと終端位置を規定する技術である。
+上記7番と同一公報であり、重複計上していない。
+</p>
+</article>
+
+<h3 class="category" id="material">C. ゴム・ポリマー材料技術</h3>
+
+<article class="patent">
+<h3>10. Self-Healing Rubber Composition</h3>
+<div class="number">US 12729289 B2</div>
+<span class="tag">自己修復ゴム</span>
+<span class="tag">ポリマー</span>
+<span class="tag">材料技術</span>
+
+<h4>発明の概要</h4>
+<p>
+ポリメタクリル酸オリゴマーを含むゴム組成物を製造し、
+自己修復性を持つタイヤ用ゴムを実現する技術。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+タイヤは走行中に損傷を受ける可能性があり、
+ゴムの損傷を修復できれば耐久性や長寿命化に寄与する。
+しかし、自己修復性とゴム本来の機械特性を両立する必要がある。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+メタクリル酸をCo(II)錯体触媒の存在下で重合し、
+数平均分子量160～3200g/molのポリメタクリル酸オリゴマーを得る。
+これを酸化亜鉛と混合して亜鉛塩を形成し、
+ジエン系ゴム、硫黄、加硫促進剤と組み合わせる。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+特定の分子量を持つポリメタクリル酸オリゴマーと
+亜鉛塩形成を利用した自己修復ゴムの製造方法。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+タイヤの長寿命化につながる可能性がある材料技術。
+材料の分子設計によって損傷回復機能を付与する点が重要。
+</div>
+</article>
+
+<article class="patent">
+<h3>11. Degradation-Resistant Copolymer</h3>
+<div class="number">US 20260258182 A1</div>
+<span class="tag">ゴム材料</span>
+<span class="tag">耐熱老化</span>
+<span class="tag">ポリマー設計</span>
+
+<h4>発明の概要</h4>
+<p>
+経時劣化に強いゴム材料を実現するため、
+特定のモノマー構成を持つ共重合体を開発する技術。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+タイヤ用ゴムは長期間にわたって熱や酸素などの影響を受ける。
+ポリマーの劣化はタイヤ性能の低下につながるため、
+耐劣化性の高い材料が必要となる。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+エチレン単位、炭素数6以上のα-オレフィン単位、
+非共役ジエン単位、芳香族ビニル単位を含む共重合体を採用する。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+複数のモノマー構成を組み合わせてポリマーの化学構造を制御する点。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+タイヤ用ゴムの耐久性・長寿命化に関する基礎材料技術。
+材料そのものの劣化を抑制するアプローチである。
+</div>
+</article>
+
+<article class="patent">
+<h3>12. Polymer Composition with Cold Flow Resistance</h3>
+<div class="number">US 20260258231 A1</div>
+<span class="tag">ポリマー材料</span>
+<span class="tag">加工性</span>
+<span class="tag">低温特性</span>
+
+<h4>発明の概要</h4>
+<p>
+低粘度でありながらコールドフローに強いポリマー組成物を実現する技術。
+タイヤ用ゴム組成物にも利用する。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+タイヤ用ポリマーは高分子量化によって性能を確保することがあるが、
+高分子量材料は加工時の粘度が高くなりやすい。
+一方、加工性を改善すると材料の形状保持性に影響する場合がある。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+数平均分子量50万g/mol以上の高分子量ポリマーに、
+水素化脂肪族樹脂または水素化環状脂肪族樹脂を組み合わせる。
+樹脂量はポリマー100質量部に対して20質量部以上。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+高分子量ポリマーと水素化樹脂の配合量を規定し、
+低粘度とコールドフロー耐性を両立させる点。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+タイヤのグリップ性能と製造加工性の両立に関係する材料技術。
+製造工程の効率化にもつながる可能性がある。
+</div>
+</article>
+
+<h3 class="category" id="manufacturing">D. タイヤ製造・リトレッド技術</h3>
+
+<article class="patent">
+<h3>13. Belt Manufacturing Apparatus and Folding-Back Roller</h3>
+<div class="number">US 20260285636 A1</div>
+<span class="tag">ベルト製造</span>
+<span class="tag">製造装置</span>
+<span class="tag">軽量化</span>
+
+<h4>発明の概要</h4>
+<p>
+タイヤのベルト層を製造する際に、
+ゴムシートをベルト材の幅方向両端で折り返す装置および方法。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+タイヤの転がり抵抗を低減するため、
+ベルト層などのタイヤ部材を薄くする取り組みが進められている。
+しかし、部材を薄くすると製造時の端部処理が難しくなり、
+耐久性や品質に悪影響が出る可能性がある。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+ベルト材の両端から突出するゴムシートを折り返すローラーを設ける。
+ローラー表面には内側に弾性変形できる弾性部材を使用する。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+折り返しローラーの弾性変形機構と、
+ベルト材端部のゴムシート処理を組み合わせた点。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+タイヤの軽量化を製造技術側から支える発明。
+薄肉化と製造品質・耐久性の両立に関係する。
+</div>
+</article>
+
+<article class="patent">
+<h3>14. Sipe Forming Assembly for Retread Tire</h3>
+<div class="number">US 20260273883 A1</div>
+<span class="tag">リトレッド</span>
+<span class="tag">サイプ加工</span>
+<span class="tag">製造装置</span>
+
+<h4>発明の概要</h4>
+<p>
+リトレッド用タイヤのトレッドにサイプを形成するための加工装置。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+リトレッドでは、摩耗したタイヤのケーシングに新しいトレッドを形成する。
+その際、トレッドにサイプを正確な角度で形成することが必要となる。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+タイヤトレッドを搬送するローラー装置と、
+直線アクチュエータによって刃を進退させる切断装置を組み合わせる。
+刃はアクチュエータ軸を中心に回転でき、
+トレッドに対するサイプの角度を調整できる。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+刃の進退動作と回転動作を組み合わせ、
+サイプの形成角度を制御する加工機構。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+リトレッド工程の加工品質を高める製造技術。
+タイヤ再生事業の品質安定化・自動化に関係する。
+</div>
+</article>
+
+<article class="patent">
+<h3>15. Sensor-Based Tire Retreading Quality Inspection</h3>
+<div class="number">US 20260274010 A1</div>
+<span class="tag">リトレッド</span>
+<span class="tag">品質管理</span>
+<span class="tag">センサー</span>
+
+<h4>発明の概要</h4>
+<p>
+リトレッド工程において、タイヤアセンブリの状態をセンサーで測定し、
+規格値と比較して品質を判定するシステム。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+摩耗したタイヤを再生利用する場合、
+ケーシングと新しいトレッドの接合状態などが重要となる。
+品質が規格を満たさなければ、安全性や耐久性に問題が生じる可能性がある。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+ケーシングを支持する構造体にセンサーを設け、
+タイヤアセンブリの属性を測定する。
+測定結果を仕様データと比較し、
+適合しない場合はアラームを出力する。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+センサー、仕様データ、判定処理、警報機能を組み合わせた品質管理システム。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+リトレッド工程の品質保証をデジタル化する技術。
+熟練作業者の経験に依存する検査を定量化する方向性が見える。
+</div>
+</article>
+
+<article class="patent">
+<h3>16. System for Applying Highly Viscous Sealing Agent</h3>
+<div class="number">US 12734775 B2</div>
+<span class="tag">シーリング材</span>
+<span class="tag">製造装置</span>
+<span class="tag">パンク対策</span>
+
+<h4>発明の概要</h4>
+<p>
+タイヤ内面に高粘度のシーリング材を塗布するための装置および方法。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+タイヤ内面にシーリング材を塗布することで、
+釘などによるパンクを自動的に封止する技術がある。
+しかし、高粘度材料は搬送や吐出が難しく、
+安定した塗布量や塗布品質を確保する必要がある。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+塗布装置、供給回路、回収タンク、可動ピストン、
+往復運動する抽出部材などを組み合わせる。
+高粘度流体を回収・供給し、アプリケーターに送り込む。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+高粘度のシーリング材を安定して供給するための
+ピストン式の回収・供給機構。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+パンク対策タイヤの製造品質を支えるプロセス技術。
+材料の特性に応じた製造装置の最適化という点で重要。
+</div>
+</article>
+
+<h3 class="category" id="digital">E. デジタル・タイヤ管理・リサイクル</h3>
+
+<article class="patent">
+<h3>17. Tire Management Apparatus Using Transmitter Signal Strength</h3>
+<div class="number">US 20260285098 A1</div>
+<span class="tag">タイヤ管理</span>
+<span class="tag">RFID・通信</span>
+<span class="tag">デジタル管理</span>
+
+<h4>発明の概要</h4>
+<p>
+タイヤに埋め込まれた送信機のIDと受信信号強度を利用して、
+車両におけるタイヤの装着位置を特定する技術。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+リトレッドなどのタイヤ管理では、
+個々のタイヤの使用履歴や劣化状態を把握する必要がある。
+そのためには、タイヤを個別に識別し、
+車両上のどの位置に装着されているかを管理する必要がある。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+タイヤに埋め込まれた送信機からID情報を取得する。
+同時に受信信号強度を取得し、
+その情報に基づいてタイヤの車両上の装着位置を判定する。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+タイヤIDと受信信号強度を組み合わせて装着位置を推定し、
+IDと位置情報を関連付けて出力する点。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+タイヤの個体管理・履歴管理を高度化する技術。
+フリート管理やリトレッド事業との連携が考えられる。
+</div>
+</article>
+
+<article class="patent">
+<h3>18. Tire Recycling Information Processing Apparatus</h3>
+<div class="number">US 12725132 B2</div>
+<span class="tag">タイヤリサイクル</span>
+<span class="tag">情報管理</span>
+<span class="tag">サーキュラーエコノミー</span>
+
+<h4>発明の概要</h4>
+<p>
+タイヤのリサイクル工程において、
+各段階で取得した情報を関連付けて管理する情報処理システム。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+タイヤをリサイクルする際には、回収から再資源化まで複数の工程を経る。
+しかし、各段階の情報が分断されていると、
+材料組成などの情報を後工程で有効利用しにくい。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+第1段階の通信端末からタイヤ情報を取得し、
+第2段階の熱分解工程に関連する情報も取得する。
+第1段階で得た配合情報を利用して、
+第2段階における分解条件を決定する。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+タイヤの配合情報と熱分解工程の条件を関連付け、
+リサイクル工程の情報を連携させる点。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+単なる廃タイヤの回収管理ではなく、
+タイヤの材料情報を再資源化工程に引き継ぐ仕組み。
+資源循環事業における重要なデジタル技術と考えられる。
+</div>
+</article>
+
+<h3 class="category" id="golf">F. ゴルフボール関連技術</h3>
+
+<article class="patent">
+<h3>19. Multi-Piece Solid Golf Ball with Specified Core Hardness Profile</h3>
+<div class="number">US 20260273347 A1</div>
+<span class="tag">ゴルフボール</span>
+<span class="tag">多層構造</span>
+<span class="tag">材料設計</span>
+
+<h4>発明の概要</h4>
+<p>
+コア、周囲層、中間層、カバーの4層以上からなる
+ソリッドゴルフボールの材料・硬度設計技術。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+ゴルフボールでは飛距離、打感、スピン性能などを両立するため、
+各層の材料と硬度分布を適切に設計する必要がある。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+ゴム組成物からなるコアと、
+樹脂組成物からなる周囲層・中間層・カバーを組み合わせる。
+コア中心から表面までの複数位置でShore C硬度を測定し、
+硬度プロファイルを規定する。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+コアの硬度を単一の数値ではなく、
+半径方向に沿った分布として規定している点。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+ゴルフボールの打感・飛距離・スピン性能を材料の硬度分布で制御する発明。
+タイヤ以外のゴム・樹脂材料技術の応用例として注目できる。
+</div>
+</article>
+
+<article class="patent">
+<h3>20. Golf Ball Manufacturing Method Using Thickener Aqueous Solution</h3>
+<div class="number">US 20260264190 A1</div>
+<span class="tag">ゴルフボール</span>
+<span class="tag">製造工程</span>
+<span class="tag">表面研磨</span>
+
+<h4>発明の概要</h4>
+<p>
+ゴルフボールのカバー表面を研磨する際に、
+増粘剤を含む水溶液を流しながら研磨する製造方法。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+ゴルフボールのカバーにはポリウレタンなどの材料が使われる。
+カバーの硬度を低くしてスピン性能を改善する場合、
+成形後の表面研磨で品質を安定させることが課題となる。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+ボール表面全体を研磨部材で研磨しながら、
+水と増粘剤を含む水溶液を供給する。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+研磨工程における液体の粘度・供給を制御し、
+ゴルフボール表面の仕上げ品質を改善する点。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+材料開発だけでなく、成形後の表面仕上げ工程まで含めた製造技術。
+ゴルフボールの品質安定化に関係する。
+</div>
+</article>
+
+<h3 class="category">G. 建設車両用クローラ・その他ゴム構造</h3>
+
+<article class="patent">
+<h3>21. Construction Vehicle Crawler with Reinforced Guide Protrusions</h3>
+<div class="number">US 12741707 B2</div>
+<span class="tag">建設車両</span>
+<span class="tag">弾性クローラ</span>
+<span class="tag">振動低減</span>
+
+<h4>発明の概要</h4>
+<p>
+建設車両用の弾性クローラにおいて、
+芯金に設けられたガイド突起のねじれを抑制する技術。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+クローラ内部のローラーがガイド突起の上を転動すると、
+ガイド突起にねじれ方向の力が加わる。
+このねじれによってローラーが上下動し、
+車体振動が発生する可能性がある。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+芯金のガイド突起基部と、
+ローラー脱落防止突起をリブで連結する。
+さらに、隣接する芯金の突起同士をかみ合わせる構造を採用する。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+リブによってガイド突起のねじり剛性を高め、
+ローラーの上下動を抑制する点。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+建設車両の乗り心地・耐久性を改善するゴムクローラ技術。
+タイヤ以外の産業用ゴム製品にも技術開発が広がっている。
+</div>
+</article>
+
+<article class="patent">
+<h3>22. Rubber Crawler with Recessed Core Projections</h3>
+<div class="number">US 12722725 B2</div>
+<span class="tag">ゴムクローラ</span>
+<span class="tag">芯金構造</span>
+<span class="tag">屈曲性</span>
+
+<h4>発明の概要</h4>
+<p>
+ゴムクローラの内部に埋め込まれた芯金の突起に、
+特定の凹部を設ける技術。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+クローラがスプロケットなどに巻き付く際、
+隣接する芯金の突起同士の隙間が狭くなり、
+クローラ全体の屈曲剛性が高くなる場合がある。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+芯金の幅方向両側に設けた突起のうち、
+隣接する芯金の突起と対向する面に凹部を形成する。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+芯金同士の突起が接近した際の干渉や隙間の問題を、
+突起表面の凹部によって調整する点。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+クローラの屈曲性と走行耐久性を改善する構造技術。
+芯金形状の最適化による機械的性能の改善である。
+</div>
+</article>
+
+<article class="patent">
+<h3>23. Wet Road Tire Behaviour Prediction Model</h3>
+<div class="number">US 12735050 B2</div>
+<span class="tag">タイヤシミュレーション</span>
+<span class="tag">ウェット性能</span>
+<span class="tag">数理モデル</span>
+
+<h4>発明の概要</h4>
+<p>
+ウェット路面におけるタイヤのコーナリング力やグリップ力を、
+コンピューター上のタイヤモデルで予測する技術。
+</p>
+
+<h4>従来技術の課題</h4>
+<p>
+従来のタイヤモデルでは、
+荷重、スリップ、キャンバー角などを用いてタイヤの挙動を予測する。
+しかし、ウェット路面では走行速度や垂直荷重によって
+摩擦特性が変化するため、適切なモデル化が重要となる。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+タイヤモデルに垂直荷重と前後方向速度を入力し、
+横方向の荷重依存摩擦係数やコーナリング剛性を利用して
+予測グリップ力を算出する。
+</p>
+
+<h4>特許上のポイント</h4>
+<p>
+ウェット路面における摩擦特性を、
+荷重と縦方向速度に依存する形で数理モデル化する点。
+</p>
+
+<div class="evaluation">
+<b>技術戦略上の評価</b><br>
+タイヤの実験評価だけでなく、
+シミュレーションを通じた性能予測・設計効率化につながる技術。
+車両開発との連携も考えられる。
+</div>
+</article>
+
+<article class="patent">
+<h3>24. Tire Having Tread of Specified Rubber Composition</h3>
+<div class="number">US 12729288 B2</div>
+<span class="tag">トレッドゴム</span>
+<span class="tag">ゴム組成物</span>
+
+<h4>発明の概要</h4>
+<p>
+タイヤのトレッドに使用する特定のゴム組成物と、
+その関連製造方法に関する特許。
+</p>
+
+<h4>技術的な特徴</h4>
+<p>
+Notion上の公報データからは発明の名称と書誌情報を確認できたが、
+明細書本文・要約・請求項のテキストが十分に取得できなかった。
+そのため、具体的な配合材料、配合比、性能向上の内容は未確認である。
+</p>
+
+<div class="note">
+<b>確認上の注意</b><br>
+本件はタイトルだけから技術的な効果やゴム配合を推定していない。
+正式な技術評価にはUSPTOの公報本文・請求項の確認が必要。
+</div>
+</article>
+
+</section>
+
+<section>
+<h2 class="section-title">3. 技術ポートフォリオ分析</h2>
+
+<h3 class="category">① 非空気入りタイヤ・構造技術</h3>
+<p>
+金属繊維を利用した骨格・トレッド構造や、
+樹脂の温度依存性を利用した小径タイヤの開発が確認できる。
+</p>
+<p>
+単に空気を使わないタイヤを作るだけでなく、
+乗り心地、耐久性、異物侵入、視認性といった実用上の課題を
+個別に解決する方向性が見える。
+</p>
+
+<h3 class="category">② トレッド・サイプの幾何学的最適化</h3>
+<p>
+サイプの方向、交差、長さ、終端位置やランド部の位置関係など、
+トレッドパターンの細部を制御する発明が複数存在する。
+</p>
+<p>
+これは、ゴム材料そのものを変更するだけではなく、
+接地時の変形や排水経路を幾何学的に制御するアプローチである。
+</p>
+
+<h3 class="category">③ ゴム材料の高機能化</h3>
+<p>
+自己修復性、耐劣化性、コールドフロー耐性など、
+ゴム材料の長寿命化と加工性向上に関する発明が見られる。
+</p>
+<p>
+特に自己修復ゴムは、タイヤの長寿命化や資源消費削減という観点から、
+中長期的に注目すべき技術領域である。
+</p>
+
+<h3 class="category">④ リトレッド・製造技術</h3>
+<p>
+ベルト製造装置、サイプ加工装置、センサーを利用した品質判定、
+シーリング材塗布装置などが確認できる。
+</p>
+<p>
+タイヤの新規製造だけでなく、再生・補修工程の効率化や品質保証まで
+知財ポートフォリオが広がっている。
+</p>
+
+<h3 class="category">⑤ デジタル管理・資源循環</h3>
+<p>
+タイヤIDによる装着位置管理や、リサイクル工程の情報連携が見られる。
+タイヤの製造・使用・再生・廃棄というライフサイクル全体を
+情報でつなぐ方向性が確認できる。
+</p>
+</section>
+
+<section>
+<h2 class="section-title">4. IP・R&D戦略上の注目ポイント</h2>
+
+<table style="width:100%;border-collapse:collapse;background:white;font-size:14px">
+<thead>
+<tr style="background:#17365d;color:white">
+<th style="padding:12px;text-align:left">技術領域</th>
+<th style="padding:12px;text-align:left">注目度</th>
+<th style="padding:12px;text-align:left">戦略的な意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:11px;border-bottom:1px solid #ddd">非空気入りタイヤ</td>
+<td style="padding:11px;border-bottom:1px solid #ddd">高</td>
+<td style="padding:11px;border-bottom:1px solid #ddd">新しいモビリティ市場への対応</td>
+</tr>
+<tr>
+<td style="padding:11px;border-bottom:1px solid #ddd">自己修復ゴム</td>
+<td style="padding:11px;border-bottom:1px solid #ddd">高</td>
+<td style="padding:11px;border-bottom:1px solid #ddd">耐久性・長寿命化・材料革新</td>
+</tr>
+<tr>
+<td style="padding:11px;border-bottom:1px solid #ddd">リトレッド自動化</td>
+<td style="padding:11px;border-bottom:1px solid #ddd">高</td>
+<td style="padding:11px;border-bottom:1px solid #ddd">再生タイヤ事業の競争力強化</td>
+</tr>
+<tr>
+<td style="padding:11px;border-bottom:1px solid #ddd">デジタルタイヤ管理</td>
+<td style="padding:11px;border-bottom:1px solid #ddd">高</td>
+<td style="padding:11px;border-bottom:1px solid #ddd">サービス事業・フリート管理</td>
+</tr>
+<tr>
+<td style="padding:11px;border-bottom:1px solid #ddd">トレッドパターン</td>
+<td style="padding:11px;border-bottom:1px solid #ddd">中～高</td>
+<td style="padding:11px;border-bottom:1px solid #ddd">ウェット・氷上性能の差別化</td>
+</tr>
+<tr>
+<td style="padding:11px;border-bottom:1px solid #ddd">ゴム材料の耐劣化</td>
+<td style="padding:11px;border-bottom:1px solid #ddd">高</td>
+<td style="padding:11px;border-bottom:1px solid #ddd">長期耐久性と環境負荷低減</td>
+</tr>
+</tbody>
+</table>
+
+<div class="point">
+<b>IP部門としての着眼点</b><br>
+個別の特許を単独で評価するだけではなく、
+材料・構造・製造装置・管理システムの組み合わせで
+競争優位性が形成されているかを確認することが重要である。
+特にリトレッドとタイヤ管理の特許群は、
+製品販売後のサービス・再生事業まで含めた知財戦略として分析する価値がある。
+</div>
+</section>
+
+<section>
+<h2 class="section-title">5. 今後の追加調査テーマ</h2>
+
+<ol>
+<li>
+<b>非空気入りタイヤの特許ファミリー分析</b><br>
+WO・JP・USの対応公報を確認し、樹脂材料、金属繊維、骨格構造の
+権利範囲と技術進展を比較する。
+</li>
+<li>
+<b>自己修復ゴムの材料比較</b><br>
+ミシュラン、コンチネンタル、グッドイヤーなどの自己修復材料と比較し、
+分子設計・修復機構の違いを分析する。
+</li>
+<li>
+<b>リトレッドの自動化・AI化</b><br>
+加工装置、画像検査、センサー、品質判定、予知保全に関する
+特許群を横断的に調査する。
+</li>
+<li>
+<b>タイヤリサイクルの情報管理</b><br>
+熱分解、材料トレーサビリティ、再生材料の品質管理などを調査し、
+資源循環ビジネスにおける知財の位置付けを評価する。
+</li>
+<li>
+<b>サイプ・トレッドパターンの権利範囲</b><br>
+各特許の独立請求項と従属請求項を比較し、
+設計変更による回避可能性や権利の重複領域を検討する。
+</li>
+</ol>
+</section>
+
+<section>
+<h2 class="section-title">6. 総括</h2>
+<p>
+今回の24件からは、ブリヂストンの知財活動が、
+タイヤの基本構造・材料・トレッド設計にとどまらず、
+製造工程、再生利用、デジタル管理へと広がっていることが確認できる。
+</p>
+<p>
+特に注目すべきなのは、リトレッドの製造・品質管理技術と、
+タイヤの個体情報・リサイクル工程を連携させる技術である。
+これらはタイヤを販売して終わるのではなく、
+使用期間全体を通じて価値を提供する事業モデルと関連する。
+</p>
+<p>
+一方、個々の特許の競争優位性や権利の強さを判断するには、
+独立請求項の範囲、審査経過、ファミリー展開、引用文献、
+実際の製品への採用状況を追加確認する必要がある。
+</p>
+</section>
+
+<div class="note">
+<b>調査上の留意事項</b><br>
+本レポートはNotionに格納された公報の要約・明細書・請求項から
+技術内容を整理した一次分析である。
+特許の有効性、権利範囲の最終解釈、他社特許との抵触、
+製品への実装状況を確定するものではない。
+US 12729288 B2については本文テキストの取得不足があるため、
+別途公報原文の確認が必要である。
+</div>
+
+</div>
+
+<footer>
+BRIDGESTONE US202609 | Patent Intelligence Report<br>
+技術分析・知財戦略検討用資料
+</footer>
+
+</body>
+</html>
